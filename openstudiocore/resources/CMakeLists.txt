@@ -536,6 +536,101 @@ IF(BUILD_SIMXML)
 
 ENDIF(BUILD_SIMXML)
 
+
+########################################################
+# espr resources
+# clear runs, calls to RUN_ENERGYPLUS will populate this
+#IF(BUILD_ESPR)
+
+  SET(ENERGYPLUS_OUTPUTS "")
+
+  SET(espr_resources_src
+    espr/2StoreyGarage/aim/2StoreyGarage.aim
+    espr/2StoreyGarage/bcd/2StoreyGarage.bcd
+    espr/2StoreyGarage/bsm/L1Z1CoreBasement.bsm
+    espr/2StoreyGarage/bsm/L2Z7RightGarage_slab.bsm
+    espr/2StoreyGarage/cfg/2StoreyGarage.cfg
+    espr/2StoreyGarage/cfg/2StoreyGarage.cfg.h3k
+    espr/2StoreyGarage/cfg/2StoreyGarage.cnn
+    espr/2StoreyGarage/cfg/2StoreyGarage.idf
+    espr/2StoreyGarage/cfg/2StoreyGarage.log
+    espr/2StoreyGarage/cfg/2StoreyGarage.osm
+    espr/2StoreyGarage/cfg/2StoreyGarage_def.res
+    espr/2StoreyGarage/cfg/annual_results.html
+    espr/2StoreyGarage/cfg/console_out.txt
+    espr/2StoreyGarage/cfg/H3K_input_summary.html
+    espr/2StoreyGarage/cfg/h3k_stylesheet.css
+    espr/2StoreyGarage/cfg/input.xml
+    espr/2StoreyGarage/cfg/logo.gif
+    espr/2StoreyGarage/cfg/monthly_results.html
+    espr/2StoreyGarage/cfg/monthly_results_table.csv
+    espr/2StoreyGarage/cfg/out.dictionary
+    espr/2StoreyGarage/cfg/out.summary
+    espr/2StoreyGarage/cfg/out.xml
+    espr/2StoreyGarage/ctl/2StoreyGarage.ctl
+    espr/2StoreyGarage/hvac/2StoreyGarage.Dhw
+    espr/2StoreyGarage/hvac/2StoreyGarage.hvac
+    espr/2StoreyGarage/zones/L1Z1CoreBasement.con
+    espr/2StoreyGarage/zones/L1Z1CoreBasement.geo
+    espr/2StoreyGarage/zones/L1Z1CoreBasement.grd
+    espr/2StoreyGarage/zones/L1Z1CoreBasement.opr
+    espr/2StoreyGarage/zones/L2Z2CoreMain.con
+    espr/2StoreyGarage/zones/L2Z2CoreMain.geo
+    espr/2StoreyGarage/zones/L2Z2CoreMain.grd
+    espr/2StoreyGarage/zones/L2Z2CoreMain.opr
+    espr/2StoreyGarage/zones/L2Z2CoreMain.shd
+    espr/2StoreyGarage/zones/L2Z2CoreMain.shda
+    espr/2StoreyGarage/zones/L2Z2CoreMain.tmc
+    espr/2StoreyGarage/zones/L2Z5FrontMudroom.con
+    espr/2StoreyGarage/zones/L2Z5FrontMudroom.geo
+    espr/2StoreyGarage/zones/L2Z5FrontMudroom.grd
+    espr/2StoreyGarage/zones/L2Z5FrontMudroom.opr
+    espr/2StoreyGarage/zones/L2Z5FrontMudroom.shd
+    espr/2StoreyGarage/zones/L2Z5FrontMudroom.shda
+    espr/2StoreyGarage/zones/L2Z5FrontMudroom.tmc
+    espr/2StoreyGarage/zones/L2Z6FrontAttic.con
+    espr/2StoreyGarage/zones/L2Z6FrontAttic.geo
+    espr/2StoreyGarage/zones/L2Z6FrontAttic.grd
+    espr/2StoreyGarage/zones/L2Z6FrontAttic.opr
+    espr/2StoreyGarage/zones/L2Z7RightGarage.con
+    espr/2StoreyGarage/zones/L2Z7RightGarage.geo
+    espr/2StoreyGarage/zones/L2Z7RightGarage.grd
+    espr/2StoreyGarage/zones/L2Z7RightGarage.opr
+    espr/2StoreyGarage/zones/L2Z7RightGarage.shd
+    espr/2StoreyGarage/zones/L2Z7RightGarage.shda
+    espr/2StoreyGarage/zones/L2Z7RightGarage.tmc
+    espr/2StoreyGarage/zones/L2Z8RightAttic.con
+    espr/2StoreyGarage/zones/L2Z8RightAttic.geo
+    espr/2StoreyGarage/zones/L2Z8RightAttic.grd
+    espr/2StoreyGarage/zones/L2Z8RightAttic.opr
+    espr/2StoreyGarage/zones/L3Z3CoreMain.con
+    espr/2StoreyGarage/zones/L3Z3CoreMain.geo
+    espr/2StoreyGarage/zones/L3Z3CoreMain.grd
+    espr/2StoreyGarage/zones/L3Z3CoreMain.opr
+    espr/2StoreyGarage/zones/L3Z3CoreMain.shd
+    espr/2StoreyGarage/zones/L3Z3CoreMain.shda
+    espr/2StoreyGarage/zones/L3Z3CoreMain.tmc
+    espr/2StoreyGarage/zones/L3Z4CoreAttic.con
+    espr/2StoreyGarage/zones/L3Z4CoreAttic.geo
+    espr/2StoreyGarage/zones/L3Z4CoreAttic.grd
+    espr/2StoreyGarage/zones/L3Z4CoreAttic.opr
+  )
+
+  # update the resources
+  UPDATE_RESOURCES("${espr_resources_src}")
+
+  # add target
+  ADD_CUSTOM_TARGET( openstudio_espr_resources
+    DEPENDS ${espr_resources_src} ${ENERGYPLUS_OUTPUTS}
+    SOURCES ${espr_resources_src}
+  )
+
+  CREATE_SRC_GROUPS( "${espr_resources_src}" )
+
+#ENDIF(BUILD_ESPR)
+
+
+
 ########################################################
 # sdd resources
 # clear runs, calls to RUN_ENERGYPLUS will populate this

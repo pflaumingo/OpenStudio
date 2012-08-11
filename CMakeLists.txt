@@ -13,6 +13,7 @@ OPTION( NIGHTLY_BUILD "Use configurations for Nightly Build" OFF )
 
 SET(OPENSTUDIO_VERSION "${CMAKE_VERSION_MAJOR}.${CMAKE_VERSION_MINOR}.${CMAKE_VERSION_PATCH}")
 
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  /MP ")
 # Build C++ documentation using Doxygen
 # Requires: doxygen
 OPTION( BUILD_DOCUMENTATION "Build Documenation" OFF )
@@ -50,6 +51,9 @@ OPTION( BUILD_WITH_OPENSSL "Build With OpenSSL Support For SSH Connections" ON )
 
 # Build SimXML
 OPTION( BUILD_SIMXML "Build with SimXml support" OFF )
+
+# Build ESP-r
+OPTION( BUILD_ESPR "Build with ESP-r support" OFF )
 
 # Build with Dakota support
 OPTION( BUILD_WITH_DAKOTA "Build with Dakota algorithm library support" OFF )
@@ -553,6 +557,7 @@ ExternalProject_Add( OpenStudioCore
     -DBUILD_PACKAGE:BOOL=${BUILD_PACKAGE}
     -DENABLE_TEST_RUNNER_TARGETS:BOOL=${ENABLE_TEST_RUNNER_TARGETS}
     -DBUILD_WITH_OPENSSL:BOOL=${BUILD_WITH_OPENSSL}
+    -DBUILD_ESPR:BOOL=${BUILD_ESPR}
     -DBUILD_WITH_DAKOTA:BOOL=${BUILD_WITH_DAKOTA}
     -DBUILD_RUBY_GEM:BOOL=${BUILD_RUBY_GEM}
     -DBUILD_RUBY_GEM_WITH_LIBS:BOOL=${BUILD_RUBY_GEM_WITH_LIBS}

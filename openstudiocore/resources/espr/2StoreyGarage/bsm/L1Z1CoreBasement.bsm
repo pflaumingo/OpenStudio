@@ -1,0 +1,14 @@
+#
+# BASESIMP input file
+#
+2.09 # basement height
+1.49 # basement depth
+12.00 # basement length
+8.00 # basement width
+0.00         # overlap (only important for BCCN__1 and BCCN__2)
+0.312 # basement insulation resistance
+1.27 # soil conductivity
+8.00 # depth of water table
+9.10 # annually-averaged soil temp.
+13.47 # amplitude of grnd-temp's annual sine wave
+0.4672895 # phase lag of ground temp's annual sine wave

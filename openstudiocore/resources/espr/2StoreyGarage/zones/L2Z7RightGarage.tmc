@@ -1,0 +1,28 @@
+# transparent properties of L2Z7RightGarage defined in user/2StoreyGarage/zones/L2Z7RightGarage.tmc
+  11    # surfaces
+# tmc index for each surface
+  0  0  0  0  0  0  1  2  0  3  0
+   3  wi01R0207     # layers in tmc type  1
+# Transmission @ 5 angles & visible tr.
+0.616 0.593 0.504 0.381 0.178 0.682
+# For each layer absorption @ 5 angles
+0.0822 0.0901 0.1023 0.1110 0.1163 
+0.0087 0.0087 0.0087 0.0087 0.0087 
+0.0647 0.0699 0.0708 0.0647 0.0481 
+0   # blind/shutter control flag
+   3  wi02R0207     # layers in tmc type  2
+# Transmission @ 5 angles & visible tr.
+0.616 0.593 0.504 0.381 0.178 0.682
+# For each layer absorption @ 5 angles
+0.0822 0.0901 0.1023 0.1110 0.1163 
+0.0087 0.0087 0.0087 0.0087 0.0087 
+0.0647 0.0699 0.0708 0.0647 0.0481 
+0   # blind/shutter control flag
+   3  wi03R0207     # layers in tmc type  3
+# Transmission @ 5 angles & visible tr.
+0.616 0.593 0.504 0.381 0.178 0.682
+# For each layer absorption @ 5 angles
+0.0822 0.0901 0.1023 0.1110 0.1163 
+0.0087 0.0087 0.0087 0.0087 0.0087 
+0.0647 0.0699 0.0708 0.0647 0.0481 
+0   # blind/shutter control flag

@@ -1,0 +1,73 @@
+*connections for 2StoreyGarage
+*Date Monday, 23 of July 2012 0:0:0
+    67   # number of connections
+#IC1 |IE1|ICT|IC2|IE2|iConn
+#zone|sur|con|zon|   |con |con
+# no.|no.|typ|no.|no.| no.|inf
+   1   1   0   0   0  #  1 wa01F0205 EXTERIOR
+   1   2   3   2   6  #  2 wa02F0205 L2Z2CoreMain
+   1   3   0   0   0  #  3 wa03F0205 EXTERIOR
+   1   4   0   0   0  #  4 wa04F0205 EXTERIOR
+   1   5   0   0   0  #  5 fl01F0205 EXTERIOR
+   1   6   3   6   3  #  6 ce01F0205 L2Z6FrontAttic
+   1   7   0   0   0  #  7 wi01F0205 EXTERIOR
+   1   8   0   0   0  #  8 wi02F0205 EXTERIOR
+   1   9   0   0   0  #  9 do01F0205 EXTERIOR
+   1  10   0   0   0  # 10 wi03F0205 EXTERIOR
+   2   1   0   0   0  # 11 wa01C0202 EXTERIOR
+   2   2   0   0   0  # 12 wa02C0202 EXTERIOR
+   2   3   0   0   0  # 13 wa03C0202 EXTERIOR
+   2   4   0   0   0  # 14 wa04C0202 EXTERIOR
+   2   5   0   0   0  # 15 wa05C0202 EXTERIOR
+   2   6   3   1   2  # 16 wa06C0202 L2Z5FrontMudroom
+   2   7   3   5   6  # 17 fl01C0202 L1Z1CoreBasement
+   2   8   3   3   6  # 18 ce01C0202 L3Z3CoreMain
+   2   9   0   0   0  # 19 wi01C0202 EXTERIOR
+   2  10   0   0   0  # 20 do01C0202 EXTERIOR
+   2  11   0   0   0  # 21 wi02C0202 EXTERIOR
+   2  12   0   0   0  # 22 wi03C0202 EXTERIOR
+   2  13   0   0   0  # 23 wi04C0202 EXTERIOR
+   2  14   0   0   0  # 24 wi05C0202 EXTERIOR
+   3   1   0   0   0  # 25 wa01C0303 EXTERIOR
+   3   2   0   0   0  # 26 wa02C0303 EXTERIOR
+   3   3   0   0   0  # 27 wa03C0303 EXTERIOR
+   3   4   0   0   0  # 28 wa04C0303 EXTERIOR
+   3   5   3   6   2  # 29 wa05C0303 L2Z6FrontAttic
+   3   6   3   2   8  # 30 fl01C0303 L2Z2CoreMain
+   3   7   3   4   3  # 31 ce01C0303 L3Z4CoreAttic
+   3   8   0   0   0  # 32 wi01C0303 EXTERIOR
+   3   9   0   0   0  # 33 wi02C0303 EXTERIOR
+   3  10   0   0   0  # 34 wi03C0303 EXTERIOR
+   3  11   0   0   0  # 35 wi04C0303 EXTERIOR
+   4   1   0   0   0  # 36 wa01C0304 EXTERIOR
+   4   2   0   0   0  # 37 wa02C0304 EXTERIOR
+   4   3   3   3   7  # 38 fl01C0304 L3Z3CoreMain
+   4   4   0   0   0  # 39 ce01C0304 EXTERIOR
+   4   5   0   0   0  # 40 ce02C0304 EXTERIOR
+   5   1   6   1   9  # 41 wa01C0101 BASESIMP
+   5   2   6   1  13  # 42 wa02C0101 BASESIMP
+   5   3   6   1   9  # 43 wa03C0101 BASESIMP
+   5   4   6   1  13  # 44 wa04C0101 BASESIMP
+   5   5   6   1  56  # 45 fl01C0101 BASESIMP
+   5   6   3   2   7  # 46 ce01C0101 L2Z2CoreMain
+   6   1   0   0   0  # 47 wa01F0206 EXTERIOR
+   6   2   3   3   5  # 48 wa02F0206 L3Z3CoreMain
+   6   3   3   1   6  # 49 fl01F0206 L2Z5FrontMudroom
+   6   4   0   0   0  # 50 ce01F0206 EXTERIOR
+   6   5   0   0   0  # 51 ce02F0206 EXTERIOR
+   7   1   0   0   0  # 52 wa01R0207 EXTERIOR
+   7   2   0   0   0  # 53 wa02R0207 EXTERIOR
+   7   3   0   0   0  # 54 wa03R0207 EXTERIOR
+   7   4   0   0   0  # 55 wa04R0207 EXTERIOR
+   7   5   6   1 100  # 56 fl01R0207 BASESIMP
+   7   6   3   8   3  # 57 ce01R0207 L2Z8RightAttic
+   7   7   0   0   0  # 58 wi01R0207 EXTERIOR
+   7   8   0   0   0  # 59 wi02R0207 EXTERIOR
+   7   9   0   0   0  # 60 do01R0207 EXTERIOR
+   7  10   0   0   0  # 61 wi03R0207 EXTERIOR
+   7  11   0   0   0  # 62 do02R0207 EXTERIOR
+   8   1   0   0   0  # 63 wa01R0208 EXTERIOR
+   8   2   0   0   0  # 64 wa02R0208 EXTERIOR
+   8   3   3   7   6  # 65 fl01R0208 L2Z7RightGarage
+   8   4   0   0   0  # 66 ce01R0208 EXTERIOR
+   8   5   0   0   0  # 67 ce02R0208 EXTERIOR

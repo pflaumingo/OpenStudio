@@ -1,0 +1,13 @@
+2 114.0        # Number of HVAC systems, site altitude
+#
+# CENTRAL HVAC SYSTEM(S) SERVING [L2Z2CoreMain] [L3Z3CoreMain] [L1Z1CoreBasement] [L2Z7RightGarage]  
+#
+# System #1 - Furnace
+1 1 4 # SysType; Pri; Zones;
+7 2 2 0.247 3 0.327 5 0.164 7 0.261 24000 0.78 1 495 0 293 1 # Furnace Type;Fuel Type;Num of 1st zone;Frac for zone3;Frac for zone4;Frac for zone6;Frac for zone8;cap
+#
+# ZONAL HVAC SYSTEM(S) SERVING [L2Z5FrontMudroom] 
+#
+# System #1 - Baseboard
+3 1 1 # Sys SysPr ZonesServed;
+1 1.0 1500 1.00 0 0.00 # Zone1 fracZ1; BaseCap, eff; FanMode FanPwr

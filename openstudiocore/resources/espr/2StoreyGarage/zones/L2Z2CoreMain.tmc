@@ -1,0 +1,44 @@
+# transparent properties of L2Z2CoreMain defined in user/2StoreyGarage/zones/L2Z2CoreMain.tmc
+  14    # surfaces
+# tmc index for each surface
+  0  0  0  0  0  0  0  0  1  0  2  3  4  5
+   3  wi01C0202     # layers in tmc type  1
+# Transmission @ 5 angles & visible tr.
+0.626 0.602 0.512 0.387 0.181 0.693
+# For each layer absorption @ 5 angles
+0.0835 0.0915 0.1039 0.1128 0.1181 
+0.0089 0.0089 0.0089 0.0089 0.0089 
+0.0657 0.0710 0.0719 0.0657 0.0488 
+0   # blind/shutter control flag
+   3  wi02C0202     # layers in tmc type  2
+# Transmission @ 5 angles & visible tr.
+0.636 0.612 0.521 0.393 0.184 0.704
+# For each layer absorption @ 5 angles
+0.0848 0.0930 0.1056 0.1146 0.1200 
+0.0090 0.0090 0.0090 0.0090 0.0090 
+0.0668 0.0722 0.0731 0.0668 0.0496 
+0   # blind/shutter control flag
+   3  wi03C0202     # layers in tmc type  3
+# Transmission @ 5 angles & visible tr.
+0.626 0.602 0.512 0.387 0.181 0.693
+# For each layer absorption @ 5 angles
+0.0835 0.0915 0.1039 0.1128 0.1181 
+0.0089 0.0089 0.0089 0.0089 0.0089 
+0.0657 0.0710 0.0719 0.0657 0.0488 
+0   # blind/shutter control flag
+   3  wi04C0202     # layers in tmc type  4
+# Transmission @ 5 angles & visible tr.
+0.605 0.582 0.495 0.374 0.175 0.669
+# For each layer absorption @ 5 angles
+0.0807 0.0884 0.1004 0.1090 0.1141 
+0.0086 0.0086 0.0086 0.0086 0.0086 
+0.0635 0.0686 0.0695 0.0635 0.0472 
+0   # blind/shutter control flag
+   3  wi05C0202     # layers in tmc type  5
+# Transmission @ 5 angles & visible tr.
+0.605 0.582 0.495 0.374 0.175 0.669
+# For each layer absorption @ 5 angles
+0.0807 0.0884 0.1004 0.1090 0.1141 
+0.0086 0.0086 0.0086 0.0086 0.0086 
+0.0635 0.0686 0.0695 0.0635 0.0472 
+0   # blind/shutter control flag

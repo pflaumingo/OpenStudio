@@ -77,6 +77,9 @@ OPTION( BUILD_SIMXML "Build with SimXml support" OFF )
 # Build SDD
 OPTION( BUILD_SDD "Build with SDD support" ON )
 
+# Build ESPR
+OPTION( BUILD_ESPR "Build with ESP-r support" ON )
+
 # Build with Dakota support
 OPTION( BUILD_WITH_DAKOTA "Build with Dakota algorithm library support" OFF )
 
@@ -141,6 +144,10 @@ SET( project_directories
   openstudio_app
   pat_app
 )
+
+IF( BUILD_ESPR )
+  LIST(APPEND project_directories ESPR)
+ENDIF( BUILD_ESPR ) 
 
 IF( BUILD_SDD )
   LIST(APPEND project_directories sdd)

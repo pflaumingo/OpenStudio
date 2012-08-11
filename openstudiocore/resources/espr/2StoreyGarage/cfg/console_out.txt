@@ -1,0 +1,134 @@
+   
+ ESP-r Integrated Building Performance Simulator (bps). 
+ This is a development copy of bps, based on ESP-r release 11.11. 
+   
+ Copyright resides with the member organisations of the ESP-r 
+ development consortium as listed at: 
+ http://www.esru.strath.ac.uk/Programs/ESP-r_central.htm 
+   
+ Build information: 
+   - SVN Source:       HOT3000@r7388 (unmodified) 
+   - Platform:         i686:MINGW32_NT-5.1:1.0.10(0.46/3/2) 
+   - Compilers:        gcc/g++/gfortran 
+   - Graphics Library: noX 
+   - XML output:       Supported 
+   
+  homedrive is F: 
+  homepath is \ 
+  No esprc file found so setting default 
+  exemplars, CAD, report & print links... 
+  Warning: Could not find 
+ /h3k_compile_clean/esp-r/default 
+ The file /h3k_compile_clean/esp-r/default was not found (assuming standard databases). 
+  the input file is: 2StoreyGarage.cfg 
+ Silent-running mode. 
+  Warning: Could not find 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+ Could not find help text file. 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+ Scanning the model description... 
+  Warning: Could not find 
+ /h3k_compile_clean/esp-r/default 
+ The file /h3k_compile_clean/esp-r/default was not found (assuming standard databases). 
+ Simulation year and calendar mismatch rectified 
+ Scanning the model description...done 
+  Checking zone descriptions... 
+   
+  No casual gains type names found ...supplying defaults. 
+ Operation file for zone  1 periods being sorted! 
+ The base area of L2Z5FrontMud is   5.0m^2. 
+   
+  No casual gains type names found ...supplying defaults. 
+ Operation file for zone  2 periods being sorted! 
+ The base area of L2Z2CoreMain is  96.0m^2. 
+   
+  No casual gains type names found ...supplying defaults. 
+ Operation file for zone  3 periods being sorted! 
+ The base area of L3Z3CoreMain is  96.0m^2. 
+   
+  No casual gains type names found ...supplying defaults. 
+ Operation file for zone  4 periods being sorted! 
+ The base area of L3Z4CoreAtti is  96.0m^2. 
+   
+  No casual gains type names found ...supplying defaults. 
+ Operation file for zone  5 periods being sorted! 
+ The base area of L1Z1CoreBase is  96.0m^2. 
+   
+  No casual gains type names found ...supplying defaults. 
+ Operation file for zone  6 periods being sorted! 
+ The base area of L2Z6FrontAtt is   5.0m^2. 
+   
+  No casual gains type names found ...supplying defaults. 
+ Operation file for zone  7 periods being sorted! 
+ The base area of L2Z7RightGar is  37.2m^2. 
+   
+  No casual gains type names found ...supplying defaults. 
+ Operation file for zone  8 periods being sorted! 
+ The base area of L2Z8RightAtt is  37.2m^2. 
+  Checking zone descriptions...done 
+  Checking model topology... 
+  Checking model topology...done 
+ A systems and building simulation start-up period of   7 days has been specified. 
+  Warning: Materials database data probably corrupt. 
+ Please fix this first. 
+  Warning: Problem during reading of construction database. 
+   
+  Climate data:                           Otta:  1997 
+   
+  Library file: 2StoreyGarage_def.res 
+  Warning: Could not find 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+ Could not find help text file. 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+  Warning: Could not find 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+ Could not find help text file. 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+  Warning: Could not find 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+ Could not find help text file. 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+   
+  Parsing BC data file: ../bcd/2StoreyGarage.bcd 
+  Boundry condition data file was processed successfully. 
+  Warning: Could not find 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+ Could not find help text file. 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+  Climate file         : ../../climate/kingston.cwec 
+  Configuration file   : 2StoreyGarage.cfg 
+  Configuration name   : 2StoreyGarage 8 zone model. 
+   
+  Control file name    : ../ctl/2StoreyGarage.ctl 
+   
+  Zone save option     : 5 H3K 
+  No. of warnings      :    14 
+   
+  Simulation period    :   365 day(s) 
+                 period: Sat-01-Jan@01h00 - Sun-31-Dec@24h00 
+  Start-up period      :     7 day(s) 
+  Zone time-steps      :     1 / hr ( 60.00 min. intervals saved at each timestep) 
+  Number of zones      :     8 
+  Zone-time increments : 71424 
+  Time-step controller :     Not active 
+   
+  Simulation has now commenced. 
+    1 %   complete; expected finish time : Mon Jul 23 15:39:04 2012 
+    5 %   complete; expected finish time : Mon Jul 23 15:38:24 2012 
+   10 %   complete; expected finish time : Mon Jul 23 15:38:14 2012 
+   20 %   complete; expected finish time : Mon Jul 23 15:38:19 2012 
+   30 %   complete; expected finish time : Mon Jul 23 15:38:17 2012 
+   40 %   complete; expected finish time : Mon Jul 23 15:38:16 2012 
+   50 %   complete; expected finish time : Mon Jul 23 15:38:16 2012 
+   60 %   complete; expected finish time : Mon Jul 23 15:38:17 2012 
+   70 %   complete; expected finish time : Mon Jul 23 15:38:16 2012 
+   80 %   complete; expected finish time : Mon Jul 23 15:38:16 2012 
+   90 %   complete; expected finish time : Mon Jul 23 15:38:16 2012 
+   95 %   complete; expected finish time : Mon Jul 23 15:38:16 2012 
+ Simulation cpu runtime:   52.85 seconds 
+ XML postprocessor cpu runtime:    1.62 seconds 
+  Warning: Could not find 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+ Could not find help text file. 
+ /h3k_compile_clean/esp-r\lib\esrubps.help 
+   
