@@ -147,7 +147,8 @@ namespace detail {
 
   bool IddField_Impl::unitsBasedOnOtherField() const {
     if (OptionalString units = properties().units) {
-      if (boost::regex_match(*units,boost::regex("BasedOnField A\\d+"))) {
+      const static boost::regex unitsBasedOnOtherFieldRegex("BasedOnField A\\d+", boost::regex_constants::optimize);
+      if (boost::regex_match(*units, unitsBasedOnOtherFieldRegex)) {
         return true;
       }
     }
