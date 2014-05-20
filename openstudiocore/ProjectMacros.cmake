@@ -253,7 +253,7 @@ MACRO( MAKE_SWIG_TARGET NAME SIMPLENAME KEY_I_FILE I_FILES PARENT_TARGET PARENT_
   ADD_CUSTOM_COMMAND(
     OUTPUT "${SWIG_WRAPPER}" 
     COMMAND "${SWIG_EXECUTABLE}"
-            "-ruby" "-c++" "-fvirtual" "-I${CMAKE_SOURCE_DIR}/src" "-I${CMAKE_BINARY_DIR}/src" "${extra_includes}" "${extra_includes2}"
+            "-ruby" "-c++" "-autorename" "-fvirtual" "-I${CMAKE_SOURCE_DIR}/src" "-I${CMAKE_BINARY_DIR}/src" "${extra_includes}" "${extra_includes2}"
             -features autodoc=1
             -module "${MODULE}" -initname "${LOWER_NAME}"
             -o "${SWIG_WRAPPER_FULL_PATH}"
