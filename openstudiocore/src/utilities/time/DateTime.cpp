@@ -209,8 +209,12 @@ std::string DateTime::toString() const
 }
 
 std::string DateTime::toISO8601() const {
-  boost::posix_time::ptime pt(m_date.impl(), m_time.impl());
-  return boost::posix_time::to_iso_string(pt);
+  //boost::posix_time::ptime pt(m_date.impl(), m_time.impl());
+  //return boost::posix_time::to_iso_string(pt);
+  QDate date(m_date.assumedBaseYear(), m_date.monthOfYear().value(), m_date.dayOfMonth());
+  QTime time(m_time.days()*24 + m_time.hours(), m_time.minutes(), m_time.seconds());
+  QDateTime dateTime(date, time);
+  return openstudio::toString(dateTime.toString(Qt::ISODate));
 }
 
 std::time_t DateTime::toEpoch() const {
@@ -223,12 +227,21 @@ std::time_t DateTime::toEpoch() const {
 
 boost::optional<DateTime> DateTime::fromISO8601(const std::string& str) {
   OptionalDateTime result;
-  try {
-    boost::posix_time::ptime pt = boost::posix_time::from_iso_string(str);
-    result = DateTime(Date(pt.date()),Time(pt.time_of_day()));
-  }
-  catch (...) {
-    LOG(Error,"Could not convert '" << str << "' to DateTime using boost::posix_time::from_iso_string.");
+  //try {
+  //  boost::posix_time::ptime pt = boost::posix_time::from_iso_string(str);
+  //  result = DateTime(Date(pt.date()),Time(pt.time_of_day()));
+  //}
+  //catch (...) {
+  //  LOG(Error,"Could not convert '" << str << "' to DateTime using boost::posix_time::from_iso_string.");
+  //}
+
+  QDateTime dateTime = QDateTime::fromString(toQString(str), Qt::ISODate);
+  if (dateTime.isValid()){
+    QDate date = dateTime.date();
+    QTime time = dateTime.time();
+    result = DateTime(Date(MonthOfYear(date.month()), date.day(), date.year()),Time(0, time.hour(), time.minute(), time.second()));
+  }else{
+    LOG(Error,"Could not convert '" << str << "' to DateTime using QDateTime::fromString.");
   }
 
   return result;

@@ -166,16 +166,62 @@ TEST(DateTime, normalization2)
 TEST(DateTime,EpochConversions) {
   DateTime dateTime = DateTime::now();
   std::time_t asEpoch = dateTime.toEpoch();
-  DateTime copy = DateTime::fromEpoch(asEpoch);
-  EXPECT_EQ(dateTime,copy);
+  DateTime fromEpoch = DateTime::fromEpoch(asEpoch);
+  EXPECT_EQ(dateTime,fromEpoch);
+
+  asEpoch = 1403618279; // From Wikipedia 1403618279 = (ISO 8601:2014-06-24T13:57:59Z)
+  fromEpoch = DateTime::fromEpoch(asEpoch);
+  OptionalDateTime isoTime = DateTime::fromISO8601("2014-06-24T13:57:59Z");
+  ASSERT_TRUE(isoTime);
+  EXPECT_EQ(fromEpoch, isoTime.get());
 }
 
 TEST(DateTime,ISO8601Conversions) {
   DateTime dateTime = DateTime::now();
-  std::string asIso = dateTime.toISO8601();
-  OptionalDateTime copy = DateTime::fromISO8601(asIso);
-  ASSERT_TRUE(copy);
-  EXPECT_EQ(dateTime,copy.get());
+  std::string asISO = dateTime.toISO8601();
+  OptionalDateTime fromISO = DateTime::fromISO8601(asISO);
+  ASSERT_TRUE(fromISO);
+  EXPECT_EQ(dateTime,fromISO.get());
+
+  // Date
+  fromISO = DateTime::fromISO8601("2014-06-19");
+  EXPECT_TRUE(fromISO);
+
+  // Non-delimited Date
+//  fromISO = DateTime::fromISO8601("20140619");
+//  EXPECT_TRUE(fromISO);
+
+  // Combined date and time in UTC
+  fromISO = DateTime::fromISO8601("2014-06-19T19:12:32+00:00");
+  EXPECT_TRUE(fromISO);
+
+  // Combined date and time in UTC
+  fromISO = DateTime::fromISO8601("2014-06-19T19:12:32Z");
+  EXPECT_TRUE(fromISO);
+
+  // Combined date and time
+  fromISO = DateTime::fromISO8601("2014-06-19T19:12:32");
+  EXPECT_TRUE(fromISO);
+
+  // Non-delimited combined date and time
+//  fromISO = DateTime::fromISO8601("20140619191232");
+//  EXPECT_TRUE(fromISO);
+
+  // Week
+//  fromISO = DateTime::fromISO8601("2014-W25");
+//  EXPECT_TRUE(fromISO);
+
+  // Date with week number
+//  fromISO = DateTime::fromISO8601("2014-W25-4");
+//  EXPECT_TRUE(fromISO);
+
+  // Ordinal date
+//  fromISO = DateTime::fromISO8601("2014-170");
+//  EXPECT_TRUE(fromISO);
+
+  // Bogus time
+  fromISO = DateTime::fromISO8601("Bogus Time");
+  EXPECT_FALSE(fromISO);
 }
 
 
