@@ -2423,7 +2423,7 @@ namespace energyplus {
       }
     }else{
       LOG_FREE(Error, "openstudio.energyplus.GeometryTranslator",
-              "Fewer than 3 vertices detected for surface '" << surface.name() << "'");
+              "Fewer than 3 vertices detected for surface '" << surface.name().get() << "'");
     }
 
     return result;

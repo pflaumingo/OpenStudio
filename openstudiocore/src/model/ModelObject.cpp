@@ -587,7 +587,7 @@ namespace detail {
   {
     bool result = false;
     if (name) {
-      result = this->setName(*name);
+      result = bool(this->setName(*name));
     }
     return result;
   }

@@ -32,6 +32,7 @@
 #include <boost/geometry/geometries/adapted/boost_tuple.hpp>
 #include <boost/geometry/strategies/cartesian/point_in_poly_franklin.hpp> 
 #include <boost/geometry/strategies/cartesian/point_in_poly_crossings_multiply.hpp> 
+#include <boost/version.hpp>
 
 typedef boost::geometry::model::d2::point_xy<double> BoostPoint;
 typedef boost::geometry::model::polygon<BoostPoint> BoostPolygon;
@@ -109,6 +110,8 @@ namespace openstudio {
 
 }
 
+// If Boost is older than 1.56
+#if BOOST_VERSION < 105600
 namespace boost { namespace geometry
 {
 
@@ -305,7 +308,7 @@ inline void remove_spikes(Geometry& geometry)
 
 }} // namespace boost::geometry
 // remove_spikes 
-
+#endif
 
 namespace openstudio{
 

@@ -123,8 +123,8 @@ namespace detail {
           if (adjacentConstructionBase && (constructionBase->handle() == adjacentConstructionBase->handle())){
             adjacentPlanarSurfacesToSkip.insert(adjacentSurface->handle());
           }else{
-            LOG(Error, "Could not resolve matched surface construction conflicts between surfaces '" << planarSurface.name()  
-                << "', and '" << adjacentSurface->name() << "', area calculation may be incorrect");
+            LOG(Error, "Could not resolve matched surface construction conflicts between surfaces '" << planarSurface.name().get()
+                << "', and '" << adjacentSurface->name().get() << "', area calculation may be incorrect");
           }
         }
       }else if (planarSurface.optionalCast<SubSurface>()){
@@ -134,8 +134,8 @@ namespace detail {
           if (adjacentConstructionBase && (constructionBase->handle() == adjacentConstructionBase->handle())){
             adjacentPlanarSurfacesToSkip.insert(adjacentSubSurface->handle());
           }else{
-            LOG(Error, "Could not resolve matched sub surface construction conflicts between sub surfaces '" << planarSurface.name()  
-                << "', and '" << adjacentSubSurface->name() << "', area calculation may be incorrect");
+            LOG(Error, "Could not resolve matched sub surface construction conflicts between sub surfaces '" << planarSurface.name().get()
+                << "', and '" << adjacentSubSurface->name().get() << "', area calculation may be incorrect");
           }
         }  
       }

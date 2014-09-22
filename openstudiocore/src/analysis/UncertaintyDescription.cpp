@@ -81,7 +81,7 @@ namespace detail {
   }
 
   bool UncertaintyDescription_Impl::isSet(const std::string& attributeName) const {
-    return findByName<Attribute>(m_attributes,attributeName,true);
+    return bool(findByName<Attribute>(m_attributes,attributeName,true));
   }
 
   std::vector<AttributeDescription> UncertaintyDescription_Impl::attributeDescriptions() const {
@@ -99,7 +99,7 @@ namespace detail {
   }
 
   bool UncertaintyDescription_Impl::hasDescription(const std::string& attributeName) const {
-    return findStructByName<AttributeDescription>(m_attributeDescriptions,attributeName,true);
+    return bool(findStructByName<AttributeDescription>(m_attributeDescriptions,attributeName,true));
   }
 
   bool UncertaintyDescription_Impl::isComplete() const {

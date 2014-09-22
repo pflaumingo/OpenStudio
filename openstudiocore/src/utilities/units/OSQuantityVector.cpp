@@ -165,7 +165,7 @@ void OSQuantityVector::clear() {
 }
 
 bool OSQuantityVector::isTemperature() const {
-  return m_units.optionalCast<TemperatureUnit>();
+  return bool(m_units.optionalCast<TemperatureUnit>());
 }
 
 bool OSQuantityVector::isAbsolute() const {

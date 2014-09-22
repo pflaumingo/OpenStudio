@@ -289,11 +289,11 @@ namespace detail {
   }
 
   bool OSArgumentRecord_Impl::hasValue() const {
-    return (m_argumentValue);
+    return bool(m_argumentValue);
   }
 
   bool OSArgumentRecord_Impl::hasDefaultValue() const {
-    return (m_defaultArgumentValue);
+    return bool(m_defaultArgumentValue);
   }
 
   openstudio::path OSArgumentRecord_Impl::valueAsPath() const {

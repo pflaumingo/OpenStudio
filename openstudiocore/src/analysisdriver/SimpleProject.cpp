@@ -331,7 +331,7 @@ namespace detail {
   }
 
   bool SimpleProject_Impl::analysisIsLoaded() const {
-    return m_analysis;
+    return bool(m_analysis);
   }
 
   bool SimpleProject_Impl::isRunning() const {

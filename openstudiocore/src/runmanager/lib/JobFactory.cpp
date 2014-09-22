@@ -132,7 +132,7 @@ namespace runmanager {
     Files files;
     files.append(FileInfo(t_model, "osm"));
 
-    return createModelToIdfJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), t_uuid);
+    return createModelToIdfJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), false, t_uuid);
   }
 
   Job JobFactory::createModelToRadJob(
@@ -161,7 +161,7 @@ namespace runmanager {
     files.append(FileInfo(t_model, "osm"));
     files.append(FileInfo(t_sql, "sql"));
 
-    return createModelToRadJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), t_uuid);
+    return createModelToRadJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), false, t_uuid);
   }
 
   Job JobFactory::createIdfToModelJob(
@@ -188,7 +188,7 @@ namespace runmanager {
     Files files;
     files.append(FileInfo(t_idf, "idf"));
 
-    return createIdfToModelJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), t_uuid);
+    return createIdfToModelJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), false, t_uuid);
   }
 
 
@@ -302,7 +302,7 @@ namespace runmanager {
 
     files.append(idf);
 
-    return createEnergyPlusJob(t_tools, params, files, std::vector<openstudio::URLSearchPath>(), t_uuid);
+    return createEnergyPlusJob(t_tools, params, files, std::vector<openstudio::URLSearchPath>(), false, t_uuid);
   }
 
   Job JobFactory::createEnergyPlusJob(
@@ -331,7 +331,7 @@ namespace runmanager {
     idf.addRequiredFile(t_epw, toPath("in.epw"));
     files.append(idf);
 
-    return createEnergyPlusJob(tools, params, files, std::vector<openstudio::URLSearchPath>(), t_uuid);
+    return createEnergyPlusJob(tools, params, files, std::vector<openstudio::URLSearchPath>(), false, t_uuid);
   }
 
   Job JobFactory::createExpandObjectsJob(
@@ -373,7 +373,7 @@ namespace runmanager {
     Files files;
     files.append(FileInfo(t_ies, "ies"));
 
-    return createPreviewIESJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), t_uuid);
+    return createPreviewIESJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), false, t_uuid);
 
   }
 
@@ -405,7 +405,7 @@ namespace runmanager {
     files.append(FileInfo(t_rubyfile, "rb"));
 
 
-    return createRubyJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), t_uuid);
+    return createRubyJob(Tools(), params, files, std::vector<openstudio::URLSearchPath>(), false, t_uuid);
   }
 
   Job JobFactory::createRubyJob(

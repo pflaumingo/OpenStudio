@@ -76,7 +76,7 @@ namespace openstudio {
       {
         if (!boost::filesystem::is_directory(t_folder))
         {
-          throw std::runtime_error("cache foler exists and is not a folder");
+          throw std::runtime_error("cache folder exists and is not a folder");
         } else {
           return t_folder;
         }
@@ -170,7 +170,7 @@ namespace openstudio {
         j = *j.parent();
       }
 
-      LOG(Debug, "TreeStatus " << j.treeStatus() << " " << j.parent() << " " << openstudio::toString(j.uuid()));
+      LOG(Debug, "TreeStatus " << j.treeStatus() << " " << bool(j.parent()) << " " << openstudio::toString(j.uuid()));
 
       if (j.treeStatus() == TreeStatusEnum::Finished)
       {

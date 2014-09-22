@@ -95,11 +95,11 @@ namespace detail {
   }
 
   bool WorkflowStep_Impl::isInputVariable() const {
-    return m_inputVariable;
+    return bool(m_inputVariable);
   }
 
   bool WorkflowStep_Impl::isWorkItem() const {
-    return m_workItem;
+    return bool(m_workItem);
   }
 
   InputVariable WorkflowStep_Impl::inputVariable() const {

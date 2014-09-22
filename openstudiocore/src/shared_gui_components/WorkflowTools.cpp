@@ -196,7 +196,7 @@ OptionalInt getModelMeasureInsertStep(const openstudio::analysis::Problem &t_pro
 
 bool projectHasRadiance(const openstudio::analysisdriver::SimpleProject &t_project)
 {
-  return getProjectRadianceJobIndex(t_project);
+  return bool(getProjectRadianceJobIndex(t_project));
 }
 
 void removeRadianceFromProject(openstudio::analysisdriver::SimpleProject &t_project)

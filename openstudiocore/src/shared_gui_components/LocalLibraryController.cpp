@@ -457,7 +457,7 @@ LibraryItem::~LibraryItem()
 
 bool LibraryItem::hasError() const
 {
-  return m_bclMeasure.error();
+  return bool(m_bclMeasure.error());
 }
 
 QString LibraryItem::name() const 

@@ -79,7 +79,7 @@ UnitSystem Quantity::system() const {
 }
 
 bool Quantity::isTemperature() const {
-  return m_units.optionalCast<TemperatureUnit>();
+  return bool(m_units.optionalCast<TemperatureUnit>());
 }
 
 std::vector<std::string> Quantity::baseUnits() const {

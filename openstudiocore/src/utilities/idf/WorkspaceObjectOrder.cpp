@@ -43,7 +43,9 @@ namespace detail {
 
   // GETTERS AND SETTERS
 
-  bool WorkspaceObjectOrder_Impl::isDirectOrder() const { return m_directOrder; }
+  bool WorkspaceObjectOrder_Impl::isDirectOrder() const {
+    return bool(m_directOrder);
+  }
 
   boost::optional< std::vector<Handle> > WorkspaceObjectOrder_Impl::directOrder() const { 
     return m_directOrder; 

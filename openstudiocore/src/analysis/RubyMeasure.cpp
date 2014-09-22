@@ -213,7 +213,7 @@ namespace detail {
   }
 
   bool RubyMeasure_Impl::usesBCLMeasure() const {
-    return m_bclMeasureDirectory;
+    return bool(m_bclMeasureDirectory);
   }
 
   boost::optional<BCLMeasure> RubyMeasure_Impl::bclMeasure() const {

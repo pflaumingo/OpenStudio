@@ -1356,7 +1356,7 @@ namespace detail {
       designSpecificationOutdoorAir->setOutdoorAirFlowAirChangesperHour(outdoorAirForVolume);
 
       if (anyDesignSpecificationOutdoorAirSchedules){
-        LOG(Warn, "DesignSpecificationOutdoorAir objects merged for ThermalZone '" << this->name() << "', could not preserve outdoor air flow rate fraction schedules");
+        LOG(Warn, "DesignSpecificationOutdoorAir objects merged for ThermalZone '" << this->name().get() << "', could not preserve outdoor air flow rate fraction schedules");
       }
 
       newSpace.setDesignSpecificationOutdoorAir(*designSpecificationOutdoorAir);

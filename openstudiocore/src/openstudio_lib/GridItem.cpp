@@ -868,7 +868,7 @@ HorizontalBranchGroupItem::HorizontalBranchGroupItem( model::Splitter & splitter
   model::Loop loop = optionalLoop.get(); 
 
   std::vector<model::ModelObject> splitterOutletObjects = splitter.outletModelObjects();
-  bool isSupplySide = loop.supplyComponent(splitter.handle());
+  bool isSupplySide = bool(loop.supplyComponent(splitter.handle()));
 
   std::vector<model::ModelObject> branchComponents;
   std::vector< std::vector<model::ModelObject> > allBranchComponents;

@@ -182,7 +182,7 @@ namespace detail {
   }
 
   bool DataPoint_Impl::hasProblem() const {
-    return m_problem;
+    return bool(m_problem);
   }
 
   Problem DataPoint_Impl::problem() const {

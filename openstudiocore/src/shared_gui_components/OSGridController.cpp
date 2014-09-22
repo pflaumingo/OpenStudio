@@ -287,7 +287,7 @@ QWidget * OSGridController::makeWidget(model::ModelObject t_mo, const QSharedPoi
     loadName->bind(t_mo,
                    OptionalStringGetter(std::bind(&LoadNameConcept::get,loadNameConcept.data(),t_mo,true)),
                    // If the concept is read only, pass an empty optional
-                   loadNameConcept->readOnly() ? boost::none : boost::optional<StringSetter>(std::bind(&LoadNameConcept::set,loadNameConcept.data(),t_mo,std::placeholders::_1)));
+                   loadNameConcept->readOnly() ? boost::none : boost::optional<StringSetterOptionalStringReturn>(std::bind(&LoadNameConcept::set,loadNameConcept.data(),t_mo,std::placeholders::_1)));
 
     widget = loadName;
 
@@ -298,7 +298,7 @@ QWidget * OSGridController::makeWidget(model::ModelObject t_mo, const QSharedPoi
     nameLineEdit->bind(t_mo,
                        OptionalStringGetter(std::bind(&NameLineEditConcept::get,nameLineEditConcept.data(),t_mo,true)),
                        // If the concept is read only, pass an empty optional
-                       nameLineEditConcept->readOnly() ? boost::none : boost::optional<StringSetter>(std::bind(&NameLineEditConcept::set,nameLineEditConcept.data(),t_mo,std::placeholders::_1)));
+                       nameLineEditConcept->readOnly() ? boost::none : boost::optional<StringSetterOptionalStringReturn>(std::bind(&NameLineEditConcept::set,nameLineEditConcept.data(),t_mo,std::placeholders::_1)));
 
     isConnected = connect(nameLineEdit, SIGNAL(itemClicked(OSItem*)), gridView(), SIGNAL(dropZoneItemClicked(OSItem*)));
     OS_ASSERT(isConnected);
