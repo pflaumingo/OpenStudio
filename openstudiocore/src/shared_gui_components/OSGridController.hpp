@@ -190,6 +190,8 @@ class ObjectSelector : public QObject
 
     void addWidget(const boost::optional<model::ModelObject> &t_obj, QWidget *t_widget, int row, int column, 
         const boost::optional<int> &subrow, bool t_selector);
+    void addViewWidget(const model::ModelObject &t_obj, QWidget *t_widget, int row, int column,
+        const boost::optional<int> &t_subrow);
     void setObjectSelection(const model::ModelObject &t_obj, bool t_selected);
     bool getObjectSelection(const model::ModelObject &t_obj) const;
     std::set<model::ModelObject> getSelectedObjects() const;
@@ -207,6 +209,15 @@ class ObjectSelector : public QObject
     void resetObjectFilter();
     bool containsObject(const openstudio::model::ModelObject &t_obj) const;
 
+  signals:
+    void widgetGotFocus(const model::ModelObject &t_obj, QWidget *widget, int row, int column, const boost::optional<int> &subrow);
+    void widgetLostFocus(const model::ModelObject &t_obj, QWidget *widget, int row, int column, const boost::optional<int> &subrow);
+
+
+
+  protected:
+    bool eventFilter(QObject *t_obj, QEvent *t_event);
+
   private slots:
     void widgetDestroyed(QObject *t_obj);
 
@@ -221,6 +232,7 @@ class ObjectSelector : public QObject
 
     OSGridController *m_grid;
     std::multimap<boost::optional<model::ModelObject>, WidgetLoc> m_widgetMap;
+    std::map<model::ModelObject, WidgetLoc> m_viewWidgets;
     std::set<model::ModelObject> m_selectedObjects;
     std::set<model::ModelObject> m_selectorObjects;
     std::function<bool (const model::ModelObject &)> m_objectFilter;
@@ -610,6 +622,7 @@ protected:
   IddObjectType m_iddObjectType;
 
 private:
+  REGISTER_LOGGER("openstudio.OSGridController");
 
   friend class OSGridView;
   friend class ObjectSelector;
@@ -686,6 +699,9 @@ private slots:
   void onAddWorkspaceObject(const WorkspaceObject& object, const openstudio::IddObjectType& iddObjectType, const openstudio::UUID& handle);
 
   void onObjectRemoved(boost::optional<model::ParentObject> parent);
+
+  void widgetGotFocus(const model::ModelObject &t_obj, QWidget *widget, int row, int column, const boost::optional<int> &subrow);
+  void widgetLostFocus(const model::ModelObject &t_obj, QWidget *widget, int row, int column, const boost::optional<int> &subrow);
 
 };
 

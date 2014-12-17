@@ -65,6 +65,42 @@ ObjectSelector::ObjectSelector(OSGridController *t_grid)
 
 }
 
+bool ObjectSelector::eventFilter(QObject *t_obj, QEvent *t_event)
+{
+  std::cout << "eventFilter called " << t_event->type() << "\n";
+  if (t_event->type() == QEvent::FocusIn || t_event->type() == QEvent::FocusOut)
+  {
+    std::cout << "eventFilter focus called " << t_event->type() << "\n";
+    if (QWidget *widget = qobject_cast<QWidget*>(t_obj) )
+    {
+      std::cout << "eventFilter focus called on a widget" << t_event->type() << "\n";
+      for (auto &loc : m_viewWidgets)
+      {
+        if (loc.second.widget == widget || (widget->parent() == loc.second.widget))
+        {
+          if (t_event->type() == QEvent::FocusIn) {
+            emit widgetGotFocus(loc.first, loc.second.widget, loc.second.row, loc.second.column, loc.second.subrow);
+          } else if (t_event->type() == QEvent::FocusOut) {
+            emit widgetLostFocus(loc.first, loc.second.widget, loc.second.row, loc.second.column, loc.second.subrow);
+          }
+        }
+
+        break;
+      }
+    }
+  }
+
+  return QObject::eventFilter(t_obj, t_event);
+}
+
+void ObjectSelector::addViewWidget(const model::ModelObject &t_obj, QWidget *t_widget, int row, int column,
+    const boost::optional<int> &t_subrow)
+{
+  connect(t_widget, &QObject::destroyed, this, &ObjectSelector::widgetDestroyed);
+  m_viewWidgets.insert(std::make_pair(t_obj, WidgetLoc(t_widget, row, column, t_subrow)));
+  t_widget->installEventFilter(this);
+}
+
 void ObjectSelector::addWidget(const boost::optional<model::ModelObject> &t_obj, QWidget *t_widget, int row, int column,
     const boost::optional<int> &t_subrow, const bool t_selector)
 {
@@ -130,6 +166,7 @@ void ObjectSelector::objectRemoved(const openstudio::model::ModelObject &t_obj)
 
   m_selectedObjects.erase(t_obj);
   m_selectorObjects.erase(t_obj);
+  m_viewWidgets.erase(t_obj);
   m_widgetMap.erase(boost::optional<model::ModelObject>(t_obj));
 }
 
@@ -137,20 +174,37 @@ bool ObjectSelector::containsObject(const openstudio::model::ModelObject &t_obj)
 {
   return m_selectedObjects.count(t_obj) != 0
       || m_selectorObjects.count(t_obj) != 0
-      || m_widgetMap.count(boost::optional<model::ModelObject>(t_obj));
+      || m_viewWidgets.count(t_obj) != 0
+      || m_widgetMap.count(boost::optional<model::ModelObject>(t_obj)) != 0;
 }
 
 
 void ObjectSelector::widgetDestroyed(QObject *t_obj)
 {
-  auto itr = m_widgetMap.begin();
-
-  while (itr != m_widgetMap.end())
   {
-    if (itr->second.widget == t_obj) {
-      itr = m_widgetMap.erase(itr);
-    } else {
-      ++itr;
+    auto itr = m_widgetMap.begin();
+
+    while (itr != m_widgetMap.end())
+    {
+      if (itr->second.widget == t_obj) {
+        itr = m_widgetMap.erase(itr);
+      } else {
+        ++itr;
+      }
+    }
+  }
+
+
+  {
+    auto itr = m_viewWidgets.begin();
+
+    while (itr != m_viewWidgets.end())
+    {
+      if (itr->second.widget == t_obj) {
+        itr = m_viewWidgets.erase(itr);
+      } else {
+        ++itr;
+      }
     }
   }
 }
@@ -274,8 +328,10 @@ void ObjectSelector::updateWidgets(const model::ModelObject &t_obj)
 
 OSGridController::OSGridController()
   : QObject(),
-  m_objectSelector(std::make_shared<ObjectSelector>(this))
+    m_objectSelector(std::make_shared<ObjectSelector>(this))
 {
+  connect(m_objectSelector.get(), &ObjectSelector::widgetGotFocus, this, &OSGridController::widgetGotFocus);
+  connect(m_objectSelector.get(), &ObjectSelector::widgetLostFocus, this, &OSGridController::widgetLostFocus);
 }
 
 OSGridController::OSGridController(bool isIP,
@@ -308,12 +364,26 @@ OSGridController::OSGridController(bool isIP,
   bool isConnected = false;
   isConnected = connect(m_cellBtnGrp, SIGNAL(buttonClicked(int)), this, SLOT(cellChecked(int)));
   OS_ASSERT(isConnected);
+
+  connect(m_objectSelector.get(), &ObjectSelector::widgetGotFocus, this, &OSGridController::widgetGotFocus);
+  connect(m_objectSelector.get(), &ObjectSelector::widgetLostFocus, this, &OSGridController::widgetLostFocus);
 }
 
 OSGridController::~OSGridController()
 {
   saveQSettings();
 }
+
+void OSGridController::widgetGotFocus(const model::ModelObject &t_obj, QWidget *widget, int row, int column, const boost::optional<int> &subrow)
+{
+  LOG(Debug, "Widget got focus: " << widget << " " << row << " " << column << " " << t_obj.briefDescription() << '\n');
+}
+
+void OSGridController::widgetLostFocus(const model::ModelObject &t_obj, QWidget *widget, int row, int column, const boost::optional<int> &subrow)
+{
+  LOG(Debug, "Widget lost focus: " << widget << " " << row << " " << column << " " << t_obj.briefDescription() << '\n');
+}
+
 
 void OSGridController::requestRefreshGrid()
 {
@@ -820,6 +890,10 @@ QWidget * OSGridController::widgetAt(int row, int column)
     }
     holders.push_back(holder);
     m_objectSelector->addWidget(t_obj, holder, row, column, hasSubRows?numWidgets:boost::optional<int>(), t_selector);
+
+    if (t_obj && !t_selector) {
+      m_objectSelector->addViewWidget(*t_obj, t_widget, row, column, hasSubRows?numWidgets:boost::optional<int>());
+    }
 
     ++numWidgets;
     expand(recommendedSize, t_widget->size());
