@@ -17,26 +17,32 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_AirLoopHVAC_ZoneSplitter_FieldEnums.hxx>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
 #include "AirLoopHVAC.hpp"
 #include "AirLoopHVACZoneSplitter.hpp"
 #include "AirLoopHVACZoneSplitter_Impl.hpp"
-#include "HVACComponent.hpp"
 #include "HVACComponent_Impl.hpp"
+#include "Model.hpp"
 #include "Node.hpp"
 #include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "AirTerminalSingleDuctUncontrolled.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include <utilities/idd/OS_AirLoopHVAC_ZoneSplitter_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/Splitter.hpp"
+#include "model/Splitter_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail{
+
+class Model_Impl;
 
   AirLoopHVACZoneSplitter_Impl::AirLoopHVACZoneSplitter_Impl(const IdfObject& idfObject,
                                                              Model_Impl* model,

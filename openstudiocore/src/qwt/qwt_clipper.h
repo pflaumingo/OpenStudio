@@ -10,13 +10,17 @@
 #ifndef QWT_CLIPPER_H
 #define QWT_CLIPPER_H
 
-#include "qwt_global.h"
+#include <qglobal.h>
+#include <qvector.h>
+
 #include "qwt_array.h"
-#include "qwt_polygon.h"
-#include "qwt_double_rect.h"
 #include "qwt_double_interval.h"
+#include "qwt_double_rect.h"
+#include "qwt_global.h"
+#include "qwt_polygon.h"
 
 class QRect;
+class QwtDoubleInterval;
 
 /*!
   \brief Some clipping algos

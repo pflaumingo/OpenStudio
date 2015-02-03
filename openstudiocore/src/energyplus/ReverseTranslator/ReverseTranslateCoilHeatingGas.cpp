@@ -17,14 +17,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/Coil_Heating_Gas_FieldEnums.hxx>
+#include <exception>
+#include <memory>
+#include <ostream>
+#include <string>
 
 #include "../../model/CoilHeatingGas.hpp"
-#include "../../model/CoilHeatingGas_Impl.hpp"
 #include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-
-#include <utilities/idd/Coil_Heating_Gas_FieldEnums.hxx>
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

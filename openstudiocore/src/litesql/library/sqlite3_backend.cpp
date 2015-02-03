@@ -5,14 +5,22 @@
  * Few windows specific bugs fixed by Axel Schmidt.
  *
  * See LICENSE for copyright information. */
-#include "compatibility.hpp"
-#include "sqlite3.hpp"
-#include "sqlite3.h"
-
+#include <litesql/backend.hpp>
+#include <litesql/except.hpp>
+#include <litesql/split.hpp>
+#include <litesql/string.hpp>
+#include <litesql/types.hpp>
+#include <stddef.h>
 #include <string>
+#include <vector>
+
+#include "litesql/config.h"
+#include "sqlite3.h"
+#include "sqlite3.hpp"
 #ifdef HAVE_LIBSQLITE3
 #ifdef _MSC_VER
 #include <windows.h>
+
 #define usleep( microsec )  ::Sleep( (microsec)/1000 )
 #else
 #ifdef HAVE_UNISTD_H

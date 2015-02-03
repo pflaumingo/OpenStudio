@@ -17,21 +17,48 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
-#include <iterator>
+#include <assert.h>
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/filesystem/convenience.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <ext/alloc_traits.h>
+#include <qdialog.h>
+#include <qnamespace.h>
+#include <qstring.h>
+#include <qthread.h>
+#include <qurl.h>
+#include <stdlib.h>
 #include <algorithm>
+#include <sstream>
+#include <stdexcept>
 
-#include "ToolBasedJob.hpp"
+#include "../../utilities/core/PathHelpers.hpp"
 #include "FileInfo.hpp"
 #include "JobOutputCleanup.hpp"
+#include "ToolBasedJob.hpp"
+#include "runmanager/lib/../../energyplus/ErrorFile.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Enum.hpp"
+#include "runmanager/lib/Job_Impl.hpp"
+#include "runmanager/lib/Process.hpp"
+#include "runmanager/lib/ProcessCreator.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-#include "../../utilities/core/Application.hpp"
-#include "../../utilities/core/PathHelpers.hpp"
-
-#include <QDir>
-#include <QDateTime>
+class QDateTime;
+namespace openstudio {
+namespace runmanager {
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

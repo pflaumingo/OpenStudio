@@ -20,13 +20,32 @@
 #ifndef ANALYSIS_OPTIMIZATIONPROBLEM_HPP
 #define ANALYSIS_OPTIMIZATIONPROBLEM_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "Problem.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+
+namespace openstudio {
+namespace runmanager {
+class Workflow;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {
 
 class Function;
+class Variable;
+class WorkflowStep;
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
 
 namespace detail {
 

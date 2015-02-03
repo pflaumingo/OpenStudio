@@ -17,37 +17,32 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/FanOnOff.hpp"
-#include "../../model/FanOnOff_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/ZoneHVACTerminalUnitVariableRefrigerantFlow.hpp"
-#include "../../model/ZoneHVACTerminalUnitVariableRefrigerantFlow_Impl.hpp"
-#include "../../model/Curve.hpp"
-#include "../../model/Curve_Impl.hpp"
-#include "../../model/CurveBiquadratic.hpp"
-#include "../../model/CurveBiquadratic_Impl.hpp"
-#include "../../model/CurveCubic.hpp"
-#include "../../model/CurveCubic_Impl.hpp"
-#include "../../model/CoilCoolingDXVariableRefrigerantFlow.hpp"
-#include "../../model/CoilCoolingDXVariableRefrigerantFlow_Impl.hpp"
-#include "../../model/CoilHeatingDXVariableRefrigerantFlow.hpp"
-#include "../../model/CoilHeatingDXVariableRefrigerantFlow_Impl.hpp"
-#include "../../utilities/core/Logger.hpp"
-#include "../../utilities/core/Assert.hpp"
-#include <utilities/idd/ZoneHVAC_TerminalUnit_VariableRefrigerantFlow_FieldEnums.hxx>
-#include <utilities/idd/Fan_OnOff_FieldEnums.hxx>
-#include <utilities/idd/OutdoorAir_Mixer_FieldEnums.hxx>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/Coil_Cooling_DX_VariableRefrigerantFlow_FieldEnums.hxx>
 #include <utilities/idd/Coil_Heating_DX_VariableRefrigerantFlow_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <utilities/idd/Fan_OnOff_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OutdoorAir_Mixer_FieldEnums.hxx>
+#include <utilities/idd/ZoneHVAC_TerminalUnit_VariableRefrigerantFlow_FieldEnums.hxx>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "../../model/CoilCoolingDXVariableRefrigerantFlow.hpp"
+#include "../../model/CoilHeatingDXVariableRefrigerantFlow.hpp"
+#include "../../model/FanOnOff.hpp"
+#include "../../model/Node.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/ZoneHVACTerminalUnitVariableRefrigerantFlow.hpp"
+#include "../../utilities/core/Logger.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/HVACComponent.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

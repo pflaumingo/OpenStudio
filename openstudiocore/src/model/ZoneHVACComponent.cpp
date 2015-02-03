@@ -17,29 +17,41 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ZoneHVACComponent.hpp"
-#include "ZoneHVACComponent_Impl.hpp"
-#include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "AirTerminalSingleDuctInletSideMixer.hpp"
-#include "AirTerminalSingleDuctInletSideMixer_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "PortList.hpp"
-#include "PortList_Impl.hpp"
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <algorithm>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "AirLoopHVAC.hpp"
+#include "AirTerminalSingleDuctInletSideMixer.hpp"
+#include "HVACComponent.hpp"
+#include "HVACComponent_Impl.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
+#include "PortList.hpp"
+#include "ThermalZone.hpp"
+#include "ZoneHVACComponent.hpp"
+#include "ZoneHVACComponent_Impl.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
+#include "utilities/core/Containers.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ZoneHVACComponent_Impl::ZoneHVACComponent_Impl(IddObjectType type, Model_Impl* model)
     : HVACComponent_Impl(type,model)

@@ -17,29 +17,39 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <exception>
+#include <set>
+
+#include "../analysis/Algorithm.hpp"
+#include "../analysis/Analysis.hpp"
+#include "../analysis/DataPoint.hpp"
+#include "../analysis/Problem.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Containers.hpp"
+#include "../utilities/core/FileReference.hpp"
+#include "AlgorithmRecord.hpp"
 #include "AnalysisRecord.hpp"
 #include "AnalysisRecord_Impl.hpp"
-
-#include "JoinRecord.hpp"
-#include "ProblemRecord.hpp"
-#include "ProblemRecord_Impl.hpp"
-#include "AlgorithmRecord.hpp"
 #include "DataPointRecord.hpp"
-#include "DataPointRecord_Impl.hpp"
+#include "DataPoint_Measure_JoinRecord.hpp"
 #include "FileReferenceRecord.hpp"
 #include "InputVariableRecord.hpp"
+#include "JoinRecord.hpp"
 #include "MeasureRecord.hpp"
-#include "DataPoint_Measure_JoinRecord.hpp"
+#include "ProblemRecord.hpp"
 #include "TagRecord.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
+#include "project/VariableRecord.hpp"
 
-#include "../analysis/Analysis.hpp"
-#include "../analysis/Problem.hpp"
-#include "../analysis/Algorithm.hpp"
-#include "../analysis/DataPoint.hpp"
-
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/FileReference.hpp"
-#include "../utilities/core/Containers.hpp"
+class QSqlDatabase;
 
 using namespace openstudio::analysis;
 

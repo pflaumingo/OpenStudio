@@ -20,11 +20,19 @@
 #ifndef UTILITIES_IDF_IDFEXTENSIBLEGROUP_HPP
 #define UTILITIES_IDF_IDFEXTENSIBLEGROUP_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
 #include "../idd/ExtensibleIndex.hpp"
 #include "Handle.hpp"
-
-#include "../core/Logger.hpp"
+#include "utilities/idf/../core/LogMessage.hpp"
+#include "utilities/idf/IdfObject.hpp"
 
 namespace openstudio {
 

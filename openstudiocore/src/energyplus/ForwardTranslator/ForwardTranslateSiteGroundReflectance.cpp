@@ -17,14 +17,15 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/Site_GroundReflectance_FieldEnums.hxx>
+#include <vector>
 
 #include "../../model/SiteGroundReflectance.hpp"
-#include "../../model/SiteGroundReflectance_Impl.hpp"
-
-#include <utilities/idd/Site_GroundReflectance_FieldEnums.hxx>
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

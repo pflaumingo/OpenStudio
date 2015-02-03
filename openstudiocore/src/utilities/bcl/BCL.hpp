@@ -20,14 +20,23 @@
 #ifndef UTILITIES_BCL_BCL_HPP
 #define UTILITIES_BCL_BCL_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qglobal.h>
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <QObject> 
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "../core/Path.hpp"
+#include "../data/Attribute.hpp"
 #include "BCLComponent.hpp"
 #include "BCLMeasure.hpp"
-#include "../core/Path.hpp"
-#include "../core/Logger.hpp"
-#include "../data/Attribute.hpp"
-
-#include <QObject> 
+#include "utilities/bcl/../core/Compare.hpp"
+#include "utilities/bcl/../core/LogMessage.hpp"
 
 class QDomElement;
 class QFile;
@@ -37,6 +46,9 @@ namespace openstudio{
 
   /// This gives information about items from a BCL facet from a meta search result.
   /// A facet is an optional search filter which may be applied to narrow down search results.
+class BCLComponent;
+class BCLMeasure;
+
   class UTILITIES_API BCLFacet {
   public:
     BCLFacet(const QDomElement& facetElement);

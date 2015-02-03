@@ -22,9 +22,11 @@
 #include <math.h>
 #include <algorithm>
 #include <vector>
-#include "TimeFrame.hpp"
-#include "EpwData.hpp"
+
 #include "../utilities/core/Logger.hpp"
+#include "EpwData.hpp"
+#include "TimeFrame.hpp"
+#include "isomodel/../utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 namespace isomodel {

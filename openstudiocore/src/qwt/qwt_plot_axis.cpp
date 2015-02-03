@@ -7,11 +7,25 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <qfont.h>
+#include <qfontinfo.h>
+#include <qglobal.h>
+#include <qlist.h>
+#include <qnamespace.h>
+#include <qstring.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_interval.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_dict.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_draw.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_map.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
 #include "qwt_plot.h"
-#include "qwt_math.h"
-#include "qwt_scale_widget.h"
 #include "qwt_scale_div.h"
 #include "qwt_scale_engine.h"
+#include "qwt_scale_widget.h"
 
 class QwtPlot::AxisData
 {

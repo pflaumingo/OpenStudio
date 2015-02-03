@@ -17,31 +17,40 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "WorkspaceObject.hpp"
-#include "WorkspaceObject_Impl.hpp"
-
-#include "Workspace.hpp"
-#include "Workspace_Impl.hpp"
-#include "WorkspaceObjectDiff.hpp"
-#include "WorkspaceObjectDiff_Impl.hpp"
-#include "WorkspaceExtensibleGroup.hpp"
-#include "IdfExtensibleGroup.hpp"
-#include "ValidityReport.hpp"
-
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <algorithm>
+#include <iostream>
+#include <set>
+#include <utility>
 
-#include "../idd/IddObjectProperties.hpp"
-#include "../idd/IddFieldProperties.hpp"
-
-#include "../core/Compare.hpp"
 #include "../core/Assert.hpp"
+#include "../core/Compare.hpp"
 #include "../core/Containers.hpp"
 #include "../core/StringHelpers.hpp"
+#include "../idd/IddFieldProperties.hpp"
+#include "../idd/IddObjectProperties.hpp"
+#include "IdfExtensibleGroup.hpp"
+#include "ValidityReport.hpp"
+#include "Workspace.hpp"
+#include "WorkspaceObject.hpp"
+#include "WorkspaceObjectDiff.hpp"
+#include "WorkspaceObject_Impl.hpp"
+#include "Workspace_Impl.hpp"
+#include "utilities/idd/../core/Optional.hpp"
+#include "utilities/idd/IddField.hpp"
+#include "utilities/idd/IddObject.hpp"
+#include "utilities/idf/../core/EnumBase.hpp"
+#include "utilities/idf/../core/UUID.hpp"
+#include "utilities/idf/DataError.hpp"
+#include "utilities/idf/IdfObject.hpp"
+#include "utilities/idf/IdfObjectDiff.hpp"
+#include "utilities/idf/IdfObject_Impl.hpp"
+#include "utilities/idf/ValidityEnums.hpp"
 
-#include <boost/lexical_cast.hpp>
-#include <boost/regex.hpp>
-
-#include <iostream>
 using namespace std;
 
 using openstudio::detail::WorkspaceObject_Impl;

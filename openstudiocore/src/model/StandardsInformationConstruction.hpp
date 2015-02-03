@@ -20,8 +20,24 @@
 #ifndef MODEL_STANDARDSINFORMATIONCONSTRUCTION_HPP
 #define MODEL_STANDARDSINFORMATIONCONSTRUCTION_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/ConstructionBase.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

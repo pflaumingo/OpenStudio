@@ -20,8 +20,23 @@
 #ifndef MODEL_RESOURCEOBJECT_HPP
 #define MODEL_RESOURCEOBJECT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace model {
+class Model;
+class ModelObject;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

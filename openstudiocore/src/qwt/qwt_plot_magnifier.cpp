@@ -9,12 +9,15 @@
 
 // vim: expandtab
 
-#include <math.h>
-#include <qevent.h>
+#include <qobject.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_magnifier.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_math.h"
 #include "qwt_plot.h"
 #include "qwt_plot_canvas.h"
-#include "qwt_scale_div.h"
 #include "qwt_plot_magnifier.h"
+#include "qwt_scale_div.h"
 
 class QwtPlotMagnifier::PrivateData
 {

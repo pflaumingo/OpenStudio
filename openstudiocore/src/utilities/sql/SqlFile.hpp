@@ -20,26 +20,33 @@
 #ifndef UTILITIES_SQL_SQLFILE_HPP
 #define UTILITIES_SQL_SQLFILE_HPP
 
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
-
-#include "SummaryData.hpp"
-#include "SqlFileDataDictionary.hpp"
-#include "SqlFileEnums.hpp"
-
-#include "../data/Vector.hpp"
-#include "../data/Matrix.hpp"
-#include "../data/DataEnums.hpp"
-#include "../data/EndUses.hpp"
-
-#include "../units/SIUnit.hpp"
-
-#include "../core/Path.hpp"
 #include "../core/Logger.hpp"
 #include "../core/Optional.hpp"
+#include "../core/Path.hpp"
+#include "../data/DataEnums.hpp"
+#include "../data/EndUses.hpp"
+#include "../data/Matrix.hpp"
+#include "../data/Vector.hpp"
+#include "../units/SIUnit.hpp"
+#include "SqlFileDataDictionary.hpp"
+#include "SqlFileEnums.hpp"
+#include "SummaryData.hpp"
+#include "utilities/sql/../data/../time/Date.hpp"
+#include "utilities/sql/../data/TimeSeries.hpp"
+#include "utilities/sql/../units/../core/LogMessage.hpp"
 
-#include <boost/optional.hpp>
-
-#include <string>
+namespace openstudio {
+class EndUses;
+struct SummaryData;
+}  // namespace openstudio
 
 // forward declaration
 namespace resultsviewer{
@@ -48,10 +55,10 @@ namespace resultsviewer{
 
 namespace openstudio {
 
+class Calendar;
 // forward declarations
 class DateTime;
 class EpwFile;
-class Calendar;
 class SqlFileTimeSeriesQuery;
 
 namespace detail {

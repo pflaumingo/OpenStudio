@@ -2,9 +2,10 @@
    See the file COPYING for copying permission.
 */
 
-#include <stddef.h>
-#include <string.h>                     /* memset(), memcpy() */
 #include <assert.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>                     /* memset(), memcpy() */
 
 #define XML_BUILDING_EXPAT 1
 
@@ -22,6 +23,7 @@
 
 #include "ascii.h"
 #include "expat.h"
+#include "expat_external.h"
 
 #ifdef XML_UNICODE
 #define XML_ENCODE_MAX XML_UTF16_ENCODE_MAX
@@ -83,8 +85,10 @@ typedef char ICHAR;
 #endif /* HAVE_MEMMOVE */
 
 #include "internal.h"
-#include "xmltok.h"
 #include "xmlrole.h"
+#include "xmltok.h"
+
+struct XML_ParserStruct;
 
 typedef const XML_Char *KEY;
 

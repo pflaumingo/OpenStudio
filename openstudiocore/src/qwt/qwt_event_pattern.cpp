@@ -8,6 +8,10 @@
  *****************************************************************************/
 
 #include <qevent.h>
+#include <qflags.h>
+#include <qvector.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_array.h"
 #include "qwt_event_pattern.h"
 
 /*! 

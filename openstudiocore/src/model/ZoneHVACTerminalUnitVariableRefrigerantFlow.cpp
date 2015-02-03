@@ -17,35 +17,39 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Model.hpp"
-#include "Model_Impl.hpp"
+#include <qglobal.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_ZoneHVAC_TerminalUnit_VariableRefrigerantFlow_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+
+#include "../utilities/core/Assert.hpp"
+#include "CoilCoolingDXVariableRefrigerantFlow.hpp"
+#include "CoilHeatingDXVariableRefrigerantFlow.hpp"
 #include "FanOnOff.hpp"
-#include "FanOnOff_Impl.hpp"
-#include "CurveCubic.hpp"
-#include "CurveCubic_Impl.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
 #include "ZoneHVACTerminalUnitVariableRefrigerantFlow.hpp"
 #include "ZoneHVACTerminalUnitVariableRefrigerantFlow_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "CoilHeatingDXVariableRefrigerantFlow.hpp"
-#include "CoilHeatingDXVariableRefrigerantFlow_Impl.hpp"
-#include "CoilCoolingDXVariableRefrigerantFlow.hpp"
-#include "CoilCoolingDXVariableRefrigerantFlow_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include <utilities/idd/IddFactory.hxx>
-
-
-#include <utilities/idd/OS_ZoneHVAC_TerminalUnit_VariableRefrigerantFlow_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ZoneHVACComponent.hpp"
+#include "model/ZoneHVACComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+#include "utilities/idf/WorkspaceObject_Impl.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ZoneHVACTerminalUnitVariableRefrigerantFlow_Impl::ZoneHVACTerminalUnitVariableRefrigerantFlow_Impl(const IdfObject& idfObject,
                                                                                                      Model_Impl* model,

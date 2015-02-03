@@ -17,11 +17,18 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "URLHelpers.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <qbytearray.h>
+#include <qregularexpression.h>
+#include <qstring.h>
+#include <qurl.h>
+#include <stdexcept>
+
 #include "Path.hpp"
 #include "String.hpp"
-
-#include <QRegularExpression>
+#include "URLHelpers.hpp"
+#include "utilities/core/Url.hpp"
 
 namespace openstudio {
   

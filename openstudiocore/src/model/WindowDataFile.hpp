@@ -20,8 +20,22 @@
 #ifndef MODEL_WINDOWDATAFILE_HPP
 #define MODEL_WINDOWDATAFILE_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ConstructionBase.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

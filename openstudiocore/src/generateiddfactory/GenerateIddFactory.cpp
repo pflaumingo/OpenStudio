@@ -17,14 +17,19 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/filesystem/fstream.hpp>
+#include <algorithm>
+#include <iomanip>
+#include <iostream>
+#include <memory>
+#include <sstream>
+#include <stdexcept>
+#include <utility>
+
 #include "GenerateIddFactory.hpp"
 #include "WriteEnums.hpp"
-
-#include <iostream>
-#include <iomanip>
-#include <cmath>
-#include <sstream>
-#include <exception>
+#include "generateiddfactory/GenerateIddFactoryOutFiles.hpp"
+#include "generateiddfactory/IddFileFactoryData.hpp"
 
 namespace openstudio {
 

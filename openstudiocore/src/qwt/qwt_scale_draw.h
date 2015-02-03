@@ -10,9 +10,19 @@
 #ifndef QWT_SCALE_DRAW_H
 #define QWT_SCALE_DRAW_H
 
+#include <qglobal.h>
+#include <qmatrix.h>
+#include <qnamespace.h>
+#include <qpen.h>
 #include <qpoint.h>
-#include "qwt_global.h"
+#include <qrect.h>
+#include <qsize.h>
+
 #include "qwt_abstract_scale_draw.h"
+#include "qwt_global.h"
+
+class QFont;
+class QPainter;
 
 /*!
   \brief A class for drawing scales
@@ -98,6 +108,7 @@ private:
     void updateMap();
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

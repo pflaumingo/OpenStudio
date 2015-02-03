@@ -17,40 +17,41 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <ext/alloc_traits.h>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_PlantLoop_FieldEnums.hxx>
+
+#include "../utilities/core/Assert.hpp"
+#include "ConnectorMixer.hpp"
+#include "ConnectorSplitter.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
 #include "PlantLoop.hpp"
 #include "PlantLoop_Impl.hpp"
 #include "SizingPlant.hpp"
-#include "SizingPlant_Impl.hpp"
-#include "Model.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "ConnectorMixer.hpp"
-#include "ConnectorMixer_Impl.hpp"
-#include "ConnectorSplitter.hpp"
-#include "ConnectorSplitter_Impl.hpp"
 #include "Splitter.hpp"
-#include "Splitter_Impl.hpp"
 #include "StraightComponent.hpp"
-#include "StraightComponent_Impl.hpp"
 #include "WaterToAirComponent.hpp"
-#include "WaterToAirComponent_Impl.hpp"
 #include "WaterToWaterComponent.hpp"
-#include "WaterToWaterComponent_Impl.hpp"
-#include "CoilCoolingWater.hpp"
-#include "CoilCoolingWater_Impl.hpp"
-#include "CoilHeatingWater.hpp"
-#include "CoilHeatingWater_Impl.hpp"
-#include "ControllerWaterCoil.hpp"
-#include "ControllerWaterCoil_Impl.hpp"
-#include <utilities/idd/OS_PlantLoop_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/Loop.hpp"
+#include "model/Loop_Impl.hpp"
+#include "model/ModelObject_Impl.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
 PlantLoop_Impl::PlantLoop_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
   : Loop_Impl(idfObject, model, keepHandle)

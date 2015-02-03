@@ -17,19 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DakotaAlgorithm.hpp"
-#include "DakotaAlgorithm_Impl.hpp"
-
-#include "DakotaAlgorithmOptions.hpp"
-#include "Analysis.hpp"
-#include "Problem.hpp"
-#include "DataPoint.hpp"
-#include "DakotaParametersFile.hpp"
-
-#include "../utilities/core/Assert.hpp"
-#include "../runmanager/lib/JSON.hpp"
-
+#include <qmetatype.h>
+#include <qvariant.h>
 #include <sstream>
+
+#include "../runmanager/lib/JSON.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "Analysis.hpp"
+#include "DakotaAlgorithm.hpp"
+#include "DakotaAlgorithmOptions.hpp"
+#include "DakotaAlgorithm_Impl.hpp"
+#include "DataPoint.hpp"
+#include "Problem.hpp"
+#include "analysis/../runmanager/lib/Job.hpp"
+#include "analysis/../utilities/core/FileReference.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/Algorithm.hpp"
+#include "analysis/Algorithm_Impl.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
 
 namespace openstudio {
 namespace analysis {

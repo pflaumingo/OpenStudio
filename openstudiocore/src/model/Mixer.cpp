@@ -17,19 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Model.hpp"
+#include "../utilities/core/Assert.hpp"
 #include "Mixer.hpp"
 #include "Mixer_Impl.hpp"
+#include "Model.hpp"
 #include "Node.hpp"
-#include "Node_Impl.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/HVACComponent_Impl.hpp"
+#include "model/ModelObject.hpp"
 
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
 Mixer_Impl::Mixer_Impl(IddObjectType type, Model_Impl* model)
   : HVACComponent_Impl(type,model)

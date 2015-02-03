@@ -17,23 +17,30 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Pipe_Adiabatic_FieldEnums.hxx>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
 #include "PipeAdiabatic.hpp"
 #include "PipeAdiabatic_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "Model.hpp"
-#include <utilities/idd/OS_Pipe_Adiabatic_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/PlantLoop.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
 PipeAdiabatic_Impl::PipeAdiabatic_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
   : StraightComponent_Impl(idfObject, model, keepHandle)

@@ -17,18 +17,37 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DakotaParametersFile.hpp"
-#include "DakotaParametersFile_Impl.hpp"
-#include "AnalysisEnums.hpp"
-#include "UncertaintyDescription.hpp"
-
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Containers.hpp"
-
+#include <boost/algorithm/string/trim.hpp>
 #include <boost/filesystem/fstream.hpp>
 #include <boost/iostreams/filter/newline.hpp>
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <ext/alloc_traits.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <sstream>
+#include <string>
+#include <utility>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Containers.hpp"
+#include "AnalysisEnums.hpp"
+#include "DakotaParametersFile.hpp"
+#include "DakotaParametersFile_Impl.hpp"
+#include "UncertaintyDescription.hpp"
+#include "analysis/../utilities/core/Enum.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/Path.hpp"
 
 using namespace boost;
 

@@ -12,9 +12,13 @@
 #ifndef QWT_DATA_H
 #define QWT_DATA_H 1
 
-#include "qwt_global.h"
+#include <qglobal.h>
+#include <qpolygon.h>
+#include <stddef.h>
+
 #include "qwt_array.h"
 #include "qwt_double_rect.h"
+#include "qwt_global.h"
 #if QT_VERSION >= 0x040000
 #include <QPolygonF>
 #endif

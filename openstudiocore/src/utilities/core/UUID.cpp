@@ -17,18 +17,18 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "UUID.hpp"
+#include <qstring.h>
+
 #include "String.hpp"
-#include "Checksum.hpp"
-#include <sstream>
+#include "UUID.hpp"
 
 #ifdef __APPLE__
 
-#include <QtGlobal>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <QtGlobal>
 
 #endif  // __APPLE__
 

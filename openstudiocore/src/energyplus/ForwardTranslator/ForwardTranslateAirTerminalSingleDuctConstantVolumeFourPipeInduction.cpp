@@ -17,21 +17,28 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/AirTerminalSingleDuctConstantVolumeFourPipeInduction.hpp"
-#include "../../model/AirTerminalSingleDuctConstantVolumeFourPipeInduction_Impl.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include <utilities/idd/AirTerminal_SingleDuct_ConstantVolume_FourPipeInduction_FieldEnums.hxx>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/AirLoopHVAC_ZoneMixer_FieldEnums.hxx>
+#include <utilities/idd/AirTerminal_SingleDuct_ConstantVolume_FourPipeInduction_FieldEnums.hxx>
 #include <utilities/idd/Coil_Cooling_Water_FieldEnums.hxx>
 #include <utilities/idd/Coil_Heating_Water_FieldEnums.hxx>
-#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/AirTerminalSingleDuctConstantVolumeFourPipeInduction.hpp"
+#include "../../model/Node.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/HVACComponent.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

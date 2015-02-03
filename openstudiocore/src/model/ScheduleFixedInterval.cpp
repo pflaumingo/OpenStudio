@@ -17,25 +17,44 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ScheduleFixedInterval.hpp"
-#include "ScheduleFixedInterval_Impl.hpp"
+#include <math.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Schedule_FixedInterval_FieldEnums.hxx>
+#include <algorithm>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/data/TimeSeries.hpp"
+#include "../utilities/time/DateTime.hpp"
 #include "Model.hpp"
 #include "ModelExtensibleGroup.hpp"
-
+#include "ScheduleFixedInterval.hpp"
+#include "ScheduleFixedInterval_Impl.hpp"
 #include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeLimits_Impl.hpp"
-
-#include <utilities/idd/OS_Schedule_FixedInterval_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/time/DateTime.hpp"
-#include "../utilities/data/TimeSeries.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/data/Vector.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/Enum.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/String.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/time/Date.hpp"
+#include "model/../utilities/time/Time.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ScheduleInterval.hpp"
+#include "model/ScheduleInterval_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ScheduleFixedInterval_Impl::ScheduleFixedInterval_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ScheduleInterval_Impl(idfObject,model,keepHandle)

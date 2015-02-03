@@ -20,12 +20,17 @@
 #ifndef UTILITIES_IDF_VALIDITYREPORT_HPP
 #define UTILITIES_IDF_VALIDITYREPORT_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <set>
+#include <string>
 
+#include "../UtilitiesAPI.hpp"
 #include "DataError.hpp"
 #include "ValidityEnums.hpp"
-
-#include <boost/optional.hpp>
+#include "utilities/idf/../idd/IddEnums.hpp"
+#include "utilities/idf/IdfObject.hpp"
 
 namespace openstudio {
 

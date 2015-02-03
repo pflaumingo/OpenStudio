@@ -9,24 +9,42 @@
 
 // vim: expandtab
 
+#include <qbrush.h>
+#include <qcolor.h>
+#include <qglobal.h>
+#include <qlayout.h>
+#include <qlayoutitem.h>
+#include <qlist.h>
+#include <qnamespace.h>
+#include <qpaintdevice.h>
 #include <qpainter.h>
+#include <qpalette.h>
+#include <qpen.h>
+#include <qpoint.h>
+#include <qrect.h>
+#include <qsize.h>
+#include <qwidget.h>
 #if QT_VERSION < 0x040000
 #include <qpaintdevicemetrics.h>
 #else
 #include <qpaintengine.h>
 #endif
-#include "qwt_painter.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_layout_metrics.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_printfilter.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_div.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_draw.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_map.h"
+#include "qwt_dyngrid_layout.h"
+#include "qwt_legend.h"
 #include "qwt_legend_item.h"
+#include "qwt_painter.h"
 #include "qwt_plot.h"
 #include "qwt_plot_canvas.h"
 #include "qwt_plot_layout.h"
-#include "qwt_legend.h"
-#include "qwt_dyngrid_layout.h"
-#include "qwt_scale_widget.h"
 #include "qwt_scale_engine.h"
+#include "qwt_scale_widget.h"
 #include "qwt_text.h"
 #include "qwt_text_label.h"
-#include "qwt_math.h"
 
 /*!
   \brief Print the plot to a \c QPaintDevice (\c QPrinter)

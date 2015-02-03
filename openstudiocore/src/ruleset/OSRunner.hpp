@@ -20,17 +20,20 @@
 #ifndef RULESET_OSRUNNER_HPP
 #define RULESET_OSRUNNER_HPP
 
-#include "RulesetAPI.hpp"
-
-#include "OSResult.hpp"
+#include <boost/optional/optional.hpp>
+#include <map>
+#include <string>
+#include <vector>
 
 #include "../model/Model.hpp"
-
+#include "../utilities/core/Logger.hpp"
+#include "../utilities/filetypes/EpwFile.hpp"
 #include "../utilities/idf/Workspace.hpp"
 #include "../utilities/sql/SqlFile.hpp"
-#include "../utilities/filetypes/EpwFile.hpp"
-
-#include "../utilities/core/Logger.hpp"
+#include "OSResult.hpp"
+#include "RulesetAPI.hpp"
+#include "ruleset/../utilities/core/LogMessage.hpp"
+#include "ruleset/../utilities/core/Path.hpp"
 
 namespace openstudio {
 
@@ -38,6 +41,8 @@ class Attribute;
 class Quantity;
 class Workspace;
 class WorkspaceObject;
+class EpwFile;
+class SqlFile;
 
 namespace model {
   class ModelObject;

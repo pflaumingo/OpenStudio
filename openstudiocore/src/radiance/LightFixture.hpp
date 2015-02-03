@@ -20,10 +20,11 @@
 #ifndef RADIANCE_LIGHTFIXTURE_HPP
 #define RADIANCE_LIGHTFIXTURE_HPP
 
-#include "RadianceAPI.hpp"
+#include <vector>
 
-#include "../utilities/data/Vector.hpp"
 #include "../utilities/core/Path.hpp"
+#include "../utilities/data/Vector.hpp"
+#include "RadianceAPI.hpp"
 
 namespace openstudio{
 namespace radiance{

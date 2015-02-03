@@ -20,14 +20,25 @@
 #ifndef ANALYSIS_HISTOGRAMBINDISTRIBUTION_HPP
 #define ANALYSIS_HISTOGRAMBINDISTRIBUTION_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "UncertaintyDescription.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/AnalysisEnums.hpp"
 
 namespace openstudio {
 namespace analysis {
 
 /** HistogramBinDistribution is an UncertaintyDescription that can apply aleatory uncertainty to a
  *  continuous variable. */
+namespace detail {
+class UncertaintyDescription_Impl;
+}  // namespace detail
+
 class ANALYSIS_API HistogramBinDistribution : public UncertaintyDescription {
  public:
   /** @name Constructors and Destructors */

@@ -17,14 +17,18 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SqliteMerge.hpp"
-#include "sqlite3.h"
-#include <vector>
-#include "boost/filesystem/operations.hpp"
-#include "boost/filesystem/path.hpp"
-#include "boost/filesystem.hpp"
+#include <boost/filesystem/convenience.hpp>
+#include <stddef.h>
 #include <iostream>
 #include <sstream>
+#include <stdexcept>
+#include <vector>
+
+#include "SqliteMerge.hpp"
+#include "boost/filesystem/operations.hpp"
+#include "boost/filesystem/path.hpp"
+#include "runmanager/lib/ParallelEnergyPlus/../../../utilities/core/Path.hpp"
+#include "sqlite3.h"
 
 
 static int callback(void *r, int argc, char **argv, char **azColName) {

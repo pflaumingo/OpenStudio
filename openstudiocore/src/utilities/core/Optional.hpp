@@ -20,16 +20,16 @@
 #ifndef UTILITIES_CORE_OPTIONAL_HPP
 #define UTILITIES_CORE_OPTIONAL_HPP
 
-#include "../UtilitiesAPI.hpp"
-
 #include <boost/optional.hpp>
-
-#include <QVariant>
+#include <boost/optional/optional.hpp>
+#include <qmetatype.h>
 #include <QMetaType>
 #include <QUrl>
-
-#include <string>
+#include <QVariant>
 #include <ostream>
+#include <string>
+
+#include "../UtilitiesAPI.hpp"
 
 namespace openstudio {
   // note: boost::optional<bool> is a bad idea, don't do it

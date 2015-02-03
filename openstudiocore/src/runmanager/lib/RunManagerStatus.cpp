@@ -17,9 +17,23 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "RunManagerStatus.hpp"
+#include <ext/alloc_traits.h>
+#include <qboxlayout.h>
+#include <qicon.h>
+#include <qpixmap.h>
+#include <qtoolbar.h>
+#include <stddef.h>
+#include <utility>
+#include <vector>
 
 #include "../../utilities/core/Application.hpp"
+#include "RunManagerStatus.hpp"
+#include "runmanager/lib/../../utilities/core/Singleton.hpp"
+#include "runmanager/lib/JobStatusWidget.hpp"
+#include "ui_RunManagerStatus.h"
+
+class QAction;
+class QWidget;
 
 namespace openstudio {
 namespace runmanager {

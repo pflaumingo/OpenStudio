@@ -17,13 +17,18 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "WorkspaceObjectOrder.hpp"
-
-#include "../idd/IddObject.hpp"
-
-#include "../math/Permutation.hpp"
+#include <boost/none.hpp>
+#include <quuid.h>
+#include <algorithm>
 
 #include "../core/Assert.hpp"
+#include "../idd/IddObject.hpp"
+#include "WorkspaceObjectOrder.hpp"
+#include "utilities/idf/../idd/IddEnums.hpp"
+#include "utilities/idf/Handle.hpp"
+#include "utilities/idf/IdfObject.hpp"
+#include "utilities/idf/ObjectOrderBase.hpp"
+#include "utilities/idf/WorkspaceObject.hpp"
 
 namespace openstudio {
 

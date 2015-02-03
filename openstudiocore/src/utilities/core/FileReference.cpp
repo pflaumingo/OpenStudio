@@ -17,15 +17,22 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "FileReference.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <qdatetime.h>
+#include <qfileinfo.h>
+#include <qmetatype.h>
+#include <qstring.h>
 
+#include "../time/DateTime.hpp"
 #include "Assert.hpp"
 #include "Checksum.hpp"
+#include "FileReference.hpp"
 #include "PathHelpers.hpp"
-#include "../time/DateTime.hpp"
-
-#include <QDateTime>
-#include <QFileInfo>
+#include "utilities/core/Compare.hpp"
+#include "utilities/core/Path.hpp"
+#include "utilities/core/String.hpp"
+#include "utilities/core/UUID.hpp"
 
 namespace openstudio {
 

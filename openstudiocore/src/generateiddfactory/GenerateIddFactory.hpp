@@ -20,14 +20,16 @@
 #ifndef GENERATEIDDFACTORY_GENERATEIDDFACTORY_HPP
 #define GENERATEIDDFACTORY_GENERATEIDDFACTORY_HPP
 
-#include "IddFileFactoryData.hpp"
-
 #include <boost/filesystem/fstream.hpp>
 #include <boost/filesystem/path.hpp>
-
+#include <string>
 #include <vector>
 
+#include "IddFileFactoryData.hpp"
+
 namespace openstudio {
+
+struct GenerateIddFactoryOutFiles;
 
 typedef boost::filesystem::path path;
 

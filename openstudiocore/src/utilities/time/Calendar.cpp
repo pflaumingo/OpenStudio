@@ -17,8 +17,14 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <ostream>
+#include <utility>
+
 #include "Calendar.hpp"
 #include "DateTime.hpp"
+#include "utilities/time/../core/Logger.hpp"
+#include "utilities/time/Date.hpp"
+#include "utilities/time/Time.hpp"
 
 using namespace std;
 using namespace boost;

@@ -20,15 +20,26 @@
 #ifndef RUNMANAGER_LIB_FILEINFO_HPP
 #define RUNMANAGER_LIB_FILEINFO_HPP
 
-#include "RunManagerAPI.hpp"
-
-#include <string>
-#include "../../utilities/time/DateTime.hpp"
-#include "../../utilities/core/Path.hpp"
+#include <boost/filesystem/path.hpp>
+#include <qmetatype.h>
+#include <qregexp.h>
+#include <qurl.h>
 #include <QMetaType>
 #include <QRegExp>
 #include <QUrl>
 #include <algorithm>
+#include <functional>
+#include <stdexcept>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "../../utilities/core/Path.hpp"
+#include "../../utilities/time/DateTime.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/time/../core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Logger.hpp"
+#include "runmanager/lib/../../utilities/time/../core/String.hpp"
 
 namespace openstudio {
 namespace runmanager {

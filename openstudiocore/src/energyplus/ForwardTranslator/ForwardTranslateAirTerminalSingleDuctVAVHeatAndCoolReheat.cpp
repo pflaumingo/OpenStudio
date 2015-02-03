@@ -16,25 +16,29 @@
  *  License along with this library; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/AirTerminalSingleDuctVAVHeatAndCoolReheat.hpp"
-#include "../../model/AirTerminalSingleDuctVAVHeatAndCoolReheat_Impl.hpp"
-#include "../../model/HVACComponent.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/WaterToAirComponent.hpp"
-#include "../../model/WaterToAirComponent_Impl.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/AirTerminal_SingleDuct_VAV_HeatAndCool_Reheat_FieldEnums.hxx>
-#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
-#include <utilities/idd/Coil_Heating_Gas_FieldEnums.hxx>
 #include <utilities/idd/Coil_Heating_Electric_FieldEnums.hxx>
+#include <utilities/idd/Coil_Heating_Gas_FieldEnums.hxx>
 #include <utilities/idd/Coil_Heating_Water_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../../model/AirTerminalSingleDuctVAVHeatAndCoolReheat.hpp"
+#include "../../model/HVACComponent.hpp"
+#include "../../model/Node.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/WaterToAirComponent.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

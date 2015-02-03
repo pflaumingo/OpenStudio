@@ -20,8 +20,23 @@
 #ifndef MODEL_COILCOOLINGDXMULTISPEEDSTAGEDATA_HPP
 #define MODEL_COILCOOLINGDXMULTISPEEDSTAGEDATA_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
+#include "model/../model/Curve.hpp"
+#include "model/../model/Model.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 

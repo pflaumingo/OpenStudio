@@ -17,12 +17,10 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include "../core/Assert.hpp"
 #include "OSOptionalQuantity.hpp"
 #include "Quantity.hpp"
-
-#include "../core/Assert.hpp"
-
-#include <cmath>
+#include "utilities/units/Unit.hpp"
 
 int _OptionalQuantityType = qRegisterMetaType<openstudio::OSOptionalQuantity>("openstudio::OSOptionalQuantity");
 

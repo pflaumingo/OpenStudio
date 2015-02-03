@@ -20,20 +20,29 @@
 #ifndef PROJECT_PROJECTDATABASE_HPP
 #define PROJECT_PROJECTDATABASE_HPP
 
-#include "ProjectAPI.hpp"
-#include "Record.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <QSqlQuery>
+#include <exception>
+#include <memory>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 
+#include "../runmanager/lib/RunManager.hpp"
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/core/Path.hpp"
 #include "../utilities/core/UUID.hpp"
 #include "../utilities/time/DateTime.hpp"
-
-#include "../runmanager/lib/RunManager.hpp"
-
-#include <QSqlQuery>
-
-#include <sstream>
+#include "ProjectAPI.hpp"
+#include "Record.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/String.hpp"
 
 class QSqlDatabase;
 
@@ -43,14 +52,15 @@ namespace project {
 namespace detail {
   class ObjectRecord_Impl;
   class ProjectDatabase_Impl;
+class Record_Impl;
 }
 
-class ProjectRecord;
 class ComponentRecord;
-class WorkflowRecord;
 class ProblemRecord;
-class VariableRecord;
 class ProjectDatabaseRecord;
+class ProjectRecord;
+class VariableRecord;
+class WorkflowRecord;
 
 /** RemoveUndo is a simple class used to commit or revert a removeRecord operation in the ProjectDatabase.
  */

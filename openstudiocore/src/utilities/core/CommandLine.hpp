@@ -20,11 +20,13 @@
 #ifndef UTILITIES_CORE_COMMANDLINE_HPP
 #define UTILITIES_CORE_COMMANDLINE_HPP
 
-#include "../UtilitiesAPI.hpp"
 #include <boost/program_options.hpp>
-
+#include <boost/program_options/detail/value_semantic.hpp>
+#include <boost/program_options/value_semantic.hpp>
 #include <string>
 #include <vector>
+
+#include "../UtilitiesAPI.hpp"
 
 /** Extend boost::program_options namespace to include platform specific functions for parsing
 *   command line arguments.  Assume UTF-16LE on Windows and UTF-8 elsewhere. 

@@ -16,15 +16,21 @@
  *  License along with this library; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
+#include <boost/optional/optional.hpp>
+#include <qfile.h>
+#include <qnamespace.h>
+#include <qstring.h>
+#include <qxml.h>
 #include <iostream>
-#include <sstream>
-
-#include <QXmlDefaultHandler>
-#include <QXmlReader>
-
-#include "AccessPolicyStore.hpp"
+#include <string>
+#include <utility>
 
 #include "../utilities/idd/IddFileAndFactoryWrapper.hpp"
+#include "AccessPolicyStore.hpp"
+#include "model/../utilities/core/Path.hpp"
+#include "model/../utilities/idd/IddField.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idd/IddObjectProperties.hpp"
 
 using std::map;
 using std::stringstream;

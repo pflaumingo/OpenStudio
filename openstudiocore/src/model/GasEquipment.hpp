@@ -20,14 +20,29 @@
 #ifndef MODEL_GASEQUIPMENT_HPP
 #define MODEL_GASEQUIPMENT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceLoadInstance.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/GasEquipmentDefinition.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
-class Schedule;
 class GasEquipmentDefinition;
+class Schedule;
 
 namespace detail {
 

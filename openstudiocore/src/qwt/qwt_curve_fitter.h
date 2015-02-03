@@ -10,8 +10,11 @@
 #ifndef QWT_CURVE_FITTER_H
 #define QWT_CURVE_FITTER_H
 
-#include "qwt_global.h"
+#include <qglobal.h>
+#include <qpolygon.h>
+
 #include "qwt_double_rect.h"
+#include "qwt_global.h"
 
 class QwtSpline;
 
@@ -110,6 +113,7 @@ private:
 #endif
     
     class PrivateData;
+
     PrivateData *d_data;
 };
 

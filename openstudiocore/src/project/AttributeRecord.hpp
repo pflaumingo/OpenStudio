@@ -20,14 +20,42 @@
 #ifndef PROJECT_ATTRIBUTERECORD_HPP
 #define PROJECT_ATTRIBUTERECORD_HPP
 
-#include "ProjectAPI.hpp"
-#include "ObjectRecord.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Enum.hpp"
+#include "../utilities/core/Logger.hpp"
 #include "../utilities/core/Optional.hpp"
 #include "../utilities/core/String.hpp"
-#include "../utilities/core/Logger.hpp"
 #include "../utilities/core/UUID.hpp"
+#include "ObjectRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/Path.hpp"
+#include "project/../utilities/data/Attribute.hpp"
+#include "project/../utilities/units/Quantity.hpp"
+#include "project/../utilities/units/Unit.hpp"
+#include "project/ProjectDatabase.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
+class QSqlQuery;
 
 namespace openstudio {
 
@@ -38,10 +66,10 @@ class Unit;
 
 namespace project {
 
-class FileReferenceRecord;
 class AlgorithmRecord;
-class VariableRecord;
 class DataPointRecord;
+class FileReferenceRecord;
+class VariableRecord;
 
 namespace detail {
   class AttributeRecord_Impl;

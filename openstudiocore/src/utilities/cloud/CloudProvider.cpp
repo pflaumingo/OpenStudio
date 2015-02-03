@@ -16,11 +16,15 @@
 *  License along with this library; if not, write to the Free Software
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
+#include <qobject.h>
+
+#include "../core/Application.hpp"
+#include "../core/Assert.hpp"
 #include "CloudProvider.hpp"
 #include "CloudProvider_Impl.hpp"
-#include "../core/Application.hpp"
-
-#include "../core/Assert.hpp"
+#include "utilities/cloud/../core/Singleton.hpp"
+#include "utilities/cloud/../core/UUID.hpp"
+#include "utilities/cloud/../core/Url.hpp"
 
 namespace openstudio{
   namespace detail {

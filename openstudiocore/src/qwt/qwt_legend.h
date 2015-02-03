@@ -13,7 +13,17 @@
 #define QWT_LEGEND_H
 
 #include <qframe.h>
+#include <qglobal.h>
+#include <qobjectdefs.h>
+#include <qsize.h>
+#include <stddef.h>
+
 #include "qwt_global.h"
+
+class QEvent;
+class QObject;
+class QResizeEvent;
+class QWidget;
 #if QT_VERSION < 0x040000
 #include <qvaluelist.h>
 #else
@@ -136,6 +146,7 @@ protected:
 
 private:
     class PrivateData;
+
     PrivateData *d_data;
 };
 

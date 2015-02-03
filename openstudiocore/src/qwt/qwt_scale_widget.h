@@ -10,19 +10,29 @@
 #ifndef QWT_SCALE_WIDGET_H
 #define QWT_SCALE_WIDGET_H
 
-#include <qwidget.h>
-#include <qfont.h>
 #include <qcolor.h>
+#include <qfont.h>
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qrect.h>
+#include <qsize.h>
 #include <qstring.h>
+#include <qwidget.h>
+#include <stddef.h>
 
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_interval.h"
 #include "qwt_global.h"
-#include "qwt_text.h"
 #include "qwt_scale_draw.h"
+#include "qwt_text.h"
 
+class QFont;
+class QPaintEvent;
 class QPainter;
-class QwtScaleTransformation;
-class QwtScaleDiv;
+class QResizeEvent;
 class QwtColorMap;
+class QwtScaleDiv;
+class QwtScaleTransformation;
 
 /*!
   \brief A Widget which contains a scale
@@ -126,6 +136,7 @@ private:
     void initScale(QwtScaleDraw::Alignment);
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

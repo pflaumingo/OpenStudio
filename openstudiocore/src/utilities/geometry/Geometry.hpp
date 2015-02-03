@@ -20,17 +20,19 @@
 #ifndef UTILITIES_GEOMETRY_GEOMETRY_HPP
 #define UTILITIES_GEOMETRY_GEOMETRY_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
 #include "Point3d.hpp"
 #include "Vector3d.hpp"
-
-#include <vector>
-#include <boost/optional.hpp>
 
 namespace openstudio{
 
   /// convert degrees to radians
+class Vector3d;
+
   UTILITIES_API double degToRad(double degrees);
 
   /// convert radians to degrees

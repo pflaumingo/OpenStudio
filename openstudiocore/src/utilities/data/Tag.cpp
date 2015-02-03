@@ -17,10 +17,12 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Tag.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
 
 #include "../core/String.hpp"
-#include "../core/Compare.hpp"
+#include "Tag.hpp"
+#include "utilities/data/../core/UUID.hpp"
 
 namespace openstudio {
 

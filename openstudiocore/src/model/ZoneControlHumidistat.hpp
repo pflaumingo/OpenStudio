@@ -20,13 +20,27 @@
 #ifndef MODEL_ZONECONTROLHUMIDISTAT_HPP
 #define MODEL_ZONECONTROLHUMIDISTAT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class Schedule;
+class Model;
 
 namespace detail {
 

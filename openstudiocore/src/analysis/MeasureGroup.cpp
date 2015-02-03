@@ -17,24 +17,40 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "MeasureGroup.hpp"
-#include "MeasureGroup_Impl.hpp"
-
-#include "DataPoint.hpp"
-#include "NullMeasure.hpp"
-#include "NullMeasure_Impl.hpp"
-#include "Problem.hpp"
-#include "WorkflowStep.hpp"
-#include "WorkflowStep_Impl.hpp"
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <functional>
+#include <ostream>
+#include <utility>
 
 #include "../runmanager/lib/WorkItem.hpp"
-
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Containers.hpp"
 #include "../utilities/core/FileReference.hpp"
 #include "../utilities/core/Json.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "DataPoint.hpp"
+#include "MeasureGroup.hpp"
+#include "MeasureGroup_Impl.hpp"
+#include "NullMeasure.hpp"
+#include "Problem.hpp"
+#include "WorkflowStep.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/DiscreteVariable.hpp"
+#include "analysis/DiscreteVariable_Impl.hpp"
+#include "analysis/InputVariable_Impl.hpp"
+#include "analysis/Measure.hpp"
+#include "analysis/Measure_Impl.hpp"
+#include "analysis/UncertaintyDescription.hpp"
 
 namespace openstudio {
 namespace analysis {

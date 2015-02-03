@@ -20,15 +20,18 @@
 #ifndef UTILITIES_UNITS_SCALEFACTORY_HPP
 #define UTILITIES_UNITS_SCALEFACTORY_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "../core/Singleton.hpp"
-#include "../core/Logger.hpp"
-
-#include "Scale.hpp"
-
+#include <map>
 #include <ostream>
 #include <set>
-#include <map>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "../core/Singleton.hpp"
+#include "Scale.hpp"
+#include "utilities/units/../core/LogMessage.hpp"
 
 namespace openstudio{
 

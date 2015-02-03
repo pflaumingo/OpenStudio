@@ -20,17 +20,34 @@
 #ifndef UTILITIES_CORE_FILEREFERENCE_HPP
 #define UTILITIES_CORE_FILEREFERENCE_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <qvariant.h>
+#include <ostream>
+#include <string>
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
+#include "../time/DateTime.hpp"
 #include "Enum.hpp"
 #include "Path.hpp"
 #include "UUID.hpp"
-
-#include "../time/DateTime.hpp"
-
-#include <boost/optional.hpp>
-
-#include <vector>
+#include "utilities/core/../time/../core/Logger.hpp"
+#include "utilities/core/EnumBase.hpp"
+#include "utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 
@@ -50,6 +67,8 @@ OPENSTUDIO_ENUM( FileReferenceType,
     ((SQL)(sql))
     ((XML)(xml)) );
  *  \endcode */
+class VersionString;
+
 OPENSTUDIO_ENUM( FileReferenceType,
     ((Unknown)(unknown))
     ((CSV)(csv))

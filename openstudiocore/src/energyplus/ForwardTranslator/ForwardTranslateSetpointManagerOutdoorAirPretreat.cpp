@@ -17,14 +17,20 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/SetpointManagerOutdoorAirPretreat.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/AirLoopHVACOutdoorAirSystem.hpp"
-#include <utilities/idd/SetpointManager_OutdoorAirPretreat_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/SetpointManager_OutdoorAirPretreat_FieldEnums.hxx>
+#include <memory>
+#include <string>
+
+#include "../../model/AirLoopHVACOutdoorAirSystem.hpp"
+#include "../../model/Node.hpp"
+#include "../../model/SetpointManagerOutdoorAirPretreat.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/AirLoopHVAC.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

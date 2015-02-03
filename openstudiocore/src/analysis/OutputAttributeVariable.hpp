@@ -20,8 +20,16 @@
 #ifndef ANALYSIS_OUTPUTATTRIBUTEVARIABLE_HPP
 #define ANALYSIS_OUTPUTATTRIBUTEVARIABLE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "OutputVariable.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
 
 namespace openstudio {
 namespace analysis {
@@ -29,6 +37,7 @@ namespace analysis {
 namespace detail {
 
   class OutputAttributeVariable_Impl;
+class AnalysisObject_Impl;
 
 } // detail
 

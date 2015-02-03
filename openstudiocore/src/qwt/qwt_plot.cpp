@@ -7,26 +7,43 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <qcoreevent.h>
+#include <qfontinfo.h>
+#include <qlayout.h>
+#include <qlist.h>
+#include <qobject.h>
 #include <qpainter.h>
+#include <qpalette.h>
+#include <qrect.h>
+#include <qregion.h>
+#include <qsizepolicy.h>
+#include <qwidget.h>
 #if QT_VERSION < 0x040000
-#include <qguardedptr.h>
 #include <qfocusdata.h>
+#include <qguardedptr.h>
 #else
 #include <qpointer.h>
-#include <qpaintengine.h>
 #endif
 #include <qapplication.h>
-#include <qevent.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_printfilter.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_div.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_draw.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_map.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_valuelist.h"
+#include "qwt_dyngrid_layout.h"
+#include "qwt_legend.h"
 #include "qwt_plot.h"
+#include "qwt_plot_canvas.h"
 #include "qwt_plot_dict.h"
 #include "qwt_plot_layout.h"
-#include "qwt_scale_widget.h"
 #include "qwt_scale_engine.h"
+#include "qwt_scale_widget.h"
 #include "qwt_text_label.h"
-#include "qwt_legend.h"
-#include "qwt_dyngrid_layout.h"
-#include "qwt_plot_canvas.h"
-#include "qwt_paint_buffer.h"
+
+class QResizeEvent;
 
 class QwtPlot::PrivateData
 {

@@ -17,14 +17,17 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+
 #include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
-#include "../../model/Model.hpp"
-#include "../../model/IlluminanceMap.hpp"
-#include "../../model/IlluminanceMap_Impl.hpp"
-
-#include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddFactory.hxx>
+namespace openstudio {
+namespace model {
+class IlluminanceMap;
+}  // namespace model
+}  // namespace openstudio
 
 using namespace openstudio::model;
 

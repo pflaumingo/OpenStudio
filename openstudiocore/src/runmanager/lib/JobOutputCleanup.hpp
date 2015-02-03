@@ -20,10 +20,17 @@
 #ifndef RUNMANAGER_LIB_JOBOUTPUTCLEANUP_HPP
 #define RUNMANAGER_LIB_JOBOUTPUTCLEANUP_HPP
 
-#include <string>
-#include <QTimer>
-#include "RunManager.hpp"
+#include <qdialog.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
 #include <ui_JobOutputCleanup.h>
+#include <QTimer>
+#include <string>
+#include <vector>
+
+#include "RunManager.hpp"
+
+class QWidget;
 
 
 namespace openstudio {

@@ -20,10 +20,16 @@
 #ifndef RUNMANAGER_LIB_LOCALPROCESSCREATOR_HPP
 #define RUNMANAGER_LIB_LOCALPROCESSCREATOR_HPP
 
-#include "ProcessCreator.hpp"
-#include <vector>
+#include <qobjectdefs.h>
+#include <memory>
 #include <string>
+#include <utility>
+#include <vector>
+
 #include "../../utilities/core/Path.hpp"
+#include "ProcessCreator.hpp"
+#include "runmanager/lib/RunManagerAPI.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
 namespace openstudio {
 namespace runmanager {
@@ -32,6 +38,8 @@ namespace runmanager {
   /// Implements ProcessCreator interface to create a process locally.
   ///
   /// Inherits from openstudio::runmanager::ProcessCreator
+class Process;
+
   class RUNMANAGER_API LocalProcessCreator : public ProcessCreator
   {
     Q_OBJECT;

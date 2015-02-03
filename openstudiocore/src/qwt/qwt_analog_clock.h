@@ -11,9 +11,20 @@
 #define QWT_ANALOG_CLOCK_H
 
 #include <qdatetime.h>
-#include "qwt_global.h"
+#include <qglobal.h>
+#include <qobjectdefs.h>
+#include <qpalette.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
 #include "qwt_dial.h"
 #include "qwt_dial_needle.h"
+#include "qwt_global.h"
+
+class QPainter;
+class QPoint;
+class QWidget;
+class QwtDialNeedle;
 
 /*!
   \brief An analog clock

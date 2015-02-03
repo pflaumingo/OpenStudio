@@ -20,21 +20,27 @@
 #ifndef UTILITIES_CORE_LOGGER_HPP
 #define UTILITIES_CORE_LOGGER_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Singleton.hpp"
-#include "Exception.hpp"
-#include "Compare.hpp"
-#include "LogSink.hpp"
-
 #include <boost/shared_ptr.hpp>
-
-#include <sstream>
-#include <set>
+#include <boost/smart_ptr/shared_ptr.hpp>
 #include <map>
+#include <set>
+#include <sstream>
+#include <string>
+
+#include "../UtilitiesAPI.hpp"
+#include "Compare.hpp"
+#include "Exception.hpp"
+#include "LogSink.hpp"
+#include "Singleton.hpp"
+#include "utilities/core/LogMessage.hpp"
 
 class QReadWriteLock;
 class QWriteLocker;
+namespace openstudio {
+namespace detail {
+class LogSink_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 /// defines method logChannel() to get a logger for a class
 #define REGISTER_LOGGER(__logChannel__) \

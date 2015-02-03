@@ -20,8 +20,39 @@
 #ifndef PROJECT_ANALYSISRECORD_HPP
 #define PROJECT_ANALYSISRECORD_HPP
 
-#include "ProjectAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
+
 #include "ObjectRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/Path.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/FileReferenceRecord.hpp"
+#include "project/ProblemRecord.hpp"
+#include "project/ProjectDatabase.hpp"
+#include "project/Record.hpp"
+
+class QSqlQuery;
+class QVariant;
 
 namespace openstudio {
 namespace analysis {
@@ -29,10 +60,10 @@ namespace analysis {
 } // analysis
 namespace project {
 
-class ProblemRecord;
 class AlgorithmRecord;
-class FileReferenceRecord;
 class DataPointRecord;
+class FileReferenceRecord;
+class ProblemRecord;
 
 namespace detail {
 

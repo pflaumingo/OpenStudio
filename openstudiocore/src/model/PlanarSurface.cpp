@@ -17,32 +17,56 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "PlanarSurface.hpp"
-#include "PlanarSurface_Impl.hpp"
-#include "Model.hpp"
-
-#include "PlanarSurfaceGroup.hpp"
-#include "Space.hpp"
-#include "ModelExtensibleGroup.hpp"
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-#include "LayeredConstruction.hpp"
-#include "LayeredConstruction_Impl.hpp"
-#include "Material.hpp"
-#include "AirWallMaterial.hpp"
-#include "AirWallMaterial_Impl.hpp"
-#include "SubSurface.hpp"
-#include "SubSurface_Impl.hpp"
-
-#include "../utilities/sql/SqlFile.hpp"
-
-#include "../utilities/geometry/Geometry.hpp"
-#include "../utilities/geometry/Transformation.hpp"
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/math/constants/constants.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <algorithm>
+#include <cmath>
+#include <exception>
+#include <map>
 
 #include "../utilities/core/Assert.hpp"
+#include "../utilities/geometry/Geometry.hpp"
+#include "../utilities/geometry/Transformation.hpp"
+#include "../utilities/sql/SqlFile.hpp"
+#include "AirWallMaterial.hpp"
+#include "ConstructionBase.hpp"
+#include "LayeredConstruction.hpp"
+#include "Material.hpp"
+#include "Model.hpp"
+#include "ModelExtensibleGroup.hpp"
+#include "PlanarSurface.hpp"
+#include "PlanarSurfaceGroup.hpp"
+#include "PlanarSurface_Impl.hpp"
+#include "Space.hpp"
+#include "SubSurface.hpp"
+#include "model/../utilities/geometry/Plane.hpp"
+#include "model/../utilities/geometry/Point3d.hpp"
+#include "model/../utilities/geometry/Vector3d.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/String.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
-#include <boost/math/constants/constants.hpp>
-#include <boost/lexical_cast.hpp>
+namespace openstudio {
+class Workspace;
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using openstudio::Handle;
 using openstudio::OptionalHandle;

@@ -17,21 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ScheduleWeek.hpp"
-#include "ScheduleWeek_Impl.hpp"
-#include "ScheduleDay.hpp"
-#include "ScheduleDay_Impl.hpp"
-#include "Model.hpp"
-
-#include <utilities/idd/OS_Schedule_Week_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Schedule_Week_FieldEnums.hxx>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "ScheduleDay.hpp"
+#include "ScheduleWeek.hpp"
+#include "ScheduleWeek_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/ResourceObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ScheduleWeek_Impl::ScheduleWeek_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ResourceObject_Impl(idfObject,model,keepHandle)

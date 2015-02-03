@@ -20,14 +20,29 @@
 #ifndef ANALYSIS_RUBYMEASURE_HPP
 #define ANALYSIS_RUBYMEASURE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "Measure.hpp"
+#include "analysis/../utilities/core/FileReference.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
 
 namespace openstudio {
 
 class BCLMeasure;
 class FileReference;
 class FileReferenceType;
+namespace analysis {
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
+}  // namespace analysis
 
 namespace ruleset {
   class OSArgument;
@@ -40,8 +55,8 @@ class RubyContinuousVariable;
 namespace detail {
 
   class Problem_Impl;
-  class RubyMeasure_Impl;
   class RubyContinuousVariable_Impl;
+  class RubyMeasure_Impl;
 
 } // detail
 

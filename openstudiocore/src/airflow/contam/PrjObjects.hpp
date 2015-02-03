@@ -20,24 +20,35 @@
 #ifndef AIRFLOW_CONTAM_PRJOBJECTS_HPP
 #define AIRFLOW_CONTAM_PRJOBJECTS_HPP
 
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../AirflowAPI.hpp"
 #include "PrjDefines.hpp"
 #include "PrjObjectsImpl.hpp"
-#include "../AirflowAPI.hpp"
 
 namespace openstudio {
 namespace contam {
 
 class Reader;
+class Icon;
+class PressureCoefficientPoint;
+class SchedulePoint;
 namespace detail {
-  class ZoneImpl;
-  class SpeciesImpl;
+class CdvDatImpl;
+}  // namespace detail
+
+namespace detail {
   class AhsImpl;
   class AirflowPathImpl;
-  class RunControlImpl;
-  class LevelImpl;
   class DayScheduleImpl;
+  class LevelImpl;
+  class RunControlImpl;
+  class SpeciesImpl;
   class WeekScheduleImpl;
   class WindPressureProfileImpl;
+  class ZoneImpl;
 }
 
 /** The Zone object stores the data that describes an airflow zone. */

@@ -20,13 +20,31 @@
 #ifndef MODEL_SCHEDULEBASE_HPP
 #define MODEL_SCHEDULEBASE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ResourceObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/units/OSQuantityVector.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class ScheduleTypeLimits;
+class Model;
 
 namespace detail {
 

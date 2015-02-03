@@ -17,20 +17,35 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <qmetatype.h>
+#include <qstring.h>
+#include <ostream>
+#include <string>
+
+#include "../runmanager/lib/WorkItem.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/FileReference.hpp"
 #include "InputVariable.hpp"
 #include "InputVariable_Impl.hpp"
-
 #include "MeasureGroup.hpp"
 #include "MeasureGroup_Impl.hpp"
-#include "RubyContinuousVariable.hpp"
 #include "RubyContinuousVariable_Impl.hpp"
 #include "WorkflowStep.hpp"
 #include "WorkflowStep_Impl.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/UncertaintyDescription.hpp"
+#include "analysis/Variable.hpp"
+#include "analysis/Variable_Impl.hpp"
 
-#include "../runmanager/lib/WorkItem.hpp"
-
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/FileReference.hpp"
+namespace openstudio {
+class VersionString;
+namespace analysis {
+class Measure;
+}  // namespace analysis
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

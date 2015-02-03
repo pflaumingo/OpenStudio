@@ -17,7 +17,12 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <ext/alloc_traits.h>
+
 #include "PrjAirflowElementsImpl.hpp"
+#include "airflow/contam/PrjDefines.hpp"
+#include "airflow/contam/PrjReader.hpp"
+#include "airflow/contam/PrjSubobjects.hpp"
 
 namespace openstudio {
 namespace contam {

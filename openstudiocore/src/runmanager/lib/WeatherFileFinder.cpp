@@ -17,15 +17,53 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "WeatherFileFinder.hpp"
-#include <boost/regex.hpp>
-#include "../../utilities/idf/IdfFile.hpp"
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/algorithm/string/classification.hpp>
+#include <boost/algorithm/string/constants.hpp>
+#include <boost/algorithm/string/detail/classification.hpp>
+#include <boost/algorithm/string/split.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/iterator/iterator_facade.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_token_iterator.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <ext/alloc_traits.h>
+#include <qdir.h>
+#include <qfileinfo.h>
+#include <qlist.h>
+#include <qstring.h>
+#include <stddef.h>
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/Version_FieldEnums.hxx>
 #include <utilities/idd/Site_Location_FieldEnums.hxx>
-#include <QFileInfo>
-#include <QDir>
+#include <utilities/idd/Version_FieldEnums.hxx>
+#include <algorithm>
+#include <exception>
+#include <iterator>
+#include <sstream>
+#include <vector>
+
+#include "../../utilities/idf/IdfFile.hpp"
+#include "WeatherFileFinder.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/../../utilities/idf/../idd/../core/Optional.hpp"
+#include "runmanager/lib/../../utilities/idf/../idd/IddEnums.hpp"
+#include "runmanager/lib/../../utilities/idf/IdfObject.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
 
 namespace openstudio {

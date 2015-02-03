@@ -20,10 +20,13 @@
 #ifndef UTILITIES_CORE_URLHELPERS_HPP
 #define UTILITIES_CORE_URLHELPERS_HPP
 
+#include <boost/optional/optional.hpp>
+#include <string>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
 #include "Path.hpp"
 #include "Url.hpp"
-#include <vector>
 
 namespace openstudio {
 

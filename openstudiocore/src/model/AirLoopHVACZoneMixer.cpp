@@ -17,23 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_AirLoopHVAC_ZoneMixer_FieldEnums.hxx>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
 #include "AirLoopHVACZoneMixer.hpp"
 #include "AirLoopHVACZoneMixer_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "Node.hpp"
-#include "AirTerminalSingleDuctUncontrolled.hpp"
 #include "Model.hpp"
-#include "Model_Impl.hpp"
-#include <utilities/idd/OS_AirLoopHVAC_ZoneMixer_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/HVACComponent_Impl.hpp"
+#include "model/Mixer.hpp"
+#include "model/Mixer_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+class Node;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   AirLoopHVACZoneMixer_Impl::AirLoopHVACZoneMixer_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : Mixer_Impl(idfObject, model, keepHandle)

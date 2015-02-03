@@ -10,9 +10,10 @@
 #ifndef QWT_SCALE_ENGINE_H
 #define QWT_SCALE_ENGINE_H
 
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_valuelist.h"
+#include "qwt_double_interval.h"
 #include "qwt_global.h"
 #include "qwt_scale_div.h"
-#include "qwt_double_interval.h"
 
 class QwtScaleTransformation;
 
@@ -128,6 +129,7 @@ protected:
 
 private:
     class PrivateData;
+
     PrivateData *d_data;
 };
 

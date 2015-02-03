@@ -17,20 +17,38 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RubyContinuousVariable.hpp"
-#include "RubyContinuousVariable_Impl.hpp"
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <ostream>
 
+#include "../runmanager/lib/WorkItem.hpp"
+#include "../utilities/core/Assert.hpp"
 #include "DataPoint.hpp"
 #include "Problem.hpp"
-#include "Problem_Impl.hpp"
+#include "RubyContinuousVariable.hpp"
+#include "RubyContinuousVariable_Impl.hpp"
 #include "RubyMeasure_Impl.hpp"
 #include "WorkflowStep.hpp"
-#include "WorkflowStep_Impl.hpp"
+#include "analysis/../ruleset/OSArgument.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/FileReference.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/../utilities/data/../core/Optional.hpp"
+#include "analysis/AnalysisEnums.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/ContinuousVariable.hpp"
+#include "analysis/ContinuousVariable_Impl.hpp"
+#include "analysis/Measure.hpp"
+#include "analysis/RubyMeasure.hpp"
+#include "analysis/UncertaintyDescription.hpp"
 
-#include "../runmanager/lib/RubyJobUtils.hpp"
-#include "../runmanager/lib/WorkItem.hpp"
-
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

@@ -20,14 +20,14 @@
 #ifndef UTILITIES_DATA_TAG_HPP
 #define UTILITIES_DATA_TAG_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "../core/UUID.hpp"
-
 #include <boost/optional.hpp>
-
+#include <boost/optional/optional.hpp>
+#include <qvariant.h>
 #include <string>
 #include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/UUID.hpp"
 
 namespace openstudio {
 

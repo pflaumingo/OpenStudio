@@ -17,23 +17,33 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
-#include <iterator>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <qcoreapplication.h>
+#include <qdir.h>
+#include <qfile.h>
+#include <qfileinfo.h>
+#include <qiodevice.h>
+#include <qlist.h>
+#include <qstringlist.h>
 #include <algorithm>
+#include <exception>
+#include <functional>
+#include <iterator>
+#include <sstream>
+#include <stdexcept>
 
-#include "LocalProcess.hpp"
-#include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
-#include "RunManager_Util.hpp"
-
-#include "../../utilities/time/DateTime.hpp"
 #include "../../utilities/core/ApplicationPathHelpers.hpp"
 #include "../../utilities/core/PathHelpers.hpp"
-
-#include <QDir>
-#include <QDateTime>
-#include <QMutexLocker>
+#include "FileInfo.hpp"
+#include "LocalProcess.hpp"
+#include "RunManager_Util.hpp"
+#include "runmanager/lib/../../utilities/core/Exception.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
 
 #ifdef Q_OS_WIN
 #include <Windows.h>

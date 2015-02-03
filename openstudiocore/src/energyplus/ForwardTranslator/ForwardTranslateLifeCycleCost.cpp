@@ -17,17 +17,24 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-
-#include "../../model/Model.hpp"
-#include "../../model/LifeCycleCost.hpp"
-#include "../../model/LifeCycleCostParameters.hpp"
-#include "../../model/LifeCycleCostParameters_Impl.hpp"
-
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
 #include <utilities/idd/LifeCycleCost_NonrecurringCost_FieldEnums.hxx>
 #include <utilities/idd/LifeCycleCost_RecurringCosts_FieldEnums.hxx>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../../model/LifeCycleCost.hpp"
+#include "../../model/LifeCycleCostParameters.hpp"
+#include "../../model/Model.hpp"
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

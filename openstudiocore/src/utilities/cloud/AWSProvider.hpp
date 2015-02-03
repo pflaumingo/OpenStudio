@@ -20,14 +20,25 @@
 #ifndef UTILITIES_CLOUD_AWSPROVIDER_HPP
 #define UTILITIES_CLOUD_AWSPROVIDER_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "CloudProvider.hpp"
+#include "utilities/cloud/../UtilitiesAPI.hpp"
+#include "utilities/cloud/../core/Logger.hpp"
+#include "utilities/cloud/../core/UUID.hpp"
+#include "utilities/cloud/../core/Url.hpp"
 
 namespace openstudio {
 namespace detail {
 
-  class AWSSettings_Impl;
-  class AWSSession_Impl;
   class AWSProvider_Impl;
+  class AWSSession_Impl;
+  class AWSSettings_Impl;
 
 }
 

@@ -20,12 +20,21 @@
 #ifndef MODEL_SCHEDULEYEAR_HPP
 #define MODEL_SCHEDULEYEAR_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "Schedule.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
 
 namespace openstudio {
 
 class Date;
+class IdfObject;
 
 namespace model {
 

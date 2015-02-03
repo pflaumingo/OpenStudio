@@ -10,15 +10,20 @@
 #ifndef QWT_COLOR_MAP_H
 #define QWT_COLOR_MAP_H
 
-#include <qglobal.h>
 #include <qcolor.h>
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qrgb.h>
 #if QT_VERSION < 0x040000
 #include <qvaluevector.h>
 #else
 #include <qvector.h>
 #endif
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_global.h"
 #include "qwt_array.h"
 #include "qwt_double_interval.h"
+
+class QwtDoubleInterval;
 
 #if defined(QWT_TEMPLATEDLL)
 // MOC_SKIP_BEGIN
@@ -151,6 +156,7 @@ public:
 
 private:
     class PrivateData;
+
     PrivateData *d_data;
 };
 
@@ -179,6 +185,7 @@ private:
         const QwtDoubleInterval &, double value) const;
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

@@ -17,14 +17,14 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/none.hpp>
+
 #include "WorkspaceExtensibleGroup.hpp"
 #include "WorkspaceObject.hpp"
 #include "WorkspaceObject_Impl.hpp"
-
-#include "../idd/IddObjectProperties.hpp"
-#include "../idd/IddFieldProperties.hpp"
-
-#include <boost/lexical_cast.hpp>
+#include "utilities/idf/../core/Containers.hpp"
+#include "utilities/idf/IdfExtensibleGroup.hpp"
+#include "utilities/idf/IdfObject_Impl.hpp"
 
 using std::shared_ptr;
 using std::dynamic_pointer_cast;

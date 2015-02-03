@@ -12,10 +12,14 @@
 #ifndef QWT_RASTER_DATA_H
 #define QWT_RASTER_DATA_H 1
 
+#include <qglobal.h>
 #include <qmap.h>
-#include "qwt_global.h"
-#include "qwt_double_rect.h"
+#include <qpolygon.h>
+#include <qsize.h>
+
 #include "qwt_double_interval.h"
+#include "qwt_double_rect.h"
+#include "qwt_global.h"
 
 #if QT_VERSION >= 0x040000
 #include <qlist.h>
@@ -29,6 +33,7 @@ template class QWT_EXPORT QMap<double, QPolygonF>;
 
 #else
 #include <qvaluelist.h>
+
 #include "qwt_array.h"
 #include "qwt_double_rect.h"
 #if defined(QWT_TEMPLATEDLL)

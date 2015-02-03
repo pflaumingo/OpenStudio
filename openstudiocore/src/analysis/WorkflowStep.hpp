@@ -20,12 +20,23 @@
 #ifndef ANALYSIS_WORKFLOWSTEP_HPP
 #define ANALYSIS_WORKFLOWSTEP_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "AnalysisObject.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
 
 namespace openstudio {
 
 class FileReferenceType;
+namespace analysis {
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
+}  // namespace analysis
 
 namespace runmanager {
   class JobType;

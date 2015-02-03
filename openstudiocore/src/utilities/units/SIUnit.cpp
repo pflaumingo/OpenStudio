@@ -17,10 +17,16 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SIUnit.hpp"
-#include "SIUnit_Impl.hpp"
+#include <ext/alloc_traits.h>
+#include <ostream>
+#include <utility>
 
 #include "../core/Assert.hpp"
+#include "SIUnit.hpp"
+#include "SIUnit_Impl.hpp"
+#include "utilities/units/../core/EnumBase.hpp"
+#include "utilities/units/Unit.hpp"
+#include "utilities/units/Unit_Impl.hpp"
 
 namespace openstudio {
 namespace detail {

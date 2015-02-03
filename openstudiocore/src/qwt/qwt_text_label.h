@@ -11,12 +11,19 @@
 #define QWT_TEXT_LABEL_H
 
 #include <qframe.h>
+#include <qglobal.h>
+#include <qobjectdefs.h>
+#include <qrect.h>
+#include <qsize.h>
+#include <stddef.h>
+
 #include "qwt_global.h"
 #include "qwt_text.h"
 
-class QString;
 class QPaintEvent;
 class QPainter;
+class QString;
+class QWidget;
 
 /*!
    \brief A Widget which displays a QwtText
@@ -69,6 +76,7 @@ private:
     int defaultIndent() const;
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

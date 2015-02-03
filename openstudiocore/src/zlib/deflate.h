@@ -13,6 +13,9 @@
 #ifndef DEFLATE_H
 #define DEFLATE_H
 
+#include <zlib.h>
+
+#include "zconf.h"
 #include "zutil.h"
 
 /* define NO_GZIP when compiling if you want to disable gzip header and

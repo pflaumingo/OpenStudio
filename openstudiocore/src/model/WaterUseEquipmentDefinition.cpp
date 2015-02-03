@@ -17,21 +17,38 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_WaterUse_Equipment_Definition_FieldEnums.hxx>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/units/OSOptionalQuantity.hpp"
+#include "Schedule.hpp"
 #include "WaterUseEquipmentDefinition.hpp"
 #include "WaterUseEquipmentDefinition_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include <utilities/idd/OS_WaterUse_Equipment_Definition_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/units/OSOptionalQuantity.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/ModelObject.hpp"
+#include "model/SpaceLoadDefinition.hpp"
+#include "model/SpaceLoadDefinition_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   WaterUseEquipmentDefinition_Impl::WaterUseEquipmentDefinition_Impl(const IdfObject& idfObject,
                                                                      Model_Impl* model,

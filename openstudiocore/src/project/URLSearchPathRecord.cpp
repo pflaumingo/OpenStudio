@@ -17,18 +17,28 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "URLSearchPathRecord.hpp"
-#include "URLSearchPathRecord_Impl.hpp"
-#include "JoinRecord.hpp"
-#include "ProjectDatabase.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qurl.h>
+#include <qvariant.h>
+#include <exception>
+#include <set>
 
 #include "../utilities/core/Assert.hpp"
-
-#include <boost/optional/optional.hpp>
-
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
+#include "JoinRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "URLSearchPathRecord.hpp"
+#include "URLSearchPathRecord_Impl.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/EnumBase.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/idf/../idd/IddEnums.hpp"
+#include "project/../utilities/idf/URLSearchPath.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
 namespace openstudio {
 namespace project {

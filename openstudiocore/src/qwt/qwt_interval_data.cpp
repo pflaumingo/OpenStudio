@@ -7,7 +7,9 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include "qwt_math.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_array.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_interval.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
 #include "qwt_interval_data.h"
 
 //! Constructor

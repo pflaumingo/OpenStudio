@@ -17,8 +17,12 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <string>
+
 #include "TemperatureUnit.hpp"
 #include "TemperatureUnit_Impl.hpp"
+#include "utilities/units/Unit.hpp"
+#include "utilities/units/Unit_Impl.hpp"
 
 namespace openstudio {
 namespace detail {

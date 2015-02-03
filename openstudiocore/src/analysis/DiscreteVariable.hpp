@@ -20,8 +20,14 @@
 #ifndef ANALYSIS_DISCRETEVARIABLE_HPP
 #define ANALYSIS_DISCRETEVARIABLE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "InputVariable.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
 
 namespace openstudio {
 namespace analysis {
@@ -29,6 +35,7 @@ namespace analysis {
 namespace detail {
 
   class DiscreteVariable_Impl;
+class AnalysisObject_Impl;
 
 } // detail
 

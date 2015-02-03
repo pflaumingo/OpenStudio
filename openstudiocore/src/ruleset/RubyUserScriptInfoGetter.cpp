@@ -17,15 +17,15 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RubyUserScriptInfoGetter.hpp"
+#include <sstream>
 
 #include "../model/Model.hpp"
-
-#include "../utilities/idf/Workspace.hpp"
 #include "../utilities/bcl/BCLMeasure.hpp"
 #include "../utilities/core/StringHelpers.hpp"
-
-#include <sstream>
+#include "RubyUserScriptInfoGetter.hpp"
+#include "ruleset/../utilities/bcl/BCLMeasureArgument.hpp"
+#include "ruleset/../utilities/idf/../core/EnumBase.hpp"
+#include "ruleset/OSArgument.hpp"
 
 namespace openstudio {
 namespace ruleset {

@@ -20,13 +20,13 @@
 #ifndef RUNMANAGER_LIB_PARALLELENERGYPLUS_SQLITEOBJECT_HPP
 #define RUNMANAGER_LIB_PARALLELENERGYPLUS_SQLITEOBJECT_HPP
 
+#include <boost/date_time/gregorian/greg_date.hpp>
+#include <boost/date_time/gregorian/gregorian.hpp>
 #include <iomanip>
+#include <string>
 #include <vector>
 
 #include "../../../utilities/core/Path.hpp"
-
-#include <boost/date_time/gregorian/gregorian.hpp>
-
 #include "sqlite3.h"
 
 

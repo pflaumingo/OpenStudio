@@ -17,40 +17,28 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/ZoneHVACWaterToAirHeatPump.hpp"
-#include "../../model/ZoneHVACWaterToAirHeatPump_Impl.hpp"
-#include "../../model/FanOnOff.hpp"
-#include "../../model/FanOnOff_Impl.hpp"
-#include "../../model/CoilCoolingWaterToAirHeatPumpEquationFit.hpp"
-#include "../../model/CoilCoolingWaterToAirHeatPumpEquationFit_Impl.hpp"
-#include "../../model/CoilHeatingWaterToAirHeatPumpEquationFit.hpp"
-#include "../../model/CoilHeatingWaterToAirHeatPumpEquationFit_Impl.hpp"
-#include "../../model/CoilHeatingElectric.hpp"
-#include "../../model/CoilHeatingElectric_Impl.hpp"
-#include "../../model/CoilHeatingGas.hpp"
-#include "../../model/CoilHeatingGas_Impl.hpp"
-#include "../../model/CoilHeatingWater.hpp"
-#include "../../model/CoilHeatingWater_Impl.hpp"
-#include <utilities/idd/ZoneHVAC_WaterToAirHeatPump_FieldEnums.hxx>
-#include <utilities/idd/OutdoorAir_Mixer_FieldEnums.hxx>
-#include <utilities/idd/Fan_OnOff_FieldEnums.hxx>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/Coil_Cooling_WaterToAirHeatPump_EquationFit_FieldEnums.hxx>
-#include <utilities/idd/Coil_Heating_WaterToAirHeatPump_EquationFit_FieldEnums.hxx>
-#include <utilities/idd/Coil_Heating_Gas_FieldEnums.hxx>
 #include <utilities/idd/Coil_Heating_Electric_FieldEnums.hxx>
+#include <utilities/idd/Coil_Heating_Gas_FieldEnums.hxx>
+#include <utilities/idd/Coil_Heating_WaterToAirHeatPump_EquationFit_FieldEnums.hxx>
 #include <utilities/idd/Coil_Heating_Water_FieldEnums.hxx>
-
-#include "../../utilities/idd/IddEnums.hpp"
+#include <utilities/idd/Fan_OnOff_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OutdoorAir_Mixer_FieldEnums.hxx>
+#include <utilities/idd/ZoneHVAC_WaterToAirHeatPump_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/Node.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/ZoneHVACWaterToAirHeatPump.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/HVACComponent.hpp"
 
 using namespace openstudio::model;
 

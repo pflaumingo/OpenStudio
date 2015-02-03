@@ -17,16 +17,22 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Geometry.hpp"
-#include "Transformation.hpp"
+#include <boost/math/constants/constants.hpp>
+#include <ext/alloc_traits.h>
+#include <polypartition/polypartition.h>
+#include <algorithm>
+#include <cmath>
+#include <iterator>
+#include <limits>
+#include <list>
 
 #include "../core/Assert.hpp"
-
-#include <boost/math/constants/constants.hpp>
-
-#include <polypartition/polypartition.h>
-
-#include <list>
+#include "Geometry.hpp"
+#include "Transformation.hpp"
+#include "utilities/geometry/../core/LogMessage.hpp"
+#include "utilities/geometry/../core/Logger.hpp"
+#include "utilities/geometry/Point3d.hpp"
+#include "utilities/geometry/Vector3d.hpp"
 
 namespace openstudio{
   /// convert degrees to radians

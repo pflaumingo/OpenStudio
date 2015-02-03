@@ -20,13 +20,13 @@
 #ifndef RULESET_RUBYUSERSCRIPTARGUMENTGETTER_HPP
 #define RULESET_RUBYUSERSCRIPTARGUMENTGETTER_HPP
 
-#include "RulesetAPI.hpp"
-
-#include "../utilities/core/Optional.hpp"
-#include "../utilities/core/Deprecated.hpp"
-
-#include <vector>
+#include <boost/optional/optional.hpp>
 #include <string>
+#include <vector>
+
+#include "../utilities/core/Deprecated.hpp"
+#include "../utilities/core/Optional.hpp"
+#include "RulesetAPI.hpp"
 
 namespace openstudio {
 

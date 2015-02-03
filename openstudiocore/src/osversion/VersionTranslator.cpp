@@ -17,46 +17,66 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "VersionTranslator.hpp"
-
-#include "../model/Model.hpp"
-#include "../model/Component.hpp"
-#include "../model/Component_Impl.hpp"
-#include "../model/Schedule.hpp"
-#include "../model/Schedule_Impl.hpp"
-#include "../model/ScheduleTypeLimits.hpp"
-#include "../model/ScheduleTypeLimits_Impl.hpp"
-#include "../model/ScheduleTypeRegistry.hpp"
-#include "../model/ScheduleDay.hpp"
-#include "../model/ScheduleDay_Impl.hpp"
-#include "../model/ScheduleRule.hpp"
-#include "../model/ScheduleRule_Impl.hpp"
-#include "../model/ScheduleRuleset.hpp"
-#include "../model/ScheduleRuleset_Impl.hpp"
-#include "../model/ComponentData.hpp"
-#include "../model/ComponentData_Impl.hpp"
-#include "../model/ModelExtensibleGroup.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
+#include <OpenStudio.hxx>
+#include <boost/bind/mem_fn_cc.hpp>
+#include <boost/filesystem/fstream.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex_format.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_replace.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <ext/alloc_traits.h>
+#include <qstring.h>
+#include <qthread.h>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
-#include "../utilities/idf/IdfExtensibleGroup.hpp"
-#include "../utilities/idf/ValidityReport.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <algorithm>
+#include <exception>
+#include <functional>
+#include <iostream>
+
+#include "../model/Component.hpp"
+#include "../model/ComponentData.hpp"
+#include "../model/Model.hpp"
+#include "../model/Schedule.hpp"
+#include "../model/ScheduleDay.hpp"
+#include "../model/ScheduleRule.hpp"
+#include "../model/ScheduleRuleset.hpp"
+#include "../model/ScheduleTypeLimits.hpp"
+#include "../model/ScheduleTypeRegistry.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Compare.hpp"
+#include "../utilities/core/Containers.hpp"
 #include "../utilities/core/PathHelpers.hpp"
 #include "../utilities/core/URLHelpers.hpp"
-#include "../utilities/core/Containers.hpp"
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/plot/ProgressBar.hpp"
-#include <utilities/idd/OS_ComponentData_FieldEnums.hxx>
+#include "../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../utilities/idf/ValidityReport.hpp"
 #include "../utilities/math/FloatCompare.hpp"
-
-#include <OpenStudio.hxx>
-
-#include <QThread>
-
-#include <boost/regex.hpp>
-#include <boost/lexical_cast.hpp>
-#include <boost/filesystem/fstream.hpp>
+#include "../utilities/plot/ProgressBar.hpp"
+#include "VersionTranslator.hpp"
+#include "osversion/../model/../utilities/idd/../core/EnumBase.hpp"
+#include "osversion/../model/../utilities/idd/../core/Logger.hpp"
+#include "osversion/../model/../utilities/idd/../core/Optional.hpp"
+#include "osversion/../model/../utilities/idd/../core/Singleton.hpp"
+#include "osversion/../model/../utilities/idd/IddEnums.hpp"
+#include "osversion/../model/../utilities/idd/IddField.hpp"
+#include "osversion/../model/../utilities/idd/IddFile.hpp"
+#include "osversion/../model/../utilities/idd/IddObject.hpp"
+#include "osversion/../model/../utilities/idf/../core/UUID.hpp"
+#include "osversion/../model/../utilities/idf/../idd/IddFileAndFactoryWrapper.hpp"
+#include "osversion/../model/../utilities/idf/Handle.hpp"
+#include "osversion/../model/../utilities/idf/ValidityEnums.hpp"
+#include "osversion/../model/../utilities/idf/Workspace.hpp"
+#include "osversion/../model/../utilities/idf/WorkspaceObject.hpp"
+#include "osversion/../model/ParentObject.hpp"
+#include "osversion/../utilities/core/StringStreamLogSink.hpp"
+#include "osversion/../utilities/idf/IdfFile.hpp"
 
 namespace openstudio {
 namespace osversion {

@@ -17,21 +17,36 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_ZoneControl_Thermostat_StagedDualSetpoint_FieldEnums.hxx>
+#include <algorithm>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
+#include "Schedule.hpp"
 #include "ZoneControlThermostatStagedDualSetpoint.hpp"
 #include "ZoneControlThermostatStagedDualSetpoint_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include <utilities/idd/OS_ZoneControl_Thermostat_StagedDualSetpoint_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/Thermostat.hpp"
+#include "model/Thermostat_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ZoneControlThermostatStagedDualSetpoint_Impl::ZoneControlThermostatStagedDualSetpoint_Impl(const IdfObject& idfObject,
                                                                                              Model_Impl* model,

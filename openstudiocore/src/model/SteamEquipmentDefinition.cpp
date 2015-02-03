@@ -17,20 +17,40 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SteamEquipmentDefinition.hpp"
-#include "SteamEquipmentDefinition_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_SteamEquipment_Definition_FieldEnums.hxx>
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/none.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/logical/bitor.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_SteamEquipment_Definition_FieldEnums.hxx>
 
 #include "../utilities/core/Assert.hpp"
+#include "SteamEquipmentDefinition.hpp"
+#include "SteamEquipmentDefinition_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/SpaceLoadDefinition.hpp"
+#include "model/SpaceLoadDefinition_Impl.hpp"
+#include "model/attributes.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   SteamEquipmentDefinition_Impl::SteamEquipmentDefinition_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : SpaceLoadDefinition_Impl(idfObject,model,keepHandle)

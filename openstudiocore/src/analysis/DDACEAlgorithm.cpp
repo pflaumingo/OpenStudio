@@ -17,17 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DDACEAlgorithm.hpp"
-#include "DDACEAlgorithm_Impl.hpp"
-
-#include "DDACEAlgorithmOptions.hpp"
-#include "DDACEAlgorithmOptions_Impl.hpp"
-
-#include "Problem.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
 
 #include "../runmanager/lib/JSON.hpp"
-
 #include "../utilities/core/Optional.hpp"
+#include "DDACEAlgorithm.hpp"
+#include "DDACEAlgorithmOptions.hpp"
+#include "DDACEAlgorithmOptions_Impl.hpp"
+#include "DDACEAlgorithm_Impl.hpp"
+#include "Problem.hpp"
+#include "analysis/../runmanager/lib/../../utilities/time/../core/Enum.hpp"
+#include "analysis/../runmanager/lib/Job.hpp"
+#include "analysis/../utilities/core/FileReference.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/DakotaAlgorithm.hpp"
+#include "analysis/DakotaAlgorithm_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

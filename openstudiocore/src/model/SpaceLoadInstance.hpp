@@ -20,8 +20,22 @@
 #ifndef MODEL_SPACELOADINSTANCE_HPP
 #define MODEL_SPACELOADINSTANCE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceLoad.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/SpaceLoadDefinition.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

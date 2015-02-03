@@ -21,20 +21,52 @@
 #define RUNMANAGER_LIB_TOOLBASEDJOB_HPP
 
 #include <boost/filesystem.hpp>
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/regex.hpp>
+#include <qmutex.h>
+#include <qobjectdefs.h>
+#include <qprocess.h>
+#include <qreadwritelock.h>
+#include <stddef.h>
+#include <QDateTime>
+#include <QFileInfo>
+#include <QFileSystemWatcher>
+#include <QMutex>
+#include <QMutexLocker>
+#include <QProcess>
+#include <exception>
+#include <map>
+#include <memory>
+#include <set>
 #include <string>
+#include <tuple>
+#include <utility>
+#include <vector>
+
+#include "../../energyplus/ErrorFile.hpp"
 #include "../../utilities/core/Logger.hpp"
 #include "Job_Impl.hpp"
 #include "ToolInfo.hpp"
-#include <boost/optional.hpp>
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
 
-#include <QProcess>
-#include <QFileSystemWatcher>
-#include <QFileInfo>
-#include <QDateTime>
-#include <QMutex>
-#include <QMutexLocker>
-#include <boost/regex.hpp>
-#include "../../energyplus/ErrorFile.hpp"
+class QDateTime;
+class QUrl;
+namespace openstudio {
+namespace runmanager {
+class Process;
+class ProcessCreator;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

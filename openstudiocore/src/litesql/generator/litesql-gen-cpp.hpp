@@ -1,10 +1,15 @@
 #ifndef litesql_gen_cpp_hpp
 #define litesql_gen_cpp_hpp
 
+#include <stdio.h>
+#include <string>
+
 #include "generator.hpp"
 
 namespace litesql {
   
+class ObjectModel;
+
   class CppGenerator : public CodeGenerator {
   public:
     CppGenerator(): CodeGenerator("c++") { };

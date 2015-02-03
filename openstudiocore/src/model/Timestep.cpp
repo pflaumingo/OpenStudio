@@ -17,21 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Timestep_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "SimulationControl.hpp"
 #include "Timestep.hpp"
 #include "Timestep_Impl.hpp"
-#include "SimulationControl.hpp"
-#include "SimulationControl_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "../utilities/core/Assert.hpp"
-#include <utilities/idd/OS_Timestep_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
 
 namespace openstudio {
 
 namespace model  {
 
 namespace detail {
+
+class Model_Impl;
 
   Timestep_Impl::Timestep_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ModelObject_Impl(idfObject, model, keepHandle)

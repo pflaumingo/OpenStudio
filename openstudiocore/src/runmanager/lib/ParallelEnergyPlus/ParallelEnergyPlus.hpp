@@ -20,13 +20,23 @@
 #ifndef RUNMANAGER_LIB_PARALLELENERGYPLUS_PARALLELENERGYPLUS_HPP
 #define RUNMANAGER_LIB_PARALLELENERGYPLUS_PARALLELENERGYPLUS_HPP
 
-#include "../../../utilities/core/Path.hpp"
-
-#include <boost/filesystem.hpp>
 #include <boost/date_time/gregorian/gregorian.hpp>
+#include <boost/filesystem.hpp>
+#include <string>
+#include <utility>
+#include <vector>
 
+#include "../../../utilities/core/Path.hpp"
 #include "../../../utilities/idf/Workspace.hpp"
 #include "../../../utilities/idf/WorkspaceObject.hpp"
+#include "runmanager/lib/ParallelEnergyPlus/../../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/ParallelEnergyPlus/../../../utilities/idf/../core/Logger.hpp"
+
+namespace boost {
+namespace gregorian {
+class date;
+}  // namespace gregorian
+}  // namespace boost
 
 
 class ParallelEnergyPlus {

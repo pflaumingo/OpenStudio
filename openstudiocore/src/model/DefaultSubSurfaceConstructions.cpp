@@ -17,23 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DefaultSubSurfaceConstructions.hpp"
-#include "DefaultSubSurfaceConstructions_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-
-#include <utilities/idd/OS_DefaultSubSurfaceConstructions_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_DefaultSubSurfaceConstructions_FieldEnums.hxx>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "ConstructionBase.hpp"
+#include "DefaultSubSurfaceConstructions.hpp"
+#include "DefaultSubSurfaceConstructions_Impl.hpp"
+#include "Model.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/ResourceObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   DefaultSubSurfaceConstructions_Impl::DefaultSubSurfaceConstructions_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ResourceObject_Impl(idfObject,model,keepHandle)

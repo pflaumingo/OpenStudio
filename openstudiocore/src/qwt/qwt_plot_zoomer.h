@@ -13,14 +13,23 @@
 #define QWT_PLOT_ZOOMER_H
 
 #include <qglobal.h>
+#include <qobjectdefs.h>
 #if QT_VERSION < 0x040000
 #include <qvaluestack.h>
 #else
 #include <qstack.h>
 #endif
 
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_global.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_picker.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_polygon.h"
 #include "qwt_double_rect.h"
 #include "qwt_plot_picker.h"
+
+class QKeyEvent;
+class QMouseEvent;
+class QwtPlotCanvas;
+template <class T> class QStack;
 
 /*!
   \brief QwtPlotZoomer provides stacked zooming for a plot widget
@@ -116,6 +125,7 @@ private:
     void init(int selectionFlags, DisplayMode trackerMode, bool doReplot);
 
     class PrivateData;
+
     PrivateData *d_data;
 };
             

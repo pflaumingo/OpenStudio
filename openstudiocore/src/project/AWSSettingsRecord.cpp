@@ -17,15 +17,23 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "AWSSettingsRecord.hpp"
-#include "AWSSettingsRecord_Impl.hpp"
-
-#include "JoinRecord.hpp"
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../utilities/cloud/AWSProvider.hpp"
-#include "../utilities/cloud/AWSProvider_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "AWSSettingsRecord.hpp"
+#include "AWSSettingsRecord_Impl.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/CloudSettingsRecord.hpp"
+#include "project/CloudSettingsRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

@@ -17,26 +17,21 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-
-#include "../../model/Model.hpp"
-#include "../../model/Luminaire.hpp"
-#include "../../model/Luminaire_Impl.hpp"
-#include "../../model/LuminaireDefinition.hpp"
-#include "../../model/LuminaireDefinition_Impl.hpp"
-#include "../../model/Space.hpp"
-#include "../../model/Space_Impl.hpp"
-#include "../../model/SpaceType.hpp"
-#include "../../model/SpaceType_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/LifeCycleCost.hpp"
-
-#include <utilities/idd/Lights_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/Lights_FieldEnums.hxx>
+#include <vector>
+
+#include "../../model/LifeCycleCost.hpp"
+#include "../../model/Luminaire.hpp"
+#include "../../model/LuminaireDefinition.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/Space.hpp"
+#include "../../model/SpaceType.hpp"
+#include "../../model/ThermalZone.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

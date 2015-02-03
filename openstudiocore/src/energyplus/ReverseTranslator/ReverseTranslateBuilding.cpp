@@ -17,18 +17,26 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/Building_FieldEnums.hxx>
+#include <utilities/idd/IddEnums.hxx>
+#include <memory>
 
 #include "../../model/Building.hpp"
-#include "../../model/Building_Impl.hpp"
-#include "../../model/Site.hpp"
-#include "../../model/Site_Impl.hpp"
 #include "../../model/SimulationControl.hpp"
-#include "../../model/SimulationControl_Impl.hpp"
-
-#include <utilities/idd/Building_FieldEnums.hxx>
+#include "../../model/Site.hpp"
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/Workspace.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/Model.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

@@ -20,17 +20,20 @@
 #ifndef RUNMANAGER_LIB_LINEARAPPROXIMATION_HPP
 #define RUNMANAGER_LIB_LINEARAPPROXIMATION_HPP
 
-#include <vector>
-#include <set>
-#include <iostream>
-#include <iomanip>
-#include <stdexcept>
-#include <sstream>
+#include <stddef.h>
 #include <algorithm>
-#include <utility>
-#include <cmath>
 #include <cassert>
+#include <cmath>
+#include <iomanip>
+#include <iostream>
 #include <map>
+#include <set>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "RunManagerAPI.hpp"
 
 class RUNMANAGER_API LinearApproximation

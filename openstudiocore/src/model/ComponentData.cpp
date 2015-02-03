@@ -17,24 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ComponentData.hpp"
-#include "ComponentData_Impl.hpp"
-
-#include "Model.hpp"
-#include "ModelExtensibleGroup.hpp"
-
-#include "../utilities/idf/IdfExtensibleGroup.hpp"
-#include <utilities/idd/OS_ComponentData_FieldEnums.hxx>
+#include <time.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_ComponentData_FieldEnums.hxx>
+#include <ostream>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
-
-#include <time.h>
+#include "../utilities/idf/IdfExtensibleGroup.hpp"
+#include "ComponentData.hpp"
+#include "ComponentData_Impl.hpp"
+#include "Model.hpp"
+#include "ModelExtensibleGroup.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/../core/UUID.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ComponentData_Impl::ComponentData_Impl(const IdfObject& idfObject,
                                          Model_Impl* model,

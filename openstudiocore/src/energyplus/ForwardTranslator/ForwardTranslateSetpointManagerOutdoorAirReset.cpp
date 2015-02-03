@@ -17,13 +17,18 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/SetpointManagerOutdoorAirReset.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/SetpointManager_OutdoorAirReset_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
 #include "../../model/Node.hpp"
 #include "../../model/Schedule.hpp"
-#include <utilities/idd/SetpointManager_OutdoorAirReset_FieldEnums.hxx>
+#include "../../model/SetpointManagerOutdoorAirReset.hpp"
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

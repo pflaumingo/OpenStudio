@@ -20,12 +20,25 @@
 #ifndef MODEL_SCHEDULERULESET_HPP
 #define MODEL_SCHEDULERULESET_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "Schedule.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/ScheduleDay.hpp"
 
 namespace openstudio {
 
 class Date;
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
 
 namespace model {
 
@@ -34,8 +47,8 @@ class ScheduleRule;
 
 namespace detail {
 
-  class ScheduleRuleset_Impl;
   class ScheduleRule_Impl;
+  class ScheduleRuleset_Impl;
 
 } // detail
 

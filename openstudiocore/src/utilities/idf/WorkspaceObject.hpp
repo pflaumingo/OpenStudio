@@ -20,8 +20,21 @@
 #ifndef UTILITIES_IDF_WORKSPACEOBJECT_HPP
 #define UTILITIES_IDF_WORKSPACEOBJECT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <iosfwd>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
 #include "IdfObject.hpp"
+#include "utilities/idf/../core/LogMessage.hpp"
+#include "utilities/idf/../core/Logger.hpp"
+#include "utilities/idf/../idd/IddEnums.hpp"
+#include "utilities/idf/Handle.hpp"
+#include "utilities/idf/Workspace.hpp"
 
 namespace openstudio {
 

@@ -20,14 +20,26 @@
 #ifndef MODEL_PLANARSURFACEGROUP_HPP
 #define MODEL_PLANARSURFACEGROUP_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "OpaqueMaterial.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/ParentObject.hpp"
 
 namespace openstudio {
 
-class Transformation;
-class Point3d;
 class BoundingBox;
+class Point3d;
+class Transformation;
+class IdfObject;
 
 namespace model {
 

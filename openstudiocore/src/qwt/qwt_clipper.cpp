@@ -7,9 +7,18 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <math.h>
+#include <qalgorithms.h>
+#include <qlist.h>
+#include <qpoint.h>
 #include <qrect.h>
-#include "qwt_math.h"
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_array.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_interval.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_polygon.h"
 #include "qwt_clipper.h"
+#include "qwt_math.h"
 
 static inline QwtDoubleRect boundingRect(const QwtPolygonF &polygon)
 {

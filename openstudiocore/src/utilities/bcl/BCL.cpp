@@ -17,19 +17,17 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "BCL.hpp"
-
-#include "LocalBCL.hpp"
-#include "RemoteBCL.hpp"
-#include "BCLComponent.hpp"
-#include "BCLMeasure.hpp"
+#include <qdom.h>
+#include <qstring.h>
+#include <exception>
 
 #include "../core/Assert.hpp"
 #include "../data/Attribute.hpp"
-
-#include <QDomElement>
-
-#include <boost/lexical_cast.hpp>
+#include "BCL.hpp"
+#include "BCLComponent.hpp"
+#include "BCLMeasure.hpp"
+#include "LocalBCL.hpp"
+#include "RemoteBCL.hpp"
 
 namespace openstudio{
 

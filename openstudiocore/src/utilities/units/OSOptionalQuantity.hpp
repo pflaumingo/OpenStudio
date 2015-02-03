@@ -20,13 +20,13 @@
 #ifndef UTILITIES_UNITS_OSOPTIONALQUANTITY_HPP
 #define UTILITIES_UNITS_OSOPTIONALQUANTITY_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Unit.hpp"
-
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <qmetatype.h>
 #include <QMetaType>
 
-#include <boost/optional.hpp>
+#include "../UtilitiesAPI.hpp"
+#include "Unit.hpp"
 
 namespace openstudio {
 

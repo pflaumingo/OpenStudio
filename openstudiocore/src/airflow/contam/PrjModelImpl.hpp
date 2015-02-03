@@ -20,20 +20,32 @@
 #ifndef AIRFLOW_CONTAM_PRJMODELIMPL_HPP
 #define AIRFLOW_CONTAM_PRJMODELIMPL_HPP
 
-#include "PrjDefines.hpp"
-#include "PrjReader.hpp"
-#include "PrjObjects.hpp"
-#include "PrjAirflowElements.hpp"
-
-#include "../utilities/core/Path.hpp"
-#include "../utilities/data/TimeSeries.hpp"
+#include <../utilities/core/String.hpp>
+#include <qvector.h>
+#include <map>
+#include <memory>
+#include <string>
+#include <vector>
 
 #include "../AirflowAPI.hpp"
+#include "../utilities/core/Path.hpp"
+#include "../utilities/data/TimeSeries.hpp"
+#include "PrjAirflowElements.hpp"
+#include "PrjDefines.hpp"
+#include "PrjObjects.hpp"
+#include "PrjReader.hpp"
+#include "airflow/contam/PrjSubobjects.hpp"
+
+namespace openstudio {
+class TimeSeries;
+}  // namespace openstudio
+template <class T> class QSharedPointer;
 
 namespace openstudio {
 namespace contam {
 
 class SimFile;
+class Reader;
 
 namespace detail {
 

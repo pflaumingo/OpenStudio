@@ -17,29 +17,33 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DaylightingDeviceShelf.hpp"
-#include "DaylightingDeviceShelf_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "SubSurface.hpp"
-#include "SubSurface_Impl.hpp"
-#include "InteriorPartitionSurface.hpp"
-#include "InteriorPartitionSurface_Impl.hpp"
-#include "ShadingSurface.hpp"
-#include "ShadingSurface_Impl.hpp"
-
-#include <utilities/idd/OS_DaylightingDevice_Shelf_FieldEnums.hxx>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_DaylightingDevice_Shelf_FieldEnums.hxx>
+#include <ostream>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "DaylightingDeviceShelf.hpp"
+#include "DaylightingDeviceShelf_Impl.hpp"
+#include "InteriorPartitionSurface.hpp"
+#include "Model.hpp"
+#include "ShadingSurface.hpp"
+#include "Space.hpp"
+#include "SubSurface.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   DaylightingDeviceShelf_Impl::DaylightingDeviceShelf_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ModelObject_Impl(idfObject,model,keepHandle)

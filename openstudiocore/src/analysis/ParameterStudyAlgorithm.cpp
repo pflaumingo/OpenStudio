@@ -17,18 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ParameterStudyAlgorithm.hpp"
-#include "ParameterStudyAlgorithm_Impl.hpp"
-
-#include "ParameterStudyAlgorithmOptions.hpp"
-#include "ParameterStudyAlgorithmOptions_Impl.hpp"
-
-#include "Problem.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
 
 #include "../runmanager/lib/JSON.hpp"
-
-#include "../utilities/core/Optional.hpp"
 #include "../utilities/core/String.hpp"
+#include "ParameterStudyAlgorithm.hpp"
+#include "ParameterStudyAlgorithmOptions.hpp"
+#include "ParameterStudyAlgorithmOptions_Impl.hpp"
+#include "ParameterStudyAlgorithm_Impl.hpp"
+#include "analysis/../runmanager/lib/Job.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/FileReference.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/DakotaAlgorithm.hpp"
+#include "analysis/DakotaAlgorithm_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+namespace analysis {
+class Problem;
+}  // namespace analysis
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

@@ -19,15 +19,17 @@
 #ifndef ISOMODEL_EPWDATA_HPP
 #define ISOMODEL_EPWDATA_HPP
 
-#include <iostream>
+#include <stddef.h>
 #include <fstream>
+#include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
-#include <sstream>
-#include "TimeFrame.hpp"
+
 #include "../utilities/core/Path.hpp"
 #include "../utilities/data/Matrix.hpp"
 #include "../utilities/data/Vector.hpp"
+#include "TimeFrame.hpp"
 
 namespace openstudio {
 namespace isomodel {

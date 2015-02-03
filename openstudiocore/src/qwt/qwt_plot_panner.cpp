@@ -9,10 +9,16 @@
 
 // vim: expandtab
 
-#include "qwt_scale_div.h"
+#include <qobject.h>
+#include <qwidget.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_panner.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_map.h"
 #include "qwt_plot.h"
 #include "qwt_plot_canvas.h"
 #include "qwt_plot_panner.h"
+#include "qwt_scale_div.h"
 
 class QwtPlotPanner::PrivateData
 {

@@ -17,33 +17,37 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
-#include <iterator>
-#include <algorithm>
-
-#include "IdfToModelJob.hpp"
-#include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
-#include "RunManager_Util.hpp"
-
-#include "../../model/Model.hpp"
-#include "../../model/Model_Impl.hpp"
-#include "../../model/WeatherFile.hpp"
-#include "../../model/WeatherFile_Impl.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <qurl.h>
+#include <exception>
+#include <stdexcept>
+#include <utility>
+#include <vector>
 
 #include "../../energyplus/ReverseTranslator.hpp"
-
-#include "../../utilities/idf/IdfFile.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include <utilities/idd/OS_WeatherFile_FieldEnums.hxx>
-
+#include "../../model/Model.hpp"
 #include "../../utilities/core/Assert.hpp"
-#include "../../utilities/time/DateTime.hpp"
+#include "../../utilities/idf/Workspace.hpp"
+#include "FileInfo.hpp"
+#include "IdfToModelJob.hpp"
+#include "RunManager_Util.hpp"
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/Job_Impl.hpp"
 
-
-#include <QDir>
-#include <QDateTime>
+class QDateTime;
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

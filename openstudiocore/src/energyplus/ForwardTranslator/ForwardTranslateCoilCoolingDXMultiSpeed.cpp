@@ -17,23 +17,21 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/CoilCoolingDXMultiSpeed.hpp"
-#include "../../model/CoilCoolingDXMultiSpeed_Impl.hpp"
-#include "../../model/CoilCoolingDXMultiSpeedStageData.hpp"
-#include "../../model/CoilCoolingDXMultiSpeedStageData_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/Curve.hpp"
-#include "../../model/Curve_Impl.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/Coil_Cooling_DX_MultiSpeed_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/CoilCoolingDXMultiSpeed.hpp"
+#include "../../model/CoilCoolingDXMultiSpeedStageData.hpp"
+#include "../../model/Curve.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
 #include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

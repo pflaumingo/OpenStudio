@@ -17,38 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/AirToAirComponent.hpp"
-#include "../../model/AirToAirComponent_Impl.hpp"
-#include "../../model/AirLoopHVACOutdoorAirSystem.hpp"
-#include "../../model/AirLoopHVACOutdoorAirSystem_Impl.hpp"
-#include "../../model/ControllerOutdoorAir.hpp"
-#include "../../model/ControllerOutdoorAir_Impl.hpp"
-#include "../../model/ControllerWaterCoil.hpp"
-#include "../../model/ControllerWaterCoil_Impl.hpp"
-#include "../../model/CoilCoolingWater.hpp"
-#include "../../model/CoilCoolingWater_Impl.hpp"
-#include "../../model/CoilHeatingWater.hpp"
-#include "../../model/CoilHeatingWater_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/AirLoopHVAC_ControllerList_FieldEnums.hxx>
 #include <utilities/idd/AirLoopHVAC_OutdoorAirSystem_FieldEnums.hxx>
-#include <utilities/idd/AirLoopHVAC_SupplyPath_FieldEnums.hxx>
 #include <utilities/idd/AvailabilityManagerAssignmentList_FieldEnums.hxx>
 #include <utilities/idd/AvailabilityManager_Scheduled_FieldEnums.hxx>
-#include <utilities/idd/Controller_OutdoorAir_FieldEnums.hxx>
-#include <utilities/idd/OutdoorAir_Mixer_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OutdoorAir_Mixer_FieldEnums.hxx>
+#include <memory>
+#include <string>
+#include <vector>
 
+#include "../../model/AirLoopHVACOutdoorAirSystem.hpp"
+#include "../../model/AirToAirComponent.hpp"
+#include "../../model/CoilCoolingWater.hpp"
+#include "../../model/CoilHeatingWater.hpp"
+#include "../../model/ControllerOutdoorAir.hpp"
+#include "../../model/ControllerWaterCoil.hpp"
+#include "../../model/Node.hpp"
+#include "../../model/Schedule.hpp"
 #include "../../utilities/core/Assert.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/Model.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

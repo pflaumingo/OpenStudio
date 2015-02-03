@@ -17,15 +17,28 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ContinuousVariable.hpp"
-#include "ContinuousVariable_Impl.hpp"
-
-#include "DataPoint.hpp"
-
-#include "../utilities/math/FloatCompare.hpp"
+#include <boost/none.hpp>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <string>
 
 #include "../utilities/core/Containers.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "../utilities/math/FloatCompare.hpp"
+#include "ContinuousVariable.hpp"
+#include "ContinuousVariable_Impl.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/InputVariable.hpp"
+#include "analysis/InputVariable_Impl.hpp"
+
+namespace openstudio {
+namespace analysis {
+class UncertaintyDescription;
+}  // namespace analysis
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

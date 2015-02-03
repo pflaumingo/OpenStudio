@@ -20,10 +20,11 @@
 #ifndef UTILITIES_IDD_COMMENTREGEX_HPP
 #define UTILITIES_IDD_COMMENTREGEX_HPP
 
+#include <boost/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+
 #include "../UtilitiesAPI.hpp"
 #include "../core/StaticInitializer.hpp"
-
-#include <boost/regex.hpp>
 
 /** \file CommentRegex.hpp 
  *  

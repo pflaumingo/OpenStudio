@@ -1,5 +1,12 @@
-#include "litesql-gen-graphviz.hpp"
+#include <litesql/string.hpp>
 #include <fstream>
+#include <string>
+#include <vector>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/generator.hpp"
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/objectmodel.hpp"
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/xmlobjects.hpp"
+#include "litesql-gen-graphviz.hpp"
 
 using namespace std;
 using namespace xml;

@@ -17,22 +17,29 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "ParentObject.hpp"
+#include "Space.hpp"
 #include "SpaceItem.hpp"
 #include "SpaceItem_Impl.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
 
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "ParentObject.hpp"
-#include "ParentObject_Impl.hpp"
-
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   SpaceItem_Impl::SpaceItem_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ModelObject_Impl(idfObject, model, keepHandle)

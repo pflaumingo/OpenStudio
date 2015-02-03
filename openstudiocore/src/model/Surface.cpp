@@ -17,40 +17,71 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Surface.hpp"
-#include "Surface_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "SubSurface.hpp"
-#include "SubSurface_Impl.hpp"
-#include "ShadingSurfaceGroup.hpp"
-#include "ShadingSurfaceGroup_Impl.hpp"
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-#include "LayeredConstruction.hpp"
-#include "LayeredConstruction_Impl.hpp"
-#include "StandardsInformationConstruction.hpp"
-#include "DaylightingDeviceShelf.hpp"
-#include "ShadingSurface.hpp"
-#include "InteriorPartitionSurfaceGroup.hpp"
-#include "InteriorPartitionSurface.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Surface_FieldEnums.hxx>
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qnamespace.h>
+#include <qpoint.h>
+#include <qpolygon.h>
+#include <quuid.h>
+#include <qvector.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Surface_FieldEnums.hxx>
+#include <algorithm>
+#include <cmath>
+#include <exception>
+#include <limits>
+#include <map>
+#include <ostream>
+#include <utility>
 
-#include "../utilities/geometry/Transformation.hpp"
+#include "../utilities/core/Assert.hpp"
 #include "../utilities/geometry/Geometry.hpp"
 #include "../utilities/geometry/Intersection.hpp"
-#include "../utilities/core/Assert.hpp"
-
+#include "../utilities/geometry/Transformation.hpp"
 #include "../utilities/sql/SqlFile.hpp"
+#include "ConstructionBase.hpp"
+#include "DaylightingDeviceShelf.hpp"
+#include "InteriorPartitionSurface.hpp"
+#include "InteriorPartitionSurfaceGroup.hpp"
+#include "LayeredConstruction.hpp"
+#include "Model.hpp"
+#include "ShadingSurface.hpp"
+#include "ShadingSurfaceGroup.hpp"
+#include "Space.hpp"
+#include "SubSurface.hpp"
+#include "Surface.hpp"
+#include "Surface_Impl.hpp"
+#include "model/../utilities/geometry/Plane.hpp"
+#include "model/../utilities/geometry/Point3d.hpp"
+#include "model/../utilities/geometry/Vector3d.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+#include "model/PlanarSurface.hpp"
+#include "model/PlanarSurfaceGroup.hpp"
+#include "model/PlanarSurface_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+#include "utilities/idf/IdfObject_Impl.hpp"
 
-#include <QPolygon>
+namespace openstudio {
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using boost::to_upper_copy;
 

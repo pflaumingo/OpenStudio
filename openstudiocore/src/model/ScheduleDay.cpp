@@ -17,36 +17,51 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ScheduleDay.hpp"
-#include "ScheduleDay_Impl.hpp"
-
-#include "Model.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeLimits_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleRuleset.hpp"
-#include "ScheduleRuleset_Impl.hpp"
-#include "ScheduleRule.hpp"
-#include "ScheduleRule_Impl.hpp"
-
-#include "../utilities/idf/IdfExtensibleGroup.hpp"
+#include <boost/lexical_cast.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
+#include <utilities/idd/IddEnums.hxx>
 #include <utilities/idd/OS_Schedule_Day_FieldEnums.hxx>
 #include <utilities/idd/OS_Schedule_Rule_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/OSQuantityVector.hpp"
+#include <iterator>
+#include <set>
+#include <sstream>
+#include <string>
+#include <utility>
 
 #include "../utilities/core/Assert.hpp"
-
-#include "../utilities/time/Time.hpp"
 #include "../utilities/data/Vector.hpp"
+#include "../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../utilities/time/Time.hpp"
+#include "../utilities/units/OSQuantityVector.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "ScheduleDay.hpp"
+#include "ScheduleDay_Impl.hpp"
+#include "ScheduleRule.hpp"
+#include "ScheduleRuleset.hpp"
+#include "ScheduleTypeLimits.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/String.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+#include "model/ScheduleBase.hpp"
+#include "model/ScheduleBase_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ScheduleDay_Impl::ScheduleDay_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ScheduleBase_Impl(idfObject,model,keepHandle)

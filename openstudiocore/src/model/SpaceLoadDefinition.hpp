@@ -20,8 +20,20 @@
 #ifndef MODEL_SPACELOADDEFINITION_HPP
 #define MODEL_SPACELOADDEFINITION_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ResourceObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

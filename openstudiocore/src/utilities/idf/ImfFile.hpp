@@ -20,20 +20,22 @@
 #ifndef UTILITIES_IDF_IMFFILE_HPP
 #define UTILITIES_IDF_IMFFILE_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "IdfObject.hpp"
-
-#include "../idd/IddObject.hpp"
-#include "../idd/IddFileAndFactoryWrapper.hpp"
-
-#include "../core/Path.hpp"
-#include "../core/Containers.hpp"
-
-#include <string>
-#include <ostream>
-#include <vector>
+#include <boost/optional/optional.hpp>
 #include <map>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Containers.hpp"
+#include "../core/Path.hpp"
+#include "../idd/IddFileAndFactoryWrapper.hpp"
+#include "../idd/IddObject.hpp"
+#include "IdfObject.hpp"
+#include "utilities/idf/../core/LogMessage.hpp"
+#include "utilities/idf/../core/Logger.hpp"
+#include "utilities/idf/../idd/IddEnums.hpp"
+#include "utilities/idf/../idd/IddFile.hpp"
 
 namespace openstudio{
 

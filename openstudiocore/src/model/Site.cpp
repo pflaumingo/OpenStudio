@@ -17,53 +17,42 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Site.hpp"
-#include "Site_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-#include "SimulationControl.hpp"
-#include "SimulationControl_Impl.hpp"
-#include "Facility.hpp"
-#include "Facility_Impl.hpp"
-
-#include "ClimateZones.hpp"
-#include "ClimateZones_Impl.hpp"
-#include "DesignDay.hpp"
-#include "DesignDay_Impl.hpp"
-#include "LightingDesignDay.hpp"
-#include "LightingDesignDay_Impl.hpp"
-#include "ShadingSurfaceGroup.hpp"
-#include "ShadingSurfaceGroup_Impl.hpp"
-#include "SkyTemperature.hpp"
-#include "SkyTemperature_Impl.hpp"
-#include "SizingPeriod.hpp"
-#include "SizingPeriod_Impl.hpp"
-#include "WeatherFile.hpp"
-#include "WeatherFile_Impl.hpp"
-#include "WeatherFileConditionType.hpp"
-#include "WeatherFileConditionType_Impl.hpp"
-#include "WeatherFileDays.hpp"
-#include "WeatherFileDays_Impl.hpp"
-#include "SiteWaterMainsTemperature.hpp"
-#include "SiteWaterMainsTemperature_Impl.hpp"
-#include "SiteGroundReflectance.hpp"
-#include "SiteGroundReflectance_Impl.hpp"
-#include "SiteGroundTemperatureBuildingSurface.hpp"
-#include "SiteGroundTemperatureBuildingSurface_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Site_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Site_FieldEnums.hxx>
 
 #include "../utilities/core/Assert.hpp"
+#include "ClimateZones.hpp"
+#include "DesignDay.hpp"
+#include "LightingDesignDay.hpp"
+#include "Model.hpp"
+#include "ShadingSurfaceGroup.hpp"
+#include "Site.hpp"
+#include "SiteGroundReflectance.hpp"
+#include "SiteGroundTemperatureBuildingSurface.hpp"
+#include "SiteWaterMainsTemperature.hpp"
+#include "Site_Impl.hpp"
+#include "SizingPeriod.hpp"
+#include "SkyTemperature.hpp"
+#include "WeatherFile.hpp"
+#include "WeatherFileConditionType.hpp"
+#include "WeatherFileDays.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   Site_Impl::Site_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ParentObject_Impl(idfObject,model,keepHandle)

@@ -20,13 +20,25 @@
 #ifndef MODEL_LIFECYCLECOSTPARAMETERS_HPP
 #define MODEL_LIFECYCLECOSTPARAMETERS_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../utilities/core/Optional.hpp"
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
-#include "../utilities/core/Optional.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/time/Date.hpp"
 
 namespace openstudio{
 
   class MonthOfYear;
+namespace model {
+class Model;
+}  // namespace model
 
 namespace model{
 

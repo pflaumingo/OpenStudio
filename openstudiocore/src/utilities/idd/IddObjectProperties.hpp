@@ -20,11 +20,12 @@
 #ifndef UTILITIES_IDD_IDDOBJECTPROPERTIES_HPP
 #define UTILITIES_IDD_IDDOBJECTPROPERTIES_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "../core/Optional.hpp"
-
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
 #include <string>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Optional.hpp"
 
 namespace openstudio{
 

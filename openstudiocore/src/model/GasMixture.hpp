@@ -20,13 +20,29 @@
 #ifndef MODEL_GASMIXTURE_HPP
 #define MODEL_GASMIXTURE_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "GasLayer.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
 
 namespace openstudio {
 
-class Quantity;
 class OSOptionalQuantity;
+class Quantity;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+namespace model {
+class Model;
+}  // namespace model
 
 namespace model {
 

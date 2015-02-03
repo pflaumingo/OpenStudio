@@ -20,14 +20,33 @@
 #ifndef RUNMANAGER_LIB_JOBSTATUSWIDGET_HPP
 #define RUNMANAGER_LIB_JOBSTATUSWIDGET_HPP
 
-#include <string>
-#include <QTimer>
-#include "RunManager.hpp"
+#include <boost/optional/optional.hpp>
+#include <qabstractitemmodel.h>
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <qstandarditemmodel.h>
+#include <qstringlist.h>
+#include <qwidget.h>
 #include <runmanager/lib/ui_JobStatusWidget.h>
-#include "JobErrors.hpp"
-#include "Job.hpp"
-#include "RunManagerAPI.hpp"
 #include <QStandardItemModel>
+#include <QTimer>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "Job.hpp"
+#include "JobErrors.hpp"
+#include "RunManager.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+
+class QAction;
+class QItemSelection;
 
 
 namespace openstudio {

@@ -17,26 +17,27 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ReverseTranslator.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <qdom.h>
+#include <qstring.h>
+#include <algorithm>
+#include <memory>
+#include <string>
+#include <vector>
 
+#include "../model/Construction.hpp"
+#include "../model/FenestrationMaterial.hpp"
+#include "../model/MasslessOpaqueMaterial.hpp"
 #include "../model/Model.hpp"
 #include "../model/ModelObject.hpp"
-#include "../model/ModelObject_Impl.hpp"
-#include "../model/Construction.hpp"
-#include "../model/Construction_Impl.hpp"
-#include "../model/MasslessOpaqueMaterial.hpp"
-#include "../model/MasslessOpaqueMaterial_Impl.hpp"
-#include "../model/StandardOpaqueMaterial.hpp"
-#include "../model/StandardOpaqueMaterial_Impl.hpp"
-#include "../model/FenestrationMaterial.hpp"
-#include "../model/FenestrationMaterial_Impl.hpp"
 #include "../model/ModelPartitionMaterial.hpp"
-#include "../model/ModelPartitionMaterial_Impl.hpp"
+#include "../model/StandardOpaqueMaterial.hpp"
 #include "../utilities/core/Assert.hpp"
-
-#include <QFile>
-#include <QDomDocument>
-#include <QDomElement>
+#include "ReverseTranslator.hpp"
+#include "gbxml/../model/Material.hpp"
+#include "gbxml/../model/OpaqueMaterial.hpp"
 
 namespace openstudio {
 namespace gbxml {

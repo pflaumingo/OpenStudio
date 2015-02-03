@@ -17,15 +17,38 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Configuration.hpp"
-#include "AddTool.hpp"
-#include "JobFactory.hpp"
+#include <boost/optional/optional.hpp>
+#include <qabstractitemmodel.h>
+#include <qcheckbox.h>
+#include <qcombobox.h>
+#include <qfiledialog.h>
+#include <qicon.h>
+#include <qitemselectionmodel.h>
+#include <qlineedit.h>
+#include <qlist.h>
+#include <qpixmap.h>
+#include <qpushbutton.h>
+#include <qspinbox.h>
+#include <qstring.h>
+#include <qstringlist.h>
+#include <qtableview.h>
+#include <qtoolbutton.h>
+#include <qvariant.h>
+#include <qwidget.h>
+#include <set>
+#include <string>
+#include <vector>
 
 #include "../../utilities/core/Application.hpp"
+#include "AddTool.hpp"
+#include "Configuration.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/Singleton.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+#include "ui_Configuration.h"
 
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QStandardItem>
+class QObject;
 
 namespace openstudio {
 namespace runmanager {

@@ -17,11 +17,15 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/ZoneControlHumidistat.hpp"
-#include "../../model/Schedule.hpp"
-#include <utilities/idd/ZoneControl_Humidistat_FieldEnums.hxx>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/ZoneControl_Humidistat_FieldEnums.hxx>
+
+#include "../../model/Schedule.hpp"
+#include "../../model/ZoneControlHumidistat.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

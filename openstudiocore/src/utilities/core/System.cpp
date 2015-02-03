@@ -19,20 +19,37 @@
 
 
 
-#include "System.hpp"
-#include "Application.hpp"
-
-#include <boost/lexical_cast.hpp>
-#include <boost/thread.hpp>
-
-#include <boost/numeric/ublas/matrix.hpp> 
-#include <boost/numeric/ublas/matrix_sparse.hpp> 
-#include <boost/numeric/ublas/io.hpp> 
-#include <boost/numeric/ublas/matrix_proxy.hpp> 
-#include <boost/numeric/ublas/triangular.hpp> 
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/date_time/time.hpp>
+#include <boost/numeric/ublas/detail/matrix_assign.hpp>
+#include <boost/numeric/ublas/functional.hpp>
 #include <boost/numeric/ublas/lu.hpp> 
-
+#include <boost/numeric/ublas/matrix.hpp> 
+#include <boost/numeric/ublas/matrix_expression.hpp>
+#include <boost/numeric/ublas/storage.hpp>
+#include <boost/thread/detail/thread.hpp>
+#include <ext/new_allocator.h>
+#include <unistd.h>
+#include <algorithm>
 #include <cassert>
+#include <exception>
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+
+#include "Application.hpp"
+#include "System.hpp"
+#include "utilities/core/../time/Time.hpp"
+#include "utilities/core/Singleton.hpp"
+
+namespace boost {
+namespace numeric {
+namespace ublas {
+struct internal_logic;
+}  // namespace ublas
+}  // namespace numeric
+}  // namespace boost
 
 namespace openstudio{
 

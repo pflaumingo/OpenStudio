@@ -17,17 +17,27 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <exception>
+#include <set>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/data/Tag.hpp"
+#include "DataPointRecord.hpp"
+#include "FileReferenceRecord.hpp"
+#include "JoinRecord.hpp"
+#include "ProjectDatabase.hpp"
 #include "TagRecord.hpp"
 #include "TagRecord_Impl.hpp"
-#include "FileReferenceRecord.hpp"
-#include "DataPointRecord.hpp"
-#include "ProjectDatabase.hpp"
-#include "JoinRecord.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include "../utilities/data/Tag.hpp"
-#include "../utilities/core/Assert.hpp"
-
-#include <QSqlQuery>
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

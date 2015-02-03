@@ -20,17 +20,29 @@
 #ifndef RUNMANAGER_LIB_RUNMANAGERWATCHER_HPP
 #define RUNMANAGER_LIB_RUNMANAGERWATCHER_HPP
 
-#include "RunManagerAPI.hpp"
-
-#include <vector>
-#include <string>
+#include <qobject.h>
+#include <qobjectdefs.h>
 #include <QObject>
+#include <string>
+#include <vector>
+
 #include "../../utilities/core/UUID.hpp"
-#include "RunManager.hpp"
 #include "Job.hpp"
+#include "RunManager.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
 
 namespace openstudio {
   class DateTime;
+namespace runmanager {
+class Files;
+struct FileInfo;
+struct JobErrors;
+}  // namespace runmanager
 
 namespace runmanager {
   class RUNMANAGER_API RunManagerWatcher : public QObject

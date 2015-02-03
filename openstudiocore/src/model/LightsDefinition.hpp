@@ -20,8 +20,25 @@
 #ifndef MODEL_LIGHTSDEFINITION_HPP
 #define MODEL_LIGHTSDEFINITION_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceLoadDefinition.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

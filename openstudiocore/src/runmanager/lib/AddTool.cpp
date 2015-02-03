@@ -17,10 +17,22 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <qcombobox.h>
+#include <qfiledialog.h>
+#include <qlineedit.h>
+#include <qspinbox.h>
+#include <qstring.h>
+#include <qtoolbutton.h>
+#include <set>
+
 #include "AddTool.hpp"
-#include <QFileDialog>
-#include <QMessageBox>
-#include "JobFactory.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/ConfigOptions.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+#include "ui_AddTool.h"
+
+class QWidget;
 
 namespace openstudio {
 namespace runmanager {

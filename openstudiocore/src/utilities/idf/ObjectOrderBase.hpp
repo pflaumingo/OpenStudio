@@ -20,12 +20,13 @@
 #ifndef UTILITIES_IDF_OBJECTORDERBASE_HPP
 #define UTILITIES_IDF_OBJECTORDERBASE_HPP
 
+#include <boost/optional/optional.hpp>
+
 #include "../UtilitiesAPI.hpp"
-
-#include "../idd/IddEnums.hpp"
-
 #include "../core/Logger.hpp"
 #include "../core/Optional.hpp"
+#include "../idd/IddEnums.hpp"
+#include "utilities/idf/../idd/../core/LogMessage.hpp"
 
 /** \file ObjectOrderBase.hpp 
  *  

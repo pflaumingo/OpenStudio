@@ -20,10 +20,12 @@
 #ifndef UTILITIES_IDF_IDFREGEX_HPP
 #define UTILITIES_IDF_IDFREGEX_HPP
 
+#include <boost/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <string>
+
 #include "../UtilitiesAPI.hpp"
 #include "../core/StaticInitializer.hpp"
-#include <string>
-#include <boost/regex.hpp>
 
 namespace openstudio {
 namespace idfRegex {

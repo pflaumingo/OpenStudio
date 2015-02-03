@@ -7,13 +7,17 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <qglobal.h>
 #include <qpainter.h>
 #include <qpen.h>
+#include <qrect.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
 #include "qwt_painter.h"
-#include "qwt_text.h"
-#include "qwt_scale_map.h"
-#include "qwt_scale_div.h"
 #include "qwt_plot_grid.h"
+#include "qwt_scale_div.h"
+#include "qwt_scale_map.h"
+#include "qwt_text.h"
 
 class QwtPlotGrid::PrivateData
 {

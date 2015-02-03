@@ -20,20 +20,35 @@
 #ifndef MODEL_SITE_HPP
 #define MODEL_SITE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 // forward declarations
 class ClimateZones;
-class WeatherFile;
+class Facility;
+class ShadingSurfaceGroup;
 class SiteGroundReflectance;
 class SiteGroundTemperatureBuildingSurface;
 class SiteWaterMainsTemperature;
-class Facility;
-class ShadingSurfaceGroup;
+class WeatherFile;
+class Model;
 
 namespace detail {
 

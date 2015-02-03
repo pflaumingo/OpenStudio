@@ -20,11 +20,17 @@
 #ifndef UTILITIES_IDF_WORKSPACEOBJECTORDER_HPP
 #define UTILITIES_IDF_WORKSPACEOBJECTORDER_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <functional>
+#include <memory>
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
 #include "Handle.hpp"
-#include "WorkspaceObject.hpp"
 #include "ObjectOrderBase.hpp"
+#include "WorkspaceObject.hpp"
+#include "utilities/idf/../core/LogMessage.hpp"
+#include "utilities/idf/../core/Logger.hpp"
 
 namespace openstudio {
 

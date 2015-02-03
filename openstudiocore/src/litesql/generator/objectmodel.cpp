@@ -1,8 +1,12 @@
 // include LiteSQL's header file and generated header file
-#include "xmlparser.hpp"
-#include "objectmodel.hpp"
 #include <string.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/litesql-gen.hpp"
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/xmlobjects.hpp"
+#include "expat_external.h"
 #include "logger.hpp"
+#include "objectmodel.hpp"
+#include "xmlparser.hpp"
 
 using namespace std;
 using namespace xml;

@@ -17,28 +17,32 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "VariableRecord.hpp"
-#include "VariableRecord_Impl.hpp"
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <set>
+#include <sstream>
 
+#include "../analysis/InputVariable.hpp"
+#include "../analysis/OutputVariable.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/math/FloatCompare.hpp"
 #include "FunctionRecord.hpp"
 #include "InputVariableRecord.hpp"
 #include "JoinRecord.hpp"
 #include "OutputVariableRecord.hpp"
 #include "ProblemRecord.hpp"
 #include "ProjectDatabase.hpp"
+#include "VariableRecord.hpp"
+#include "VariableRecord_Impl.hpp"
+#include "project/../analysis/Variable.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include "../analysis/InputVariable.hpp"
-#include "../analysis/InputVariable_Impl.hpp"
-#include "../analysis/OutputVariable.hpp"
-#include "../analysis/OutputVariable_Impl.hpp"
-
-#include "../utilities/math/FloatCompare.hpp"
-#include "../utilities/core/Assert.hpp"
-
-#include <sstream>
-
-#include <QSqlQuery>
-#include <QSqlError>
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

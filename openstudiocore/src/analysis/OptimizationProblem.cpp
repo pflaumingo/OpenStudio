@@ -17,19 +17,40 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "OptimizationProblem.hpp"
-#include "OptimizationProblem_Impl.hpp"
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <functional>
 
+#include "../utilities/core/Containers.hpp"
+#include "../utilities/core/Json.hpp"
 #include "DataPoint.hpp"
 #include "Function_Impl.hpp"
 #include "OptimizationDataPoint.hpp"
-#include "OptimizationDataPoint_Impl.hpp"
+#include "OptimizationProblem.hpp"
+#include "OptimizationProblem_Impl.hpp"
 #include "WorkflowStep.hpp"
+#include "analysis/../runmanager/lib/Job.hpp"
+#include "analysis/../utilities/core/Compare.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/Function.hpp"
+#include "analysis/Measure.hpp"
+#include "analysis/Problem.hpp"
+#include "analysis/Problem_Impl.hpp"
 
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Containers.hpp"
-#include "../utilities/core/Finder.hpp"
-#include "../utilities/core/Json.hpp"
+namespace openstudio {
+namespace analysis {
+class Variable;
+}  // namespace analysis
+namespace runmanager {
+class Workflow;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

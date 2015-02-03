@@ -17,21 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SurfaceNetworkBuilder.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <qthread.h>
+#include <qvector.h>
+#include <memory>
+#include <ostream>
 
 #include "../model/Model.hpp"
 #include "../model/Space.hpp"
-#include "../model/Space_Impl.hpp"
-#include "../model/ThermalZone.hpp"
-#include "../model/ThermalZone_Impl.hpp"
-#include "../model/Surface.hpp"
-#include "../model/Surface_Impl.hpp"
 #include "../model/SubSurface.hpp"
-#include "../model/SubSurface_Impl.hpp"
-
+#include "../model/Surface.hpp"
+#include "../model/ThermalZone.hpp"
 #include "../utilities/plot/ProgressBar.hpp"
-
-#include <QThread>
+#include "SurfaceNetworkBuilder.hpp"
+#include "airflow/../model/../utilities/idf/../core/UUID.hpp"
+#include "airflow/../model/../utilities/idf/Handle.hpp"
+#include "airflow/../utilities/core/Logger.hpp"
+#include "airflow/../utilities/core/StringStreamLogSink.hpp"
 
 namespace openstudio {
 namespace airflow {

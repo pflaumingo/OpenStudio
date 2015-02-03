@@ -20,18 +20,22 @@
 #ifndef UTILITIES_UNITS_QUANTITYFACTORY_HPP
 #define UTILITIES_UNITS_QUANTITYFACTORY_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <map>
+#include <set>
+#include <string>
 
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
 #include "../core/Singleton.hpp"
 #include "Quantity.hpp"
 #include "UnitFactory.hpp"
-
-#include "../core/Logger.hpp"
-
-#include <set>
-#include <map>
+#include "utilities/units/../core/LogMessage.hpp"
+#include "utilities/units/Unit.hpp"
 
 namespace openstudio{
+
+class Quantity;
 
 class UTILITIES_API QuantityFactorySingleton {
 

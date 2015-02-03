@@ -20,14 +20,31 @@
 #ifndef MODEL_STEAMEQUIPMENT_HPP
 #define MODEL_STEAMEQUIPMENT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceLoadInstance.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/SteamEquipmentDefinition.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
-class SteamEquipmentDefinition;
 class Schedule;
+class SteamEquipmentDefinition;
 
 namespace detail {
 

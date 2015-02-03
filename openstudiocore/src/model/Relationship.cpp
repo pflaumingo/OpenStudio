@@ -17,20 +17,23 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Relationship.hpp"
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qobjectdefs.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <memory>
+#include <ostream>
+
+#include "../utilities/core/Assert.hpp"
+#include "Component.hpp"
+#include "ComponentData.hpp"
+#include "Model.hpp"
 #include "ModelObject.hpp"
 #include "ModelObject_Impl.hpp"
-#include "Model.hpp"
-#include "Component.hpp"
-#include "Component_Impl.hpp"
-#include "ComponentData.hpp"
-#include "ComponentData_Impl.hpp"
-
-#include "../utilities/math/FloatCompare.hpp"
-#include "../utilities/core/String.hpp"
-#include "../utilities/core/Assert.hpp"
-
-#include <QMetaType>
+#include "Relationship.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
 
 namespace openstudio {
 namespace model {

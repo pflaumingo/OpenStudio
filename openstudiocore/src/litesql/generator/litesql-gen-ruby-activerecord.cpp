@@ -1,5 +1,13 @@
-#include "litesql-gen-ruby-activerecord.hpp"
+#include <litesql/string.hpp>
 #include <fstream>
+#include <string>
+#include <vector>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/generator.hpp"
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/litesql-gen.hpp"
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/objectmodel.hpp"
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/xmlobjects.hpp"
+#include "litesql-gen-ruby-activerecord.hpp"
 
 using namespace std;
 using namespace xml;

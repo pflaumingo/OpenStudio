@@ -20,9 +20,31 @@
 #ifndef MODEL_SETPOINTMANAGERMIXEDAIR_HPP
 #define MODEL_SETPOINTMANAGERMIXEDAIR_HPP
 
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SetpointManager.hpp"
-#include <boost/optional.hpp>
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+namespace model {
+class AirLoopHVAC;
+class Node;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 

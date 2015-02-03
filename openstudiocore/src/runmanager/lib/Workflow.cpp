@@ -16,15 +16,37 @@
 *  License along with this library; if not, write to the Free Software
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
-#include "Workflow.hpp"
-#include "WorkItem.hpp"
-#include "RubyJobUtils.hpp"
-#include <QCryptographicHash>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_token_iterator.hpp>
+#include <ext/alloc_traits.h>
+#include <qbytearray.h>
+#include <qcryptographichash.h>
+#include <qstring.h>
+#include <qurl.h>
+#include <stddef.h>
+#include <exception>
+#include <ostream>
+#include <stdexcept>
 
 #include "../../ruleset/OSArgument.hpp"
-
-#include "../../utilities/core/PathHelpers.hpp"
 #include "../../utilities/core/ApplicationPathHelpers.hpp"
+#include "../../utilities/core/PathHelpers.hpp"
+#include "RubyJobUtils.hpp"
+#include "WorkItem.hpp"
+#include "Workflow.hpp"
+#include "runmanager/lib/../../utilities/core/FileReference.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Enum.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Logger.hpp"
+#include "runmanager/lib/../../utilities/time/../core/String.hpp"
+#include "runmanager/lib/JobFactory.hpp"
+
+namespace openstudio {
+class URLSearchPath;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

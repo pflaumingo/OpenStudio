@@ -17,26 +17,44 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/none.hpp>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Controller_OutdoorAir_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Compare.hpp"
+#include "../utilities/units/OSOptionalQuantity.hpp"
+#include "../utilities/units/Quantity.hpp"
+#include "AirLoopHVACOutdoorAirSystem.hpp"
+#include "ControllerMechanicalVentilation.hpp"
 #include "ControllerOutdoorAir.hpp"
 #include "ControllerOutdoorAir_Impl.hpp"
-#include "AirLoopHVACOutdoorAirSystem.hpp"
-#include "AirLoopHVACOutdoorAirSystem_Impl.hpp"
-#include "ControllerMechanicalVentilation.hpp"
-#include "ControllerMechanicalVentilation_Impl.hpp"
-#include "ScheduleCompact.hpp"
-#include "ScheduleCompact_Impl.hpp"
 #include "CurveQuadratic.hpp"
-#include "CurveQuadratic_Impl.hpp"
-
 #include "Model.hpp"
-#include "Model_Impl.hpp"
+#include "ScheduleCompact.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+#include "model/Schedule.hpp"
+#include "utilities/core/Containers.hpp"
 
-#include <utilities/idd/OS_Controller_OutdoorAir_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/units/Quantity.hpp"
-#include "../utilities/units/OSOptionalQuantity.hpp"
+namespace openstudio {
+class Workspace;
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using openstudio::Handle;
 using openstudio::OptionalHandle;

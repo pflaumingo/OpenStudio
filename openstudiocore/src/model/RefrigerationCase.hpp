@@ -20,19 +20,36 @@
 #ifndef MODEL_REFRIGERATIONCASE_HPP
 #define MODEL_REFRIGERATIONCASE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
 #include "RefrigerationSystem.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/CurveCubic.hpp"
+#include "model/Model.hpp"
+#include "model/RefrigerationDefrostCycleParameters.hpp"
 
 namespace openstudio {
 
 class Time;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+namespace model {
+class RefrigerationSystem;
+}  // namespace model
 
 namespace model {
 
+class CurveCubic;
 class Schedule;
 class ThermalZone;
-class CurveCubic;
 
 namespace detail {
 

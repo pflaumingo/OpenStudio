@@ -17,10 +17,13 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <memory>
+
+#include "../core/Application.hpp"
 #include "IdfObjectWatcher.hpp"
 #include "IdfObject_Impl.hpp"
-#include "../core/Application.hpp"
-#include "../core/Assert.hpp"
+#include "utilities/idf/../core/Singleton.hpp"
+#include "utilities/idf/IdfObject.hpp"
 
 namespace openstudio {
 

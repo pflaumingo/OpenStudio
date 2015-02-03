@@ -7,6 +7,9 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <qstring.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
 #include "qwt_plot.h"
 
 void QwtPlot::applyProperties(const QString &xmlDocument)

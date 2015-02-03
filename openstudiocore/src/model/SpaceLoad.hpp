@@ -20,13 +20,27 @@
 #ifndef MODEL_SPACELOAD_HPP
 #define MODEL_SPACELOAD_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceItem.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class SpaceType;
+class Model;
 
 namespace detail{
   class SpaceLoad_Impl;

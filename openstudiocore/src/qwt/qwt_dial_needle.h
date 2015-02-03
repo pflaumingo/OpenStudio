@@ -10,7 +10,11 @@
 #ifndef QWT_DIAL_NEEDLE_H
 #define QWT_DIAL_NEEDLE_H 1
 
+#include <qbrush.h>
+#include <qcolor.h>
+#include <qnamespace.h>
 #include <qpalette.h>
+
 #include "qwt_global.h"
 
 class QPainter;

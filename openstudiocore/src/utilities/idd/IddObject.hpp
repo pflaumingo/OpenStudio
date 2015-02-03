@@ -20,21 +20,26 @@
 #ifndef UTILITIES_IDD_IDDOBJECT_HPP
 #define UTILITIES_IDD_IDDOBJECT_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "IddObjectProperties.hpp"
-#include "IddField.hpp"
-
-#include "../core/Logger.hpp"
-
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <memory>
 #include <ostream>
+#include <set>
+#include <string>
 #include <vector>
 
-#include <boost/optional.hpp>
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "IddField.hpp"
+#include "IddObjectProperties.hpp"
+#include "utilities/idd/../core/LogMessage.hpp"
 
 namespace openstudio {
 
 // forward declarations
 class ExtensibleIndex;
+class IddField;
+struct IddObjectProperties;
 struct IddObjectType;
 
 namespace detail {

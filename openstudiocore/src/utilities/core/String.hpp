@@ -20,14 +20,18 @@
 #ifndef UTILITIES_CORE_STRING_HPP
 #define UTILITIES_CORE_STRING_HPP
 
-#include "../UtilitiesAPI.hpp"
-
+#include <qmetatype.h>
+#include <qstring.h>
+#include <QMetaType>
+#include <QString>
+#include <QTextStream>
+#include <iosfwd>
 #include <string>
 #include <vector>
 
-#include <QString>
-#include <QTextStream>
-#include <QMetaType>
+#include "../UtilitiesAPI.hpp"
+
+class QTextStream;
 
 /** \file String.hpp
  *  

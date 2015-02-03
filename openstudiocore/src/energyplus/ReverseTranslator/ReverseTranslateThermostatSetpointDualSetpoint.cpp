@@ -17,14 +17,19 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
-
-#include "../../model/ThermostatSetpointDualSetpoint.hpp"
-#include "../../model/ThermostatSetpointDualSetpoint_Impl.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/ThermostatSetpoint_DualSetpoint_FieldEnums.hxx>
+#include <memory>
+#include <ostream>
+#include <string>
+
+#include "../../model/Schedule.hpp"
+#include "../../model/ThermostatSetpointDualSetpoint.hpp"
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

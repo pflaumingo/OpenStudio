@@ -9,11 +9,24 @@
 
 // vim: expandtab
 
-#include <math.h>
+#include <qpoint.h>
+#include <qrect.h>
+#include <qsize.h>
+#include <qstack.h>
+#include <qvector.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_event_pattern.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_math.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_picker.h"
 #include "qwt_plot.h"
-#include "qwt_plot_canvas.h"
 #include "qwt_plot_zoomer.h"
 #include "qwt_scale_div.h"
+
+class QKeyEvent;
+class QMouseEvent;
+class QwtPlotCanvas;
 #if QT_VERSION < 0x040000
 typedef QValueStack<QwtDoubleRect> QwtZoomStack;
 #else

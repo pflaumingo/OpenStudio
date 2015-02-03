@@ -7,12 +7,14 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include "qwt_scale_engine.h"
-#include "qwt_scale_draw.h"
-#include "qwt_scale_div.h"
-#include "qwt_scale_map.h"
-#include "qwt_double_interval.h"
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_abstract_scale_draw.h"
 #include "qwt_abstract_scale.h"
+#include "qwt_double_interval.h"
+#include "qwt_scale_div.h"
+#include "qwt_scale_draw.h"
+#include "qwt_scale_engine.h"
 
 class QwtAbstractScale::PrivateData
 {

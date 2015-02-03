@@ -13,9 +13,11 @@
 #include <qbrush.h>
 #include <qpen.h>
 #include <qsize.h>
+
 #include "qwt_global.h"
 
 class QPainter;
+class QPoint;
 class QRect;
 
 //! A class for drawing symbols

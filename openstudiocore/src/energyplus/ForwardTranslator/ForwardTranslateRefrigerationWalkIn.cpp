@@ -17,20 +17,26 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/RefrigerationWalkIn.hpp"
-#include "../../model/RefrigerationWalkIn_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/RefrigerationWalkInZoneBoundary.hpp"
-#include "../../utilities/time/Time.hpp"
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-
-#include <utilities/idd/Refrigeration_WalkIn_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/Refrigeration_WalkIn_FieldEnums.hxx>
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "../../model/RefrigerationWalkIn.hpp"
+#include "../../model/RefrigerationWalkInZoneBoundary.hpp"
+#include "../../model/RefrigerationWalkIn_Impl.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/ThermalZone.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../../utilities/time/Time.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

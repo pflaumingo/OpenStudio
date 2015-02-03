@@ -17,41 +17,52 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DataPointRecord.hpp"
-#include "DataPointRecord_Impl.hpp"
-#include "DataPoint_Measure_JoinRecord.hpp"
-#include "DataPoint_Measure_JoinRecord_Impl.hpp"
-#include "DataPointValueRecord.hpp"
-
-#include "AnalysisRecord.hpp"
-#include "AttributeRecord.hpp"
-#include "ProblemRecord.hpp"
-#include "ContinuousVariableRecord.hpp"
-#include "ContinuousVariableRecord_Impl.hpp"
-#include "FunctionRecord.hpp"
-#include "FileReferenceRecord.hpp"
-#include "MeasureGroupRecord.hpp"
-#include "MeasureGroupRecord_Impl.hpp"
-#include "MeasureRecord.hpp"
-#include "OptimizationProblemRecord.hpp"
-#include "OptimizationProblemRecord_Impl.hpp"
-#include "OptimizationDataPointRecord.hpp"
-
-#include "TagRecord.hpp"
+#include <boost/filesystem/path.hpp>
+#include <ext/alloc_traits.h>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qstringlist.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <stddef.h>
+#include <algorithm>
+#include <exception>
+#include <functional>
+#include <set>
 
 #include "../analysis/DataPoint.hpp"
 #include "../analysis/OptimizationDataPoint.hpp"
-#include "../analysis/OptimizationDataPoint_Impl.hpp"
-
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Compare.hpp"
+#include "../utilities/core/Containers.hpp"
+#include "../utilities/core/FileReference.hpp"
+#include "../utilities/core/PathHelpers.hpp"
 #include "../utilities/data/Attribute.hpp"
 #include "../utilities/data/Tag.hpp"
+#include "AnalysisRecord.hpp"
+#include "AttributeRecord.hpp"
+#include "ContinuousVariableRecord.hpp"
+#include "DataPointRecord.hpp"
+#include "DataPointRecord_Impl.hpp"
+#include "DataPointValueRecord.hpp"
+#include "DataPoint_Measure_JoinRecord.hpp"
+#include "FileReferenceRecord.hpp"
+#include "FunctionRecord.hpp"
+#include "MeasureGroupRecord.hpp"
+#include "MeasureRecord.hpp"
+#include "OptimizationDataPointRecord.hpp"
+#include "OptimizationProblemRecord.hpp"
+#include "ProblemRecord.hpp"
+#include "TagRecord.hpp"
+#include "project/../analysis/../runmanager/lib/Job.hpp"
+#include "project/../runmanager/lib/RunManager.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/InputVariableRecord.hpp"
+#include "project/JoinRecord.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/FileReference.hpp"
-#include "../utilities/core/Containers.hpp"
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Finder.hpp"
-#include "../utilities/core/PathHelpers.hpp"
+class QSqlDatabase;
 
 using namespace openstudio::analysis;
 

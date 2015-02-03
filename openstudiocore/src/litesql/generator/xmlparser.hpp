@@ -4,6 +4,7 @@
 #include <string>
 
 #include "expat.h"
+#include "expat_external.h"
 
 namespace xml {
 /** abstract base class for SAX2 Parser based on libxml2 */

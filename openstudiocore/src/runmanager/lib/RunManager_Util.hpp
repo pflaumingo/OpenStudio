@@ -20,8 +20,11 @@
 #ifndef RUNMANAGER_LIB_RUNMANAGER_UTIL_HPP
 #define RUNMANAGER_LIB_RUNMANAGER_UTIL_HPP
 
-#include "FileInfo.hpp"
+#include <qfileinfo.h>
 #include <QFileInfo>
+
+#include "FileInfo.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
 
 namespace openstudio {
 namespace runmanager {

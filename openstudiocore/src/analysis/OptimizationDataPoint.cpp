@@ -17,14 +17,32 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "OptimizationDataPoint.hpp"
-#include "OptimizationDataPoint_Impl.hpp"
-
-#include "OptimizationProblem.hpp"
-#include "OptimizationProblem_Impl.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <functional>
 
 #include "../utilities/core/Containers.hpp"
 #include "../utilities/core/Json.hpp"
+#include "OptimizationDataPoint.hpp"
+#include "OptimizationDataPoint_Impl.hpp"
+#include "OptimizationProblem.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/DataPoint.hpp"
+#include "analysis/DataPoint_Impl.hpp"
+#include "analysis/Problem.hpp"
+
+namespace openstudio {
+class Attribute;
+class FileReference;
+class Tag;
+class VersionString;
+namespace runmanager {
+class Job;
+class RunManager;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

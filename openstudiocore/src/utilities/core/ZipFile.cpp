@@ -17,15 +17,19 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ZipFile.hpp"
-
-#include <zlib/zconf.h>
-#include <zlib/zlib.h>
+#include <qdir.h>
+#include <qfileinfo.h>
+#include <qflags.h>
+#include <qstring.h>
 #include <zlib/contrib/minizip/zip.h>
-
-#include <QDir>
-
+#include <zlib/zlib.h>
 #include <fstream>
+#include <stdexcept>
+#include <string>
+#include <vector>
+
+#include "ZipFile.hpp"
+#include "utilities/core/Path.hpp"
 
 namespace openstudio {
 

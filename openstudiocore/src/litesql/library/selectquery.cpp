@@ -3,8 +3,13 @@
  * The list of contributors at http://litesql.sf.net/ 
  * 
  * See LICENSE for copyright information. */
-#include "compatibility.hpp"
+#include <litesql/expr.hpp>
+#include <litesql/split.hpp>
+#include <litesql/string.hpp>
+#include <string>
+
 #include "litesql/selectquery.hpp"
+
 using namespace std;
 namespace litesql {
 SelectQuery & SelectQuery::distinct(bool d) { 

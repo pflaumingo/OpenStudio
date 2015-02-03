@@ -17,10 +17,12 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <qdir.h>
+#include <qstring.h>
+#include <qtextstream.h>
+
 #include "Path.hpp"
 #include "String.hpp"
-
-#include <QDir>
 
 namespace openstudio {
 

@@ -10,11 +10,19 @@
 #ifndef QWT_PANNER_H
 #define QWT_PANNER_H 1
 
+#include <qglobal.h>
 #include <qnamespace.h>
+#include <qobjectdefs.h>
 #include <qwidget.h>
+
 #include "qwt_global.h"
 
 class QCursor;
+class QEvent;
+class QKeyEvent;
+class QMouseEvent;
+class QObject;
+class QPaintEvent;
 
 /*!
   \brief QwtPanner provides panning of a widget
@@ -95,6 +103,7 @@ private:
 #endif
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

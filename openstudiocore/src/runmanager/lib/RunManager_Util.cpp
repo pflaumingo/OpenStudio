@@ -17,8 +17,13 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <qdatetime.h>
+#include <qstring.h>
+
 #include "RunManager_Util.hpp"
-#include <QDateTime>
+#include "runmanager/lib/../../utilities/time/../core/String.hpp"
+#include "runmanager/lib/../../utilities/time/DateTime.hpp"
+#include "runmanager/lib/FileInfo.hpp"
 
 namespace openstudio {
 namespace runmanager {

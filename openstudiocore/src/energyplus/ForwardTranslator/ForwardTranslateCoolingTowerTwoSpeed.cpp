@@ -17,12 +17,17 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/CoolingTower_TwoSpeed_FieldEnums.hxx>
+#include <utilities/idd/IddEnums.hxx>
+
 #include "../../model/CoolingTowerTwoSpeed.hpp"
 #include "../../model/Schedule.hpp"
-#include <utilities/idd/CoolingTower_TwoSpeed_FieldEnums.hxx>
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

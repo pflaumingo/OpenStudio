@@ -9,12 +9,17 @@
 
 #include <qapplication.h>
 #include <qdesktopwidget.h>
+#include <qglobal.h>
+#include <qnamespace.h>
 #include <qpaintdevice.h>
 #include <qpainter.h>
-#include "qwt_legend.h"
-#include "qwt_legend_item.h"
-#include "qwt_scale_map.h"
+#include <qrect.h>
+#include <qrgb.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
 #include "qwt_plot_rasteritem.h"
+#include "qwt_scale_map.h"
 
 class QwtPlotRasterItem::PrivateData
 {

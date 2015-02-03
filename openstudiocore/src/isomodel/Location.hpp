@@ -19,11 +19,15 @@
 #ifndef ISOMODEL_LOCATION_HPP
 #define ISOMODEL_LOCATION_HPP
 
+#include <memory>
+
 #include "WeatherData.hpp"
 
 namespace openstudio {
 namespace isomodel {
   
+class WeatherData;
+
   class Location
   {
   public:

@@ -5,7 +5,9 @@
 
 /* @(#) $Id$ */
 
-#include "zutil.h"
+#include <zlib.h>
+
+#include "zconf.h"
 
 #define local static
 

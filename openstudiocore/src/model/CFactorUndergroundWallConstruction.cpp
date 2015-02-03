@@ -17,22 +17,33 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "CFactorUndergroundWallConstruction.hpp"
-#include "CFactorUndergroundWallConstruction_Impl.hpp"
-
-#include "Material.hpp"
-#include "Material_Impl.hpp"
-#include "ModelExtensibleGroup.hpp"
-
-#include <utilities/idd/OS_Construction_CfactorUndergroundWall_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Construction_CfactorUndergroundWall_FieldEnums.hxx>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "CFactorUndergroundWallConstruction.hpp"
+#include "CFactorUndergroundWallConstruction_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/ConstructionBase.hpp"
+#include "model/ConstructionBase_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   CFactorUndergroundWallConstruction_Impl::CFactorUndergroundWallConstruction_Impl(
       const IdfObject& idfObject, Model_Impl* model, bool keepHandle)

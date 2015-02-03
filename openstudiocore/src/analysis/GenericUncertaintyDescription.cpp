@@ -19,6 +19,8 @@
 
 #include "GenericUncertaintyDescription.hpp"
 #include "UncertaintyDescription_Impl.hpp"
+#include "analysis/../utilities/data/Attribute.hpp"
+#include "analysis/UncertaintyDescription.hpp"
 
 namespace openstudio {
 namespace analysis {

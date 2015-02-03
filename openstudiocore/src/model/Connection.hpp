@@ -20,15 +20,29 @@
 #ifndef MODEL_CONNECTION_HPP
 #define MODEL_CONNECTION_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "../utilities/core/Logger.hpp"
+#include "ModelAPI.hpp"
 #include "ModelObject.hpp"
+#include "model/../utilities/core/LogMessage.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
   class Connection_Impl;
+class ModelObject_Impl;
 } // detail
 
 class MODEL_API Connection : public ModelObject {

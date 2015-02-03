@@ -17,20 +17,38 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "LuminaireDefinition.hpp"
-#include "LuminaireDefinition_Impl.hpp"
-
-#include <utilities/idd/OS_Luminaire_Definition_FieldEnums.hxx>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/logical/bitor.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/math/FloatCompare.hpp"
+#include <utilities/idd/OS_Luminaire_Definition_FieldEnums.hxx>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "LuminaireDefinition.hpp"
+#include "LuminaireDefinition_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/SpaceLoadDefinition.hpp"
+#include "model/SpaceLoadDefinition_Impl.hpp"
+#include "model/attributes.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ATTRIBUTE_IMPLEMENTATION(0,1,0,lightingPower,LightingPower,
                            LuminaireDefinition,0,OS_Luminaire_Definition,LightingPower)

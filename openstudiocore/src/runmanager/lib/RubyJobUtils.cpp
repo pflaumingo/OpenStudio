@@ -17,22 +17,40 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "RubyJobUtils.hpp"
-#include "RunManager.hpp"
-#include "WorkItem.hpp"
-#include "JSON.hpp"
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/lexical_cast.hpp>
+#include <ext/alloc_traits.h>
+#include <qdir.h>
+#include <qurl.h>
+#include <stddef.h>
+#include <algorithm>
+#include <exception>
+#include <functional>
+#include <set>
+#include <sstream>
 
 #include "../../ruleset/OSArgument.hpp"
-
-#include "../../utilities/core/Assert.hpp"
+#include "../../utilities/bcl/BCLMeasure.hpp"
 #include "../../utilities/core/ApplicationPathHelpers.hpp"
+#include "../../utilities/core/Assert.hpp"
 #include "../../utilities/core/Compare.hpp"
 #include "../../utilities/core/PathHelpers.hpp"
 #include "../../utilities/core/URLHelpers.hpp"
-#include "../../utilities/bcl/BCLMeasure.hpp"
-
-#include <boost/filesystem.hpp>
-#include <QDir>
+#include "JSON.hpp"
+#include "RubyJobUtils.hpp"
+#include "RunManager.hpp"
+#include "WorkItem.hpp"
+#include "runmanager/lib/../../utilities/bcl/BCLFileReference.hpp"
+#include "runmanager/lib/../../utilities/core/FileReference.hpp"
+#include "runmanager/lib/../../utilities/time/../core/EnumBase.hpp"
+#include "runmanager/lib/ConfigOptions.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/Job.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+#include "runmanager/lib/Workflow.hpp"
 
 namespace openstudio {
 namespace runmanager {

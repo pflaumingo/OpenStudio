@@ -16,7 +16,30 @@
  *  License along with this library; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
+#include <assert.h>
+#include <boost/numeric/ublas/vector.hpp>
+#include <boost/numeric/ublas/vector_expression.hpp>
+#include <math.h>
+#include <stddef.h>
+#include <algorithm>
+#include <limits>
+#include <ostream>
+
 #include "SimModel.hpp"
+#include "isomodel/../utilities/core/Logger.hpp"
+#include "isomodel/../utilities/data/DataEnums.hpp"
+#include "isomodel/../utilities/data/EndUses.hpp"
+#include "isomodel/../utilities/data/Matrix.hpp"
+#include "isomodel/../utilities/data/Vector.hpp"
+#include "isomodel/Building.hpp"
+#include "isomodel/Cooling.hpp"
+#include "isomodel/Heating.hpp"
+#include "isomodel/Lighting.hpp"
+#include "isomodel/Location.hpp"
+#include "isomodel/Population.hpp"
+#include "isomodel/Structure.hpp"
+#include "isomodel/Ventilation.hpp"
+#include "isomodel/WeatherData.hpp"
 
 #if _DEBUG || (__GNUC__ && !NDEBUG)
 #define DEBUG_ISO_MODEL_SIMULATION

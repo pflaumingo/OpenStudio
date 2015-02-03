@@ -20,12 +20,15 @@
 #ifndef UTILITIES_CORE_SYSTEM_HPP
 #define UTILITIES_CORE_SYSTEM_HPP
 
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+
 #include "../UtilitiesAPI.hpp"
 #include "../time/Time.hpp"
 
-#include <boost/optional.hpp>
-
 namespace openstudio {
+
+class Time;
 
   class UTILITIES_API System{
   public:

@@ -17,18 +17,54 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Job_Impl.hpp"
-#include "JobErrorsDisplay.hpp"
-#include "RunManager_Impl.hpp"
-#include "MergeJobError.hpp"
-#include "MergedJobResults.hpp"
-#include <QReadLocker>
-#include <QWriteLocker>
-#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qapplication.h>
+#include <qcoreapplication.h>
+#include <qdir.h>
+#include <qflags.h>
+#include <qnamespace.h>
+#include <qurl.h>
+#include <quuid.h>
+#include <algorithm>
+#include <exception>
+#include <functional>
+#include <iterator>
+#include <set>
+#include <sstream>
+#include <stdexcept>
+
 #include "../../utilities/core/Application.hpp"
 #include "../../utilities/core/Assert.hpp"
 #include "../../utilities/core/PathHelpers.hpp"
-#include <QDir>
+#include "JobErrorsDisplay.hpp"
+#include "Job_Impl.hpp"
+#include "MergeJobError.hpp"
+#include "MergedJobResults.hpp"
+#include "RunManager_Impl.hpp"
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/Checksum.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Singleton.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobState.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/TreeStatus.hpp"
+
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

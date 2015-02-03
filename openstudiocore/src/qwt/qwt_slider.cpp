@@ -9,15 +9,25 @@
 
 // vim: expandtab
 
-#include <math.h>
-#include <qevent.h>
 #include <qdrawutil.h>
+#include <qevent.h>
 #include <qpainter.h>
+#include <qpalette.h>
+#include <qpen.h>
+#include <qpoint.h>
+#include <qrect.h>
+#include <qsizepolicy.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_abstract_slider.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_math.h"
 #include "qwt_painter.h"
-#include "qwt_paint_buffer.h"
 #include "qwt_scale_draw.h"
 #include "qwt_scale_map.h"
 #include "qwt_slider.h"
+
+class QFont;
+class QWidget;
 
 class QwtSlider::PrivateData
 {

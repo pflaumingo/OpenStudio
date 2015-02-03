@@ -20,20 +20,38 @@
 #ifndef MODEL_REFRIGERATIONWALKIN_HPP
 #define MODEL_REFRIGERATIONWALKIN_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
 #include "RefrigerationSystem.hpp"
 #include "ThermalZone.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/RefrigerationDefrostCycleParameters.hpp"
+#include "model/Schedule.hpp"
 
 namespace openstudio {
 
 class Time;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+namespace model {
+class RefrigerationSystem;
+class ThermalZone;
+}  // namespace model
 
 namespace model {
 
-class Schedule;
-class RefrigerationWalkInZoneBoundary;
 class RefrigerationDefrostCycleParameters;
+class RefrigerationWalkInZoneBoundary;
+class Schedule;
 
 namespace detail {
 

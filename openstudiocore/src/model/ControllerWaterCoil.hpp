@@ -20,14 +20,29 @@
 #ifndef MODEL_CONTROLLERWATERCOIL_HPP
 #define MODEL_CONTROLLERWATERCOIL_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "HVACComponent.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 class Node;
+class Model;
 
 namespace detail {
 

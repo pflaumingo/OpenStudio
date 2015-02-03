@@ -17,12 +17,21 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
-#include "../../model/SizingSystem.hpp"
-#include "../../model/SizingSystem_Impl.hpp"
-#include "../../model/AirLoopHVAC.hpp"
-#include "../../model/AirLoopHVAC_Impl.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/Sizing_System_FieldEnums.hxx>
+#include <memory>
+#include <ostream>
+#include <string>
+
+#include "../../model/AirLoopHVAC.hpp"
+#include "../../model/SizingSystem.hpp"
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

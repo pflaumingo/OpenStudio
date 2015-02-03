@@ -20,8 +20,26 @@
 #ifndef ANALYSIS_RUBYCONTINUOUSVARIABLE_HPP
 #define ANALYSIS_RUBYCONTINUOUSVARIABLE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "ContinuousVariable.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+
+namespace openstudio {
+class FileReferenceType;
+namespace analysis {
+class UncertaintyDescription;
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
+}  // namespace analysis
+}  // namespace openstudio
 
 namespace openstudio {
 

@@ -20,8 +20,16 @@
 #ifndef ANALYSIS_NULLMEASURE_HPP
 #define ANALYSIS_NULLMEASURE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "Measure.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
 
 namespace openstudio {
 namespace analysis {
@@ -29,6 +37,7 @@ namespace analysis {
 namespace detail {
 
   class NullMeasure_Impl;
+class AnalysisObject_Impl;
 
 } // detail
 

@@ -20,14 +20,25 @@
 #ifndef RUNMANAGER_LIB_SIMULATIONENGINE_HPP
 #define RUNMANAGER_LIB_SIMULATIONENGINE_HPP
 
-#include "../../utilities/core/Path.hpp"
-#include "../../utilities/core/UUID.hpp"
+#include <boost/filesystem/path.hpp>
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <stddef.h>
+#include <map>
+#include <set>
+#include <string>
+#include <utility>
 #include <vector>
+
 #include "../../model/Model.hpp"
 #include "../../utilities/core/Logger.hpp"
+#include "../../utilities/core/Path.hpp"
+#include "../../utilities/core/UUID.hpp"
+#include "ErrorEstimation.hpp"
 #include "RunManager.hpp"
 #include "RunManagerAPI.hpp"
-#include "ErrorEstimation.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/Job.hpp"
 
 namespace openstudio {
   namespace runmanager {

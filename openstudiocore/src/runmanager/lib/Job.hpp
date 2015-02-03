@@ -20,19 +20,39 @@
 #ifndef RUNMANAGER_LIB_JOB_HPP
 #define RUNMANAGER_LIB_JOB_HPP
 
-#include "RunManagerAPI.hpp"
-#include "ProcessCreator.hpp"
-#include "AdvancedStatus.hpp"
-#include "TreeStatus.hpp"
+#include <boost/optional/optional.hpp>
+#include <qnamespace.h>
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
 
 #include "../../utilities/core/UUID.hpp"
+#include "AdvancedStatus.hpp"
 #include "FileInfo.hpp"
-#include "JobParam.hpp"
-#include "ToolInfo.hpp"
 #include "JobErrors.hpp"
+#include "JobParam.hpp"
 #include "JobType.hpp"
+#include "ProcessCreator.hpp"
+#include "RunManagerAPI.hpp"
+#include "ToolInfo.hpp"
+#include "TreeStatus.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
 
+class QObject;
 class QThread;
+namespace boost {
+namespace posix_time {
+class ptime;
+}  // namespace posix_time
+}  // namespace boost
+namespace openstudio {
+class DateTime;
+namespace runmanager {
+class ProcessCreator;
+struct ToolInfo;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {
@@ -42,7 +62,6 @@ namespace detail {
 }
   
   class JobFactory;
-
   class MergedJobResults;
   
   /// A handle to a job that must be created with the JobFactory class.

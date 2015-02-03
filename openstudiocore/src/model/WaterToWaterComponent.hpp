@@ -20,14 +20,29 @@
 #ifndef MODEL_WATERTOWATERCOMPONENT_HPP
 #define MODEL_WATERTOWATERCOMPONENT_HPP
 
-#include "ModelAPI.hpp"
-#include "HVACComponent.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "Connection.hpp"
+#include "HVACComponent.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class AirLoopHVAC;
+class Node;
+class PlantLoop;
 
 namespace detail{
   class WaterToWaterComponent_Impl;

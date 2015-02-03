@@ -17,18 +17,36 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RubyContinuousVariableRecord.hpp"
-#include "RubyContinuousVariableRecord_Impl.hpp"
-#include "ProjectDatabase.hpp"
-#include "ProblemRecord.hpp"
-#include "FunctionRecord.hpp"
-#include "RubyMeasureRecord.hpp"
-#include "OSArgumentRecord.hpp"
+#include <qsqlquery.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../analysis/RubyContinuousVariable.hpp"
-#include "../analysis/RubyContinuousVariable_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "FunctionRecord.hpp"
+#include "OSArgumentRecord.hpp"
+#include "ProblemRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "RubyContinuousVariableRecord.hpp"
+#include "RubyContinuousVariableRecord_Impl.hpp"
+#include "RubyMeasureRecord.hpp"
+#include "project/../analysis/ContinuousVariable.hpp"
+#include "project/../analysis/InputVariable.hpp"
+#include "project/../analysis/RubyMeasure.hpp"
+#include "project/../analysis/Variable.hpp"
+#include "project/../ruleset/OSArgument.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ContinuousVariableRecord.hpp"
+#include "project/ContinuousVariableRecord_Impl.hpp"
+#include "project/InputVariableRecord.hpp"
+#include "project/InputVariableRecord_Impl.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 using namespace openstudio::ruleset;
 

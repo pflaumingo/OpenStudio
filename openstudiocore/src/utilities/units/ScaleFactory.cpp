@@ -17,15 +17,25 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "../core/Assert.hpp"
-#include "ScaleFactory.hpp"
-
-#include "../core/String.hpp"
-#include "../core/Exception.hpp"
-
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <algorithm>
+#include <functional>
 #include <map>
 #include <vector>
-#include <boost/regex.hpp>
+
+#include "ScaleFactory.hpp"
+#include "utilities/units/../core/Logger.hpp"
+#include "utilities/units/../core/Singleton.hpp"
+#include "utilities/units/Scale.hpp"
 
 namespace openstudio{
 

@@ -20,27 +20,36 @@
 #ifndef OSVERSION_VERSIONTRANSLATOR_HPP
 #define OSVERSION_VERSIONTRANSLATOR_HPP
 
-#include "OSVersionAPI.hpp"
+#include <boost/function/function_template.hpp>
+#include <boost/functional.hpp>
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <map>
+#include <memory>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
 
 #include "../model/Schedule.hpp"
-
-#include "../utilities/idf/IdfFile.hpp"
-#include "../utilities/idd/IddFile.hpp"
-#include "../utilities/idd/IddFileAndFactoryWrapper.hpp"
-
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/core/StringStreamLogSink.hpp"
-
-#include <boost/functional.hpp>
-
-#include <map>
+#include "../utilities/idd/IddFile.hpp"
+#include "../utilities/idd/IddFileAndFactoryWrapper.hpp"
+#include "../utilities/idf/IdfFile.hpp"
+#include "OSVersionAPI.hpp"
+#include "osversion/../model/../utilities/core/Path.hpp"
+#include "osversion/../model/../utilities/idd/../core/LogMessage.hpp"
+#include "osversion/../model/../utilities/idf/IdfObject.hpp"
+#include "osversion/../model/ModelObject.hpp"
 
 namespace openstudio {
   class ProgressBar;
+
 namespace model {
-  class Model;
   class Component;
+  class Model;
 }
 namespace osversion {
 

@@ -20,13 +20,27 @@
 #ifndef ANALYSIS_MEASUREGROUP_HPP
 #define ANALYSIS_MEASUREGROUP_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "DiscreteVariable.hpp"
+#include "analysis/../utilities/core/FileReference.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
 
 namespace openstudio {
 namespace analysis {
 
 class Measure;
+class DataPoint;
+class UncertaintyDescription;
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
 
 namespace detail {
 

@@ -9,20 +9,25 @@
 
 // vim: expandtab
 
+#include <qbrush.h>
+#include <qglobal.h>
+#include <qnamespace.h>
 #include <qpainter.h>
-#include <qstyle.h>
+#include <qpalette.h>
+#include <qpixmap.h>
+#include <qrect.h>
+#include <qregion.h>
+#include <qsize.h>
+#include <qwidget.h>
 #if QT_VERSION >= 0x040000
-#include <qstyleoption.h>
-#include <qpaintengine.h>
 #ifdef Q_OS_X11
 #include <qx11info_x11.h>
 #endif
 #endif
 #include <qevent.h>
+
 #include "qwt_painter.h"
-#include "qwt_math.h"
 #include "qwt_plot.h"
-#include "qwt_paint_buffer.h"
 #include "qwt_plot_canvas.h"
 
 class QwtPlotCanvas::PrivateData

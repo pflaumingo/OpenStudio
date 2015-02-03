@@ -17,20 +17,23 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Quantity.hpp"
-
-#include "UnitFactory.hpp"
-#include "ScaleFactory.hpp"
-#include "IPUnit.hpp"
-#include "IPUnit_Impl.hpp"
-#include "TemperatureUnit.hpp"
-#include "TemperatureUnit_Impl.hpp"
-
-#include "../math/FloatCompare.hpp"
+#include <assert.h>
+#include <cmath>
+#include <functional>
+#include <memory>
+#include <ostream>
 
 #include "../core/Assert.hpp"
-
-#include <cmath>
+#include "../math/FloatCompare.hpp"
+#include "IPUnit.hpp"
+#include "Quantity.hpp"
+#include "ScaleFactory.hpp"
+#include "TemperatureUnit.hpp"
+#include "UnitFactory.hpp"
+#include "utilities/units/../core/EnumBase.hpp"
+#include "utilities/units/../core/Singleton.hpp"
+#include "utilities/units/Scale.hpp"
+#include "utilities/units/Unit.hpp"
 
 int _QuantityType = qRegisterMetaType<openstudio::Quantity>("openstudio::Quantity");
 

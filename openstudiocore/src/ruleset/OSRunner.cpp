@@ -17,17 +17,30 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OSRunner.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/none.hpp>
+#include <exception>
+#include <ostream>
+#include <utility>
 
-#include "OSArgument.hpp"
-#include "UserScript.hpp"
-
+#include "../utilities/core/Assert.hpp"
 #include "../utilities/idf/Workspace.hpp"
 #include "../utilities/idf/WorkspaceObject.hpp"
 #include "../utilities/units/Quantity.hpp"
-#include "../utilities/math/FloatCompare.hpp"
-
-#include "../utilities/core/Assert.hpp"
+#include "OSArgument.hpp"
+#include "OSRunner.hpp"
+#include "UserScript.hpp"
+#include "ruleset/../model/../utilities/idf/Handle.hpp"
+#include "ruleset/../model/Model.hpp"
+#include "ruleset/../utilities/core/Enum.hpp"
+#include "ruleset/../utilities/core/EnumBase.hpp"
+#include "ruleset/../utilities/core/Logger.hpp"
+#include "ruleset/../utilities/data/../core/UUID.hpp"
+#include "ruleset/../utilities/data/Attribute.hpp"
+#include "ruleset/../utilities/filetypes/EpwFile.hpp"
+#include "ruleset/../utilities/sql/../units/Unit.hpp"
+#include "ruleset/../utilities/sql/SqlFile.hpp"
+#include "ruleset/OSResult.hpp"
 
 namespace openstudio {
 namespace ruleset {

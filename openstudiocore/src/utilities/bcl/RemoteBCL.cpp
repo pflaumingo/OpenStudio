@@ -16,29 +16,42 @@
 *  License along with this library; if not, write to the Free Software
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
-#include "LocalBCL.hpp"
-#include "RemoteBCL.hpp"
+#include <boost/filesystem/path.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
+#include <qbytearray.h>
+#include <qdir.h>
+#include <qfile.h>
+#include <qflags.h>
+#include <qglobal.h>
+#include <qiodevice.h>
+#include <qmutex.h>
+#include <qnetworkaccessmanager.h>
+#include <qnetworkreply.h>
+#include <qnetworkrequest.h>
+#include <qsslsocket.h>
+#include <qstring.h>
+#include <qtextstream.h>
+#include <qurl.h>
+#include <qurlquery.h>
+#include <qvariant.h>
+#include <exception>
+#include <ostream>
+
 #include "../core/Application.hpp"
 #include "../core/Assert.hpp"
 #include "../core/Path.hpp"
 #include "../core/PathHelpers.hpp"
 #include "../core/System.hpp"
 #include "../core/UnzipFile.hpp"
-#include "../core/ZipFile.hpp"
-
-#include <QDir>
-#include <QDomDocument>
-#include <QDomElement>
-#include <QFile>
-#include <QMessageBox>
-#include <QMutex>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QNetworkRequest>
-#include <QSslError>
-#include <QTextStream>
-#include <QSslSocket>
-#include <QUrlQuery>
+#include "LocalBCL.hpp"
+#include "RemoteBCL.hpp"
+#include "utilities/bcl/../core/Singleton.hpp"
+#include "utilities/bcl/../core/String.hpp"
+#include "utilities/bcl/BCL.hpp"
+#include "utilities/bcl/BCLComponent.hpp"
+#include "utilities/bcl/BCLMeasure.hpp"
 
 #define REMOTE_PRODUCTION_SERVER "https://bcl.nrel.gov"
 #define REMOTE_DEVELOPMENT_SERVER "http://bcl7.development.nrel.gov"

@@ -20,11 +20,20 @@
 #ifndef MODEL_LIFECYCLECOST_HPP
 #define MODEL_LIFECYCLECOST_HPP
 
-#include "ModelAPI.hpp"
-#include "ModelObject.hpp"
-#include "ModelExtensibleGroup.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Optional.hpp"
+#include "ModelAPI.hpp"
+#include "ModelExtensibleGroup.hpp"
+#include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
 
 namespace openstudio{
 namespace model{

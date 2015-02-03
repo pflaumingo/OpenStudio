@@ -17,22 +17,25 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Record.hpp"
-#include "Record_Impl.hpp"
-#include "JoinRecord.hpp"
-#include "ObjectRecord.hpp"
-#include "ProjectDatabase.hpp"
-#include "ProjectDatabase_Impl.hpp"
+#include <qiterator.h>
+#include <qmap.h>
+#include <qobject.h>
+#include <qsqldatabase.h>
+#include <qsqldriver.h>
+#include <qsqlerror.h>
+#include <qsqlquery.h>
+#include <quuid.h>
+#include <limits>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/String.hpp"
-#include "../utilities/time/DateTime.hpp"
-
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QFile>
-#include <QSqlDriver>
-#include <QThread>
+#include "JoinRecord.hpp"
+#include "ObjectRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "Record.hpp"
+#include "Record_Impl.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/UUID.hpp"
 
 namespace openstudio {
 namespace project {

@@ -1,10 +1,20 @@
 #ifndef _litesql_gen_graphviz_hpp
 #define _litesql_gen_graphviz_hpp
 
+#include <stddef.h>
+#include <iosfwd>
+
 #include "generator.hpp"
+
+namespace xml {
+class Object;
+class Relation;
+}  // namespace xml
 
 namespace litesql {
   
+class ObjectModel;
+
   class GraphvizGenerator : public CodeGenerator {
   public:
     GraphvizGenerator(): CodeGenerator("graphviz") { };

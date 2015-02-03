@@ -3,7 +3,13 @@
 
 #include "generator.hpp"
 
+namespace xml {
+class Object;
+}  // namespace xml
+
 namespace litesql {
+
+class ObjectModel;
 
   class RubyActiveRecordGenerator : public CompositeGenerator {
   public:

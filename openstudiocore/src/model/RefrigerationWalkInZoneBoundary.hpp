@@ -20,15 +20,30 @@
 #ifndef MODEL_REFRIGERATIONWALKINZONEBOUNDARY_HPP
 #define MODEL_REFRIGERATIONWALKINZONEBOUNDARY_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
-class ThermalZone;
 class Schedule;
+class ThermalZone;
 
 namespace detail {
 

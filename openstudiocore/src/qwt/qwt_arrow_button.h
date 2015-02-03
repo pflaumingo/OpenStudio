@@ -10,8 +10,19 @@
 #ifndef QWT_ARROW_BUTTON_H
 #define QWT_ARROW_BUTTON_H
 
+#include <qglobal.h>
+#include <qnamespace.h>
 #include <qpushbutton.h>
+#include <qrect.h>
+#include <qsize.h>
+#include <stddef.h>
+
 #include "qwt_global.h"
+
+class QKeyEvent;
+class QPaintEvent;
+class QPainter;
+class QWidget;
 
 /*!
   \brief Arrow Button
@@ -48,6 +59,7 @@ protected:
 
 private:
     class PrivateData;
+
     PrivateData *d_data;
 };
 

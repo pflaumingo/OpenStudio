@@ -20,8 +20,23 @@
 #ifndef MODEL_ZONEHVACHIGHTEMPERATURERADIANT_HPP
 #define MODEL_ZONEHVACHIGHTEMPERATURERADIANT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ZoneHVACComponent.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
@@ -29,6 +44,7 @@ namespace model {
 
 class Schedule;
 class Surface;
+class ThermalZone;
 
 namespace detail {
 

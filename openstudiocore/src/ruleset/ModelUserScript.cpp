@@ -18,9 +18,9 @@
  **********************************************************************/
 
 #include "ModelUserScript.hpp"
-
 #include "OSArgument.hpp"
 #include "OSRunner.hpp"
+#include "ruleset/../model/Model.hpp"
 
 namespace openstudio {
 namespace ruleset {

@@ -7,7 +7,8 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include <cfloat>
+#include <math.h>
+
 #include "qwt_double_range.h"
 #include "qwt_math.h"
 

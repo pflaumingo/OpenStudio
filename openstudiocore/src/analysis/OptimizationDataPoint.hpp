@@ -20,13 +20,36 @@
 #ifndef ANALYSIS_OPTIMIZATIONDATAPOINT_HPP
 #define ANALYSIS_OPTIMIZATIONDATAPOINT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "DataPoint.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/OptimizationProblem.hpp"
+
+class QVariant;
+namespace openstudio {
+class Attribute;
+class FileReference;
+class Tag;
+namespace runmanager {
+class Job;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {
 
 class OptimizationProblem;
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
 
 namespace detail {
 

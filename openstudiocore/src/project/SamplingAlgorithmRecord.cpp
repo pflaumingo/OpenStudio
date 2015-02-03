@@ -17,19 +17,35 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SamplingAlgorithmRecord.hpp"
-#include "SamplingAlgorithmRecord_Impl.hpp"
-#include "AnalysisRecord.hpp"
-#include "JoinRecord.hpp"
-#include "FileReferenceRecord.hpp"
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../analysis/SamplingAlgorithm.hpp"
-#include "../analysis/SamplingAlgorithm_Impl.hpp"
 #include "../analysis/SamplingAlgorithmOptions.hpp"
-
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Optional.hpp"
-#include "../utilities/data/Attribute.hpp"
+#include "AnalysisRecord.hpp"
+#include "FileReferenceRecord.hpp"
+#include "JoinRecord.hpp"
+#include "SamplingAlgorithmRecord.hpp"
+#include "SamplingAlgorithmRecord_Impl.hpp"
+#include "project/../analysis/../runmanager/lib/Job.hpp"
+#include "project/../analysis/../utilities/core/FileReference.hpp"
+#include "project/../analysis/Algorithm.hpp"
+#include "project/../analysis/DakotaAlgorithm.hpp"
+#include "project/../runmanager/lib/RunManager.hpp"
+#include "project/../utilities/core/EnumBase.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/DakotaAlgorithmRecord.hpp"
+#include "project/DakotaAlgorithmRecord_Impl.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

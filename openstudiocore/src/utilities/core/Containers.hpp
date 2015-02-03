@@ -20,14 +20,16 @@
 #ifndef UTILITIES_CORE_CONTAINERS_HPP
 #define UTILITIES_CORE_CONTAINERS_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "Compare.hpp"
-
 #include <boost/optional.hpp>
-
-#include <vector>
+#include <boost/optional/optional.hpp>
+#include <stddef.h>
 #include <set>
 #include <string>
+#include <utility>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "Compare.hpp"
 
 namespace openstudio {
 

@@ -20,13 +20,19 @@
 #ifndef UTILITIES_DATA_MATRIX_HPP
 #define UTILITIES_DATA_MATRIX_HPP
 
-#include "Vector.hpp"
-#include "../UtilitiesAPI.hpp"
-#include "../core/Logger.hpp"
-
-#include <boost/numeric/ublas/matrix.hpp>
+#include <boost/numeric/ublas/functional.hpp>
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/lu.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
+#include <boost/numeric/ublas/storage.hpp>
+#include <exception>
+#include <ostream>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "Vector.hpp"
+#include "utilities/data/../core/LogMessage.hpp"
 
 namespace openstudio{
 

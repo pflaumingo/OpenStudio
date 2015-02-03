@@ -17,27 +17,32 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RefrigerationCompressor.hpp"
-#include "RefrigerationCompressor_Impl.hpp"
-
-#include "CurveBicubic.hpp"
-#include "CurveBicubic_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Refrigeration_Compressor_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/Unit.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Refrigeration_Compressor_FieldEnums.hxx>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "CurveBicubic.hpp"
+#include "Model.hpp"
+#include "RefrigerationCompressor.hpp"
+#include "RefrigerationCompressor_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   RefrigerationCompressor_Impl::RefrigerationCompressor_Impl(const IdfObject& idfObject,
                                                              Model_Impl* model,

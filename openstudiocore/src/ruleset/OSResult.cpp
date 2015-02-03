@@ -17,15 +17,21 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OSResult.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <qdom.h>
+#include <qfile.h>
+#include <qiodevice.h>
+#include <qstring.h>
+#include <qtextstream.h>
+#include <exception>
 
 #include "../utilities/core/Assert.hpp"
-
-#include <boost/filesystem.hpp>
-
-#include <QFile>
-#include <QDomDocument>
-#include <QDomElement>
+#include "OSResult.hpp"
+#include "ruleset/../utilities/core/LogMessage.hpp"
+#include "ruleset/../utilities/core/Logger.hpp"
+#include "ruleset/../utilities/core/Path.hpp"
+#include "ruleset/../utilities/core/String.hpp"
+#include "ruleset/../utilities/data/Attribute.hpp"
 
 namespace openstudio {
 namespace ruleset {

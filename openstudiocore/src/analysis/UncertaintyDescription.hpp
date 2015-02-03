@@ -20,13 +20,22 @@
 #ifndef ANALYSIS_UNCERTAINTYDESCRIPTION_HPP
 #define ANALYSIS_UNCERTAINTYDESCRIPTION_HPP
 
-#include "AnalysisAPI.hpp"
-#include "AnalysisEnums.hpp"
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <qvariant.h>
+#include <memory>
+#include <typeinfo>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/data/Attribute.hpp"
+#include "AnalysisAPI.hpp"
+#include "AnalysisEnums.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
 
-#include <boost/optional.hpp>
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

@@ -7,17 +7,21 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include <qpainter.h>
-#include <qevent.h>
-#include <qstyle.h>
-#include <qpixmap.h>
 #include <qdrawutil.h>
+#include <qevent.h>
+#include <qpainter.h>
+#include <qpalette.h>
+#include <qpen.h>
+#include <qrect.h>
+#include <qsizepolicy.h>
+
 #include "qwt_math.h"
-#include "qwt_scale_engine.h"
 #include "qwt_scale_draw.h"
+#include "qwt_scale_engine.h"
 #include "qwt_scale_map.h"
-#include "qwt_paint_buffer.h"
 #include "qwt_thermo.h"
+
+class QFont;
 
 class QwtThermo::PrivateData
 {

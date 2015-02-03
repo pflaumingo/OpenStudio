@@ -17,30 +17,31 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
+#include <boost/filesystem/operations.hpp>
+#include <exception>
 #include <sstream>
-#include <iterator>
-#include <algorithm>
+#include <utility>
+#include <vector>
 
-#include "NullJob.hpp"
 #include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
-#include "RunManager_Util.hpp"
+#include "NullJob.hpp"
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Enum.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/Job_Impl.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Model_Impl.hpp"
-#include "../../model/WeatherFile.hpp"
-#include "../../model/WeatherFile_Impl.hpp"
-#include "../../energyplus/ForwardTranslator.hpp"
-#include "../../utilities/idf/IdfFile.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include <utilities/idd/OS_WeatherFile_FieldEnums.hxx>
-#include "../../utilities/core/System.hpp"
-
-#include <QDir>
-#include <QDateTime>
-#include <QMutexLocker>
+class QDateTime;
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

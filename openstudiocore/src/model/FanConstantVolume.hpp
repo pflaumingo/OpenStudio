@@ -20,10 +20,28 @@
 #ifndef MODEL_FANCONSTANTVOLUME_HPP
 #define MODEL_FANCONSTANTVOLUME_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "Connection.hpp"
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
 #include "StraightComponent.hpp"
-#include "Connection.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/Model.hpp"
+#include "model/Schedule.hpp"
+
+namespace openstudio {
+class IdfObject;
+class Quantity;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

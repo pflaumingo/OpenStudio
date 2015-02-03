@@ -17,24 +17,16 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-
-#include "../../model/ScheduleTypeLimits.hpp"
-#include "../../model/ScheduleTypeLimits_Impl.hpp"
-#include "../../model/ScheduleWeek.hpp"
-#include "../../model/ScheduleWeek_Impl.hpp"
-#include "../../model/ScheduleDay.hpp"
-#include "../../model/ScheduleDay_Impl.hpp"
-
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-
-#include "../../utilities/core/Logger.hpp"
-#include "../../utilities/core/Assert.hpp"
-
-#include <utilities/idd/Schedule_Week_Daily_FieldEnums.hxx>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/Schedule_Week_Daily_FieldEnums.hxx>
+#include <vector>
+
+#include "../../model/ScheduleDay.hpp"
+#include "../../model/ScheduleWeek.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 
 using namespace openstudio::model;

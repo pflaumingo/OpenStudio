@@ -13,17 +13,22 @@
 #ifndef QWT_PLOT_DICT
 #define QWT_PLOT_DICT
 
+#include <qglobal.h>
+#include <qvector.h>
+
 #include "qwt_global.h"
 #include "qwt_plot_item.h"
 
 #if QT_VERSION < 0x040000
 #include <qvaluelist.h>
+
 typedef QValueListConstIterator<QwtPlotItem *> QwtPlotItemIterator;
 /// \var typedef QValueList< QwtPlotItem *> QwtPlotItemList
 /// \brief See QT 3.x assistant documentation for QValueList
 typedef QValueList<QwtPlotItem *> QwtPlotItemList;
 #else
 #include <qlist.h>
+
 typedef QList<QwtPlotItem *>::ConstIterator QwtPlotItemIterator;
 /// \var typedef QList< QwtPlotItem *> QwtPlotItemList
 /// \brief See QT 4.x assistant documentation for QList
@@ -59,6 +64,7 @@ private:
     void attachItem(QwtPlotItem *, bool);
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

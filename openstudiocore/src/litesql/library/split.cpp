@@ -4,11 +4,11 @@
  * 
  * See LICENSE for copyright information. */
 //#include "compatibility.hpp"
-#include "litesql/split.hpp"
-#include <string>
 #include <string.h>
-#include <cstring>
 #include <cstdlib>
+#include <string>
+
+#include "litesql/split.hpp"
 
 using namespace litesql;    
 using namespace std;

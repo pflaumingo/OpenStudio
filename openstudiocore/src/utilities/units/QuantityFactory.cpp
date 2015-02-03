@@ -17,14 +17,17 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/lexical_cast.hpp>
+#include <memory>
+#include <sstream>
+
+#include "../core/Containers.hpp"
 #include "QuantityFactory.hpp"
 #include "QuantityRegex.hpp"
-
-#include "../core/Exception.hpp"
-#include "../core/Containers.hpp"
-
-#include <boost/pointer_cast.hpp>
-#include <boost/lexical_cast.hpp>
+#include "utilities/units/../core/Logger.hpp"
+#include "utilities/units/../core/Singleton.hpp"
+#include "utilities/units/Quantity.hpp"
+#include "utilities/units/UnitFactory.hpp"
 
 using std::shared_ptr;
 using std::dynamic_pointer_cast;

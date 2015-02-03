@@ -17,17 +17,28 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DiscreteVariableRecord.hpp"
-#include "DiscreteVariableRecord_Impl.hpp"
-
-#include "JoinRecord.hpp"
-#include "MeasureGroupRecord.hpp"
-#include "MeasureGroupRecord_Impl.hpp"
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qvariant.h>
 
 #include "../analysis/MeasureGroup.hpp"
-#include "../analysis/MeasureGroup_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "DiscreteVariableRecord.hpp"
+#include "DiscreteVariableRecord_Impl.hpp"
+#include "MeasureGroupRecord.hpp"
+#include "project/../analysis/DiscreteVariable.hpp"
+#include "project/../analysis/InputVariable.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/InputVariableRecord.hpp"
+#include "project/InputVariableRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+namespace openstudio {
+namespace project {
+class FunctionRecord;
+class ProblemRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 namespace project {

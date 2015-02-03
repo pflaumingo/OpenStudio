@@ -17,22 +17,35 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ZoneHVACEquipmentList.hpp"
-#include "ZoneHVACEquipmentList_Impl.hpp"
-#include "ZoneHVACComponent.hpp"
-#include "ZoneHVACComponent_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "Model.hpp"
-#include <utilities/idd/OS_ZoneHVAC_EquipmentList_FieldEnums.hxx>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_ZoneHVAC_EquipmentList_FieldEnums.hxx>
+#include <algorithm>
+#include <map>
+#include <string>
+#include <utility>
+
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
+#include "Model.hpp"
+#include "ThermalZone.hpp"
+#include "ZoneHVACEquipmentList.hpp"
+#include "ZoneHVACEquipmentList_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
 ZoneHVACEquipmentList_Impl::ZoneHVACEquipmentList_Impl(const IdfObject& idfObject,
                                                        Model_Impl* model,

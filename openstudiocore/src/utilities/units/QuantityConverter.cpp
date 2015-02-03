@@ -17,23 +17,23 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "QuantityConverter.hpp"
-#include "Quantity.hpp"
-#include "OSQuantityVector.hpp"
-
-#include "UnitFactory.hpp"
-#include "ScaleFactory.hpp"
-#include "Unit.hpp"
-#include "BTUUnit.hpp"
-#include "CelsiusUnit.hpp"
-#include "CFMUnit.hpp"
-#include "FahrenheitUnit.hpp"
-#include "IPUnit.hpp"
-#include "SIUnit.hpp"
-#include "ThermUnit.hpp"
-#include "WhUnit.hpp"
+#include <boost/none.hpp>
+#include <stdlib.h>
+#include <cmath>
+#include <ostream>
+#include <utility>
+#include <vector>
 
 #include "../core/Assert.hpp"
+#include "OSQuantityVector.hpp"
+#include "Quantity.hpp"
+#include "QuantityConverter.hpp"
+#include "Unit.hpp"
+#include "UnitFactory.hpp"
+#include "utilities/units/../core/EnumBase.hpp"
+#include "utilities/units/../core/Logger.hpp"
+#include "utilities/units/../core/Singleton.hpp"
+#include "utilities/units/Scale.hpp"
 
 namespace openstudio {
 

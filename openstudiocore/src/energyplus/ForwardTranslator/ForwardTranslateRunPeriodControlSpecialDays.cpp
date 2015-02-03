@@ -17,12 +17,19 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/RunPeriodControlSpecialDays.hpp"
-#include <utilities/idd/RunPeriodControl_SpecialDays_FieldEnums.hxx>
-#include <utilities/idd/OS_RunPeriodControl_SpecialDays_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
+#include <qstring.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_RunPeriodControl_SpecialDays_FieldEnums.hxx>
+#include <utilities/idd/RunPeriodControl_SpecialDays_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/RunPeriodControlSpecialDays.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/String.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

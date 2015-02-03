@@ -20,12 +20,20 @@
 #ifndef UTILITIES_BCL_LOCALBCL_HPP
 #define UTILITIES_BCL_LOCALBCL_HPP
 
-#include "BCL.hpp"
+#include <boost/optional/optional.hpp>
+#include <qglobal.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "../core/Optional.hpp"
 #include "../core/Path.hpp"
-
-#include <string>
-#include <vector>
+#include "BCL.hpp"
+#include "utilities/bcl/../core/../UtilitiesAPI.hpp"
 
 class QSqlDatabase;
 class QWidget;
@@ -38,6 +46,9 @@ namespace openstudio{
   ///       instantiate the singleton at the time of QApplication construction in the Application singleton
   ///       this would avoid all known problems with threading. The Singleton<> template cannot be used because
   ///       of static initialize and destruction order problems caused by statics used in the QDatabase stuff
+class BCLComponent;
+class BCLMeasure;
+
   class UTILITIES_API LocalBCL : public BCL {
 
     Q_OBJECT

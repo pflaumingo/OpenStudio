@@ -17,17 +17,21 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
-
-#include "../../model/ConvergenceLimits.hpp"
-#include "../../model/ConvergenceLimits_Impl.hpp"
-
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/ConvergenceLimits_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <memory>
 
+#include "../../model/ConvergenceLimits.hpp"
 #include "../../utilities/core/Assert.hpp"
 #include "../../utilities/core/Optional.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/Model.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

@@ -17,22 +17,32 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <deque>
+#include <set>
+#include <utility>
+
+#include "../utilities/core/Assert.hpp"
+#include "LifeCycleCost.hpp"
 #include "ParentObject.hpp"
 #include "ParentObject_Impl.hpp"
 #include "ResourceObject.hpp"
-#include "LifeCycleCost.hpp"
-#include "Component.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
 
-#include "../utilities/idf/Workspace_Impl.hpp"
-
-#include "../utilities/core/Assert.hpp"
-
-#include <deque>
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ParentObject_Impl::ParentObject_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ModelObject_Impl(idfObject, model, keepHandle)

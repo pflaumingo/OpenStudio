@@ -20,14 +20,31 @@
 #ifndef RULESET_OSRESULT_HPP
 #define RULESET_OSRESULT_HPP
 
-#include "RulesetAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <ostream>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Enum.hpp"
-#include "../utilities/core/Logger.hpp"
 #include "../utilities/core/LogMessage.hpp"
+#include "../utilities/core/Logger.hpp"
 #include "../utilities/core/Path.hpp"
-
 #include "../utilities/data/Attribute.hpp"
+#include "RulesetAPI.hpp"
+#include "ruleset/../utilities/core/EnumBase.hpp"
 
 class QDomDocument;
 class QDomElement;

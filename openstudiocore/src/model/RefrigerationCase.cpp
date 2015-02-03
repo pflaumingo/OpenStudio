@@ -17,36 +17,41 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RefrigerationCase.hpp"
-#include "RefrigerationCase_Impl.hpp"
-
-#include "RefrigerationSystem_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "CurveCubic.hpp"
-#include "CurveCubic_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "RefrigerationDefrostCycleParameters.hpp"
-#include "RefrigerationDefrostCycleParameters_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Refrigeration_Case_FieldEnums.hxx>
+#include <boost/none.hpp>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/time/Time.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Refrigeration_Case_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "../utilities/time/Time.hpp"
+#include "CurveCubic.hpp"
+#include "Model.hpp"
+#include "RefrigerationCase.hpp"
+#include "RefrigerationCase_Impl.hpp"
+#include "RefrigerationDefrostCycleParameters.hpp"
+#include "RefrigerationDefrostCycleParameters_Impl.hpp"
+#include "Schedule.hpp"
+#include "ThermalZone.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+#include "model/RefrigerationSystem.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   RefrigerationCase_Impl::RefrigerationCase_Impl(const IdfObject& idfObject,
                                                  Model_Impl* model,

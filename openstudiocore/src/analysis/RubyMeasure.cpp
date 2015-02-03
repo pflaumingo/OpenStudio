@@ -17,30 +17,42 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "RubyMeasure.hpp"
-#include "RubyMeasure_Impl.hpp"
-
-#include "MeasureGroup.hpp"
-#include "MeasureGroup_Impl.hpp"
-#include "RubyContinuousVariable.hpp"
-#include "RubyContinuousVariable_Impl.hpp"
-
-#include "../runmanager/lib/RubyJobUtils.hpp"
-#include "../runmanager/lib/WorkItem.hpp"
+#include <boost/filesystem/path.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <functional>
+#include <ostream>
 
 #include "../ruleset/OSArgument.hpp"
-
-#include "../utilities/units/Quantity.hpp"
-
-#include "../utilities/data/Attribute.hpp"
-
+#include "../runmanager/lib/RubyJobUtils.hpp"
+#include "../runmanager/lib/WorkItem.hpp"
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/FileReference.hpp"
 #include "../utilities/core/Finder.hpp"
 #include "../utilities/core/Json.hpp"
 #include "../utilities/core/PathHelpers.hpp"
+#include "MeasureGroup.hpp"
+#include "RubyContinuousVariable.hpp"
+#include "RubyMeasure.hpp"
+#include "RubyMeasure_Impl.hpp"
+#include "analysis/../ruleset/../utilities/idf/../core/Enum.hpp"
+#include "analysis/../utilities/bcl/BCLMeasure.hpp"
+#include "analysis/../utilities/core/../time/DateTime.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/Measure.hpp"
+#include "analysis/Measure_Impl.hpp"
 
-#include <OpenStudio.hxx>
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 using namespace openstudio::ruleset;
 

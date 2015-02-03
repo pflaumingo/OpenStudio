@@ -21,8 +21,9 @@
 #define UTILITIES_CORE_TEMPORARYDIRECTORY_HPP
 
 #include "../UtilitiesAPI.hpp"
-#include "Path.hpp"
 #include "Logger.hpp"
+#include "Path.hpp"
+#include "utilities/core/LogMessage.hpp"
 
 namespace openstudio
 {

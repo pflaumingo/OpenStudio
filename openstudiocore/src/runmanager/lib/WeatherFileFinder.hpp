@@ -20,16 +20,24 @@
 #ifndef RUNMANAGER_LIB_WEATHERFILEFINDER_HPP
 #define RUNMANAGER_LIB_WEATHERFILEFINDER_HPP
 
+#include <boost/optional/optional.hpp>
+#include <set>
+#include <string>
+
+#include "../../utilities/core/Logger.hpp"
 #include "../../utilities/core/Path.hpp"
+#include "../../utilities/idf/IdfFile.hpp"
 #include "JobParam.hpp"
 #include "ToolInfo.hpp"
-#include "../../utilities/idf/IdfFile.hpp"
-#include "../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/RunManagerAPI.hpp"
 
 namespace openstudio {
 namespace runmanager {
 
   /// Used to determine the weather file that needs to be used with a given IDF
+class ToolVersion;
+
   class RUNMANAGER_API WeatherFileFinder
   {
     public:

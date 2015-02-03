@@ -17,62 +17,45 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/AirLoopHVAC.hpp"
-#include "../../model/AirLoopHVAC_Impl.hpp"
-#include "../../model/SizingSystem.hpp"
-#include "../../model/SizingSystem_Impl.hpp"
-#include "../../model/CoilCoolingWater.hpp"
-#include "../../model/CoilCoolingWater_Impl.hpp"
-#include "../../model/CoilHeatingWater.hpp"
-#include "../../model/CoilHeatingWater_Impl.hpp"
-#include "../../model/ControllerWaterCoil.hpp"
-#include "../../model/ControllerWaterCoil_Impl.hpp"
-#include "../../model/AirLoopHVACZoneSplitter.hpp"
-#include "../../model/AirLoopHVACZoneSplitter_Impl.hpp"
-#include "../../model/AirLoopHVACZoneMixer.hpp"
-#include "../../model/AirLoopHVACZoneMixer_Impl.hpp"
-#include "../../model/AirLoopHVACOutdoorAirSystem.hpp"
-#include "../../model/AirLoopHVACOutdoorAirSystem_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/ScheduleCompact.hpp"
-#include "../../model/ScheduleCompact_Impl.hpp"
-#include "../../model/SetpointManager.hpp"
-#include "../../model/SetpointManager_Impl.hpp"
-#include "../../model/SetpointManagerMixedAir.hpp"
-#include "../../model/StraightComponent.hpp"
-#include "../../model/StraightComponent_Impl.hpp"
-#include "../../model/WaterToAirComponent.hpp"
-#include "../../model/WaterToAirComponent_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/FanConstantVolume.hpp"
-#include "../../model/FanConstantVolume_Impl.hpp"
-#include "../../model/FanVariableVolume.hpp"
-#include "../../model/FanVariableVolume_Impl.hpp"
-#include "../../model/LifeCycleCost.hpp"
-
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
 #include <utilities/idd/AirLoopHVAC_FieldEnums.hxx>
-#include <utilities/idd/AirLoopHVAC_ControllerList_FieldEnums.hxx>
-#include <utilities/idd/AirLoopHVAC_OutdoorAirSystem_FieldEnums.hxx>
-#include <utilities/idd/AirLoopHVAC_SupplyPath_FieldEnums.hxx>
-#include <utilities/idd/AirLoopHVAC_ReturnPath_FieldEnums.hxx>
 #include <utilities/idd/AvailabilityManagerAssignmentList_FieldEnums.hxx>
-#include <utilities/idd/AvailabilityManager_Scheduled_FieldEnums.hxx>
 #include <utilities/idd/AvailabilityManager_NightCycle_FieldEnums.hxx>
-#include <utilities/idd/BranchList_FieldEnums.hxx>
+#include <utilities/idd/AvailabilityManager_Scheduled_FieldEnums.hxx>
 #include <utilities/idd/Branch_FieldEnums.hxx>
-#include <utilities/idd/Schedule_Compact_FieldEnums.hxx>
-#include <utilities/idd/Sizing_System_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <algorithm>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../../model/AirLoopHVAC.hpp"
+#include "../../model/AirLoopHVACOutdoorAirSystem.hpp"
+#include "../../model/CoilCoolingWater.hpp"
+#include "../../model/CoilHeatingWater.hpp"
+#include "../../model/ControllerWaterCoil.hpp"
+#include "../../model/FanConstantVolume.hpp"
+#include "../../model/FanVariableVolume.hpp"
+#include "../../model/LifeCycleCost.hpp"
+#include "../../model/Model.hpp"
+#include "../../model/Node.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/SetpointManager.hpp"
+#include "../../model/SetpointManagerMixedAir.hpp"
+#include "../../model/SizingSystem.hpp"
+#include "../../model/StraightComponent.hpp"
+#include "../../model/WaterToAirComponent.hpp"
 #include "../../utilities/core/Containers.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/core/Assert.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/HVACComponent.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

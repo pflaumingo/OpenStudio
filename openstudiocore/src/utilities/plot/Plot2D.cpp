@@ -17,7 +17,20 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <qboxlayout.h>
+#include <qfiledialog.h>
+#include <qpainter.h>
+#include <qpixmap.h>
+#include <qrect.h>
+#include <qsizepolicy.h>
+
 #include "Plot2D.hpp"
+#include "qwt/qwt_plot.h"
+#include "qwt/qwt_text.h"
+#include "utilities/plot/../core/Path.hpp"
+#include "utilities/plot/../core/String.hpp"
+
+class QCloseEvent;
 
 using namespace std;
 using namespace boost;

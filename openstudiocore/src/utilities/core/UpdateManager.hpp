@@ -20,17 +20,20 @@
 #ifndef UTILITIES_CORE_UPDATEMANAGER_HPP
 #define UTILITIES_CORE_UPDATEMANAGER_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "Logger.hpp"
-
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <QObject>
 #include <string>
 #include <vector>
-#include <QObject>
 
-class QNetworkRequest;
-class QNetworkReply;
-class QNetworkAccessManager;
+#include "../UtilitiesAPI.hpp"
+#include "Logger.hpp"
+#include "utilities/core/LogMessage.hpp"
+
 class QDomElement;
+class QNetworkAccessManager;
+class QNetworkReply;
+class QNetworkRequest;
 
 namespace openstudio {
 

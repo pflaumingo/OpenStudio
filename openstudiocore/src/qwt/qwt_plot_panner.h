@@ -10,11 +10,13 @@
 #ifndef QWT_PLOT_PANNER_H
 #define QWT_PLOT_PANNER_H 1
 
+#include <qobjectdefs.h>
+
 #include "qwt_global.h"
 #include "qwt_panner.h"
 
-class QwtPlotCanvas;
 class QwtPlot;
+class QwtPlotCanvas;
 
 /*!
   \brief QwtPlotPanner provides panning of a plot canvas 
@@ -51,6 +53,7 @@ protected slots:
 
 private:
     class PrivateData;
+
     PrivateData *d_data;
 };
 

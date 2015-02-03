@@ -10,9 +10,20 @@
 #ifndef QWT_ABSTRACT_SLIDER_H
 #define QWT_ABSTRACT_SLIDER_H
 
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
 #include <qwidget.h>
-#include "qwt_global.h"
+#include <stddef.h>
+
 #include "qwt_double_range.h"
+#include "qwt_global.h"
+
+class QKeyEvent;
+class QMouseEvent;
+class QPoint;
+class QTimerEvent;
+class QWheelEvent;
 
 /*!
   \brief An abstract base class for slider widgets
@@ -187,6 +198,7 @@ private:
     void buttonReleased();
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

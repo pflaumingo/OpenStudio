@@ -20,49 +20,54 @@
 #ifndef MODEL_MODELOBJECT_HPP
 #define MODEL_MODELOBJECT_HPP
 
-#include "ModelAPI.hpp"
-#include "AccessPolicyStore.hpp"
-
-#include "../utilities/idf/WorkspaceObject.hpp"
-
-#include "../utilities/idd/IddEnums.hpp"
+#include <boost/lexical_cast.hpp>
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <qmetatype.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
-
-#include <boost/optional.hpp>
-#include <boost/lexical_cast.hpp>
-
-#include <vector>
-#include <set>
+#include "../utilities/idd/IddEnums.hpp"
+#include "../utilities/idf/WorkspaceObject.hpp"
+#include "AccessPolicyStore.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
 
 namespace openstudio {
 
 class Attribute;
-class TimeSeries;
-
 class ModelObjectSelectorView;
+class TimeSeries;
+class IdfExtensibleGroup;
+class IdfObject;
+class Quantity;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
 
 namespace model {
 
-class Model;
 class Component;
+class Connection;
 class LifeCycleCost;
-
-class Relationship;
+class Meter;
+class Model;
 class ModelExtensibleGroup;
-
+class OutputVariable;
 class ParentObject;
+class Relationship;
 class ResourceObject;
-
 class Schedule;
 
-class OutputVariable;
-class Meter;
-class Connection;
-
 namespace detail {
-  class Model_Impl;
   class ModelObject_Impl;
+  class Model_Impl;
 } // detail
 
 /** Typedef for ScheduleTypeRegistry key. First is a string representation of the class name.

@@ -20,9 +20,19 @@
 #ifndef AIRFLOW_CONTAM_PRJAIRFLOWELEMENTSIMPL_HPP
 #define AIRFLOW_CONTAM_PRJAIRFLOWELEMENTSIMPL_HPP
 
+#include <qstring.h>
+#include <string>
+#include <vector>
+
 #include "PrjDefines.hpp"
 #include "PrjReader.hpp"
 #include "PrjSubobjects.hpp"
+
+namespace openstudio {
+namespace contam {
+class Reader;
+}  // namespace contam
+}  // namespace openstudio
 
 namespace openstudio {
 namespace contam {

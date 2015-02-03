@@ -17,49 +17,50 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Fan_OnOff_FieldEnums.hxx>
+#include <algorithm>
+
+#include "../utilities/core/Assert.hpp"
+#include "AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass.hpp"
+#include "AirLoopHVACUnitaryHeatPumpAirToAir.hpp"
+#include "AirLoopHVACUnitarySystem.hpp"
+#include "Curve.hpp"
+#include "CurveCubic.hpp"
+#include "CurveExponent.hpp"
 #include "FanOnOff.hpp"
 #include "FanOnOff_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Model.hpp"
 #include "Loop.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
+#include "Schedule.hpp"
 #include "StraightComponent.hpp"
 #include "StraightComponent_Impl.hpp"
-#include "Curve.hpp"
-#include "Curve_Impl.hpp"
-#include "CurveCubic.hpp"
-#include "CurveCubic_Impl.hpp"
-#include "CurveExponent.hpp"
-#include "CurveExponent_Impl.hpp"
 #include "ZoneHVACComponent.hpp"
-#include "ZoneHVACComponent_Impl.hpp"
-#include "ZoneHVACWaterToAirHeatPump.hpp"
-#include "ZoneHVACWaterToAirHeatPump_Impl.hpp"
-#include "ZoneHVACPackagedTerminalAirConditioner.hpp"
-#include "ZoneHVACPackagedTerminalAirConditioner_Impl.hpp"
 #include "ZoneHVACFourPipeFanCoil.hpp"
-#include "ZoneHVACFourPipeFanCoil_Impl.hpp"
+#include "ZoneHVACPackagedTerminalAirConditioner.hpp"
 #include "ZoneHVACPackagedTerminalHeatPump.hpp"
-#include "ZoneHVACPackagedTerminalHeatPump_Impl.hpp"
 #include "ZoneHVACTerminalUnitVariableRefrigerantFlow.hpp"
-#include "ZoneHVACTerminalUnitVariableRefrigerantFlow_Impl.hpp"
-#include "AirLoopHVACUnitaryHeatPumpAirToAir.hpp"
-#include "AirLoopHVACUnitaryHeatPumpAirToAir_Impl.hpp"
-#include "AirLoopHVACUnitarySystem.hpp"
-#include "AirLoopHVACUnitarySystem_Impl.hpp"
-#include "AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass.hpp"
-#include "AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass_Impl.hpp"
-#include <utilities/idd/OS_Fan_OnOff_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "ZoneHVACWaterToAirHeatPump.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   FanOnOff_Impl::FanOnOff_Impl(const IdfObject& idfObject,
                                Model_Impl* model,

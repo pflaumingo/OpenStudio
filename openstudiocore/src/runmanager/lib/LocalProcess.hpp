@@ -21,18 +21,31 @@
 #define RUNMANAGER_LIB_LOCALPROCESS_HPP
 
 #include <boost/filesystem.hpp>
+#include <qbytearray.h>
+#include <qmutex.h>
+#include <qobjectdefs.h>
+#include <qprocess.h>
+#include <qstring.h>
+#include <qtimer.h>
+#include <QDateTime>
+#include <QFileInfo>
+#include <QFileSystemWatcher>
+#include <QMutex>
+#include <QProcess>
+#include <QTimer>
+#include <set>
 #include <string>
+#include <utility>
+#include <vector>
+
+#include "../../energyplus/ErrorFile.hpp"
 #include "../../utilities/core/Logger.hpp"
 #include "../../utilities/core/Path.hpp"
 #include "Job_Impl.hpp"
-#include "../../energyplus/ErrorFile.hpp"
-
-#include <QProcess>
-#include <QFileSystemWatcher>
-#include <QFileInfo>
-#include <QDateTime>
-#include <QTimer>
-#include <QMutex>
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/Process.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
 namespace openstudio {
 namespace runmanager {

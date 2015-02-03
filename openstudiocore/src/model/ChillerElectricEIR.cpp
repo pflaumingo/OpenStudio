@@ -17,29 +17,43 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Model.hpp"
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Chiller_Electric_EIR_FieldEnums.hxx>
+#include <algorithm>
+
+#include "../utilities/core/Assert.hpp"
 #include "ChillerElectricEIR.hpp"
 #include "ChillerElectricEIR_Impl.hpp"
 #include "CurveBiquadratic.hpp"
-#include "CurveBiquadratic_Impl.hpp"
 #include "CurveQuadratic.hpp"
-#include "CurveQuadratic_Impl.hpp"
+#include "Model.hpp"
 #include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/WaterToWaterComponent.hpp"
+#include "model/WaterToWaterComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Chiller_Electric_EIR_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace model {
+class Node;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ChillerElectricEIR_Impl::ChillerElectricEIR_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : WaterToWaterComponent_Impl(idfObject,model,keepHandle)

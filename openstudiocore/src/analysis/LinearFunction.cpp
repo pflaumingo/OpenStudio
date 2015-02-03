@@ -17,18 +17,33 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "LinearFunction.hpp"
-#include "LinearFunction_Impl.hpp"
-
-#include "Variable.hpp"
-#include "Variable_Impl.hpp"
-
-#include "../utilities/data/Vector.hpp"
+#include <qmap.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <functional>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
 #include "../utilities/core/Json.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "../utilities/data/Vector.hpp"
+#include "LinearFunction.hpp"
+#include "LinearFunction_Impl.hpp"
+#include "Variable.hpp"
+#include "Variable_Impl.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/Function.hpp"
+#include "analysis/Function_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+namespace analysis {
+class DataPoint;
+}  // namespace analysis
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

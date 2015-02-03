@@ -20,11 +20,14 @@
 #ifndef UTILITIES_GEOMETRY_EULERANGLES_HPP
 #define UTILITIES_GEOMETRY_EULERANGLES_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "../data/Vector.hpp"
-#include "../core/Logger.hpp"
-
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
 #include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "../data/Vector.hpp"
+#include "utilities/geometry/../core/LogMessage.hpp"
 
 namespace openstudio{
 

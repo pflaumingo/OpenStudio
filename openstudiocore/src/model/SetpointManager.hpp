@@ -20,8 +20,27 @@
 #ifndef MODEL_SETPOINTMANAGER_HPP
 #define MODEL_SETPOINTMANAGER_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "HVACComponent.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+namespace model {
+class Node;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 

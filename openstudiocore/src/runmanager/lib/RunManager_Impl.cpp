@@ -17,33 +17,93 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "RunManager_Impl.hpp"
-#include "Configuration.hpp"
-#include "../../utilities/core/Application.hpp"
-#include "../../utilities/core/PathHelpers.hpp"
-#include "../../utilities/core/URLHelpers.hpp"
-#include "../../utilities/core/ApplicationPathHelpers.hpp"
-#include <runmanager/lib/runmanagerdatabase.hxx>
-#include "JobFactory.hpp"
-#include "Workflow.hpp"
-#include <QFileInfo>
-#include <QDateTime>
-#include <QMessageBox>
-#include <QMutexLocker>
-#include <QElapsedTimer>
-#include "../../utilities/core/System.hpp"
-#include "../../utilities/core/Compare.hpp"
-#include "../../utilities/bcl/BCLMeasure.hpp"
-#include <QtConcurrentRun>
-#include <QFuture>
 #include <OpenStudio.hxx>
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/date_time/time.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <ext/alloc_traits.h>
+#include <limits.h>
+#include <litesql/datasource.hpp>
+#include <litesql/expr.hpp>
+#include <litesql/field.hpp>
+#include <litesql/operations.hpp>
+#include <qbrush.h>
+#include <qbytearray.h>
+#include <qdialog.h>
+#include <qelapsedtimer.h>
+#include <qfile.h>
+#include <qfileinfo.h>
+#include <qflags.h>
+#include <qfuture.h>
+#include <qiodevice.h>
+#include <qjsondocument.h>
+#include <qlist.h>
+#include <qmap.h>
+#include <qmetatype.h>
+#include <qnamespace.h>
+#include <qprocess.h>
+#include <qstring.h>
+#include <qtconcurrentrun.h>
+#include <qurl.h>
+#include <quuid.h>
+#include <runmanager/lib/runmanagerdatabase.hxx>
+#include <algorithm>
+#include <exception>
+#include <functional>
+#include <iostream>
+#include <list>
+#include <sstream>
+#include <stdexcept>
+#include <typeinfo>
+#include <utility>
 
-#include <QJsonDocument>
-#include <QJsonParseError>
-#include "RubyJobUtils.hpp"
-#include "WorkItem.hpp"
-#include "JSONWorkflowOptions.hpp"
 #include "../../ruleset/OSArgument.hpp"
+#include "../../utilities/bcl/BCLMeasure.hpp"
+#include "../../utilities/core/Application.hpp"
+#include "../../utilities/core/ApplicationPathHelpers.hpp"
+#include "../../utilities/core/Compare.hpp"
+#include "../../utilities/core/PathHelpers.hpp"
+#include "../../utilities/core/System.hpp"
+#include "../../utilities/core/URLHelpers.hpp"
+#include "Configuration.hpp"
+#include "JSONWorkflowOptions.hpp"
+#include "JobFactory.hpp"
+#include "RubyJobUtils.hpp"
+#include "RunManager_Impl.hpp"
+#include "Workflow.hpp"
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/Singleton.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/../../utilities/idf/URLSearchPath.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Enum.hpp"
+#include "runmanager/lib/../../utilities/time/Date.hpp"
+#include "runmanager/lib/../../utilities/time/Time.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/ConfigOptions.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/Job.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobState.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/LocalProcessCreator.hpp"
+#include "runmanager/lib/RunManagerStatus.hpp"
+#include "runmanager/lib/TreeStatus.hpp"
+
+class QWidget;
+namespace litesql {
+class NotFound;
+class SQLError;
+}  // namespace litesql
 
 namespace openstudio {
 namespace runmanager {

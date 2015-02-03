@@ -20,17 +20,31 @@
 #ifndef RUNMANAGER_LIB_ERRORESTIMATION_HPP
 #define RUNMANAGER_LIB_ERRORESTIMATION_HPP
 
-#include "RunManagerAPI.hpp"
-
-#include "../../utilities/units/Unit.hpp"
-#include "../../utilities/data/DataEnums.hpp"
-#include "../../utilities/sql/SqlFileEnums.hpp"
-#include "../../utilities/sql/SqlFile.hpp"
+#include <stddef.h>
+#include <map>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
 
 #include "../../isomodel/SimModel.hpp"
 #include "../../isomodel/UserModel.hpp"
-
+#include "../../utilities/data/DataEnums.hpp"
+#include "../../utilities/sql/SqlFile.hpp"
+#include "../../utilities/sql/SqlFileEnums.hpp"
+#include "../../utilities/units/Unit.hpp"
 #include "LinearApproximation.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/units/../core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/units/../core/Logger.hpp"
+
+namespace openstudio {
+class SqlFile;
+namespace isomodel {
+class UserModel;
+struct ISOResults;
+}  // namespace isomodel
+}  // namespace openstudio
 
 /// These classes are currently stubbed in here as we are move towards a full error estimation model
 namespace openstudio {

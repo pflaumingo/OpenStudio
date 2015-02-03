@@ -20,21 +20,34 @@
 #ifndef UTILITIES_SQL_SQLFILE_IMPL_HPP
 #define UTILITIES_SQL_SQLFILE_IMPL_HPP
 
-#include "../UtilitiesAPI.hpp"
-
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
 #include <sqlite/sqlite3.h>
-#include "SummaryData.hpp"
-#include "SqlFileEnums.hpp"
-#include "SqlFileDataDictionary.hpp"
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Optional.hpp"
 #include "../data/DataEnums.hpp"
 #include "../data/EndUses.hpp"
-#include "../core/Optional.hpp"
 #include "../data/Matrix.hpp"
+#include "SqlFileDataDictionary.hpp"
+#include "SqlFileEnums.hpp"
+#include "SummaryData.hpp"
+#include "utilities/sql/../data/../core/Path.hpp"
+#include "utilities/sql/../data/../time/Date.hpp"
+#include "utilities/sql/../data/TimeSeries.hpp"
+#include "utilities/sql/../data/Vector.hpp"
+#include "utilities/sql/../units/../core/LogMessage.hpp"
+#include "utilities/sql/../units/../core/Logger.hpp"
 
-#include <boost/optional.hpp>
-
-#include <string>
-#include <vector>
+namespace openstudio {
+class EndUses;
+class Time;
+struct SummaryData;
+}  // namespace openstudio
 
 // forward declaration
 namespace resultsviewer{
@@ -43,11 +56,11 @@ namespace resultsviewer{
 
 namespace openstudio{
 
+  class Calendar;
+  class DateTime;
+  class EpwFile;
   // forward declarations
   class SqlFileTimeSeriesQuery;
-  class EpwFile;
-  class DateTime;
-  class Calendar;
 
   // private namespace
   namespace detail{

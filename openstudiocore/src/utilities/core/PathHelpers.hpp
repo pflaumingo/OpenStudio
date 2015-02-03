@@ -20,8 +20,11 @@
 #ifndef UTILITIES_CORE_PATHHELPERS_HPP
 #define UTILITIES_CORE_PATHHELPERS_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <string>
 
+#include "../UtilitiesAPI.hpp"
 #include "Path.hpp"
 
 namespace openstudio {

@@ -17,25 +17,26 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-
-#include "../../model/Model.hpp"
-#include "../../model/SubSurface.hpp"
-#include "../../model/SubSurface_Impl.hpp"
-#include "../../model/Surface.hpp"
-#include "../../model/Surface_Impl.hpp"
-#include "../../model/ConstructionBase.hpp"
-#include "../../model/ConstructionBase_Impl.hpp"
-#include "../../model/ShadingControl.hpp"
-#include "../../model/ShadingControl_Impl.hpp"
-
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/FenestrationSurface_Detailed_FieldEnums.hxx>
-
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "../../model/ConstructionBase.hpp"
+#include "../../model/ShadingControl.hpp"
+#include "../../model/SubSurface.hpp"
+#include "../../model/Surface.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/geometry/Point3d.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

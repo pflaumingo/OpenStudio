@@ -17,16 +17,27 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OutputAttributeVariableRecord.hpp"
-#include "OutputAttributeVariableRecord_Impl.hpp"
-
-#include "JoinRecord.hpp"
-#include "FunctionRecord.hpp"
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../analysis/OutputAttributeVariable.hpp"
-#include "../analysis/OutputAttributeVariable_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "FunctionRecord.hpp"
+#include "OutputAttributeVariableRecord.hpp"
+#include "OutputAttributeVariableRecord_Impl.hpp"
+#include "project/../analysis/OutputVariable.hpp"
+#include "project/../analysis/Variable.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/OutputVariableRecord.hpp"
+#include "project/OutputVariableRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

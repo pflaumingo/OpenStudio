@@ -20,15 +20,14 @@
 #ifndef UTILITIES_CORE_LOGMESSAGE_HPP
 #define UTILITIES_CORE_LOGMESSAGE_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "String.hpp"
-
 #include <boost/log/sinks/sync_frontend.hpp>
 #include <boost/log/sinks/text_ostream_backend.hpp>
 #include <boost/log/sources/severity_channel_logger.hpp>
-
+#include <string>
 #include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "String.hpp"
 
 /** Severity levels for logging, Warn is default = 0
  *  Trace = debug messages not currently needed, but may be useful later

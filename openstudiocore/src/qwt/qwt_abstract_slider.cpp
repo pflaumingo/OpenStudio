@@ -7,10 +7,16 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include <qevent.h>
+#include <math.h>
 #include <qdatetime.h>
+#include <qevent.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_range.h"
 #include "qwt_abstract_slider.h"
 #include "qwt_math.h"
+
+class QPoint;
+class QTimerEvent;
 
 #ifndef WHEEL_DELTA
 #define WHEEL_DELTA 120

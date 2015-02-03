@@ -1,5 +1,7 @@
 #include "logger.hpp"
+
 #
+#include <litesql/except.hpp>
 #include <iostream>
 
 using namespace std; 

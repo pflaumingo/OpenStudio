@@ -20,11 +20,17 @@
 #ifndef UTILITIES_UNITS_QUANTITY_HPP
 #define UTILITIES_UNITS_QUANTITY_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Unit.hpp"
-
+#include <boost/optional/optional.hpp>
+#include <qmetatype.h>
 #include <QMetaType>
+#include <iosfwd>
+#include <string>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "Unit.hpp"
+#include "utilities/units/../core/LogMessage.hpp"
+#include "utilities/units/../core/Logger.hpp"
 
 namespace openstudio {
 
@@ -32,6 +38,8 @@ namespace openstudio {
  *  arithmetic operations. The constructors and assignment operator ensure that this class 
  *  behaves as "plain old data" (POD) by cloning any units information (to avoid multiple objects 
  *  pointing to the exact same unit data). */
+struct Scale;
+
 class UTILITIES_API Quantity {
  public:
   /** @name Constructors */

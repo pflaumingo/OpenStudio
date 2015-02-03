@@ -17,15 +17,30 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <../utilities/core/Logger.hpp>
+#include <../utilities/core/Path.hpp>
+#include <../utilities/data/../time/DateTime.hpp>
+#include <../utilities/data/TimeSeries.hpp>
+#include <../utilities/data/Vector.hpp>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <qfile.h>
+#include <qiodevice.h>
+#include <qstring.h>
+#include <algorithm>
+
 #include "PrjModelImpl.hpp"
 #include "PrjReader.hpp"
 #include "SimFile.hpp"
-#include <QFile>
-#include <algorithm>
+#include "airflow/contam/PrjAirflowElements.hpp"
+#include "airflow/contam/PrjDefines.hpp"
+#include "airflow/contam/PrjObjects.hpp"
 
 namespace openstudio {
 namespace contam {
 namespace detail {
+
+class IndexModelImpl::removeSpecies::;
 
 void IndexModelImpl::setDefaults()
 {

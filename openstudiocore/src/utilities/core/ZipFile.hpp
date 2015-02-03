@@ -20,10 +20,10 @@
 #ifndef UTILITIES_CORE_ZIPFILE_HPP
 #define UTILITIES_CORE_ZIPFILE_HPP
 
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
 #include "Path.hpp"
-
-#include <vector>
 
 namespace openstudio {
   class UTILITIES_API ZipFile 

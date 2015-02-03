@@ -19,6 +19,12 @@
 
 #include "DakotaAlgorithmOptions.hpp"
 #include "DakotaAlgorithmOptions_Impl.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/AlgorithmOptions_Impl.hpp"
+
+namespace openstudio {
+class Attribute;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

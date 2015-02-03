@@ -20,12 +20,15 @@
 #ifndef UTILITIES_CORE_FILELOGSINK_HPP
 #define UTILITIES_CORE_FILELOGSINK_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
 #include "LogSink.hpp"
 #include "Path.hpp"
 
 namespace openstudio{
+
+class LogMessage;
 
   class UTILITIES_API FileLogSink : public LogSink
   {

@@ -17,22 +17,34 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "SpaceLoadInstance.hpp"
-#include "SpaceLoadInstance_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "SpaceLoadDefinition.hpp"
-#include "SpaceLoadDefinition_Impl.hpp"
-#include "Space.hpp"
-#include "SpaceType.hpp"
+#include <ext/alloc_traits.h>
+#include <quuid.h>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "Space.hpp"
+#include "SpaceLoadDefinition.hpp"
+#include "SpaceLoadInstance.hpp"
+#include "SpaceLoadInstance_Impl.hpp"
+#include "SpaceType.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/SpaceLoad.hpp"
+#include "model/SpaceLoad_Impl.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   SpaceLoadInstance_Impl::SpaceLoadInstance_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : SpaceLoad_Impl(idfObject, model, keepHandle)

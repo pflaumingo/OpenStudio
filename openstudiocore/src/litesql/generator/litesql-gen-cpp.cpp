@@ -1,11 +1,17 @@
-#include "litesql/split.hpp"
-#include "litesql/types.hpp"
-#include "litesql-gen-cpp.hpp"
-#include "xmlobjects.hpp"
-
-#include "logger.hpp"
-
+#include <ext/alloc_traits.h>
+#include <litesql/except.hpp>
+#include <litesql/string.hpp>
+#include <stddef.h>
 #include <cstdio>
+#include <map>
+#include <utility>
+#include <vector>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/objectmodel.hpp"
+#include "litesql-gen-cpp.hpp"
+#include "litesql/split.hpp"
+#include "logger.hpp"
+#include "xmlobjects.hpp"
 
 namespace gen {
 using namespace litesql;
@@ -69,7 +75,6 @@ public:
         return buf;
     }
 };
-#include <iostream>
 class Method {
 public:
     string name, returnType, templateParams, constructorParams;

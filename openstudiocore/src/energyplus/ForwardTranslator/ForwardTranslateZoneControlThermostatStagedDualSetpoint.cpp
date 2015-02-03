@@ -17,18 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/ZoneControlThermostatStagedDualSetpoint.hpp"
-#include "../../model/ZoneControlThermostatStagedDualSetpoint_Impl.hpp"
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include <utilities/idd/ZoneControl_Thermostat_StagedDualSetpoint_FieldEnums.hxx>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <utilities/idd/IddEnums.hxx>
 #include <utilities/idd/ThermostatSetpoint_DualSetpoint_FieldEnums.hxx>
 #include <utilities/idd/ZoneControl_Thermostat_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/ZoneControl_Thermostat_StagedDualSetpoint_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/Schedule.hpp"
+#include "../../model/ThermalZone.hpp"
+#include "../../model/ZoneControlThermostatStagedDualSetpoint.hpp"
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObjectProperties.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "utilities/core/Containers.hpp"
 
 using namespace openstudio::model;
 

@@ -11,6 +11,10 @@
 
 #include "qwt_plot_dict.h"
 
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
+
 class QwtPlotDict::PrivateData
 {
 public:

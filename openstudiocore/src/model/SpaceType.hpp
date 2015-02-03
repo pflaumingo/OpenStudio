@@ -20,31 +20,49 @@
 #ifndef MODEL_SPACETYPE_HPP
 #define MODEL_SPACETYPE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ResourceObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
-// forward declarations
-class Schedule;
-class Space;
-class InternalMass;
-class People;
-class Lights;
-class Luminaire;
-class ElectricEquipment;
-class GasEquipment;
-class HotWaterEquipment;
-class SteamEquipment;
-class OtherEquipment;
-class SpaceInfiltrationDesignFlowRate;
-class SpaceInfiltrationEffectiveLeakageArea;
 class DefaultConstructionSet;
 class DefaultScheduleSet;
 class DefaultScheduleType;
-class RenderingColor;
 class DesignSpecificationOutdoorAir;
+class ElectricEquipment;
+class GasEquipment;
+class HotWaterEquipment;
+class InternalMass;
+class Lights;
+class Luminaire;
+class OtherEquipment;
+class People;
+class RenderingColor;
+// forward declarations
+class Schedule;
+class Space;
+class SpaceInfiltrationDesignFlowRate;
+class SpaceInfiltrationEffectiveLeakageArea;
+class SteamEquipment;
 
 namespace detail {
 

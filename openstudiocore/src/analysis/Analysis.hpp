@@ -20,18 +20,47 @@
 #ifndef ANALYSIS_ANALYSIS_HPP
 #define ANALYSIS_ANALYSIS_HPP
 
-#include "AnalysisAPI.hpp"
-#include "AnalysisObject.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <QVariant>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Enum.hpp"
 #include "../utilities/core/Path.hpp"
+#include "AnalysisAPI.hpp"
+#include "AnalysisObject.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
 
-#include <QVariant>
+class QVariant;
 
 namespace openstudio {
 
 class FileReference;
 class FileReferenceType;
+namespace analysis {
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
+}  // namespace analysis
 
 namespace runmanager {
   class Job;
@@ -39,12 +68,12 @@ namespace runmanager {
 
 namespace analysis {
 
-class Problem;
 class Algorithm;
 class DakotaAlgorithm;
 class DataPoint;
 class Measure;
 class OpenStudioAlgorithm;
+class Problem;
 
 namespace detail {
 

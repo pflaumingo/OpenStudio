@@ -17,34 +17,37 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ShadingControl.hpp"
-#include "ShadingControl_Impl.hpp"
-#include "Construction.hpp"
-#include "Construction_Impl.hpp"
-#include "ShadingMaterial.hpp"
-#include "ShadingMaterial_Impl.hpp"
-#include "Blind.hpp"
-#include "Blind_Impl.hpp"
-#include "Screen.hpp"
-#include "Screen_Impl.hpp"
-#include "Shade.hpp"
-#include "Shade_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_ShadingControl_FieldEnums.hxx>
+#include <ext/alloc_traits.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_ShadingControl_FieldEnums.hxx>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "Blind.hpp"
+#include "Construction.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "Screen.hpp"
+#include "Shade.hpp"
+#include "ShadingControl.hpp"
+#include "ShadingControl_Impl.hpp"
+#include "ShadingMaterial.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/Material.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/ResourceObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ShadingControl_Impl::ShadingControl_Impl(const IdfObject& idfObject,
                                            Model_Impl* model,

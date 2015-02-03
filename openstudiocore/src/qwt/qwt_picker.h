@@ -10,19 +10,25 @@
 #ifndef QWT_PICKER
 #define QWT_PICKER 1
 
-#include <qobject.h>
-#include <qpen.h>
 #include <qfont.h>
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <qpen.h>
+#include <qpoint.h>
 #include <qrect.h>
-#include "qwt_global.h"
-#include "qwt_text.h"
-#include "qwt_polygon.h"
-#include "qwt_event_pattern.h"
 
-class QWidget;
-class QMouseEvent;
-class QWheelEvent;
+#include "qwt_event_pattern.h"
+#include "qwt_global.h"
+#include "qwt_polygon.h"
+#include "qwt_text.h"
+
+class QEvent;
 class QKeyEvent;
+class QMouseEvent;
+class QPainter;
+class QSize;
+class QWheelEvent;
+class QWidget;
 class QwtPickerMachine;
 
 /*!
@@ -370,6 +376,7 @@ private:
 
     class PickerWidget;
     class PrivateData;
+
     PrivateData *d_data;
 };
             

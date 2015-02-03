@@ -20,13 +20,16 @@
 #ifndef ANALYSIS_ALGORITHMOPTIONS_HPP
 #define ANALYSIS_ALGORITHMOPTIONS_HPP
 
-#include "AnalysisAPI.hpp"
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <qvariant.h>
+#include <memory>
+#include <typeinfo>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
-
-#include <boost/optional.hpp>
-
-#include <vector>
+#include "AnalysisAPI.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 

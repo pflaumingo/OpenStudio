@@ -17,33 +17,37 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_ZoneHVAC_UnitHeater_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+
+#include "../utilities/core/Assert.hpp"
+#include "CoilHeatingWater.hpp"
+#include "HVACComponent.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
 #include "ZoneHVACUnitHeater.hpp"
 #include "ZoneHVACUnitHeater_Impl.hpp"
-
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "CoilHeatingWater.hpp"
-#include "CoilHeatingWater_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-
-#include <utilities/idd/OS_ZoneHVAC_UnitHeater_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/PlantLoop.hpp"
+#include "model/ZoneHVACComponent.hpp"
+#include "model/ZoneHVACComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ZoneHVACUnitHeater_Impl::ZoneHVACUnitHeater_Impl(const IdfObject& idfObject,
                                                    Model_Impl* model,

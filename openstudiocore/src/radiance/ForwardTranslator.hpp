@@ -20,24 +20,47 @@
 #ifndef RADIANCE_FORWARDTRANSLATOR_HPP
 #define RADIANCE_FORWARDTRANSLATOR_HPP
 
-#include "RadianceAPI.hpp"
-#include "WindowGroup.hpp"
+#include <boost/optional/optional.hpp>
+#include <map>
+#include <set>
+#include <string>
+#include <vector>
 
-#include "../model/Model.hpp"
-#include "../model/Surface.hpp"
-#include "../model/SubSurface.hpp"
-#include "../model/ShadingSurface.hpp"
+#include "../model/DaylightingControl.hpp"
+#include "../model/GlareSensor.hpp"
+#include "../model/IlluminanceMap.hpp"
 #include "../model/InteriorPartitionSurface.hpp"
 #include "../model/Luminaire.hpp"
-#include "../model/DaylightingControl.hpp"
-#include "../model/IlluminanceMap.hpp"
-#include "../model/GlareSensor.hpp"
-
-#include "../utilities/geometry/Point3d.hpp"
-#include "../utilities/geometry/Vector3d.hpp"
-
+#include "../model/Model.hpp"
+#include "../model/ShadingSurface.hpp"
+#include "../model/SubSurface.hpp"
+#include "../model/Surface.hpp"
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/core/StringStreamLogSink.hpp"
+#include "../utilities/geometry/Point3d.hpp"
+#include "../utilities/geometry/Vector3d.hpp"
+#include "RadianceAPI.hpp"
+#include "WindowGroup.hpp"
+#include "radiance/../model/../utilities/core/Path.hpp"
+#include "radiance/../model/../utilities/idd/../core/LogMessage.hpp"
+#include "radiance/../model/../utilities/idf/Handle.hpp"
+
+namespace openstudio {
+namespace model {
+class ConstructionBase;
+class DaylightingControl;
+class GlareSensor;
+class IlluminanceMap;
+class InteriorPartitionSurface;
+class Luminaire;
+class ShadingControl;
+class ShadingSurface;
+class ShadingSurfaceGroup;
+class Space;
+class SubSurface;
+class Surface;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace radiance {

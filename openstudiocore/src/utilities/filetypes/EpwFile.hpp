@@ -20,19 +20,42 @@
 #ifndef UTILITIES_FILETYPES_EPWFILE_HPP
 #define UTILITIES_FILETYPES_EPWFILE_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/filesystem/path.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <qstring.h>
+#include <ostream>
+#include <string>
+#include <vector>
 
-#include "../core/Path.hpp"
+#include "../UtilitiesAPI.hpp"
 #include "../core/Logger.hpp"
-#include "../time/Time.hpp"
+#include "../core/Path.hpp"
+#include "../data/TimeSeries.hpp"
 #include "../time/Date.hpp"
 #include "../time/DateTime.hpp"
-#include "../data/TimeSeries.hpp"
+#include "../time/Time.hpp"
+#include "utilities/filetypes/../core/EnumBase.hpp"
+#include "utilities/filetypes/../core/LogMessage.hpp"
+#include "utilities/filetypes/../time/../core/Enum.hpp"
 
 namespace openstudio{
 
 // forward declaration
 class IdfObject;
+class TimeSeries;
 
 OPENSTUDIO_ENUM(EpwDataField,
   ((Year)(Year)(0))

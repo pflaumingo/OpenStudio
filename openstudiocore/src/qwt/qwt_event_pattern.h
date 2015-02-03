@@ -10,11 +10,14 @@
 #ifndef QWT_EVENT_PATTERN
 #define QWT_EVENT_PATTERN 1
 
+#include <qglobal.h>
 #include <qnamespace.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_global.h"
 #include "qwt_array.h"
 
-class QMouseEvent;
 class QKeyEvent;
+class QMouseEvent;
 
 /*!
   \brief A collection of event patterns

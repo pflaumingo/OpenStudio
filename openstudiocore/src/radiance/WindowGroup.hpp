@@ -20,13 +20,15 @@
 #ifndef RADIANCE_WINDOWGROUP_HPP
 #define RADIANCE_WINDOWGROUP_HPP
 
-#include "RadianceAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <string>
+#include <vector>
 
-#include "../model/Space.hpp"
 #include "../model/ConstructionBase.hpp"
 #include "../model/ShadingControl.hpp"
-
+#include "../model/Space.hpp"
 #include "../utilities/geometry/Point3d.hpp"
+#include "RadianceAPI.hpp"
 
 namespace openstudio{
 namespace radiance{

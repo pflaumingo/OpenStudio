@@ -10,18 +10,29 @@
 #ifndef QWT_PLOT_CURVE_H
 #define QWT_PLOT_CURVE_H
 
+#include <qbrush.h>
+#include <qglobal.h>
 #include <qpen.h>
+#include <qpolygon.h>
 #include <qstring.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_array.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
+#include "qwt_data.h"
 #include "qwt_global.h"
 #include "qwt_plot_item.h"
-#include "qwt_text.h"
 #include "qwt_polygon.h"
-#include "qwt_data.h"
+#include "qwt_text.h"
 
 class QPainter;
+class QPoint;
+class QRect;
+class QwtCurveFitter;
+class QwtLegend;
 class QwtScaleMap;
 class QwtSymbol;
-class QwtCurveFitter;
+class QwtText;
 
 /*!
   \brief A plot item, that represents a series of points
@@ -269,6 +280,7 @@ private:
     QwtData *d_xy;
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

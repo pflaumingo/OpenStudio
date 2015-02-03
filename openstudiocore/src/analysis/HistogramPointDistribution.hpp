@@ -20,14 +20,25 @@
 #ifndef ANALYSIS_HISTOGRAMPOINTDISTRIBUTION_HPP
 #define ANALYSIS_HISTOGRAMPOINTDISTRIBUTION_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "UncertaintyDescription.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/AnalysisEnums.hpp"
 
 namespace openstudio {
 namespace analysis {
 
 /** HistogramPointDistribution is an UncertaintyDescription that can apply aleatory uncertainty to a
  *  discrete variable. */
+namespace detail {
+class UncertaintyDescription_Impl;
+}  // namespace detail
+
 class ANALYSIS_API HistogramPointDistribution : public UncertaintyDescription {
  public:
   /** @name Constructors and Destructors */

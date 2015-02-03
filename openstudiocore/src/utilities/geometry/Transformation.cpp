@@ -17,20 +17,29 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Transformation.hpp"
-#include "Point3d.hpp"
-#include "Vector3d.hpp"
-#include "Plane.hpp"
+#include <boost/math/constants/constants.hpp>
+#include <boost/numeric/ublas/detail/matrix_assign.hpp>
+#include <boost/numeric/ublas/expression_types.hpp>
+#include <boost/numeric/ublas/io.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
+#include <boost/numeric/ublas/matrix_expression.hpp>
+#include <boost/numeric/ublas/vector.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
+#include <algorithm>
+#include <sstream>
+
+#include "../core/Assert.hpp"
 #include "BoundingBox.hpp"
 #include "EulerAngles.hpp"
 #include "Geometry.hpp"
-#include "../core/Assert.hpp"
-
-#include <boost/math/constants/constants.hpp>
-
-#include <algorithm>
-
-#include <math.h>
+#include "Plane.hpp"
+#include "Point3d.hpp"
+#include "Transformation.hpp"
+#include "Vector3d.hpp"
+#include "utilities/geometry/../data/../core/Logger.hpp"
+#include "utilities/geometry/../data/Matrix.hpp"
+#include "utilities/geometry/../data/Vector.hpp"
 
 using boost::numeric::ublas::identity_matrix;
 using std::min;

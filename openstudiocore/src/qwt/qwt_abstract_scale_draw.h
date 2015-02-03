@@ -10,6 +10,9 @@
 #ifndef QWT_ABSTRACT_SCALE_DRAW_H
 #define QWT_ABSTRACT_SCALE_DRAW_H
 
+#include <qglobal.h>
+#include <qpen.h>
+
 #include "qwt_global.h"
 #include "qwt_scale_div.h"
 #include "qwt_text.h"
@@ -20,10 +23,10 @@ class QColorGroup;
 #else
 class QPalette;
 #endif
-class QPainter;
 class QFont;
-class QwtScaleTransformation;
+class QPainter;
 class QwtScaleMap;
+class QwtScaleTransformation;
 
 /*!
   \brief A abstract base class for drawing scales
@@ -139,6 +142,7 @@ private:
     int operator!=(const QwtAbstractScaleDraw &) const;
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

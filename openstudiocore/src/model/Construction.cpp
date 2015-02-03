@@ -17,28 +17,40 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Construction.hpp"
-#include "Construction_Impl.hpp"
-#include "Model.hpp"
-
-#include "Material.hpp"
-#include "Material_Impl.hpp"
-#include "OpaqueMaterial.hpp"
-#include "FenestrationMaterial.hpp"
-#include "ModelPartitionMaterial.hpp"
-#include "ModelExtensibleGroup.hpp"
-#include "ShadingMaterial.hpp"
-#include "ShadingMaterial_Impl.hpp"
-
-#include <utilities/idd/OS_Construction_FieldEnums.hxx>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Construction_FieldEnums.hxx>
+#include <algorithm>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "Construction.hpp"
+#include "Construction_Impl.hpp"
+#include "Material.hpp"
+#include "Model.hpp"
+#include "ModelPartitionMaterial.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/LayeredConstruction.hpp"
+#include "model/LayeredConstruction_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+
+namespace openstudio {
+namespace model {
+class FenestrationMaterial;
+class OpaqueMaterial;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   Construction_Impl::Construction_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : LayeredConstruction_Impl(idfObject, model, keepHandle)

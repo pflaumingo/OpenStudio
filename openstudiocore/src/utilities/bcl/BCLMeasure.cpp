@@ -17,28 +17,38 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "BCLMeasure.hpp"
-#include "LocalBCL.hpp"
+#include <OpenStudio.hxx>
+#include <boost/filesystem/operations.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qdir.h>
+#include <qfile.h>
+#include <qfileinfo.h>
+#include <qflags.h>
+#include <qiodevice.h>
+#include <qregularexpression.h>
+#include <qsettings.h>
+#include <qstring.h>
+#include <qstringlist.h>
+#include <qtextstream.h>
+#include <qvariant.h>
+#include <exception>
 
 #include "../core/ApplicationPathHelpers.hpp"
-#include "../core/System.hpp"
+#include "../core/Assert.hpp"
+#include "../core/FileReference.hpp"
 #include "../core/Path.hpp"
 #include "../core/PathHelpers.hpp"
 #include "../core/StringHelpers.hpp"
-#include "../core/FileReference.hpp"
 #include "../data/Attribute.hpp"
-#include "../core/Assert.hpp"
-#include "../core/Checksum.hpp"
-
-#include <OpenStudio.hxx>
-
-#include <QDir>
-#include <QDomDocument>
-#include <QFile>
-#include <QSettings>
-#include <QRegularExpression>
-
-#include <boost/filesystem.hpp>
+#include "BCLMeasure.hpp"
+#include "LocalBCL.hpp"
+#include "utilities/bcl/../core/EnumBase.hpp"
+#include "utilities/bcl/../core/String.hpp"
+#include "utilities/bcl/BCLFileReference.hpp"
+#include "utilities/bcl/BCLMeasureArgument.hpp"
+#include "utilities/bcl/BCLXML.hpp"
 
 namespace openstudio{
 

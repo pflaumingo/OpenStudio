@@ -20,14 +20,21 @@
 #ifndef ANALYSIS_OUTPUTVARIABLE_HPP
 #define ANALYSIS_OUTPUTVARIABLE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "Variable.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
 
 namespace openstudio {
 namespace analysis {
 
 namespace detail {
   class OutputVariable_Impl;
+class AnalysisObject_Impl;
 } // detail
 
 class ANALYSIS_API OutputVariable : public Variable {

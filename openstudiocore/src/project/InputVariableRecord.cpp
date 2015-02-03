@@ -17,25 +17,39 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "InputVariableRecord.hpp"
-#include "InputVariableRecord_Impl.hpp"
-
-#include "AttributeRecord.hpp"
-#include "AttributeRecord_Impl.hpp"
-#include "ContinuousVariableRecord.hpp"
-#include "DiscreteVariableRecord.hpp"
-#include "JoinRecord.hpp"
-#include "ProblemRecord.hpp"
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <functional>
 
 #include "../analysis/ContinuousVariable.hpp"
-#include "../analysis/ContinuousVariable_Impl.hpp"
 #include "../analysis/DiscreteVariable.hpp"
-#include "../analysis/DiscreteVariable_Impl.hpp"
 #include "../analysis/GenericUncertaintyDescription.hpp"
 #include "../analysis/UncertaintyDescription.hpp"
-#include "../analysis/UncertaintyDescription_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "AttributeRecord.hpp"
+#include "ContinuousVariableRecord.hpp"
+#include "DiscreteVariableRecord.hpp"
+#include "InputVariableRecord.hpp"
+#include "InputVariableRecord_Impl.hpp"
+#include "ProblemRecord.hpp"
+#include "project/../analysis/AnalysisEnums.hpp"
+#include "project/../analysis/InputVariable.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/data/Attribute.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/Record.hpp"
+#include "project/VariableRecord.hpp"
+#include "project/VariableRecord_Impl.hpp"
+
+namespace openstudio {
+namespace project {
+class FunctionRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 namespace project {

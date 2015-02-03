@@ -17,39 +17,41 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Loop.hpp"
-#include "Loop_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "PortList.hpp"
-#include "PortList_Impl.hpp"
-#include "Splitter.hpp"
-#include "Splitter_Impl.hpp"
-#include "Mixer.hpp"
-#include "Mixer_Impl.hpp"
-#include "StraightComponent.hpp"
-#include "StraightComponent_Impl.hpp"
-#include "WaterToAirComponent.hpp"
-#include "WaterToAirComponent_Impl.hpp"
-#include "WaterToWaterComponent.hpp"
-#include "WaterToWaterComponent_Impl.hpp"
-#include "AirLoopHVACOutdoorAirSystem.hpp"
-#include "AirLoopHVACOutdoorAirSystem_Impl.hpp"
-#include "ConnectorSplitter.hpp"
-#include "ConnectorSplitter_Impl.hpp"
-#include "Model.hpp"
-
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <algorithm>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "Loop.hpp"
+#include "Loop_Impl.hpp"
+#include "Mixer.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
+#include "Splitter.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/HVACComponent_Impl.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+class Model_Impl;
+
   Loop_Impl::Loop_Impl(IddObjectType type, Model_Impl* model)
     : ParentObject_Impl(type,model)
   {

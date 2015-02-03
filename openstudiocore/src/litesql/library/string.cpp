@@ -4,10 +4,11 @@
  * 
  * See LICENSE for copyright information. */
 
-#include "litesql/utils.hpp"
-
 #include <ctype.h>
+#include <litesql/split.hpp>
+#include <stddef.h>
 #include <cstdlib>
+#include <string>
 
 namespace litesql {
 using namespace std; 

@@ -17,17 +17,28 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OptimizationProblemRecord.hpp"
-#include "OptimizationProblemRecord_Impl.hpp"
-
-#include "JoinRecord.hpp"
-#include "FunctionRecord.hpp"
+#include <ext/alloc_traits.h>
+#include <qsqlquery.h>
+#include <algorithm>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../analysis/OptimizationProblem.hpp"
-#include "../analysis/OptimizationProblem_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "FunctionRecord.hpp"
+#include "OptimizationProblemRecord.hpp"
+#include "OptimizationProblemRecord_Impl.hpp"
+#include "project/../analysis/Function.hpp"
+#include "project/../analysis/Problem.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ProblemRecord.hpp"
+#include "project/ProblemRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

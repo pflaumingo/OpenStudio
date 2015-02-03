@@ -17,62 +17,75 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "GeometryTranslator.hpp"
-#include "MapFields.hpp"
-
-#include "../model/Building.hpp"
-#include "../model/Space.hpp"
-#include "../model/Surface.hpp"
-#include "../model/SubSurface.hpp"
-#include "../model/ShadingSurface.hpp"
-
-#include "../utilities/geometry/Geometry.hpp"
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Optional.hpp"
-#include "../utilities/core/Containers.hpp"
-
-#include "../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/GlobalGeometryRules_FieldEnums.hxx>
-#include <utilities/idd/Building_FieldEnums.hxx>
-#include <utilities/idd/Zone_FieldEnums.hxx>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
 #include <utilities/idd/BuildingSurface_Detailed_FieldEnums.hxx>
-#include <utilities/idd/FenestrationSurface_Detailed_FieldEnums.hxx>
-#include <utilities/idd/Daylighting_Controls_FieldEnums.hxx>
-#include <utilities/idd/Output_IlluminanceMap_FieldEnums.hxx>
-#include <utilities/idd/Wall_Detailed_FieldEnums.hxx>
-#include <utilities/idd/RoofCeiling_Detailed_FieldEnums.hxx>
-#include <utilities/idd/Floor_Detailed_FieldEnums.hxx>
-#include <utilities/idd/Wall_Exterior_FieldEnums.hxx>
-#include <utilities/idd/Wall_Adiabatic_FieldEnums.hxx>
-#include <utilities/idd/Wall_Underground_FieldEnums.hxx>
-#include <utilities/idd/Wall_Interzone_FieldEnums.hxx>
-#include <utilities/idd/Roof_FieldEnums.hxx>
+#include <utilities/idd/Building_FieldEnums.hxx>
 #include <utilities/idd/Ceiling_Adiabatic_FieldEnums.hxx>
 #include <utilities/idd/Ceiling_Interzone_FieldEnums.hxx>
-#include <utilities/idd/Floor_GroundContact_FieldEnums.hxx>
-#include <utilities/idd/Floor_Adiabatic_FieldEnums.hxx>
-#include <utilities/idd/Floor_Interzone_FieldEnums.hxx>
-#include <utilities/idd/Window_FieldEnums.hxx>
+#include <utilities/idd/Daylighting_Controls_FieldEnums.hxx>
 #include <utilities/idd/Door_FieldEnums.hxx>
-#include <utilities/idd/GlazedDoor_FieldEnums.hxx>
-#include <utilities/idd/Window_Interzone_FieldEnums.hxx>
 #include <utilities/idd/Door_Interzone_FieldEnums.hxx>
+#include <utilities/idd/FenestrationSurface_Detailed_FieldEnums.hxx>
+#include <utilities/idd/Floor_Adiabatic_FieldEnums.hxx>
+#include <utilities/idd/Floor_Detailed_FieldEnums.hxx>
+#include <utilities/idd/Floor_GroundContact_FieldEnums.hxx>
+#include <utilities/idd/Floor_Interzone_FieldEnums.hxx>
+#include <utilities/idd/GlazedDoor_FieldEnums.hxx>
 #include <utilities/idd/GlazedDoor_Interzone_FieldEnums.hxx>
-#include <utilities/idd/Shading_Site_FieldEnums.hxx>
+#include <utilities/idd/GlobalGeometryRules_FieldEnums.hxx>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/Output_IlluminanceMap_FieldEnums.hxx>
+#include <utilities/idd/RoofCeiling_Detailed_FieldEnums.hxx>
+#include <utilities/idd/Roof_FieldEnums.hxx>
+#include <utilities/idd/Shading_Building_Detailed_FieldEnums.hxx>
 #include <utilities/idd/Shading_Building_FieldEnums.hxx>
-#include <utilities/idd/Shading_Overhang_FieldEnums.hxx>
-#include <utilities/idd/Shading_Overhang_Projection_FieldEnums.hxx>
 #include <utilities/idd/Shading_Fin_FieldEnums.hxx>
 #include <utilities/idd/Shading_Fin_Projection_FieldEnums.hxx>
+#include <utilities/idd/Shading_Overhang_FieldEnums.hxx>
+#include <utilities/idd/Shading_Overhang_Projection_FieldEnums.hxx>
 #include <utilities/idd/Shading_Site_Detailed_FieldEnums.hxx>
-#include <utilities/idd/Shading_Building_Detailed_FieldEnums.hxx>
+#include <utilities/idd/Shading_Site_FieldEnums.hxx>
 #include <utilities/idd/Shading_Zone_Detailed_FieldEnums.hxx>
+#include <utilities/idd/Wall_Adiabatic_FieldEnums.hxx>
+#include <utilities/idd/Wall_Detailed_FieldEnums.hxx>
+#include <utilities/idd/Wall_Exterior_FieldEnums.hxx>
+#include <utilities/idd/Wall_Interzone_FieldEnums.hxx>
+#include <utilities/idd/Wall_Underground_FieldEnums.hxx>
+#include <utilities/idd/Window_FieldEnums.hxx>
+#include <utilities/idd/Window_Interzone_FieldEnums.hxx>
+#include <utilities/idd/Zone_FieldEnums.hxx>
+#include <algorithm>
+#include <cmath>
+#include <utility>
+#include <vector>
 
-#include "../utilities/idf/WorkspaceObject.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Containers.hpp"
+#include "../utilities/core/Optional.hpp"
+#include "../utilities/geometry/Geometry.hpp"
+#include "../utilities/idd/IddEnums.hpp"
 #include "../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../utilities/idf/WorkspaceObject.hpp"
+#include "GeometryTranslator.hpp"
+#include "MapFields.hpp"
+#include "energyplus/../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/../utilities/geometry/../data/Vector.hpp"
+#include "energyplus/../utilities/geometry/Point3d.hpp"
+#include "energyplus/../utilities/geometry/Transformation.hpp"
+#include "energyplus/../utilities/geometry/Vector3d.hpp"
+#include "energyplus/../utilities/idf/../core/Enum.hpp"
+#include "energyplus/../utilities/idf/../core/Logger.hpp"
+#include "energyplus/../utilities/idf/Workspace.hpp"
 
-#include <boost/filesystem.hpp>
+namespace openstudio {
+namespace model {
+class Building;
+class Space;
+class SubSurface;
+class Surface;
+}  // namespace model
+}  // namespace openstudio
 
 using openstudio::IddObjectType;
 using openstudio::GlobalGeometryRulesFields;

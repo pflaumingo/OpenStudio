@@ -9,14 +9,23 @@
 
 // vim: expandtab
 
-#include <qlayout.h>
-#include <qlineedit.h>
-#include <qvalidator.h>
+#include <qboxlayout.h>
+#include <qcoreevent.h>
 #include <qevent.h>
+#include <qflags.h>
+#include <qfontmetrics.h>
+#include <qlineedit.h>
+#include <qnamespace.h>
+#include <qrect.h>
+#include <qsizepolicy.h>
+#include <qstring.h>
 #include <qstyle.h>
-#include "qwt_math.h"
-#include "qwt_counter.h"
+#include <qvalidator.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_range.h"
 #include "qwt_arrow_button.h"
+#include "qwt_counter.h"
+#include "qwt_math.h"
 
 class QwtCounter::PrivateData
 {

@@ -20,11 +20,30 @@
 #ifndef MODEL_AIRLOOPHVACOUTDOORAIRSYSTEM_HPP
 #define MODEL_AIRLOOPHVACOUTDOORAIRSYSTEM_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
 
-#include "HVACComponent.hpp"
-#include "StraightComponent.hpp"
 #include "Connection.hpp"
+#include "HVACComponent.hpp"
+#include "ModelAPI.hpp"
+#include "StraightComponent.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/ControllerOutdoorAir.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace model {
+class AirLoopHVAC;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

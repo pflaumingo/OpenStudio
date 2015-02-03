@@ -20,17 +20,26 @@
 #ifndef UTILITIES_CLOUD_VAGRANTPROVIDER_HPP
 #define UTILITIES_CLOUD_VAGRANTPROVIDER_HPP
 
-#include "CloudProvider.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
 
 #include "../core/Path.hpp"
 #include "../core/Url.hpp"
+#include "CloudProvider.hpp"
+#include "utilities/cloud/../UtilitiesAPI.hpp"
+#include "utilities/cloud/../core/Logger.hpp"
+#include "utilities/cloud/../core/UUID.hpp"
 
 namespace openstudio{
 
   namespace detail{
-    class VagrantSettings_Impl;
-    class VagrantSession_Impl;
     class VagrantProvider_Impl;
+    class VagrantSession_Impl;
+    class VagrantSettings_Impl;
   }
 
   /// VagrantSettings is a CloudSettings.

@@ -10,14 +10,18 @@
 #ifndef QWT_PLOT_GRID_H
 #define QWT_PLOT_GRID_H
 
+#include <qnamespace.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_valuelist.h"
 #include "qwt_global.h"
 #include "qwt_plot_item.h"
 #include "qwt_scale_div.h"
 
 class QPainter;
 class QPen;
-class QwtScaleMap;
+class QRect;
 class QwtScaleDiv;
+class QwtScaleMap;
 
 /*!
   \brief A class which draws a coordinate grid
@@ -78,6 +82,7 @@ private:
         const QwtValueList &) const;
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

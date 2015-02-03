@@ -12,16 +12,23 @@
 #ifndef QWT_PLOT_MARKER_H
 #define QWT_PLOT_MARKER_H
 
-#include <qpen.h>
-#include <qfont.h>
-#include <qstring.h>
 #include <qbrush.h>
+#include <qfont.h>
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qpen.h>
+#include <qstring.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
 #include "qwt_global.h"
 #include "qwt_plot_item.h"
 
+class QPainter;
+class QPoint;
 class QRect;
-class QwtText;
+class QwtScaleMap;
 class QwtSymbol;
+class QwtText;
 
 /*!
   \brief A class for drawing markers
@@ -111,6 +118,7 @@ private:
     void drawLabel(QPainter *, const QRect &, const QPoint &) const;
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

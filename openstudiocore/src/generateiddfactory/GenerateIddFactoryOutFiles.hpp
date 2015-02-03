@@ -20,10 +20,14 @@
 #ifndef GENERATEIDDFACTORY_GENERATEIDDFACTORYOUTFILES_HPP
 #define GENERATEIDDFACTORY_GENERATEIDDFACTORYOUTFILES_HPP
 
-#include <map>
-#include <vector>
 #include <boost/filesystem/fstream.hpp>
 #include <boost/filesystem/path.hpp>
+#include <map>
+#include <memory>
+#include <stdexcept>
+#include <string>
+#include <utility>
+#include <vector>
 
 namespace openstudio {
 

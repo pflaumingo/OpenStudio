@@ -17,110 +17,97 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Building.hpp"
-#include "Building_Impl.hpp"
-#include "SpaceType.hpp"
-#include "SpaceType_Impl.hpp"
-#include "RenderingColor.hpp"
-#include "RenderingColor_Impl.hpp"
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-#include "DefaultConstructionSet.hpp"
-#include "DefaultConstructionSet_Impl.hpp"
-#include "DefaultScheduleSet.hpp"
-#include "DefaultScheduleSet_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "BuildingStory.hpp"
-#include "BuildingStory_Impl.hpp"
-#include "ShadingSurfaceGroup.hpp"
-#include "ShadingSurfaceGroup_Impl.hpp"
-#include "ShadingSurface.hpp"
-#include "ShadingSurface_Impl.hpp"
-#include "InteriorPartitionSurfaceGroup.hpp"
-#include "InteriorPartitionSurfaceGroup_Impl.hpp"
-#include "InteriorPartitionSurface.hpp"
-#include "InteriorPartitionSurface_Impl.hpp"
-#include "Surface.hpp"
-#include "Surface_Impl.hpp"
-#include "SubSurface.hpp"
-#include "SubSurface_Impl.hpp"
-#include "InternalMass.hpp"
-#include "InternalMass_Impl.hpp"
-#include "InternalMassDefinition.hpp"
-#include "InternalMassDefinition_Impl.hpp"
-#include "People.hpp"
-#include "People_Impl.hpp"
-#include "PeopleDefinition.hpp"
-#include "PeopleDefinition_Impl.hpp"
-#include "Lights.hpp"
-#include "Lights_Impl.hpp"
-#include "LightsDefinition.hpp"
-#include "LightsDefinition_Impl.hpp"
-#include "Luminaire.hpp"
-#include "Luminaire_Impl.hpp"
-#include "LuminaireDefinition.hpp"
-#include "LuminaireDefinition_Impl.hpp"
-#include "ElectricEquipment.hpp"
-#include "ElectricEquipment_Impl.hpp"
-#include "ElectricEquipmentDefinition.hpp"
-#include "ElectricEquipmentDefinition_Impl.hpp"
-#include "GasEquipment.hpp"
-#include "GasEquipment_Impl.hpp"
-#include "GasEquipmentDefinition.hpp"
-#include "GasEquipmentDefinition_Impl.hpp"
-#include "HotWaterEquipment.hpp"
-#include "HotWaterEquipment_Impl.hpp"
-#include "SteamEquipment.hpp"
-#include "SteamEquipment_Impl.hpp"
-#include "OtherEquipment.hpp"
-#include "OtherEquipment_Impl.hpp"
-#include "WaterUseEquipment.hpp"
-#include "WaterUseEquipment_Impl.hpp"
-#include "DaylightingControl.hpp"
-#include "DaylightingControl_Impl.hpp"
-#include "IlluminanceMap.hpp"
-#include "IlluminanceMap_Impl.hpp"
-#include "SpaceInfiltrationDesignFlowRate.hpp"
-#include "SpaceInfiltrationDesignFlowRate_Impl.hpp"
-#include "SpaceInfiltrationEffectiveLeakageArea.hpp"
-#include "SpaceInfiltrationEffectiveLeakageArea_Impl.hpp"
-#include "DesignSpecificationOutdoorAir.hpp"
-#include "DesignSpecificationOutdoorAir_Impl.hpp"
-#include "GlareSensor.hpp"
-#include "GlareSensor_Impl.hpp"
-
-
-#include <utilities/idd/OS_Space_FieldEnums.hxx>
-#include <utilities/idd/OS_Surface_FieldEnums.hxx>
-#include <utilities/idd/OS_SubSurface_FieldEnums.hxx>
+#include <boost/concept/usage.hpp>
+#include <boost/geometry/algorithms/append.hpp>
+#include <boost/geometry/algorithms/union.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/none.hpp>
+#include <boost/tuple/detail/tuple_basic.hpp>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/geometry/Geometry.hpp"
-#include "../utilities/geometry/Transformation.hpp"
-#include "../utilities/geometry/Point3d.hpp"
-#include "../utilities/geometry/Vector3d.hpp"
-#include "../utilities/geometry/EulerAngles.hpp"
-#include "../utilities/geometry/BoundingBox.hpp"
+#include <utilities/idd/OS_Space_FieldEnums.hxx>
 
 #include "../utilities/core/Assert.hpp"
+#include "../utilities/geometry/BoundingBox.hpp"
+#include "../utilities/geometry/Geometry.hpp"
+#include "../utilities/geometry/Point3d.hpp"
+#include "../utilities/geometry/Transformation.hpp"
+#include "../utilities/geometry/Vector3d.hpp"
+#include "Building.hpp"
+#include "BuildingStory.hpp"
+#include "ConstructionBase.hpp"
+#include "DaylightingControl.hpp"
+#include "DefaultConstructionSet.hpp"
+#include "DefaultScheduleSet.hpp"
+#include "DesignSpecificationOutdoorAir.hpp"
+#include "ElectricEquipment.hpp"
+#include "ElectricEquipmentDefinition.hpp"
+#include "GasEquipment.hpp"
+#include "GasEquipmentDefinition.hpp"
+#include "GlareSensor.hpp"
+#include "HotWaterEquipment.hpp"
+#include "IlluminanceMap.hpp"
+#include "InteriorPartitionSurface.hpp"
+#include "InteriorPartitionSurfaceGroup.hpp"
+#include "InternalMass.hpp"
+#include "Lights.hpp"
+#include "LightsDefinition.hpp"
+#include "Luminaire.hpp"
+#include "Model.hpp"
+#include "OtherEquipment.hpp"
+#include "People.hpp"
+#include "PeopleDefinition.hpp"
+#include "Schedule.hpp"
+#include "ShadingSurface.hpp"
+#include "ShadingSurfaceGroup.hpp"
+#include "Space.hpp"
+#include "SpaceInfiltrationDesignFlowRate.hpp"
+#include "SpaceInfiltrationEffectiveLeakageArea.hpp"
+#include "SpaceType.hpp"
+#include "Space_Impl.hpp"
+#include "SteamEquipment.hpp"
+#include "SubSurface.hpp"
+#include "Surface.hpp"
+#include "ThermalZone.hpp"
+#include "WaterUseEquipment.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/../core/UUID.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/PlanarSurface.hpp"
+#include "model/PlanarSurfaceGroup.hpp"
+#include "model/PlanarSurfaceGroup_Impl.hpp"
+#include "model/SpaceLoad.hpp"
+#include "utilities/core/Containers.hpp"
+
+namespace openstudio {
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 #undef BOOST_UBLAS_TYPE_CHECK
-#include <boost/geometry/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
 #include <boost/geometry/geometries/ring.hpp>
 #include <boost/geometry/multi/geometries/multi_polygon.hpp>
-#include <boost/geometry/geometries/adapted/boost_tuple.hpp>
-
+#include <algorithm>
 #include <cmath>
+#include <exception>
+#include <limits>
+#include <map>
+#include <ostream>
+#include <set>
+#include <string>
 
 namespace openstudio {
 namespace model {

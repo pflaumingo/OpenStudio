@@ -17,44 +17,48 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ReverseTranslator.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <qdom.h>
+#include <qfile.h>
+#include <qiodevice.h>
+#include <qnamespace.h>
+#include <qtextstream.h>
+#include <qthread.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <exception>
+#include <memory>
+#include <ostream>
 
+#include "../model/Building.hpp"
+#include "../model/BuildingStory.hpp"
+#include "../model/ConstructionBase.hpp"
+#include "../model/Facility.hpp"
 #include "../model/Model.hpp"
 #include "../model/ModelObject.hpp"
-#include "../model/ModelObject_Impl.hpp"
-#include "../model/Facility.hpp"
-#include "../model/Facility_Impl.hpp"
-#include "../model/Building.hpp"
-#include "../model/Building_Impl.hpp"
-#include "../model/BuildingStory.hpp"
-#include "../model/BuildingStory_Impl.hpp"
-#include "../model/ThermalZone.hpp"
-#include "../model/ThermalZone_Impl.hpp"
-#include "../model/Space.hpp"
-#include "../model/Space_Impl.hpp"
-#include "../model/Surface.hpp"
-#include "../model/Surface_Impl.hpp"
-#include "../model/SubSurface.hpp"
-#include "../model/SubSurface_Impl.hpp"
 #include "../model/ShadingSurface.hpp"
-#include "../model/ShadingSurface_Impl.hpp"
 #include "../model/ShadingSurfaceGroup.hpp"
-#include "../model/ShadingSurfaceGroup_Impl.hpp"
-#include "../model/ConstructionBase.hpp"
-#include "../model/ConstructionBase_Impl.hpp"
-
+#include "../model/Space.hpp"
+#include "../model/SubSurface.hpp"
+#include "../model/Surface.hpp"
+#include "../model/ThermalZone.hpp"
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/units/UnitFactory.hpp"
-#include "../utilities/units/QuantityConverter.hpp"
 #include "../utilities/plot/ProgressBar.hpp"
-
-#include <utilities/idd/IddEnums.hxx>
-
-
-#include <QFile>
-#include <QDomDocument>
-#include <QDomElement>
-#include <QThread>
+#include "../utilities/units/QuantityConverter.hpp"
+#include "../utilities/units/UnitFactory.hpp"
+#include "ReverseTranslator.hpp"
+#include "gbxml/../model/../utilities/geometry/Point3d.hpp"
+#include "gbxml/../model/../utilities/idd/IddEnums.hpp"
+#include "gbxml/../model/../utilities/idf/WorkspaceObject.hpp"
+#include "gbxml/../model/../utilities/units/Quantity.hpp"
+#include "gbxml/../utilities/core/Logger.hpp"
+#include "gbxml/../utilities/core/Path.hpp"
+#include "gbxml/../utilities/core/Singleton.hpp"
+#include "gbxml/../utilities/core/String.hpp"
+#include "gbxml/../utilities/core/StringStreamLogSink.hpp"
+#include "gbxml/../utilities/units/Unit.hpp"
 
 namespace openstudio {
 namespace gbxml {

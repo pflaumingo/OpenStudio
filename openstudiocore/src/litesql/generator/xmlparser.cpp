@@ -1,10 +1,10 @@
-#include <iostream>
-
+#include <stddef.h>
 #include <string.h>
 #include <cstdio>
+#include <iostream>
 
-#include "xmlparser.hpp"
 #include "logger.hpp"
+#include "xmlparser.hpp"
 
 using namespace std;
 using namespace litesql;

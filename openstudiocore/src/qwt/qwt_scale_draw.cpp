@@ -9,20 +9,32 @@
 
 // vim: expandtab
 
-#include <qpen.h>
+#include <math.h>
+#include <qflags.h>
+#include <qfontmetrics.h>
 #include <qpainter.h>
+#include <qpen.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_abstract_scale_draw.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_layout_metrics.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_valuelist.h"
 #include "qwt_math.h"
 #include "qwt_painter.h"
 #include "qwt_polygon.h"
 #include "qwt_scale_div.h"
-#include "qwt_scale_map.h"
 #include "qwt_scale_draw.h"
+#include "qwt_scale_map.h"
+
+class QFont;
 
 #if QT_VERSION < 0x040000
 #include <qwmatrix.h>
+
 #define QwtMatrix QWMatrix
 #else
 #include <qmatrix.h>
+
 #define QwtMatrix QMatrix
 #endif
 

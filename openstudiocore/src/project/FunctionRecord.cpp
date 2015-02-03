@@ -17,18 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <set>
+
+#include "../analysis/LinearFunction.hpp"
+#include "../utilities/core/Assert.hpp"
 #include "FunctionRecord.hpp"
 #include "FunctionRecord_Impl.hpp"
-
 #include "JoinRecord.hpp"
 #include "LinearFunctionRecord.hpp"
 #include "ProblemRecord.hpp"
 #include "VariableRecord.hpp"
+#include "project/../analysis/Function.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/Optional.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include "../analysis/LinearFunction.hpp"
-#include "../analysis/LinearFunction_Impl.hpp"
-
-#include "../utilities/core/Assert.hpp"
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

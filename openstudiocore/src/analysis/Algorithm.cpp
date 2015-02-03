@@ -17,23 +17,35 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
+#include <string>
+
 #include "Algorithm.hpp"
 #include "Algorithm_Impl.hpp"
-
 #include "DDACEAlgorithm.hpp"
 #include "DDACEAlgorithm_Impl.hpp"
+#include "DesignOfExperiments_Impl.hpp"
 #include "FSUDaceAlgorithm.hpp"
 #include "FSUDaceAlgorithm_Impl.hpp"
-#include "ParameterStudyAlgorithm.hpp"
-#include "ParameterStudyAlgorithm_Impl.hpp"
 #include "PSUADEDaceAlgorithm.hpp"
 #include "PSUADEDaceAlgorithm_Impl.hpp"
+#include "ParameterStudyAlgorithm.hpp"
+#include "ParameterStudyAlgorithm_Impl.hpp"
 #include "SamplingAlgorithm.hpp"
 #include "SamplingAlgorithm_Impl.hpp"
-#include "DesignOfExperiments.hpp"
-#include "DesignOfExperiments_Impl.hpp"
 #include "SequentialSearch.hpp"
 #include "SequentialSearch_Impl.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

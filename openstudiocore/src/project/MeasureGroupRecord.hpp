@@ -20,11 +20,28 @@
 #ifndef PROJECT_MEASUREGROUPRECORD_HPP
 #define PROJECT_MEASUREGROUPRECORD_HPP
 
-#include "ProjectAPI.hpp"
-#include "DiscreteVariableRecord.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
 
-#include "../utilities/core/Path.hpp"
 #include "../utilities/core/Logger.hpp"
+#include "../utilities/core/Path.hpp"
+#include "DiscreteVariableRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/MeasureRecord.hpp"
+#include "project/ProjectDatabase.hpp"
+#include "project/VariableRecord.hpp"
+
+class QSqlQuery;
+namespace openstudio {
+namespace project {
+class FunctionRecord;
+class ProblemRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 

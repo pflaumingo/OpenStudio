@@ -10,14 +10,18 @@
 #ifndef QWT_LAYOUT_METRICS_H
 #define QWT_LAYOUT_METRICS_H
 
-#include <qsize.h>
+#include <qglobal.h>
+#include <qpoint.h>
 #include <qrect.h>
-#include "qwt_polygon.h"
-#include "qwt_global.h"
+#include <qsize.h>
+#include <stddef.h>
 
+#include "qwt_global.h"
+#include "qwt_polygon.h"
+
+class QFontMetrics;
 class QPainter;
 class QString;
-class QFontMetrics;
 #if QT_VERSION < 0x040000
 class QWMatrix;
 #else

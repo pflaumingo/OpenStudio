@@ -17,20 +17,29 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "BCLXML.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/lexical_cast.hpp>
+#include <qdom.h>
+#include <qfile.h>
+#include <qflags.h>
+#include <qiodevice.h>
+#include <qstring.h>
+#include <qtextstream.h>
+#include <algorithm>
+#include <exception>
+#include <sstream>
 
-#include "../data/Attribute.hpp"
-
-#include "../units/Unit.hpp"
-#include "../units/Quantity.hpp"
+#include "../core/Checksum.hpp"
 #include "../core/Compare.hpp"
 #include "../core/String.hpp"
-#include "../core/System.hpp"
-#include "../core/Checksum.hpp"
-#include "../core/Assert.hpp"
-
-#include <QDomDocument>
-#include <QFile>
+#include "../data/Attribute.hpp"
+#include "../units/Quantity.hpp"
+#include "../units/Unit.hpp"
+#include "BCLXML.hpp"
+#include "utilities/bcl/../core/Path.hpp"
+#include "utilities/bcl/../core/UUID.hpp"
+#include "utilities/bcl/BCLFileReference.hpp"
+#include "utilities/bcl/BCLMeasureArgument.hpp"
 
 namespace openstudio{
 

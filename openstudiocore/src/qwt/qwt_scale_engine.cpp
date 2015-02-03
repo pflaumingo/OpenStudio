@@ -7,9 +7,14 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <math.h>
+#include <qglobal.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_interval.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_div.h"
 #include "qwt_math.h"
-#include "qwt_scale_map.h"
 #include "qwt_scale_engine.h"
+#include "qwt_scale_map.h"
 
 static const double _eps = 1.0e-6;
 

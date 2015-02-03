@@ -17,16 +17,28 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OutputAttributeVariable.hpp"
-#include "OutputAttributeVariable_Impl.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
 
-#include "DataPoint.hpp"
-
-#include "../runmanager/lib/Job.hpp"
-
-#include "../utilities/core/Exception.hpp"
 #include "../utilities/data/Attribute.hpp"
 #include "../utilities/units/Quantity.hpp"
+#include "DataPoint.hpp"
+#include "OutputAttributeVariable.hpp"
+#include "OutputAttributeVariable_Impl.hpp"
+#include "analysis/../runmanager/lib/../../ruleset/../utilities/data/../core/Optional.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/OutputVariable.hpp"
+#include "analysis/OutputVariable_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

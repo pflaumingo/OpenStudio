@@ -17,23 +17,29 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "WorkflowRecord.hpp"
-#include "WorkflowRecord_Impl.hpp"
-
-#include "JoinRecord.hpp"
-#include "ProblemRecord.hpp"
-#include "ProjectDatabase.hpp"
+#include <boost/optional/optional.hpp>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <exception>
+#include <set>
 
 #include "../runmanager/lib/RunManager.hpp"
 #include "../runmanager/lib/Workflow.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "JoinRecord.hpp"
+#include "ProblemRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "WorkflowRecord.hpp"
+#include "WorkflowRecord_Impl.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include <boost/optional/optional.hpp>
-
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

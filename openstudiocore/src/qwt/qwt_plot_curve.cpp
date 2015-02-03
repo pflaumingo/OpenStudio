@@ -7,23 +7,37 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <math.h>
+#include <qbitarray.h>
+#include <qcolor.h>
+#include <qcoreevent.h>
+#include <qmap.h>
+#include <qnamespace.h>
+#include <qobject.h>
 #include <qpainter.h>
 #include <qpixmap.h>
-#include <qbitarray.h>
-#include "qwt_global.h"
+#include <qpoint.h>
+#include <qrect.h>
+#include <qvector.h>
+#include <qwidget.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_layout_metrics.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_polygon.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
+#include "qwt_clipper.h"
+#include "qwt_curve_fitter.h"
+#include "qwt_data.h"
+#include "qwt_double_rect.h"
 #include "qwt_legend.h"
 #include "qwt_legend_item.h"
-#include "qwt_data.h"
-#include "qwt_scale_map.h"
-#include "qwt_double_rect.h"
 #include "qwt_math.h"
-#include "qwt_clipper.h"
 #include "qwt_painter.h"
 #include "qwt_plot.h"
 #include "qwt_plot_canvas.h"
-#include "qwt_curve_fitter.h"
-#include "qwt_symbol.h"
 #include "qwt_plot_curve.h"
+#include "qwt_scale_map.h"
+#include "qwt_symbol.h"
 
 #if QT_VERSION < 0x040000
 #include <qguardedptr.h>
@@ -32,9 +46,6 @@
 #endif
 
 #if QT_VERSION >= 0x040000
-
-#include <qevent.h>
-#include <qpaintengine.h>
 
 class QwtPlotCurvePaintHelper: public QObject
 {

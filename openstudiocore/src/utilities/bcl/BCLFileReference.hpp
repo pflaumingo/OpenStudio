@@ -20,12 +20,16 @@
 #ifndef UTILITIES_BCL_BCLFILEREFERENCE_HPP
 #define UTILITIES_BCL_BCLFILEREFERENCE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <string>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Compare.hpp"
 #include "../core/Logger.hpp"
 #include "../core/Path.hpp"
-#include "../core/Compare.hpp"
-#include "../UtilitiesAPI.hpp"
-
-#include <vector>
+#include "utilities/bcl/../core/LogMessage.hpp"
 
 class QDomDocument;
 class QDomElement;
@@ -34,6 +38,8 @@ namespace openstudio{
 
   /** BCLFileReference is a class for tracking files that come with BCL components and measures.
   **/
+class VersionString;
+
   class UTILITIES_API BCLFileReference {
 
   public:

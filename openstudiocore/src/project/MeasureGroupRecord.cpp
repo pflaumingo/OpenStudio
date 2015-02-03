@@ -17,26 +17,45 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <exception>
+#include <sstream>
+#include <string>
+
+#include "../analysis/Measure.hpp"
+#include "../analysis/MeasureGroup.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "FunctionRecord.hpp"
 #include "MeasureGroupRecord.hpp"
 #include "MeasureGroupRecord_Impl.hpp"
 #include "MeasureRecord.hpp"
 #include "ProblemRecord.hpp"
-#include "FunctionRecord.hpp"
-#include "JoinRecord.hpp"
 #include "ProjectDatabase.hpp"
+#include "project/../analysis/DiscreteVariable.hpp"
+#include "project/../analysis/InputVariable.hpp"
+#include "project/../analysis/Variable.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/Optional.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/DiscreteVariableRecord.hpp"
+#include "project/DiscreteVariableRecord_Impl.hpp"
+#include "project/InputVariableRecord.hpp"
+#include "project/InputVariableRecord_Impl.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/Record.hpp"
 
-#include "../analysis/MeasureGroup.hpp"
-#include "../analysis/MeasureGroup_Impl.hpp"
-#include "../analysis/Measure.hpp"
-#include "../analysis/UncertaintyDescription.hpp"
-
-#include "../utilities/core/Checksum.hpp"
-#include "../utilities/core/Assert.hpp"
-
-#include <sstream>
-
-#include <QSqlQuery>
-#include <QSqlError>
+class QSqlDatabase;
+namespace openstudio {
+namespace project {
+namespace detail {
+class MeasureRecord_Impl;
+}  // namespace detail
+}  // namespace project
+}  // namespace openstudio
 
 using namespace openstudio::analysis;
 

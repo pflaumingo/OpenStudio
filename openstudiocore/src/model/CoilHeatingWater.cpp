@@ -17,48 +17,48 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Coil_Heating_Water_FieldEnums.hxx>
+#include <algorithm>
+#include <vector>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Compare.hpp"
+#include "AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass.hpp"
+#include "AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed.hpp"
+#include "AirLoopHVACUnitarySystem.hpp"
+#include "AirTerminalSingleDuctConstantVolumeReheat.hpp"
+#include "AirTerminalSingleDuctParallelPIUReheat.hpp"
+#include "AirTerminalSingleDuctVAVReheat.hpp"
 #include "CoilHeatingWater.hpp"
 #include "CoilHeatingWater_Impl.hpp"
 #include "ControllerWaterCoil.hpp"
-#include "ControllerWaterCoil_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ZoneHVACComponent.hpp"
-#include "ZoneHVACComponent_Impl.hpp"
-#include "ZoneHVACFourPipeFanCoil.hpp"
-#include "ZoneHVACFourPipeFanCoil_Impl.hpp"
-#include "ZoneHVACPackagedTerminalAirConditioner.hpp"
-#include "ZoneHVACPackagedTerminalAirConditioner_Impl.hpp"
-#include "ZoneHVACWaterToAirHeatPump.hpp"
-#include "ZoneHVACWaterToAirHeatPump_Impl.hpp"
-#include "ZoneHVACUnitHeater.hpp"
-#include "ZoneHVACUnitHeater_Impl.hpp"
-#include "AirLoopHVACUnitarySystem.hpp"
-#include "AirLoopHVACUnitarySystem_Impl.hpp"
-#include "AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass.hpp"
-#include "AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass_Impl.hpp"
-#include "AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed.hpp"
-#include "AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "ScheduleCompact.hpp"
-#include "ScheduleCompact_Impl.hpp"
-#include "AirTerminalSingleDuctConstantVolumeReheat.hpp"
-#include "AirTerminalSingleDuctConstantVolumeReheat_Impl.hpp"
-#include "AirTerminalSingleDuctVAVReheat.hpp"
-#include "AirTerminalSingleDuctVAVReheat_Impl.hpp"
-#include "AirTerminalSingleDuctParallelPIUReheat.hpp"
-#include "AirTerminalSingleDuctParallelPIUReheat_Impl.hpp"
 #include "Model.hpp"
-#include <utilities/idd/OS_Coil_Heating_Water_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "Node.hpp"
+#include "Schedule.hpp"
+#include "ZoneHVACComponent.hpp"
+#include "ZoneHVACFourPipeFanCoil.hpp"
+#include "ZoneHVACPackagedTerminalAirConditioner.hpp"
+#include "ZoneHVACUnitHeater.hpp"
+#include "ZoneHVACWaterToAirHeatPump.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/ModelObject.hpp"
+#include "model/WaterToAirComponent.hpp"
+#include "model/WaterToAirComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail{
+
+class Model_Impl;
 
   CoilHeatingWater_Impl::CoilHeatingWater_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : WaterToAirComponent_Impl(idfObject, model, keepHandle)

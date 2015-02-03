@@ -20,16 +20,37 @@
 #ifndef UTILITIES_BCL_BCLXML_HPP
 #define UTILITIES_BCL_BCLXML_HPP
 
-#include "BCLFileReference.hpp"
-#include "BCLMeasureArgument.hpp"
+#include <boost/filesystem/path.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Deprecated.hpp"
 #include "../core/Optional.hpp"
 #include "../core/Path.hpp"
 #include "../core/UUID.hpp"
 #include "../data/Attribute.hpp"
-#include "../core/Deprecated.hpp"
-#include "../UtilitiesAPI.hpp"
-
-#include <vector>
+#include "BCLFileReference.hpp"
+#include "BCLMeasureArgument.hpp"
+#include "utilities/bcl/../core/EnumBase.hpp"
+#include "utilities/bcl/../core/LogMessage.hpp"
+#include "utilities/bcl/../core/Logger.hpp"
+#include "utilities/bcl/../data/../core/Enum.hpp"
 
 namespace openstudio{
 

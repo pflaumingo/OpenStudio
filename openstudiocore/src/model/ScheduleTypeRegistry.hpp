@@ -20,15 +20,16 @@
 #ifndef MODEL_SCHEDULETYPEREGISTRY_HPP
 #define MODEL_SCHEDULETYPEREGISTRY_HPP
 
-#include "ModelAPI.hpp"
-
-#include "../utilities/core/Singleton.hpp"
-#include "../utilities/core/Logger.hpp"
-
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
 #include <map>
 #include <string>
+#include <vector>
 
-#include <boost/optional.hpp>
+#include "../utilities/core/Logger.hpp"
+#include "../utilities/core/Singleton.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 

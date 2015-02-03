@@ -17,16 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RunManagerWatcher.hpp"
-#include "../../utilities/time/DateTime.hpp"
-#include "../../utilities/core/Assert.hpp"
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <stddef.h>
+#include <ostream>
+#include <stdexcept>
 
-#include "JobErrors.hpp"
+#include "../../utilities/core/Assert.hpp"
+#include "../../utilities/time/DateTime.hpp"
+#include "AdvancedStatus.hpp"
 #include "FileInfo.hpp"
 #include "Job.hpp"
-#include "AdvancedStatus.hpp"
-#include "RubyJobUtils.hpp"
+#include "JobErrors.hpp"
 #include "MergedJobResults.hpp"
+#include "RubyJobUtils.hpp"
+#include "RunManagerWatcher.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/RunManager.hpp"
+#include "runmanager/lib/TreeStatus.hpp"
 
 namespace openstudio {
 namespace runmanager {

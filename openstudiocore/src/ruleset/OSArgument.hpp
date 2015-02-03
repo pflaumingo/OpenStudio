@@ -20,15 +20,43 @@
 #ifndef RULESET_OSARGUMENT_HPP
 #define RULESET_OSARGUMENT_HPP
 
-#include "RulesetAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <qmetatype.h>
+#include <qvariant.h>
+#include <QVariant>
+#include <map>
+#include <ostream>
+#include <string>
+#include <utility>
+#include <vector>
 
-#include "../utilities/idf/Workspace.hpp"
-#include "../utilities/idd/IddEnums.hpp"
-#include "../utilities/core/Path.hpp"
 #include "../utilities/core/Enum.hpp"
 #include "../utilities/core/Logger.hpp"
+#include "../utilities/core/Path.hpp"
+#include "../utilities/idd/IddEnums.hpp"
+#include "../utilities/idf/Workspace.hpp"
+#include "RulesetAPI.hpp"
+#include "ruleset/../utilities/idf/../core/EnumBase.hpp"
+#include "ruleset/../utilities/idf/../core/LogMessage.hpp"
+#include "ruleset/../utilities/idf/../core/UUID.hpp"
+#include "ruleset/../utilities/units/Quantity.hpp"
 
-#include <QVariant>
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace ruleset {

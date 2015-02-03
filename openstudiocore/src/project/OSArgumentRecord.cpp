@@ -17,16 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OSArgumentRecord.hpp"
-#include "OSArgumentRecord_Impl.hpp"
-#include "RubyMeasureRecord.hpp"
-#include "RubyContinuousVariableRecord.hpp"
-
-#include "JoinRecord.hpp"
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qstringlist.h>
+#include <qvariant.h>
+#include <exception>
+#include <set>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
 #include "../utilities/core/PathHelpers.hpp"
+#include "JoinRecord.hpp"
+#include "OSArgumentRecord.hpp"
+#include "OSArgumentRecord_Impl.hpp"
+#include "RubyContinuousVariableRecord.hpp"
+#include "RubyMeasureRecord.hpp"
+#include "project/../ruleset/OSArgument.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/EnumBase.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

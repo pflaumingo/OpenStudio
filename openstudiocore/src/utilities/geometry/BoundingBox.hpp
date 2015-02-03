@@ -21,10 +21,13 @@
 #ifndef UTILITIES_GEOMETRY_BOUNDINGBOX_HPP
 #define UTILITIES_GEOMETRY_BOUNDINGBOX_HPP
 
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
 #include "../core/Logger.hpp"
-
-#include <boost/optional.hpp>
+#include "utilities/geometry/../core/LogMessage.hpp"
 
 namespace openstudio{
 

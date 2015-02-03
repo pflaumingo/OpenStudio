@@ -17,12 +17,23 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
-#include "../../model/ControllerOutdoorAir.hpp"
-#include "../../model/ControllerOutdoorAir_Impl.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/Controller_OutdoorAir_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
+#include <ostream>
+#include <string>
+
+#include "../../model/ControllerOutdoorAir.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

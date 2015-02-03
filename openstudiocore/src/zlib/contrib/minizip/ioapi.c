@@ -28,6 +28,9 @@
 
 #include "ioapi.h"
 
+#include <stddef.h>
+#include <stdio.h>
+
 voidpf call_zopen64 (const zlib_filefunc64_32_def* pfilefunc,const void*filename,int mode)
 {
     if (pfilefunc->zfile_func64.zopen64_file != NULL)

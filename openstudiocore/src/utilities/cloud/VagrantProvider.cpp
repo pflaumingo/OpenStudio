@@ -16,22 +16,34 @@
 *  License along with this library; if not, write to the Free Software
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
-#include "VagrantProvider.hpp"
-#include "VagrantProvider_Impl.hpp"
-#include "OSServer.hpp"
+#include <boost/none.hpp>
+#include <qbytearray.h>
+#include <qdir.h>
+#include <qfile.h>
+#include <qflags.h>
+#include <qiodevice.h>
+#include <qnetworkaccessmanager.h>
+#include <qnetworkreply.h>
+#include <qnetworkrequest.h>
+#include <qprocess.h>
+#include <qsettings.h>
+#include <qstringlist.h>
+#include <qurl.h>
+#include <qvariant.h>
+#include <functional>
 
 #include "../core/Application.hpp"
 #include "../core/Assert.hpp"
 #include "../core/System.hpp"
-
-#include <QSettings>
-#include <QProcess>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QNetworkRequest>
-#include <QMutex>
-#include <QFile>
-#include <QDir>
+#include "VagrantProvider.hpp"
+#include "VagrantProvider_Impl.hpp"
+#include "utilities/cloud/../core/LogMessage.hpp"
+#include "utilities/cloud/../core/Path.hpp"
+#include "utilities/cloud/../core/Singleton.hpp"
+#include "utilities/cloud/../core/String.hpp"
+#include "utilities/cloud/../core/Url.hpp"
+#include "utilities/cloud/CloudProvider.hpp"
+#include "utilities/cloud/CloudProvider_Impl.hpp"
 
 namespace openstudio{
   namespace detail{

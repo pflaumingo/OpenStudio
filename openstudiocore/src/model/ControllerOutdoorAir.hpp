@@ -20,8 +20,31 @@
 #ifndef MODEL_CONTROLLEROUTDOORAIR_HPP
 #define MODEL_CONTROLLEROUTDOORAIR_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/ControllerMechanicalVentilation.hpp"
+#include "model/CurveQuadratic.hpp"
+#include "model/Model.hpp"
+#include "model/ScheduleCompact.hpp"
+
+namespace openstudio {
+class IdfObject;
+class Quantity;
+namespace model {
+class Schedule;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 
@@ -33,10 +56,10 @@ namespace detail {
 
 } // detail
 
+class AirLoopHVACOutdoorAirSystem;
+class ControllerMechanicalVentilation;
 class CurveQuadratic;
 class ScheduleCompact;
-class ControllerMechanicalVentilation;
-class AirLoopHVACOutdoorAirSystem;
 
 class MODEL_API ControllerOutdoorAir : public ParentObject {
  public:

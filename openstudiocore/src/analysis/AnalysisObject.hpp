@@ -20,15 +20,26 @@
 #ifndef ANALYSIS_ANALYSISOBJECT_HPP
 #define ANALYSIS_ANALYSISOBJECT_HPP
 
-#include "AnalysisAPI.hpp"
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <iosfwd>
+#include <memory>
+#include <string>
+#include <typeinfo>
+#include <vector>
 
-#include "../utilities/core/UUID.hpp"
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/core/Path.hpp"
+#include "../utilities/core/UUID.hpp"
+#include "AnalysisAPI.hpp"
+#include "analysis/../utilities/core/Compare.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
 
-#include <boost/optional.hpp>
-
-#include <vector>
+class QObject;
 
 namespace openstudio {
 namespace analysis {

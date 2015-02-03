@@ -16,23 +16,37 @@
 *  License along with this library; if not, write to the Free Software
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
-#include "OSServer.hpp"
-#include "OSServer_Impl.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <qbytearray.h>
+#include <qfile.h>
+#include <qflags.h>
+#include <qglobal.h>
+#include <qiodevice.h>
+#include <qjsonarray.h>
+#include <qjsondocument.h>
+#include <qjsonobject.h>
+#include <qjsonvalue.h>
+#include <qlist.h>
+#include <qmutex.h>
+#include <qnetworkaccessmanager.h>
+#include <qnetworkreply.h>
+#include <qnetworkrequest.h>
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <qurl.h>
+#include <ostream>
 
 #include "../core/Application.hpp"
 #include "../core/System.hpp"
-#include "../core/Json.hpp"
-#include "../core/Assert.hpp"
-
-#include <QJsonArray>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QNetworkRequest>
-#include <QHttpMultiPart>
-#include <QMutex>
-#include <QFile>
+#include "OSServer.hpp"
+#include "OSServer_Impl.hpp"
+#include "utilities/cloud/../core/Logger.hpp"
+#include "utilities/cloud/../core/Path.hpp"
+#include "utilities/cloud/../core/Singleton.hpp"
+#include "utilities/cloud/../core/String.hpp"
+#include "utilities/cloud/../core/UUID.hpp"
+#include "utilities/cloud/../core/Url.hpp"
 
 namespace openstudio{
   namespace detail{

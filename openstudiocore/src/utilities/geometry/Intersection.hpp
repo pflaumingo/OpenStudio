@@ -20,12 +20,12 @@
 #ifndef UTILITIES_GEOMETRY_INTERSECTION_HPP
 #define UTILITIES_GEOMETRY_INTERSECTION_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Point3d.hpp"
-
-#include <vector>
 #include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "Point3d.hpp"
 
 namespace openstudio{
 

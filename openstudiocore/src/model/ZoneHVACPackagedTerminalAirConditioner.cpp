@@ -17,29 +17,37 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ZoneHVACPackagedTerminalAirConditioner.hpp"
-#include "ZoneHVACPackagedTerminalAirConditioner_Impl.hpp"
-
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "CoilHeatingWater.hpp"
-#include "CoilHeatingWater_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include <utilities/idd/IddFactory.hxx>
-
-
-#include <utilities/idd/OS_ZoneHVAC_PackagedTerminalAirConditioner_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_ZoneHVAC_PackagedTerminalAirConditioner_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "CoilHeatingWater.hpp"
+#include "HVACComponent.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "ZoneHVACPackagedTerminalAirConditioner.hpp"
+#include "ZoneHVACPackagedTerminalAirConditioner_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/PlantLoop.hpp"
+#include "model/ZoneHVACComponent.hpp"
+#include "model/ZoneHVACComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ZoneHVACPackagedTerminalAirConditioner_Impl::ZoneHVACPackagedTerminalAirConditioner_Impl(
       const IdfObject& idfObject, 

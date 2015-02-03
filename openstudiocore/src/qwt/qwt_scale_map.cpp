@@ -9,6 +9,8 @@
 
 #include "qwt_scale_map.h"
 
+#include <stddef.h>
+
 QT_STATIC_CONST_IMPL double QwtScaleMap::LogMin = 1.0e-150;
 QT_STATIC_CONST_IMPL double QwtScaleMap::LogMax = 1.0e150;
 

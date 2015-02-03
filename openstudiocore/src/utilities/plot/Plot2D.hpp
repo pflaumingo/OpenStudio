@@ -20,36 +20,49 @@
 #ifndef UTILITIES_PLOT_PLOT2D_HPP
 #define UTILITIES_PLOT_PLOT2D_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "../core/Path.hpp"
-#include "../core/Macro.hpp"
-#include "../data/TimeSeries.hpp"
-
-#include <QWidget>
-#include <QAction>
-#include <QFont>
-#include <QColor>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QLabel>
-#include <QSlider>
-#include <QSpinBox>
-#include <QPainter>
-#include <QFileDialog>
-#include <QBitmap>
-#include <QDropEvent>
-#include <QPixmap>
-#include <qwt/qwt_plot.h>
-#include <qwt/qwt_text.h>
+#include <qcolor.h>
+#include <qfont.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <qwidget.h>
 #include <qwt/qwt_legend.h>
+#include <qwt/qwt_plot.h>
+#include <qwt/qwt_plot_curve.h>
 #include <qwt/qwt_plot_layout.h>
 #include <qwt/qwt_plot_panner.h>
-#include <qwt/qwt_scale_widget.h>
 #include <qwt/qwt_scale_draw.h>
-#include <qwt/qwt_plot_curve.h>
-
+#include <qwt/qwt_scale_widget.h>
+#include <qwt/qwt_text.h>
+#include <QAction>
 #include <QApplication>
+#include <QBitmap>
+#include <QColor>
+#include <QDropEvent>
+#include <QFileDialog>
+#include <QFont>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QPainter>
+#include <QPixmap>
+#include <QSlider>
+#include <QSpinBox>
+#include <QVBoxLayout>
+#include <QWidget>
+#include <string>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Macro.hpp"
+#include "../core/Path.hpp"
+#include "../data/TimeSeries.hpp"
+#include "qwt/qwt_scale_div.h"
+#include "utilities/plot/../data/../time/Date.hpp"
+#include "utilities/plot/../data/../time/DateTime.hpp"
+#include "utilities/plot/../data/../time/Time.hpp"
+
+class QCloseEvent;
+class QVBoxLayout;
+class QwtPlot;
 
 
 namespace openstudio{

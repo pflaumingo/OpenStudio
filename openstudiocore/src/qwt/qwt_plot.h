@@ -10,23 +10,39 @@
 #ifndef QWT_PLOT_H
 #define QWT_PLOT_H
 
+#include <qcolor.h>
+#include <qfont.h>
 #include <qframe.h>
-#include "qwt_global.h"
-#include "qwt_array.h"
-#include "qwt_text.h"
-#include "qwt_plot_dict.h"
-#include "qwt_scale_map.h"
-#include "qwt_plot_printfilter.h"
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qsize.h>
+#include <qstring.h>
+#include <stddef.h>
 
-class QwtPlotLayout;
+#include "qwt_array.h"
+#include "qwt_global.h"
+#include "qwt_plot_dict.h"
+#include "qwt_plot_printfilter.h"
+#include "qwt_scale_map.h"
+#include "qwt_text.h"
+
+class QEvent;
+class QPaintDevice;
+class QPainter;
+class QRect;
+class QResizeEvent;
+class QWidget;
 class QwtLegend;
-class QwtScaleWidget;
-class QwtScaleEngine;
+class QwtPlotCanvas;
+class QwtPlotItem;
+class QwtPlotLayout;
+class QwtPlotPrintFilter;
 class QwtScaleDiv;
 class QwtScaleDraw;
+class QwtScaleEngine;
+class QwtScaleWidget;
 class QwtTextLabel;
-class QwtPlotCanvas;
-class QwtPlotPrintFilter;
 
 /*!
   \brief A 2-D plotting widget
@@ -315,9 +331,11 @@ private:
     void initPlot(const QwtText &title);
 
     class AxisData;
+
     AxisData *d_axisData[axisCnt];
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

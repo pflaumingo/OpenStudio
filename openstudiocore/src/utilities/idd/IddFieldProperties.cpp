@@ -17,12 +17,14 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "IddFieldProperties.hpp"
-
-#include "../core/Optional.hpp"
-#include "../core/Containers.hpp"
-
+#include <algorithm>
+#include <iterator>
+#include <map>
 #include <sstream>
+
+#include "../core/Containers.hpp"
+#include "IddFieldProperties.hpp"
+#include "utilities/idd/../core/Compare.hpp"
 
 namespace openstudio{
 

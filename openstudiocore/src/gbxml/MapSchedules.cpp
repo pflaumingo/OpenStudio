@@ -17,33 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ReverseTranslator.hpp"
+#include <boost/optional/optional.hpp>
+#include <qdom.h>
+#include <qstring.h>
+#include <qstringlist.h>
+#include <utilities/idd/OS_ScheduleTypeLimits_FieldEnums.hxx>
+#include <memory>
+#include <string>
 
 #include "../model/Model.hpp"
 #include "../model/ModelObject.hpp"
-#include "../model/ModelObject_Impl.hpp"
 #include "../model/ScheduleDay.hpp"
-#include "../model/ScheduleDay_Impl.hpp"
-#include "../model/ScheduleWeek.hpp"
-#include "../model/ScheduleWeek_Impl.hpp"
-#include "../model/ScheduleYear.hpp"
-#include "../model/ScheduleYear_Impl.hpp"
 #include "../model/ScheduleTypeLimits.hpp"
-#include "../model/ScheduleTypeLimits_Impl.hpp"
+#include "../model/ScheduleWeek.hpp"
+#include "../model/ScheduleYear.hpp"
 #include "../model/YearDescription.hpp"
-#include "../model/YearDescription_Impl.hpp"
-
-#include "../utilities/time/Time.hpp"
-#include "../utilities/time/Date.hpp"
-
 #include "../utilities/core/Assert.hpp"
-
-#include <utilities/idd/OS_ScheduleTypeLimits_FieldEnums.hxx>
-
-#include <QFile>
-#include <QDomDocument>
-#include <QDomElement>
-#include <QStringList>
+#include "../utilities/time/Date.hpp"
+#include "../utilities/time/Time.hpp"
+#include "ReverseTranslator.hpp"
 
 namespace openstudio {
 namespace gbxml {

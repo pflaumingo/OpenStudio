@@ -17,35 +17,48 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "IdfFile.hpp"
-#include <utilities/idf/IdfObject_Impl.hpp> // needed for serialization
-#include "IdfRegex.hpp"
-#include "ValidityReport.hpp"
-
-#include <utilities/idd/IddObject_Impl.hpp> // needed for serialization
-#include <utilities/idd/IddField_Impl.hpp> // needed for serialization
-#include <utilities/idd/IddFile_Impl.hpp> // needed for serialization
-#include "../idd/IddRegex.hpp"
-#include <utilities/idd/IddFactory.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../idd/CommentRegex.hpp"
-#include "../idd/Comments.hpp"
-
-#include "../plot/ProgressBar.hpp"
-#include "../core/PathHelpers.hpp"
-#include "../core/String.hpp"
-#include "../core/Assert.hpp"
-#include "../core/Compare.hpp"
-
-#include <boost/algorithm/string.hpp>
-#include <boost/algorithm/string/split.hpp>
-#include <boost/regex.hpp>
-#include <boost/filesystem.hpp>
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/filesystem/convenience.hpp>
 #include <boost/filesystem/fstream.hpp>
 #include <boost/iostreams/filter/newline.hpp>
 #include <boost/iostreams/filtering_stream.hpp>
-
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <algorithm>
+#include <functional>
+#include <iterator>
 #include <sstream>
+
+#include "../core/Assert.hpp"
+#include "../core/Compare.hpp"
+#include "../core/PathHelpers.hpp"
+#include "../core/String.hpp"
+#include "../idd/CommentRegex.hpp"
+#include "../idd/Comments.hpp"
+#include "../idd/IddRegex.hpp"
+#include "../plot/ProgressBar.hpp"
+#include "IdfFile.hpp"
+#include "IdfRegex.hpp"
+#include "ValidityReport.hpp"
+#include "utilities/core/Containers.hpp"
+#include "utilities/idf/../idd/../core/EnumBase.hpp"
+#include "utilities/idf/../idd/../core/Optional.hpp"
+#include "utilities/idf/../idd/../core/Path.hpp"
+#include "utilities/idf/../idd/IddFileAndFactoryWrapper.hpp"
+#include "utilities/idf/DataError.hpp"
+#include "utilities/idf/IdfObject.hpp"
+#include "utilities/idf/ValidityEnums.hpp"
 
 namespace openstudio {
 

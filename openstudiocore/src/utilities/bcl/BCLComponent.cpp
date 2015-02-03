@@ -17,12 +17,19 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "BCLComponent.hpp"
-#include "../core/System.hpp"
-#include "../data/Attribute.hpp"
+#include <boost/lexical_cast.hpp>
+#include <ext/alloc_traits.h>
+#include <qdom.h>
+#include <qfile.h>
+#include <qflags.h>
+#include <qiodevice.h>
+#include <qstring.h>
+#include <sstream>
 
-#include <QDomDocument>
-#include <QFile>
+#include "../data/Attribute.hpp"
+#include "BCLComponent.hpp"
+#include "utilities/bcl/../core/String.hpp"
+#include "utilities/bcl/../core/UUID.hpp"
 
 namespace openstudio{
 

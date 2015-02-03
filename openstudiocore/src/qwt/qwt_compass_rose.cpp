@@ -8,10 +8,14 @@
  *****************************************************************************/
 
 #include <math.h>
+#include <qcolor.h>
+#include <qnamespace.h>
 #include <qpainter.h>
-#include "qwt_math.h"
-#include "qwt_painter.h"
+#include <qpoint.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_polygon.h"
 #include "qwt_compass_rose.h"
+#include "qwt_math.h"
 
 static QPoint cutPoint(QPoint p11, QPoint p12, QPoint p21, QPoint p22)
 {

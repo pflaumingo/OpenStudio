@@ -17,22 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "WaterUseEquipment.hpp"
-#include "WaterUseEquipment_Impl.hpp"
-#include "WaterUseEquipmentDefinition.hpp"
-#include "WaterUseEquipmentDefinition_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "WaterUseConnections.hpp"
-#include "WaterUseConnections_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include <utilities/idd/OS_WaterUse_Equipment_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
+#include <utilities/idd/OS_WaterUse_Equipment_FieldEnums.hxx>
+#include <algorithm>
+#include <string>
+
 #include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "WaterUseConnections.hpp"
+#include "WaterUseEquipment.hpp"
+#include "WaterUseEquipmentDefinition.hpp"
+#include "WaterUseEquipment_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/SpaceLoadDefinition.hpp"
+#include "model/SpaceLoadInstance.hpp"
+#include "model/SpaceLoadInstance_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 
@@ -40,6 +49,8 @@ namespace model {
 
 namespace detail {
 
+
+class Model_Impl;
 
   WaterUseEquipment_Impl::WaterUseEquipment_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : SpaceLoadInstance_Impl(idfObject,model,keepHandle)

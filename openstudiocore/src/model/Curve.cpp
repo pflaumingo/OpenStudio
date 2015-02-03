@@ -17,18 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Curve.hpp"
-#include "Curve_Impl.hpp"
-
-#include "ParentObject.hpp"
-#include "ParentObject_Impl.hpp"
+#include <boost/none.hpp>
+#include <ostream>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "Curve.hpp"
+#include "Curve_Impl.hpp"
+#include "ParentObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   Curve_Impl::Curve_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ModelObject_Impl(idfObject,model,keepHandle)

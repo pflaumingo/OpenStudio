@@ -17,76 +17,69 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SpaceType.hpp"
-#include "SpaceType_Impl.hpp"
-
-#include "DefaultConstructionSet.hpp"
-#include "DefaultConstructionSet_Impl.hpp"
-#include "DefaultScheduleSet.hpp"
-#include "DefaultScheduleSet_Impl.hpp"
-#include "RenderingColor.hpp"
-#include "RenderingColor_Impl.hpp"
-
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "InternalMass.hpp"
-#include "InternalMass_Impl.hpp"
-#include "People.hpp"
-#include "People_Impl.hpp"
-#include "PeopleDefinition.hpp"
-#include "PeopleDefinition_Impl.hpp"
-#include "Lights.hpp"
-#include "Lights_Impl.hpp"
-#include "LightsDefinition.hpp"
-#include "LightsDefinition_Impl.hpp"
-#include "Luminaire.hpp"
-#include "Luminaire_Impl.hpp"
-#include "ElectricEquipment.hpp"
-#include "ElectricEquipment_Impl.hpp"
-#include "ElectricEquipmentDefinition.hpp"
-#include "ElectricEquipmentDefinition_Impl.hpp"
-#include "GasEquipment.hpp"
-#include "GasEquipment_Impl.hpp"
-#include "GasEquipmentDefinition.hpp"
-#include "GasEquipmentDefinition_Impl.hpp"
-#include "HotWaterEquipment.hpp"
-#include "HotWaterEquipment_Impl.hpp"
-#include "SteamEquipment.hpp"
-#include "SteamEquipment_Impl.hpp"
-#include "OtherEquipment.hpp"
-#include "OtherEquipment_Impl.hpp"
-#include "SpaceInfiltrationDesignFlowRate.hpp"
-#include "SpaceInfiltrationDesignFlowRate_Impl.hpp"
-#include "SpaceInfiltrationEffectiveLeakageArea.hpp"
-#include "SpaceInfiltrationEffectiveLeakageArea_Impl.hpp"
-#include "DesignSpecificationOutdoorAir.hpp"
-#include "DesignSpecificationOutdoorAir_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Building.hpp"
-#include "Building_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_SpaceType_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <qbytearray.h>
+#include <qfile.h>
+#include <qglobal.h>
+#include <qiodevice.h>
+#include <qjsondocument.h>
+#include <qjsonobject.h>
+#include <qmap.h>
+#include <quuid.h>
+#include <qvariant.h>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/math/FloatCompare.hpp"
+#include <utilities/idd/OS_SpaceType_FieldEnums.hxx>
+#include <algorithm>
+#include <iterator>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
-
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonParseError>
+#include "../utilities/math/FloatCompare.hpp"
+#include "Building.hpp"
+#include "DefaultConstructionSet.hpp"
+#include "DefaultScheduleSet.hpp"
+#include "DesignSpecificationOutdoorAir.hpp"
+#include "ElectricEquipment.hpp"
+#include "ElectricEquipmentDefinition.hpp"
+#include "GasEquipment.hpp"
+#include "GasEquipmentDefinition.hpp"
+#include "HotWaterEquipment.hpp"
+#include "InternalMass.hpp"
+#include "Lights.hpp"
+#include "LightsDefinition.hpp"
+#include "Luminaire.hpp"
+#include "Model.hpp"
+#include "OtherEquipment.hpp"
+#include "People.hpp"
+#include "PeopleDefinition.hpp"
+#include "RenderingColor.hpp"
+#include "Schedule.hpp"
+#include "Space.hpp"
+#include "SpaceInfiltrationDesignFlowRate.hpp"
+#include "SpaceInfiltrationEffectiveLeakageArea.hpp"
+#include "SpaceType.hpp"
+#include "SpaceType_Impl.hpp"
+#include "SteamEquipment.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/String.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/ResourceObject_Impl.hpp"
+#include "model/SpaceLoad.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   QMap<QString, QVariant> SpaceType_Impl::m_standardsMap;
 

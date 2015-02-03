@@ -20,13 +20,24 @@
 #ifndef MODEL_SPACEINFILTRATIONEFFECTIVELEAKAGEAREA_HPP
 #define MODEL_SPACEINFILTRATIONEFFECTIVELEAKAGEAREA_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceLoad.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/units/Quantity.hpp"
 
 namespace openstudio {
 namespace model {
 
 class Schedule;
+class Model;
 
 namespace detail {
 

@@ -17,19 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qvariant.h>
+
+#include "../analysis/DesignOfExperiments.hpp"
+#include "../analysis/SequentialSearch.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "DesignOfExperimentsRecord.hpp"
 #include "OpenStudioAlgorithmRecord.hpp"
 #include "OpenStudioAlgorithmRecord_Impl.hpp"
 #include "ProjectDatabase.hpp"
-#include "AnalysisRecord.hpp"
-#include "DesignOfExperimentsRecord.hpp"
 #include "SequentialSearchRecord.hpp"
+#include "project/../analysis/Algorithm.hpp"
+#include "project/../analysis/OpenStudioAlgorithm.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/AlgorithmRecord.hpp"
+#include "project/AlgorithmRecord_Impl.hpp"
+#include "project/Record.hpp"
 
-#include "../analysis/DesignOfExperiments.hpp"
-#include "../analysis/DesignOfExperiments_Impl.hpp"
-#include "../analysis/SequentialSearch.hpp"
-#include "../analysis/SequentialSearch_Impl.hpp"
-
-#include "../utilities/core/Assert.hpp"
+class QSqlDatabase;
+namespace openstudio {
+namespace project {
+class AnalysisRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 namespace project {

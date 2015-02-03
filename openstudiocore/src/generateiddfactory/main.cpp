@@ -17,16 +17,23 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "GenerateIddFactory.hpp"
-
 #include <boost/filesystem/path.hpp>
-#include "../utilities/core/GeneratorApplicationPathHelpers.hpp"
-
-#include <boost/program_options.hpp>
-#include <boost/filesystem/fstream.hpp>
-
+#include <boost/program_options/detail/parsers.hpp>
+#include <boost/program_options/detail/value_semantic.hpp>
+#include <boost/program_options/options_description.hpp>
+#include <boost/program_options/parsers.hpp>
+#include <boost/program_options/positional_options.hpp>
+#include <boost/program_options/value_semantic.hpp>
+#include <boost/program_options/variables_map.hpp>
 #include <iostream>
-#include <exception>
+#include <stdexcept>
+#include <string>
+#include <vector>
+
+#include "../utilities/core/GeneratorApplicationPathHelpers.hpp"
+#include "GenerateIddFactory.hpp"
+#include "generateiddfactory/GenerateIddFactoryOutFiles.hpp"
+#include "generateiddfactory/IddFileFactoryData.hpp"
 
 int main(int argc, char *argv[])
 {

@@ -20,16 +20,31 @@
 #ifndef ANALYSIS_SEQUENTIALSEARCH_HPP
 #define ANALYSIS_SEQUENTIALSEARCH_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "OpenStudioAlgorithm.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/SequentialSearchOptions.hpp"
+
+class QVariant;
 
 namespace openstudio {
 
 namespace analysis {
 
-class SequentialSearchOptions;
 class DataPoint;
 class OptimizationDataPoint;
+class SequentialSearchOptions;
+class Analysis;
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
 
 namespace detail {
 

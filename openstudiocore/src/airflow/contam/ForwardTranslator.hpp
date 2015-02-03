@@ -20,29 +20,36 @@
 #ifndef AIRFLOW_CONTAM_FORWARDTRANSLATOR_HPP
 #define AIRFLOW_CONTAM_FORWARDTRANSLATOR_HPP
 
+#include <../utilities/core/LogMessage.hpp>
+#include <../utilities/data/../time/DateTime.hpp>
+#include <boost/optional/optional.hpp>
+#include <qmap.h>
+#include <map>
+#include <string>
+#include <vector>
+
 #include "../AirflowAPI.hpp"
-
-#include "PrjModel.hpp"
 #include "../SurfaceNetworkBuilder.hpp"
-
-//#include "../model/Model.hpp"
-#include "../utilities/idf/Handle.hpp"
-#include "../utilities/core/Path.hpp"
-#include "../utilities/core/Optional.hpp"
 #include "../utilities/core/Logger.hpp"
+#include "../utilities/core/Optional.hpp"
+#include "../utilities/core/Path.hpp"
 #include "../utilities/core/StringStreamLogSink.hpp"
 #include "../utilities/data/TimeSeries.hpp"
-#include "../utilities/time/Date.hpp"
 #include "../utilities/filetypes/EpwFile.hpp"
+//#include "../model/Model.hpp"
+#include "../utilities/idf/Handle.hpp"
+#include "../utilities/time/Date.hpp"
+#include "PrjModel.hpp"
 
 namespace openstudio{
 class ProgressBar;
+
 namespace model {
 class Model;
 class Space;
-class ThermalZone;
 class SubSurface;
 class Surface;
+class ThermalZone;
 }
 
 namespace contam{

@@ -18,6 +18,7 @@
  **********************************************************************/
 
 #include "AdvancedStatus.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
 
 namespace openstudio {
 namespace runmanager {

@@ -20,8 +20,27 @@
 #ifndef MODEL_LOOP_HPP
 #define MODEL_LOOP_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/Mixer.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject.hpp"
+#include "model/Node.hpp"
+#include "model/Splitter.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
@@ -30,13 +49,10 @@ namespace detail {
   class Loop_Impl;
 };
 
-class Node;
-
-class Splitter;
-
-class Mixer;
-
 class HVACComponent;
+class Mixer;
+class Node;
+class Splitter;
 
 /** Loop is the base class for HVAC air and water loops.
  *

@@ -20,19 +20,26 @@
 #ifndef UTILITIES_CLOUD_CLOUDPROVIDER_HPP
 #define UTILITIES_CLOUD_CLOUDPROVIDER_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <typeinfo>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
 #include "../core/Optional.hpp"
 #include "../core/UUID.hpp"
 #include "../core/Url.hpp"
-#include "../core/Logger.hpp"
-
-#include <vector>
+#include "utilities/cloud/../core/LogMessage.hpp"
 
 namespace openstudio{
   namespace detail {
-    class CloudSettings_Impl;
-    class CloudSession_Impl;
     class CloudProvider_Impl;
+    class CloudSession_Impl;
+    class CloudSettings_Impl;
   }
 
   /// CloudSettings returns the information needed to use a CloudProvider (e.g. username, password, etc)

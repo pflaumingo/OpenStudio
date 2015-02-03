@@ -20,9 +20,30 @@
 #ifndef RUNMANAGER_LIB_JOBERRORS_HPP
 #define RUNMANAGER_LIB_JOBERRORS_HPP
 
-#include "RunManagerAPI.hpp"
-#include "../../ruleset/OSResult.hpp"
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <qmetatype.h>
 #include <QMetaType>
+#include <ostream>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "../../ruleset/OSResult.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../ruleset/../utilities/core/Enum.hpp"
+#include "runmanager/lib/../../ruleset/../utilities/core/EnumBase.hpp"
 
 namespace openstudio {
 namespace runmanager {

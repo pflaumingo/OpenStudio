@@ -20,8 +20,25 @@
 #ifndef MODEL_AIRLOOPHVACZONEMIXER_HPP
 #define MODEL_AIRLOOPHVACZONEMIXER_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "Mixer.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace model {
+class Node;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

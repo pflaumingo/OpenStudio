@@ -17,24 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_SetpointManager_Warmest_FieldEnums.hxx>
+
+#include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
 #include "SetpointManagerWarmest.hpp"
 #include "SetpointManagerWarmest_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVACOutdoorAirSystem.hpp"
-#include "Model.hpp"
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_SetpointManager_Warmest_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/SetpointManager.hpp"
+#include "model/SetpointManager_Impl.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   SetpointManagerWarmest_Impl::SetpointManagerWarmest_Impl(const IdfObject& idfObject,
                                                            Model_Impl* model,

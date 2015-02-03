@@ -21,9 +21,10 @@
 #define RUNMANAGER_LIB_PARALLELENERGYPLUS_SQLITEMERGE_HPP
 
 #include <iostream>
+#include <string>
 #include <vector>
-#include "../../../utilities/core/Path.hpp"
 
+#include "../../../utilities/core/Path.hpp"
 #include "sqlite3.h"
 
 

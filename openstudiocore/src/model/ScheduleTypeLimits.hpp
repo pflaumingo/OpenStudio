@@ -20,12 +20,30 @@
 #ifndef MODEL_SCHEDULETYPELIMITS_HPP
 #define MODEL_SCHEDULETYPELIMITS_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ResourceObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
 
 namespace openstudio {
-class Quantity;
 class OSOptionalQuantity;
+class Quantity;
+class Unit;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+namespace model {
+class Model;
+}  // namespace model
+
 namespace model {
 
 namespace detail {

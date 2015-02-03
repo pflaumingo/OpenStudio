@@ -17,25 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "AlgorithmRecord.hpp"
-#include "AlgorithmRecord_Impl.hpp"
-
-#include "ProjectDatabase.hpp"
-#include "AnalysisRecord.hpp"
-#include "OpenStudioAlgorithmRecord.hpp"
-#include "DakotaAlgorithmRecord.hpp"
-#include "AttributeRecord.hpp"
-#include "AttributeRecord_Impl.hpp"
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <functional>
+#include <set>
 
 #include "../analysis/Algorithm.hpp"
-#include "../analysis/OpenStudioAlgorithm.hpp"
-#include "../analysis/OpenStudioAlgorithm_Impl.hpp"
 #include "../analysis/DakotaAlgorithm.hpp"
-#include "../analysis/DakotaAlgorithm_Impl.hpp"
-
-#include "../utilities/data/Attribute.hpp"
+#include "../analysis/OpenStudioAlgorithm.hpp"
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Compare.hpp"
+#include "../utilities/data/Attribute.hpp"
+#include "AlgorithmRecord.hpp"
+#include "AlgorithmRecord_Impl.hpp"
+#include "AnalysisRecord.hpp"
+#include "AttributeRecord.hpp"
+#include "DakotaAlgorithmRecord.hpp"
+#include "OpenStudioAlgorithmRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "project/../analysis/AlgorithmOptions.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
 namespace openstudio {
 namespace project {

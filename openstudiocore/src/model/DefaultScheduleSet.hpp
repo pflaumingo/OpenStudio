@@ -20,15 +20,43 @@
 #ifndef MODEL_DEFAULTSCHEDULESET_HPP
 #define MODEL_DEFAULTSCHEDULESET_HPP
 
-#include "ModelAPI.hpp"
-#include "ResourceObject.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Enum.hpp"
+#include "ModelAPI.hpp"
+#include "ResourceObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class Schedule;
+class Model;
 
 namespace detail {
 

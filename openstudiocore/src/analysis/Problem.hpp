@@ -20,22 +20,38 @@
 #ifndef ANALYSIS_PROBLEM_HPP
 #define ANALYSIS_PROBLEM_HPP
 
-#include "AnalysisAPI.hpp"
-#include "AnalysisObject.hpp"
-
-#include "Measure.hpp"
-#include "WorkflowStep.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <qvariant.h>
+#include <QVariant>
+#include <map>
+#include <memory>
+#include <string>
+#include <vector>
 
 #include "../runmanager/lib/Job.hpp"
-
 #include "../utilities/core/Path.hpp"
-
-#include <QVariant>
+#include "AnalysisAPI.hpp"
+#include "AnalysisObject.hpp"
+#include "Measure.hpp"
+#include "WorkflowStep.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
 
 namespace openstudio {
 
 class BCLMeasure;
 class FileReferenceType;
+namespace analysis {
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
+}  // namespace analysis
+namespace runmanager {
+class Files;
+struct JobErrors;
+}  // namespace runmanager
 
 namespace ruleset {
   class OSArgument;
@@ -44,8 +60,8 @@ namespace ruleset {
 namespace runmanager {
   class Job;
   class JobType;
-  class Workflow;
   class WorkItem;
+  class Workflow;
 }
 
 namespace analysis {
@@ -65,10 +81,10 @@ class Variable;
 namespace detail {
 
   class Analysis_Impl;
-  class Problem_Impl;
-  class Variable_Impl;
   class DiscreteVariable_Impl;
+  class Problem_Impl;
   class RubyContinuousVariable_Impl;
+  class Variable_Impl;
 
 } // detail
 

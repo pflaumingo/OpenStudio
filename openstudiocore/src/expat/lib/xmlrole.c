@@ -2,8 +2,6 @@
    See the file COPYING for copying permission.
 */
 
-#include <stddef.h>
-
 #ifdef COMPILED_FROM_DSP
 #include "winconfig.h"
 #elif defined(MACOS_CLASSIC)
@@ -18,10 +16,9 @@
 #endif
 #endif /* ndef COMPILED_FROM_DSP */
 
-#include "expat_external.h"
+#include "ascii.h"
 #include "internal.h"
 #include "xmlrole.h"
-#include "ascii.h"
 
 /* Doesn't check:
 

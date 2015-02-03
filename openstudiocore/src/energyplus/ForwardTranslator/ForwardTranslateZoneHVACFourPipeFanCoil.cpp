@@ -17,30 +17,33 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/ZoneHVACFourPipeFanCoil.hpp"
-#include "../../model/ZoneHVACFourPipeFanCoil_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/CoilCoolingWater.hpp"
-#include "../../model/CoilCoolingWater_Impl.hpp"
-#include "../../model/CoilHeatingWater.hpp"
-#include "../../model/CoilHeatingWater_Impl.hpp"
-#include <utilities/idd/ZoneHVAC_FourPipeFanCoil_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/Coil_Cooling_Water_FieldEnums.hxx>
+#include <utilities/idd/Coil_Heating_Water_FieldEnums.hxx>
 #include <utilities/idd/Fan_ConstantVolume_FieldEnums.hxx>
 #include <utilities/idd/Fan_OnOff_FieldEnums.hxx>
 #include <utilities/idd/Fan_VariableVolume_FieldEnums.hxx>
-#include <utilities/idd/Coil_Cooling_Water_FieldEnums.hxx>
-#include <utilities/idd/Coil_Heating_Water_FieldEnums.hxx>
-#include <utilities/idd/OutdoorAir_Mixer_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OutdoorAir_Mixer_FieldEnums.hxx>
+#include <utilities/idd/ZoneHVAC_FourPipeFanCoil_FieldEnums.hxx>
+#include <exception>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "../../model/Node.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/ZoneHVACFourPipeFanCoil.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/AirLoopHVAC.hpp"
+#include "energyplus/ForwardTranslator/../../model/HVACComponent.hpp"
 
 using namespace openstudio::model;
 

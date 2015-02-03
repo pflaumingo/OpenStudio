@@ -17,17 +17,21 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Plane.hpp"
-
-#include "Point3d.hpp"
-#include "Vector3d.hpp"
-#include "Geometry.hpp"
-#include "../data/Vector.hpp"
-#include "../data/Matrix.hpp"
+#include <boost/numeric/ublas/detail/matrix_assign.hpp>
+#include <boost/numeric/ublas/matrix_expression.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
+#include <algorithm>
+#include <sstream>
 
 #include "../core/Assert.hpp"
-
-#include <iomanip>
+#include "../data/Matrix.hpp"
+#include "../data/Vector.hpp"
+#include "Geometry.hpp"
+#include "Plane.hpp"
+#include "Point3d.hpp"
+#include "Vector3d.hpp"
+#include "utilities/geometry/../core/Logger.hpp"
 
 namespace openstudio{
 

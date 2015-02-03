@@ -17,17 +17,15 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-
-#include "../../model/Model.hpp"
-#include "../../model/AirWallMaterial.hpp"
-#include "../../model/AirWallMaterial_Impl.hpp"
-
-#include <utilities/idd/Material_FieldEnums.hxx>
-
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/Material_FieldEnums.hxx>
+#include <vector>
+
+#include "../../model/AirWallMaterial.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

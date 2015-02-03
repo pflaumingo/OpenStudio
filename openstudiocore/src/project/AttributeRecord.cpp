@@ -17,26 +17,35 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "AttributeRecord.hpp"
-#include "AttributeRecord_Impl.hpp"
-
-#include "ProjectDatabase.hpp"
-#include "FileReferenceRecord.hpp"
-#include "JoinRecord.hpp"
-#include "AlgorithmRecord.hpp"
-#include "VariableRecord.hpp"
-#include "DataPointRecord.hpp"
-
-#include "../utilities/units/UnitFactory.hpp"
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/units/Quantity.hpp"
-
-#include "../utilities/core/Assert.hpp"
-
+#include <qmetatype.h>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <exception>
+#include <set>
 #include <sstream>
 
-#include <QSqlQuery>
-#include <QSqlError>
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/units/Quantity.hpp"
+#include "../utilities/units/Unit.hpp"
+#include "../utilities/units/UnitFactory.hpp"
+#include "AlgorithmRecord.hpp"
+#include "AttributeRecord.hpp"
+#include "AttributeRecord_Impl.hpp"
+#include "DataPointRecord.hpp"
+#include "FileReferenceRecord.hpp"
+#include "JoinRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "VariableRecord.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/EnumBase.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
+
+class QSqlDatabase;
 
 int __type__ = qRegisterMetaType< std::vector<openstudio::project::AttributeRecord> >(
     "std::vector<openstudio::project::AttributeRecord>");

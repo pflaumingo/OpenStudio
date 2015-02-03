@@ -17,8 +17,16 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/algorithm/string/classification.hpp>
+#include <boost/algorithm/string/constants.hpp>
+#include <boost/algorithm/string/detail/classification.hpp>
+#include <boost/algorithm/string/split.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <ext/alloc_traits.h>
+#include <stdlib.h>
+
 #include "ToolInfo.hpp"
-#include <boost/thread.hpp>
+#include "runmanager/lib/RunManagerAPI.hpp"
 
 namespace openstudio {
 namespace runmanager {

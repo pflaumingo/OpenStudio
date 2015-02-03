@@ -32,9 +32,11 @@
  **********************************************************************
  */
 
+#include <stddef.h>
+#include <cstdio>
+
 /* -- include the following line if the md5.h header file is separate -- */
 #include "md5.hpp"
-#include <cstdio>
 
 using namespace std;
 /* forward declaration */

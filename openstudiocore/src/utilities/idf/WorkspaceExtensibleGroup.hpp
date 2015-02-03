@@ -20,15 +20,22 @@
 #ifndef UTILITIES_IDF_WORKSPACEEXTENSIBLEGROUP_HPP
 #define UTILITIES_IDF_WORKSPACEEXTENSIBLEGROUP_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "../idd/ExtensibleIndex.hpp"
-#include "IdfExtensibleGroup.hpp"
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
+#include "../core/Containers.hpp"
 #include "../core/Logger.hpp"
 #include "../core/Optional.hpp"
-#include "../core/Containers.hpp"
-
-#include <boost/optional.hpp>
+#include "../idd/ExtensibleIndex.hpp"
+#include "IdfExtensibleGroup.hpp"
+#include "utilities/idf/../core/LogMessage.hpp"
+#include "utilities/idf/Handle.hpp"
+#include "utilities/idf/IdfObject.hpp"
 
 namespace openstudio {
 

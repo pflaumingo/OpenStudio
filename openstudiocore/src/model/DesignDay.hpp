@@ -20,13 +20,28 @@
 #ifndef MODEL_DESIGNDAY_HPP
 #define MODEL_DESIGNDAY_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SizingPeriod.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class ScheduleDay;
+class Model;
 
 namespace detail {
   class DesignDay_Impl;

@@ -10,15 +10,25 @@
 // vim: expandtab
 
 #include <qapplication.h> 
+#include <qcoreevent.h>
+#include <qflags.h>
+#include <qlayout.h>
+#include <qlayoutitem.h>
 #include <qmap.h> 
+#include <qnamespace.h>
+#include <qobject.h>
+#include <qrect.h>
+#include <qwidget.h>
 #if QT_VERSION >= 0x040000
 #include <qscrollbar.h> 
 #endif
-#include "qwt_math.h"
 #include "qwt_dyngrid_layout.h"
-#include "qwt_legend_itemmanager.h"
-#include "qwt_legend_item.h"
 #include "qwt_legend.h"
+#include "qwt_legend_item.h"
+#include "qwt_legend_itemmanager.h"
+#include "qwt_math.h"
+
+class QResizeEvent;
 
 class QwtLegend::PrivateData
 {
@@ -56,6 +66,7 @@ public:
     LegendMap map;
 
     class LegendView;
+
     LegendView *view;
 };
 

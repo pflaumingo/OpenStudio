@@ -17,8 +17,9 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "BoundingBox.hpp"
+#include <algorithm>
 
+#include "BoundingBox.hpp"
 #include "Point3d.hpp"
 
 namespace openstudio{

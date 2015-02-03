@@ -17,36 +17,40 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DefaultConstructionSet.hpp"
-#include "DefaultConstructionSet_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "PlanarSurface.hpp"
-#include "PlanarSurface_Impl.hpp"
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-#include "DefaultSubSurfaceConstructions.hpp"
-#include "DefaultSubSurfaceConstructions_Impl.hpp"
-#include "DefaultSurfaceConstructions.hpp"
-#include "DefaultSurfaceConstructions_Impl.hpp"
-#include "Surface.hpp"
-#include "Surface_Impl.hpp"
-#include "SubSurface.hpp"
-#include "SubSurface_Impl.hpp"
-#include "InteriorPartitionSurface.hpp"
-#include "InteriorPartitionSurface_Impl.hpp"
-#include "InteriorPartitionSurfaceGroup.hpp"
-#include "InteriorPartitionSurfaceGroup_Impl.hpp"
-#include "ShadingSurface.hpp"
-#include "ShadingSurface_Impl.hpp"
-#include "ShadingSurfaceGroup.hpp"
-#include "ShadingSurfaceGroup_Impl.hpp"
-
-#include <utilities/idd/OS_DefaultConstructionSet_FieldEnums.hxx>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_DefaultConstructionSet_FieldEnums.hxx>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "ConstructionBase.hpp"
+#include "DefaultConstructionSet.hpp"
+#include "DefaultConstructionSet_Impl.hpp"
+#include "DefaultSubSurfaceConstructions.hpp"
+#include "DefaultSurfaceConstructions.hpp"
+#include "InteriorPartitionSurface.hpp"
+#include "Model.hpp"
+#include "PlanarSurface.hpp"
+#include "ShadingSurface.hpp"
+#include "ShadingSurfaceGroup.hpp"
+#include "SubSurface.hpp"
+#include "Surface.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/ResourceObject_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using openstudio::istringEqual;
 

@@ -17,19 +17,21 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
-#include <iterator>
-#include <algorithm>
+#include <assert.h>
+#include <qthread.h>
 
 #include "UserScriptJob.hpp"
-#include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/RubyJob.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-
-#include <QDir>
-#include <QDateTime>
+namespace openstudio {
+namespace runmanager {
+class Files;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

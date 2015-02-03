@@ -17,18 +17,37 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "IddFileFactoryData.hpp"
-#include "WriteEnums.hpp"
+#include <assert.h>
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/filesystem/fstream.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_format.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_replace.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <ext/alloc_traits.h>
+#include <algorithm>
+#include <iostream>
+#include <list>
+#include <memory>
+#include <sstream>
+#include <stdexcept>
 
 #include "../utilities/idd/IddRegex.hpp"
-
-#include <boost/regex.hpp>
-#include <boost/algorithm/string.hpp>
-#include <boost/filesystem/operations.hpp>
-
-#include <iostream>
-#include <sstream>
-#include <exception>
+#include "IddFileFactoryData.hpp"
+#include "WriteEnums.hpp"
+#include "generateiddfactory/GenerateIddFactoryOutFiles.hpp"
 
 namespace openstudio {
 

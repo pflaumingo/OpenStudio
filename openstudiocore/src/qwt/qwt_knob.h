@@ -10,10 +10,23 @@
 #ifndef QWT_KNOB_H
 #define QWT_KNOB_H
 
-#include "qwt_global.h"
-#include "qwt_abstract_slider.h"
-#include "qwt_abstract_scale.h"
+#include <qcolor.h>
+#include <qglobal.h>
+#include <qobjectdefs.h>
+#include <qsize.h>
+#include <stddef.h>
 
+#include "qwt_abstract_scale.h"
+#include "qwt_abstract_slider.h"
+#include "qwt_global.h"
+
+class QFont;
+class QPaintEvent;
+class QPainter;
+class QPoint;
+class QRect;
+class QResizeEvent;
+class QWidget;
 class QwtRoundScaleDraw;
 
 /*!
@@ -94,6 +107,7 @@ private:
     virtual void fontChange(const QFont &oldFont);
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

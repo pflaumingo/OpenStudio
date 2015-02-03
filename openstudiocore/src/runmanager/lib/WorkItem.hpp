@@ -20,13 +20,19 @@
 #ifndef RUNMANAGER_LIB_WORKITEM_HPP
 #define RUNMANAGER_LIB_WORKITEM_HPP
 
-#include "RunManagerAPI.hpp"
-#include "JobType.hpp"
-#include "ToolInfo.hpp"
-#include "FileInfo.hpp"
-#include "JobParam.hpp"
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <string>
+#include <vector>
 
 #include "../../utilities/core/Logger.hpp"
+#include "FileInfo.hpp"
+#include "JobParam.hpp"
+#include "JobType.hpp"
+#include "RunManagerAPI.hpp"
+#include "ToolInfo.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
 
 namespace openstudio {
 

@@ -8,8 +8,13 @@
  *****************************************************************************/
 
 #include "qwt_spline.h"
-#include "qwt_math.h"
+
+#include <math.h>
+#include <qpoint.h>
+#include <qvector.h>
+
 #include "qwt_array.h"
+#include "qwt_math.h"
 
 class QwtSpline::PrivateData
 {
@@ -40,9 +45,6 @@ static int lookup(double x, const QwtArray<QwtDoublePoint> &values)
 static int lookup(double x, const QPolygonF &values)
 #endif
 {
-#if 0
-//qLowerBiund/qHigherBound ???
-#endif
     int i1;
     const int size = (int)values.size();
     

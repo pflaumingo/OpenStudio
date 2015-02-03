@@ -20,14 +20,33 @@
 #ifndef RUNMANAGER_LIB_WORKFLOW_HPP
 #define RUNMANAGER_LIB_WORKFLOW_HPP
 
-#include "RunManagerAPI.hpp"
-#include "JobFactory.hpp"
+#include <assert.h>
+#include <boost/optional/optional.hpp>
+#include <map>
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
 
-#include "../../utilities/core/Logger.hpp"
 #include "../../utilities/core/FileReference.hpp"
+#include "../../utilities/core/Logger.hpp"
 #include "../../utilities/idf/URLSearchPath.hpp"
+#include "JobFactory.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/../../utilities/time/../core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/time/../core/LogMessage.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/Job.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
 class QCryptographicHash;
+namespace openstudio {
+class FileReferenceType;
+}  // namespace openstudio
 
 namespace openstudio {
   namespace ruleset {

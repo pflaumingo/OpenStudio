@@ -17,10 +17,12 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "WeibullDistribution.hpp"
-#include "UncertaintyDescription_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "UncertaintyDescription_Impl.hpp"
+#include "WeibullDistribution.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/data/Attribute.hpp"
+#include "analysis/UncertaintyDescription.hpp"
 
 namespace openstudio {
 namespace analysis {

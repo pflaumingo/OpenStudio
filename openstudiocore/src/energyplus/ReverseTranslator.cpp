@@ -17,22 +17,32 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "EnergyPlusAPI.hpp"
-#include "ReverseTranslator.hpp"
-#include "GeometryTranslator.hpp"
+#include <boost/none.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <qthread.h>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <algorithm>
+#include <ostream>
+#include <string>
+#include <utility>
 
 #include "../model/ModelObject.hpp"
-
-#include "../utilities/idf/IdfFile.hpp"
-#include "../utilities/idf/WorkspaceObject.hpp"
-#include "../utilities/idf/ValidityReport.hpp"
 #include "../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/core/Assert.hpp"
+#include "../utilities/idf/IdfFile.hpp"
+#include "../utilities/idf/ValidityReport.hpp"
+#include "../utilities/idf/WorkspaceObject.hpp"
 #include "../utilities/plot/ProgressBar.hpp"
-
-#include <QThread>
+#include "GeometryTranslator.hpp"
+#include "ReverseTranslator.hpp"
+#include "energyplus/../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/../model/../utilities/idd/../core/String.hpp"
+#include "energyplus/../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/../model/../utilities/idf/ValidityEnums.hpp"
+#include "energyplus/../model/Model.hpp"
+#include "energyplus/../utilities/core/StringStreamLogSink.hpp"
 
 using namespace openstudio::model;
 

@@ -17,12 +17,24 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DataPoint_Measure_JoinRecord.hpp"
-#include "DataPoint_Measure_JoinRecord_Impl.hpp"
-#include "DataPointRecord.hpp"
-#include "MeasureRecord.hpp"
+#include <qsqlquery.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <ostream>
+#include <set>
 
 #include "../utilities/core/Assert.hpp"
+#include "DataPointRecord.hpp"
+#include "DataPoint_Measure_JoinRecord.hpp"
+#include "DataPoint_Measure_JoinRecord_Impl.hpp"
+#include "MeasureRecord.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/JoinRecord.hpp"
+#include "project/JoinRecord_Impl.hpp"
+#include "project/ObjectRecord.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

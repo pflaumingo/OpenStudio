@@ -20,11 +20,13 @@
 #ifndef ISOMODEL_FORWARDTRANSLATOR_HPP
 #define ISOMODEL_FORWARDTRANSLATOR_HPP
 
-#include "ISOModelAPI.hpp"
+#include <vector>
 
-#include "../utilities/core/Optional.hpp"
 #include "../utilities/core/Logger.hpp"
+#include "../utilities/core/Optional.hpp"
 #include "../utilities/core/StringStreamLogSink.hpp"
+#include "ISOModelAPI.hpp"
+#include "isomodel/../utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 

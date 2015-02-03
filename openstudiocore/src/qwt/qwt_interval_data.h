@@ -10,11 +10,14 @@
 #ifndef QWT_INTERVAL_DATA_H
 #define QWT_INTERVAL_DATA_H 1
 
-#include "qwt_global.h"
-#include "qwt_math.h"
+#include <qvector.h>
+#include <stddef.h>
+
 #include "qwt_array.h"
 #include "qwt_double_interval.h"
 #include "qwt_double_rect.h"
+#include "qwt_global.h"
+#include "qwt_math.h"
 
 #if defined(_MSC_VER) && (_MSC_VER > 1310)
 #include <string.h>

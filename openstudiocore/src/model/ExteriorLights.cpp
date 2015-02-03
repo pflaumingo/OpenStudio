@@ -17,29 +17,36 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ExteriorLights.hpp"
-#include "ExteriorLights_Impl.hpp"
-
-#include "Model.hpp"
-#include "ExteriorLightsDefinition.hpp"
-#include "ExteriorLightsDefinition_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleConstant.hpp"
-#include "Facility.hpp"
-#include "Facility_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Exterior_Lights_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Exterior_Lights_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "ExteriorLights.hpp"
+#include "ExteriorLightsDefinition.hpp"
+#include "ExteriorLights_Impl.hpp"
+#include "Facility.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "ScheduleConstant.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ExteriorLights_Impl::ExteriorLights_Impl(const IdfObject& idfObject,
                                            Model_Impl* model, 

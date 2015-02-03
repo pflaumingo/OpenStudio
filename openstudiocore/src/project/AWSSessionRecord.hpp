@@ -20,8 +20,20 @@
 #ifndef PROJECT_AWSSESSIONRECORD_HPP
 #define PROJECT_AWSSESSIONRECORD_HPP
 
-#include "ProjectAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "CloudSessionRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/cloud/AWSProvider.hpp"
+#include "project/../utilities/cloud/CloudProvider.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/ProjectDatabase.hpp"
+
+class QSqlQuery;
 
 namespace openstudio {
 

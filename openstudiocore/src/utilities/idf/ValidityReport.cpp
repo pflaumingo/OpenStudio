@@ -17,13 +17,16 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ValidityReport.hpp"
-#include "IdfObject.hpp"
+#include <ostream>
 
-#include "../idd/IddObject.hpp"
-
-#include "../core/Optional.hpp"
 #include "../core/Assert.hpp"
+#include "../core/Optional.hpp"
+#include "../idd/IddObject.hpp"
+#include "IdfObject.hpp"
+#include "ValidityReport.hpp"
+#include "utilities/idf/../core/EnumBase.hpp"
+#include "utilities/idf/DataError.hpp"
+#include "utilities/idf/ValidityEnums.hpp"
 
 namespace openstudio {
 

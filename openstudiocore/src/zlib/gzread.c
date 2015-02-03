@@ -3,7 +3,13 @@
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
 
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <zlib.h>
+
 #include "gzguts.h"
+#include "zconf.h"
 
 /* Local functions */
 local int gz_load OF((gz_statep, unsigned char *, unsigned, unsigned *));

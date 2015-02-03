@@ -17,16 +17,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/Table_MultiVariableLookup_FieldEnums.hxx>
+#include <algorithm>
+#include <memory>
+#include <utility>
+#include <vector>
+
 #include "../../model/TableMultiVariableLookup.hpp"
 #include "../../model/TableMultiVariableLookup_Impl.hpp"
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include "../../utilities/idf/WorkspaceObjectOrder.hpp"
-#include "../../utilities/core/Logger.hpp"
-#include <utilities/idd/Table_MultiVariableLookup_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/core/Assert.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

@@ -21,12 +21,22 @@
 #ifndef RUNMANAGER_LIB_TOOLFINDER_HPP
 #define RUNMANAGER_LIB_TOOLFINDER_HPP
 
-#include "RunManagerAPI.hpp"
-
-#include <vector>
-#include "../../utilities/core/Path.hpp"
+#include <boost/regex/v4/regex_fwd.hpp>
 #include <QProgressDialog>
+#include <map>
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "../../utilities/core/Path.hpp"
 #include "ConfigOptions.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+
+class QProgressDialog;
 
 namespace openstudio {
 namespace runmanager {
@@ -36,6 +46,8 @@ namespace runmanager {
   ///
   /// Used internally by openstudio::runmanager::ConfigOptions::findTools and
   /// openstudio::runmanager::ConfigOptions::fastFindEnergyPlus.
+class ToolLocationInfo;
+
   class RUNMANAGER_API ToolFinder
   {
     public:

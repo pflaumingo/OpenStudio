@@ -20,19 +20,36 @@
 #ifndef RUNMANAGER_LIB_RUNMANAGERSTATUSWIDGET_HPP
 #define RUNMANAGER_LIB_RUNMANAGERSTATUSWIDGET_HPP
 
-#include <string>
-#include <QTimer>
-#include "RunManager.hpp"
+#include <boost/optional/optional.hpp>
+#include <qabstractitemmodel.h>
+#include <qobjectdefs.h>
+#include <qwidget.h>
 #include <runmanager/lib/ui_RunManagerStatusWidget.h>
-#include "JobErrors.hpp"
-#include "RunManagerAPI.hpp"
 #include <QStandardItem>
+#include <QTimer>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "JobErrors.hpp"
+#include "RunManager.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/Job.hpp"
+
+class QAction;
+class QItemSelection;
+class QStandardItem;
 
 namespace openstudio {
   namespace runmanager {
 
     //! QDialog based user interface for displaying RunManager queue job status to the user
     //! \sa http://doc.qt.nokia.com/qdialog.html
+class RunManager;
+
     class RUNMANAGER_API RunManagerStatusWidget : public QWidget
     {
       Q_OBJECT

@@ -20,8 +20,27 @@
 #ifndef MODEL_PLANTLOOP_HPP
 #define MODEL_PLANTLOOP_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "Loop.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/Mixer.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject.hpp"
+#include "model/Node.hpp"
+#include "model/SizingPlant.hpp"
+#include "model/Splitter.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 
@@ -31,15 +50,11 @@ namespace detail {
   class PlantLoop_Impl;
 };
 
-class Node;
-
-class Splitter;
-
-class Mixer;
-
 class HVACComponent;
-
+class Mixer;
+class Node;
 class SizingPlant;
+class Splitter;
 
 /** PlantLoop is an interface to the EnergyPlus IDD object
  *  named "PlantLoop"

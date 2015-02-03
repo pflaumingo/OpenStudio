@@ -17,27 +17,42 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "StandardsInformationMaterial.hpp"
-#include "StandardsInformationMaterial_Impl.hpp"
-
-#include "Model.hpp"
-#include "Material.hpp"
-#include "Material_Impl.hpp"
-
-#include <utilities/idd/OS_StandardsInformation_Material_FieldEnums.hxx>
+#include <qbytearray.h>
+#include <qfile.h>
+#include <qglobal.h>
+#include <qiodevice.h>
+#include <qjsondocument.h>
+#include <qjsonobject.h>
+#include <qmap.h>
+#include <qstring.h>
+#include <quuid.h>
+#include <qvariant.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_StandardsInformation_Material_FieldEnums.hxx>
+#include <algorithm>
+#include <iterator>
 
 #include "../utilities/core/Assert.hpp"
-
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonParseError>
+#include "Material.hpp"
+#include "Model.hpp"
+#include "StandardsInformationMaterial.hpp"
+#include "StandardsInformationMaterial_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/String.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   QMap<QString, QVariant> StandardsInformationMaterial_Impl::m_standardsMap;
 

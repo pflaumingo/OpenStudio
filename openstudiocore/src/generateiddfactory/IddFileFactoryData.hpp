@@ -20,13 +20,16 @@
 #ifndef GENERATEIDDFACTORY_IDDFILEFACTORYDATA_HPP
 #define GENERATEIDDFACTORY_IDDFILEFACTORYDATA_HPP
 
-#include "GenerateIddFactoryOutFiles.hpp"
-
 #include <boost/filesystem/path.hpp>
-
+#include <string>
+#include <utility>
 #include <vector>
 
+#include "GenerateIddFactoryOutFiles.hpp"
+
 namespace openstudio {
+
+struct GenerateIddFactoryOutFiles;
 
 typedef boost::filesystem::path path;
 typedef std::pair<std::string,std::string> StringPair;

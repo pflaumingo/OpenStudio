@@ -17,27 +17,43 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-
-#include "Model.hpp"
-#include "StandardsInformationConstruction.hpp"
-#include "StandardsInformationConstruction_Impl.hpp"
-#include "PlanarSurface.hpp"
-#include "PlanarSurface_Impl.hpp"
-#include "Surface.hpp"
-#include "Surface_Impl.hpp"
-#include "SubSurface.hpp"
-#include "SubSurface_Impl.hpp"
-#include "InteriorPartitionSurface.hpp"
-#include "InteriorPartitionSurface_Impl.hpp"
-#include "InteriorPartitionSurfaceGroup.hpp"
-#include "InteriorPartitionSurfaceGroup_Impl.hpp"
-#include "RenderingColor.hpp"
-#include "RenderingColor_Impl.hpp"
-#include "Space.hpp"
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
+#include <algorithm>
+#include <ostream>
+#include <set>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "ConstructionBase.hpp"
+#include "ConstructionBase_Impl.hpp"
+#include "InteriorPartitionSurface.hpp"
+#include "InteriorPartitionSurfaceGroup.hpp"
+#include "Model.hpp"
+#include "PlanarSurface.hpp"
+#include "RenderingColor.hpp"
+#include "Space.hpp"
+#include "StandardsInformationConstruction.hpp"
+#include "SubSurface.hpp"
+#include "Surface.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/ResourceObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using std::vector;
 

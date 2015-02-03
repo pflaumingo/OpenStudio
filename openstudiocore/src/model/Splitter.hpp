@@ -20,8 +20,23 @@
 #ifndef MODEL_SPLITTER_HPP
 #define MODEL_SPLITTER_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "HVACComponent.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace model {
+class ModelObject;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 

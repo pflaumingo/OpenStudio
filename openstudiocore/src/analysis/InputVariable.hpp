@@ -20,16 +20,27 @@
 #ifndef ANALYSIS_INPUTVARIABLE_HPP
 #define ANALYSIS_INPUTVARIABLE_HPP
 
-#include "AnalysisAPI.hpp"
-#include "Variable.hpp"
+#include <boost/optional/optional.hpp>
+#include <qvariant.h>
+#include <QVariant>
+#include <memory>
+#include <vector>
 
 #include "../utilities/core/Path.hpp"
-
-#include <QVariant>
+#include "AnalysisAPI.hpp"
+#include "Variable.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/WorkflowStep.hpp"
 
 namespace openstudio {
 
 class FileReferenceType;
+namespace analysis {
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
+}  // namespace analysis
 
 namespace runmanager {
   class WorkItem;

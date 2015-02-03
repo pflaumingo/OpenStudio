@@ -9,6 +9,11 @@
 
 #include "qwt_raster_data.h"
 
+#include <qvector.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_interval.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
+
 class QwtRasterData::Contour3DPoint
 {
 public:

@@ -17,42 +17,45 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "CoilHeatingLowTempRadiantConstFlow.hpp"
-#include "CoilHeatingLowTempRadiantConstFlow_Impl.hpp"
-#include "CoilCoolingLowTempRadiantConstFlow.hpp"
-#include "CoilCoolingLowTempRadiantConstFlow_Impl.hpp"
-#include "ConstructionWithInternalSource.hpp"
-#include "ConstructionWithInternalSource_Impl.hpp"
-#include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "Surface.hpp"
-#include "Surface_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "ZoneHVACLowTempRadiantConstFlow.hpp"
-#include "ZoneHVACLowTempRadiantConstFlow_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_ZoneHVAC_LowTemperatureRadiant_ConstantFlow_FieldEnums.hxx>
+#include <boost/none.hpp>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/Unit.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_ZoneHVAC_LowTemperatureRadiant_ConstantFlow_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "CoilCoolingLowTempRadiantConstFlow.hpp"
+#include "CoilHeatingLowTempRadiantConstFlow.hpp"
+#include "ConstructionWithInternalSource.hpp"
+#include "HVACComponent.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "Space.hpp"
+#include "Surface.hpp"
+#include "ThermalZone.hpp"
+#include "ZoneHVACLowTempRadiantConstFlow.hpp"
+#include "ZoneHVACLowTempRadiantConstFlow_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ConstructionBase.hpp"
+#include "model/ModelObject.hpp"
+#include "model/PlantLoop.hpp"
+#include "model/ZoneHVACComponent.hpp"
+#include "model/ZoneHVACComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ZoneHVACLowTempRadiantConstFlow_Impl::ZoneHVACLowTempRadiantConstFlow_Impl(const IdfObject& idfObject,
                                                                              Model_Impl* model,

@@ -20,10 +20,18 @@
 #ifndef RUNMANAGER_LIB_POSTPROCESSREPORTING_HPP
 #define RUNMANAGER_LIB_POSTPROCESSREPORTING_HPP
 
+#include <string>
 #include <vector>
 
 #include "../../utilities/data/Attribute.hpp"
 #include "../../utilities/sql/SqlFile.hpp"
+#include "runmanager/lib/../../utilities/data/../core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/data/../core/Logger.hpp"
+
+namespace openstudio {
+class Attribute;
+class SqlFile;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

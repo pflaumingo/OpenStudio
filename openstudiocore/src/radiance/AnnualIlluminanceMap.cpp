@@ -17,18 +17,30 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "AnnualIlluminanceMap.hpp"
-#include "HeaderInfo.hpp"
-
-#include <iostream>
-#include <fstream>
+#include <boost/filesystem/fstream.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/token_functions.hpp>
+#include <boost/token_iterator.hpp>
+#include <boost/tokenizer.hpp>
+#include <sstream>
+#include <string>
+#include <utility>
 #include <vector>
 
-#include <boost/lexical_cast.hpp>
-#include <boost/regex.hpp>
-#include <boost/filesystem/fstream.hpp>
-#include <boost/algorithm/string.hpp>
-#include <boost/tokenizer.hpp>
+#include "AnnualIlluminanceMap.hpp"
+#include "HeaderInfo.hpp"
+#include "radiance/../utilities/core/Path.hpp"
+#include "radiance/../utilities/data/../core/Logger.hpp"
+#include "radiance/../utilities/data/Matrix.hpp"
+#include "radiance/../utilities/data/Vector.hpp"
+#include "radiance/../utilities/time/Date.hpp"
+#include "radiance/../utilities/time/DateTime.hpp"
+#include "radiance/../utilities/time/Time.hpp"
 
 using namespace std;
 using namespace boost;

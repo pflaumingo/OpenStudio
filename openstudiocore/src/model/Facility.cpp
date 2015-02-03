@@ -17,37 +17,46 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Facility.hpp"
-#include "Facility_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Building.hpp"
-#include "Building_Impl.hpp"
-#include "LifeCycleCost.hpp"
-#include "LifeCycleCost_Impl.hpp"
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-#include "ExteriorLights.hpp"
-#include "ExteriorLights_Impl.hpp"
-#include "LifeCycleCostParameters.hpp"
-#include "LifeCycleCostParameters_Impl.hpp"
-#include "Meter.hpp"
-#include "Meter_Impl.hpp"
-#include "PlanarSurface.hpp"
-#include "PlanarSurface_Impl.hpp"
-#include "Site.hpp"
-#include "Site_Impl.hpp"
-#include "UtilityBill.hpp"
-#include "UtilityBill_Impl.hpp"
-
 #include <utilities/idd/IddEnums.hxx>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Optional.hpp"
 #include "../utilities/core/Compare.hpp"
+#include "../utilities/core/Optional.hpp"
 #include "../utilities/economics/Economics.hpp"
 #include "../utilities/sql/SqlFile.hpp"
+#include "Building.hpp"
+#include "ExteriorLights.hpp"
+#include "Facility.hpp"
+#include "Facility_Impl.hpp"
+#include "Meter.hpp"
+#include "Model.hpp"
+#include "UtilityBill.hpp"
+#include "model/../utilities/data/../time/Date.hpp"
+#include "model/../utilities/data/Attribute.hpp"
+#include "model/../utilities/data/CalibrationResult.hpp"
+#include "model/../utilities/data/DataEnums.hpp"
+#include "model/../utilities/data/EndUses.hpp"
+#include "model/../utilities/idd/../core/Enum.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+
+namespace openstudio {
+class Workspace;
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using openstudio::Handle;
 using openstudio::OptionalHandle;

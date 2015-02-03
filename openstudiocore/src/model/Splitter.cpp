@@ -17,21 +17,30 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Splitter.hpp"
-#include "Splitter_Impl.hpp"
+#include "../utilities/core/Assert.hpp"
 #include "Model.hpp"
 #include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "PortList.hpp"
-#include "PortList_Impl.hpp"
+#include "Splitter.hpp"
+#include "Splitter_Impl.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/HVACComponent_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "utilities/core/Containers.hpp"
 
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
 Splitter_Impl::Splitter_Impl(IddObjectType type, Model_Impl* model)
   : HVACComponent_Impl(type,model)

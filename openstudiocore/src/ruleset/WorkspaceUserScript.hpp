@@ -20,14 +20,22 @@
 #ifndef RULESET_WORKSPACEUSERSCRIPT_HPP
 #define RULESET_WORKSPACEUSERSCRIPT_HPP
 
-#include "RulesetAPI.hpp"
-#include "UserScript.hpp"
+#include <map>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
+#include "RulesetAPI.hpp"
+#include "UserScript.hpp"
+#include "ruleset/../utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 
 class Workspace;
+namespace ruleset {
+class OSArgument;
+class OSRunner;
+}  // namespace ruleset
 
 namespace ruleset {
 

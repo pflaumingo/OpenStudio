@@ -17,17 +17,27 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "AWSSessionRecord.hpp"
-#include "AWSSessionRecord_Impl.hpp"
-
-#include "ProjectDatabase.hpp"
-#include "UrlRecord.hpp"
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../utilities/cloud/AWSProvider.hpp"
-#include "../utilities/cloud/AWSProvider_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
+#include "AWSSessionRecord.hpp"
+#include "AWSSessionRecord_Impl.hpp"
+#include "ProjectDatabase.hpp"
+#include "UrlRecord.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/core/Url.hpp"
+#include "project/CloudSessionRecord.hpp"
+#include "project/CloudSessionRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

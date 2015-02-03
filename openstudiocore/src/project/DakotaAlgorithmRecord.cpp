@@ -17,31 +17,43 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DakotaAlgorithmRecord.hpp"
-#include "DakotaAlgorithmRecord_Impl.hpp"
-#include "ProjectDatabase.hpp"
-#include "AnalysisRecord.hpp"
-#include "FileReferenceRecord.hpp"
-#include "DDACEAlgorithmRecord.hpp"
-#include "FSUDaceAlgorithmRecord.hpp"
-#include "PSUADEDaceAlgorithmRecord.hpp"
-#include "ParameterStudyAlgorithmRecord.hpp"
-#include "SamplingAlgorithmRecord.hpp"
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <quuid.h>
+#include <qvariant.h>
 
 #include "../analysis/DDACEAlgorithm.hpp"
-#include "../analysis/DDACEAlgorithm_Impl.hpp"
 #include "../analysis/FSUDaceAlgorithm.hpp"
-#include "../analysis/FSUDaceAlgorithm_Impl.hpp"
 #include "../analysis/PSUADEDaceAlgorithm.hpp"
-#include "../analysis/PSUADEDaceAlgorithm_Impl.hpp"
 #include "../analysis/ParameterStudyAlgorithm.hpp"
-#include "../analysis/ParameterStudyAlgorithm_Impl.hpp"
 #include "../analysis/SamplingAlgorithm.hpp"
-#include "../analysis/SamplingAlgorithm_Impl.hpp"
-
-#include "JoinRecord.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "DDACEAlgorithmRecord.hpp"
+#include "DakotaAlgorithmRecord.hpp"
+#include "DakotaAlgorithmRecord_Impl.hpp"
+#include "FSUDaceAlgorithmRecord.hpp"
+#include "FileReferenceRecord.hpp"
+#include "PSUADEDaceAlgorithmRecord.hpp"
+#include "ParameterStudyAlgorithmRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "SamplingAlgorithmRecord.hpp"
+#include "project/../analysis/../runmanager/lib/Job.hpp"
+#include "project/../analysis/../utilities/core/FileReference.hpp"
+#include "project/../analysis/Algorithm.hpp"
+#include "project/../analysis/DakotaAlgorithm.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/AlgorithmRecord.hpp"
+#include "project/AlgorithmRecord_Impl.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
+namespace openstudio {
+namespace project {
+class AnalysisRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 namespace project {

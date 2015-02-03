@@ -17,19 +17,28 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ComponentWatcher.hpp"
-#include "ComponentWatcher_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-#include "ModelObject.hpp"
-#include "ModelObject_Impl.hpp"
-
-#include "ComponentData_Impl.hpp"
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
+#include <algorithm>
+#include <functional>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Compare.hpp"
+#include "ComponentData_Impl.hpp"
+#include "ComponentWatcher.hpp"
+#include "ComponentWatcher_Impl.hpp"
+#include "Model.hpp"
+#include "ModelObject.hpp"
+#include "ModelObject_Impl.hpp"
+#include "Model_Impl.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/../core/UUID.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/ComponentData.hpp"
 
 namespace openstudio {
 namespace model {

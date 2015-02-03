@@ -7,15 +7,25 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <math.h>
+#include <qbrush.h>
+#include <qevent.h>
+#include <qnamespace.h>
 #include <qpainter.h>
 #include <qpalette.h>
-#include <qstyle.h>
-#include <qevent.h>
-#include "qwt_round_scale_draw.h"
+#include <qpen.h>
+#include <qpoint.h>
+#include <qrect.h>
+#include <qsizepolicy.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_abstract_slider.h"
 #include "qwt_knob.h"
 #include "qwt_math.h"
 #include "qwt_painter.h"
-#include "qwt_paint_buffer.h"
+#include "qwt_round_scale_draw.h"
+
+class QFont;
+class QWidget;
 
 class QwtKnob::PrivateData
 {

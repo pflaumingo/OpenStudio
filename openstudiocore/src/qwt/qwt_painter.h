@@ -10,20 +10,27 @@
 #ifndef QWT_PAINTER_H
 #define QWT_PAINTER_H
 
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qpen.h>
 #include <qpoint.h>
 #include <qrect.h>
-#include <qpen.h>
+#include <qstring.h>
+
 #include "qwt_global.h"
 #include "qwt_layout_metrics.h"
 #include "qwt_polygon.h"
 
-class QPainter;
 class QBrush;
 class QColor;
+class QPaintDevice;
+class QPainter;
+class QRect;
 class QWidget;
-class QwtScaleMap;
 class QwtColorMap;
 class QwtDoubleInterval;
+class QwtMetricsMap;
+class QwtScaleMap;
 
 #if QT_VERSION < 0x040000
 class QColorGroup;

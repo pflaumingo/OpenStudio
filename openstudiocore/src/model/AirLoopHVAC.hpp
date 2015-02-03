@@ -20,8 +20,38 @@
 #ifndef MODEL_AIRLOOPHVAC_HPP
 #define MODEL_AIRLOOPHVAC_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "Loop.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/AirLoopHVACZoneMixer.hpp"
+#include "model/AirLoopHVACZoneSplitter.hpp"
+#include "model/AvailabilityManagerAssignmentList.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject.hpp"
+#include "model/Node.hpp"
+#include "model/Schedule.hpp"
+#include "model/SizingSystem.hpp"
+
+namespace openstudio {
+class IdfObject;
+class Quantity;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+namespace model {
+class HVACComponent;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 
@@ -31,15 +61,15 @@ namespace detail {
   class AirLoopHVAC_Impl;
 };
 
-class Node;
 class AirLoopHVACOutdoorAirSystem;
-class AirLoopHVACZoneSplitter;
-class AirLoopHVACZoneMixer;
-class AirLoopHVACSupplyPlenum;
 class AirLoopHVACReturnPlenum;
+class AirLoopHVACSupplyPlenum;
+class AirLoopHVACZoneMixer;
+class AirLoopHVACZoneSplitter;
+class Node;
+class SizingSystem;
 class StraightComponent;
 class ThermalZone;
-class SizingSystem;
 
 /** AirLoopHVAC is an interface to the EnergyPlus IDD object named "AirLoopHVAC"
  *

@@ -20,8 +20,28 @@
 #ifndef MODEL_CONSTRUCTION_HPP
 #define MODEL_CONSTRUCTION_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "LayeredConstruction.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+namespace model {
+class FenestrationMaterial;
+class ModelPartitionMaterial;
+class OpaqueMaterial;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

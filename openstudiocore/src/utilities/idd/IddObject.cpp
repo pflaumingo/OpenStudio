@@ -17,22 +17,48 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "IddObject.hpp"
-#include "IddObject_Impl.hpp"
-
-#include "ExtensibleIndex.hpp"
-#include "IddRegex.hpp"
-#include <utilities/idd/IddFactory.hxx>
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/algorithm/string/replace.hpp>
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/cpp_regex_traits.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_format.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_replace.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
 #include <utilities/idd/IddEnums.hxx>
-#include "IddKey.hpp"
-#include "CommentRegex.hpp"
+#include <algorithm>
+#include <sstream>
+#include <utility>
 
 #include "../core/Assert.hpp"
-
-#include <boost/filesystem/fstream.hpp>
-#include <boost/lexical_cast.hpp>
-#include <boost/tokenizer.hpp>
-#include <boost/algorithm/string.hpp>
+#include "CommentRegex.hpp"
+#include "ExtensibleIndex.hpp"
+#include "IddKey.hpp"
+#include "IddObject.hpp"
+#include "IddObject_Impl.hpp"
+#include "IddRegex.hpp"
+#include "utilities/idd/../core/Containers.hpp"
+#include "utilities/idd/../core/EnumBase.hpp"
+#include "utilities/idd/../core/Logger.hpp"
+#include "utilities/idd/../core/Optional.hpp"
+#include "utilities/idd/IddEnums.hpp"
+#include "utilities/idd/IddField.hpp"
+#include "utilities/idd/IddFieldProperties.hpp"
+#include "utilities/idd/IddObjectProperties.hpp"
 
 using std::string;
 using std::vector;

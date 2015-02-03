@@ -17,24 +17,42 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Analysis.hpp"
-#include "Analysis_Impl.hpp"
-
-#include "Algorithm_Impl.hpp"
-#include "DakotaAlgorithm.hpp"
-#include "DakotaAlgorithm_Impl.hpp"
-#include "DataPoint_Impl.hpp"
-#include "Measure.hpp"
-#include "InputVariable.hpp"
-#include "OpenStudioAlgorithm.hpp"
-#include "OpenStudioAlgorithm_Impl.hpp"
-#include "Problem_Impl.hpp"
+#include <boost/filesystem/path.hpp>
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <functional>
+#include <utility>
 
 #include "../runmanager/lib/Job.hpp"
-
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Json.hpp"
 #include "../utilities/core/PathHelpers.hpp"
+#include "Algorithm_Impl.hpp"
+#include "Analysis.hpp"
+#include "Analysis_Impl.hpp"
+#include "DakotaAlgorithm.hpp"
+#include "DakotaAlgorithm_Impl.hpp"
+#include "DataPoint_Impl.hpp"
+#include "OpenStudioAlgorithm.hpp"
+#include "Problem_Impl.hpp"
+#include "analysis/../runmanager/lib/JobErrors.hpp"
+#include "analysis/../runmanager/lib/JobType.hpp"
+#include "analysis/../runmanager/lib/TreeStatus.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/FileReference.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/Algorithm.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/DataPoint.hpp"
+#include "analysis/Problem.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

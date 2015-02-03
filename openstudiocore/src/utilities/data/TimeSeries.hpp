@@ -20,17 +20,21 @@
 #ifndef UTILITIES_DATA_TIMESERIES_HPP
 #define UTILITIES_DATA_TIMESERIES_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Vector.hpp"
-#include "../time/Date.hpp"
-#include "../time/Time.hpp"
-#include "../time/DateTime.hpp"
-
-#include <boost/optional.hpp>
 #include <boost/function.hpp>
-
+#include <boost/function/function_template.hpp>
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
 #include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../time/Date.hpp"
+#include "../time/DateTime.hpp"
+#include "../time/Time.hpp"
+#include "Vector.hpp"
+#include "utilities/data/../time/../core/LogMessage.hpp"
+#include "utilities/data/../time/../core/Logger.hpp"
 
 namespace openstudio{
 

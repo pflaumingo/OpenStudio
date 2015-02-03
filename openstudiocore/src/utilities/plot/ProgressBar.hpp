@@ -20,13 +20,19 @@
 #ifndef UTILITIES_PLOT_PROGRESSBAR_HPP
 #define UTILITIES_PLOT_PROGRESSBAR_HPP
 
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <QProgressBar>
+#include <memory>
+#include <string>
+
 #include "../UtilitiesAPI.hpp"
 #include "../core/Macro.hpp"
 #include "../core/String.hpp"
 
-#include <QProgressBar>
-
-#include <memory>
+class QProgressBar;
+class QWidget;
 
 namespace openstudio{
 

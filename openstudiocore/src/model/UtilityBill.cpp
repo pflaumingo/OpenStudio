@@ -17,41 +17,48 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "UtilityBill.hpp"
-#include "UtilityBill_Impl.hpp"
-#include "Meter.hpp"
-#include "Meter_Impl.hpp"
-#include "RunPeriod.hpp"
-#include "RunPeriod_Impl.hpp"
-#include "YearDescription.hpp"
-#include "YearDescription_Impl.hpp"
-#include "Building.hpp"
-#include "Building_Impl.hpp"
-#include "Facility.hpp"
-#include "Facility_Impl.hpp"
-#include "Timestep.hpp"
-#include "Timestep_Impl.hpp"
-
-#include "Model.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_UtilityBill_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/data/DataEnums.hpp"
-#include "../utilities/data/TimeSeries.hpp"
-
-#include "../utilities/time/Date.hpp"
+#include <utilities/idd/OS_UtilityBill_FieldEnums.hxx>
+#include <algorithm>
+#include <cmath>
+#include <limits>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
-
-#include <QDate>
+#include "../utilities/data/DataEnums.hpp"
+#include "../utilities/data/TimeSeries.hpp"
+#include "../utilities/time/Date.hpp"
+#include "Meter.hpp"
+#include "Model.hpp"
+#include "RunPeriod.hpp"
+#include "Timestep.hpp"
+#include "UtilityBill.hpp"
+#include "UtilityBill_Impl.hpp"
+#include "YearDescription.hpp"
+#include "model/../utilities/data/../time/DateTime.hpp"
+#include "model/../utilities/data/../time/Time.hpp"
+#include "model/../utilities/data/Vector.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/Enum.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/String.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelExtensibleGroup.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "utilities/idf/IdfObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   UtilityBill_Impl::UtilityBill_Impl(const IdfObject& idfObject,
                                      Model_Impl* model,

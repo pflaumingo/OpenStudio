@@ -17,17 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SamplingAlgorithm.hpp"
-#include "SamplingAlgorithm_Impl.hpp"
-
-#include "SamplingAlgorithmOptions.hpp"
-#include "SamplingAlgorithmOptions_Impl.hpp"
-
-#include "Problem.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
 
 #include "../runmanager/lib/JSON.hpp"
-
 #include "../utilities/core/Optional.hpp"
+#include "SamplingAlgorithm.hpp"
+#include "SamplingAlgorithmOptions.hpp"
+#include "SamplingAlgorithmOptions_Impl.hpp"
+#include "SamplingAlgorithm_Impl.hpp"
+#include "analysis/../runmanager/lib/Job.hpp"
+#include "analysis/../utilities/core/FileReference.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/DakotaAlgorithm.hpp"
+#include "analysis/DakotaAlgorithm_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+namespace analysis {
+class Problem;
+class UncertaintyDescriptionType;
+}  // namespace analysis
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

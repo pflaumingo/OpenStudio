@@ -20,12 +20,24 @@
 #ifndef ANALYSIS_DAKOTAALGORITHM_HPP
 #define ANALYSIS_DAKOTAALGORITHM_HPP
 
-#include "AnalysisAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "Algorithm.hpp"
+#include "AnalysisAPI.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
 
 namespace openstudio {
 
 class FileReference;
+namespace analysis {
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
+}  // namespace analysis
 
 namespace runmanager {
 class Job;
@@ -34,14 +46,14 @@ class Job;
 namespace analysis {
 
 class Analysis;
-class DataPoint;
 class DakotaParametersFile;
+class DataPoint;
 class UncertaintyDescriptionType;
 
 namespace detail {
 
-  class DakotaAlgorithm_Impl;
   class Analysis_Impl;
+  class DakotaAlgorithm_Impl;
 
 } // detail
 

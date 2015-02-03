@@ -17,25 +17,44 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/lexical_cast.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_RunPeriodControl_SpecialDays_FieldEnums.hxx>
+#include <algorithm>
+#include <sstream>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/time/Date.hpp"
+#include "Model.hpp"
 #include "RunPeriodControlSpecialDays.hpp"
 #include "RunPeriodControlSpecialDays_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
 #include "YearDescription.hpp"
-#include "YearDescription_Impl.hpp"
-
-#include <utilities/idd/OS_RunPeriodControl_SpecialDays_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/time/Date.hpp"
-#include "../utilities/core/Assert.hpp"
-
-#include <boost/regex.hpp>
+#include "model/../utilities/idd/../core/Enum.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
 
 namespace openstudio {
 namespace model  {
 
 namespace detail {
+
+class Model_Impl;
 
   RunPeriodControlSpecialDays_Impl::RunPeriodControlSpecialDays_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ModelObject_Impl(idfObject, model, keepHandle)

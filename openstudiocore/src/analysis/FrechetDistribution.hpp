@@ -20,14 +20,23 @@
 #ifndef ANALYSIS_FRECHETDISTRIBUTION_HPP
 #define ANALYSIS_FRECHETDISTRIBUTION_HPP
 
+#include <memory>
+
 #include "AnalysisAPI.hpp"
 #include "UncertaintyDescription.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/AnalysisEnums.hpp"
 
 namespace openstudio {
 namespace analysis {
 
 /** FrechetDistribution is an UncertaintyDescription that can apply aleatory uncertainty to a
  *  continuous variable. */
+namespace detail {
+class UncertaintyDescription_Impl;
+}  // namespace detail
+
 class ANALYSIS_API FrechetDistribution : public UncertaintyDescription {
  public:
   /** @name Constructors and Destructors */

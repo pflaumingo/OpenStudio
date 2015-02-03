@@ -20,13 +20,21 @@
 #ifndef UTILITIES_CLOUD_OSSERVER_HPP
 #define UTILITIES_CLOUD_OSSERVER_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "../core/UUID.hpp"
-#include "../core/Path.hpp"
-#include "../core/Url.hpp"
-#include "../core/Logger.hpp"
-
+#include <boost/optional/optional.hpp>
+#include <qnamespace.h>
+#include <memory>
 #include <string>
+#include <typeinfo>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "../core/Path.hpp"
+#include "../core/UUID.hpp"
+#include "../core/Url.hpp"
+#include "utilities/cloud/../core/LogMessage.hpp"
+
+class QObject;
 
 namespace openstudio{
   namespace detail{

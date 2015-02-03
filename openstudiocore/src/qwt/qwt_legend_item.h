@@ -12,14 +12,23 @@
 #ifndef QWT_LEGEND_ITEM_H
 #define QWT_LEGEND_ITEM_H
 
+#include <qobjectdefs.h>
+#include <qsize.h>
+
 #include "qwt_global.h"
 #include "qwt_legend.h"
 #include "qwt_text.h"
 #include "qwt_text_label.h"
 
+class QKeyEvent;
+class QMouseEvent;
+class QPaintEvent;
 class QPainter;
 class QPen;
+class QRect;
+class QWidget;
 class QwtSymbol;
+class QwtText;
 
 /*!
   \brief A legend label
@@ -116,6 +125,7 @@ private:
     void init(const QwtText &);
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

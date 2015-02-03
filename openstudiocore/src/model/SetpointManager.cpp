@@ -17,21 +17,39 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SetpointManager.hpp"
-#include "SetpointManager_Impl.hpp"
-#include "Model.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "PlantLoop.hpp"
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
 
 #include "../utilities/core/Assert.hpp"
+#include "AirLoopHVAC.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
+#include "PlantLoop.hpp"
+#include "SetpointManager.hpp"
+#include "SetpointManager_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/AirLoopHVACOutdoorAirSystem.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/HVACComponent_Impl.hpp"
+#include "model/Loop.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail{
+
+class Model_Impl;
 
   SetpointManager_Impl::SetpointManager_Impl(
       const IdfObject& idfObject, Model_Impl* model, bool keepHandle)

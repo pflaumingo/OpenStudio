@@ -17,32 +17,42 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <ext/alloc_traits.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_AirLoopHVAC_SupplyPlenum_FieldEnums.hxx>
+#include <string>
+
 #include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "AirLoopHVACZoneSplitter.hpp"
-#include "AirLoopHVACZoneSplitter_Impl.hpp"
+#include "AirLoopHVACReturnPlenum.hpp"
 #include "AirLoopHVACSupplyPlenum.hpp"
 #include "AirLoopHVACSupplyPlenum_Impl.hpp"
-#include "AirLoopHVACReturnPlenum.hpp"
-#include "AirLoopHVACReturnPlenum_Impl.hpp"
 #include "AirLoopHVACZoneMixer.hpp"
-#include "AirLoopHVACZoneMixer_Impl.hpp"
+#include "AirLoopHVACZoneSplitter.hpp"
+#include "AirLoopHVAC_Impl.hpp"
+#include "AirTerminalSingleDuctUncontrolled.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
 #include "ThermalZone.hpp"
 #include "ThermalZone_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "AirTerminalSingleDuctUncontrolled.hpp"
-#include "AirTerminalSingleDuctUncontrolled_Impl.hpp"
-#include <utilities/idd/OS_AirLoopHVAC_SupplyPlenum_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
+#include "model/../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/Mixer.hpp"
+#include "model/ModelObject.hpp"
+#include "model/Splitter.hpp"
+#include "model/Splitter_Impl.hpp"
+#include "model/StraightComponent.hpp"
 
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   AirLoopHVACSupplyPlenum_Impl::AirLoopHVACSupplyPlenum_Impl(const IdfObject& idfObject,
                                                              Model_Impl* model,

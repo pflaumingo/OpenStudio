@@ -17,14 +17,26 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "DiscreteVariable.hpp"
-#include "DiscreteVariable_Impl.hpp"
-
-#include "DataPoint.hpp"
-#include "Problem.hpp"
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
+#include "DataPoint.hpp"
+#include "DiscreteVariable.hpp"
+#include "DiscreteVariable_Impl.hpp"
+#include "Problem.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/../utilities/data/../core/Optional.hpp"
+#include "analysis/AnalysisEnums.hpp"
+#include "analysis/InputVariable.hpp"
+#include "analysis/InputVariable_Impl.hpp"
+#include "analysis/UncertaintyDescription.hpp"
 
 namespace openstudio {
 namespace analysis {

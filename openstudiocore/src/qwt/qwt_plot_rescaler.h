@@ -10,14 +10,18 @@
 #ifndef QWT_PLOT_RESCALER_H
 #define QWT_PLOT_RESCALER_H 1
 
-#include "qwt_global.h"
-#include "qwt_double_rect.h"
-#include "qwt_double_interval.h"
-#include "qwt_plot.h"
+#include <qnamespace.h>
 #include <qobject.h>
 
-class QwtPlotCanvas;
+#include "qwt_double_interval.h"
+#include "qwt_double_rect.h"
+#include "qwt_global.h"
+#include "qwt_plot.h"
+
+class QEvent;
 class QResizeEvent;
+class QSize;
+class QwtPlotCanvas;
 
 /*!
     \brief QwtPlotRescaler takes care of fixed aspect ratios for plot scales
@@ -129,6 +133,7 @@ private:
 
     class AxisData;
     class PrivateData;
+
     PrivateData *d_data;
 };
 

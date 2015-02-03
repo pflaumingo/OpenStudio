@@ -20,15 +20,28 @@
 #ifndef MODEL_YEARDESCRIPTION_HPP
 #define MODEL_YEARDESCRIPTION_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
 
 namespace openstudio {
 
 class Date;
+class DayOfWeek;
 class MonthOfYear;
 class NthDayOfWeekInMonth;
-class DayOfWeek;
+namespace model {
+class Model;
+}  // namespace model
 
 namespace model {
 

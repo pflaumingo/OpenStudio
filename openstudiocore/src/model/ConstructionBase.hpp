@@ -20,14 +20,32 @@
 #ifndef MODEL_CONSTRUCTIONBASE_HPP
 #define MODEL_CONSTRUCTIONBASE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ResourceObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/StandardsInformationConstruction.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
-class StandardsInformationConstruction;
 class RenderingColor;
+class StandardsInformationConstruction;
 
 namespace detail{
   class ConstructionBase_Impl;

@@ -20,8 +20,20 @@
 #ifndef PROJECT_SEQUENTIALSEARCHRECORD_HPP
 #define PROJECT_SEQUENTIALSEARCHRECORD_HPP
 
-#include "ProjectAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "OpenStudioAlgorithmRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/AlgorithmRecord.hpp"
+#include "project/AnalysisRecord.hpp"
+#include "project/ProjectDatabase.hpp"
+
+class QSqlQuery;
 
 namespace openstudio {
 namespace analysis {

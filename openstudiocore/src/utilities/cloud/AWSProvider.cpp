@@ -16,8 +16,30 @@
 *  License along with this library; if not, write to the Free Software
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
-#include "AWSProvider.hpp"
-#include "AWSProvider_Impl.hpp"
+#include <OpenStudio.hxx>
+#include <boost/algorithm/string/join.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/none.hpp>
+#include <qbytearray.h>
+#include <qdatetime.h>
+#include <qdir.h>
+#include <qfile.h>
+#include <qflags.h>
+#include <qiodevice.h>
+#include <qjsonarray.h>
+#include <qjsondocument.h>
+#include <qjsonobject.h>
+#include <qjsonvalue.h>
+#include <qprocess.h>
+#include <qregexp.h>
+#include <qsettings.h>
+#include <qstringlist.h>
+#include <qsystemdetection.h>
+#include <qtemporaryfile.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <functional>
 
 #include "../core/Application.hpp"
 #include "../core/ApplicationPathHelpers.hpp"
@@ -25,23 +47,12 @@
 #include "../core/Path.hpp"
 #include "../core/String.hpp"
 #include "../core/System.hpp"
-
-#include <OpenStudio.hxx>
-#include <QDateTime>
-#include <QDir>
-#include <QFile>
-#include <QJsonArray>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QList>
-#include <QProcess>
-#include <QSettings>
-#include <QString>
-#include <QTemporaryFile>
-#include <QTextStream>
-#include <QUrl>
-
-#include <algorithm>
+#include "AWSProvider.hpp"
+#include "AWSProvider_Impl.hpp"
+#include "utilities/cloud/../core/LogMessage.hpp"
+#include "utilities/cloud/../core/Singleton.hpp"
+#include "utilities/cloud/CloudProvider.hpp"
+#include "utilities/cloud/CloudProvider_Impl.hpp"
 
 namespace openstudio{
   namespace detail{

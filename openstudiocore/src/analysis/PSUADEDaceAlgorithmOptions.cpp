@@ -17,13 +17,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "PSUADEDaceAlgorithmOptions.hpp"
-#include "PSUADEDaceAlgorithmOptions_Impl.hpp"
-
-#include "../runmanager/lib/JSON.hpp"
+#include <qmetatype.h>
+#include <qvariant.h>
+#include <functional>
 
 #include "../utilities/core/Json.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "PSUADEDaceAlgorithmOptions.hpp"
+#include "PSUADEDaceAlgorithmOptions_Impl.hpp"
+#include "analysis/../utilities/data/Attribute.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/DakotaAlgorithmOptions.hpp"
+#include "analysis/DakotaAlgorithmOptions_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

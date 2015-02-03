@@ -20,16 +20,30 @@
 #ifndef MODEL_SHADINGCONTROL_HPP
 #define MODEL_SHADINGCONTROL_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ResourceObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 class Construction;
-class ShadingMaterial;
 class Schedule;
+class ShadingMaterial;
 
 namespace detail {
 

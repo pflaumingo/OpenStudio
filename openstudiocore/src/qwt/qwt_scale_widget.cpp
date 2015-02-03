@@ -9,16 +9,24 @@
 
 // vim: expandtab
 
-#include <qpainter.h>
 #include <qevent.h>
-#include "qwt_painter.h"
+#include <qflags.h>
+#include <qpainter.h>
+#include <qpalette.h>
+#include <qpen.h>
+#include <qsizepolicy.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_layout_metrics.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_draw.h"
 #include "qwt_color_map.h"
-#include "qwt_scale_widget.h"
-#include "qwt_scale_map.h"
 #include "qwt_math.h"
-#include "qwt_paint_buffer.h"
+#include "qwt_painter.h"
 #include "qwt_scale_div.h"
+#include "qwt_scale_map.h"
+#include "qwt_scale_widget.h"
 #include "qwt_text.h"
+
+class QFont;
 
 class QwtScaleWidget::PrivateData
 {

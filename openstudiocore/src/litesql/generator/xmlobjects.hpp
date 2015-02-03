@@ -1,11 +1,14 @@
 #ifndef litesql_xmlobjects_hpp
 #define litesql_xmlobjects_hpp
 
-#include <string>
-#include <vector>
-#include <stdexcept>
+#include <stddef.h>
 #include <algorithm>
 #include <map>
+#include <stdexcept>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "litesql-gen.hpp"
 #include "litesql/split.hpp"
 #include "litesql/string.hpp"
@@ -142,9 +145,10 @@ public:
         params.push_back(p);
     }
 };
-class Relation;
-class Relate;
 class Object;
+class Relate;
+class Relation;
+
 class RelationHandle {
 public:
     string name;

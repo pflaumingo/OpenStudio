@@ -10,8 +10,22 @@
 #ifndef QWT_WHEEL_H
 #define QWT_WHEEL_H
 
-#include "qwt_global.h"
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qpalette.h>
+#include <qsize.h>
+#include <stddef.h>
+
 #include "qwt_abstract_slider.h"
+#include "qwt_global.h"
+
+class QPaintEvent;
+class QPainter;
+class QPoint;
+class QRect;
+class QResizeEvent;
+class QWidget;
 
 /*!
   \brief The Wheel Widget
@@ -78,6 +92,7 @@ private:
     void initWheel();
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

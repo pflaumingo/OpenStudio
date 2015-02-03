@@ -10,10 +10,13 @@
 #ifndef QWT_COMPASS_ROSE_H
 #define QWT_COMPASS_ROSE_H 1
 
+#include <qglobal.h>
 #include <qpalette.h>
+
 #include "qwt_global.h"
 
 class QPainter;
+class QPoint;
 
 /*!
   \brief Abstract base class for a compass rose

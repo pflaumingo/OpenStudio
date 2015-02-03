@@ -17,38 +17,58 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SubSurface.hpp"
-#include "SubSurface_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Surface.hpp"
-#include "Surface_Impl.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "ShadingSurface.hpp"
-#include "ShadingSurface_Impl.hpp"
-#include "ShadingSurfaceGroup.hpp"
-#include "ShadingSurfaceGroup_Impl.hpp"
-#include "ShadingControl.hpp"
-#include "ShadingControl_Impl.hpp"
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-#include "Construction.hpp"
-#include "Construction_Impl.hpp"
-#include "DaylightingDeviceShelf.hpp"
-#include "DaylightingDeviceShelf_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_SubSurface_FieldEnums.hxx>
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/none.hpp>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_SubSurface_FieldEnums.hxx>
+#include <algorithm>
+#include <exception>
+#include <limits>
+#include <ostream>
+#include <utility>
 
-#include "../utilities/sql/SqlFile.hpp"
-
+#include "../utilities/core/Assert.hpp"
 #include "../utilities/geometry/Geometry.hpp"
 #include "../utilities/geometry/Transformation.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "../utilities/sql/SqlFile.hpp"
+#include "ConstructionBase.hpp"
+#include "DaylightingDeviceShelf.hpp"
+#include "Model.hpp"
+#include "ShadingControl.hpp"
+#include "ShadingSurface.hpp"
+#include "ShadingSurfaceGroup.hpp"
+#include "Space.hpp"
+#include "SubSurface.hpp"
+#include "SubSurface_Impl.hpp"
+#include "Surface.hpp"
+#include "model/../utilities/geometry/Plane.hpp"
+#include "model/../utilities/geometry/Point3d.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/LayeredConstruction.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+#include "model/PlanarSurface.hpp"
+#include "model/PlanarSurfaceGroup.hpp"
+#include "model/PlanarSurface_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using boost::to_upper_copy;
 

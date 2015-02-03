@@ -17,24 +17,37 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ImfFile.hpp"
-#include "IdfRegex.hpp"
-#include "../idd/CommentRegex.hpp"
-#include <utilities/idd/IddFactory.hxx>
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/filesystem/fstream.hpp>
+#include <boost/iostreams/filter/newline.hpp>
+#include <boost/iostreams/filtering_stream.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/sub_match.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <algorithm>
+#include <sstream>
+#include <utility>
 
 #include "../core/Assert.hpp"
 #include "../core/PathHelpers.hpp"
-#include "../core/String.hpp"
-
-#include <boost/algorithm/string.hpp>
-#include <boost/iostreams/filter/newline.hpp>
-#include <boost/iostreams/filtering_stream.hpp>
-
-#include <boost/filesystem.hpp>
-#include <boost/filesystem/fstream.hpp>
-
-#include <sstream>
+#include "../idd/CommentRegex.hpp"
+#include "IdfRegex.hpp"
+#include "ImfFile.hpp"
+#include "utilities/idf/../core/Containers.hpp"
+#include "utilities/idf/../core/Singleton.hpp"
+#include "utilities/idf/../idd/../core/Path.hpp"
+#include "utilities/idf/../idd/IddFileAndFactoryWrapper.hpp"
+#include "utilities/idf/../idd/IddObject.hpp"
+#include "utilities/idf/IdfObject.hpp"
 
 namespace openstudio{
 

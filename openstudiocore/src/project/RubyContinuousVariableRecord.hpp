@@ -20,13 +20,33 @@
 #ifndef PROJECT_RUBYCONTINUOUSVARIABLERECORD_HPP
 #define PROJECT_RUBYCONTINUOUSVARIABLERECORD_HPP
 
-#include "ProjectAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ContinuousVariableRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/OSArgumentRecord.hpp"
+#include "project/ProjectDatabase.hpp"
+#include "project/RubyMeasureRecord.hpp"
+#include "project/VariableRecord.hpp"
+
+class QSqlQuery;
+namespace openstudio {
+namespace project {
+class FunctionRecord;
+class ProblemRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace analysis {
 class RubyContinuousVariable;
+class Variable;
 }
 
 namespace project {

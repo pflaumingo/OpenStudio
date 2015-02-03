@@ -20,14 +20,16 @@
 #ifndef UTILITIES_CORE_LOGSINK_HPP
 #define UTILITIES_CORE_LOGSINK_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "LogMessage.hpp"
-
+#include <boost/optional/optional.hpp>
 #include <boost/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
 #include <boost/shared_ptr.hpp>
-
+#include <boost/smart_ptr/shared_ptr.hpp>
 #include <ostream>
+#include <string>
+
+#include "../UtilitiesAPI.hpp"
+#include "LogMessage.hpp"
 
 class QThread;
 

@@ -2,6 +2,8 @@
  * Generated automatically by crc32.c
  */
 
+#include "zconf.h"
+
 local const z_crc_t FAR crc_table[TBLS][256] =
 {
   {

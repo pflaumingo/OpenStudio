@@ -17,14 +17,26 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "RunManagerStatusWidget.hpp"
-#include "RunManager.hpp"
-#include "RunManager_Impl.hpp"
-#include "Job.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <qaction.h>
+#include <qdesktopservices.h>
+#include <qitemselectionmodel.h>
+#include <qlist.h>
+#include <qmessagebox.h>
+#include <qstandarditemmodel.h>
+#include <qstring.h>
+#include <qtreeview.h>
+#include <qurl.h>
+#include <string>
 
-#include <QMessageBox>
-#include <QDesktopServices>
-#include <QUrl>
+#include "Job.hpp"
+#include "RunManager.hpp"
+#include "RunManagerStatusWidget.hpp"
+#include "RunManager_Impl.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/TreeStatus.hpp"
+#include "ui_RunManagerStatusWidget.h"
 
 namespace openstudio {
 namespace runmanager {

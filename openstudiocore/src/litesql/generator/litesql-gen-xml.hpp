@@ -1,10 +1,20 @@
 #ifndef xmlgenerator_hpp
 #define xmlgenerator_hpp
 
+#include <stddef.h>
 #include <ostream>
+#include <string>
+
 #include "generator.hpp"
 
+namespace xml {
+class Object;
+class Relation;
+}  // namespace xml
+
 namespace litesql {
+class ObjectModel;
+
   class XmlGenerator : public CodeGenerator {
   public:
     XmlGenerator(): CodeGenerator("xml") { };

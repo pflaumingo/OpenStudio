@@ -20,17 +20,21 @@
 #ifndef UTILITIES_SQL_SQLFILETIMESERIESQUERY_HPP
 #define UTILITIES_SQL_SQLFILETIMESERIESQUERY_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "SqlFileEnums.hpp"
-
-#include "../core/Logger.hpp"
-
+#include <boost/none.hpp>
 #include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
 #include <boost/regex.hpp>
-
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <ostream>
+#include <set>
 #include <string>
 #include <vector>
-#include <ostream>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "SqlFileEnums.hpp"
+#include "utilities/sql/../core/LogMessage.hpp"
 
 namespace openstudio {
 

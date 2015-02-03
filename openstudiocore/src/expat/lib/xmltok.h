@@ -5,6 +5,9 @@
 #ifndef XmlTok_INCLUDED
 #define XmlTok_INCLUDED 1
 
+#include "expat_config.h"
+#include "expat_external.h"
+#include "internal.h"
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -123,6 +126,7 @@ typedef struct {
 } ATTRIBUTE;
 
 struct encoding;
+
 typedef struct encoding ENCODING;
 
 typedef int (PTRCALL *SCANNER)(const ENCODING *,

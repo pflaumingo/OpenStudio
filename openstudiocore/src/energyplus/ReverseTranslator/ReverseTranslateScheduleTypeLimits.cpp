@@ -17,18 +17,35 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/ScheduleTypeLimits_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+#include <string>
+#include <vector>
 
 #include "../../model/ScheduleTypeLimits.hpp"
-#include "../../model/ScheduleTypeLimits_Impl.hpp"
-
-#include <utilities/idd/ScheduleTypeLimits_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/OS_ScheduleTypeLimits_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
-
 #include "../../utilities/core/Assert.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

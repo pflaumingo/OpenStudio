@@ -17,56 +17,52 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Building.hpp"
-#include "Building_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "BuildingStory.hpp"
-#include "BuildingStory_Impl.hpp"
-#include "Facility.hpp"
-#include "Facility_Impl.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "SpaceType.hpp"
-#include "SpaceType_Impl.hpp"
-#include "DefaultConstructionSet.hpp"
-#include "DefaultConstructionSet_Impl.hpp"
-#include "DefaultScheduleSet.hpp"
-#include "DefaultScheduleSet_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "ShadingSurface.hpp"
-#include "ShadingSurface_Impl.hpp"
-#include "ShadingSurfaceGroup.hpp"
-#include "ShadingSurfaceGroup_Impl.hpp"
-#include "Meter.hpp"
-#include "Meter_Impl.hpp"
-#include "Surface.hpp"
-#include "Surface_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
+#include <ext/alloc_traits.h>
+#include <utilities/idd/IddEnums.hxx>
 #include <utilities/idd/OS_Building_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/OS_ThermalZone_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
+#include <algorithm>
+#include <iterator>
 
-#include "../utilities/math/FloatCompare.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Compare.hpp"
 #include "../utilities/data/DataEnums.hpp"
 #include "../utilities/geometry/Geometry.hpp"
 #include "../utilities/geometry/Transformation.hpp"
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "../utilities/math/FloatCompare.hpp"
 #include "../utilities/units/QuantityConverter.hpp"
-
-#include <boost/optional.hpp>
-#include <boost/algorithm/string.hpp>
+#include "Building.hpp"
+#include "BuildingStory.hpp"
+#include "Building_Impl.hpp"
+#include "DefaultConstructionSet.hpp"
+#include "DefaultScheduleSet.hpp"
+#include "Facility.hpp"
+#include "Meter.hpp"
+#include "Model.hpp"
+#include "ShadingSurfaceGroup.hpp"
+#include "Space.hpp"
+#include "SpaceType.hpp"
+#include "Surface.hpp"
+#include "ThermalZone.hpp"
+#include "model/../utilities/geometry/Point3d.hpp"
+#include "model/../utilities/geometry/Vector3d.hpp"
+#include "model/../utilities/idd/../core/Enum.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   Building_Impl::Building_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ParentObject_Impl(idfObject, model, keepHandle)

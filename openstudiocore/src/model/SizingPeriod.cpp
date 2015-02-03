@@ -17,22 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "Site.hpp"
 #include "SizingPeriod.hpp"
 #include "SizingPeriod_Impl.hpp"
-#include "Site.hpp"
-#include "Site_Impl.hpp"
 #include "SkyTemperature.hpp"
-#include "SkyTemperature_Impl.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
 
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model  {
 
 namespace detail {
+
+class Model_Impl;
 
   SizingPeriod_Impl::SizingPeriod_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ParentObject_Impl(idfObject, model, keepHandle)

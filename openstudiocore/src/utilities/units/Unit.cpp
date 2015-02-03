@@ -17,21 +17,21 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Unit.hpp"
-#include "Unit_Impl.hpp"
-#include "Quantity.hpp"
-#include "QuantityConverter.hpp"
-
-#include "ScaleFactory.hpp"
-#include "QuantityRegex.hpp"
-#include "UnitFactory.hpp"
-
-#include "../core/Compare.hpp"
-#include "../core/Assert.hpp"
-#include "../core/Containers.hpp"
-
 #include <algorithm>
-#include <sstream>
+#include <functional>
+#include <utility>
+
+#include "../core/Assert.hpp"
+#include "../core/Compare.hpp"
+#include "../core/Containers.hpp"
+#include "QuantityRegex.hpp"
+#include "ScaleFactory.hpp"
+#include "Unit.hpp"
+#include "UnitFactory.hpp"
+#include "Unit_Impl.hpp"
+#include "utilities/units/../core/Logger.hpp"
+#include "utilities/units/../core/Singleton.hpp"
+#include "utilities/units/Scale.hpp"
 
 namespace openstudio {
 namespace detail {

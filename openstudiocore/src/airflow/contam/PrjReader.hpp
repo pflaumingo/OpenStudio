@@ -20,13 +20,24 @@
 #ifndef AIRFLOW_CONTAM_PRJREADER_HPP
 #define AIRFLOW_CONTAM_PRJREADER_HPP
 
+#include <../utilities/core/LogMessage.hpp>
+#include <qsharedpointer_impl.h>
+#include <qstring.h>
+#include <qstringlist.h>
+#include <qtextstream.h>
+#include <qvector.h>
 #include <QFile>
+#include <QSharedPointer>
 #include <QStringList>
 #include <QVector>
-#include <QSharedPointer>
-#include "../utilities/core/Logger.hpp"
+#include <memory>
+#include <string>
+#include <vector>
 
+#include "../utilities/core/Logger.hpp"
 #include "PrjDefines.hpp"
+
+class QFile;
 
 namespace openstudio {
 namespace contam {

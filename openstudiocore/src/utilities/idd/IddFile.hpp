@@ -20,21 +20,26 @@
 #ifndef UTILITIES_IDD_IDDFILE_HPP
 #define UTILITIES_IDD_IDDFILE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
-
-#include "IddObject.hpp"
-
 #include "../core/Logger.hpp"
 #include "../core/Path.hpp"
-
-#include <string>
-#include <ostream>
-#include <vector>
+#include "IddObject.hpp"
+#include "utilities/idd/../core/LogMessage.hpp"
+#include "utilities/idd/IddEnums.hpp"
 
 namespace openstudio{
 
 // forward declarations
 class IddFactorySingleton;
+
 namespace detail{
   class IddFile_Impl;
 } // detail

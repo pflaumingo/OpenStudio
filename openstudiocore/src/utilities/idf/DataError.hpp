@@ -20,16 +20,19 @@
 #ifndef UTILITIES_IDF_DATAERROR_HPP
 #define UTILITIES_IDF_DATAERROR_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "ValidityEnums.hpp"
-#include "Handle.hpp"
-
-#include "../core/Logger.hpp"
-
-#include "../idd/IddEnums.hpp"
-
 #include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <set>
+#include <string>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "../idd/IddEnums.hpp"
+#include "Handle.hpp"
+#include "ValidityEnums.hpp"
+#include "utilities/idf/../core/LogMessage.hpp"
 
 namespace openstudio {
 

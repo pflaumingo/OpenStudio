@@ -17,23 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <algorithm>
+
+#include "../utilities/core/Assert.hpp"
+#include "AirLoopHVACOutdoorAirSystem.hpp"
 #include "AirToAirComponent.hpp"
 #include "AirToAirComponent_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "AirLoopHVACOutdoorAirSystem.hpp"
-#include "AirLoopHVACOutdoorAirSystem_Impl.hpp"
 #include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "Node.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/HVACComponent_Impl.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
 AirToAirComponent_Impl::AirToAirComponent_Impl(IddObjectType type, Model_Impl* model)
   : HVACComponent_Impl(type,model)

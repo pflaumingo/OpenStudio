@@ -20,15 +20,30 @@
 #ifndef MODEL_EVAPORATIVECOOLERDIRECTRESEARCHSPECIAL_HPP
 #define MODEL_EVAPORATIVECOOLERDIRECTRESEARCHSPECIAL_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
+#include "Connection.hpp"
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
 #include "StraightComponent.hpp"
-#include "Connection.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class Schedule;
+class Node;
 
 namespace detail {
   class EvaporativeCoolerDirectResearchSpecial_Impl;

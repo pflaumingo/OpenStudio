@@ -17,29 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ZoneAirContaminantBalance.hpp"
-#include "ZoneAirContaminantBalance_Impl.hpp"
-#include "SimulationControl.hpp"
-#include "SimulationControl_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-// TODO: Check the following class names against object getters and setters.
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-
-#include <utilities/idd/OS_ZoneAirContaminantBalance_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_ZoneAirContaminantBalance_FieldEnums.hxx>
+#include <algorithm>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+// TODO: Check the following class names against object getters and setters.
+#include "Schedule.hpp"
+#include "SimulationControl.hpp"
+#include "ZoneAirContaminantBalance.hpp"
+#include "ZoneAirContaminantBalance_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ZoneAirContaminantBalance_Impl::ZoneAirContaminantBalance_Impl(const IdfObject& idfObject,
                                                                  Model_Impl* model,

@@ -20,15 +20,30 @@
 #ifndef RUNMANAGER_LIB_RUNMANAGER_HPP
 #define RUNMANAGER_LIB_RUNMANAGER_HPP
 
-#include "ConfigOptions.hpp"
-#include "RunManagerAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <qabstractitemmodel.h>
+#include <qnamespace.h>
+#include <qvariant.h>
+#include <QAbstractItemModel>
+#include <map>
+#include <memory>
+#include <string>
+#include <vector>
 
 #include "../../utilities/core/Path.hpp"
 #include "../../utilities/core/UUID.hpp"
+#include "ConfigOptions.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
-#include <QAbstractItemModel>
+class QObject;
+class QWidget;
 
 namespace openstudio{
+class VersionString;
+
   namespace model
   {
     class Model;
@@ -40,9 +55,9 @@ namespace detail {
 }
 
   class Job;
-  class Workflow;
-  class RunManagerStatus;
   class RunManager;
+  class RunManagerStatus;
+  class Workflow;
   struct JSONWorkflowOptions;
 
 
@@ -309,6 +324,7 @@ namespace detail {
       RunManagerStatusHandle m_handle;
 
       struct DB_Handler;
+
       static DB_Handler &get_db_handler();
       static openstudio::path generateTempPathName();
 

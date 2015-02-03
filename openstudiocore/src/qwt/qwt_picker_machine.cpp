@@ -7,7 +7,9 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <qcoreevent.h>
 #include <qevent.h>
+
 #include "qwt_event_pattern.h"
 #include "qwt_picker_machine.h"
 

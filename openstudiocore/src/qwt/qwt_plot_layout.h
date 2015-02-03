@@ -10,6 +10,9 @@
 #ifndef QWT_PLOT_LAYOUT_H
 #define QWT_PLOT_LAYOUT_H
 
+#include <qrect.h>
+#include <qsize.h>
+
 #include "qwt_global.h"
 #include "qwt_plot.h"
 

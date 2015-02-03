@@ -20,19 +20,34 @@
 #ifndef UTILITIES_BCL_REMOTEBCL_HPP
 #define UTILITIES_BCL_REMOTEBCL_HPP
 
-#include "BCL.hpp"
-#include "../core/Path.hpp"
-
+#include <boost/optional/optional.hpp>
+#include <qdom.h>
+#include <qlist.h>
+#include <qobjectdefs.h>
 #include <QDomDocument>
+#include <memory>
+#include <string>
+#include <vector>
 
-class QNetworkAccessManager;
-class QNetworkRequest;
+#include "../core/Path.hpp"
+#include "BCL.hpp"
+#include "utilities/bcl/../UtilitiesAPI.hpp"
+#include "utilities/bcl/../core/LogMessage.hpp"
+#include "utilities/bcl/../data/../core/Logger.hpp"
+
+class QFile;
 class QMutex;
+class QNetworkAccessManager;
+class QNetworkReply;
+class QNetworkRequest;
 class QSslError;
 
 namespace openstudio{
 
   /// This class is used to capture the xml response of a query and store it for later processing.
+class BCLComponent;
+class BCLMeasure;
+
   class UTILITIES_API RemoteQueryResponse {
   public:
 

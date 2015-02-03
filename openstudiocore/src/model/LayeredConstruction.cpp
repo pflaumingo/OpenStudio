@@ -17,43 +17,59 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "LayeredConstruction.hpp"
-#include "LayeredConstruction_Impl.hpp"
-#include "Model.hpp"
-
-#include "StandardsInformationConstruction.hpp"
-#include "Material.hpp"
-#include "OpaqueMaterial.hpp"
-#include "OpaqueMaterial_Impl.hpp"
-#include "AirGap.hpp"
-#include "AirGap_Impl.hpp"
-#include "RoofVegetation.hpp"
-#include "RoofVegetation_Impl.hpp"
-#include "FenestrationMaterial.hpp"
-#include "FenestrationMaterial_Impl.hpp"
-#include "SimpleGlazing.hpp"
-#include "SimpleGlazing_Impl.hpp"
-#include "StandardGlazing.hpp"
-#include "StandardGlazing_Impl.hpp"
-#include "RefractionExtinctionGlazing.hpp"
-#include "RefractionExtinctionGlazing_Impl.hpp"
-#include "GasLayer.hpp"
-#include "GasLayer_Impl.hpp"
-#include "ShadingMaterial.hpp"
-#include "ShadingMaterial_Impl.hpp"
-#include "ModelPartitionMaterial.hpp"
-#include "ModelPartitionMaterial_Impl.hpp"
-
-#include "ModelExtensibleGroup.hpp"
-
-#include "../utilities/idf/ValidityReport.hpp"
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
+#include <algorithm>
+#include <ostream>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "../utilities/idf/ValidityReport.hpp"
+#include "AirGap.hpp"
+#include "FenestrationMaterial.hpp"
+#include "GasLayer.hpp"
+#include "LayeredConstruction.hpp"
+#include "LayeredConstruction_Impl.hpp"
+#include "Material.hpp"
+#include "Model.hpp"
+#include "ModelExtensibleGroup.hpp"
+#include "ModelPartitionMaterial.hpp"
+#include "OpaqueMaterial.hpp"
+#include "RefractionExtinctionGlazing.hpp"
+#include "RoofVegetation.hpp"
+#include "SimpleGlazing.hpp"
+#include "StandardGlazing.hpp"
+#include "StandardsInformationConstruction.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/../idd/ExtensibleIndex.hpp"
+#include "model/../utilities/idf/DataError.hpp"
+#include "model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/ValidityEnums.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/ConstructionBase.hpp"
+#include "model/ConstructionBase_Impl.hpp"
+#include "model/Glazing.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   LayeredConstruction_Impl::LayeredConstruction_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ConstructionBase_Impl(idfObject, model, keepHandle)

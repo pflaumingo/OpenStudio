@@ -17,20 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/Space.hpp"
-#include "../../model/Space_Impl.hpp"
-#include "../../model/ThermostatSetpointDualSetpoint.hpp"
-#include "../../model/ThermostatSetpointDualSetpoint_Impl.hpp"
-#include <utilities/idd/Zone_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
 #include <utilities/idd/ZoneControl_Thermostat_FieldEnums.hxx>
 #include <utilities/idd/ZoneList_FieldEnums.hxx>
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include <utilities/idd/ZoneHVAC_EquipmentConnections_FieldEnums.hxx>
+#include <utilities/idd/Zone_FieldEnums.hxx>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../../model/Space.hpp"
+#include "../../model/ThermalZone.hpp"
+#include "../../model/ThermostatSetpointDualSetpoint.hpp"
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/Workspace.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

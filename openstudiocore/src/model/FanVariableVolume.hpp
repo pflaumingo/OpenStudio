@@ -20,12 +20,25 @@
 #ifndef MODEL_FANVARIABLEVOLUME_HPP
 #define MODEL_FANVARIABLEVOLUME_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "StraightComponent.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/Schedule.hpp"
 
 namespace openstudio {
-class Quantity;
 class OSOptionalQuantity;
+class Quantity;
+class IdfObject;
 
 namespace model {
 

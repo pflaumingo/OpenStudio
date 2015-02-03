@@ -17,10 +17,35 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "LinePlot.hpp"
+#include <qflags.h>
+#include <qlist.h>
+#include <qpalette.h>
+#include <qvector.h>
+#include <qwidget.h>
+#include <algorithm>
 #include <cfloat>
+#include <memory>
+#include <stdexcept>
+
 #include "../core/Application.hpp"
-#include <qwt/qwt_painter.h>
+#include "LinePlot.hpp"
+#include "qwt/qwt_array.h"
+#include "qwt/qwt_legend.h"
+#include "qwt/qwt_legend_item.h"
+#include "qwt/qwt_plot.h"
+#include "qwt/qwt_plot_curve.h"
+#include "qwt/qwt_plot_dict.h"
+#include "qwt/qwt_plot_grid.h"
+#include "qwt/qwt_plot_item.h"
+#include "qwt/qwt_plot_layout.h"
+#include "qwt/qwt_text.h"
+#include "utilities/plot/../core/Singleton.hpp"
+#include "utilities/plot/../core/String.hpp"
+#include "utilities/plot/../data/../time/Date.hpp"
+#include "utilities/plot/../data/../time/Time.hpp"
+#include "utilities/plot/../data/TimeSeries.hpp"
+#include "utilities/plot/../data/Vector.hpp"
+#include "utilities/plot/Plot2D.hpp"
 
 
 using namespace std;

@@ -17,96 +17,78 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "AirLoopHVACSupplyPlenum.hpp"
-#include "AirLoopHVACSupplyPlenum_Impl.hpp"
-#include "AirTerminalSingleDuctParallelPIUReheat.hpp"
-#include "AirTerminalSingleDuctParallelPIUReheat_Impl.hpp"
-#include "AirLoopHVACReturnPlenum.hpp"
-#include "AirLoopHVACReturnPlenum_Impl.hpp"
-#include "ZoneHVACEquipmentList.hpp"
-#include "ZoneHVACEquipmentList_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Building.hpp"
-#include "Building_Impl.hpp"
-#include "SizingZone.hpp"
-#include "SizingZone_Impl.hpp"
-#include "BuildingStory.hpp"
-#include "BuildingStory_Impl.hpp"
-#include "SpaceType.hpp"
-#include "SpaceType_Impl.hpp"
-#include "DefaultConstructionSet.hpp"
-#include "DefaultConstructionSet_Impl.hpp"
-#include "DefaultScheduleSet.hpp"
-#include "DefaultScheduleSet_Impl.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "SpaceLoad.hpp"
-#include "SpaceLoad_Impl.hpp"
-#include "Surface.hpp"
-#include "Surface_Impl.hpp"
-#include "InteriorPartitionSurfaceGroup.hpp"
-#include "InteriorPartitionSurfaceGroup_Impl.hpp"
-#include "InteriorPartitionSurface.hpp"
-#include "InteriorPartitionSurface_Impl.hpp"
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-#include "DaylightingControl.hpp"
-#include "DaylightingControl_Impl.hpp"
-#include "IlluminanceMap.hpp"
-#include "IlluminanceMap_Impl.hpp"
-#include "RenderingColor.hpp"
-#include "RenderingColor_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "PortList.hpp"
-#include "PortList_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "Thermostat.hpp"
-#include "Thermostat_Impl.hpp"
-#include "ThermostatSetpointDualSetpoint.hpp"
-#include "ThermostatSetpointDualSetpoint_Impl.hpp"
-#include "ZoneControlHumidistat.hpp"
-#include "ZoneControlHumidistat_Impl.hpp"
-#include "DesignSpecificationOutdoorAir.hpp"
-#include "DesignSpecificationOutdoorAir_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "AirLoopHVACZoneSplitter.hpp"
-#include "AirLoopHVACZoneSplitter_Impl.hpp"
-#include "AirLoopHVACZoneMixer.hpp"
-#include "AirLoopHVACZoneMixer_Impl.hpp"
-#include "LifeCycleCost.hpp"
-#include "LifeCycleCost_Impl.hpp"
-#include "SetpointManagerSingleZoneReheat.hpp"
-#include "SetpointManagerSingleZoneReheat_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_ThermalZone_FieldEnums.hxx>
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qobject.h>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/geometry/Transformation.hpp"
-#include "../utilities/geometry/Geometry.hpp"
-#include "../utilities/geometry/Point3d.hpp"
-#include "../utilities/geometry/Vector3d.hpp"
-
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/units/QuantityConverter.hpp"
-
-#include "../utilities/math/FloatCompare.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_ThermalZone_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+#include <set>
 
 #include "../utilities/core/Assert.hpp"
-
+#include "../utilities/geometry/Transformation.hpp"
+#include "../utilities/math/FloatCompare.hpp"
 #include "../utilities/sql/SqlFile.hpp"
+#include "../utilities/units/QuantityConverter.hpp"
+#include "AirLoopHVAC.hpp"
+#include "AirLoopHVACReturnPlenum.hpp"
+#include "AirLoopHVACSupplyPlenum.hpp"
+#include "AirLoopHVACZoneMixer.hpp"
+#include "AirLoopHVACZoneSplitter.hpp"
+#include "AirTerminalSingleDuctParallelPIUReheat.hpp"
+#include "Building.hpp"
+#include "BuildingStory.hpp"
+#include "ConstructionBase.hpp"
+#include "DaylightingControl.hpp"
+#include "DesignSpecificationOutdoorAir.hpp"
+#include "IlluminanceMap.hpp"
+#include "InteriorPartitionSurface.hpp"
+#include "InteriorPartitionSurfaceGroup.hpp"
+#include "LifeCycleCost.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
+#include "PortList.hpp"
+#include "RenderingColor.hpp"
+#include "SetpointManagerSingleZoneReheat.hpp"
+#include "SizingZone.hpp"
+#include "Space.hpp"
+#include "SpaceLoad.hpp"
+#include "SpaceType.hpp"
+#include "Surface.hpp"
+#include "ThermalZone.hpp"
+#include "ThermalZone_Impl.hpp"
+#include "Thermostat.hpp"
+#include "ThermostatSetpointDualSetpoint.hpp"
+#include "ZoneControlHumidistat.hpp"
+#include "ZoneHVACEquipmentList.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/HVACComponent_Impl.hpp"
+#include "model/Mixer.hpp"
+#include "model/ParentObject.hpp"
+#include "model/SetpointManager.hpp"
+#include "model/Splitter.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ThermalZone_Impl::ThermalZone_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : HVACComponent_Impl(idfObject,model,keepHandle)

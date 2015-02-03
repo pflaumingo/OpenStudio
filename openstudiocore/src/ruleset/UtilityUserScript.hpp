@@ -20,16 +20,23 @@
 #ifndef RULESET_UTILITYUSERSCRIPT_HPP
 #define RULESET_UTILITYUSERSCRIPT_HPP
 
-#include "RulesetAPI.hpp"
-#include "UserScript.hpp"
+#include <map>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
+#include "RulesetAPI.hpp"
+#include "UserScript.hpp"
+#include "ruleset/../utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 namespace ruleset {
 
 /** UtilityUserScript is an abstract base class for UserScripts that fulfill some
  *  purpose that is independent of any particular building energy model. */
+class OSArgument;
+class OSRunner;
+
 class RULESET_API UtilityUserScript : public UserScript {
  public:
   /** @name Constructors and Destructors */

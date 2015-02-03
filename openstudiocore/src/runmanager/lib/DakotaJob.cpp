@@ -17,18 +17,22 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
 #include <sstream>
-#include <iterator>
-#include <algorithm>
+#include <stdexcept>
 
 #include "DakotaJob.hpp"
 #include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/ToolBasedJob.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-#include <QDir>
-#include <QDateTime>
+namespace openstudio {
+namespace runmanager {
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

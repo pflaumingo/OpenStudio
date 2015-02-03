@@ -17,29 +17,46 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "DataPoint.hpp"
-#include "DataPoint_Impl.hpp"
-
-#include "Analysis.hpp"
-#include "Analysis_Impl.hpp"
-#include "InputVariable.hpp"
-#include "OptimizationDataPoint.hpp"
-#include "OptimizationDataPoint_Impl.hpp"
-
-#include "../runmanager/lib/Job.hpp"
-#include "../runmanager/lib/JSON.hpp"
-#include "../runmanager/lib/RunManager.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <quuid.h>
+#include <algorithm>
+#include <exception>
+#include <functional>
+#include <istream>
 
 #include "../ruleset/OSResult.hpp"
-
-#include "../utilities/math/FloatCompare.hpp"
-
+#include "../runmanager/lib/JSON.hpp"
+#include "../runmanager/lib/Job.hpp"
+#include "../runmanager/lib/RunManager.hpp"
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
 #include "../utilities/core/FileReference.hpp"
 #include "../utilities/core/Finder.hpp"
 #include "../utilities/core/Json.hpp"
 #include "../utilities/core/UnzipFile.hpp"
+#include "../utilities/math/FloatCompare.hpp"
+#include "Analysis.hpp"
+#include "DataPoint.hpp"
+#include "DataPoint_Impl.hpp"
+#include "OptimizationDataPoint.hpp"
+#include "OptimizationDataPoint_Impl.hpp"
+#include "analysis/../model/../utilities/idf/Workspace.hpp"
+#include "analysis/../model/Model.hpp"
+#include "analysis/../runmanager/lib/../../ruleset/../utilities/data/Attribute.hpp"
+#include "analysis/../runmanager/lib/FileInfo.hpp"
+#include "analysis/../utilities/core/Compare.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/../utilities/data/Tag.hpp"
+#include "analysis/../utilities/sql/SqlFile.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/Problem.hpp"
 
 namespace openstudio {
 namespace analysis {

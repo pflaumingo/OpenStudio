@@ -17,19 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ContinuousVariableRecord.hpp"
-#include "ContinuousVariableRecord_Impl.hpp"
-
-#include "JoinRecord.hpp"
-#include "ProblemRecord.hpp"
-#include "FunctionRecord.hpp"
-#include "RubyContinuousVariableRecord.hpp"
+#include <qsqlquery.h>
+#include <qvariant.h>
 
 #include "../analysis/RubyContinuousVariable.hpp"
-#include "../analysis/RubyContinuousVariable_Impl.hpp"
-
-#include "../utilities/math/FloatCompare.hpp"
 #include "../utilities/core/Assert.hpp"
+#include "../utilities/math/FloatCompare.hpp"
+#include "ContinuousVariableRecord.hpp"
+#include "ContinuousVariableRecord_Impl.hpp"
+#include "RubyContinuousVariableRecord.hpp"
+#include "project/../analysis/ContinuousVariable.hpp"
+#include "project/../analysis/InputVariable.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/InputVariableRecord.hpp"
+#include "project/InputVariableRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
+namespace openstudio {
+namespace project {
+class FunctionRecord;
+class ProblemRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 namespace project {

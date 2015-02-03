@@ -17,11 +17,21 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "TimeSeries.hpp"
-#include "../core/Assert.hpp"
-
-#include <exception>
+#include <boost/numeric/ublas/expression_types.hpp>
+#include <boost/numeric/ublas/vector.hpp>
+#include <boost/numeric/ublas/vector_expression.hpp>
+#include <ext/alloc_traits.h>
+#include <algorithm>
+#include <functional>
+#include <ostream>
 #include <set>
+
+#include "../core/Assert.hpp"
+#include "TimeSeries.hpp"
+#include "utilities/data/../time/Date.hpp"
+#include "utilities/data/../time/DateTime.hpp"
+#include "utilities/data/../time/Time.hpp"
+#include "utilities/data/Vector.hpp"
 
 using namespace std;
 using namespace boost;

@@ -17,10 +17,13 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "WorkspaceObjectWatcher.hpp"
+#include <memory>
+
 #include "WorkspaceObject.hpp"
+#include "WorkspaceObjectWatcher.hpp"
 #include "WorkspaceObject_Impl.hpp"
-#include "../core/Assert.hpp"
+#include "utilities/idf/IdfObject.hpp"
+#include "utilities/idf/IdfObjectWatcher.hpp"
 
 namespace openstudio {
 

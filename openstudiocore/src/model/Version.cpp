@@ -17,22 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Version.hpp"
-#include "Version_Impl.hpp"
-
-#include "ParentObject.hpp"
-
-#include <utilities/idd/OS_Version_FieldEnums.hxx>
+#include <OpenStudio.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Version_FieldEnums.hxx>
+#include <vector>
 
 #include "../utilities/core/Assert.hpp"
+#include "ParentObject.hpp"
+#include "Version.hpp"
+#include "Version_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
 
-#include <OpenStudio.hxx>
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   Version_Impl::Version_Impl(const IdfObject& idfObject,
                              Model_Impl* model,

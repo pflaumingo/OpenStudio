@@ -19,16 +19,18 @@
 #ifndef MODEL_ACCESSPOLICYSTORE_HPP
 #define MODEL_ACCESSPOLICYSTORE_HPP
 
-#include "ModelAPI.hpp"
-
-#include <map>
-
 #include <QFile>
 #include <QString>
-
-#include "../utilities/idd/IddObject.hpp"
+#include <map>
 
 #include "../utilities/core/Path.hpp"
+#include "../utilities/idd/IddObject.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+class QFile;
 
 namespace openstudio
 {

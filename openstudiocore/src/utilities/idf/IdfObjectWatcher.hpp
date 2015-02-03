@@ -20,9 +20,10 @@
 #ifndef UTILITIES_IDF_IDFOBJECTWATCHER_HPP
 #define UTILITIES_IDF_IDFOBJECTWATCHER_HPP
 
+#include <qobject.h>
+#include <qobjectdefs.h>
 #include <utilities/UtilitiesAPI.hpp>
 #include <utilities/idf/IdfObject.hpp>
-
 #include <QObject>
 
 namespace openstudio{

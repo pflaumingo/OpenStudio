@@ -17,18 +17,30 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "PSUADEDaceAlgorithm.hpp"
-#include "PSUADEDaceAlgorithm_Impl.hpp"
-
-#include "PSUADEDaceAlgorithmOptions.hpp"
-#include "PSUADEDaceAlgorithmOptions_Impl.hpp"
-
-#include "Problem.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
 
 #include "../runmanager/lib/JSON.hpp"
-
-#include "../utilities/core/Json.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "PSUADEDaceAlgorithm.hpp"
+#include "PSUADEDaceAlgorithmOptions.hpp"
+#include "PSUADEDaceAlgorithmOptions_Impl.hpp"
+#include "PSUADEDaceAlgorithm_Impl.hpp"
+#include "analysis/../runmanager/lib/Job.hpp"
+#include "analysis/../utilities/core/FileReference.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/DakotaAlgorithm.hpp"
+#include "analysis/DakotaAlgorithm_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+namespace analysis {
+class Problem;
+}  // namespace analysis
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

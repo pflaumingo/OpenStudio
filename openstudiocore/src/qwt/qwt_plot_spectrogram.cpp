@@ -7,14 +7,28 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <qalgorithms.h>
+#include <qcolor.h>
+#include <qglobal.h>
 #include <qimage.h>
-#include <qpen.h>
+#include <qnamespace.h>
 #include <qpainter.h>
-#include "qwt_painter.h"
-#include "qwt_double_interval.h"
-#include "qwt_scale_map.h"
+#include <qpen.h>
+#include <qpoint.h>
+#include <qpolygon.h>
+#include <qrect.h>
+#include <qrgb.h>
+#include <qvector.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_rasteritem.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_raster_data.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_valuelist.h"
 #include "qwt_color_map.h"
+#include "qwt_double_interval.h"
+#include "qwt_painter.h"
 #include "qwt_plot_spectrogram.h"
+#include "qwt_scale_map.h"
 
 #if QT_VERSION < 0x040000
 typedef QValueVector<QRgb> QwtColorTable;

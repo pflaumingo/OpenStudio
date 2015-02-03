@@ -17,13 +17,21 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/RunPeriod_FieldEnums.hxx>
+#include <memory>
+#include <vector>
+
 #include "../../model/RunPeriod.hpp"
 #include "../../model/YearDescription.hpp"
-#include "../../model/YearDescription_Impl.hpp"
-#include <utilities/idd/RunPeriod_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
 #include "../../utilities/time/Date.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Enum.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/Model.hpp"
 
 using namespace openstudio::model;
 

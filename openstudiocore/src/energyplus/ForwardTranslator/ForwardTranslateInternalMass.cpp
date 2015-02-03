@@ -17,25 +17,24 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-
-#include "../../model/Model.hpp"
-#include "../../model/InternalMass.hpp"
-#include "../../model/InternalMass_Impl.hpp"
-#include "../../model/InternalMassDefinition.hpp"
-#include "../../model/InternalMassDefinition_Impl.hpp"
-#include "../../model/Space.hpp"
-#include "../../model/Space_Impl.hpp"
-#include "../../model/SpaceType.hpp"
-#include "../../model/SpaceType_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/ConstructionBase.hpp"
-#include "../../model/ConstructionBase_Impl.hpp"
-
-#include <utilities/idd/InternalMass_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/InternalMass_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/ConstructionBase.hpp"
+#include "../../model/InternalMass.hpp"
+#include "../../model/InternalMassDefinition.hpp"
+#include "../../model/Space.hpp"
+#include "../../model/SpaceType.hpp"
+#include "../../model/ThermalZone.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

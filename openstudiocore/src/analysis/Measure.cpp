@@ -17,17 +17,28 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
+#include <string>
+
+#include "../runmanager/lib/WorkItem.hpp"
+#include "../utilities/core/FileReference.hpp"
 #include "Measure.hpp"
 #include "Measure_Impl.hpp"
-
 #include "NullMeasure.hpp"
 #include "NullMeasure_Impl.hpp"
 #include "RubyMeasure.hpp"
 #include "RubyMeasure_Impl.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
 
-#include "../utilities/core/FileReference.hpp"
-
-#include "../runmanager/lib/WorkItem.hpp"
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

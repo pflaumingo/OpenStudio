@@ -17,14 +17,28 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "FSUDaceAlgorithmOptions.hpp"
-#include "FSUDaceAlgorithmOptions_Impl.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <stdlib.h>
+#include <algorithm>
+#include <functional>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Json.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "FSUDaceAlgorithmOptions.hpp"
+#include "FSUDaceAlgorithmOptions_Impl.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/../utilities/data/Attribute.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/AlgorithmOptions_Impl.hpp"
+#include "analysis/DakotaAlgorithmOptions.hpp"
+#include "analysis/DakotaAlgorithmOptions_Impl.hpp"
 
-#include <stdlib.h>
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

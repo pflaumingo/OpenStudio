@@ -17,16 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <exception>
+#include <set>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/math/FloatCompare.hpp"
+#include "ContinuousVariableRecord.hpp"
+#include "DataPointRecord.hpp"
 #include "DataPointValueRecord.hpp"
 #include "DataPointValueRecord_Impl.hpp"
-
-#include "JoinRecord.hpp"
-#include "DataPointRecord.hpp"
 #include "FunctionRecord.hpp"
-#include "ContinuousVariableRecord.hpp"
+#include "JoinRecord.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include "../utilities/math/FloatCompare.hpp"
-#include "../utilities/core/Assert.hpp"
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

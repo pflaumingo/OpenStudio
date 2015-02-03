@@ -20,22 +20,25 @@
 #ifndef UTILITIES_GEOMETRY_TRANSFORMATION_HPP
 #define UTILITIES_GEOMETRY_TRANSFORMATION_HPP
 
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
 #include "../data/Matrix.hpp"
 #include "../data/Vector.hpp"
-#include "../core/Logger.hpp"
-
-#include <vector>
-#include <boost/optional.hpp>
+#include "utilities/geometry/../data/../core/LogMessage.hpp"
 
 namespace openstudio{
 
+  class BoundingBox;
+  class EulerAngles;
+  class Plane;
   // forward declaration
   class Point3d;
   class Vector3d;
-  class Plane;
-  class BoundingBox;
-  class EulerAngles;
 
   class UTILITIES_API Transformation{
   public:

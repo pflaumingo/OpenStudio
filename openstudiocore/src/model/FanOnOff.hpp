@@ -20,16 +20,33 @@
 #ifndef MODEL_FANONOFF_HPP
 #define MODEL_FANONOFF_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
 #include "StraightComponent.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Curve.hpp"
+#include "model/Model.hpp"
+#include "model/Schedule.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
-class Schedule;
 class Curve;
+class Schedule;
 
 namespace detail {
 

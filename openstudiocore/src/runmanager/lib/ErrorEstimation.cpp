@@ -17,10 +17,27 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ErrorEstimation.hpp"
-#include "../../utilities/units/Quantity.hpp"
-#include "../../utilities/units/QuantityConverter.hpp"
+#include <assert.h>
+#include <boost/optional/optional.hpp>
+#include <math.h>
+#include <algorithm>
+#include <exception>
+#include <iterator>
+#include <ostream>
+#include <stdexcept>
+
 #include "../../utilities/units/UnitFactory.hpp"
+#include "ErrorEstimation.hpp"
+#include "runmanager/lib/../../isomodel/SimModel.hpp"
+#include "runmanager/lib/../../isomodel/UserModel.hpp"
+#include "runmanager/lib/../../utilities/data/DataEnums.hpp"
+#include "runmanager/lib/../../utilities/sql/../data/EndUses.hpp"
+#include "runmanager/lib/../../utilities/sql/SqlFile.hpp"
+#include "runmanager/lib/../../utilities/sql/SqlFileEnums.hpp"
+#include "runmanager/lib/../../utilities/sql/SummaryData.hpp"
+#include "runmanager/lib/../../utilities/units/../core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/units/Unit.hpp"
+#include "runmanager/lib/LinearApproximation.hpp"
 
 namespace openstudio {
   namespace runmanager {

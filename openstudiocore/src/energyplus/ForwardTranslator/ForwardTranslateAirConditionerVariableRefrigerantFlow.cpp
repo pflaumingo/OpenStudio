@@ -17,33 +17,24 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/PlantLoop.hpp"
-#include "../../model/PlantLoop_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/AirConditionerVariableRefrigerantFlow.hpp"
-#include "../../model/AirConditionerVariableRefrigerantFlow_Impl.hpp"
-#include "../../model/ZoneHVACTerminalUnitVariableRefrigerantFlow.hpp"
-#include "../../model/ZoneHVACTerminalUnitVariableRefrigerantFlow_Impl.hpp"
-#include "../../model/Curve.hpp"
-#include "../../model/Curve_Impl.hpp"
-#include "../../model/Curve.hpp"
-#include "../../model/Curve_Impl.hpp"
-#include "../../model/Curve.hpp"
-#include "../../model/Curve_Impl.hpp"
-#include "../../utilities/core/Logger.hpp"
-#include "../../utilities/core/Assert.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/AirConditioner_VariableRefrigerantFlow_FieldEnums.hxx>
-#include <utilities/idd/ZoneTerminalUnitList_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/ZoneTerminalUnitList_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/AirConditionerVariableRefrigerantFlow.hpp"
+#include "../../model/Curve.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/ThermalZone.hpp"
+#include "../../model/ZoneHVACTerminalUnitVariableRefrigerantFlow.hpp"
+#include "../../utilities/core/Assert.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
 #include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

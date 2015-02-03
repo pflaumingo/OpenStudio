@@ -6,10 +6,14 @@
 
 #ifndef litesql_expr_hpp
 #define litesql_expr_hpp
+#include <litesql/split.hpp>
+#include <litesql/string.hpp>
 #include <string>
 #include <utility>
-#include "litesql/utils.hpp"
+
 #include "litesql/field.hpp"
+#include "litesql/utils.hpp"
+
 /** \file expr.hpp 
     Contains Expr-class hierarchy and operator overloadings for them.*/
 namespace litesql {
@@ -180,6 +184,7 @@ public:
         : Oper(fld, "like", d) {}
 };
 class SelectQuery;
+
 /** in operator */
 class In : public Oper {
 public:

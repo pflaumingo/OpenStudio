@@ -17,24 +17,41 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "SequentialSearch.hpp"
-#include "SequentialSearch_Impl.hpp"
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <functional>
+#include <limits>
+#include <ostream>
 
-#include "SequentialSearchOptions.hpp"
-#include "SequentialSearchOptions_Impl.hpp"
-
-#include "Analysis.hpp"
-#include "DataPoint.hpp"
-#include "OptimizationProblem.hpp"
-#include "OptimizationProblem_Impl.hpp"
-#include "OptimizationDataPoint.hpp"
-#include "OptimizationDataPoint_Impl.hpp"
-#include "DiscreteVariable.hpp"
-#include "DiscreteVariable_Impl.hpp"
-
-#include "../utilities/math/FloatCompare.hpp"
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
+#include "../utilities/math/FloatCompare.hpp"
+#include "Analysis.hpp"
+#include "DataPoint.hpp"
+#include "DiscreteVariable.hpp"
+#include "OptimizationDataPoint.hpp"
+#include "OptimizationProblem.hpp"
+#include "SequentialSearch.hpp"
+#include "SequentialSearchOptions.hpp"
+#include "SequentialSearchOptions_Impl.hpp"
+#include "SequentialSearch_Impl.hpp"
+#include "analysis/../utilities/data/../core/Optional.hpp"
+#include "analysis/Algorithm.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/Algorithm_Impl.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/InputVariable.hpp"
+#include "analysis/OpenStudioAlgorithm.hpp"
+#include "analysis/OpenStudioAlgorithm_Impl.hpp"
+#include "analysis/Problem.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

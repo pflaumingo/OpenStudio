@@ -20,30 +20,45 @@
 #ifndef UTILITIES_PLOT_LINEPLOT_HPP
 #define UTILITIES_PLOT_LINEPLOT_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Plot2D.hpp"
-#include "../data/TimeSeries.hpp"
-#include "../data/Vector.hpp"
-#include "../data/Matrix.hpp"
- 
-#include <QWidget>
-#include <QPushButton>
-#include <QAction>
-#include <QColor>
- 
-#include <qwt/qwt_legend.h>
-#include <qwt/qwt_plot_grid.h>
-#include <qwt/qwt_legend_item.h>
-#include <qwt/qwt_text.h>
+#include <qcolor.h>
+#include <qevent.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qpen.h>
+#include <qstring.h>
 #include <qwt/qwt_color_map.h>
 #include <qwt/qwt_data.h>
-#include <qwt/qwt_scale_draw.h>
-#include <qwt/qwt_plot_zoomer.h>
+#include <qwt/qwt_legend.h>
+#include <qwt/qwt_legend_item.h>
 #include <qwt/qwt_plot_curve.h>
+#include <qwt/qwt_plot_grid.h>
 #include <qwt/qwt_plot_layout.h>
-
+#include <qwt/qwt_plot_zoomer.h>
+#include <qwt/qwt_scale_draw.h>
+#include <qwt/qwt_text.h>
+#include <stddef.h>
+#include <QAction>
+#include <QColor>
+#include <QPushButton>
+#include <QWidget>
 #include <cmath>
+#include <string>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../data/Matrix.hpp"
+#include "../data/TimeSeries.hpp"
+#include "../data/Vector.hpp"
+#include "Plot2D.hpp"
+#include "qwt/qwt_double_rect.h"
+#include "utilities/plot/../core/Macro.hpp"
+#include "utilities/plot/../data/../time/DateTime.hpp"
+
+class QWidget;
+class QwtLegend;
+class QwtPlotCurve;
+class QwtPlotGrid;
+class QwtPlotItem;
 
 namespace openstudio{
 

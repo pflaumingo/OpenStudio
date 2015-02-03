@@ -17,34 +17,42 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
-#include "../../model/AirLoopHVAC.hpp"
-#include "../../model/AirLoopHVAC_Impl.hpp"
-#include "../../model/HVACComponent.hpp"
-#include "../../model/HVACComponent_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/PortList.hpp"
-#include "../../model/PortList_Impl.hpp"
-#include "../../model/Space.hpp"
-#include "../../model/Space_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/AirLoopHVACOutdoorAirSystem.hpp"
-#include "../../model/AirLoopHVACOutdoorAirSystem_Impl.hpp"
-#include "../../model/ScheduleCompact.hpp"
-#include "../../model/ScheduleCompact_Impl.hpp"
-#include "../../model/AirTerminalSingleDuctUncontrolled.hpp"
-#include "../../model/AirTerminalSingleDuctUncontrolled_Impl.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/AirLoopHVAC_FieldEnums.hxx>
 #include <utilities/idd/AirLoopHVAC_ZoneMixer_FieldEnums.hxx>
-#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
 #include <utilities/idd/BranchList_FieldEnums.hxx>
 #include <utilities/idd/Branch_FieldEnums.hxx>
-#include <utilities/idd/ZoneHVAC_EquipmentConnections_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
+#include <utilities/idd/ZoneHVAC_EquipmentConnections_FieldEnums.hxx>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "../../model/AirLoopHVAC.hpp"
+#include "../../model/AirLoopHVACOutdoorAirSystem.hpp"
+#include "../../model/HVACComponent.hpp"
+#include "../../model/Node.hpp"
+#include "../../model/PortList.hpp"
+#include "../../model/Space.hpp"
+#include "../../model/ThermalZone.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
 #include "../../utilities/idf/WorkspaceExtensibleGroup.hpp"
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/Workspace.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/Model.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/StraightComponent.hpp"
 
 using namespace openstudio::model;
 

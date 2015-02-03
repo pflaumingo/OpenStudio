@@ -17,19 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "WeatherFileConditionType.hpp"
-#include "WeatherFileConditionType_Impl.hpp"
-#include "Site.hpp"
-#include "Site_Impl.hpp"
+#include <utilities/idd/IddEnums.hxx>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "WeatherFileConditionType.hpp"
+#include "WeatherFileConditionType_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/SizingPeriod.hpp"
+#include "model/SizingPeriod_Impl.hpp"
 
-#include <utilities/idd/IddEnums.hxx>
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model  {
 
 namespace detail {
+
+class Model_Impl;
 
   WeatherFileConditionType_Impl::WeatherFileConditionType_Impl(const IdfObject& idfObject,
                                                                Model_Impl* model, 

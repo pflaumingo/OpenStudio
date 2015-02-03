@@ -8,8 +8,10 @@
     contains class Split */
 #ifndef litesql_split_hpp
 #define litesql_split_hpp
+#include <stddef.h>
 #include <string>
 #include <vector>
+
 namespace litesql {
 /** splits and joins strings. Modelled with Python's strings in mind. */
 class Split : public std::vector<std::string> {

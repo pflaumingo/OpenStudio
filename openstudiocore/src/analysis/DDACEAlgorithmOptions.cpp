@@ -17,17 +17,32 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DDACEAlgorithmOptions.hpp"
-#include "DDACEAlgorithmOptions_Impl.hpp"
-
-#include "Problem.hpp"
-
-#include "../utilities/math/Primes.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <stdlib.h>
+#include <algorithm>
+#include <cmath>
+#include <functional>
 
 #include "../utilities/core/Json.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "../utilities/math/Primes.hpp"
+#include "DDACEAlgorithmOptions.hpp"
+#include "DDACEAlgorithmOptions_Impl.hpp"
+#include "Problem.hpp"
+#include "analysis/../utilities/core/Enum.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/../utilities/data/Attribute.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/AlgorithmOptions_Impl.hpp"
+#include "analysis/DakotaAlgorithmOptions.hpp"
+#include "analysis/DakotaAlgorithmOptions_Impl.hpp"
 
-#include <stdlib.h>
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

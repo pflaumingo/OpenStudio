@@ -17,21 +17,34 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "DesignOfExperiments.hpp"
-#include "DesignOfExperiments_Impl.hpp"
-
-#include "DesignOfExperimentsOptions.hpp"
-#include "DesignOfExperimentsOptions_Impl.hpp"
-
-#include "Analysis.hpp"
-#include "Problem.hpp"
-#include "DataPoint.hpp"
-#include "DiscreteVariable.hpp"
-#include "DiscreteVariable_Impl.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Optional.hpp"
 #include "../utilities/core/Containers.hpp"
+#include "../utilities/core/Optional.hpp"
+#include "Analysis.hpp"
+#include "DataPoint.hpp"
+#include "DesignOfExperiments.hpp"
+#include "DesignOfExperimentsOptions.hpp"
+#include "DesignOfExperimentsOptions_Impl.hpp"
+#include "DesignOfExperiments_Impl.hpp"
+#include "DiscreteVariable.hpp"
+#include "Problem.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/Algorithm.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/Algorithm_Impl.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/OpenStudioAlgorithm.hpp"
+#include "analysis/OpenStudioAlgorithm_Impl.hpp"
+#include "analysis/Variable.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

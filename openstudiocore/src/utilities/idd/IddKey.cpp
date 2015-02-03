@@ -17,13 +17,24 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <algorithm>
+
 #include "IddKey.hpp"
-#include "IddKey_Impl.hpp"
-
 #include "IddKeyProperties.hpp"
+#include "IddKey_Impl.hpp"
 #include "IddRegex.hpp"
-
-#include <boost/algorithm/string.hpp>
+#include "utilities/idd/../core/Logger.hpp"
 
 namespace openstudio {
 

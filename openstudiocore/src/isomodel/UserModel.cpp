@@ -17,7 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <ctype.h>
+#include <ext/alloc_traits.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <algorithm>
+#include <functional>
+#include <ostream>
+#include <stdexcept>
+#include <vector>
+
 #include "UserModel.hpp"
+#include "isomodel/../utilities/data/../core/Logger.hpp"
+#include "isomodel/../utilities/data/Matrix.hpp"
+#include "isomodel/../utilities/data/Vector.hpp"
+#include "isomodel/Building.hpp"
+#include "isomodel/Cooling.hpp"
+#include "isomodel/EpwData.hpp"
+#include "isomodel/Heating.hpp"
+#include "isomodel/Lighting.hpp"
+#include "isomodel/Location.hpp"
+#include "isomodel/Population.hpp"
+#include "isomodel/SimModel.hpp"
+#include "isomodel/Structure.hpp"
+#include "isomodel/Ventilation.hpp"
+#include "isomodel/WeatherData.hpp"
 
 using namespace std;
 namespace openstudio {

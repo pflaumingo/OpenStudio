@@ -22,14 +22,18 @@
 #ifndef GBXML_REVERSETRANSLATOR_HPP
 #define GBXML_REVERSETRANSLATOR_HPP
 
-#include "gbXMLAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <qstring.h>
+#include <string>
+#include <vector>
 
-#include "../utilities/core/Path.hpp"
-#include "../utilities/core/Optional.hpp"
 #include "../utilities/core/Logger.hpp"
+#include "../utilities/core/Optional.hpp"
+#include "../utilities/core/Path.hpp"
 #include "../utilities/core/StringStreamLogSink.hpp"
-
 #include "../utilities/units/Unit.hpp"
+#include "gbXMLAPI.hpp"
+#include "gbxml/../utilities/core/LogMessage.hpp"
 
 class QDomDocument;
 class QDomElement;

@@ -17,17 +17,26 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OutputVariableRecord.hpp"
-#include "OutputVariableRecord_Impl.hpp"
-
-#include "FunctionRecord.hpp"
-#include "JoinRecord.hpp"
-#include "OutputAttributeVariableRecord.hpp"
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qvariant.h>
 
 #include "../analysis/OutputAttributeVariable.hpp"
-#include "../analysis/OutputAttributeVariable_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "OutputAttributeVariableRecord.hpp"
+#include "OutputVariableRecord.hpp"
+#include "OutputVariableRecord_Impl.hpp"
+#include "project/../analysis/OutputVariable.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/Record.hpp"
+#include "project/VariableRecord.hpp"
+#include "project/VariableRecord_Impl.hpp"
+
+namespace openstudio {
+namespace project {
+class FunctionRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 namespace project {

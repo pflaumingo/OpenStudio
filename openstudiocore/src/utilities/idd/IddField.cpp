@@ -17,30 +17,44 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "IddField.hpp"
-#include "IddField_Impl.hpp"
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <algorithm>
+#include <sstream>
 
-#include "IddRegex.hpp"
-#include "CommentRegex.hpp"
-#include <utilities/idd/IddFactory.hxx>
-
-#include "../units/Unit.hpp"
-#include "../units/UnitFactory.hpp"
-#include "../units/IddUnitString.hpp"
-#include "../units/QuantityConverter.hpp"
-#include "../units/SIUnit.hpp"
-#include "../units/IPUnit.hpp"
-#include "../units/Quantity.hpp"
-
-#include "../core/Finder.hpp"
 #include "../core/Assert.hpp"
 #include "../core/Containers.hpp"
-
-#include <boost/filesystem/fstream.hpp>
-#include <boost/algorithm/string.hpp>
-#include <boost/lexical_cast.hpp>
-
-#include <algorithm>
+#include "../units/IPUnit.hpp"
+#include "../units/IddUnitString.hpp"
+#include "../units/Quantity.hpp"
+#include "../units/QuantityConverter.hpp"
+#include "../units/SIUnit.hpp"
+#include "../units/Unit.hpp"
+#include "../units/UnitFactory.hpp"
+#include "CommentRegex.hpp"
+#include "IddField.hpp"
+#include "IddField_Impl.hpp"
+#include "IddRegex.hpp"
+#include "utilities/idd/../core/Compare.hpp"
+#include "utilities/idd/../core/EnumBase.hpp"
+#include "utilities/idd/../core/Logger.hpp"
+#include "utilities/idd/../core/Optional.hpp"
+#include "utilities/idd/IddFieldProperties.hpp"
+#include "utilities/idd/IddKey.hpp"
 
 using boost::algorithm::trim;
 

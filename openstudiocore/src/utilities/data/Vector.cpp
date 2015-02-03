@@ -17,14 +17,16 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Vector.hpp"
-
-#include <algorithm>
-#include <random>
-
+#include <boost/numeric/ublas/expression_types.hpp>
+#include <boost/numeric/ublas/vector_expression.hpp>
 // this should all be moved to a utilities/core/Random.h
 #include <boost/random/uniform_real.hpp>
 #include <boost/random/variate_generator.hpp>
+#include <math.h>
+#include <algorithm>
+#include <random>
+
+#include "Vector.hpp"
 
 namespace openstudio{
 

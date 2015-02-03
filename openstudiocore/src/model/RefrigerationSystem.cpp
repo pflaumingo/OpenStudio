@@ -17,45 +17,39 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RefrigerationSystem.hpp"
-#include "RefrigerationSystem_Impl.hpp"
-
-#include "ModelObjectList.hpp"
-#include "ModelObjectList_Impl.hpp"
-#include "RefrigerationAirChiller.hpp"
-#include "RefrigerationAirChiller_Impl.hpp"
-#include "RefrigerationCondenserCascade.hpp"
-#include "RefrigerationCondenserCascade_Impl.hpp"
-#include "RefrigerationCase.hpp"
-#include "RefrigerationCase_Impl.hpp"
-#include "RefrigerationCompressor.hpp"
-#include "RefrigerationCompressor_Impl.hpp"
-#include "RefrigerationSecondarySystem.hpp"
-#include "RefrigerationSecondarySystem_Impl.hpp"
-#include "RefrigerationWalkIn.hpp"
-#include "RefrigerationWalkIn_Impl.hpp"
-#include "RefrigerationSubcoolerLiquidSuction.hpp"
-#include "RefrigerationSubcoolerLiquidSuction_Impl.hpp"
-#include "RefrigerationSubcoolerMechanical.hpp"
-#include "RefrigerationSubcoolerMechanical_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Refrigeration_System_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/Unit.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Refrigeration_System_FieldEnums.hxx>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "ModelObjectList.hpp"
+#include "RefrigerationAirChiller.hpp"
+#include "RefrigerationCase.hpp"
+#include "RefrigerationCompressor.hpp"
+#include "RefrigerationCondenserCascade.hpp"
+#include "RefrigerationSecondarySystem.hpp"
+#include "RefrigerationSubcoolerLiquidSuction.hpp"
+#include "RefrigerationSubcoolerMechanical.hpp"
+#include "RefrigerationSystem.hpp"
+#include "RefrigerationSystem_Impl.hpp"
+#include "RefrigerationWalkIn.hpp"
+#include "ThermalZone.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   RefrigerationSystem_Impl::RefrigerationSystem_Impl(const IdfObject& idfObject,
                                                      Model_Impl* model,

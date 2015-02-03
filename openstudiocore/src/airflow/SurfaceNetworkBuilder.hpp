@@ -20,22 +20,24 @@
 #ifndef AIRFLOW_SURFACENETWORKBUILDER_HPP
 #define AIRFLOW_SURFACENETWORKBUILDER_HPP
 
+#include <string>
 #include <vector>
-
-#include "AirflowAPI.hpp"
 
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/core/StringStreamLogSink.hpp"
+#include "AirflowAPI.hpp"
+#include "airflow/../utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 
 class ProgressBar;
+
 namespace model {
 class Model;
 class Space;
-class ThermalZone;
 class SubSurface;
 class Surface;
+class ThermalZone;
 }
 
 namespace airflow {

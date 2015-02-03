@@ -17,8 +17,21 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "EndUses.hpp"
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <map>
+#include <ostream>
+#include <set>
+#include <utility>
+
 #include "../core/Assert.hpp"
+#include "EndUses.hpp"
+#include "utilities/data/../core/Enum.hpp"
+#include "utilities/data/../core/EnumBase.hpp"
+#include "utilities/data/Attribute.hpp"
+#include "utilities/data/DataEnums.hpp"
 
 namespace openstudio {
 

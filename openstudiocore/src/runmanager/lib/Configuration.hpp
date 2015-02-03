@@ -20,21 +20,37 @@
 #ifndef RUNMANAGER_LIB_CONFIGURATION_HPP
 #define RUNMANAGER_LIB_CONFIGURATION_HPP
 
-#include <string>
-#include <QTimer>
-#include <QItemDelegate>
 #include <boost/optional.hpp>
-#include "RunManager.hpp"
+#include <qdialog.h>
+#include <qflags.h>
+#include <qitemdelegate.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qstandarditemmodel.h>
+#include <qstyleoption.h>
 #include <runmanager/lib/ui_Configuration.h>
-#include "Job.hpp"
+#include <QItemDelegate>
 #include <QStandardItemModel>
+#include <QTimer>
+#include <string>
+#include <utility>
 
+#include "Job.hpp"
+#include "RunManager.hpp"
+#include "runmanager/lib/ConfigOptions.hpp"
+
+class QAbstractItemModel;
 class QFileDialog;
+class QModelIndex;
+class QObject;
+class QWidget;
 
 namespace openstudio {
 namespace runmanager {
 
   /// Editor delegate used during editing of the ToolInfo version number
+class ToolVersion;
+
   class SpinBoxDelegate : public QItemDelegate
   {
     Q_OBJECT

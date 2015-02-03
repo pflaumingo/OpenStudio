@@ -8,8 +8,12 @@
  *****************************************************************************/
 
 #include "qwt_scale_div.h"
-#include "qwt_math.h"
+
+#include <qglobal.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_valuelist.h"
 #include "qwt_double_interval.h"
+#include "qwt_math.h"
 
 //! Construct an invalid QwtScaleDiv instance.
 QwtScaleDiv::QwtScaleDiv():

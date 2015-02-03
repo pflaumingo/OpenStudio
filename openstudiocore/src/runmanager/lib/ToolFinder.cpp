@@ -17,22 +17,51 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ToolFinder.hpp"
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <qdir.h>
+#include <qfileinfo.h>
+#include <qflags.h>
+#include <qglobal.h>
+#include <qicon.h>
+#include <qlabel.h>
+#include <qnamespace.h>
+#include <qpixmap.h>
+#include <qprogressdialog.h>
+#include <qsharedpointer_impl.h>
+#include <qstring.h>
+#include <stdlib.h>
+#include <sys/sysmacros.h>
+#include <algorithm>
+#include <deque>
+#include <exception>
+#include <iterator>
+#include <ostream>
+#include <set>
 
 #include "../../utilities/core/Application.hpp"
 #include "../../utilities/core/ApplicationPathHelpers.hpp"
 #include "../../utilities/core/PathHelpers.hpp"
 #include "../../utilities/idd/IddFile.hpp"
-
-#include <QIcon>
-#include <QLabel>
-#include <QPixmap>
-#include <QProgressBar>
-#include <QProgressDialog>
-#include <QFileInfo>
-#include <QDirIterator>
-
-#include <boost/filesystem.hpp>
+#include "ToolFinder.hpp"
+#include "runmanager/lib/../../utilities/core/Compare.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/Singleton.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/ConfigOptions.hpp"
 
 namespace openstudio {
 namespace runmanager {

@@ -17,23 +17,36 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/data/TimeSeries.hpp"
+#include "Model.hpp"
+#include "ScheduleFixedInterval.hpp"
 #include "ScheduleInterval.hpp"
 #include "ScheduleInterval_Impl.hpp"
-#include "ScheduleFixedInterval.hpp"
-#include "ScheduleFixedInterval_Impl.hpp"
 #include "ScheduleVariableInterval.hpp"
-#include "ScheduleVariableInterval_Impl.hpp"
-#include "Model.hpp"
+#include "model/../utilities/data/../time/Time.hpp"
+#include "model/../utilities/data/Vector.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/Schedule.hpp"
+#include "model/Schedule_Impl.hpp"
 
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeLimits_Impl.hpp"
-
-#include "../utilities/idf/IdfExtensibleGroup.hpp"
-
-#include <utilities/idd/OS_Schedule_Compact_FieldEnums.hxx>
-
-#include "../utilities/data/TimeSeries.hpp"
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+class Workspace;
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using openstudio::Handle;
 using openstudio::OptionalHandle;

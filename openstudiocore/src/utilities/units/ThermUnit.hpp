@@ -20,8 +20,15 @@
 #ifndef UTILITIES_UNITS_THERMUNIT_HPP
 #define UTILITIES_UNITS_THERMUNIT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
 #include "Unit.hpp"
+#include "utilities/units/../core/LogMessage.hpp"
+#include "utilities/units/../core/Logger.hpp"
 
 namespace openstudio {
 namespace detail {

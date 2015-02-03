@@ -12,11 +12,19 @@
 #ifndef QWT_PLOT_PICKER_H
 #define QWT_PLOT_PICKER_H
 
+#include <qobjectdefs.h>
+#include <qpoint.h>
+#include <qrect.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_array.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_global.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
 #include "qwt_double_rect.h"
-#include "qwt_plot_canvas.h"
 #include "qwt_picker.h"
+#include "qwt_plot_canvas.h"
 
 class QwtPlot;
+class QwtPlotCanvas;
 
 /*!
   \brief QwtPlotPicker provides selections on a plot canvas

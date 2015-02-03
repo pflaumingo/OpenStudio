@@ -12,10 +12,22 @@
 #ifndef QWT_SLIDER_H
 #define QWT_SLIDER_H
 
-#include "qwt_global.h"
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qsize.h>
+
 #include "qwt_abstract_scale.h"
 #include "qwt_abstract_slider.h"
+#include "qwt_global.h"
 
+class QFont;
+class QPaintEvent;
+class QPainter;
+class QPoint;
+class QRect;
+class QResizeEvent;
+class QWidget;
 class QwtScaleDraw;
 
 /*!
@@ -132,6 +144,7 @@ private:
     void initSlider(Qt::Orientation, ScalePos scalePos, BGSTYLE bgStyle);
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

@@ -17,10 +17,16 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "FahrenheitUnit.hpp"
-#include "FahrenheitUnit_Impl.hpp"
+#include <ext/alloc_traits.h>
+#include <utility>
 
 #include "../core/Assert.hpp"
+#include "FahrenheitUnit.hpp"
+#include "FahrenheitUnit_Impl.hpp"
+#include "utilities/units/../core/EnumBase.hpp"
+#include "utilities/units/TemperatureUnit.hpp"
+#include "utilities/units/TemperatureUnit_Impl.hpp"
+#include "utilities/units/Unit.hpp"
 
 namespace openstudio {
 namespace detail {

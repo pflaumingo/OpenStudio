@@ -17,8 +17,19 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <string>
+
 #include "OpenStudioAlgorithm.hpp"
 #include "OpenStudioAlgorithm_Impl.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/Algorithm.hpp"
+#include "analysis/Algorithm_Impl.hpp"
+
+namespace openstudio {
+namespace analysis {
+class AlgorithmOptions;
+}  // namespace analysis
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

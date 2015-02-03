@@ -20,15 +20,21 @@
 #ifndef UTILITIES_CORE_COMPARE_HPP
 #define UTILITIES_CORE_COMPARE_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include <utility> // for std::pair
-#include <iostream>
-#include <vector> 
-#include <string> 
-
-#include <boost/optional.hpp>
 #include <boost/algorithm/string.hpp>
+#include <boost/algorithm/string/compare.hpp>
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <ctype.h>
+#include <sys/sysmacros.h>
+#include <algorithm>
+#include <iostream>
+#include <memory>
+#include <string> 
+#include <utility> // for std::pair
+#include <vector> 
+
+#include "../UtilitiesAPI.hpp"
 
 namespace openstudio {
 

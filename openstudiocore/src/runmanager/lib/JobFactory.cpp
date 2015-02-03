@@ -17,35 +17,55 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "JobFactory.hpp"
-#include "EnergyPlusJob.hpp"
-#include "ModelToIdfJob.hpp"
-#include "IdfToModelJob.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/lexical_cast.hpp>
+#include <algorithm>
+#include <functional>
+#include <memory>
+#include <sstream>
+#include <stdexcept>
+
+#include "BasementJob.hpp"
 #include "CalculateEconomicsJob.hpp"
-#include "ExpandObjectsJob.hpp"
-#include "PreviewIESJob.hpp"
-#include "ReadVarsJob.hpp"
-#include "XMLPreprocessorJob.hpp"
-#include "RubyJob.hpp"
-#include "RubyJobUtils.hpp"
-#include "NullJob.hpp"
-#include "NormalizeURLs.hpp"
-#include "MergeJobError.hpp"
+#include "DakotaJob.hpp"
+#include "EnergyPlusJob.hpp"
 #include "EnergyPlusPostProcessJob.hpp"
 #include "EnergyPlusPreProcessJob.hpp"
-#include "OpenStudioPostProcessJob.hpp"
-#include "ParallelEnergyPlusSplitJob.hpp"
-#include "ParallelEnergyPlusJoinJob.hpp"
-#include "BasementJob.hpp"
-#include "SlabJob.hpp"
+#include "ExpandObjectsJob.hpp"
+#include "IdfToModelJob.hpp"
+#include "JobFactory.hpp"
+#include "ModelToIdfJob.hpp"
 #include "ModelToRadJob.hpp"
 #include "ModelToRadPreProcessJob.hpp"
-#include "DakotaJob.hpp"
+#include "NormalizeURLs.hpp"
+#include "NullJob.hpp"
+#include "OpenStudioPostProcessJob.hpp"
+#include "ParallelEnergyPlusJoinJob.hpp"
+#include "ParallelEnergyPlusSplitJob.hpp"
+#include "PreviewIESJob.hpp"
+#include "ReadVarsJob.hpp"
+#include "RubyJob.hpp"
+#include "RubyJobUtils.hpp"
+#include "SlabJob.hpp"
 #include "UserScriptJob.hpp"
-#include "Job_Impl.hpp"
+#include "XMLPreprocessorJob.hpp"
+#include "runmanager/lib/../../ruleset/OSArgument.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/idf/URLSearchPath.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Enum.hpp"
+#include "runmanager/lib/Job.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobState.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+#include "runmanager/lib/Workflow.hpp"
 
 namespace openstudio {
 namespace runmanager {
+
+class MergeJobError;
+namespace detail {
+class Job_Impl;
+}  // namespace detail
 
   Job JobFactory::createJob(
       openstudio::runmanager::JobType t_type,

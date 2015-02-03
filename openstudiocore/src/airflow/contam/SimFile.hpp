@@ -20,14 +20,23 @@
 #ifndef AIRFLOW_CONTAM_SIMFILE_HPP
 #define AIRFLOW_CONTAM_SIMFILE_HPP
 
-#include "PrjDefines.hpp"
-
-#include "../utilities/data/TimeSeries.hpp"
-#include "../utilities/core/Path.hpp"
-
+#include <../utilities/data/../time/../core/LogMessage.hpp>
+#include <../utilities/data/../time/../core/Logger.hpp>
+#include <../utilities/data/../time/DateTime.hpp>
+#include <boost/optional/optional.hpp>
+#include <qstring.h>
+#include <qvector.h>
 #include <QVector>
+#include <vector>
 
 #include "../AirflowAPI.hpp"
+#include "../utilities/core/Path.hpp"
+#include "../utilities/data/TimeSeries.hpp"
+#include "PrjDefines.hpp"
+
+namespace openstudio {
+class TimeSeries;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace contam {

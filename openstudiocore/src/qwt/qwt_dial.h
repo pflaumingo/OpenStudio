@@ -13,13 +13,26 @@
 #define QWT_DIAL_H 1
 
 #include <qframe.h>
+#include <qglobal.h>
+#include <qobjectdefs.h>
 #include <qpalette.h>
-#include "qwt_global.h"
+#include <qrect.h>
+#include <qsize.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
 #include "qwt_abstract_slider.h"
+#include "qwt_global.h"
 #include "qwt_round_scale_draw.h"
 
-class QwtDialNeedle;
+class QKeyEvent;
+class QPaintEvent;
+class QPainter;
+class QPoint;
+class QResizeEvent;
+class QWidget;
 class QwtDial;
+class QwtDialNeedle;
 
 /*!
   \brief A special scale draw made for QwtDial
@@ -222,6 +235,7 @@ private:
     void initDial();
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

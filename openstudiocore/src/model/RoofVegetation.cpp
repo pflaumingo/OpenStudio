@@ -17,22 +17,37 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RoofVegetation.hpp"
-#include "RoofVegetation_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Material_RoofVegetation_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/Unit.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Material_RoofVegetation_FieldEnums.hxx>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "RoofVegetation.hpp"
+#include "RoofVegetation_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/OpaqueMaterial.hpp"
+#include "model/OpaqueMaterial_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   RoofVegetation_Impl::RoofVegetation_Impl(const IdfObject& idfObject,
                                            Model_Impl* model,

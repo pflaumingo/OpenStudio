@@ -17,23 +17,37 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/filesystem/fstream.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <algorithm>
+#include <map>
+#include <sstream>
+#include <stdexcept>
+
+#include "../core/Assert.hpp"
+#include "../core/Containers.hpp"
+#include "../core/PathHelpers.hpp"
+#include "IddEnums.hpp"
 #include "IddFile.hpp"
 #include "IddFile_Impl.hpp"
-
 #include "IddRegex.hpp"
-#include "IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../core/PathHelpers.hpp"
-#include "../core/Assert.hpp"
-
-#include "../core/Containers.hpp"
-#include <boost/filesystem/fstream.hpp>
-
-#include <boost/algorithm/string.hpp>
-#include <boost/lexical_cast.hpp>
-
-#include <sstream>
+#include "utilities/idd/../core/Compare.hpp"
+#include "utilities/idd/../core/EnumBase.hpp"
+#include "utilities/idd/../core/Logger.hpp"
+#include "utilities/idd/../core/Path.hpp"
+#include "utilities/idd/IddObject.hpp"
+#include "utilities/idd/IddObjectProperties.hpp"
 
 namespace openstudio {
 

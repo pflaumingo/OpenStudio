@@ -3,12 +3,19 @@
  * The list of contributors at http://litesql.sf.net/ 
  * 
  * See LICENSE for copyright information. */
+#include <litesql/expr.hpp>
+#include <litesql/string.hpp>
+#include <stddef.h>
+#include <string.h>
 #include <cstdlib>
-#include "compatibility.hpp"
-#include "litesql.hpp"
+#include <iosfwd>
+#include <string>
+
 #include "litesql/field.hpp"
 
 namespace litesql {
+class SelectQuery;
+
 using namespace std;
 In FieldType::in(const string& set) const {
     return In(*this, set);

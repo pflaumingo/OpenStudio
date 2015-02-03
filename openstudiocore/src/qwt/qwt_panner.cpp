@@ -9,17 +9,27 @@
 
 // vim: expandtab
 
-#include <qpainter.h>
-#include <qpixmap.h>
-#include <qevent.h>
-#include <qframe.h>
+#include <qbrush.h>
+#include <qcolor.h>
+#include <qcoreevent.h>
 #include <qcursor.h>
+#include <qevent.h>
+#include <qflags.h>
+#include <qframe.h>
+#include <qobject.h>
+#include <qpainter.h>
+#include <qpalette.h>
+#include <qpixmap.h>
+#include <qpoint.h>
+#include <qrect.h>
+#include <qvector.h>
+#include <stddef.h>
 #if QT_VERSION < 0x040000
 #include <qobjectlist.h>
 #endif
-#include "qwt_picker.h"
 #include "qwt_array.h"
 #include "qwt_panner.h"
+#include "qwt_picker.h"
 
 static QwtArray<QwtPicker *> activePickers(QWidget *w)
 {

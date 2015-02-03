@@ -17,16 +17,20 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-
-#include "../../model/ShadingControl.hpp"
-#include "../../model/Construction.hpp"
-#include "../../model/ShadingMaterial.hpp"
-#include "../../model/Schedule.hpp"
-
-#include <utilities/idd/WindowProperty_ShadingControl_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/WindowProperty_ShadingControl_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/Construction.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/ShadingControl.hpp"
+#include "../../model/ShadingMaterial.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

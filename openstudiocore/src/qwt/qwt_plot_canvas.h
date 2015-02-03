@@ -13,11 +13,17 @@
 #define QWT_PLOT_CANVAS_H
 
 #include <qframe.h>
+#include <qobjectdefs.h>
 #include <qpen.h>
+#include <stddef.h>
+
 #include "qwt_global.h"
 
-class QwtPlot;
+class QHideEvent;
+class QPaintEvent;
+class QPainter;
 class QPixmap;
+class QwtPlot;
 
 /*!
   \brief Canvas of a QwtPlot. 
@@ -113,6 +119,7 @@ private:
     void setSystemBackground(bool);
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

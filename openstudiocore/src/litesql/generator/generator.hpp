@@ -1,13 +1,22 @@
 #ifndef generator_hpp
 #define generator_hpp
 
-#include <vector>
+#include <stddef.h>
 #include <ostream>
+#include <string>
+#include <vector>
 
 #include "objectmodel.hpp"
 
+namespace xml {
+class Object;
+class Relation;
+}  // namespace xml
+
 
 namespace litesql {
+class ObjectModel;
+
   class CodeGenerator {
   public:
     enum generation_mode_t { REFRESH=0,OVERWRITE };

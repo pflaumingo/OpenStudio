@@ -17,32 +17,51 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeLimits_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_ScheduleTypeLimits_FieldEnums.hxx>
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/none.hpp>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/QuantityConverter.hpp"
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/units/SIUnit.hpp"
-#include "../utilities/units/IPUnit.hpp"
-#include "../utilities/units/BTUUnit.hpp"
-#include "../utilities/units/CFMUnit.hpp"
-#include "../utilities/units/WhUnit.hpp"
-#include "../utilities/units/CelsiusUnit.hpp"
-#include "../utilities/units/FahrenheitUnit.hpp"
-#include "../utilities/units/TemperatureUnit_Impl.hpp"
-#include "../utilities/units/UnitFactory.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_ScheduleTypeLimits_FieldEnums.hxx>
 
 #include "../utilities/core/Assert.hpp"
+#include "../utilities/units/BTUUnit.hpp"
+#include "../utilities/units/CFMUnit.hpp"
+#include "../utilities/units/CelsiusUnit.hpp"
+#include "../utilities/units/FahrenheitUnit.hpp"
+#include "../utilities/units/IPUnit.hpp"
+#include "../utilities/units/QuantityConverter.hpp"
+#include "../utilities/units/SIUnit.hpp"
+#include "../utilities/units/Unit.hpp"
+#include "../utilities/units/UnitFactory.hpp"
+#include "../utilities/units/WhUnit.hpp"
+#include "ScheduleTypeLimits.hpp"
+#include "ScheduleTypeLimits_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/../utilities/units/TemperatureUnit.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/ResourceObject_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ScheduleTypeLimits_Impl::ScheduleTypeLimits_Impl(const IdfObject& idfObject,
                                                    Model_Impl* model,

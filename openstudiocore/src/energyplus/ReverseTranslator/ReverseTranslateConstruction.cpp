@@ -17,26 +17,28 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
+#include <boost/none.hpp>
+#include <utilities/idd/Construction_FieldEnums.hxx>
+#include <utilities/idd/IddEnums.hxx>
+#include <memory>
 
 #include "../../model/Construction.hpp"
-#include "../../model/Construction_Impl.hpp"
-#include "../../model/Material.hpp"
-#include "../../model/Material_Impl.hpp"
-#include "../../model/OpaqueMaterial.hpp"
-#include "../../model/OpaqueMaterial_Impl.hpp"
 #include "../../model/FenestrationMaterial.hpp"
-#include "../../model/FenestrationMaterial_Impl.hpp"
+#include "../../model/Material.hpp"
 #include "../../model/ModelPartitionMaterial.hpp"
-#include "../../model/ModelPartitionMaterial_Impl.hpp"
-
-#include "../../utilities/idf/WorkspaceExtensibleGroup.hpp"
-
-#include <utilities/idd/Construction_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
-
+#include "../../model/OpaqueMaterial.hpp"
 #include "../../utilities/core/Assert.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../../utilities/idf/WorkspaceExtensibleGroup.hpp"
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

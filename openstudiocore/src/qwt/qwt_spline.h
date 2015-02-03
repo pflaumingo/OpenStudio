@@ -10,8 +10,12 @@
 #ifndef QWT_SPLINE_H
 #define QWT_SPLINE_H
 
-#include "qwt_global.h"
+#include <qglobal.h>
+#include <qpolygon.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_array.h"
 #include "qwt_double_rect.h"
+#include "qwt_global.h"
 
 #if QT_VERSION >= 0x040000
 #include <QPolygonF>
@@ -124,6 +128,7 @@ protected:
 #endif
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

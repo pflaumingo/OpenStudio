@@ -17,32 +17,46 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Pump_ConstantSpeed_FieldEnums.hxx>
+#include <algorithm>
+
+#include "../utilities/core/Assert.hpp"
+#include "Curve.hpp"
+#include "Node.hpp"
 #include "PumpConstantSpeed.hpp"
 #include "PumpConstantSpeed_Impl.hpp"
-#include "Connection.hpp"
-#include "Connection_Impl.hpp"
 #include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Curve.hpp"
-#include "Curve_Impl.hpp"
 #include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include <utilities/idd/IddFactory.hxx>
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/ModelObject.hpp"
+#include "model/PlantLoop.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
-#include <utilities/idd/OS_Pump_ConstantSpeed_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   PumpConstantSpeed_Impl::PumpConstantSpeed_Impl(const IdfObject& idfObject,
                                                  Model_Impl* model,

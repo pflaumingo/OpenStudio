@@ -17,26 +17,32 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SetpointManagerFollowOutdoorAirTemperature.hpp"
-#include "SetpointManagerFollowOutdoorAirTemperature_Impl.hpp"
-
-#include "Model.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "PlantLoop.hpp"
-#include "Schedule.hpp"
-
-#include <utilities/idd/OS_SetpointManager_FollowOutdoorAirTemperature_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_SetpointManager_FollowOutdoorAirTemperature_FieldEnums.hxx>
+#include <vector>
 
 #include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
+#include "PlantLoop.hpp"
+#include "SetpointManagerFollowOutdoorAirTemperature.hpp"
+#include "SetpointManagerFollowOutdoorAirTemperature_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/SetpointManager.hpp"
+#include "model/SetpointManager_Impl.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail{
+
+class Model_Impl;
 
   SetpointManagerFollowOutdoorAirTemperature_Impl::SetpointManagerFollowOutdoorAirTemperature_Impl(
       const IdfObject& idfObject, Model_Impl* model, bool keepHandle)

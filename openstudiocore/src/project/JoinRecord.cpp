@@ -17,15 +17,20 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "JoinRecord.hpp"
-#include "JoinRecord_Impl.hpp"
-#include "ProjectDatabase.hpp"
-#include "ProjectDatabase_Impl.hpp"
+#include <boost/none.hpp>
+#include <qstring.h>
+#include <qvariant.h>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/String.hpp"
+#include "JoinRecord.hpp"
+#include "JoinRecord_Impl.hpp"
+#include "ProjectDatabase.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/Record.hpp"
+#include "project/Record_Impl.hpp"
 
-#include <QSqlQuery>
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

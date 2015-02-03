@@ -10,10 +10,16 @@
 // vim: expandtab
 
 #include <math.h>
+#include <qcoreevent.h>
 #include <qevent.h>
+#include <qflags.h>
+#include <qglobal.h>
+#include <qpoint.h>
 #include <qwidget.h>
-#include "qwt_math.h"
+#include <stddef.h>
+
 #include "qwt_magnifier.h"
+#include "qwt_math.h"
 
 class QwtMagnifier::PrivateData
 {

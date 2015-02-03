@@ -10,15 +10,22 @@
 #ifndef QWT_DYNGRID_LAYOUT_H
 #define QWT_DYNGRID_LAYOUT_H
 
+#include <qglobal.h>
 #include <qlayout.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
 #include <qsize.h>
 #if QT_VERSION >= 0x040000
 #include <qlist.h>
 #else
 #include <qvaluelist.h>
 #endif
-#include "qwt_global.h"
 #include "qwt_array.h"
+#include "qwt_global.h"
+
+class QLayoutItem;
+class QRect;
+class QWidget;
 
 /*!
   \brief The QwtDynGridLayout class lays out widgets in a grid,

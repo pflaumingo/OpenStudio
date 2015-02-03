@@ -17,17 +17,37 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <ostream>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
 #include "Material.hpp"
 #include "Material_Impl.hpp"
 #include "StandardsInformationMaterial.hpp"
-#include "StandardsInformationMaterial_Impl.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/ResourceObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   Material_Impl::Material_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ResourceObject_Impl(idfObject, model, keepHandle)

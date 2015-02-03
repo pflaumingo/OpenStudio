@@ -10,11 +10,13 @@
 #ifndef QWT_PLOT_MAGNIFIER_H
 #define QWT_PLOT_MAGNIFIER_H 1
 
+#include <qobjectdefs.h>
+
 #include "qwt_global.h"
 #include "qwt_magnifier.h"
 
-class QwtPlotCanvas;
 class QwtPlot;
+class QwtPlotCanvas;
 
 /*!
   \brief QwtPlotMagnifier provides zooming, by magnifying in steps.
@@ -49,6 +51,7 @@ protected:
 
 private:
     class PrivateData;
+
     PrivateData *d_data;
 };
 

@@ -17,22 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 // copy from AirTerminalSingleDuctVAVReheat
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/AirTerminalSingleDuctInletSideMixer.hpp"
-#include "../../model/AirTerminalSingleDuctInletSideMixer_Impl.hpp"
-#include "../../model/HVACComponent.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/ZoneHVACComponent.hpp"
-#include "../../model/ZoneHVACComponent_Impl.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/AirTerminal_SingleDuct_InletSideMixer_FieldEnums.hxx>
-#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../../model/AirTerminalSingleDuctInletSideMixer.hpp"
+#include "../../model/Node.hpp"
+#include "../../model/ZoneHVACComponent.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/AirLoopHVAC.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
+#include "utilities/core/Containers.hpp"
 
 using namespace openstudio::model;
 

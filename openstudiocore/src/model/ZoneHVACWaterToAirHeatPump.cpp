@@ -17,44 +17,39 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ZoneHVACWaterToAirHeatPump.hpp"
-#include "ZoneHVACWaterToAirHeatPump_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "FanOnOff.hpp"
-#include "FanOnOff_Impl.hpp"
-#include "CoilHeatingWaterToAirHeatPumpEquationFit.hpp"
-#include "CoilHeatingWaterToAirHeatPumpEquationFit_Impl.hpp"
-#include "CoilCoolingWaterToAirHeatPumpEquationFit.hpp"
-#include "CoilCoolingWaterToAirHeatPumpEquationFit_Impl.hpp"
-#include "CoilHeatingElectric.hpp"
-#include "CoilHeatingElectric_Impl.hpp"
-#include "CoilHeatingGas.hpp"
-#include "CoilHeatingGas_Impl.hpp"
-#include "CoilHeatingWater.hpp"
-#include "CoilHeatingWater_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-
-#include <utilities/idd/IddFactory.hxx>
-
-
-#include <utilities/idd/OS_ZoneHVAC_WaterToAirHeatPump_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/Unit.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_ZoneHVAC_WaterToAirHeatPump_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "CoilCoolingWaterToAirHeatPumpEquationFit.hpp"
+#include "CoilHeatingWater.hpp"
+#include "CoilHeatingWaterToAirHeatPumpEquationFit.hpp"
+#include "HVACComponent.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "ZoneHVACWaterToAirHeatPump.hpp"
+#include "ZoneHVACWaterToAirHeatPump_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/PlantLoop.hpp"
+#include "model/ZoneHVACComponent.hpp"
+#include "model/ZoneHVACComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ZoneHVACWaterToAirHeatPump_Impl::ZoneHVACWaterToAirHeatPump_Impl(const IdfObject& idfObject,
                                                                    Model_Impl* model,

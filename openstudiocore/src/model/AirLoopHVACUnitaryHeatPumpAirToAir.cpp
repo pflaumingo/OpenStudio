@@ -17,43 +17,43 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "AirLoopHVACUnitaryHeatPumpAirToAir.hpp"
-#include "AirLoopHVACUnitaryHeatPumpAirToAir_Impl.hpp"
-
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "CoilHeatingDXSingleSpeed.hpp"
-#include "CoilHeatingDXSingleSpeed_Impl.hpp"
-#include "CoilCoolingDXSingleSpeed.hpp"
-#include "CoilCoolingDXSingleSpeed_Impl.hpp"
-#include "CoilHeatingElectric.hpp"
-#include "CoilHeatingElectric_Impl.hpp"
-#include "CoilHeatingGas.hpp"
-#include "CoilHeatingGas_Impl.hpp"
-#include "FanConstantVolume.hpp"
-#include "FanConstantVolume_Impl.hpp"
-#include "FanOnOff.hpp"
-#include "FanOnOff_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_AirLoopHVAC_UnitaryHeatPump_AirToAir_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_AirLoopHVAC_UnitaryHeatPump_AirToAir_FieldEnums.hxx>
+#include <algorithm>
 
 #include "../utilities/core/Assert.hpp"
+#include "AirLoopHVACUnitaryHeatPumpAirToAir.hpp"
+#include "AirLoopHVACUnitaryHeatPumpAirToAir_Impl.hpp"
+#include "CoilCoolingDXSingleSpeed.hpp"
+#include "CoilHeatingDXSingleSpeed.hpp"
+#include "CoilHeatingElectric.hpp"
+#include "CoilHeatingGas.hpp"
+#include "FanConstantVolume.hpp"
+#include "FanOnOff.hpp"
+#include "HVACComponent.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
+#include "Schedule.hpp"
+#include "ThermalZone.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/AirLoopHVAC.hpp"
+#include "model/ModelObject.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   AirLoopHVACUnitaryHeatPumpAirToAir_Impl::AirLoopHVACUnitaryHeatPumpAirToAir_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : StraightComponent_Impl(idfObject,model, keepHandle)

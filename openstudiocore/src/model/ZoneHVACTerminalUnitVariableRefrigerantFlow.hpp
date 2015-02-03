@@ -20,17 +20,38 @@
 #ifndef MODEL_ZONEHVACTERMINALUNITVARIABLEREFRIGERANTFLOW_HPP
 #define MODEL_ZONEHVACTERMINALUNITVARIABLEREFRIGERANTFLOW_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ZoneHVACComponent.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/CoilCoolingDXVariableRefrigerantFlow.hpp"
+#include "model/CoilHeatingDXVariableRefrigerantFlow.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/Model.hpp"
+#include "model/Schedule.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
+class CoilCoolingDXVariableRefrigerantFlow;
+class CoilHeatingDXVariableRefrigerantFlow;
 class HVACComponent;
 class Schedule;
-class CoilHeatingDXVariableRefrigerantFlow;
-class CoilCoolingDXVariableRefrigerantFlow;
 
 namespace detail {
 

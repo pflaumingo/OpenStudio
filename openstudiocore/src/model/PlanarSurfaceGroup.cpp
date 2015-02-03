@@ -17,26 +17,31 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "PlanarSurfaceGroup.hpp"
-#include "PlanarSurfaceGroup_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Building.hpp"
-#include "Building_Impl.hpp"
-
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/geometry/BoundingBox.hpp"
+#include "../utilities/geometry/EulerAngles.hpp"
 #include "../utilities/geometry/Geometry.hpp"
 #include "../utilities/geometry/Transformation.hpp"
-#include "../utilities/geometry/BoundingBox.hpp"
-#include "../utilities/geometry/Point3d.hpp"
 #include "../utilities/geometry/Vector3d.hpp"
-#include "../utilities/geometry/EulerAngles.hpp"
+#include "Building.hpp"
+#include "Model.hpp"
+#include "PlanarSurfaceGroup.hpp"
+#include "PlanarSurfaceGroup_Impl.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/ParentObject_Impl.hpp"
 
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   PlanarSurfaceGroup_Impl::PlanarSurfaceGroup_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ParentObject_Impl(idfObject, model, keepHandle)

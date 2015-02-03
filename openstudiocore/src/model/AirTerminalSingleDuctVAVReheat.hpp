@@ -20,18 +20,34 @@
 #ifndef MODEL_AIRTERMINALSINGLEDUCTVAVREHEAT_HPP
 #define MODEL_AIRTERMINALSINGLEDUCTVAVREHEAT_HPP
 
-#include "ModelObject.hpp"
-#include "StraightComponent.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+
 #include "Connection.hpp"
 #include "ModelAPI.hpp"
+#include "ModelObject.hpp"
+#include "StraightComponent.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
-class Schedule;
-
 class HVACComponent;
+class Schedule;
 
 namespace detail {
   class AirTerminalSingleDuctVAVReheat_Impl;

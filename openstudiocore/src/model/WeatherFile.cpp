@@ -17,29 +17,38 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "WeatherFile.hpp"
-#include "WeatherFile_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Site.hpp"
-#include "Site_Impl.hpp"
-
-#include <utilities/idd/OS_WeatherFile_FieldEnums.hxx>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/none.hpp>
+#include <qurl.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_WeatherFile_FieldEnums.hxx>
+#include <ostream>
 
-#include "../utilities/filetypes/EpwFile.hpp"
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/PathHelpers.hpp"
-#include "../utilities/core/URLHelpers.hpp"
 #include "../utilities/core/String.hpp"
-
-#include <boost/algorithm/string/replace.hpp>
+#include "../utilities/core/URLHelpers.hpp"
+#include "../utilities/filetypes/EpwFile.hpp"
+#include "Model.hpp"
+#include "Site.hpp"
+#include "WeatherFile.hpp"
+#include "WeatherFile_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   WeatherFile_Impl::WeatherFile_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ModelObject_Impl(idfObject,model,keepHandle)

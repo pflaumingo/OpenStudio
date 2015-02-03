@@ -17,39 +17,40 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "RunManager.hpp"
-#include "RunManagerStatus.hpp"
-#include "JSON.hpp"
-
-#include "Workflow.hpp"
-#include "RunManager_Impl.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <qdir.h>
+#include <qmap.h>
+#include <qmutex.h>
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 #include <map>
+#include <stdexcept>
+#include <utility>
 
-#include "../../utilities/core/Path.hpp"
-#include "../../utilities/core/PathHelpers.hpp"
-#include "../../utilities/core/Application.hpp"
-
+#include "../../model/ConvergenceLimits.hpp"
+#include "../../model/DesignDay.hpp"
 #include "../../model/Model.hpp"
 #include "../../model/ShadowCalculation.hpp"
-#include "../../model/ConvergenceLimits.hpp"
 #include "../../model/Surface.hpp"
-#include "../../model/SubSurface.hpp"
 #include "../../model/Timestep.hpp"
-#include "../../model/ShadowCalculation_Impl.hpp"
-#include "../../model/ConvergenceLimits_Impl.hpp"
-#include "../../model/Surface_Impl.hpp"
-#include "../../model/SubSurface_Impl.hpp"
-#include "../../model/Timestep_Impl.hpp"
-#include "../../model/DesignDay.hpp"
-#include "../../model/DesignDay_Impl.hpp"
+#include "../../utilities/core/Path.hpp"
+#include "../../utilities/core/PathHelpers.hpp"
+#include "JSON.hpp"
+#include "RunManager.hpp"
+#include "RunManager_Impl.hpp"
+#include "Workflow.hpp"
+#include "runmanager/lib/../../utilities/core/Compare.hpp"
+#include "runmanager/lib/../../utilities/core/Json.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/ConfigOptions.hpp"
+#include "runmanager/lib/Job.hpp"
 
-
-#include <QThread>
-#include <QDir>
-#include <QMutex>
-#include <QMutexLocker>
-
-#include <boost/filesystem.hpp>
+class QWidget;
 
 namespace openstudio {
 namespace runmanager {

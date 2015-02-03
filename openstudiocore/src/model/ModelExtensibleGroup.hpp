@@ -20,14 +20,20 @@
 #ifndef MODEL_MODELEXTENSIBLEGROUP_HPP
 #define MODEL_MODELEXTENSIBLEGROUP_HPP
 
-#include "ModelAPI.hpp"
-#include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
-#include "ModelObject.hpp"
-#include "ModelObject_Impl.hpp"
+#include <boost/none.hpp>
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
-
-#include <boost/optional.hpp>
+#include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
+#include "ModelAPI.hpp"
+#include "ModelObject.hpp"
+#include "ModelObject_Impl.hpp"
+#include "model/../utilities/idf/../core/LogMessage.hpp"
 
 namespace openstudio {
 namespace model {

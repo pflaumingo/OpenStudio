@@ -17,33 +17,39 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ZoneHVACBaseboardConvectiveWater.hpp"
-#include "ZoneHVACBaseboardConvectiveWater_Impl.hpp"
-
-// TODO: Check the following class names against object getters and setters.
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "StraightComponent.hpp"
-#include "StraightComponent_Impl.hpp"
-#include "CoilHeatingWaterBaseboard.hpp"
-#include "CoilHeatingWaterBaseboard_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-
-#include <utilities/idd/OS_ZoneHVAC_Baseboard_Convective_Water_FieldEnums.hxx>
+#include <boost/none.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_ZoneHVAC_Baseboard_Convective_Water_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "CoilHeatingWaterBaseboard.hpp"
+#include "Model.hpp"
+// TODO: Check the following class names against object getters and setters.
+#include "Schedule.hpp"
+#include "StraightComponent.hpp"
+#include "ThermalZone.hpp"
+#include "ZoneHVACBaseboardConvectiveWater.hpp"
+#include "ZoneHVACBaseboardConvectiveWater_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/PlantLoop.hpp"
+#include "model/ZoneHVACComponent.hpp"
+#include "model/ZoneHVACComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ZoneHVACBaseboardConvectiveWater_Impl::ZoneHVACBaseboardConvectiveWater_Impl(const IdfObject& idfObject,
                                                                                Model_Impl* model,

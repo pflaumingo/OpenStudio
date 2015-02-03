@@ -17,25 +17,50 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
-#include <iterator>
+#include <assert.h>
+#include <boost/filesystem/convenience.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <qthread.h>
+#include <qurl.h>
+#include <stddef.h>
 #include <algorithm>
+#include <exception>
+#include <functional>
+#include <map>
+#include <set>
+#include <sstream>
+#include <stdexcept>
+#include <tuple>
 
-#include "UserScriptJob.hpp"
+#include "FileInfo.hpp"
+#include "JSON.hpp"
+#include "MergeJobError.hpp"
 #include "RubyJob.hpp"
 #include "RubyJobUtils.hpp"
-#include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
-#include "MergeJobError.hpp"
+#include "UserScriptJob.hpp"
 #include "WorkItem.hpp"
-#include "JSON.hpp"
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/Compare.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Enum.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/Job_Impl.hpp"
+#include "runmanager/lib/MergedJobResults.hpp"
+#include "runmanager/lib/ToolBasedJob.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-
-#include <QDir>
-#include <QDateTime>
-#include <QUrl>
+namespace openstudio {
+namespace runmanager {
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

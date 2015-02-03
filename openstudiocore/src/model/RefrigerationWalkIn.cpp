@@ -17,33 +17,36 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RefrigerationWalkIn.hpp"
-#include "RefrigerationWalkIn_Impl.hpp"
-#include "RefrigerationWalkInZoneBoundary.hpp"
-#include "RefrigerationWalkInZoneBoundary_Impl.hpp"
+#include <boost/none.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Refrigeration_WalkIn_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
 
-#include "RefrigerationSystem_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
+#include "../utilities/idf/WorkspaceObject.hpp"
+#include "../utilities/time/Time.hpp"
 #include "Model.hpp"
 #include "Model_Impl.hpp"
 #include "RefrigerationDefrostCycleParameters.hpp"
 #include "RefrigerationDefrostCycleParameters_Impl.hpp"
-
-#include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
-#include "../utilities/idf/WorkspaceObject.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Refrigeration_WalkIn_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/time/Time.hpp"
-
-#include "../utilities/core/Assert.hpp"
+#include "RefrigerationWalkIn.hpp"
+#include "RefrigerationWalkInZoneBoundary.hpp"
+#include "RefrigerationWalkIn_Impl.hpp"
+#include "Schedule.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/RefrigerationSystem.hpp"
+#include "model/ThermalZone.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {

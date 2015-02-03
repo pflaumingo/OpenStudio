@@ -17,21 +17,63 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Geometry.hpp"
-#include "Intersection.hpp"
-#include "../data/Matrix.hpp"
 #include "../core/Assert.hpp"
 #include "../core/Logger.hpp"
+#include "../data/Matrix.hpp"
+#include "Geometry.hpp"
+#include "Intersection.hpp"
+#include "utilities/geometry/../core/LogMessage.hpp"
+#include "utilities/geometry/Point3d.hpp"
+
+namespace boost {
+namespace geometry {
+struct polygon_tag;
+struct ring_tag;
+}  // namespace geometry
+template <typename T0 = detail::variant::void_, typename T1 = detail::variant::void_, typename T2 = detail::variant::void_, typename T3 = detail::variant::void_, typename T4 = detail::variant::void_, typename T5 = detail::variant::void_, typename T6 = detail::variant::void_, typename T7 = detail::variant::void_, typename T8 = detail::variant::void_, typename T9 = detail::variant::void_, typename T10 = detail::variant::void_, typename T11 = detail::variant::void_, typename T12 = detail::variant::void_, typename T13 = detail::variant::void_, typename T14 = detail::variant::void_, typename T15 = detail::variant::void_, typename T16 = detail::variant::void_, typename T17 = detail::variant::void_, typename T18 = detail::variant::void_, typename T19 = detail::variant::void_> class variant;
+}  // namespace boost
 
 #undef BOOST_UBLAS_TYPE_CHECK
-#include <boost/geometry/geometry.hpp>
+#include <boost/concept/usage.hpp>
+#include <boost/geometry/algorithms/append.hpp>
+#include <boost/geometry/algorithms/area.hpp>
+#include <boost/geometry/algorithms/clear.hpp>
+#include <boost/geometry/algorithms/correct.hpp>
+#include <boost/geometry/algorithms/detail/has_self_intersections.hpp>
+#include <boost/geometry/algorithms/difference.hpp>
+#include <boost/geometry/algorithms/distance.hpp>
+#include <boost/geometry/algorithms/intersection.hpp>
+#include <boost/geometry/algorithms/union.hpp>
+#include <boost/geometry/core/closure.hpp>
+#include <boost/geometry/core/coordinate_type.hpp>
+#include <boost/geometry/core/cs.hpp>
+#include <boost/geometry/core/exterior_ring.hpp>
+#include <boost/geometry/core/interior_rings.hpp>
+#include <boost/geometry/core/interior_type.hpp>
+#include <boost/geometry/core/point_type.hpp>
+#include <boost/geometry/core/ring_type.hpp>
+#include <boost/geometry/core/tag.hpp>
+#include <boost/geometry/geometries/concepts/check.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
 #include <boost/geometry/geometries/ring.hpp>
 #include <boost/geometry/multi/geometries/multi_polygon.hpp>
-#include <boost/geometry/geometries/adapted/boost_tuple.hpp>
-#include <boost/geometry/strategies/cartesian/point_in_poly_franklin.hpp> 
-#include <boost/geometry/strategies/cartesian/point_in_poly_crossings_multiply.hpp> 
+#include <boost/geometry/strategies/side.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/none.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/repetition/repeat.hpp>
+#include <boost/range/begin.hpp>
+#include <boost/range/end.hpp>
+#include <boost/range/iterator.hpp>
+#include <boost/range/size.hpp>
+#include <boost/tuple/detail/tuple_basic.hpp>
+#include <boost/typeof/typeof.hpp>
+#include <boost/variant/static_visitor.hpp>
+#include <boost/variant/variant_fwd.hpp>
+#include <ext/alloc_traits.h>
 
 typedef boost::geometry::model::d2::point_xy<double> BoostPoint;
 typedef boost::geometry::model::polygon<BoostPoint> BoostPolygon;
@@ -39,8 +81,12 @@ typedef boost::geometry::model::ring<BoostPoint> BoostRing;
 typedef boost::geometry::model::multi_polygon<BoostPolygon> BoostMultiPolygon;
 
 #include <polypartition/polypartition.h>
-
+#include <algorithm>
+#include <cmath>
+#include <deque>
+#include <iterator>
 #include <list>
+#include <ostream>
 
 // remove_spikes 
 // adapted from https://github.com/boostorg/geometry/commits/develop/include/boost/geometry/algorithms/remove_spikes.hpp eb3260708eb241d8da337f4be73b41d69d33cd09

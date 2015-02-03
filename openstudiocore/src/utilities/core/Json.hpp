@@ -20,15 +20,20 @@
 #ifndef UTILITIES_CORE_JSON_HPP
 #define UTILITIES_CORE_JSON_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Path.hpp"
-#include "Compare.hpp"
-
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
 #include <QVariant>
-
+#include <algorithm>
+#include <functional>
+#include <iterator>
 #include <string>
+#include <utility>
 #include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "Compare.hpp"
+#include "Path.hpp"
 
 namespace openstudio {
 

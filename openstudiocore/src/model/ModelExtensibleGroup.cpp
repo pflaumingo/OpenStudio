@@ -19,6 +19,7 @@
 
 #include "ModelExtensibleGroup.hpp"
 #include "ModelObject_Impl.hpp"
+#include "model/../utilities/idf/WorkspaceExtensibleGroup.hpp"
 
 namespace openstudio {
 namespace model {

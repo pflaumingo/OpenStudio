@@ -17,14 +17,24 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "GenerateIddFactoryOutFiles.hpp"
-#include "IddFileFactoryData.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <algorithm>
+#include <sstream>
 
 #include "../utilities/core/Checksum.hpp"
-
-#include <boost/regex.hpp>
-
-#include <sstream>
+#include "GenerateIddFactoryOutFiles.hpp"
+#include "IddFileFactoryData.hpp"
+#include "generateiddfactory/../utilities/core/Path.hpp"
 
 namespace openstudio {
 

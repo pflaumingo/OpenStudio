@@ -17,62 +17,50 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
-#include <iterator>
-#include <algorithm>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <qurl.h>
+#include <exception>
+#include <utility>
+#include <vector>
 
-#include "ModelToRadPreProcessJob.hpp"
-#include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
-#include "RunManager_Util.hpp"
-
-#include "../../utilities/time/DateTime.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Model_Impl.hpp"
 #include "../../model/Building.hpp"
-#include "../../model/Building_Impl.hpp"
-#include "../../model/Facility.hpp"
-#include "../../model/Facility_Impl.hpp"
-#include "../../model/Timestep.hpp"
-#include "../../model/Timestep_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/WeatherFile.hpp"
-#include "../../model/WeatherFile_Impl.hpp"
-#include "../../model/Space.hpp"
-#include "../../model/Space_Impl.hpp"
-#include "../../model/Surface.hpp"
-#include "../../model/Surface_Impl.hpp"
-#include "../../model/SubSurface.hpp"
-#include "../../model/SubSurface_Impl.hpp"
-#include "../../model/SpaceItem.hpp"
-#include "../../model/SpaceItem_Impl.hpp"
-#include "../../model/ShadingSurfaceGroup.hpp"
-#include "../../model/ShadingSurfaceGroup_Impl.hpp"
-#include "../../model/SimulationControl.hpp"
-#include "../../model/SimulationControl_Impl.hpp"
-#include "../../model/RunPeriod.hpp"
-#include "../../model/RunPeriod_Impl.hpp"
-#include "../../model/People.hpp"
-#include "../../model/People_Impl.hpp"
 #include "../../model/Lights.hpp"
-#include "../../model/Lights_Impl.hpp"
 #include "../../model/Luminaire.hpp"
-#include "../../model/Luminaire_Impl.hpp"
+#include "../../model/Model.hpp"
 #include "../../model/OutputVariable.hpp"
-#include "../../model/OutputVariable_Impl.hpp"
-
-#include "../../energyplus/ReverseTranslator.hpp"
-
-#include "../../utilities/data/Attribute.hpp"
-#include "../../utilities/idf/IdfFile.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include "../../utilities/sql/SqlFile.hpp"
-
+#include "../../model/People.hpp"
+#include "../../model/RunPeriod.hpp"
+#include "../../model/ShadingSurfaceGroup.hpp"
+#include "../../model/SimulationControl.hpp"
+#include "../../model/Space.hpp"
+#include "../../model/SpaceItem.hpp"
+#include "../../model/SubSurface.hpp"
+#include "../../model/Surface.hpp"
+#include "../../model/ThermalZone.hpp"
+#include "../../model/Timestep.hpp"
+#include "../../model/WeatherFile.hpp"
 #include "../../utilities/core/Assert.hpp"
+#include "FileInfo.hpp"
+#include "ModelToRadPreProcessJob.hpp"
+#include "RunManager_Util.hpp"
+#include "runmanager/lib/../../model/ModelObject.hpp"
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/Job_Impl.hpp"
 
-#include <QDir>
-#include <QDateTime>
+class QDateTime;
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

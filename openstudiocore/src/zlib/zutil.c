@@ -6,6 +6,9 @@
 /* @(#) $Id$ */
 
 #include "zutil.h"
+
+#include <stdlib.h>
+#include <zlib.h>
 #ifndef Z_SOLO
 #  include "gzguts.h"
 #endif

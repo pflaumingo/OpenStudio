@@ -17,35 +17,43 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Luminaire.hpp"
-#include "Luminaire_Impl.hpp"
-
-#include "LuminaireDefinition.hpp"
-#include "LuminaireDefinition_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "SpaceType.hpp"
-#include "SpaceType_Impl.hpp"
-#include "DefaultScheduleSet.hpp"
-#include "DefaultScheduleSet_Impl.hpp"
-#include "LifeCycleCost.hpp"
-
-#include <utilities/idd/OS_Luminaire_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Luminaire_FieldEnums.hxx>
+#include <algorithm>
 
-#include "../utilities/geometry/Point3d.hpp"
-#include "../utilities/geometry/Vector3d.hpp"
-#include "../utilities/geometry/Transformation.hpp"
+#include "../utilities/core/Assert.hpp"
 #include "../utilities/geometry/EulerAngles.hpp"
 #include "../utilities/geometry/Geometry.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "../utilities/geometry/Point3d.hpp"
+#include "../utilities/geometry/Transformation.hpp"
+#include "../utilities/geometry/Vector3d.hpp"
+#include "DefaultScheduleSet.hpp"
+#include "LifeCycleCost.hpp"
+#include "Luminaire.hpp"
+#include "LuminaireDefinition.hpp"
+#include "Luminaire_Impl.hpp"
+#include "Schedule.hpp"
+#include "Space.hpp"
+#include "SpaceType.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/OSOptionalQuantity.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/SpaceLoadDefinition.hpp"
+#include "model/SpaceLoadInstance.hpp"
+#include "model/SpaceLoadInstance_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   Luminaire_Impl::Luminaire_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : SpaceLoadInstance_Impl(idfObject,model,keepHandle)

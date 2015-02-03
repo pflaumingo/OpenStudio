@@ -20,12 +20,15 @@
 #ifndef UTILITIES_GEOMETRY_POINT3D_HPP
 #define UTILITIES_GEOMETRY_POINT3D_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "../data/Vector.hpp"
-#include "../core/Logger.hpp"
-
-#include <vector>
 #include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "../data/Vector.hpp"
+#include "utilities/geometry/../core/LogMessage.hpp"
 
 namespace openstudio{
 

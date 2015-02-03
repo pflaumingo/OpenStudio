@@ -20,8 +20,21 @@
 #ifndef PROJECT_VAGRANTSETTINGSRECORD_HPP
 #define PROJECT_VAGRANTSETTINGSRECORD_HPP
 
-#include "ProjectAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "CloudSettingsRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/cloud/CloudProvider.hpp"
+#include "project/../utilities/cloud/VagrantProvider.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/ProjectDatabase.hpp"
+#include "project/UrlRecord.hpp"
+
+class QSqlQuery;
 
 namespace openstudio {
 

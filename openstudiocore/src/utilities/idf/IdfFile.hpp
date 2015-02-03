@@ -20,16 +20,22 @@
 #ifndef UTILITIES_IDF_IDFFILE_HPP
 #define UTILITIES_IDF_IDFFILE_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <ostream>
+#include <set>
+#include <string>
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
+#include "../core/Path.hpp"
 #include "../idd/IddFileAndFactoryWrapper.hpp"
 #include "IdfObject.hpp"
-
-#include "../core/Path.hpp"
-
-#include <string>
-#include <ostream>
-#include <vector>
+#include "utilities/idf/../idd/../core/LogMessage.hpp"
+#include "utilities/idf/../idd/../core/Logger.hpp"
+#include "utilities/idf/../idd/IddEnums.hpp"
+#include "utilities/idf/../idd/IddFile.hpp"
+#include "utilities/idf/../idd/IddObject.hpp"
+#include "utilities/idf/Handle.hpp"
 
 namespace openstudio{
 
@@ -38,6 +44,7 @@ class ProgressBar;
 class StrictnessLevel;
 class ValidityReport;
 class VersionString;
+
 namespace detail {
   class Workspace_Impl;
 }

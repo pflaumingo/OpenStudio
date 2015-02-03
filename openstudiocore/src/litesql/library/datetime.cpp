@@ -3,11 +3,15 @@
  * The list of contributors at http://litesql.sf.net/
  *
  * See LICENSE for copyright information. */
-#include "litesql/datetime.hpp"
-#include "litesql/split.hpp"
-#include "compatibility.hpp"
+#include <ext/alloc_traits.h>
+#include <litesql/string.hpp>
+#include <stddef.h>
 #include <time.h>
 #include <cstdio>
+#include <vector>
+
+#include "litesql/datetime.hpp"
+#include "litesql/split.hpp"
 
 using namespace std;
 

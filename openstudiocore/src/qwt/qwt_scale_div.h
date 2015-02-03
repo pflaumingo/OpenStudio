@@ -10,9 +10,9 @@
 #ifndef QWT_SCALE_DIV_H
 #define QWT_SCALE_DIV_H
 
+#include "qwt_double_interval.h"
 #include "qwt_global.h"
 #include "qwt_valuelist.h"
-#include "qwt_double_interval.h"
 
 class QwtDoubleInterval;
 

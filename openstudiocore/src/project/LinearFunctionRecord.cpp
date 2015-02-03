@@ -17,21 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "LinearFunctionRecord.hpp"
-#include "LinearFunctionRecord_Impl.hpp"
-
-#include "JoinRecord.hpp"
-#include "VariableRecord.hpp"
-#include "ProblemRecord.hpp"
+#include <ext/alloc_traits.h>
+#include <qsqlquery.h>
+#include <stddef.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../analysis/Function.hpp"
-#include "../analysis/Function_Impl.hpp"
 #include "../analysis/LinearFunction.hpp"
 #include "../analysis/Variable.hpp"
-
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "LinearFunctionRecord.hpp"
+#include "LinearFunctionRecord_Impl.hpp"
+#include "ProblemRecord.hpp"
+#include "VariableRecord.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/FunctionRecord.hpp"
+#include "project/FunctionRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 using namespace openstudio::analysis;
 

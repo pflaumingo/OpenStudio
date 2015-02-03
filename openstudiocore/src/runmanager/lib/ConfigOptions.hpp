@@ -20,11 +20,31 @@
 #ifndef RUNMANAGER_LIB_CONFIGOPTIONS_HPP
 #define RUNMANAGER_LIB_CONFIGOPTIONS_HPP
 
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <ostream>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "../../utilities/core/Enum.hpp"
+#include "../../utilities/core/Path.hpp"
 #include "RunManagerAPI.hpp"
 #include "ToolInfo.hpp"
-
-#include "../../utilities/core/Path.hpp"
-#include "../../utilities/core/Enum.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
 
 namespace openstudio {
 namespace runmanager {

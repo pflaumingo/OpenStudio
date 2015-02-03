@@ -20,10 +20,15 @@
 #ifndef UTILITIES_IDF_WORKSPACEWATCHER_HPP
 #define UTILITIES_IDF_WORKSPACEWATCHER_HPP
 
+#include <qobject.h>
+#include <qobjectdefs.h>
 #include <utilities/UtilitiesAPI.hpp>
 #include <utilities/idf/IdfObject.hpp>
 #include <utilities/idf/Workspace.hpp>
 #include <QObject>
+#include <vector>
+
+#include "utilities/idf/WorkspaceObject.hpp"
 
 namespace openstudio{
 

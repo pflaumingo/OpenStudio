@@ -18,26 +18,30 @@
  **********************************************************************/
 
 #include "ParallelEnergyPlus.hpp"
+#include "runmanager/lib/ParallelEnergyPlus/../../../utilities/core/Path.hpp"
+#include "runmanager/lib/ParallelEnergyPlus/../../../utilities/idf/../idd/IddEnums.hpp"
+#include "runmanager/lib/ParallelEnergyPlus/../../../utilities/idf/Workspace.hpp"
+#include "runmanager/lib/ParallelEnergyPlus/../../../utilities/idf/WorkspaceObject.hpp"
 //#include "Building.hpp"
 
-#include <fstream>
-
-#include <iostream>
+#include <boost/date_time/date.hpp>
+#include <boost/date_time/gregorian/greg_date.hpp>
+#include <boost/date_time/gregorian/greg_duration.hpp>
+#include <boost/date_time/gregorian/greg_weekday.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/operators.hpp>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/RunPeriod_FieldEnums.hxx>
 #include <sstream>
-#include <iomanip>
-
+#include <stdexcept>
 #include <string>
 #include <vector>
 
-#include <boost/algorithm/string.hpp>
-#include <boost/algorithm/string/iter_find.hpp>
-
 #include "../../../utilities/idf/IdfFile.hpp"
 #include "../../../utilities/idf/IdfObject.hpp"
-#include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/RunPeriod_FieldEnums.hxx>
-
-#include "../../../energyplus/ReverseTranslator.hpp"
 
 ParallelEnergyPlus::ParallelEnergyPlus(const openstudio::path &t_idf, int t_numPartitions, int t_offsetInDays)
   : m_idfPath(t_idf), m_numPartitions(t_numPartitions), m_offset(t_offsetInDays), m_runPeriod(getRunPeriod(t_idf)), 

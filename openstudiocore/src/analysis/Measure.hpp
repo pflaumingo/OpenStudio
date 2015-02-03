@@ -20,14 +20,24 @@
 #ifndef ANALYSIS_MEASURE_HPP
 #define ANALYSIS_MEASURE_HPP
 
-#include "AnalysisAPI.hpp"
-#include "AnalysisObject.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
 
 #include "../utilities/core/Path.hpp"
+#include "AnalysisAPI.hpp"
+#include "AnalysisObject.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
 
 namespace openstudio {
 
 class FileReferenceType;
+namespace analysis {
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
+}  // namespace analysis
 
 namespace runmanager {
   class WorkItem;
@@ -39,8 +49,8 @@ class MeasureGroup;
 
 namespace detail {
 
-  class Measure_Impl;
   class MeasureGroup_Impl;
+  class Measure_Impl;
 
 } // detail
 

@@ -20,13 +20,26 @@
 #ifndef MODEL_GLARESENSOR_HPP
 #define MODEL_GLARESENSOR_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceItem.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
 
 namespace openstudio {
 
 class Point3d;
 class Transformation;
+class IdfObject;
+namespace model {
+class Model;
+}  // namespace model
+struct IddObjectType;
 
 namespace model {
 

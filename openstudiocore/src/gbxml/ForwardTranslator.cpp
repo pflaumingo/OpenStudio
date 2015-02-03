@@ -17,43 +17,41 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ForwardTranslator.hpp"
+#include <boost/math/constants/constants.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <ext/alloc_traits.h>
+#include <qfile.h>
+#include <qiodevice.h>
+#include <qtextstream.h>
+#include <qthread.h>
+#include <stddef.h>
+#include <cmath>
+#include <limits>
+#include <memory>
 
-#include "../model/Model.hpp"
-#include "../model/ModelObject.hpp"
-#include "../model/ModelObject_Impl.hpp"
-#include "../model/Material.hpp"
-#include "../model/Material_Impl.hpp"
-#include "../model/ConstructionBase.hpp"
-#include "../model/ConstructionBase_Impl.hpp"
-#include "../model/Facility.hpp"
-#include "../model/Facility_Impl.hpp"
 #include "../model/Building.hpp"
-#include "../model/Building_Impl.hpp"
+#include "../model/ConstructionBase.hpp"
+#include "../model/Facility.hpp"
+#include "../model/Model.hpp"
 #include "../model/Space.hpp"
-#include "../model/Space_Impl.hpp"
 #include "../model/SpaceType.hpp"
-#include "../model/SpaceType_Impl.hpp"
-#include "../model/Surface.hpp"
-#include "../model/Surface_Impl.hpp"
 #include "../model/SubSurface.hpp"
-#include "../model/SubSurface_Impl.hpp"
+#include "../model/Surface.hpp"
 #include "../model/ThermalZone.hpp"
-#include "../model/ThermalZone_Impl.hpp"
-
-#include "../utilities/geometry/Transformation.hpp"
-#include "../utilities/geometry/EulerAngles.hpp"
+#include "../utilities/core/Assert.hpp"
 #include "../utilities/geometry/BoundingBox.hpp"
 #include "../utilities/geometry/Geometry.hpp"
+#include "../utilities/geometry/Transformation.hpp"
 #include "../utilities/plot/ProgressBar.hpp"
-#include "../utilities/core/Assert.hpp"
-
-#include <boost/math/constants/constants.hpp>
-
-#include <QFile>
-#include <QDomDocument>
-#include <QDomElement>
-#include <QThread>
+#include "ForwardTranslator.hpp"
+#include "gbxml/../model/../utilities/geometry/Point3d.hpp"
+#include "gbxml/../model/../utilities/geometry/Vector3d.hpp"
+#include "gbxml/../utilities/core/Compare.hpp"
+#include "gbxml/../utilities/core/Path.hpp"
+#include "gbxml/../utilities/core/String.hpp"
+#include "gbxml/../utilities/core/StringStreamLogSink.hpp"
 
 namespace openstudio {
 namespace gbxml {

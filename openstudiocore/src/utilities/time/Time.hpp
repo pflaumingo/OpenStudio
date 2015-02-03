@@ -20,15 +20,21 @@
 #ifndef UTILITIES_TIME_TIME_HPP
 #define UTILITIES_TIME_TIME_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "../core/Macro.hpp"
-#include "../core/Logger.hpp"
-
+#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/date_time/posix_time/posix_time_config.hpp>
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <memory>
+#include <string>
 #include <vector>
 
-#include <boost/optional.hpp>
-#include <boost/date_time/posix_time/posix_time.hpp>
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "../core/Macro.hpp"
+#include "utilities/time/../core/LogMessage.hpp"
+
+struct tm;
 
 namespace openstudio{
 

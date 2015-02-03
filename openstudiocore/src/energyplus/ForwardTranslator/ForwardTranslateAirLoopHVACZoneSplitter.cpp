@@ -17,18 +17,20 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/AirLoopHVACZoneSplitter.hpp"
-#include "../../model/AirLoopHVACZoneSplitter_Impl.hpp"
-#include "../../model/AirLoopHVACZoneMixer.hpp"
-#include "../../model/AirLoopHVACZoneMixer_Impl.hpp"
-#include "../../model/AirTerminalSingleDuctUncontrolled.hpp"
-#include "../../model/AirTerminalSingleDuctUncontrolled_Impl.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/AirLoopHVAC_ZoneSplitter_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../../model/AirLoopHVACZoneSplitter.hpp"
+#include "../../model/AirTerminalSingleDuctUncontrolled.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

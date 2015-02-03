@@ -20,16 +20,32 @@
 #ifndef MODEL_COILWATERHEATINGDESUPERHEATER_HPP
 #define MODEL_COILWATERHEATINGDESUPERHEATER_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "StraightComponent.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/Schedule.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
-class Schedule;
 class CurveBiquadratic;
 class HVACComponent;
+class Schedule;
+class ModelObject;
 
 namespace detail {
 

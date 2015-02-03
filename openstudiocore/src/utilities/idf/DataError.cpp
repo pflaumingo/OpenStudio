@@ -17,15 +17,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <quuid.h>
 #include <iomanip>
+#include <ostream>
+
+#include "../core/Assert.hpp"
+#include "../core/Compare.hpp"
+#include "../core/Optional.hpp"
+#include "../idd/IddObject.hpp"
 #include "DataError.hpp"
 #include "IdfObject.hpp"
-
-#include "../idd/IddObject.hpp"
-
-#include "../core/Compare.hpp"
-#include "../core/Assert.hpp"
-#include "../core/Optional.hpp"
+#include "utilities/idf/../core/EnumBase.hpp"
+#include "utilities/idf/../core/Logger.hpp"
+#include "utilities/idf/../idd/IddEnums.hpp"
+#include "utilities/idf/Handle.hpp"
+#include "utilities/idf/ValidityEnums.hpp"
 
 namespace openstudio {
 

@@ -20,16 +20,27 @@
 #ifndef PROJECT_RUBYMEASURERECORD_HPP
 #define PROJECT_RUBYMEASURERECORD_HPP
 
-#include "ProjectAPI.hpp"
-#include "MeasureRecord.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
+#include "MeasureRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/FileReferenceRecord.hpp"
+#include "project/ProjectDatabase.hpp"
 
-#include <boost/optional/optional.hpp>
+class QSqlQuery;
 
 namespace openstudio {
 
 class FileReferenceType;
+namespace project {
+class MeasureGroupRecord;
+}  // namespace project
 
 namespace analysis {
   class RubyMeasure;

@@ -20,11 +20,15 @@
 #ifndef UTILITIES_CORE_STRINGSTREAMLOGSINK_HPP
 #define UTILITIES_CORE_STRINGSTREAMLOGSINK_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <string>
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
 #include "LogSink.hpp"
 
 namespace openstudio{
+
+class LogMessage;
 
   class UTILITIES_API StringStreamLogSink : public LogSink
   {

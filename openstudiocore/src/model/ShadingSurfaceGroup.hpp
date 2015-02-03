@@ -20,19 +20,31 @@
 #ifndef MODEL_SHADINGSURFACEGROUP_HPP
 #define MODEL_SHADINGSURFACEGROUP_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "PlanarSurfaceGroup.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
 
 namespace openstudio {
 
 class Transformation;
+class IdfObject;
 
 namespace model {
   
-class Space;
 class ShadingSurface;
-class Surface;
+class Space;
 class SubSurface;
+class Surface;
 
 namespace detail {
 

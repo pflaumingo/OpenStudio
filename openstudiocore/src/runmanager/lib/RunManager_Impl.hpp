@@ -20,24 +20,53 @@
 #ifndef RUNMANAGER_LIB_RUNMANAGER_IMPL_HPP
 #define RUNMANAGER_LIB_RUNMANAGER_IMPL_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qabstractitemmodel.h>
+#include <qdatetime.h>
+#include <qmutex.h>
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <qstandarditemmodel.h>
+#include <qstringlist.h>
+#include <qthread.h>
+#include <qtimer.h>
+#include <qvariant.h>
+#include <qwaitcondition.h>
+#include <QDateTime>
+#include <QMutex>
 #include <QObject>
+#include <QStandardItemModel>
+#include <QThread>
+#include <QTimer>
+#include <QWaitCondition>
+#include <deque>
+#include <map>
+#include <memory>
+#include <set>
+#include <string>
+#include <vector>
+
 #include "../../utilities/core/Path.hpp"
 #include "../../utilities/core/UUID.hpp"
-#include <QStandardItemModel>
-#include <QMutex>
-#include <QWaitCondition>
-#include <QTimer>
-#include <QThread>
-#include <QDateTime>
-#include "Job.hpp"
 #include "ConfigOptions.hpp"
+#include "Job.hpp"
 #include "LocalProcessCreator.hpp"
-#include "Workflow.hpp"
 #include "RunManagerStatus.hpp"
+#include "Workflow.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Logger.hpp"
+#include "runmanager/lib/../../utilities/time/DateTime.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+
+class QWidget;
 
 namespace openstudio {
 namespace runmanager {
   class RunManager;
+class LocalProcessCreator;
+class RunManagerStatus;
+struct FileInfo;
+struct JobErrors;
   struct JSONWorkflowOptions;
 
 namespace detail {

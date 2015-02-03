@@ -17,11 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "LinearApproximation.hpp"
-
-#include <boost/numeric/ublas/matrix.hpp>
-#include <boost/numeric/ublas/io.hpp>
+#include <boost/numeric/ublas/detail/matrix_assign.hpp>
+#include <boost/numeric/ublas/functional.hpp>
+#include <boost/numeric/ublas/fwd.hpp>
 #include <boost/numeric/ublas/lu.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
+#include <boost/numeric/ublas/matrix_expression.hpp>
+#include <boost/numeric/ublas/storage.hpp>
+#include <boost/numeric/ublas/vector.hpp>
+#include <ext/alloc_traits.h>
+#include <ext/new_allocator.h>
+#include <algorithm>
+#include <cassert>
+#include <cmath>
+#include <iomanip>
+#include <iostream>
+#include <set>
+#include <stdexcept>
+
+#include "LinearApproximation.hpp"
 
 
 LinearApproximation::LinearApproximation(const size_t t_numVars)

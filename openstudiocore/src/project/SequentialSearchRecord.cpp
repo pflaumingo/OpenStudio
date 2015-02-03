@@ -17,19 +17,27 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SequentialSearchRecord.hpp"
-#include "SequentialSearchRecord_Impl.hpp"
-#include "AnalysisRecord.hpp"
+#include <qsqlquery.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../analysis/SequentialSearch.hpp"
-#include "../analysis/SequentialSearch_Impl.hpp"
 #include "../analysis/SequentialSearchOptions.hpp"
-
-#include "JoinRecord.hpp"
-
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Optional.hpp"
-#include "../utilities/data/Attribute.hpp"
+#include "AnalysisRecord.hpp"
+#include "JoinRecord.hpp"
+#include "SequentialSearchRecord.hpp"
+#include "SequentialSearchRecord_Impl.hpp"
+#include "project/../analysis/Algorithm.hpp"
+#include "project/../analysis/OpenStudioAlgorithm.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/OpenStudioAlgorithmRecord.hpp"
+#include "project/OpenStudioAlgorithmRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

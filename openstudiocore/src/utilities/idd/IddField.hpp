@@ -20,21 +20,25 @@
 #ifndef UTILITIES_IDD_IDDFIELD_HPP
 #define UTILITIES_IDD_IDDFIELD_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "IddFieldProperties.hpp"
-
-#include "../core/Logger.hpp"
-
-#include <string>
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <memory>
 #include <ostream>
+#include <string>
 #include <vector>
 
-#include <boost/optional.hpp>
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "IddFieldProperties.hpp"
+#include "utilities/idd/../core/LogMessage.hpp"
 
 namespace openstudio {
 
-class Unit;
 class IddKey;
+class Unit;
+struct IddFieldProperties;
 
 // forward declarations
 namespace detail {

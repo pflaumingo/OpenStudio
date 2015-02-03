@@ -17,7 +17,15 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <qflags.h>
+#include <qlistwidget.h>
+#include <stddef.h>
+
 #include "JobOutputCleanup.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "ui_JobOutputCleanup.h"
+
+class QWidget;
 
 namespace openstudio {
 namespace runmanager {

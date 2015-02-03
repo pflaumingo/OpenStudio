@@ -17,27 +17,42 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <ext/alloc_traits.h>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Daylighting_Control_FieldEnums.hxx>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/geometry/EulerAngles.hpp"
+#include "../utilities/geometry/Geometry.hpp"
+#include "../utilities/geometry/Point3d.hpp"
+#include "../utilities/geometry/Transformation.hpp"
+#include "../utilities/geometry/Vector3d.hpp"
 #include "DaylightingControl.hpp"
 #include "DaylightingControl_Impl.hpp"
 #include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/SpaceItem.hpp"
+#include "model/SpaceItem_Impl.hpp"
 
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Daylighting_Control_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/geometry/Transformation.hpp"
-#include "../utilities/geometry/EulerAngles.hpp"
-#include "../utilities/geometry/Vector3d.hpp"
-#include "../utilities/geometry/Point3d.hpp"
-#include "../utilities/geometry/Geometry.hpp"
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   DaylightingControl_Impl::DaylightingControl_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : SpaceItem_Impl(idfObject,model,keepHandle)

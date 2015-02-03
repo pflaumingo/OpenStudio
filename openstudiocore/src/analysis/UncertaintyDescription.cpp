@@ -17,14 +17,27 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "UncertaintyDescription.hpp"
-#include "UncertaintyDescription_Impl.hpp"
-
-#include "GenericUncertaintyDescription.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <algorithm>
+#include <functional>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Finder.hpp"
 #include "../utilities/core/Json.hpp"
+#include "GenericUncertaintyDescription.hpp"
+#include "UncertaintyDescription.hpp"
+#include "UncertaintyDescription_Impl.hpp"
+#include "analysis/../utilities/core/Enum.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/../utilities/data/Attribute.hpp"
+#include "analysis/AnalysisEnums.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

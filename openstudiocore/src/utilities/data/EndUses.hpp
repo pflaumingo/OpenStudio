@@ -20,9 +20,15 @@
 #ifndef UTILITIES_DATA_ENDUSES_HPP
 #define UTILITIES_DATA_ENDUSES_HPP
 
+#include <boost/optional/optional.hpp>
+#include <string>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
 #include "Attribute.hpp"
 #include "DataEnums.hpp"
+#include "utilities/data/../core/LogMessage.hpp"
+#include "utilities/data/../core/Logger.hpp"
 
 namespace openstudio {
 

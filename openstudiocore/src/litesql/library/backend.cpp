@@ -4,9 +4,12 @@
  * 
  * See LICENSE for copyright information. */
 
-#include <map>
+#include <ext/alloc_traits.h>
+#include <litesql/split.hpp>
+#include <stddef.h>
+#include <string>
+#include <vector>
 
-#include "compatibility.hpp"
 #include "litesql/backend.hpp"
 #include "litesql/string.hpp"
 #include "litesql/types.hpp"

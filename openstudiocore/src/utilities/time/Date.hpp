@@ -20,20 +20,39 @@
 #ifndef UTILITIES_TIME_DATE_HPP
 #define UTILITIES_TIME_DATE_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Time.hpp"
-#include "../core/Macro.hpp"
-#include "../core/Logger.hpp"
-
-#include <ostream>
-#include <vector>
-
-#include <boost/optional.hpp>
-#include <boost/date_time/gregorian/gregorian.hpp>
 #include <boost/date_time/date_defs.hpp>
 #include <boost/date_time/gregorian/greg_calendar.hpp>
+#include <boost/date_time/gregorian/greg_date.hpp>
+#include <boost/date_time/gregorian/gregorian.hpp>
+#include <boost/date_time/gregorian/gregorian_types.hpp>
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
 #include "../core/Enum.hpp"
+#include "../core/Logger.hpp"
+#include "../core/Macro.hpp"
+#include "Time.hpp"
+#include "utilities/time/../core/LogMessage.hpp"
+
+struct tm;
 
 namespace openstudio{
 

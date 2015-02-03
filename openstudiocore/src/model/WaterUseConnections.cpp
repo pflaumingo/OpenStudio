@@ -17,32 +17,39 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_WaterUse_Connections_FieldEnums.hxx>
+#include <algorithm>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
 #include "Model.hpp"
+#include "Node.hpp"
+#include "PlantLoop.hpp"
+#include "Schedule.hpp"
 #include "WaterUseConnections.hpp"
 #include "WaterUseConnections_Impl.hpp"
 #include "WaterUseEquipment.hpp"
-#include "WaterUseEquipment_Impl.hpp"
-#include "Connection.hpp"
-#include "Connection_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "PlantLoop.hpp"
-#include "PlantLoop_Impl.hpp"
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_WaterUse_Connections_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   WaterUseConnections_Impl::WaterUseConnections_Impl(const IdfObject& idfObject,
                                                      Model_Impl* model,

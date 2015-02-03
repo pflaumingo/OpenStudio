@@ -17,16 +17,17 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/CoolingTowerPerformanceCoolTools.hpp"
-#include "../../model/CoolingTowerPerformanceCoolTools_Impl.hpp"
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include "../../utilities/idf/WorkspaceObjectOrder.hpp"
-#include "../../utilities/core/Logger.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/CoolingTowerPerformance_CoolTools_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <vector>
+
+#include "../../model/CoolingTowerPerformanceCoolTools.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

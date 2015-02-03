@@ -17,16 +17,24 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "VagrantSessionRecord.hpp"
-#include "VagrantSessionRecord_Impl.hpp"
-
-#include "ProjectDatabase.hpp"
-#include "UrlRecord.hpp"
+#include <qsqlquery.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../utilities/cloud/VagrantProvider.hpp"
-#include "../utilities/cloud/VagrantProvider_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "ProjectDatabase.hpp"
+#include "UrlRecord.hpp"
+#include "VagrantSessionRecord.hpp"
+#include "VagrantSessionRecord_Impl.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/core/Url.hpp"
+#include "project/CloudSessionRecord.hpp"
+#include "project/CloudSessionRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

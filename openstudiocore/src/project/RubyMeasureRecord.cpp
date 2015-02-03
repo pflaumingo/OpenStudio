@@ -17,29 +17,35 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "RubyMeasureRecord.hpp"
-#include "RubyMeasureRecord_Impl.hpp"
-#include "MeasureGroupRecord.hpp"
-#include "JoinRecord.hpp"
-#include "ProjectDatabase.hpp"
-#include "FileReferenceRecord.hpp"
-#include "OSArgumentRecord.hpp"
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <exception>
+#include <sstream>
+#include <string>
 
 #include "../analysis/Measure.hpp"
-#include "../analysis/Measure_Impl.hpp"
 #include "../analysis/RubyMeasure.hpp"
-
 #include "../ruleset/OSArgument.hpp"
-
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Checksum.hpp"
-#include "../utilities/data/Attribute.hpp"
-#include "../utilities/core/Compare.hpp"
+#include "FileReferenceRecord.hpp"
+#include "MeasureGroupRecord.hpp"
+#include "OSArgumentRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "RubyMeasureRecord.hpp"
+#include "RubyMeasureRecord_Impl.hpp"
+#include "project/../utilities/core/EnumBase.hpp"
+#include "project/../utilities/core/FileReference.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/time/DateTime.hpp"
+#include "project/MeasureRecord.hpp"
+#include "project/MeasureRecord_Impl.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/Record.hpp"
 
-#include <sstream>
-
-#include <QSqlQuery>
-#include <QSqlError>
+class QSqlDatabase;
 
 using namespace openstudio::ruleset;
 

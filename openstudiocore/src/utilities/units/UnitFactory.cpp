@@ -17,41 +17,55 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "UnitFactory.hpp"
+#include <boost/function/function_base.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/cpp_regex_traits.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regbase.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_format.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_replace.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <stddef.h>
+#include <algorithm>
+#include <functional>
+#include <map>
+#include <memory>
+#include <ostream>
+#include <utility>
+#include <vector>
 
-#include "ScaleFactory.hpp"
+#include "../core/Assert.hpp"
+#include "../core/Containers.hpp"
+#include "BTUUnit.hpp"
+#include "CFMUnit.hpp"
+#include "CelsiusUnit.hpp"
+#include "FahrenheitUnit.hpp"
+#include "GPDUnit.hpp"
+#include "IPUnit.hpp"
+#include "MPHUnit.hpp"
+#include "Misc1Unit.hpp"
 #include "QuantityRegex.hpp"
 #include "SIUnit.hpp"
-#include "SIUnit_Impl.hpp"
-#include "IPUnit.hpp"
-#include "IPUnit_Impl.hpp"
-#include "BTUUnit.hpp"
-#include "BTUUnit_Impl.hpp"
-#include "CFMUnit.hpp"
-#include "CFMUnit_Impl.hpp"
-#include "GPDUnit.hpp"
-#include "GPDUnit_Impl.hpp"
-#include "MPHUnit.hpp"
-#include "MPHUnit_Impl.hpp"
-#include "WhUnit.hpp"
-#include "WhUnit_Impl.hpp"
+#include "ScaleFactory.hpp"
 #include "ThermUnit.hpp"
-#include "ThermUnit_Impl.hpp"
-#include "Misc1Unit.hpp"
-#include "Misc1Unit_Impl.hpp"
-#include "CelsiusUnit.hpp"
-#include "CelsiusUnit_Impl.hpp"
-#include "FahrenheitUnit.hpp"
-#include "FahrenheitUnit_Impl.hpp"
-
-#include "../core/Exception.hpp"
-#include "../core/Containers.hpp"
-#include "../core/Assert.hpp"
-
-#include <boost/pointer_cast.hpp>
-
-#include <map>
-#include <vector>
+#include "UnitFactory.hpp"
+#include "WhUnit.hpp"
+#include "utilities/units/../core/Enum.hpp"
+#include "utilities/units/../core/EnumBase.hpp"
+#include "utilities/units/../core/Logger.hpp"
+#include "utilities/units/../core/Singleton.hpp"
+#include "utilities/units/Scale.hpp"
+#include "utilities/units/TemperatureUnit.hpp"
+#include "utilities/units/Unit.hpp"
 
 namespace openstudio{
 

@@ -17,12 +17,17 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
+#include <boost/algorithm/string/case_conv.hpp>
+#include <utilities/idd/SimulationControl_FieldEnums.hxx>
+#include <memory>
+#include <string>
 
 #include "../../model/SimulationControl.hpp"
-#include "../../model/SimulationControl_Impl.hpp"
-
-#include <utilities/idd/SimulationControl_FieldEnums.hxx>
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/Model.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

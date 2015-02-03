@@ -17,10 +17,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DesignOfExperimentsOptions.hpp"
-#include "DesignOfExperimentsOptions_Impl.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <functional>
 
 #include "../utilities/core/Json.hpp"
+#include "DesignOfExperimentsOptions.hpp"
+#include "DesignOfExperimentsOptions_Impl.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/../utilities/data/Attribute.hpp"
+#include "analysis/AlgorithmOptions.hpp"
+#include "analysis/AlgorithmOptions_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

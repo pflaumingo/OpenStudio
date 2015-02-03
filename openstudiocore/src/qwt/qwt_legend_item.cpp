@@ -9,18 +9,30 @@
 
 // vim: expandtab
 
-#include <qpainter.h>
 #include <qdrawutil.h>
-#include <qstyle.h>
+#include <qflags.h>
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qpainter.h>
 #include <qpen.h>
+#include <qpoint.h>
+#include <qrect.h>
+#include <qstyle.h>
+#include <stddef.h>
 #if QT_VERSION >= 0x040000
 #include <qevent.h>
 #include <qstyleoption.h>
 #endif
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_layout_metrics.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_legend.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text_label.h"
+#include "qwt_legend_item.h"
 #include "qwt_math.h"
 #include "qwt_painter.h"
 #include "qwt_symbol.h"
-#include "qwt_legend_item.h"
+
+class QWidget;
 
 static const int ButtonFrame = 2;
 static const int Margin = 2;

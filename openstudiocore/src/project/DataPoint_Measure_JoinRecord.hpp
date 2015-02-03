@@ -20,8 +20,20 @@
 #ifndef PROJECT_DATAPOINT_MEASURE_JOINRECORD_HPP
 #define PROJECT_DATAPOINT_MEASURE_JOINRECORD_HPP
 
-#include "ProjectAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "JoinRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/DataPointRecord.hpp"
+#include "project/MeasureRecord.hpp"
+#include "project/ProjectDatabase.hpp"
+#include "project/Record.hpp"
 
 namespace openstudio {
 namespace project {

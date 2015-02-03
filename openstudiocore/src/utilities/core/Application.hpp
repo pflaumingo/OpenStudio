@@ -20,12 +20,16 @@
 #ifndef UTILITIES_CORE_APPLICATION_HPP
 #define UTILITIES_CORE_APPLICATION_HPP
 
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <QApplication>
+#include <string>
+
 #include "../UtilitiesAPI.hpp"
 #include "Singleton.hpp"
 
-#include <QApplication>
-
-#include <boost/optional.hpp>
+class QCoreApplication;
+class QWidget;
 
 namespace openstudio{
 

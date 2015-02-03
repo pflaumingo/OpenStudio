@@ -20,15 +20,24 @@
 #ifndef RUNMANAGER_LIB_PROCESS_HPP
 #define RUNMANAGER_LIB_PROCESS_HPP
 
-#include <string>
-#include "FileInfo.hpp"
-#include "AdvancedStatus.hpp"
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <qprocess.h>
 #include <QProcess>
+#include <string>
+#include <vector>
+
+#include "AdvancedStatus.hpp"
+#include "FileInfo.hpp"
+#include "runmanager/lib/../../utilities/time/../core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Logger.hpp"
 
 namespace openstudio {
 namespace runmanager {
 
   /// Base class for local processes
+struct FileInfo;
+
   class Process : public QObject
   {
     Q_OBJECT;

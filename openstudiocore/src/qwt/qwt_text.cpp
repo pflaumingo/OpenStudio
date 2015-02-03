@@ -9,15 +9,21 @@
 
 // vim: expandtab
 
-#include <qmap.h>
-#include <qfont.h>
-#include <qcolor.h>
-#include <qpen.h>
 #include <qbrush.h>
+#include <qcolor.h>
+#include <qfont.h>
+#include <qglobal.h>
+#include <qmap.h>
+#include <qnamespace.h>
 #include <qpainter.h>
+#include <qpen.h>
+#include <qrect.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_layout_metrics.h"
 #include "qwt_painter.h"
-#include "qwt_text_engine.h"
 #include "qwt_text.h"
+#include "qwt_text_engine.h"
 #if QT_VERSION >= 0x040000
 #include <qapplication.h>
 #include <qdesktopwidget.h>

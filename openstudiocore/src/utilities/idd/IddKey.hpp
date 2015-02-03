@@ -20,15 +20,16 @@
 #ifndef UTILITIES_IDD_IDDKEY_HPP
 #define UTILITIES_IDD_IDDKEY_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "../core/Logger.hpp"
-
 #include <boost/optional.hpp>
-
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <ostream>
 #include <string>
 #include <vector>
-#include <ostream>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "utilities/idd/../core/LogMessage.hpp"
 
 namespace openstudio{
 

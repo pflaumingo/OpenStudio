@@ -20,14 +20,23 @@
 #ifndef ANALYSIS_UNIFORMDISTRIBUTION_HPP
 #define ANALYSIS_UNIFORMDISTRIBUTION_HPP
 
+#include <memory>
+
 #include "AnalysisAPI.hpp"
 #include "UncertaintyDescription.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/AnalysisEnums.hpp"
 
 namespace openstudio {
 namespace analysis {
 
 /** UniformDistribution is an UncertaintyDescription that can apply aleatory uncertainty to a
  *  continuous variable. */
+namespace detail {
+class UncertaintyDescription_Impl;
+}  // namespace detail
+
 class ANALYSIS_API UniformDistribution : public UncertaintyDescription {
  public:
   /** @name Constructors and Destructors */

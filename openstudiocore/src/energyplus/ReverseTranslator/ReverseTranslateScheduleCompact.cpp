@@ -17,17 +17,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
+#include <boost/none.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Schedule_Compact_FieldEnums.hxx>
+#include <utilities/idd/Schedule_Compact_FieldEnums.hxx>
 
 #include "../../model/ScheduleCompact.hpp"
-#include "../../model/ScheduleCompact_Impl.hpp"
-
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-
-#include <utilities/idd/Schedule_Compact_FieldEnums.hxx>
-#include <utilities/idd/OS_Schedule_Compact_FieldEnums.hxx>
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/EnumBase.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

@@ -17,30 +17,38 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OtherEquipment.hpp"
-#include "OtherEquipment_Impl.hpp"
-
-#include "OtherEquipmentDefinition.hpp"
-#include "OtherEquipmentDefinition_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "SpaceType.hpp"
-#include "SpaceType_Impl.hpp"
-#include "DefaultScheduleSet.hpp"
-#include "DefaultScheduleSet_Impl.hpp"
-#include "LifeCycleCost.hpp"
-
-#include <utilities/idd/OS_OtherEquipment_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_OtherEquipment_FieldEnums.hxx>
+#include <algorithm>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "DefaultScheduleSet.hpp"
+#include "LifeCycleCost.hpp"
+#include "OtherEquipment.hpp"
+#include "OtherEquipmentDefinition.hpp"
+#include "OtherEquipment_Impl.hpp"
+#include "Schedule.hpp"
+#include "Space.hpp"
+#include "SpaceType.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/SpaceLoadDefinition.hpp"
+#include "model/SpaceLoadInstance.hpp"
+#include "model/SpaceLoadInstance_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   OtherEquipment_Impl::OtherEquipment_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : SpaceLoadInstance_Impl(idfObject,model,keepHandle)

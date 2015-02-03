@@ -17,17 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "DesignOfExperimentsRecord.hpp"
-#include "DesignOfExperimentsRecord_Impl.hpp"
-#include "AnalysisRecord.hpp"
-#include "JoinRecord.hpp"
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
 #include "../analysis/DesignOfExperiments.hpp"
-#include "../analysis/DesignOfExperiments_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Optional.hpp"
-#include "../utilities/data/Attribute.hpp"
+#include "AnalysisRecord.hpp"
+#include "DesignOfExperimentsRecord.hpp"
+#include "DesignOfExperimentsRecord_Impl.hpp"
+#include "JoinRecord.hpp"
+#include "project/../analysis/Algorithm.hpp"
+#include "project/../analysis/DesignOfExperimentsOptions.hpp"
+#include "project/../analysis/OpenStudioAlgorithm.hpp"
+#include "project/../utilities/core/EnumBase.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/OpenStudioAlgorithmRecord.hpp"
+#include "project/OpenStudioAlgorithmRecord_Impl.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

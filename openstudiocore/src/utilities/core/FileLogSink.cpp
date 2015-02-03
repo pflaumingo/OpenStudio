@@ -17,13 +17,18 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "FileLogSink.hpp"
-#include "FileLogSink_Impl.hpp"
+#include <boost/filesystem/fstream.hpp>
+#include <boost/smart_ptr/shared_ptr.hpp>
+#include <qreadwritelock.h>
+#include <istream>
+#include <string>
 
 #include "Assert.hpp"
-
-#include <QReadWriteLock>
-#include <QWriteLocker>
+#include "FileLogSink.hpp"
+#include "FileLogSink_Impl.hpp"
+#include "utilities/core/LogMessage.hpp"
+#include "utilities/core/LogSink.hpp"
+#include "utilities/core/Path.hpp"
 
 namespace openstudio{
 

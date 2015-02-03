@@ -20,12 +20,45 @@
 #ifndef RUNMANAGER_LIB_RUBYJOBUTILS_HPP
 #define RUNMANAGER_LIB_RUBYJOBUTILS_HPP
 
+#include <boost/filesystem/path.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <map>
+#include <ostream>
+#include <stdexcept>
+#include <string>
+#include <tuple>
+#include <utility>
+#include <vector>
+
+#include "../../ruleset/OSArgument.hpp"
 #include "RunManagerAPI.hpp"
 #include "Workflow.hpp"
-#include "../../ruleset/OSArgument.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Enum.hpp"
+#include "runmanager/lib/../../utilities/time/../core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Logger.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/WorkItem.hpp"
 
 namespace openstudio {
   class BCLMeasure;
+namespace runmanager {
+class Workflow;
+}  // namespace runmanager
 
 namespace runmanager {
   class RunManager;

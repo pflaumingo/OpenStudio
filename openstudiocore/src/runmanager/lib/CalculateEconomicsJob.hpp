@@ -21,15 +21,30 @@
 #define RUNMANAGER_LIB_CALCULATEECONOMICSJOB_HPP
 
 #include <boost/filesystem.hpp>
-#include <string>
-#include "../../utilities/core/Logger.hpp"
-#include "Job_Impl.hpp"
-#include "JobParam.hpp"
-#include "JobFactory.hpp"
-
-#include <QFileSystemWatcher>
-#include <QFileInfo>
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
 #include <QDateTime>
+#include <QFileInfo>
+#include <QFileSystemWatcher>
+#include <memory>
+#include <string>
+
+#include "../../utilities/core/Logger.hpp"
+#include "JobFactory.hpp"
+#include "JobParam.hpp"
+#include "Job_Impl.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+
+class QDateTime;
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

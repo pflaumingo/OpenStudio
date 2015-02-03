@@ -17,11 +17,15 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/optional/optional.hpp>
+#include <ostream>
 #include <vector>
+
 #include "../../utilities/data/Attribute.hpp"
 #include "../../utilities/sql/SqlFile.hpp"
-
 #include "PostProcessReporting.hpp"
+#include "runmanager/lib/../../utilities/sql/../data/DataEnums.hpp"
+#include "runmanager/lib/../../utilities/sql/../data/EndUses.hpp"
 
 namespace openstudio {
 namespace runmanager {

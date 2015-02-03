@@ -17,10 +17,23 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SimFile.hpp"
+#include <../utilities/core/Path.hpp>
+#include <../utilities/data/../time/Date.hpp>
+#include <../utilities/data/../time/Time.hpp>
+#include <../utilities/data/TimeSeries.hpp>
+#include <../utilities/data/Vector.hpp>
+#include <ext/alloc_traits.h>
+#include <qfile.h>
+#include <qglobal.h>
+#include <qiodevice.h>
+#include <qlist.h>
+#include <qmap.h>
+#include <qstringlist.h>
+#include <qtextstream.h>
+#include <ostream>
+#include <string>
 
-#include <QFile>
-#include <QStringList>
+#include "SimFile.hpp"
 
 namespace openstudio {
 namespace contam {

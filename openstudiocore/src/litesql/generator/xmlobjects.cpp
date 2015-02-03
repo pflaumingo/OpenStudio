@@ -1,9 +1,14 @@
-#include "xmlobjects.hpp"
-#include "md5.hpp"
-#include "litesql.hpp"
-#include "logger.hpp"
-
+#include <ctype.h>
+#include <ext/alloc_traits.h>
+#include <litesql/except.hpp>
+#include <litesql/split.hpp>
+#include <litesql/string.hpp>
 #include <algorithm>
+#include <functional>
+
+#include "logger.hpp"
+#include "md5.hpp"
+#include "xmlobjects.hpp"
 
 namespace std {
     template <>

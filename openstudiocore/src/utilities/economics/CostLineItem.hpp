@@ -22,6 +22,7 @@
 
 #include <string>
 #include <vector>
+
 #include "../UtilitiesAPI.hpp"
 
 namespace openstudio{

@@ -9,17 +9,17 @@
 
 // vim: expandtab
 
-#include <math.h>
-#include <qpainter.h>
-#include <qpixmap.h>
 #include <qevent.h>
-#include "qwt_math.h"
-#include "qwt_scale_draw.h"
-#include "qwt_paint_buffer.h"
-#include "qwt_painter.h"
-#include "qwt_dial_needle.h"
-#include "qwt_compass_rose.h"
+#include <qnamespace.h>
+#include <qstring.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_dial.h"
 #include "qwt_compass.h"
+#include "qwt_compass_rose.h"
+
+class QPainter;
+class QPoint;
+class QWidget;
 
 class QwtCompass::PrivateData
 {

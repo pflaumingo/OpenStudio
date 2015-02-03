@@ -9,11 +9,17 @@
 
 #include <math.h>
 #include <qapplication.h>
+#include <qglobal.h>
 #include <qpainter.h>
-#include "qwt_math.h"
-#include "qwt_painter.h"
-#include "qwt_polygon.h"
+#include <qpen.h>
+#include <qpoint.h>
+#include <qrect.h>
+#include <qvariant.h>
+#include <qvector.h>
+
 #include "qwt_dial_needle.h"
+#include "qwt_math.h"
+#include "qwt_polygon.h"
 
 #if QT_VERSION < 0x040000
 typedef QColorGroup QwtPalette;

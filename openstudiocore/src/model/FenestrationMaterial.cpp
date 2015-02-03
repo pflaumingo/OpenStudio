@@ -17,15 +17,28 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include "../utilities/core/Assert.hpp"
 #include "FenestrationMaterial.hpp"
 #include "FenestrationMaterial_Impl.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/Material.hpp"
+#include "model/Material_Impl.hpp"
 
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   FenestrationMaterial_Impl::FenestrationMaterial_Impl(const IdfObject& idfObject,
                                                        Model_Impl* model, 

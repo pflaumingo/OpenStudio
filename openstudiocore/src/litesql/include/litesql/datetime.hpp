@@ -6,9 +6,14 @@
 
 #ifndef litesql_datetime_hpp
 #define litesql_datetime_hpp
+#include <time.h>
+#include <iosfwd>
+#include <string>
+
 /** \file datetime.hpp
     constains Date, Time and DateTime - classes */
 #include "field.hpp"
+
 namespace litesql {
 using namespace std;
 /* holds struct tm */

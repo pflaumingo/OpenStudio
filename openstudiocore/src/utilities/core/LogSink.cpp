@@ -17,22 +17,35 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/log/attributes/fallback_policy.hpp>
+#include <boost/log/detail/attr_output_impl.hpp>
+#include <boost/log/detail/locking_ptr.hpp>
+#include <boost/log/expressions/attr.hpp>
+#include <boost/log/expressions/formatters/stream.hpp>
+#include <boost/log/expressions/keyword_fwd.hpp>
+#include <boost/log/expressions/message.hpp>
+#include <boost/log/expressions/predicates/matches.hpp>
+#include <boost/log/keywords/severity.hpp>
+#include <boost/log/sinks/sink.hpp>
+#include <boost/log/sinks/sync_frontend.hpp>
+#include <boost/log/utility/value_ref.hpp>
+#include <boost/phoenix/core/actor.hpp>
+#include <boost/phoenix/core/detail/preprocessed/actor_operator_10.hpp>
+#include <boost/proto/detail/preprocessed/expr_variadic.hpp>
+#include <boost/proto/extends.hpp>
+#include <boost/proto/operators.hpp>
+#include <boost/proto/transform/impl.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <qreadwritelock.h>
+
 #include "LogSink.hpp"
 #include "LogSink_Impl.hpp"
-
 #include "Logger.hpp"
-
-#include <boost/log/common.hpp>
-#include <boost/log/support/regex.hpp>
-#include <boost/log/expressions.hpp>
-#include <boost/log/expressions/keyword.hpp>
-#include <boost/log/expressions/attr_fwd.hpp>
-#include <boost/log/expressions/attr.hpp>
-#include <boost/log/attributes/value_extraction.hpp>
-
-#include <QReadWriteLock>
-#include <QWriteLocker>
-#include <QThread>
+#include "utilities/core/LogMessage.hpp"
+#include "utilities/core/Singleton.hpp"
 
 namespace sinks = boost::log::sinks;
 namespace keywords = boost::log::keywords;

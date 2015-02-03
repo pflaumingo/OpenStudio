@@ -20,10 +20,12 @@
 #ifndef UTILITIES_DATA_VECTOR_HPP
 #define UTILITIES_DATA_VECTOR_HPP
 
-#include "../UtilitiesAPI.hpp"
-
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/vector.hpp>
+#include <functional>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
 
 namespace openstudio {
 

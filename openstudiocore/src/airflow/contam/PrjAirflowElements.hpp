@@ -20,37 +20,42 @@
 #ifndef AIRFLOW_CONTAM_PRJAIRFLOWELEMENTS_HPP
 #define AIRFLOW_CONTAM_PRJAIRFLOWELEMENTS_HPP
 
-#include "PrjDefines.hpp"
-#include "PrjSubobjects.hpp"
+#include <memory>
 #include <string>
 #include <vector>
 
 #include "../AirflowAPI.hpp"
+#include "PrjDefines.hpp"
+#include "PrjSubobjects.hpp"
 
 namespace openstudio {
 namespace contam {
 
 class Reader;
+class AirflowSubelementData;
+class FanDataPoint;
+class XyDataPoint;
+
 namespace detail {
-  class PlrOrfImpl;
-  class PlrLeakImpl;
+  class AfeCsfImpl;
+  class AfeDorImpl;
+  class AfeFanImpl;
+  class AfeFlowImpl;
+  class AfeSupImpl;
+  class DrPl2Impl;
+  class PlrBackDamperImpl;
   class PlrConnImpl;
+  class PlrCrackImpl;
   class PlrGeneralImpl;
+  class PlrLeakImpl;
+  class PlrOrfImpl;
+  class PlrShaftImpl;
+  class PlrStairImpl;
   class PlrTest1Impl;
   class PlrTest2Impl;
-  class PlrCrackImpl;
-  class PlrStairImpl;
-  class PlrShaftImpl;
-  class PlrBackDamperImpl;
-  class QfrQuadraticImpl;
   class QfrCrackImpl;
+  class QfrQuadraticImpl;
   class QfrTest2Impl;
-  class AfeDorImpl;
-  class DrPl2Impl;
-  class AfeFlowImpl;
-  class AfeFanImpl;
-  class AfeCsfImpl;
-  class AfeSupImpl;
 }
 
 /** The AirflowElement object is the base class of all airflow elements. */

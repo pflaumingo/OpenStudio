@@ -20,14 +20,29 @@
 #ifndef MODEL_HOTWATEREQUIPMENT_HPP
 #define MODEL_HOTWATEREQUIPMENT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceLoadInstance.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/HotWaterEquipmentDefinition.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
-class Schedule;
 class HotWaterEquipmentDefinition;
+class Schedule;
 
 namespace detail {
 

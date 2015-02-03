@@ -20,12 +20,27 @@
 #ifndef MODEL_SCHEDULERULE_HPP
 #define MODEL_SCHEDULERULE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/ScheduleDay.hpp"
+#include "model/ScheduleRuleset.hpp"
 
 namespace openstudio {
 
 class Date;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
 
 namespace model {
 

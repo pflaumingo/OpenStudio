@@ -20,10 +20,21 @@
 #ifndef ENERGYPLUS_REVERSETRANSLATOR_HPP
 #define ENERGYPLUS_REVERSETRANSLATOR_HPP
 
-#include "EnergyPlusAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <map>
+#include <vector>
+
 #include "../model/Model.hpp"
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/core/StringStreamLogSink.hpp"
+#include "EnergyPlusAPI.hpp"
+#include "energyplus/../model/../utilities/core/Path.hpp"
+#include "energyplus/../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/../model/../utilities/idf/Handle.hpp"
+#include "energyplus/../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/../model/../utilities/idf/Workspace.hpp"
+#include "energyplus/../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/../model/ModelObject.hpp"
 
 namespace openstudio {
 

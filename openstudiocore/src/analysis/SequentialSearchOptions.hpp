@@ -20,8 +20,18 @@
 #ifndef ANALYSIS_SEQUENTIALSEARCHOPTIONS_HPP
 #define ANALYSIS_SEQUENTIALSEARCHOPTIONS_HPP
 
-#include "AnalysisAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "AlgorithmOptions.hpp"
+#include "AnalysisAPI.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+
+namespace openstudio {
+class Attribute;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

@@ -20,10 +20,27 @@
 #ifndef MODEL_TABLEMULTIVARIABLELOOKUP_HPP
 #define MODEL_TABLEMULTIVARIABLELOOKUP_HPP
 
-#include "ModelAPI.hpp"
-#include "Curve.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
 
 #include "../utilities/math/FloatCompare.hpp"
+#include "Curve.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 

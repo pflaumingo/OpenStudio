@@ -17,23 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_AvailabilityManager_Scheduled_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
 #include "AvailabilityManagerScheduled.hpp"
 #include "AvailabilityManagerScheduled_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleConstant.hpp"
-#include "ScheduleConstant_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
 #include "Model.hpp"
-#include <utilities/idd/OS_AvailabilityManager_Scheduled_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Assert.hpp"
+#include "Schedule.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   AvailabilityManagerScheduled_Impl::AvailabilityManagerScheduled_Impl(const IdfObject& idfObject,
                                                                        Model_Impl* model,

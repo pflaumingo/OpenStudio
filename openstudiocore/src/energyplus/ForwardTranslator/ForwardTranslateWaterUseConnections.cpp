@@ -17,20 +17,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/WaterUseConnections.hpp"
-#include "../../model/WaterUseConnections_Impl.hpp"
-#include "../../model/WaterUseEquipment.hpp"
-#include "../../model/WaterUseEquipment_Impl.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../utilities/core/Assert.hpp"
-#include <utilities/idd/WaterUse_Connections_FieldEnums.hxx>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/WaterUse_Connections_FieldEnums.hxx>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../../model/Node.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../model/WaterUseConnections.hpp"
+#include "../../model/WaterUseEquipment.hpp"
 #include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

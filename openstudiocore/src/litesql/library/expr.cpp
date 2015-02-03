@@ -7,7 +7,10 @@
 
 #include "litesql/expr.hpp"
 #include "litesql/selectquery.hpp"
+
 namespace litesql {
+
+class FieldType;
 
 const char* Expr::True ="True";
 

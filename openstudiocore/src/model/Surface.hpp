@@ -20,16 +20,36 @@
 #ifndef MODEL_SURFACE_HPP
 #define MODEL_SURFACE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <iosfwd>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "PlanarSurface.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+class Point3d;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
+class ConstructionBase;
+class ShadingSurfaceGroup;
 class Space;
 class SubSurface;
-class ShadingSurfaceGroup;
-class ConstructionBase;
 
 namespace detail {
 

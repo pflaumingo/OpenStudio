@@ -17,9 +17,18 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/filesystem/operations.hpp>
+#include <qdir.h>
+#include <qstring.h>
+#include <qtemporaryfile.h>
+#include <exception>
+#include <ostream>
+#include <stdexcept>
+#include <string>
+
 #include "TemporaryDirectory.hpp"
-#include <QTemporaryFile>
-#include <QDir>
+#include "utilities/core/Logger.hpp"
+#include "utilities/core/Path.hpp"
 
 namespace openstudio
 {

@@ -17,30 +17,40 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SiteWaterMainsTemperature.hpp"
-#include "SiteWaterMainsTemperature_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Site.hpp"
-#include "Site_Impl.hpp"
-
-#include "../utilities/idf/ValidityReport.hpp"
-
-#include "../utilities/idd/IddKey.hpp"
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Site_WaterMainsTemperature_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Site_WaterMainsTemperature_FieldEnums.hxx>
+#include <algorithm>
 
 #include "../utilities/core/Assert.hpp"
+#include "../utilities/idd/IddKey.hpp"
+#include "../utilities/idf/ValidityReport.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "Site.hpp"
+#include "SiteWaterMainsTemperature.hpp"
+#include "SiteWaterMainsTemperature_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddField.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/DataError.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/ValidityEnums.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   SiteWaterMainsTemperature_Impl::SiteWaterMainsTemperature_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ModelObject_Impl(idfObject,model,keepHandle)

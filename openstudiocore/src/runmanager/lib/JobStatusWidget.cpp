@@ -17,15 +17,45 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "JobStatusWidget.hpp"
-#include "Job.hpp"
-#include "RunManager.hpp"
+#include <assert.h>
+#include <boost/filesystem/operations.hpp>
+#include <boost/none.hpp>
+#include <qaction.h>
+#include <qboxlayout.h>
+#include <qbrush.h>
+#include <qdesktopservices.h>
+#include <qicon.h>
+#include <qitemselectionmodel.h>
+#include <qlabel.h>
+#include <qlineedit.h>
+#include <qlist.h>
+#include <qmessagebox.h>
+#include <qnamespace.h>
+#include <qpixmap.h>
+#include <qplaintextedit.h>
+#include <qstring.h>
+#include <qtextcursor.h>
+#include <qtreeview.h>
+#include <qurl.h>
+#include <algorithm>
+#include <exception>
+#include <functional>
+#include <map>
+#include <ostream>
+#include <stdexcept>
+#include <typeinfo>
 
 #include "../../utilities/core/Application.hpp"
-
-#include <QDesktopServices>
-#include <QMessageBox>
-#include <QUrl>
+#include "Job.hpp"
+#include "JobStatusWidget.hpp"
+#include "RunManager.hpp"
+#include "runmanager/lib/../../utilities/core/Singleton.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/../../utilities/time/Date.hpp"
+#include "runmanager/lib/../../utilities/time/DateTime.hpp"
+#include "runmanager/lib/../../utilities/time/Time.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "ui_JobStatusWidget.h"
 
 namespace openstudio {
 namespace runmanager {

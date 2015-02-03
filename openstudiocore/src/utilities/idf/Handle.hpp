@@ -20,13 +20,14 @@
 #ifndef UTILITIES_IDF_HANDLE_HPP
 #define UTILITIES_IDF_HANDLE_HPP
 
-#include "../core/UUID.hpp"
-
 #include <boost/optional.hpp>
-
+#include <boost/optional/optional.hpp>
 #include <map>
-#include <vector>
 #include <set>
+#include <vector>
+
+#include "../core/UUID.hpp"
+#include "utilities/idf/../core/../UtilitiesAPI.hpp"
 
 namespace openstudio {
 

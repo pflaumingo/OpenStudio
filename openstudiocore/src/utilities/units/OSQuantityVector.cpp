@@ -17,19 +17,26 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <assert.h>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <cmath>
+#include <functional>
+#include <memory>
+#include <ostream>
+
+#include "../core/Assert.hpp"
+#include "../core/Containers.hpp"
+#include "../data/Vector.hpp"
+#include "IPUnit.hpp"
 #include "OSQuantityVector.hpp"
 #include "Quantity.hpp"
 #include "ScaleFactory.hpp"
 #include "TemperatureUnit.hpp"
-#include "TemperatureUnit_Impl.hpp"
-#include "IPUnit.hpp"
-#include "IPUnit_Impl.hpp"
-
-#include "../math/FloatCompare.hpp"
-#include "../data/Vector.hpp"
-
-#include "../core/Containers.hpp"
-#include "../core/Assert.hpp"
+#include "utilities/units/../core/EnumBase.hpp"
+#include "utilities/units/../core/Singleton.hpp"
+#include "utilities/units/Scale.hpp"
+#include "utilities/units/Unit.hpp"
 
 namespace openstudio {
 

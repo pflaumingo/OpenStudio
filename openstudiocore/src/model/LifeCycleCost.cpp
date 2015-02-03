@@ -17,50 +17,50 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "LifeCycleCost.hpp"
-#include "LifeCycleCost_Impl.hpp"
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-#include "LightsDefinition.hpp"
-#include "LightsDefinition_Impl.hpp"
-#include "LuminaireDefinition.hpp"
-#include "LuminaireDefinition_Impl.hpp"
-#include "ElectricEquipmentDefinition.hpp"
-#include "ElectricEquipmentDefinition_Impl.hpp"
-#include "GasEquipmentDefinition.hpp"
-#include "GasEquipmentDefinition_Impl.hpp"
-#include "HotWaterEquipmentDefinition.hpp"
-#include "HotWaterEquipmentDefinition_Impl.hpp"
-#include "SteamEquipmentDefinition.hpp"
-#include "SteamEquipmentDefinition_Impl.hpp"
-#include "Building.hpp"
-#include "Building_Impl.hpp"
-#include "Space.hpp"
-#include "Space_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "PlantLoop.hpp"
-#include "PlantLoop_Impl.hpp"
-#include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "ZoneHVACComponent.hpp"
-#include "ZoneHVACComponent_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_LifeCycleCost_FieldEnums.hxx>
+#include <boost/none.hpp>
 #include <utilities/idd/IddEnums.hxx>
-
-#include <boost/algorithm/string.hpp>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_LifeCycleCost_FieldEnums.hxx>
+#include <algorithm>
+#include <exception>
+#include <typeinfo>
 
 #include "../utilities/core/Assert.hpp"
+#include "AirLoopHVAC.hpp"
+#include "Building.hpp"
+#include "ConstructionBase.hpp"
+#include "ElectricEquipmentDefinition.hpp"
+#include "GasEquipmentDefinition.hpp"
+#include "HVACComponent.hpp"
+#include "HotWaterEquipmentDefinition.hpp"
+#include "LifeCycleCost.hpp"
+#include "LifeCycleCost_Impl.hpp"
+#include "LightsDefinition.hpp"
+#include "LuminaireDefinition.hpp"
+#include "Model.hpp"
+#include "PlantLoop.hpp"
+#include "Space.hpp"
+#include "SteamEquipmentDefinition.hpp"
+#include "ThermalZone.hpp"
+#include "ZoneHVACComponent.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Exception.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/SpaceLoadDefinition.hpp"
 
-#include <typeinfo>
-#include <iostream>
+namespace openstudio {
+namespace model {
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using namespace std;
 

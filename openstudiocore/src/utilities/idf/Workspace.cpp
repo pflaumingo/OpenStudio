@@ -17,34 +17,54 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Workspace.hpp"
-#include "Workspace_Impl.hpp"
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <qurl.h>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <algorithm>
+#include <functional>
+#include <list>
+#include <map>
+#include <sstream>
 
-#include "WorkspaceObject_Impl.hpp"
+#include "../core/Assert.hpp"
+#include "../core/Compare.hpp"
+#include "../core/Containers.hpp"
+#include "../core/StringHelpers.hpp"
+#include "../core/URLHelpers.hpp"
+#include "../plot/ProgressBar.hpp"
 #include "IdfFile.hpp"
 #include "URLSearchPath.hpp"
 #include "ValidityReport.hpp"
-
-#include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
-
-#include "../plot/ProgressBar.hpp"
-
-#include "../core/Assert.hpp"
-#include "../core/Containers.hpp"
-#include "../core/URLHelpers.hpp"
-#include "../core/Compare.hpp"
-#include "../core/StringHelpers.hpp"
-
-#include <boost/algorithm/string.hpp>
-#include <boost/regex.hpp>
-#include <boost/lexical_cast.hpp>
-
-#include <sstream>
-#include <iostream>
-#include <deque>
-#include <map>
-#include <list>
+#include "Workspace.hpp"
+#include "WorkspaceObject_Impl.hpp"
+#include "Workspace_Impl.hpp"
+#include "utilities/idd/../core/Optional.hpp"
+#include "utilities/idd/IddField.hpp"
+#include "utilities/idd/IddFieldProperties.hpp"
+#include "utilities/idd/IddFile.hpp"
+#include "utilities/idd/IddFileAndFactoryWrapper.hpp"
+#include "utilities/idd/IddObject.hpp"
+#include "utilities/idd/IddObjectProperties.hpp"
+#include "utilities/idf/../core/EnumBase.hpp"
+#include "utilities/idf/../core/Logger.hpp"
+#include "utilities/idf/../core/Path.hpp"
+#include "utilities/idf/../core/String.hpp"
+#include "utilities/idf/../core/UUID.hpp"
+#include "utilities/idf/../idd/IddEnums.hpp"
+#include "utilities/idf/DataError.hpp"
+#include "utilities/idf/Handle.hpp"
+#include "utilities/idf/IdfObject.hpp"
+#include "utilities/idf/ObjectPointer.hpp"
+#include "utilities/idf/ValidityEnums.hpp"
+#include "utilities/idf/WorkspaceObject.hpp"
+#include "utilities/idf/WorkspaceObjectOrder.hpp"
 
 using namespace std;
 using openstudio::istringEqual; // used for all name comparisons

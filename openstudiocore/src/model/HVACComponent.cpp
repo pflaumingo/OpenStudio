@@ -17,27 +17,37 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "ZoneHVACComponent.hpp"
-#include "ZoneHVACComponent_Impl.hpp"
-#include "StraightComponent.hpp"
-#include "StraightComponent_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "PlantLoop.hpp"
-#include "PlantLoop_Impl.hpp"
-#include "AirLoopHVACOutdoorAirSystem.hpp"
-#include "AirLoopHVACOutdoorAirSystem_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
+#include <boost/none.hpp>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "AirLoopHVAC.hpp"
+#include "AirLoopHVACOutdoorAirSystem.hpp"
+#include "HVACComponent.hpp"
+#include "HVACComponent_Impl.hpp"
+#include "Model.hpp"
+#include "PlantLoop.hpp"
+#include "StraightComponent.hpp"
+#include "ZoneHVACComponent.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/Loop.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   HVACComponent_Impl::HVACComponent_Impl(IddObjectType type, Model_Impl* model)
     : ParentObject_Impl(type,model)

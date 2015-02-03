@@ -20,13 +20,27 @@
 #ifndef MODEL_DAYLIGHTINGCONTROL_HPP
 #define MODEL_DAYLIGHTINGCONTROL_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceItem.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
 
 namespace openstudio {
 
 class Point3d;
 class Transformation;
+class IdfObject;
+namespace model {
+class Model;
+}  // namespace model
 
 namespace model {
 

@@ -17,8 +17,12 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <qstring.h>
+
 #include "PrjSubobjects.hpp"
 #include "PrjSubobjectsImpl.hpp"
+#include "airflow/contam/PrjDefines.hpp"
+#include "airflow/contam/PrjReader.hpp"
 
 namespace openstudio {
 namespace contam {

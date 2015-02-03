@@ -20,14 +20,17 @@
 #ifndef UTILITIES_CORE_UUID_HPP
 #define UTILITIES_CORE_UUID_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include <QUuid>
-#include <QMetaType>
 #include <boost/optional.hpp>
-#include <vector>
+#include <boost/optional/optional.hpp>
+#include <qmetatype.h>
+#include <quuid.h>
+#include <QMetaType>
+#include <QUuid>
 #include <ostream>
 #include <string>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
 
 namespace openstudio {
 

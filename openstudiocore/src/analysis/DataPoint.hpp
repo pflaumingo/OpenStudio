@@ -20,22 +20,49 @@
 #ifndef ANALYSIS_DATAPOINT_HPP
 #define ANALYSIS_DATAPOINT_HPP
 
-#include "AnalysisAPI.hpp"
-#include "AnalysisObject.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <qvariant.h>
+#include <QDomDocument>
+#include <QVariant>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Enum.hpp"
 #include "../utilities/core/Path.hpp"
-
-#include <QVariant>
-#include <QDomDocument>
+#include "AnalysisAPI.hpp"
+#include "AnalysisObject.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
 
 namespace openstudio {
 
-class FileReference;
-class Workspace;
-class SqlFile;
 class Attribute;
+class FileReference;
+class SqlFile;
 class Tag;
+class Workspace;
+namespace analysis {
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
+}  // namespace analysis
 
 namespace runmanager {
   class Job;
@@ -49,13 +76,13 @@ namespace model {
 namespace analysis {
 
 class Analysis;
-class Problem;
 class DataPoint;
+class Problem;
 
 namespace detail {
+  class Analysis_Impl;
   class DataPoint_Impl;
   class Problem_Impl;
-  class Analysis_Impl;
 
   ANALYSIS_API QVariant toTopLevelVariant(const std::vector<DataPoint>& dataPoints);
 } // detail

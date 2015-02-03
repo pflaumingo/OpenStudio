@@ -17,41 +17,48 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "AirConditionerVariableRefrigerantFlow.hpp"
-#include "AirConditionerVariableRefrigerantFlow_Impl.hpp"
-#include "ZoneHVACTerminalUnitVariableRefrigerantFlow.hpp"
-#include "ZoneHVACTerminalUnitVariableRefrigerantFlow_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Curve.hpp"
-#include "Curve_Impl.hpp"
-#include "CurveBiquadratic.hpp"
-#include "CurveBiquadratic_Impl.hpp"
-#include "CurveCubic.hpp"
-#include "CurveCubic_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "Connection.hpp"
-#include "Connection_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "ModelObjectList.hpp"
-#include "ModelObjectList_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_AirConditioner_VariableRefrigerantFlow_FieldEnums.hxx>
+#include <qglobal.h>
 #include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_AirConditioner_VariableRefrigerantFlow_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
+#include "AirConditionerVariableRefrigerantFlow.hpp"
+#include "AirConditionerVariableRefrigerantFlow_Impl.hpp"
+#include "Curve.hpp"
+#include "CurveBiquadratic.hpp"
+#include "CurveCubic.hpp"
+#include "Model.hpp"
+#include "ModelObjectList.hpp"
+#include "Schedule.hpp"
+#include "ThermalZone.hpp"
+#include "ZoneHVACTerminalUnitVariableRefrigerantFlow.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+class Node;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   AirConditionerVariableRefrigerantFlow_Impl::AirConditionerVariableRefrigerantFlow_Impl(const IdfObject& idfObject,
                                                                                          Model_Impl* model,

@@ -10,9 +10,22 @@
 #ifndef QWT_COMPASS_H
 #define QWT_COMPASS_H 1
 
-#include <qstring.h>
+#include <qglobal.h>
 #include <qmap.h>
+#include <qobjectdefs.h>
+#include <qpalette.h>
+#include <qstring.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_global.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
 #include "qwt_dial.h"
+
+class QKeyEvent;
+class QPainter;
+class QPoint;
+class QString;
+class QWidget;
 
 #if defined(QWT_TEMPLATEDLL)
 
@@ -79,6 +92,7 @@ private:
     void initCompass();
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

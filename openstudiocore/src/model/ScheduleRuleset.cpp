@@ -17,31 +17,41 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ScheduleRuleset.hpp"
-#include "ScheduleRuleset_Impl.hpp"
-#include "ScheduleRule.hpp"
-#include "ScheduleRule_Impl.hpp"
-#include "ScheduleDay.hpp"
-#include "ScheduleDay_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeLimits_Impl.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include "YearDescription.hpp"
-#include "YearDescription_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "ModelExtensibleGroup.hpp"
-
-#include <utilities/idd/OS_Schedule_Ruleset_FieldEnums.hxx>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Schedule_Ruleset_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/time/Date.hpp"
+#include "Model.hpp"
+#include "ScheduleDay.hpp"
+#include "ScheduleRule.hpp"
+#include "ScheduleRuleset.hpp"
+#include "ScheduleRuleset_Impl.hpp"
+#include "ScheduleTypeLimits.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/time/Time.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/Schedule.hpp"
+#include "model/Schedule_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ScheduleRuleset_Impl::ScheduleRuleset_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : Schedule_Impl(idfObject,model,keepHandle)

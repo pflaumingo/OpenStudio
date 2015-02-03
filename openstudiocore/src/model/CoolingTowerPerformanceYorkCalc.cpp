@@ -17,17 +17,32 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_CoolingTowerPerformance_YorkCalc_FieldEnums.hxx>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
 #include "CoolingTowerPerformanceYorkCalc.hpp"
 #include "CoolingTowerPerformanceYorkCalc_Impl.hpp"
-#include <utilities/idd/OS_CoolingTowerPerformance_YorkCalc_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   CoolingTowerPerformanceYorkCalc_Impl::CoolingTowerPerformanceYorkCalc_Impl(const IdfObject& idfObject,
                                                                              Model_Impl* model,

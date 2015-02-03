@@ -8,20 +8,30 @@
  *****************************************************************************/
 
 #include <math.h>
+#include <qbrush.h>
+#include <qcolor.h>
+#include <qnamespace.h>
 #include <qpainter.h>
+#include <qpen.h>
+#include <qpoint.h>
+#include <qregion.h>
+#include <qstring.h>
+#include <qwidget.h>
 #if QT_VERSION >= 0x040000
-#include <qbitmap.h>
 #include <qpalette.h>
 #endif
-#include <qpixmap.h>
 #include <qevent.h>
-#include "qwt_math.h"
-#include "qwt_scale_engine.h"
-#include "qwt_scale_map.h"
-#include "qwt_paint_buffer.h"
-#include "qwt_painter.h"
-#include "qwt_dial_needle.h"
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_abstract_scale_draw.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_abstract_slider.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_range.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_round_scale_draw.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_div.h"
 #include "qwt_dial.h"
+#include "qwt_dial_needle.h"
+#include "qwt_math.h"
+#include "qwt_painter.h"
+#include "qwt_scale_engine.h"
 
 class QwtDial::PrivateData
 {

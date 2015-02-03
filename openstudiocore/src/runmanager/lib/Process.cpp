@@ -18,9 +18,12 @@
  **********************************************************************/
 
 #include "Process.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
 
 namespace openstudio {
 namespace runmanager {
+
+struct FileInfo;
 
   Process::Process()
     : m_status(AdvancedStatusEnum::Idle), m_stopped(false)

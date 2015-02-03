@@ -17,22 +17,35 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "WorkflowStep.hpp"
-#include "WorkflowStep_Impl.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
+#include <string>
 
+#include "../runmanager/lib/JSON.hpp"
+#include "../runmanager/lib/RubyJobUtils.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/FileReference.hpp"
+#include "../utilities/core/PathHelpers.hpp"
 #include "InputVariable_Impl.hpp"
 #include "MeasureGroup.hpp"
 #include "MeasureGroup_Impl.hpp"
 #include "Problem.hpp"
-#include "Problem_Impl.hpp"
+#include "WorkflowStep.hpp"
+#include "WorkflowStep_Impl.hpp"
+#include "analysis/../runmanager/lib/FileInfo.hpp"
+#include "analysis/../runmanager/lib/JobType.hpp"
+#include "analysis/../runmanager/lib/WorkItem.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/InputVariable.hpp"
 
-#include "../runmanager/lib/JSON.hpp"
-#include "../runmanager/lib/RubyJobUtils.hpp"
-
-#include "../utilities/core/Assert.hpp"
-
-#include "../utilities/core/FileReference.hpp"
-#include "../utilities/core/PathHelpers.hpp"
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

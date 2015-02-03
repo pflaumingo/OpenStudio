@@ -20,21 +20,54 @@
 #ifndef RUNMANAGER_LIB_JOB_IMPL_HPP
 #define RUNMANAGER_LIB_JOB_IMPL_HPP
 
-#include <QObject>
-#include <QThread>
+#include <boost/optional/optional.hpp>
+#include <qdatetime.h>
+#include <qfileinfo.h>
+#include <qmetatype.h>
+#include <qobjectdefs.h>
+#include <qprocess.h>
+#include <qreadwritelock.h>
+#include <qstring.h>
+#include <qthread.h>
+#include <stddef.h>
+#include <QDateTime>
 #include <QFileInfo>
+#include <QObject>
+#include <QReadWriteLock>
+#include <QThread>
+#include <map>
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "../../utilities/core/Checksum.hpp"
-#include "../../utilities/core/UUID.hpp"
 #include "../../utilities/core/String.hpp"
+#include "../../utilities/core/UUID.hpp"
 #include "FileInfo.hpp"
 #include "JobErrors.hpp"
 #include "JobParam.hpp"
+#include "JobState.hpp"
 #include "JobType.hpp"
 #include "ProcessCreator.hpp"
 #include "TreeStatus.hpp"
-#include "JobState.hpp"
-#include <QReadWriteLock>
-#include <QDateTime>
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Logger.hpp"
+#include "runmanager/lib/../../utilities/time/DateTime.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+
+namespace boost {
+namespace posix_time {
+class ptime;
+}  // namespace posix_time
+}  // namespace boost
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+}  // namespace runmanager
+}  // namespace openstudio
 
 Q_DECLARE_METATYPE(QProcess::ExitStatus);
 Q_DECLARE_METATYPE(QProcess::ProcessError);

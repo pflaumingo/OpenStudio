@@ -11,9 +11,11 @@
 #define QWT_MATH_H
 
 #include <math.h>
+#include <qglobal.h>
 #include <qpoint.h>
-#include "qwt_global.h"
+
 #include "qwt_double_rect.h"
+#include "qwt_global.h"
 
 #if QT_VERSION < 0x040000
 

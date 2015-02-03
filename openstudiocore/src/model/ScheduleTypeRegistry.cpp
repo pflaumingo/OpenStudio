@@ -17,17 +17,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ScheduleTypeRegistry.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeLimits_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Model.hpp"
-
-#include "../utilities/units/Quantity.hpp"
-#include "../utilities/units/OSOptionalQuantity.hpp"
+#include <algorithm>
+#include <memory>
+#include <ostream>
+#include <utility>
 
 #include "../utilities/core/Containers.hpp"
+#include "../utilities/units/OSOptionalQuantity.hpp"
+#include "../utilities/units/Quantity.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "ScheduleTypeLimits.hpp"
+#include "ScheduleTypeRegistry.hpp"
+#include "model/../utilities/core/Logger.hpp"
+#include "model/../utilities/core/Singleton.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/units/Unit.hpp"
 
 namespace openstudio {
 namespace model {

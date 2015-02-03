@@ -11,12 +11,21 @@
 #define QWT_PLOT_SPECTROGRAM_H
 
 #include <qglobal.h>
+#include <qimage.h>
+#include <qpen.h>
+#include <qsize.h>
+#include <qstring.h>
 
-#include "qwt_valuelist.h" 
-#include "qwt_raster_data.h" 
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_global.h"
 #include "qwt_plot_rasteritem.h" 
+#include "qwt_raster_data.h" 
+#include "qwt_valuelist.h" 
 
+class QPainter;
+class QRect;
 class QwtColorMap;
+class QwtScaleMap;
 
 /*!
   \brief A plot item, which displays a spectrogram
@@ -103,6 +112,7 @@ protected:
 
 private:
     class PrivateData;
+
     PrivateData *d_data;
 };
 

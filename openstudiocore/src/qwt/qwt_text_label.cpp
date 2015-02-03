@@ -9,11 +9,21 @@
 
 // vim: expandtab
 
-#include <qpainter.h>
 #include <qevent.h>
-#include "qwt_text.h"
+#include <qfont.h>
+#include <qfontmetrics.h>
+#include <qnamespace.h>
+#include <qpainter.h>
+#include <qpalette.h>
+#include <qregion.h>
+#include <qsizepolicy.h>
+#include <qstring.h>
+
 #include "qwt_painter.h"
+#include "qwt_text.h"
 #include "qwt_text_label.h"
+
+class QWidget;
 
 class QwtTextLabel::PrivateData
 {

@@ -17,23 +17,49 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ConfigOptions.hpp"
-#include "ToolFinder.hpp"
+#include <OpenStudio.hxx>
+#include <assert.h>
+#include <boost/filesystem/convenience.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/thread/detail/thread.hpp>
+#include <ext/alloc_traits.h>
+#include <qbytearray.h>
+#include <qcoreapplication.h>
+#include <qdir.h>
+#include <qfile.h>
+#include <qfileinfo.h>
+#include <qglobal.h>
+#include <qicon.h>
+#include <qlist.h>
+#include <qmessagebox.h>
+#include <qpixmap.h>
+#include <qsettings.h>
+#include <qstring.h>
+#include <qstringlist.h>
+#include <qsystemdetection.h>
+#include <qvariant.h>
+#include <stddef.h>
+#include <algorithm>
+#include <exception>
+#include <iterator>
+#include <sstream>
+#include <stdexcept>
+
 #include "../../utilities/core/Application.hpp"
 #include "../../utilities/core/ApplicationPathHelpers.hpp"
-
-#include <OpenStudio.hxx>
-
-#include <QApplication>
-#include <QCoreApplication>
-#include <QDir>
-#include <QIcon>
-#include <QMessageBox>
-#include <QSettings>
-
-#include <boost/filesystem.hpp>
-#include <boost/lexical_cast.hpp>
-#include <boost/thread.hpp>
+#include "ConfigOptions.hpp"
+#include "ToolFinder.hpp"
+#include "runmanager/lib/../../utilities/core/Enum.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/Singleton.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
 #ifdef Q_OS_WIN
 #include <Windows.h>

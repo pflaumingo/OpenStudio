@@ -17,23 +17,25 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "NullMeasureRecord.hpp"
-#include "NullMeasureRecord_Impl.hpp"
-#include "MeasureGroupRecord.hpp"
-#include "MeasureGroupRecord_Impl.hpp"
-#include "JoinRecord.hpp"
-#include "ProjectDatabase.hpp"
+#include <qsqlquery.h>
+#include <exception>
+#include <sstream>
+#include <string>
 
 #include "../analysis/Measure.hpp"
-#include "../analysis/Measure_Impl.hpp"
 #include "../analysis/NullMeasure.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "MeasureGroupRecord.hpp"
+#include "NullMeasureRecord.hpp"
+#include "NullMeasureRecord_Impl.hpp"
+#include "ProjectDatabase.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/MeasureRecord.hpp"
+#include "project/MeasureRecord_Impl.hpp"
+#include "project/Record.hpp"
 
-#include <sstream>
-
-#include <QSqlQuery>
-#include <QSqlError>
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

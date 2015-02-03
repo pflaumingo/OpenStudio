@@ -17,27 +17,39 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "StandardsInformationConstruction.hpp"
-#include "StandardsInformationConstruction_Impl.hpp"
-
-#include "ConstructionBase.hpp"
-#include "ConstructionBase_Impl.hpp"
-#include "LayeredConstruction.hpp"
-#include "LayeredConstruction_Impl.hpp"
-#include "Material.hpp"
-
-#include "Model.hpp"
-
-#include <utilities/idd/OS_StandardsInformation_Construction_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
 #include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_StandardsInformation_Construction_FieldEnums.hxx>
+#include <algorithm>
+#include <iterator>
 
 #include "../utilities/core/Assert.hpp"
+#include "ConstructionBase.hpp"
+#include "LayeredConstruction.hpp"
+#include "Material.hpp"
+#include "Model.hpp"
+#include "StandardsInformationConstruction.hpp"
+#include "StandardsInformationConstruction_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   StandardsInformationConstruction_Impl::StandardsInformationConstruction_Impl(
       const IdfObject& idfObject, Model_Impl* model, bool keepHandle)

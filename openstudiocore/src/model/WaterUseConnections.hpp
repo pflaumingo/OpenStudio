@@ -20,13 +20,26 @@
 #ifndef MODEL_WATERUSECONNECTIONS_HPP
 #define MODEL_WATERUSECONNECTIONS_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "StraightComponent.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
 
 namespace openstudio {
 
-class Quantity;
 class OSOptionalQuantity;
+class Quantity;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
 
 namespace model {
 

@@ -17,23 +17,35 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SetpointManagerOutdoorAirPretreat.hpp"
-#include "SetpointManagerOutdoorAirPretreat_Impl.hpp"
-
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_SetpointManager_OutdoorAirPretreat_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_SetpointManager_OutdoorAirPretreat_FieldEnums.hxx>
 
 #include "../utilities/core/Assert.hpp"
+#include "Node.hpp"
+#include "SetpointManagerOutdoorAirPretreat.hpp"
+#include "SetpointManagerOutdoorAirPretreat_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/SetpointManager.hpp"
+#include "model/SetpointManager_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   SetpointManagerOutdoorAirPretreat_Impl::SetpointManagerOutdoorAirPretreat_Impl(const IdfObject& idfObject,
                                                                                  Model_Impl* model,

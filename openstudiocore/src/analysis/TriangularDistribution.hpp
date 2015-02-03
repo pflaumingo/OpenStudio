@@ -20,14 +20,23 @@
 #ifndef ANALYSIS_TRIANGULARDISTRIBUTION_HPP
 #define ANALYSIS_TRIANGULARDISTRIBUTION_HPP
 
+#include <memory>
+
 #include "AnalysisAPI.hpp"
 #include "UncertaintyDescription.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/AnalysisEnums.hpp"
 
 namespace openstudio {
 namespace analysis {
 
 /** TriangularDistribution is an UncertaintyDescription that can apply aleatory uncertainty to a
  *  continuous variable. */
+namespace detail {
+class UncertaintyDescription_Impl;
+}  // namespace detail
+
 class ANALYSIS_API TriangularDistribution : public UncertaintyDescription {
  public:
   /** @name Constructors and Destructors */

@@ -17,84 +17,66 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_AirLoopHVAC_FieldEnums.hxx>
+#include <utilities/idd/OS_Node_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Compare.hpp"
+#include "../utilities/idd/IddEnums.hpp"
 #include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "AirLoopHVACSupplyPlenum.hpp"
-#include "AirLoopHVACSupplyPlenum_Impl.hpp"
+#include "AirLoopHVACOutdoorAirSystem.hpp"
 #include "AirLoopHVACReturnPlenum.hpp"
-#include "AirLoopHVACReturnPlenum_Impl.hpp"
-#include "AirTerminalSingleDuctSeriesPIUReheat.hpp"
-#include "AirTerminalSingleDuctSeriesPIUReheat_Impl.hpp"
+#include "AirLoopHVACSupplyPlenum.hpp"
+#include "AirLoopHVACZoneMixer.hpp"
+#include "AirLoopHVACZoneSplitter.hpp"
+#include "AirLoopHVAC_Impl.hpp"
 #include "AirTerminalSingleDuctParallelPIUReheat.hpp"
 #include "AirTerminalSingleDuctParallelPIUReheat_Impl.hpp"
-#include "FanConstantVolume.hpp"
-#include "FanConstantVolume_Impl.hpp"
-#include "FanVariableVolume.hpp"
-#include "FanVariableVolume_Impl.hpp"
-#include "FanOnOff.hpp"
-#include "FanOnOff_Impl.hpp"
-#include "SizingSystem.hpp"
-#include "SizingSystem_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "ZoneHVACComponent.hpp"
-#include "ZoneHVACComponent_Impl.hpp"
-#include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "StraightComponent.hpp"
-#include "StraightComponent_Impl.hpp"
-#include "WaterToAirComponent.hpp"
-#include "WaterToAirComponent_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "AirLoopHVACOutdoorAirSystem.hpp"
-#include "AirLoopHVACOutdoorAirSystem_Impl.hpp"
-#include "AirLoopHVACZoneSplitter.hpp"
-#include "AirLoopHVACZoneSplitter_Impl.hpp"
-#include "AirLoopHVACZoneMixer.hpp"
-#include "AirLoopHVACZoneMixer_Impl.hpp"
-#include "AirTerminalSingleDuctConstantVolumeCooledBeam.hpp"
-#include "AirTerminalSingleDuctConstantVolumeCooledBeam_Impl.hpp"
-#include "AirTerminalSingleDuctUncontrolled.hpp"
-#include "AirTerminalSingleDuctUncontrolled_Impl.hpp"
-#include "AirTerminalSingleDuctVAVReheat.hpp"
-#include "AirTerminalSingleDuctVAVReheat_Impl.hpp"
+#include "AirTerminalSingleDuctSeriesPIUReheat.hpp"
+#include "AirTerminalSingleDuctSeriesPIUReheat_Impl.hpp"
 #include "AvailabilityManagerAssignmentList.hpp"
-#include "AvailabilityManagerAssignmentList_Impl.hpp"
-#include "AvailabilityManagerScheduled.hpp"
-#include "AvailabilityManagerScheduled_Impl.hpp"
 #include "AvailabilityManagerNightCycle.hpp"
-#include "AvailabilityManagerNightCycle_Impl.hpp"
-#include "CoilHeatingWater.hpp"
-#include "CoilHeatingWater_Impl.hpp"
+#include "AvailabilityManagerScheduled.hpp"
+#include "HVACComponent.hpp"
 #include "Model.hpp"
-#include "Model_Impl.hpp"
+#include "Node.hpp"
 #include "PortList.hpp"
-#include "PortList_Impl.hpp"
-#include "ScheduleYear.hpp"
-#include "ScheduleYear_Impl.hpp"
 #include "SetpointManagerSingleZoneReheat.hpp"
-#include "SetpointManagerSingleZoneReheat_Impl.hpp"
-#include "../utilities/idd/IddEnums.hpp"
-
-#include <utilities/idd/OS_AirLoopHVAC_FieldEnums.hxx>
-#include <utilities/idd/OS_AirLoopHVAC_ZoneMixer_FieldEnums.hxx>
-#include <utilities/idd/OS_AirLoopHVAC_OutdoorAirSystem_FieldEnums.hxx>
-#include <utilities/idd/OS_Node_FieldEnums.hxx>
-#include <utilities/idd/OS_AirLoopHVAC_ZoneSplitter_FieldEnums.hxx>
-#include <utilities/idd/OS_AirTerminal_SingleDuct_Uncontrolled_FieldEnums.hxx>
-#include <utilities/idd/OS_AvailabilityManagerAssignmentList_FieldEnums.hxx>
-#include <utilities/idd/OS_AirLoopHVAC_ControllerList_FieldEnums.hxx>
-#include <utilities/idd/OS_Controller_OutdoorAir_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "SizingSystem.hpp"
+#include "StraightComponent.hpp"
+#include "ThermalZone.hpp"
+#include "WaterToAirComponent.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/Loop.hpp"
+#include "model/Loop_Impl.hpp"
+#include "model/Mixer.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/PlantLoop.hpp"
+#include "model/SetpointManager.hpp"
+#include "model/Splitter.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   AirLoopHVAC_Impl::AirLoopHVAC_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : Loop_Impl(idfObject, model, keepHandle)

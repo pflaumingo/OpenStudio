@@ -17,16 +17,20 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "IdfExtensibleGroup.hpp"
-#include "IdfObject.hpp"
-#include "IdfObject_Impl.hpp"
-
-#include "../idd/IddObjectProperties.hpp"
-#include "../idd/IddFieldProperties.hpp"
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
 
 #include "../core/Assert.hpp"
-
-#include <boost/lexical_cast.hpp>
+#include "../idd/IddFieldProperties.hpp"
+#include "../idd/IddObjectProperties.hpp"
+#include "IdfExtensibleGroup.hpp"
+#include "IdfObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+#include "utilities/idd/IddObject.hpp"
+#include "utilities/idf/../core/Logger.hpp"
+#include "utilities/idf/../idd/../core/Optional.hpp"
+#include "utilities/idf/../idd/ExtensibleIndex.hpp"
+#include "utilities/idf/../idd/IddField.hpp"
 
 namespace openstudio {
 

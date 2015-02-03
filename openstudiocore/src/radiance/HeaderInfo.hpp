@@ -20,10 +20,12 @@
 #ifndef RADIANCE_HEADERINFO_HPP
 #define RADIANCE_HEADERINFO_HPP
 
-#include "RadianceAPI.hpp"
+#include <string>
 
-#include "../utilities/data/Vector.hpp"
 #include "../utilities/core/Logger.hpp"
+#include "../utilities/data/Vector.hpp"
+#include "RadianceAPI.hpp"
+#include "radiance/../utilities/core/LogMessage.hpp"
 
 
 namespace openstudio{

@@ -20,15 +20,16 @@
 #ifndef RULESET_RUBYUSERSCRIPTINFOGETTER_HPP
 #define RULESET_RUBYUSERSCRIPTINFOGETTER_HPP
 
-#include "RulesetAPI.hpp"
-
-#include "OSArgument.hpp"
-
-#include "../utilities/core/Optional.hpp"
-#include "../utilities/bcl/BCLMeasure.hpp"
-
-#include <vector>
+#include <boost/optional/optional.hpp>
 #include <string>
+#include <vector>
+
+#include "../utilities/bcl/BCLMeasure.hpp"
+#include "../utilities/core/Optional.hpp"
+#include "OSArgument.hpp"
+#include "RulesetAPI.hpp"
+#include "ruleset/../utilities/idf/../core/LogMessage.hpp"
+#include "ruleset/../utilities/idf/../core/Logger.hpp"
 
 namespace openstudio {
 

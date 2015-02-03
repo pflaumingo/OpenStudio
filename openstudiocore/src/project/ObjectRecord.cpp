@@ -17,18 +17,20 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ObjectRecord.hpp"
-#include "ObjectRecord_Impl.hpp"
-#include "ProjectDatabase.hpp"
-#include "ProjectDatabase_Impl.hpp"
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/String.hpp"
 #include "../utilities/time/DateTime.hpp"
-
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QFile>
+#include "ObjectRecord.hpp"
+#include "ObjectRecord_Impl.hpp"
+#include "ProjectDatabase.hpp"
+#include "project/../utilities/core/Path.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/Record.hpp"
+#include "project/Record_Impl.hpp"
 
 namespace openstudio {
 namespace project {

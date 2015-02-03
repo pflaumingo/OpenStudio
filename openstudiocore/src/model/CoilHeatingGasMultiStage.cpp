@@ -17,30 +17,46 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "CoilHeatingGasMultiStage.hpp"
-#include "CoilHeatingGasMultiStage_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "Curve.hpp"
-#include "Curve_Impl.hpp"
-#include "CoilHeatingGasMultiStageStageData.hpp"
-#include "CoilHeatingGasMultiStageStageData_Impl.hpp"
-#include "AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed.hpp"
-#include "AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include <utilities/idd/OS_Coil_Heating_Gas_MultiStage_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
-#include "../utilities/units/Unit.hpp"
+#include <utilities/idd/OS_Coil_Heating_Gas_MultiStage_FieldEnums.hxx>
+#include <algorithm>
+#include <string>
+
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
+#include "AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed.hpp"
+#include "CoilHeatingGasMultiStage.hpp"
+#include "CoilHeatingGasMultiStageStageData.hpp"
+#include "CoilHeatingGasMultiStage_Impl.hpp"
+#include "Curve.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/ModelObject.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+#include "utilities/idf/WorkspaceObject_Impl.hpp"
+
+namespace openstudio {
+namespace model {
+class Node;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   CoilHeatingGasMultiStage_Impl::CoilHeatingGasMultiStage_Impl(const IdfObject& idfObject,
                                                                Model_Impl* model,

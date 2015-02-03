@@ -7,12 +7,20 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include <qpainter.h>
-#include <qstyle.h>
+#include <qcolor.h>
 #include <qevent.h>
+#include <qobjectdefs.h>
+#include <qpainter.h>
+#include <qpalette.h>
+#include <qpoint.h>
+#include <qsizepolicy.h>
+#include <qstyle.h>
+
+#include "qwt_arrow_button.h"
 #include "qwt_math.h"
 #include "qwt_polygon.h"
-#include "qwt_arrow_button.h"
+
+class QWidget;
 
 static const int MaxNum = 3;
 static const int Margin = 2;
@@ -28,6 +36,7 @@ public:
 
 #if QT_VERSION >= 0x040000
 #include <qstyleoption.h>
+
 static QStyleOptionButton styleOpt(const QwtArrowButton* btn)
 {
     QStyleOptionButton option;

@@ -7,13 +7,22 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include <qpalette.h>
+#include <qnamespace.h>
 #include <qpainter.h>
+#include <qpalette.h>
+#include <qpen.h>
+#include <qrect.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_div.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_draw.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
+#include "qwt_double_interval.h"
 #include "qwt_plot.h"
 #include "qwt_plot_canvas.h"
-#include "qwt_scale_map.h"
 #include "qwt_plot_scaleitem.h"
-#include "qwt_double_interval.h"
+#include "qwt_scale_map.h"
 
 class QwtPlotScaleItem::PrivateData
 {

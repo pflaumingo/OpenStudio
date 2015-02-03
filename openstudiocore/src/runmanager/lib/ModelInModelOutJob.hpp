@@ -21,16 +21,36 @@
 #define RUNMANAGER_LIB_MODELINMODELOUTJOB_HPP
 
 #include <boost/filesystem.hpp>
-#include <string>
-#include "../../utilities/core/Logger.hpp"
-#include "Job_Impl.hpp"
-#include "JobParam.hpp"
-#include "../../utilities/core/Checksum.hpp"
-#include "../../model/Model.hpp"
-
-#include <QFileSystemWatcher>
-#include <QFileInfo>
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qreadwritelock.h>
 #include <QDateTime>
+#include <QFileInfo>
+#include <QFileSystemWatcher>
+#include <map>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../../model/Model.hpp"
+#include "../../utilities/core/Checksum.hpp"
+#include "../../utilities/core/Logger.hpp"
+#include "JobParam.hpp"
+#include "Job_Impl.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+
+class QDateTime;
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

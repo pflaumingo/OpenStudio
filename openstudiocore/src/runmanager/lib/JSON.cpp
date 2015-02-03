@@ -17,16 +17,36 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "JSON.hpp"
+#include <boost/filesystem/path.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <qlist.h>
+#include <qmap.h>
+#include <qstring.h>
+#include <qurl.h>
+#include <sstream>
+#include <stdexcept>
 
+#include "../../utilities/core/Assert.hpp"
+#include "../../utilities/core/Compare.hpp"
+#include "../../utilities/core/Json.hpp"
+#include "JSON.hpp"
 #include "Job.hpp"
 #include "JobFactory.hpp"
 #include "WorkItem.hpp"
-
-#include "../../utilities/core/Assert.hpp"
-#include "../../utilities/core/Json.hpp"
-#include "../../utilities/core/Compare.hpp"
-#include "../../utilities/core/PathHelpers.hpp"
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/../../utilities/idf/URLSearchPath.hpp"
+#include "runmanager/lib/../../utilities/time/DateTime.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobState.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
 namespace openstudio {
 namespace runmanager {

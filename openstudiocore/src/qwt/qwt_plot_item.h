@@ -10,19 +10,22 @@
 #ifndef QWT_PLOT_ITEM_H
 #define QWT_PLOT_ITEM_H
 
+#include <qglobal.h>
+#include <stddef.h>
+
+#include "qwt_double_rect.h"
 #include "qwt_global.h"
 #include "qwt_legend_itemmanager.h"
 #include "qwt_text.h"
-#include "qwt_double_rect.h"
 
-class QString;
-class QRect;
 class QPainter;
+class QRect;
+class QString;
 class QWidget;
-class QwtPlot;
 class QwtLegend;
-class QwtScaleMap;
+class QwtPlot;
 class QwtScaleDiv;
+class QwtScaleMap;
 
 /*!
   \brief Base class for items on the plot canvas
@@ -193,6 +196,7 @@ private:
     QwtPlotItem &operator=( const QwtPlotItem & );
 
     class PrivateData;
+
     PrivateData *d_data;
 };
             

@@ -12,9 +12,18 @@
 #ifndef QWT_COUNTER_H
 #define QWT_COUNTER_H
 
+#include <qglobal.h>
+#include <qobjectdefs.h>
+#include <qsize.h>
 #include <qwidget.h>
-#include "qwt_global.h"
+#include <stddef.h>
+
 #include "qwt_double_range.h"
+#include "qwt_global.h"
+
+class QEvent;
+class QKeyEvent;
+class QWheelEvent;
 
 /*!
   \brief The Counter Widget
@@ -151,6 +160,7 @@ private:
     virtual void valueChange();
     
     class PrivateData;
+
     PrivateData *d_data;
 };
 

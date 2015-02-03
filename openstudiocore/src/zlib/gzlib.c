@@ -3,7 +3,17 @@
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
 
+#include <fcntl.h>
+#include <limits.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <zlib.h>
+
 #include "gzguts.h"
+#include "zconf.h"
 
 #if defined(_WIN32) && !defined(__BORLANDC__)
 #  define LSEEK _lseeki64

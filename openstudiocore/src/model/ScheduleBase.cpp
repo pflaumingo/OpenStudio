@@ -17,21 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/idf/ValidityReport.hpp"
+#include "../utilities/units/OSQuantityVector.hpp"
+#include "../utilities/units/Quantity.hpp"
+#include "../utilities/units/QuantityConverter.hpp"
+#include "../utilities/units/Unit.hpp"
 #include "ScheduleBase.hpp"
 #include "ScheduleBase_Impl.hpp"
-
 #include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeLimits_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idf/DataError.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/ValidityEnums.hpp"
+#include "model/../utilities/units/Scale.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ResourceObject.hpp"
+#include "model/ResourceObject_Impl.hpp"
 
-#include "../utilities/idf/ValidityReport.hpp"
-
-#include "../utilities/units/Unit.hpp"
-#include "../utilities/units/Quantity.hpp"
-#include "../utilities/units/OSQuantityVector.hpp"
-#include "../utilities/units/QuantityConverter.hpp"
-#include "../utilities/units/ScaleFactory.hpp"
-
-#include "../utilities/core/Assert.hpp"
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
@@ -39,6 +52,8 @@ namespace model {
 namespace detail {
 
   // constructor
+class Model_Impl;
+
   ScheduleBase_Impl::ScheduleBase_Impl(const IdfObject& idfObject,
                                        Model_Impl* model,
                                        bool keepHandle)

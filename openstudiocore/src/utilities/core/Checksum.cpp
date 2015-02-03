@@ -17,13 +17,14 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Checksum.hpp"
-
-#include <ios>
-#include <sstream>
-
 #include <boost/crc.hpp> 
 #include <boost/filesystem/fstream.hpp>
+#include <stddef.h>
+#include <algorithm>
+#include <sstream>
+
+#include "Checksum.hpp"
+#include "utilities/core/Path.hpp"
 
 namespace openstudio {
 

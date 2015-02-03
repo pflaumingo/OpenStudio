@@ -17,38 +17,40 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "YearDescription.hpp"
-#include "YearDescription_Impl.hpp"
-#include "RunPeriod.hpp"
-#include "RunPeriod_Impl.hpp"
-#include "RunPeriodControlDaylightSavingTime.hpp"
-#include "RunPeriodControlDaylightSavingTime_Impl.hpp"
-#include "RunPeriodControlSpecialDays.hpp"
-#include "RunPeriodControlSpecialDays_Impl.hpp"
-#include "SizingPeriod.hpp"
-#include "SizingPeriod_Impl.hpp"
-#include "ScheduleBase.hpp"
-#include "ScheduleBase_Impl.hpp"
-#include "ScheduleRule.hpp"
-#include "ScheduleRule_Impl.hpp"
-#include "LightingDesignDay.hpp"
-#include "LightingDesignDay_Impl.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_YearDescription_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/time/Date.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_YearDescription_FieldEnums.hxx>
+#include <exception>
+#include <ostream>
 
 #include "../utilities/core/Assert.hpp"
+#include "../utilities/time/Date.hpp"
+#include "LightingDesignDay.hpp"
+#include "Model.hpp"
+#include "RunPeriod.hpp"
+#include "RunPeriodControlDaylightSavingTime.hpp"
+#include "RunPeriodControlSpecialDays.hpp"
+#include "ScheduleBase.hpp"
+#include "ScheduleRule.hpp"
+#include "SizingPeriod.hpp"
+#include "YearDescription.hpp"
+#include "YearDescription_Impl.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   YearDescription_Impl::YearDescription_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ParentObject_Impl(idfObject,model,keepHandle)

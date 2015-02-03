@@ -17,9 +17,23 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/date_time/gregorian/greg_date.hpp>
+#include <boost/date_time/posix_time/conversion.hpp>
+#include <boost/date_time/posix_time/posix_time_config.hpp>
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/date_time/posix_time/time_formatters.hpp>
+#include <boost/date_time/posix_time/time_parsers.hpp>
+#include <boost/date_time/time.hpp>
+#include <qdatetime.h>
+#include <qmetatype.h>
+#include <ostream>
+
 #include "DateTime.hpp"
-#include <QDateTime>
-#include <cmath>
+#include "utilities/time/../core/Enum.hpp"
+#include "utilities/time/../core/Logger.hpp"
+#include "utilities/time/Date.hpp"
+#include "utilities/time/Time.hpp"
 
 using namespace std;
 using namespace boost;

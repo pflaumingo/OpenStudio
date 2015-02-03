@@ -17,27 +17,32 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SetpointManagerSingleZoneHumidityMinimum.hpp"
-#include "SetpointManagerSingleZoneHumidityMinimum_Impl.hpp"
-
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "Model.hpp"
-#include "AirLoopHVAC.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_SetpointManager_SingleZone_Humidity_Minimum_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_SetpointManager_SingleZone_Humidity_Minimum_FieldEnums.hxx>
 
 #include "../utilities/core/Assert.hpp"
+#include "AirLoopHVAC.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
+#include "SetpointManagerSingleZoneHumidityMinimum.hpp"
+#include "SetpointManagerSingleZoneHumidityMinimum_Impl.hpp"
+#include "ThermalZone.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/SetpointManager.hpp"
+#include "model/SetpointManager_Impl.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   SetpointManagerSingleZoneHumidityMinimum_Impl::SetpointManagerSingleZoneHumidityMinimum_Impl(const IdfObject& idfObject,
                                                                                                Model_Impl* model,

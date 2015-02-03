@@ -17,22 +17,21 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
-#include <iterator>
-#include <algorithm>
+#include <assert.h>
 
 #include "CalculateEconomicsJob.hpp"
 #include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/Job_Impl.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-#include "../../model/Model.hpp"
-#include "../../energyplus/ForwardTranslator.hpp"
-
-
-#include <QDir>
-#include <QDateTime>
+class QDateTime;
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

@@ -17,11 +17,11 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "PrjReader.hpp"
-#include <iostream>
-#include <stdlib.h>
+#include <qchar.h>
+#include <qfile.h>
 
 #include "../utilities/core/Logger.hpp"
+#include "PrjReader.hpp"
 
 namespace openstudio {
 namespace contam {

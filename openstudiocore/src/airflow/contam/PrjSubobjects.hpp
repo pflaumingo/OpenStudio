@@ -20,17 +20,21 @@
 #ifndef AIRFLOW_CONTAM_PRJSUBOBJECTS_HPP
 #define AIRFLOW_CONTAM_PRJSUBOBJECTS_HPP
 
+#include <memory>
+#include <string>
+
+#include "../AirflowAPI.hpp"
 #include "PrjDefines.hpp"
 #include "PrjReader.hpp"
-#include "../AirflowAPI.hpp"
 
 namespace openstudio {
 namespace contam {
 
 class Reader;
+
 namespace detail {
-  class WeatherDataImpl;
   class IconImpl;
+  class WeatherDataImpl;
 }
 
 /** WeatherData objects contain the simplified weather data associated with a CONTAM model. */

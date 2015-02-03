@@ -7,7 +7,14 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <qflags.h>
+#include <qlayoutitem.h>
+#include <qrect.h>
+#include <qvector.h>
 #include <qwidget.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_array.h"
 #include "qwt_dyngrid_layout.h"
 #include "qwt_math.h"
 

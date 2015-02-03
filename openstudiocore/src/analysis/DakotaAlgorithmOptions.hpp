@@ -20,8 +20,14 @@
 #ifndef ANALYSIS_DAKOTAALGORITHMOPTIONS_HPP
 #define ANALYSIS_DAKOTAALGORITHMOPTIONS_HPP
 
-#include "AnalysisAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "AlgorithmOptions.hpp"
+#include "AnalysisAPI.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
 
 namespace openstudio {
 namespace analysis {

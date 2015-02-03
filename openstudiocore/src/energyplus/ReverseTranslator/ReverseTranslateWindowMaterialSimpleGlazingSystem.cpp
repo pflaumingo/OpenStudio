@@ -17,12 +17,13 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
+#include <utilities/idd/WindowMaterial_SimpleGlazingSystem_FieldEnums.hxx>
 
 #include "../../model/SimpleGlazing.hpp"
-#include "../../model/SimpleGlazing_Impl.hpp"
-
-#include <utilities/idd/WindowMaterial_SimpleGlazingSystem_FieldEnums.hxx>
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

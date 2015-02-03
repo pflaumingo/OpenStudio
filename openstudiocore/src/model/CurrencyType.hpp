@@ -20,10 +20,23 @@
 #ifndef MODEL_CURRENCYTYPE_HPP
 #define MODEL_CURRENCYTYPE_HPP
 
-#include "ModelAPI.hpp"
-#include "ParentObject.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Optional.hpp"
+#include "ModelAPI.hpp"
+#include "ParentObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio{
 namespace model{

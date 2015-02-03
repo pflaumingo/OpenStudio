@@ -20,10 +20,14 @@
 #ifndef RULESET_USERSCRIPT_HPP
 #define RULESET_USERSCRIPT_HPP
 
-#include "RulesetAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <string>
+#include <vector>
 
-#include "../utilities/core/Logger.hpp"
 #include "../utilities/core/Deprecated.hpp"
+#include "../utilities/core/Logger.hpp"
+#include "RulesetAPI.hpp"
+#include "ruleset/../utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 namespace ruleset {

@@ -17,23 +17,40 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Component.hpp"
-#include "Component_Impl.hpp"
-
-#include "Version.hpp"
-#include "Version_Impl.hpp"
-#include "ComponentData.hpp"
-#include "ComponentData_Impl.hpp"
-
-#include "../utilities/idf/IdfFile.hpp"
-#include "../utilities/idf/WorkspaceObject.hpp"
-
-#include <utilities/idd/OS_ComponentData_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
+#include <quuid.h>
+#include <time.h>
 #include <utilities/idd/IddEnums.hxx>
-
+#include <utilities/idd/OS_ComponentData_FieldEnums.hxx>
+#include <ostream>
+#include <utility>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/PathHelpers.hpp"
+#include "../utilities/idf/IdfFile.hpp"
+#include "../utilities/idf/WorkspaceObject.hpp"
+#include "Component.hpp"
+#include "ComponentData.hpp"
+#include "ComponentData_Impl.hpp"
+#include "Component_Impl.hpp"
+#include "Version.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idf/../core/UUID.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/ValidityEnums.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/Workspace_Impl.hpp"
+#include "model/ComponentWatcher.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/Model_Impl.hpp"
+#include "utilities/idf/WorkspaceObject_Impl.hpp"
+
+namespace openstudio {
+class SqlFile;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

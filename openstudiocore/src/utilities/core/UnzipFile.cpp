@@ -17,15 +17,20 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "UnzipFile.hpp"
-#include <zlib/zconf.h>
-#include <zlib/zlib.h>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <qbytearray.h>
+#include <qdir.h>
+#include <qfile.h>
+#include <qflags.h>
+#include <qiodevice.h>
+#include <qstring.h>
 #include <zlib/contrib/minizip/unzip.h>
-#include <fstream>
-#include <boost/filesystem.hpp>
+#include <stdexcept>
+#include <string>
 
-#include <QDir>
-#include <QFile>
+#include "UnzipFile.hpp"
+#include "utilities/core/Path.hpp"
 
 namespace openstudio {
 

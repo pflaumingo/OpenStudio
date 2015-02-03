@@ -10,6 +10,10 @@
 #ifndef QWT_SCALE_MAP_H
 #define QWT_SCALE_MAP_H
 
+#include <math.h>
+#include <qcompilerdetection.h>
+#include <qglobal.h>
+
 #include "qwt_global.h"
 #include "qwt_math.h"
 

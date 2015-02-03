@@ -20,10 +20,22 @@
 #ifndef RUNMANAGER_LIB_NORMALIZEURLS_HPP
 #define RUNMANAGER_LIB_NORMALIZEURLS_HPP
 
+#include <qurl.h>
 #include <QUrl>
-#include "FileInfo.hpp"
-#include "../../utilities/idf/URLSearchPath.hpp"
+#include <map>
+#include <set>
+#include <vector>
+
 #include "../../utilities/core/UUID.hpp"
+#include "../../utilities/idf/URLSearchPath.hpp"
+#include "FileInfo.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/time/../core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Logger.hpp"
+
+namespace openstudio {
+class URLSearchPath;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

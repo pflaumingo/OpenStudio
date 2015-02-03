@@ -20,7 +20,24 @@
 #ifndef MODEL_COMPONENT_HPP
 #define MODEL_COMPONENT_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "Model.hpp"
+#include "model/../utilities/core/Path.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idf/IdfFile.hpp"
+#include "model/ComponentData.hpp"
+#include "model/ModelAPI.hpp"
+#include "model/ModelObject.hpp"
+
+namespace openstudio {
+class Workspace;
+}  // namespace openstudio
 
 namespace openstudio {
 

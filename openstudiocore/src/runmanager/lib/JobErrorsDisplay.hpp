@@ -20,11 +20,17 @@
 #ifndef RUNMANAGER_LIB_JOBERRORSDISPLAY_HPP
 #define RUNMANAGER_LIB_JOBERRORSDISPLAY_HPP
 
-#include <string>
-#include <QTimer>
-#include "RunManager.hpp"
+#include <qdialog.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
 #include <runmanager/lib/ui_JobErrorsDisplay.h>
+#include <QTimer>
+#include <string>
+
 #include "JobErrors.hpp"
+#include "RunManager.hpp"
+
+class QWidget;
 
 
 namespace openstudio {

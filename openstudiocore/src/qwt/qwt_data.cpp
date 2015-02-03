@@ -7,8 +7,14 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include "qwt_math.h"
+#include <qpoint.h>
+#include <qvector.h>
+#include <string.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_array.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
 #include "qwt_data.h"
+#include "qwt_math.h"
 
 //! Constructor
 QwtData::QwtData()

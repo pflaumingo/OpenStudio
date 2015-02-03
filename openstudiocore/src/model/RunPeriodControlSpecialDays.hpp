@@ -20,15 +20,28 @@
 #ifndef MODEL_RUNPERIODCONTROLSPECIALDAYS_HPP
 #define MODEL_RUNPERIODCONTROLSPECIALDAYS_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/time/Date.hpp"
 
 namespace openstudio {
 
 class Date;
+class DayOfWeek;
 class MonthOfYear;
 class NthDayOfWeekInMonth;
-class DayOfWeek;
+class IdfObject;
+namespace model {
+class Model;
+}  // namespace model
 
 namespace model {
 

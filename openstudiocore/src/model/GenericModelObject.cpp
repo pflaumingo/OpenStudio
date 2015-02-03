@@ -17,8 +17,21 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <string>
+
 #include "GenericModelObject.hpp"
 #include "GenericModelObject_Impl.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+
+namespace openstudio {
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 
 namespace openstudio {
@@ -27,6 +40,8 @@ namespace model {
 namespace detail{
 
 // constructor
+class Model_Impl;
+
 GenericModelObject_Impl::GenericModelObject_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
   : ModelObject_Impl(idfObject, model, keepHandle)
 {}

@@ -17,20 +17,28 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-
-#include "../../model/Model.hpp"
-#include "../../model/ScheduleTypeLimits.hpp"
-#include "../../model/ScheduleFixedInterval.hpp"
-#include "../../model/ScheduleFixedInterval_Impl.hpp"
-
-#include "../../utilities/data/TimeSeries.hpp"
-
-#include <utilities/idd/Schedule_Compact_FieldEnums.hxx>
-
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
+#include <math.h>
+#include <qstring.h>
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/Schedule_Compact_FieldEnums.hxx>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "../../model/ScheduleFixedInterval.hpp"
+#include "../../model/ScheduleTypeLimits.hpp"
+#include "../../utilities/data/TimeSeries.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Enum.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../utilities/data/../time/Date.hpp"
+#include "energyplus/ForwardTranslator/../../utilities/data/../time/DateTime.hpp"
+#include "energyplus/ForwardTranslator/../../utilities/data/Vector.hpp"
+#include "energyplus/ForwardTranslator/../../utilities/time/Time.hpp"
 
 using namespace openstudio::model;
 

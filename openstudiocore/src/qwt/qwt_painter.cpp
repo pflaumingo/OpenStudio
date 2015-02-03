@@ -9,28 +9,35 @@
 
 // vim: expandtab
 
-#include <qwindowdefs.h>
-#include <qwidget.h>
-#include <qrect.h>
+#include <qbrush.h>
+#include <qcolor.h>
+#include <qpaintdevice.h>
 #include <qpainter.h>
 #include <qpalette.h>
-#include <qpaintdevice.h>
 #include <qpixmap.h>
+#include <qrect.h>
+#include <qregion.h>
+#include <qrgb.h>
+#include <qsize.h>
 #include <qstyle.h>
+#include <qvector.h>
+#include <qwidget.h>
 #if QT_VERSION < 0x040000
 #include <qsimplerichtext.h>
 #else
-#include <qtextdocument.h>
 #include <qabstracttextdocumentlayout.h>
-#include <qstyleoption.h>
 #include <qpaintengine.h>
+#include <qstyleoption.h>
+#include <qtextdocument.h>
 #endif
 
-#include "qwt_math.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_layout_metrics.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_polygon.h"
 #include "qwt_clipper.h"
 #include "qwt_color_map.h"
-#include "qwt_scale_map.h"
+#include "qwt_math.h"
 #include "qwt_painter.h"
+#include "qwt_scale_map.h"
 
 QwtMetricsMap QwtPainter::d_metricsMap;
 

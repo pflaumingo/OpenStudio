@@ -20,11 +20,13 @@
 #ifndef UTILITIES_IDF_IDFOBJECTDIFF_HPP
 #define UTILITIES_IDF_IDFOBJECTDIFF_HPP
 
-#include "../UtilitiesAPI.hpp"
-
 #include <boost/optional.hpp>
-
+#include <boost/optional/optional.hpp>
 #include <memory>
+#include <string>
+#include <typeinfo>
+
+#include "../UtilitiesAPI.hpp"
 
 namespace openstudio {
 namespace detail {

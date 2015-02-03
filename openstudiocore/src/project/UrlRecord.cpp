@@ -17,14 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "UrlRecord.hpp"
-#include "UrlRecord_Impl.hpp"
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <exception>
+#include <set>
 
+#include "../utilities/core/Assert.hpp"
 #include "CloudSessionRecord.hpp"
 #include "CloudSettingsRecord.hpp"
 #include "JoinRecord.hpp"
+#include "UrlRecord.hpp"
+#include "UrlRecord_Impl.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/core/Url.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include "../utilities/core/Assert.hpp"
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

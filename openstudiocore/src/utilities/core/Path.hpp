@@ -20,13 +20,15 @@
 #ifndef UTILITIES_CORE_PATH_HPP
 #define UTILITIES_CORE_PATH_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
-#include <ostream>
+#include <boost/filesystem/path.hpp>
 #include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <ostream>
+#include <string>
+#include <utility>
 
+#include "../UtilitiesAPI.hpp"
 
 // forward declarations
 class QString;

@@ -17,32 +17,34 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Logger.hpp"
-
-#include <boost/log/common.hpp>
-#include <boost/log/core/record.hpp>
-#include <boost/log/core/core.hpp>
-#include <boost/log/attributes/attribute.hpp>
-#include <boost/log/attributes/current_thread_id.hpp>
-#include <boost/log/attributes/attribute_value.hpp>
-#include <boost/log/sources/channel_feature.hpp>
-#include <boost/log/sources/severity_feature.hpp>
-#include <boost/log/sources/severity_channel_logger.hpp>
-#include <boost/log/sources/global_logger_storage.hpp>
-#include <boost/log/sources/record_ostream.hpp>
 #include <boost/log/attributes/function.hpp>
-#include <boost/log/support/regex.hpp>
-
+#include <boost/log/core/core.hpp>
+#include <boost/log/core/record.hpp>
+#include <boost/log/detail/attachable_sstream_buf.hpp>
+#include <boost/log/keywords/channel.hpp>
+#include <boost/log/keywords/severity.hpp>
+#include <boost/log/sinks/sink.hpp>
+#include <boost/log/sinks/sync_frontend.hpp>
+#include <boost/log/sources/severity_feature.hpp>
+#include <boost/log/utility/formatting_ostream.hpp>
+#include <boost/parameter/aux_/tagged_argument.hpp>
+#include <boost/parameter/keyword.hpp>
+#include <boost/preprocessor/seq/enum.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/smart_ptr/intrusive_ptr.hpp>
+#include <boost/smart_ptr/intrusive_ref_counter.hpp>
 #include <boost/utility/empty_deleter.hpp>
-
+#include <boost/utility/explicit_operator_bool.hpp>
+#include <qlogging.h>
+#include <qreadwritelock.h>
+#include <qthread.h>
+#include <iostream>
 #include <sstream>
-#include <stdio.h>
-#include <stdlib.h>
+#include <utility>
 
-#include <QReadWriteLock>
-#include <QWriteLocker>
-#include <QApplication>
-#include <QThread>
+#include "Logger.hpp"
+#include "utilities/core/LogSink.hpp"
+#include "utilities/core/Singleton.hpp"
 
 namespace sinks = boost::log::sinks;
 namespace keywords = boost::log::keywords;

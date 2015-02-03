@@ -20,14 +20,28 @@
 #ifndef MODEL_STRAIGHTCOMPONENT_HPP
 #define MODEL_STRAIGHTCOMPONENT_HPP
 
-#include "ModelAPI.hpp"
-#include "HVACComponent.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "Connection.hpp"
+#include "HVACComponent.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class AirLoopHVAC;
+class Node;
 
 namespace detail{
   class StraightComponent_Impl;

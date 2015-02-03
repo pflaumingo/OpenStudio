@@ -21,10 +21,14 @@
 #ifndef UTILITIES_GEOMETRY_PLANE_HPP
 #define UTILITIES_GEOMETRY_PLANE_HPP
 
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
 #include "../core/Logger.hpp"
-
-#include <boost/optional.hpp>
+#include "utilities/geometry/../core/LogMessage.hpp"
 
 namespace openstudio{
 

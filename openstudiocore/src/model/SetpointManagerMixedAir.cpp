@@ -17,30 +17,36 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "SetpointManagerMixedAir.hpp"
-#include "SetpointManagerMixedAir_Impl.hpp"
+#include <ext/alloc_traits.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_SetpointManager_MixedAir_FieldEnums.hxx>
+
+#include "../utilities/core/Assert.hpp"
+#include "AirLoopHVAC.hpp"
+#include "FanConstantVolume.hpp"
+#include "FanOnOff.hpp"
+#include "FanVariableVolume.hpp"
 #include "Model.hpp"
 #include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "FanConstantVolume.hpp"
-#include "FanConstantVolume_Impl.hpp"
-#include "FanVariableVolume.hpp"
-#include "FanVariableVolume_Impl.hpp"
-#include "FanOnOff.hpp"
-#include "FanOnOff_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVACOutdoorAirSystem.hpp"
-#include "PlantLoop.hpp"
-#include <utilities/idd/OS_SetpointManager_MixedAir_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "SetpointManagerMixedAir.hpp"
+#include "SetpointManagerMixedAir_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/SetpointManager.hpp"
+#include "model/SetpointManager_Impl.hpp"
+#include "model/StraightComponent.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail{
+
+class Model_Impl;
 
 SetpointManagerMixedAir_Impl::SetpointManagerMixedAir_Impl(const IdfObject& idfObject, 
                                                            Model_Impl* model, 

@@ -20,12 +20,17 @@
 #ifndef ISOMODEL_USERMODEL_HPP
 #define ISOMODEL_USERMODEL_HPP
 
-#include "ISOModelAPI.hpp"
-#include "EpwData.hpp"
-#include "SimModel.hpp"
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/filesystem.hpp>
+#include <memory>
+#include <string>
+
 #include "../utilities/core/Logger.hpp"
+#include "EpwData.hpp"
+#include "ISOModelAPI.hpp"
+#include "SimModel.hpp"
+#include "isomodel/../utilities/core/LogMessage.hpp"
+#include "isomodel/../utilities/core/Path.hpp"
 
 namespace openstudio {
 

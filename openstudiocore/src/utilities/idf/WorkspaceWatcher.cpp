@@ -18,14 +18,21 @@
 **********************************************************************/
 
 
-#include "WorkspaceWatcher.hpp"
-#include "Workspace_Impl.hpp"
+#include <qtimer.h>
+#include <memory>
+
 #include "../core/Application.hpp"
 #include "../core/Assert.hpp"
-
-#include <QTimer>
+#include "WorkspaceWatcher.hpp"
+#include "Workspace_Impl.hpp"
+#include "utilities/idf/../core/Singleton.hpp"
+#include "utilities/idf/../core/UUID.hpp"
+#include "utilities/idf/Handle.hpp"
+#include "utilities/idf/Workspace.hpp"
 
 namespace openstudio {
+
+struct IddObjectType;
 
 WorkspaceWatcher::WorkspaceWatcher(const Workspace& work)
   : m_enabled(true), m_dirty(false), m_objectAdded(false), m_objectRemoved(false)

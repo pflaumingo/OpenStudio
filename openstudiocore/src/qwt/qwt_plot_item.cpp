@@ -7,11 +7,19 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include "qwt_text.h"
-#include "qwt_plot.h"
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <qrect.h>
+#include <qstring.h>
+#include <qwidget.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_map.h"
 #include "qwt_legend.h"
 #include "qwt_legend_item.h"
+#include "qwt_plot.h"
 #include "qwt_plot_item.h"
+#include "qwt_text.h"
 
 class QwtPlotItem::PrivateData
 {

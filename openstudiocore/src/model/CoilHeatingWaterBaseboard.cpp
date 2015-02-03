@@ -17,26 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Coil_Heating_Water_Baseboard_FieldEnums.hxx>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
 #include "CoilHeatingWaterBaseboard.hpp"
 #include "CoilHeatingWaterBaseboard_Impl.hpp"
 #include "Node.hpp"
-#include "Node_Impl.hpp"
 #include "PlantLoop.hpp"
-#include "PlantLoop_Impl.hpp"
 #include "ZoneHVACBaseboardConvectiveWater.hpp"
-#include "ZoneHVACBaseboardConvectiveWater_Impl.hpp"
-
-#include <utilities/idd/OS_Coil_Heating_Water_Baseboard_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/Unit.hpp"
-
-#include "../utilities/core/Assert.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+#include "model/ZoneHVACComponent.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   CoilHeatingWaterBaseboard_Impl::CoilHeatingWaterBaseboard_Impl(const IdfObject& idfObject,
                                                                  Model_Impl* model,

@@ -17,35 +17,41 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_AirTerminal_SingleDuct_VAV_Reheat_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+#include <vector>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Compare.hpp"
 #include "AirTerminalSingleDuctVAVReheat.hpp"
 #include "AirTerminalSingleDuctVAVReheat_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "PortList.hpp"
-#include "PortList_Impl.hpp"
 #include "HVACComponent.hpp"
-#include "HVACComponent_Impl.hpp"
-#include "AirLoopHVACZoneSplitter.hpp"
-#include "AirLoopHVACZoneSplitter_Impl.hpp"
-#include "AirLoopHVACZoneMixer.hpp"
-#include "AirLoopHVACZoneMixer_Impl.hpp"
-#include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
 #include "Model.hpp"
+#include "Node.hpp"
+#include "PortList.hpp"
 #include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include <utilities/idd/OS_AirTerminal_SingleDuct_VAV_Reheat_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
+#include "ThermalZone.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/Mixer.hpp"
+#include "model/ModelObject.hpp"
+#include "model/PlantLoop.hpp"
+#include "model/Splitter.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail{
+
+class Model_Impl;
 
   AirTerminalSingleDuctVAVReheat_Impl::AirTerminalSingleDuctVAVReheat_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : StraightComponent_Impl(idfObject, model, keepHandle)

@@ -64,7 +64,7 @@
 */
 
 
-#include <stdio.h>
+#include <contrib/minizip/ioapi.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -72,18 +72,15 @@
         #define NOUNCRYPT
 #endif
 
-#include "zlib.h"
 #include "unzip.h"
+#include "zlib.h"
 
 #ifdef STDC
 #  include <stddef.h>
-#  include <string.h>
-#  include <stdlib.h>
 #endif
 #ifdef NO_ERRNO_H
     extern int errno;
 #else
-#   include <errno.h>
 #endif
 
 

@@ -20,8 +20,19 @@
 #ifndef PROJECT_OPTIMIZATIONPROBLEMRECORD_HPP
 #define PROJECT_OPTIMIZATIONPROBLEMRECORD_HPP
 
-#include "ProjectAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "ProblemRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/ProjectDatabase.hpp"
+
+class QSqlQuery;
 
 namespace openstudio {
 namespace analysis {

@@ -17,15 +17,26 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Variable.hpp"
-#include "Variable_Impl.hpp"
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
+#include <string>
 
 #include "MeasureGroup.hpp"
 #include "MeasureGroup_Impl.hpp"
 #include "OutputAttributeVariable.hpp"
 #include "OutputAttributeVariable_Impl.hpp"
-#include "RubyContinuousVariable.hpp"
 #include "RubyContinuousVariable_Impl.hpp"
+#include "Variable.hpp"
+#include "Variable_Impl.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

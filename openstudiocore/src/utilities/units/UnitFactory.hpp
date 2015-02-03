@@ -20,17 +20,19 @@
 #ifndef UTILITIES_UNITS_UNITFACTORY_HPP
 #define UTILITIES_UNITS_UNITFACTORY_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/function/function_template.hpp>
+#include <boost/functional.hpp>
+#include <boost/optional/optional.hpp>
+#include <map>
+#include <set>
+#include <string>
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
 #include "../core/Singleton.hpp"
 #include "Unit.hpp"
-
-#include "../core/Logger.hpp"
-
-#include <boost/functional.hpp>
-
-#include <set>
-#include <map>
+#include "utilities/units/../core/LogMessage.hpp"
 
 namespace openstudio{
 

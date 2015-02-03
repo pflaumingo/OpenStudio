@@ -20,13 +20,28 @@
 #ifndef MODEL_SPACEINFILTRATIONDESIGNFLOWRATE_HPP
 #define MODEL_SPACEINFILTRATIONDESIGNFLOWRATE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceLoad.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class Schedule;
+class Model;
 
 namespace detail {
 

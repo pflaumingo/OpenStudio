@@ -20,41 +20,60 @@
 #ifndef MODEL_SPACE_HPP
 #define MODEL_SPACE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <utility>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "PlanarSurfaceGroup.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+class Point3d;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
-// forward declarations
-class SpaceType;
-class ConstructionBase;
-class DefaultConstructionSet;
-class Schedule;
-class DefaultScheduleType;
-class DefaultScheduleSet;
-class ThermalZone;
 class BuildingStory;
-class ShadingSurfaceGroup;
-class InteriorPartitionSurfaceGroup;
-class PlanarSurface;
-class Surface;
-class InternalMass;
-class People;
-class Lights;
-class Luminaire;
+class ConstructionBase;
+class DaylightingControl;
+class DefaultConstructionSet;
+class DefaultScheduleSet;
+class DefaultScheduleType;
+class DesignSpecificationOutdoorAir;
 class ElectricEquipment;
 class GasEquipment;
-class HotWaterEquipment;
-class SteamEquipment;
-class OtherEquipment;
-class WaterUseEquipment;
-class DaylightingControl;
-class IlluminanceMap;
 class GlareSensor;
+class HotWaterEquipment;
+class IlluminanceMap;
+class InteriorPartitionSurfaceGroup;
+class InternalMass;
+class Lights;
+class Luminaire;
+class OtherEquipment;
+class People;
+class PlanarSurface;
+class Schedule;
+class ShadingSurfaceGroup;
 class SpaceInfiltrationDesignFlowRate;
 class SpaceInfiltrationEffectiveLeakageArea;
-class DesignSpecificationOutdoorAir;
+// forward declarations
+class SpaceType;
+class SteamEquipment;
+class Surface;
+class ThermalZone;
+class WaterUseEquipment;
 
 namespace detail {
 

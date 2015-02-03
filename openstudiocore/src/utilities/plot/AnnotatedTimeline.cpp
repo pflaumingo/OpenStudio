@@ -17,14 +17,20 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "AnnotatedTimeline.hpp"
-
-#include <iostream>
-#include <set>
-#include <limits>
-
 #include <boost/filesystem/fstream.hpp>
-#include <math.h>
+#include <ext/alloc_traits.h>
+#include <iostream>
+#include <limits>
+#include <set>
+
+#include "AnnotatedTimeline.hpp"
+#include "utilities/plot/../core/Logger.hpp"
+#include "utilities/plot/../core/Path.hpp"
+#include "utilities/plot/../data/../time/Date.hpp"
+#include "utilities/plot/../data/../time/DateTime.hpp"
+#include "utilities/plot/../data/../time/Time.hpp"
+#include "utilities/plot/../data/TimeSeries.hpp"
+#include "utilities/plot/../data/Vector.hpp"
 
 using namespace boost::filesystem;
 using namespace std;

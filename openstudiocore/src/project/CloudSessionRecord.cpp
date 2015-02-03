@@ -17,24 +17,31 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <set>
+
+#include "../utilities/cloud/AWSProvider.hpp"
+#include "../utilities/cloud/VagrantProvider.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Containers.hpp"
+#include "AWSSessionRecord.hpp"
 #include "CloudSessionRecord.hpp"
 #include "CloudSessionRecord_Impl.hpp"
-
-#include "AWSSessionRecord.hpp"
-#include "AWSSessionRecord_Impl.hpp"
 #include "JoinRecord.hpp"
 #include "ProjectDatabase.hpp"
 #include "UrlRecord.hpp"
 #include "VagrantSessionRecord.hpp"
-#include "VagrantSessionRecord_Impl.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/core/Url.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include "../utilities/cloud/AWSProvider.hpp"
-#include "../utilities/cloud/AWSProvider_Impl.hpp"
-#include "../utilities/cloud/VagrantProvider.hpp"
-#include "../utilities/cloud/VagrantProvider_Impl.hpp"
-
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Containers.hpp"
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

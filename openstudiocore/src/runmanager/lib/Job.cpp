@@ -17,16 +17,35 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "../../utilities/core/UUID.hpp"
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/date_time/time.hpp>
+#include <limits.h>
+#include <qdatetime.h>
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <quuid.h>
+
 #include "../../utilities/core/System.hpp"
+#include "../../utilities/core/UUID.hpp"
+#include "JSON.hpp"
 #include "Job.hpp"
 #include "Job_Impl.hpp"
-#include "JSON.hpp"
 #include "MergedJobResults.hpp"
+#include "runmanager/lib/../../utilities/time/DateTime.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+#include "runmanager/lib/TreeStatus.hpp"
 
 namespace openstudio {
 namespace runmanager {
 
+
+class ProcessCreator;
 
   Job::Job(const std::shared_ptr<detail::Job_Impl> &t_impl)
     : m_impl(t_impl)

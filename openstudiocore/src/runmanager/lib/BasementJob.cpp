@@ -17,23 +17,31 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
-#include <iterator>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <qurl.h>
 #include <algorithm>
+#include <iterator>
+#include <sstream>
+#include <stdexcept>
+#include <utility>
+#include <vector>
 
+#include "../../utilities/idf/IdfFile.hpp"
 #include "BasementJob.hpp"
 #include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
-#include "WeatherFileFinder.hpp"
 #include "OpenStudio.hxx"
+#include "WeatherFileFinder.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/ToolBasedJob.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-#include "../../utilities/idf/IdfFile.hpp"
-#include <utilities/idd/Version_FieldEnums.hxx>
-
-#include <QDir>
-#include <QDateTime>
+namespace openstudio {
+namespace runmanager {
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

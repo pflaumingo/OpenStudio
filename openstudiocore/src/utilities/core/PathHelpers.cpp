@@ -17,15 +17,23 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "PathHelpers.hpp"
-#include "Logger.hpp"
-#include "Assert.hpp"
-#include <boost/filesystem.hpp>
+#include <boost/filesystem/convenience.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <qdir.h>
+#include <qfile.h>
+#include <qfileinfo.h>
+#include <qflags.h>
+#include <qregularexpression.h>
+#include <qstring.h>
+#include <ostream>
 
-#include <QDir>
-#include <QFile>
-#include <QFileInfo>
-#include <QRegularExpression>
+#include "Logger.hpp"
+#include "PathHelpers.hpp"
+#include "utilities/core/LogMessage.hpp"
+#include "utilities/core/Path.hpp"
+#include "utilities/core/String.hpp"
 
 #ifdef Q_OS_WIN
 #include <Windows.h>

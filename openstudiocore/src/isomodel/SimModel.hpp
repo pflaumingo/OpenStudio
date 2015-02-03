@@ -20,25 +20,38 @@
 #ifndef ISOMODEL_SIMMODEL_HPP
 #define ISOMODEL_SIMMODEL_HPP
 
-#include "ISOModelAPI.hpp"
+#include <memory>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
-#include "../utilities/data/Vector.hpp"
-#include "../utilities/data/Matrix.hpp"
 #include "../utilities/data/EndUses.hpp"
-#include "Population.hpp"
-#include "Location.hpp"
-#include "Lighting.hpp"
+#include "../utilities/data/Matrix.hpp"
+#include "../utilities/data/Vector.hpp"
 #include "Building.hpp"
 #include "Cooling.hpp"
 #include "Heating.hpp"
+#include "ISOModelAPI.hpp"
+#include "Lighting.hpp"
+#include "Location.hpp"
+#include "Population.hpp"
 #include "Structure.hpp"
 #include "Ventilation.hpp"
+#include "isomodel/../utilities/core/LogMessage.hpp"
 
 
 namespace openstudio {
 
   class EndUses;
+namespace isomodel {
+class Building;
+class Cooling;
+class Heating;
+class Lighting;
+class Location;
+class Population;
+class Structure;
+class Ventilation;
+}  // namespace isomodel
 
 namespace isomodel { 
 

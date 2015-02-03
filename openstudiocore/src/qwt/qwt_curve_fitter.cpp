@@ -7,9 +7,14 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <math.h>
+#include <qpoint.h>
+#include <qvector.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
+#include "qwt_curve_fitter.h"
 #include "qwt_math.h"
 #include "qwt_spline.h"
-#include "qwt_curve_fitter.h"
 
 //! Constructor
 QwtCurveFitter::QwtCurveFitter()

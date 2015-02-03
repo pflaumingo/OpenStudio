@@ -9,12 +9,22 @@
 
 // vim: expandtab
 
-#include <qpainter.h>
-#include <qpixmap.h>
+#include <qcolor.h>
+#include <qfont.h>
+#include <qfontmetrics.h>
+#include <qglobal.h>
 #include <qimage.h>
 #include <qmap.h>
+#include <qnamespace.h>
+#include <qpainter.h>
+#include <qpixmap.h>
+#include <qrect.h>
+#include <qrgb.h>
+#include <qstring.h>
+#include <qtextformat.h>
+#include <qtextoption.h>
 #include <qwidget.h>
-#include "qwt_math.h"
+
 #include "qwt_painter.h"
 #include "qwt_text_engine.h"
 
@@ -58,9 +68,9 @@ public:
 
 #else // QT_VERSION >= 0x040000
 
-#include <qtextobject.h>
-#include <qtextdocument.h>
 #include <qabstracttextdocumentlayout.h>
+#include <qtextdocument.h>
+#include <qtextobject.h>
 
 #if QT_VERSION < 0x040200
 #include <qlabel.h>

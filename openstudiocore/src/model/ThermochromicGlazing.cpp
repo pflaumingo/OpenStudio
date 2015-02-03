@@ -17,20 +17,40 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ThermochromicGlazing.hpp"
-#include "ThermochromicGlazing_Impl.hpp"
-#include "ModelExtensibleGroup.hpp"
-
-#include <utilities/idd/OS_WindowMaterial_GlazingGroup_Thermochromic_FieldEnums.hxx>
+#include <ext/alloc_traits.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_WindowMaterial_GlazingGroup_Thermochromic_FieldEnums.hxx>
+#include <ostream>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/math/FloatCompare.hpp"
+#include "ModelExtensibleGroup.hpp"
+#include "ThermochromicGlazing.hpp"
+#include "ThermochromicGlazing_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfExtensibleGroup.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/Glazing.hpp"
+#include "model/Glazing_Impl.hpp"
+#include "utilities/core/Containers.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   ThermochromicGlazing_Impl::ThermochromicGlazing_Impl(const IdfObject& idfObject,
                                                        Model_Impl* model,

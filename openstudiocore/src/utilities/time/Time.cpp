@@ -17,9 +17,16 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Time.hpp"
-
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/date_time/posix_time/time_formatters.hpp>
+#include <boost/date_time/posix_time/time_parsers.hpp>
+#include <boost/date_time/time_duration.hpp>
+#include <time.h>
+#include <algorithm>
 #include <cmath>
+
+#include "Time.hpp"
 
 using namespace std;
 using namespace boost;

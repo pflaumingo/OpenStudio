@@ -17,13 +17,17 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "AlgorithmOptions.hpp"
-#include "AlgorithmOptions_Impl.hpp"
+#include <qmetatype.h>
+#include <algorithm>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Finder.hpp"
 #include "../utilities/core/Optional.hpp"
+#include "AlgorithmOptions.hpp"
+#include "AlgorithmOptions_Impl.hpp"
+#include "analysis/../utilities/data/Attribute.hpp"
+#include "analysis/Algorithm.hpp"
 
 namespace openstudio {
 namespace analysis {

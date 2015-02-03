@@ -19,14 +19,20 @@
 #ifndef RUNMANAGER_LIB_JOBFACTORY_HPP
 #define RUNMANAGER_LIB_JOBFACTORY_HPP
 
-#include "Job.hpp"
-#include "JobParam.hpp"
-#include "RunManagerAPI.hpp"
-#include "ToolInfo.hpp"
-#include "JobState.hpp"
-#include "../../utilities/idf/URLSearchPath.hpp"
+#include <boost/optional/optional.hpp>
+#include <string>
+#include <vector>
 
 #include "../../utilities/core/Path.hpp"
+#include "../../utilities/idf/URLSearchPath.hpp"
+#include "Job.hpp"
+#include "JobParam.hpp"
+#include "JobState.hpp"
+#include "RunManagerAPI.hpp"
+#include "ToolInfo.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/JobType.hpp"
 
 namespace openstudio {
 namespace ruleset {

@@ -10,13 +10,17 @@
 #ifndef QWT_MAGNIFIER_H
 #define QWT_MAGNIFIER_H 1
 
-#include "qwt_global.h"
+#include <qnamespace.h>
 #include <qobject.h>
+#include <qobjectdefs.h>
 
-class QWidget;
+#include "qwt_global.h"
+
+class QEvent;
+class QKeyEvent;
 class QMouseEvent;
 class QWheelEvent;
-class QKeyEvent;
+class QWidget;
 
 /*!
   \brief QwtMagnifier provides zooming, by magnifying in steps.
@@ -80,6 +84,7 @@ protected:
 
 private:
     class PrivateData;
+
     PrivateData *d_data;
 };
 

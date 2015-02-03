@@ -17,20 +17,28 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ProjectDatabaseRecord.hpp"
-#include "ProjectDatabaseRecord_Impl.hpp"
-#include "JoinRecord.hpp"
-#include "ProjectDatabase.hpp"
+#include <boost/filesystem/path.hpp>
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <set>
+#include <vector>
 
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/core/String.hpp"
 #include "../utilities/core/PathHelpers.hpp"
-#include "../utilities/idf/IdfFile.hpp"
-#include "../utilities/idf/Workspace.hpp"
+#include "../utilities/core/String.hpp"
+#include "JoinRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "ProjectDatabaseRecord.hpp"
+#include "ProjectDatabaseRecord_Impl.hpp"
+#include "project/../runmanager/lib/RunManager.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

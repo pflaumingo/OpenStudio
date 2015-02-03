@@ -20,28 +20,37 @@
 #ifndef MODEL_NODE_HPP
 #define MODEL_NODE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
+#include "../utilities/core/Deprecated.hpp"
+#include "Connection.hpp"
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
 #include "StraightComponent.hpp"
-#include "Connection.hpp"
-#include "../utilities/core/Deprecated.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
-class SetpointManagerSingleZoneReheat;
-
-class SetpointManagerMixedAir;
-
-class SetpointManagerScheduled;
-
-class SetpointManagerFollowOutdoorAirTemperature;
-
-class SetpointManagerOutdoorAirReset;
-
-class SetpointManagerWarmest;
-
 class SetpointManager;
+class SetpointManagerFollowOutdoorAirTemperature;
+class SetpointManagerMixedAir;
+class SetpointManagerOutdoorAirReset;
+class SetpointManagerScheduled;
+class SetpointManagerSingleZoneReheat;
+class SetpointManagerWarmest;
 
 namespace detail {
   class Node_Impl;

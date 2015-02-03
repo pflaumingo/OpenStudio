@@ -16,13 +16,13 @@
 *  License along with this library; if not, write to the Free Software
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
-#include <cstdlib>
+#include <stddef.h>
 #include <cmath>
 
+#include "../core/Assert.hpp"
 #include "CostObject.hpp"
 #include "Economics.hpp"
-
-#include "../core/Assert.hpp"
+#include "utilities/economics/../core/Optional.hpp"
 
 #define MAX_ERR 0.0001
 #define MAX_LIMIT 100000

@@ -20,24 +20,39 @@
 #ifndef MODEL_BUILDING_HPP
 #define MODEL_BUILDING_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
+#include "model/../utilities/geometry/Transformation.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
 
 namespace openstudio {
 
 class Point3d;
 class Transformation;
+class IdfObject;
+namespace model {
+class Model;
+}  // namespace model
 
 namespace model {
 
+class DefaultConstructionSet;
+class DefaultScheduleSet;
 class Facility;
 class Meter;
 class ShadingSurfaceGroup;
-class Surface;
 class Space;
 class SpaceType;
-class DefaultConstructionSet;
-class DefaultScheduleSet;
+class Surface;
 class ThermalZone;
 
 namespace detail {

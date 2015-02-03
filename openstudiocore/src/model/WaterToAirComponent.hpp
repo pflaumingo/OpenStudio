@@ -20,8 +20,25 @@
 #ifndef MODEL_WATERTOAIRCOMPONENT_HPP
 #define MODEL_WATERTOAIRCOMPONENT_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "HVACComponent.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace model {
+class Node;
+class Splitter;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 
@@ -32,7 +49,6 @@ namespace detail{
 }
 
 class AirLoopHVAC;
-
 class PlantLoop;
 
 /** WaterToAirComponent is the base class for model objects which interact with 

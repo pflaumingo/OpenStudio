@@ -10,13 +10,22 @@
 // vim: expandtab
 
 #include <math.h>
-#include <qpen.h>
+#include <qglobal.h>
 #include <qpainter.h>
-#include <qfontmetrics.h>
+#include <qpen.h>
+#include <qrect.h>
+#include <qsize.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_abstract_scale_draw.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_math.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_valuelist.h"
 #include "qwt_painter.h"
+#include "qwt_round_scale_draw.h"
 #include "qwt_scale_div.h"
 #include "qwt_scale_map.h"
-#include "qwt_round_scale_draw.h"
+
+class QFont;
 
 class QwtRoundScaleDraw::PrivateData
 {

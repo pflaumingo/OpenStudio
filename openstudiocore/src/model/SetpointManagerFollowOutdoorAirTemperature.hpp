@@ -20,14 +20,30 @@
 #ifndef MODEL_SETPOINTMANAGERFOLLOWOUTDOORAIRTEMPERATURE_HPP
 #define MODEL_SETPOINTMANAGERFOLLOWOUTDOORAIRTEMPERATURE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+
 #include "ModelAPI.hpp"
 #include "SetpointManager.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
 class Schedule;
+class Node;
 
 namespace detail {
 

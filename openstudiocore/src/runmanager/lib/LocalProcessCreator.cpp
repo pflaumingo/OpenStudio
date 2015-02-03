@@ -17,11 +17,14 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "LocalProcessCreator.hpp"
 #include "LocalProcess.hpp"
+#include "LocalProcessCreator.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
 
 namespace openstudio {
 namespace runmanager {
+
+class Process;
 
   LocalProcessCreator::LocalProcessCreator()
   {

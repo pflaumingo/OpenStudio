@@ -17,79 +17,65 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ProjectDatabase.hpp"
-#include "ProjectDatabase_Impl.hpp"
-#include "ProjectDatabaseRecord.hpp"
-#include "ProjectDatabaseRecord_Impl.hpp"
-
-#include "ObjectRecord.hpp"
-#include "ObjectRecord_Impl.hpp"
-#include "JoinRecord.hpp"
-#include "JoinRecord_Impl.hpp"
-
-#include "AnalysisRecord.hpp"
-#include "AnalysisRecord_Impl.hpp"
-#include "AlgorithmRecord.hpp"
-#include "AlgorithmRecord_Impl.hpp"
-#include "AttributeRecord.hpp"
-#include "AttributeRecord_Impl.hpp"
-#include "CloudSessionRecord.hpp"
-#include "CloudSessionRecord_Impl.hpp"
-#include "CloudSettingsRecord.hpp"
-#include "CloudSettingsRecord_Impl.hpp"
-#include "ContinuousVariableRecord.hpp"
-#include "DataPointRecord.hpp"
-#include "DataPointRecord_Impl.hpp"
-#include "DataPointValueRecord.hpp"
-#include "DataPointValueRecord_Impl.hpp"
-#include "DiscreteVariableRecord.hpp"
-#include "FileReferenceRecord.hpp"
-#include "FileReferenceRecord_Impl.hpp"
-#include "FunctionRecord.hpp"
-#include "FunctionRecord_Impl.hpp"
-#include "OSArgumentRecord.hpp"
-#include "OSArgumentRecord_Impl.hpp"
-#include "OutputVariableRecord.hpp"
-#include "MeasureRecord.hpp"
-#include "MeasureRecord_Impl.hpp"
-#include "ProblemRecord.hpp"
-#include "ProblemRecord_Impl.hpp"
-#include "TagRecord.hpp"
-#include "TagRecord_Impl.hpp"
-#include "UrlRecord.hpp"
-#include "UrlRecord_Impl.hpp"
-#include "URLSearchPathRecord.hpp"
-#include "URLSearchPathRecord_Impl.hpp"
-#include "VariableRecord.hpp"
-#include "VariableRecord_Impl.hpp"
-#include "WorkflowRecord.hpp"
-#include "WorkflowRecord_Impl.hpp"
-
-#include "DataPoint_Measure_JoinRecord.hpp"
-#include "DataPoint_Measure_JoinRecord_Impl.hpp"
-
-#include "../analysis/DataPoint.hpp"
-
-#include "../runmanager/lib/Job.hpp"
-#include "../runmanager/lib/Workflow.hpp"
-
-#include "../utilities/core/String.hpp"
-#include "../utilities/core/PathHelpers.hpp"
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/time/DateTime.hpp"
-
 #include <OpenStudio.hxx>
-
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <qsqldatabase.h>
+#include <qsqldriver.h>
+#include <qsqlerror.h>
+#include <quuid.h>
+#include <algorithm>
+#include <functional>
+#include <map>
+#include <set>
 #include <sstream>
 
-#include <boost/filesystem.hpp>
-#include <boost/regex.hpp>
-
-#include <QSqlDatabase>
-#include <QSqlDriver>
-#include <QSqlQuery>
-#include <QSqlError>
+#include "../analysis/DataPoint.hpp"
+#include "../runmanager/lib/Workflow.hpp"
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Compare.hpp"
+#include "../utilities/core/PathHelpers.hpp"
+#include "../utilities/core/String.hpp"
+#include "../utilities/time/DateTime.hpp"
+#include "AlgorithmRecord.hpp"
+#include "AnalysisRecord.hpp"
+#include "AttributeRecord.hpp"
+#include "CloudSessionRecord.hpp"
+#include "CloudSettingsRecord.hpp"
+#include "ContinuousVariableRecord.hpp"
+#include "DataPointRecord.hpp"
+#include "DataPointValueRecord.hpp"
+#include "DataPoint_Measure_JoinRecord.hpp"
+#include "DiscreteVariableRecord.hpp"
+#include "FileReferenceRecord.hpp"
+#include "FunctionRecord.hpp"
+#include "JoinRecord.hpp"
+#include "MeasureRecord.hpp"
+#include "OSArgumentRecord.hpp"
+#include "ObjectRecord.hpp"
+#include "OutputVariableRecord.hpp"
+#include "ProblemRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "ProjectDatabaseRecord.hpp"
+#include "ProjectDatabaseRecord_Impl.hpp"
+#include "ProjectDatabase_Impl.hpp"
+#include "TagRecord.hpp"
+#include "URLSearchPathRecord.hpp"
+#include "UrlRecord.hpp"
+#include "VariableRecord.hpp"
+#include "WorkflowRecord.hpp"
+#include "project/../ruleset/OSArgument.hpp"
+#include "project/../runmanager/lib/RunManager.hpp"
+#include "project/../utilities/core/FileReference.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/Path.hpp"
+#include "project/../utilities/core/UUID.hpp"
+#include "project/../utilities/data/Attribute.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/InputVariableRecord.hpp"
+#include "project/Record.hpp"
 
 using namespace openstudio::analysis;
 

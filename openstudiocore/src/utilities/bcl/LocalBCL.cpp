@@ -16,33 +16,41 @@
 *  License along with this library; if not, write to the Free Software
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
+#include <boost/filesystem/path.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/none.hpp>
+#include <qdir.h>
+#include <qfile.h>
+#include <qfileinfo.h>
+#include <qflags.h>
+#include <qicon.h>
+#include <qinputdialog.h>
+#include <qnamespace.h>
+#include <qpixmap.h>
+#include <qsettings.h>
+#include <qsqldatabase.h>
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <exception>
+#include <iomanip>
+#include <set>
+#include <sstream>
+#include <vector>
+
+#include "../core/Application.hpp"
+#include "../core/Assert.hpp"
+#include "../core/Path.hpp"
+#include "../core/PathHelpers.hpp"
+#include "../data/Attribute.hpp"
 #include "BCLComponent.hpp"
 #include "BCLMeasure.hpp"
 #include "LocalBCL.hpp"
 #include "RemoteBCL.hpp"
-#include "../core/Application.hpp"
-#include "../core/Assert.hpp"
-#include "../data/Attribute.hpp"
-#include "../core/Path.hpp"
-#include "../core/PathHelpers.hpp"
-#include "../core/System.hpp"
-
-#include <QDir>
-#include <QFile>
-#include <QIcon>
-#include <QInputDialog>
-#include <QSettings>
-#include <QSqlDatabase>
-#include <QSqlDriver>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QSqlResult>
-
-#include <boost/lexical_cast.hpp>
-
-#include <algorithm>
-#include <set>
-#include <vector>
+#include "utilities/bcl/../core/Singleton.hpp"
+#include "utilities/bcl/../core/String.hpp"
+#include "utilities/bcl/../data/../core/Enum.hpp"
+#include "utilities/bcl/BCLFileReference.hpp"
 
 namespace openstudio{
 

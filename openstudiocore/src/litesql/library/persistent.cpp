@@ -3,10 +3,20 @@
  * The list of contributors at http://litesql.sf.net/ 
  * 
  * See LICENSE for copyright information. */
-#include "compatibility.hpp"
+#include <ext/alloc_traits.h>
+#include <litesql/database.hpp>
+#include <litesql/expr.hpp>
+#include <litesql/field.hpp>
+#include <litesql/string.hpp>
+#include <litesql/types.hpp>
+#include <stddef.h>
+#include <map>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "litesql/persistent.hpp"
 #include "litesql/updatequery.hpp"
-#include <iostream>
 
 namespace litesql {
 using namespace std;

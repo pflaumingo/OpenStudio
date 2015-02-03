@@ -17,13 +17,35 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SimulationEngine.hpp"
-#include "Job.hpp"
-#include "Workflow.hpp"
-#include "WorkItem.hpp"
-#include <boost/filesystem.hpp>
-#include <QCryptographicHash>
+#include <boost/filesystem/operations.hpp>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <qbytearray.h>
+#include <qcryptographichash.h>
+#include <exception>
+#include <istream>
+#include <stdexcept>
+
 #include "../../utilities/core/ApplicationPathHelpers.hpp"
+#include "Job.hpp"
+#include "SimulationEngine.hpp"
+#include "WorkItem.hpp"
+#include "Workflow.hpp"
+#include "runmanager/lib/../../model/../utilities/idd/../core/Enum.hpp"
+#include "runmanager/lib/../../model/../utilities/idd/../core/Logger.hpp"
+#include "runmanager/lib/../../model/Model.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/../../utilities/sql/SqlFile.hpp"
+#include "runmanager/lib/ConfigOptions.hpp"
+#include "runmanager/lib/ErrorEstimation.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/RunManager.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
+#include "runmanager/lib/TreeStatus.hpp"
 
 namespace openstudio {
   namespace runmanager {

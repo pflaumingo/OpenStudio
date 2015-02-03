@@ -17,15 +17,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "CurveFanPressureRise.hpp"
-#include "CurveFanPressureRise_Impl.hpp"
-
-#include <utilities/idd/OS_Curve_FanPressureRise_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Curve_FanPressureRise_FieldEnums.hxx>
+#include <cmath>
+#include <string>
 
 #include "../utilities/core/Assert.hpp"
+#include "CurveFanPressureRise.hpp"
+#include "CurveFanPressureRise_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/Curve.hpp"
+#include "model/Curve_Impl.hpp"
 
-#include <cmath>
+namespace openstudio {
+namespace model {
+class Model;
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using namespace std;
 

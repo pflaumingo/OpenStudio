@@ -20,8 +20,24 @@
 #ifndef PROJECT_OUTPUTATTRIBUTEVARIABLERECORD_HPP
 #define PROJECT_OUTPUTATTRIBUTEVARIABLERECORD_HPP
 
-#include "ProjectAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "OutputVariableRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/ProjectDatabase.hpp"
+#include "project/VariableRecord.hpp"
+
+class QSqlQuery;
+namespace openstudio {
+namespace project {
+class FunctionRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

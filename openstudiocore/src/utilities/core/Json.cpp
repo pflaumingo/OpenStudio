@@ -17,19 +17,25 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Json.hpp"
+#include <OpenStudio.hxx>
+#include <boost/optional/optional.hpp>
+#include <qbytearray.h>
+#include <qfile.h>
+#include <qiodevice.h>
+#include <qjsondocument.h>
+#include <qjsonobject.h>
+#include <qjsonvalue.h>
+#include <qmap.h>
+#include <ostream>
 
 #include "Assert.hpp"
 #include "Compare.hpp"
+#include "Json.hpp"
 #include "Logger.hpp"
 #include "PathHelpers.hpp"
 #include "String.hpp"
-
-#include <OpenStudio.hxx>
-
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonObject>
+#include "utilities/core/LogMessage.hpp"
+#include "utilities/core/Path.hpp"
 
 namespace openstudio {
 

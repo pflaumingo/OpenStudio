@@ -9,6 +9,16 @@
 
 #include "qwt_analog_clock.h"
 
+#include <qcolor.h>
+#include <qstring.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_dial.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_dial_needle.h"
+
+class QPainter;
+class QPoint;
+class QWidget;
+
 /*!
   Constructor
   \param parent Parent widget

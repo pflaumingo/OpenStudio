@@ -20,14 +20,30 @@
 #ifndef MODEL_ZONEAIRCONTAMINANTBALANCE_HPP
 #define MODEL_ZONEAIRCONTAMINANTBALANCE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 // TODO: Check the following class names against object getters and setters.
 class Schedule;
+class Model;
 
 namespace detail {
 

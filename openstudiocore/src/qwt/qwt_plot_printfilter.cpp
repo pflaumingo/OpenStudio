@@ -9,17 +9,30 @@
 
 // vim: expandtab
 
+#include <qbrush.h>
+#include <qglobal.h>
+#include <qlist.h>
 #include <qmap.h>
-#include "qwt_plot.h"
-#include "qwt_plot_grid.h"
-#include "qwt_plot_curve.h"
-#include "qwt_plot_marker.h"
-#include "qwt_symbol.h"
+#include <qmetatype.h>
+#include <qnamespace.h>
+#include <qpalette.h>
+#include <qpen.h>
+#include <qwidget.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_dict.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
 #include "qwt_legend.h"
 #include "qwt_legend_item.h"
-#include "qwt_scale_widget.h"
-#include "qwt_text_label.h"
+#include "qwt_plot.h"
+#include "qwt_plot_curve.h"
+#include "qwt_plot_grid.h"
+#include "qwt_plot_marker.h"
 #include "qwt_plot_printfilter.h"
+#include "qwt_scale_widget.h"
+#include "qwt_symbol.h"
+#include "qwt_text_label.h"
 
 #if QT_VERSION < 0x040000
 typedef QColorGroup Palette;

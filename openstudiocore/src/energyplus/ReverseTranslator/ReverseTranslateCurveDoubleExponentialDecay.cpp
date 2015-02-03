@@ -17,12 +17,14 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ReverseTranslator.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/Curve_DoubleExponentialDecay_FieldEnums.hxx>
 
 #include "../../model/CurveDoubleExponentialDecay.hpp"
-#include "../../model/CurveDoubleExponentialDecay_Impl.hpp"
-
-#include <utilities/idd/Curve_DoubleExponentialDecay_FieldEnums.hxx>
+#include "../ReverseTranslator.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

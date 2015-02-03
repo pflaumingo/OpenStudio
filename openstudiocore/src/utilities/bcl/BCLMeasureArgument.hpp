@@ -20,10 +20,13 @@
 #ifndef UTILITIES_BCL_BCLMEASUREARGUMENT_HPP
 #define UTILITIES_BCL_BCLMEASUREARGUMENT_HPP
 
-#include "../core/Optional.hpp"
-#include "../UtilitiesAPI.hpp"
-
+#include <boost/optional/optional.hpp>
+#include <iosfwd>
+#include <string>
 #include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Optional.hpp"
 
 class QDomDocument;
 class QDomElement;

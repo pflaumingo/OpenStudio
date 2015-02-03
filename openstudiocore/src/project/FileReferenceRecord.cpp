@@ -17,23 +17,34 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <qsqlquery.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <exception>
+#include <set>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/PathHelpers.hpp"
+#include "../utilities/core/UUID.hpp"
+#include "AlgorithmRecord.hpp"
+#include "AnalysisRecord.hpp"
+#include "AttributeRecord.hpp"
+#include "DataPointRecord.hpp"
 #include "FileReferenceRecord.hpp"
 #include "FileReferenceRecord_Impl.hpp"
-
-#include "ProjectDatabase.hpp"
 #include "JoinRecord.hpp"
-#include "AttributeRecord.hpp"
-#include "TagRecord.hpp"
-#include "AnalysisRecord.hpp"
-#include "DataPointRecord.hpp"
 #include "MeasureRecord.hpp"
-#include "AlgorithmRecord.hpp"
+#include "ProjectDatabase.hpp"
+#include "TagRecord.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/EnumBase.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
-#include "../utilities/data/Attribute.hpp"
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Finder.hpp"
-#include "../utilities/core/UUID.hpp"
-#include "../utilities/core/PathHelpers.hpp"
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

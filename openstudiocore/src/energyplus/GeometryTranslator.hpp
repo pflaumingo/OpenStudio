@@ -20,13 +20,32 @@
 #ifndef ENERGYPLUS_GEOMETRYTRANSLATOR_HPP
 #define ENERGYPLUS_GEOMETRYTRANSLATOR_HPP
 
-#include "EnergyPlusAPI.hpp"
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <ostream>
+#include <string>
 
-#include "../utilities/idf/Workspace.hpp"
-#include "../utilities/core/Logger.hpp"
 #include "../utilities/core/Enum.hpp"
-#include "../utilities/geometry/Transformation.hpp"
+#include "../utilities/core/Logger.hpp"
 #include "../utilities/geometry/Point3d.hpp"
+#include "../utilities/geometry/Transformation.hpp"
+#include "../utilities/idf/Workspace.hpp"
+#include "EnergyPlusAPI.hpp"
+#include "energyplus/../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/../utilities/idf/../core/EnumBase.hpp"
+#include "energyplus/../utilities/idf/../core/LogMessage.hpp"
+#include "energyplus/../utilities/idf/IdfObject.hpp"
 
 namespace openstudio {
 namespace energyplus {

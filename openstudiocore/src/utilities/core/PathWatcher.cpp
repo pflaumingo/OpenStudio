@@ -17,14 +17,17 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "PathWatcher.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <qfilesystemwatcher.h>
+#include <qtimer.h>
+#include <ostream>
+
 #include "Application.hpp"
 #include "Checksum.hpp"
-#include "Assert.hpp"
 #include "Logger.hpp"
-
-#include <QFileSystemWatcher>
-#include <QTimer>
+#include "PathWatcher.hpp"
+#include "utilities/core/Path.hpp"
+#include "utilities/core/Singleton.hpp"
 
 namespace openstudio {
 

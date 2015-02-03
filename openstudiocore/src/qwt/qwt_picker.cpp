@@ -7,21 +7,35 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
-#include <qapplication.h>
-#include <qevent.h>
-#include <qpainter.h>
-#include <qframe.h>
-#include <qcursor.h>
 #include <qbitmap.h>
+#include <qbrush.h>
+#include <qcolor.h>
+#include <qcoreevent.h>
+#include <qcursor.h>
+#include <qevent.h>
+#include <qflags.h>
+#include <qframe.h>
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qpainter.h>
+#include <qregion.h>
+#include <qsize.h>
+#include <qstring.h>
+#include <qvector.h>
+#include <qwidget.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_event_pattern.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_polygon.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_text.h"
 #include "qwt_math.h"
 #include "qwt_painter.h"
-#include "qwt_picker_machine.h"
 #include "qwt_picker.h"
+#include "qwt_picker_machine.h"
 #if QT_VERSION < 0x040000
 #include <qguardedptr.h>
 #else
 #include <qpointer.h>
-#include <qpaintengine.h>
 #endif
 
 class QwtPicker::PickerWidget: public QWidget

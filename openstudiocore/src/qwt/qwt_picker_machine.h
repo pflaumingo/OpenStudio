@@ -10,6 +10,10 @@
 #ifndef QWT_PICKER_MACHINE
 #define QWT_PICKER_MACHINE 1
 
+#include <qglobal.h>
+#include <qset.h>
+#include <qvector.h>
+
 #include "qwt_global.h"
 #if QT_VERSION < 0x040000
 #include <qvaluelist.h>

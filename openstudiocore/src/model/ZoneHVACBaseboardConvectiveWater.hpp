@@ -20,16 +20,32 @@
 #ifndef MODEL_ZONEHVACBASEBOARDCONVECTIVEWATER_HPP
 #define MODEL_ZONEHVACBASEBOARDCONVECTIVEWATER_HPP
 
-#include "ModelAPI.hpp"
-#include "ZoneHVACComponent.hpp"
-#include "ThermalZone.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "Model.hpp"
+#include "ModelAPI.hpp"
+#include "ThermalZone.hpp"
+#include "ZoneHVACComponent.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Schedule.hpp"
+#include "model/StraightComponent.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
 
 class Schedule;
 class StraightComponent;
+class ThermalZone;
 
 namespace detail {
 

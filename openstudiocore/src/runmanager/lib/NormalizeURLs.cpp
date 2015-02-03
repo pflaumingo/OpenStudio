@@ -17,13 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "NormalizeURLs.hpp"
-#include "../../utilities/idf/IdfFile.hpp"
-#include "../../utilities/idf/WorkspaceObject.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include <boost/filesystem.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/lexical_cast.hpp>
 #include <boost/timer.hpp>
-#include <fstream>
+#include <stddef.h>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <utility>
+
+#include "../../utilities/idf/IdfFile.hpp"
+#include "../../utilities/idf/Workspace.hpp"
+#include "NormalizeURLs.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+
+namespace openstudio {
+class URLSearchPath;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

@@ -17,48 +17,26 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Problem.hpp"
-#include "Problem_Impl.hpp"
-
-#include "Analysis.hpp"
-#include "Analysis_Impl.hpp"
-#include "ContinuousVariable.hpp"
-#include "ContinuousVariable_Impl.hpp"
-#include "DakotaAlgorithm.hpp"
-#include "DakotaParametersFile.hpp"
-#include "DataPoint.hpp"
-#include "DiscreteVariable.hpp"
-#include "DiscreteVariable_Impl.hpp"
-#include "Measure.hpp"
-#include "MeasureGroup.hpp"
-#include "MeasureGroup_Impl.hpp"
-#include "Function_Impl.hpp"
-#include "GenericUncertaintyDescription.hpp"
-#include "NullMeasure.hpp"
-#include "NullMeasure_Impl.hpp"
-#include "OptimizationProblem.hpp"
-#include "OptimizationProblem_Impl.hpp"
-#include "RubyContinuousVariable.hpp"
-#include "RubyContinuousVariable_Impl.hpp"
-#include "RubyMeasure.hpp"
-#include "RubyMeasure_Impl.hpp"
-#include "UncertaintyDescription.hpp"
-#include "UncertaintyDescription_Impl.hpp"
-#include "WorkflowStep_Impl.hpp"
-
-#include "../runmanager/lib/WorkItem.hpp"
-#include "../runmanager/lib/Workflow.hpp"
-#include "../runmanager/lib/MergedJobResults.hpp"
-#include "../runmanager/lib/RubyJobUtils.hpp"
+#include <boost/lexical_cast.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <quuid.h>
+#include <algorithm>
+#include <exception>
+#include <functional>
+#include <iterator>
+#include <limits>
+#include <set>
+#include <sstream>
+#include <utility>
 
 #include "../ruleset/OSArgument.hpp"
-
-#include "../utilities/idf/URLSearchPath.hpp"
-
-#include "../utilities/data/Attribute.hpp"
-
+#include "../runmanager/lib/RubyJobUtils.hpp"
+#include "../runmanager/lib/WorkItem.hpp"
+#include "../runmanager/lib/Workflow.hpp"
 #include "../utilities/bcl/BCLMeasure.hpp"
-
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Containers.hpp"
@@ -66,11 +44,45 @@
 #include "../utilities/core/Finder.hpp"
 #include "../utilities/core/Json.hpp"
 #include "../utilities/core/Optional.hpp"
-#include "../utilities/core/URLHelpers.hpp"
 #include "../utilities/core/UUID.hpp"
-
-#include <sstream>
-#include <limits>
+#include "../utilities/data/Attribute.hpp"
+#include "Analysis.hpp"
+#include "ContinuousVariable.hpp"
+#include "DakotaAlgorithm.hpp"
+#include "DakotaParametersFile.hpp"
+#include "DataPoint.hpp"
+#include "DiscreteVariable.hpp"
+#include "Function_Impl.hpp"
+#include "GenericUncertaintyDescription.hpp"
+#include "Measure.hpp"
+#include "MeasureGroup.hpp"
+#include "NullMeasure.hpp"
+#include "OptimizationProblem.hpp"
+#include "OptimizationProblem_Impl.hpp"
+#include "Problem.hpp"
+#include "Problem_Impl.hpp"
+#include "RubyContinuousVariable.hpp"
+#include "RubyMeasure.hpp"
+#include "UncertaintyDescription.hpp"
+#include "WorkflowStep_Impl.hpp"
+#include "analysis/../runmanager/lib/FileInfo.hpp"
+#include "analysis/../runmanager/lib/Job.hpp"
+#include "analysis/../runmanager/lib/JobErrors.hpp"
+#include "analysis/../runmanager/lib/JobParam.hpp"
+#include "analysis/../runmanager/lib/JobType.hpp"
+#include "analysis/../runmanager/lib/TreeStatus.hpp"
+#include "analysis/../utilities/core/EnumBase.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/AnalysisEnums.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/Function.hpp"
+#include "analysis/InputVariable.hpp"
+#include "analysis/InputVariable_Impl.hpp"
+#include "analysis/Measure_Impl.hpp"
+#include "analysis/Variable.hpp"
+#include "analysis/WorkflowStep.hpp"
 
 using namespace openstudio::ruleset;
 

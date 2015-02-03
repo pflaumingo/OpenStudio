@@ -20,21 +20,36 @@
 #ifndef MODEL_FACILITY_HPP
 #define MODEL_FACILITY_HPP
 
-#include "ModelAPI.hpp"
-#include "ParentObject.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
 
 #include "../utilities/data/DataEnums.hpp"
+#include "ModelAPI.hpp"
+#include "ParentObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
 
 namespace openstudio {
 
 class CalibrationResult;
 class EndUses;
+class Attribute;
+class IdfObject;
+namespace model {
+class Model;
+}  // namespace model
 
 namespace model {
 
 class Building;
-class Meter;
 class ExteriorLights;
+class Meter;
 
 namespace detail {
 

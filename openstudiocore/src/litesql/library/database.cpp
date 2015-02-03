@@ -4,13 +4,23 @@
  * 
  * See LICENSE for copyright information. */
 
-#include "compatibility.hpp"
+#include <ext/alloc_traits.h>
+#include <litesql/backend.hpp>
+#include <litesql/expr.hpp>
+#include <litesql/split.hpp>
+#include <litesql/string.hpp>
+#include <litesql/types.hpp>
+#include <stddef.h>
+#include <algorithm>
+#include <iostream>
+#include <map>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "litesql/database.hpp"
-#include "litesql/cursor.hpp"
 #include "litesql/except.hpp"
 #include "litesql/selectquery.hpp"
-#include <map>
-#include <algorithm>
 
 namespace litesql {
 using namespace std;

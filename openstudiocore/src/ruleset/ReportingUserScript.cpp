@@ -17,12 +17,12 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ReportingUserScript.hpp"
+#include <vector>
 
 #include "OSArgument.hpp"
 #include "OSRunner.hpp"
-
-#include <vector>
+#include "ReportingUserScript.hpp"
+#include "ruleset/../utilities/idf/IdfObject.hpp"
 
 namespace openstudio {
 namespace ruleset {

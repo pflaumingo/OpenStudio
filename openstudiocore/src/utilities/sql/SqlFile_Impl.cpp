@@ -17,21 +17,74 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SqlFile_Impl.hpp"
-#include "SqlFileTimeSeriesQuery.hpp"
-#include "OpenStudio.hxx"
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/multi_index/composite_key.hpp>
+#include <boost/multi_index/detail/bidir_node_iterator.hpp>
+#include <boost/multi_index/detail/index_node_base.hpp>
+#include <boost/multi_index/detail/ord_index_node.hpp>
+#include <boost/multi_index/indexed_by.hpp>
+#include <boost/multi_index/ordered_index.hpp>
+#include <boost/multi_index/tag.hpp>
+#include <boost/multi_index_container.hpp>
+#include <boost/multi_index_container_fwd.hpp>
+#include <boost/numeric/ublas/vector.hpp>
+#include <boost/operators.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <boost/tuple/detail/tuple_basic.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
+#include <stddef.h>
+#include <algorithm>
+#include <exception>
+#include <functional>
+#include <map>
+#include <sstream>
+#include <stdexcept>
 
-#include "../core/String.hpp"
-#include "../time/Calendar.hpp"
-#include "../filetypes/EpwFile.hpp"
+#include "../core/Assert.hpp"
 #include "../core/Containers.hpp"
 #include "../core/Optional.hpp"
+#include "../core/String.hpp"
+#include "../filetypes/EpwFile.hpp"
+#include "../time/Calendar.hpp"
 #include "../time/DateTime.hpp"
-#include "../core/Assert.hpp"
+#include "OpenStudio.hxx"
+#include "SqlFileTimeSeriesQuery.hpp"
+#include "SqlFile_Impl.hpp"
+#include "sqlite/sqlite3.h"
+#include "utilities/sql/../data/../time/Time.hpp"
+#include "utilities/sql/../data/DataEnums.hpp"
+#include "utilities/sql/../data/EndUses.hpp"
+#include "utilities/sql/../data/Matrix.hpp"
+#include "utilities/sql/../units/../core/Compare.hpp"
+#include "utilities/sql/../units/../core/Enum.hpp"
+#include "utilities/sql/../units/../core/EnumBase.hpp"
+#include "utilities/sql/../units/../core/Exception.hpp"
+#include "utilities/sql/../units/Unit.hpp"
+#include "utilities/sql/SqlFileDataDictionary.hpp"
+#include "utilities/sql/SqlFileEnums.hpp"
+#include "utilities/sql/SummaryData.hpp"
 
-#include <boost/filesystem.hpp>
-#include <boost/lexical_cast.hpp>
-#include <boost/regex.hpp>
+namespace boost {
+namespace multi_index {
+template <class Class, typename Type, Type Class::* PtrToMember> struct member;
+}  // namespace multi_index
+}  // namespace boost
 
 using boost::multi_index_container;
 using boost::multi_index::indexed_by;

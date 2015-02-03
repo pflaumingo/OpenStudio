@@ -20,11 +20,13 @@
 #ifndef UTILITIES_IDF_WORKSPACEOBJECTDIFF_HPP
 #define UTILITIES_IDF_WORKSPACEOBJECTDIFF_HPP
 
-#include "IdfObjectDiff.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
 
 #include "../UtilitiesAPI.hpp"
-
 #include "../core/UUID.hpp"
+#include "IdfObjectDiff.hpp"
 
 namespace openstudio {
 namespace detail {

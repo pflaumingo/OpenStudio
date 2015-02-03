@@ -20,18 +20,30 @@
 #ifndef MODEL_UTILITYBILL_HPP
 #define MODEL_UTILITYBILL_HPP
 
-#include "ModelAPI.hpp"
-#include "ModelObject.hpp"
-#include "ModelExtensibleGroup.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
 
 #include "../utilities/data/Vector.hpp"
+#include "ModelAPI.hpp"
+#include "ModelExtensibleGroup.hpp"
+#include "ModelObject.hpp"
+#include "model/../utilities/data/DataEnums.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
 
 namespace openstudio {
 
+class Date;
+class EndUseCategoryType;
 class FuelType;
 class InstallLocationType;
-class EndUseCategoryType;
-class Date;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
 
 namespace model {
 

@@ -19,20 +19,22 @@
 #ifndef UTILITIES_UNITS_QUANTITYCONVERTER_HPP
 #define UTILITIES_UNITS_QUANTITYCONVERTER_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "../core/Singleton.hpp"
-#include "../core/Logger.hpp"
-
-#include "Unit.hpp"
-#include <string>
+#include <boost/optional/optional.hpp>
 #include <map>
+#include <string>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "../core/Singleton.hpp"
+#include "Unit.hpp"
+#include "utilities/units/../core/LogMessage.hpp"
 
 class QDomElement;
 
 namespace openstudio {
 
-class Quantity;
 class OSQuantityVector;
+class Quantity;
 
 // JMT@20100902 - it's necessary to move the temperature conversion
 //                rule enum into a class that is *not* %ignored by swig, if we want

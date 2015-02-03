@@ -1,4 +1,10 @@
-#include "litesql.hpp"
+#include <litesql/except.hpp>
+#include <litesql/split.hpp>
+#include <litesql/string.hpp>
+#include <iostream>
+#include <string>
+#include <vector>
+
 #include "generator.hpp"
 #include "litesql-gen-cpp.hpp"
 #include "litesql-gen-graphviz.hpp"

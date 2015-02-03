@@ -20,15 +20,19 @@
 #ifndef ANALYSIS_DAKOTAPARAMETERSFILE_HPP
 #define ANALYSIS_DAKOTAPARAMETERSFILE_HPP
 
-#include "AnalysisAPI.hpp"
-
-#include "../utilities/core/Logger.hpp"
-#include "../utilities/core/Enum.hpp"
-#include "../utilities/core/Path.hpp"
-
 #include <boost/optional.hpp>
-
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <typeinfo>
 #include <vector>
+
+#include "../utilities/core/Enum.hpp"
+#include "../utilities/core/Logger.hpp"
+#include "../utilities/core/Path.hpp"
+#include "AnalysisAPI.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+
+class QVariant;
 
 namespace openstudio {
 namespace analysis {

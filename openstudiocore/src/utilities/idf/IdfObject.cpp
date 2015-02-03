@@ -17,44 +17,65 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "IdfObject.hpp"
-#include "IdfObject_Impl.hpp"
-
-#include "IdfExtensibleGroup.hpp"
-#include "IdfRegex.hpp"
-#include "ValidityReport.hpp"
-
-#include "../idd/IddObject.hpp"
-#include "../idd/IddObjectProperties.hpp"
-#include "../idd/IddFieldProperties.hpp"
-#include "../idd/IddKey.hpp"
-#include "../idd/ExtensibleIndex.hpp"
-#include <utilities/idd/IddFactory.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../idd/IddField.hpp"
-#include "../idd/IddRegex.hpp"
-#include "../idd/CommentRegex.hpp"
-#include "../idd/Comments.hpp"
-
-#include "../math/FloatCompare.hpp"
-#include "../core/Finder.hpp"
-#include "../core/Assert.hpp"
-#include "../core/Url.hpp"
-#include "../core/UUID.hpp"
-
-#include "../units/Quantity.hpp"
-#include "../units/OSOptionalQuantity.hpp"
-#include "../units/QuantityConverter.hpp"
-
-#include <boost/filesystem/fstream.hpp> 
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/algorithm/string/trim.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/none.hpp>
 #include <boost/numeric/conversion/cast.hpp>
-
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <ext/alloc_traits.h>
+#include <qurl.h>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <algorithm>
+#include <exception>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
-#include <iomanip>
-#include <algorithm>
-#include <limits>
+
+#include "../core/Assert.hpp"
+#include "../core/Finder.hpp"
+#include "../core/UUID.hpp"
+#include "../core/Url.hpp"
+#include "../idd/CommentRegex.hpp"
+#include "../idd/Comments.hpp"
+#include "../idd/ExtensibleIndex.hpp"
+#include "../idd/IddField.hpp"
+#include "../idd/IddFieldProperties.hpp"
+#include "../idd/IddKey.hpp"
+#include "../idd/IddObject.hpp"
+#include "../idd/IddObjectProperties.hpp"
+#include "../idd/IddRegex.hpp"
+#include "../math/FloatCompare.hpp"
+#include "../units/OSOptionalQuantity.hpp"
+#include "../units/Quantity.hpp"
+#include "../units/QuantityConverter.hpp"
+#include "IdfExtensibleGroup.hpp"
+#include "IdfObject.hpp"
+#include "IdfObject_Impl.hpp"
+#include "IdfRegex.hpp"
+#include "ValidityReport.hpp"
+#include "utilities/core/Containers.hpp"
+#include "utilities/idd/../core/Optional.hpp"
+#include "utilities/idf/../core/EnumBase.hpp"
+#include "utilities/idf/../core/Logger.hpp"
+#include "utilities/idf/../core/Singleton.hpp"
+#include "utilities/idf/../core/String.hpp"
+#include "utilities/idf/../idd/IddEnums.hpp"
+#include "utilities/idf/../units/Unit.hpp"
+#include "utilities/idf/DataError.hpp"
+#include "utilities/idf/Handle.hpp"
+#include "utilities/idf/IdfObjectDiff.hpp"
+#include "utilities/idf/ValidityEnums.hpp"
 
 using std::cout;
 using std::endl;

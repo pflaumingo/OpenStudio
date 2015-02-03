@@ -9,12 +9,21 @@
 
 // vim: expandtab
 
-#include "qwt_plot.h"
+#include <qobject.h>
+#include <qstring.h>
+#include <qvector.h>
+#include <qwidget.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_math.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_picker.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_canvas.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_polygon.h"
 #include "qwt_double_rect.h"
-#include "qwt_scale_div.h"
-#include "qwt_painter.h"
-#include "qwt_scale_map.h"
+#include "qwt_plot.h"
 #include "qwt_plot_picker.h"
+#include "qwt_scale_div.h"
+#include "qwt_scale_map.h"
 
 /*!
   \brief Create a plot picker

@@ -20,18 +20,19 @@
 #ifndef UTILITIES_TIME_DATETIME_HPP
 #define UTILITIES_TIME_DATETIME_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Date.hpp"
-#include "Time.hpp"
-#include "../core/Macro.hpp"
-#include "../core/Logger.hpp"
-
+#include <boost/date_time/gregorian/greg_date.hpp>
+#include <boost/optional/optional.hpp>
+#include <ctime>
+#include <iosfwd>
+#include <string>
 #include <vector>
 
-#include <boost/date_time/gregorian/greg_date.hpp>
-
-#include <ctime>
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "../core/Macro.hpp"
+#include "Date.hpp"
+#include "Time.hpp"
+#include "utilities/time/../core/LogMessage.hpp"
 
 class QDateTime;
 

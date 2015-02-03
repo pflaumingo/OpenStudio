@@ -17,26 +17,27 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/Schedule_Year_FieldEnums.hxx>
+#include <ostream>
+#include <string>
+#include <vector>
 
 #include "../../model/ScheduleTypeLimits.hpp"
-#include "../../model/ScheduleTypeLimits_Impl.hpp"
-#include "../../model/ScheduleYear.hpp"
-#include "../../model/ScheduleYear_Impl.hpp"
 #include "../../model/ScheduleWeek.hpp"
-#include "../../model/ScheduleWeek_Impl.hpp"
-
+#include "../../model/ScheduleYear.hpp"
+#include "../../utilities/core/Logger.hpp"
 #include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include "../../utilities/idf/Workspace.hpp"
 #include "../../utilities/time/Date.hpp"
 #include "../../utilities/time/Time.hpp"
-
-#include "../../utilities/core/Logger.hpp"
-#include "../../utilities/core/Assert.hpp"
-
-#include <utilities/idd/Schedule_Year_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Enum.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

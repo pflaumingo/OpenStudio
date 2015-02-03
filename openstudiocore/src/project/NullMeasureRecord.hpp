@@ -20,12 +20,23 @@
 #ifndef PROJECT_NULLMEASURERECORD_HPP
 #define PROJECT_NULLMEASURERECORD_HPP
 
-#include "ProjectAPI.hpp"
-#include "MeasureRecord.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
+#include "MeasureRecord.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/ProjectDatabase.hpp"
 
-#include <boost/optional/optional.hpp>
+class QSqlQuery;
+namespace openstudio {
+namespace project {
+class MeasureGroupRecord;
+}  // namespace project
+}  // namespace openstudio
 
 namespace openstudio {
 

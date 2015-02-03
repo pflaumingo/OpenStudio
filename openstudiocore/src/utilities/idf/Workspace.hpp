@@ -20,40 +20,48 @@
 #ifndef UTILITIES_IDF_WORKSPACE_HPP
 #define UTILITIES_IDF_WORKSPACE_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "ValidityEnums.hpp"
-#include "Handle.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <ostream>
+#include <set>
+#include <string>
+#include <typeinfo>
+#include <utility>
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
 #include "../core/Logger.hpp"
 #include "../core/Path.hpp"
+#include "Handle.hpp"
+#include "ValidityEnums.hpp"
+#include "utilities/idf/../core/Compare.hpp"
+#include "utilities/idf/../core/LogMessage.hpp"
+#include "utilities/idf/IdfFile.hpp"
 
-#include <string>
-#include <ostream>
-#include <vector>
-#include <set>
+class QUrl;
 
 namespace openstudio {
 
 // forward declarations
 class IddFile;
-struct IddFileType;
 class IddObject;
-struct IddObjectType;
 class IdfFile;
 class IdfObject;
-class WorkspaceObject;
-class WorkspaceObjectOrder;
+class ProgressBar;
+class Quantity;
 class URLSearchPath;
 class ValidityReport;
 class VersionString;
-
-class Quantity;
-
-class ProgressBar;
+class WorkspaceObject;
+class WorkspaceObjectOrder;
+struct IddFileType;
+struct IddObjectType;
 
 namespace detail {
-  class Workspace_Impl;
   class WorkspaceObject_Impl;
+  class Workspace_Impl;
 }
 
 /** Workspace holds a collection of interconnected \link WorkspaceObject WorkspaceObjects\endlink.

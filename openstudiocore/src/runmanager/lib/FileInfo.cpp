@@ -17,7 +17,14 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/filesystem/operations.hpp>
+#include <features.h>
+#include <qnamespace.h>
+#include <time.h>
+
 #include "FileInfo.hpp"
+#include "runmanager/lib/../../utilities/core/Path.hpp"
+#include "runmanager/lib/../../utilities/time/DateTime.hpp"
 
 namespace openstudio {
 namespace runmanager {

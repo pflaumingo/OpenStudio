@@ -20,28 +20,55 @@
 #ifndef PROJECT_RECORD_HPP
 #define PROJECT_RECORD_HPP
 
-#include "ProjectAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <memory>
+#include <ostream>
+#include <set>
+#include <string>
+#include <typeinfo>
+#include <vector>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Logger.hpp"
+#include "../utilities/core/Path.hpp"
 #include "../utilities/core/UUID.hpp"
 #include "../utilities/time/DateTime.hpp"
-#include "../utilities/core/Path.hpp"
+#include "ProjectAPI.hpp"
+#include "project/../utilities/core/LogMessage.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
 
-class QSqlQuery;
+class QObject;
 class QSqlDatabase;
+class QSqlQuery;
 class QThread;
 
 namespace openstudio {
 namespace project {
 
-class ObjectRecord;
 class JoinRecord;
+class ObjectRecord;
 class ProjectDatabase;
 
 namespace detail{
-  class Record_Impl;
   class ProjectDatabase_Impl;
+  class Record_Impl;
 }
 
 struct UpdateByIdQueryData {

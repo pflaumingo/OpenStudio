@@ -17,28 +17,31 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "MeasureRecord.hpp"
-#include "MeasureRecord_Impl.hpp"
-#include "MeasureGroupRecord.hpp"
-#include "RubyMeasureRecord.hpp"
-#include "RubyMeasureRecord_Impl.hpp"
-#include "NullMeasureRecord.hpp"
-#include "NullMeasureRecord_Impl.hpp"
-#include "ProjectDatabase.hpp"
-#include "JoinRecord.hpp"
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <set>
+#include <sstream>
 
 #include "../analysis/Measure.hpp"
 #include "../analysis/NullMeasure.hpp"
-#include "../analysis/NullMeasure_Impl.hpp"
 #include "../analysis/RubyMeasure.hpp"
-#include "../analysis/RubyMeasure_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
-
-#include <sstream>
-
-#include <QSqlQuery>
-#include <QSqlError>
+#include "JoinRecord.hpp"
+#include "MeasureGroupRecord.hpp"
+#include "MeasureRecord.hpp"
+#include "MeasureRecord_Impl.hpp"
+#include "NullMeasureRecord.hpp"
+#include "NullMeasureRecord_Impl.hpp"
+#include "ProjectDatabase.hpp"
+#include "RubyMeasureRecord.hpp"
+#include "RubyMeasureRecord_Impl.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/Optional.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
 
 namespace openstudio {
 namespace project {

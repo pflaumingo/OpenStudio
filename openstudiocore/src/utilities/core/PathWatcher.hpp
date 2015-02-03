@@ -20,11 +20,16 @@
 #ifndef UTILITIES_CORE_PATHWATCHER_HPP
 #define UTILITIES_CORE_PATHWATCHER_HPP
 
-#include "../UtilitiesAPI.hpp"
-#include "Path.hpp"
-
+#include <qobject.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
 #include <QObject>
 #include <QString>
+#include <memory>
+#include <string>
+
+#include "../UtilitiesAPI.hpp"
+#include "Path.hpp"
 
 // forward declarations
 class QFileSystemWatcher;

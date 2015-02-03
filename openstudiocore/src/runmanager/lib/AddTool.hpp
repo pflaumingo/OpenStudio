@@ -20,12 +20,20 @@
 #ifndef RUNMANAGER_LIB_ADDTOOL_HPP
 #define RUNMANAGER_LIB_ADDTOOL_HPP
 
-#include <string>
-#include <QTimer>
 #include <boost/optional.hpp>
-#include "RunManager.hpp"
+#include <boost/optional/optional.hpp>
+#include <qdialog.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
 #include <runmanager/lib/ui_AddTool.h>
+#include <QTimer>
+#include <string>
+#include <utility>
+
 #include "Job.hpp"
+#include "RunManager.hpp"
+
+class QWidget;
 
 
 namespace openstudio {
@@ -33,6 +41,9 @@ namespace runmanager {
 
   //! QDialog based user interface for setting RunManager configuration options. 
   //! \sa http://doc.qt.nokia.com/qdialog.html
+class ToolLocationInfo;
+class ToolVersion;
+
   class AddTool : public QDialog
   {
     Q_OBJECT

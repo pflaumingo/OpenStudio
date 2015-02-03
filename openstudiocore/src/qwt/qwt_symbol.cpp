@@ -7,8 +7,12 @@
  * modify it under the terms of the Qwt License, Version 1.0
  *****************************************************************************/
 
+#include <qnamespace.h>
 #include <qpainter.h>
-#include <qapplication.h>
+#include <qpoint.h>
+#include <qrect.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_layout_metrics.h"
 #include "qwt_painter.h"
 #include "qwt_polygon.h"
 #include "qwt_symbol.h"

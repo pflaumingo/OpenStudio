@@ -20,8 +20,20 @@
 #ifndef MODEL_METER_HPP
 #define MODEL_METER_HPP
 
+#include <boost/optional/optional.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
 
 namespace openstudio {
 
@@ -29,6 +41,7 @@ class EndUseType;
 class FuelType;
 class InstallLocationType;
 class TimeSeries;
+class IdfObject;
 
 namespace model {
 

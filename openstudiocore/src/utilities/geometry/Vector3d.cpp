@@ -17,7 +17,12 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/numeric/ublas/vector.hpp>
+#include <boost/numeric/ublas/vector_expression.hpp>
+#include <ostream>
+
 #include "Vector3d.hpp"
+#include "utilities/geometry/../data/Vector.hpp"
 
 namespace openstudio{
 

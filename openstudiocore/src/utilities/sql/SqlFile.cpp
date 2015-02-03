@@ -17,9 +17,23 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <exception>
+#include <ostream>
+
 #include "SqlFile.hpp"
-#include "SqlFile_Impl.hpp"
 #include "SqlFileTimeSeriesQuery.hpp"
+#include "SqlFile_Impl.hpp"
+#include "sqlite/sqlite3.h"
+#include "utilities/sql/../data/../core/Path.hpp"
+#include "utilities/sql/../data/../time/DateTime.hpp"
+#include "utilities/sql/../data/DataEnums.hpp"
+#include "utilities/sql/../data/EndUses.hpp"
+#include "utilities/sql/../data/Matrix.hpp"
+#include "utilities/sql/../data/Vector.hpp"
+#include "utilities/sql/../units/../core/Logger.hpp"
+#include "utilities/sql/SqlFileDataDictionary.hpp"
+#include "utilities/sql/SqlFileEnums.hpp"
+#include "utilities/sql/SummaryData.hpp"
 
 namespace openstudio{
 

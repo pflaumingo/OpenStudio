@@ -20,13 +20,22 @@
 #ifndef RUNMANAGER_LIB_TOOLINFO_HPP
 #define RUNMANAGER_LIB_TOOLINFO_HPP
 
-#include "RunManagerAPI.hpp"
-
-#include <string>
-#include "../../utilities/core/Path.hpp"
-#include "../../utilities/core/Logger.hpp"
+#include <boost/filesystem/path.hpp>
+#include <boost/optional/optional.hpp>
 #include <boost/regex.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
 #include <algorithm>
+#include <functional>
+#include <ostream>
+#include <stdexcept>
+#include <string>
+#include <vector>
+
+#include "../../utilities/core/Logger.hpp"
+#include "../../utilities/core/Path.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
 
 namespace openstudio {
 namespace runmanager {

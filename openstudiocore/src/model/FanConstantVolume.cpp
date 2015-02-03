@@ -17,50 +17,52 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Fan_ConstantVolume_FieldEnums.hxx>
+#include <algorithm>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Compare.hpp"
+#include "../utilities/units/OSOptionalQuantity.hpp"
+#include "../utilities/units/Quantity.hpp"
+#include "AirLoopHVAC.hpp"
+#include "AirLoopHVACOutdoorAirSystem.hpp"
+#include "AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass.hpp"
+#include "AirLoopHVACUnitaryHeatPumpAirToAir.hpp"
+#include "AirLoopHVACUnitarySystem.hpp"
+#include "AirTerminalSingleDuctParallelPIUReheat.hpp"
 #include "FanConstantVolume.hpp"
 #include "FanConstantVolume_Impl.hpp"
 #include "FanVariableVolume.hpp"
-#include "FanVariableVolume_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVAC_Impl.hpp"
-#include "ZoneHVACComponent.hpp"
-#include "ZoneHVACComponent_Impl.hpp"
-#include "ZoneHVACFourPipeFanCoil.hpp"
-#include "ZoneHVACFourPipeFanCoil_Impl.hpp"
-#include "ZoneHVACPackagedTerminalHeatPump.hpp"
-#include "ZoneHVACPackagedTerminalHeatPump_Impl.hpp"
-#include "ZoneHVACPackagedTerminalAirConditioner.hpp"
-#include "ZoneHVACPackagedTerminalAirConditioner_Impl.hpp"
-#include "ZoneHVACUnitHeater.hpp"
-#include "ZoneHVACUnitHeater_Impl.hpp"
-#include "AirLoopHVACOutdoorAirSystem.hpp"
-#include "AirLoopHVACOutdoorAirSystem_Impl.hpp"
-#include "AirTerminalSingleDuctParallelPIUReheat.hpp"
-#include "AirTerminalSingleDuctParallelPIUReheat_Impl.hpp"
-#include "AirLoopHVACUnitaryHeatPumpAirToAir.hpp"
-#include "AirLoopHVACUnitaryHeatPumpAirToAir_Impl.hpp"
-#include "AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass.hpp"
-#include "AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass_Impl.hpp"
-#include "AirLoopHVACUnitarySystem.hpp"
-#include "AirLoopHVACUnitarySystem_Impl.hpp"
-#include "SetpointManagerMixedAir.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
 #include "Model.hpp"
-#include <utilities/idd/OS_Fan_ConstantVolume_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Compare.hpp"
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/units/Quantity.hpp"
-#include "../utilities/units/OSOptionalQuantity.hpp"
+#include "Node.hpp"
+#include "Schedule.hpp"
+#include "SetpointManagerMixedAir.hpp"
+#include "ZoneHVACComponent.hpp"
+#include "ZoneHVACFourPipeFanCoil.hpp"
+#include "ZoneHVACPackagedTerminalAirConditioner.hpp"
+#include "ZoneHVACPackagedTerminalHeatPump.hpp"
+#include "ZoneHVACUnitHeater.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/ModelObject.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   FanConstantVolume_Impl::FanConstantVolume_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : StraightComponent_Impl(idfObject, model, keepHandle)

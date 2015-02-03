@@ -17,12 +17,11 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <boost/none.hpp>
+
 #include "../ReverseTranslator.hpp"
-
-#include "../../model/Version.hpp"
-#include "../../model/Version_Impl.hpp"
-
-#include <utilities/idd/Version_FieldEnums.hxx>
+#include "energyplus/ReverseTranslator/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "energyplus/ReverseTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

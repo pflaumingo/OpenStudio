@@ -20,10 +20,34 @@
 #ifndef ANALYSIS_DDACEALGORITHMOPTIONS_HPP
 #define ANALYSIS_DDACEALGORITHMOPTIONS_HPP
 
-#include "AnalysisAPI.hpp"
-#include "DakotaAlgorithmOptions.hpp"
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Enum.hpp"
+#include "AnalysisAPI.hpp"
+#include "DakotaAlgorithmOptions.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+
+namespace openstudio {
+class Attribute;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

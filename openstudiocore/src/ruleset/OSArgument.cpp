@@ -17,23 +17,32 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OSArgument.hpp"
-
-#include "../utilities/idf/WorkspaceObject.hpp"
-
-#include "../utilities/idd/IddObject.hpp"
-
-#include "../utilities/units/QuantityFactory.hpp"
+#include <boost/functional/value_factory.hpp>
+#include <boost/lexical_cast.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
+#include <qmap.h>
+#include <qstring.h>
+#include <algorithm>
+#include <functional>
+#include <limits>
+#include <sstream>
 
 #include "../utilities/core/Assert.hpp"
-#include "../utilities/core/Containers.hpp"
 #include "../utilities/core/Compare.hpp"
+#include "../utilities/core/Containers.hpp"
 #include "../utilities/core/Json.hpp"
-
-#include <boost/lexical_cast.hpp>
-#include <boost/functional/value_factory.hpp>
-
-#include <sstream>
+#include "../utilities/idd/IddObject.hpp"
+#include "../utilities/idf/WorkspaceObject.hpp"
+#include "../utilities/units/QuantityFactory.hpp"
+#include "OSArgument.hpp"
+#include "ruleset/../utilities/idd/IddEnums.hpp"
+#include "ruleset/../utilities/idf/../core/Enum.hpp"
+#include "ruleset/../utilities/idf/../core/Logger.hpp"
+#include "ruleset/../utilities/idf/../core/Path.hpp"
+#include "ruleset/../utilities/idf/../core/String.hpp"
+#include "ruleset/../utilities/idf/Workspace.hpp"
+#include "ruleset/../utilities/units/Unit.hpp"
 
 namespace openstudio {
 namespace ruleset {

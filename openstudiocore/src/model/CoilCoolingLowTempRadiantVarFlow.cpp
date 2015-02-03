@@ -17,38 +17,41 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "CoilCoolingLowTempRadiantVarFlow.hpp"
-#include "CoilCoolingLowTempRadiantVarFlow_Impl.hpp"
-
-#include "ZoneHVACComponent.hpp"
-#include "ZoneHVACComponent_Impl.hpp"
-#include "ZoneHVACLowTempRadiantVarFlow.hpp"
-#include "ZoneHVACLowTempRadiantVarFlow_Impl.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include "Model.hpp"
-#include "Model_Impl.hpp"
-#include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "PlantLoop.hpp"
-#include "PlantLoop_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Coil_Cooling_LowTemperatureRadiant_VariableFlow_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <quuid.h>
 #include <utilities/idd/IddEnums.hxx>
-
-#include "../utilities/units/Unit.hpp"
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_Coil_Cooling_LowTemperatureRadiant_VariableFlow_FieldEnums.hxx>
+#include <algorithm>
 
 #include "../utilities/core/Assert.hpp"
+#include "CoilCoolingLowTempRadiantVarFlow.hpp"
+#include "CoilCoolingLowTempRadiantVarFlow_Impl.hpp"
+#include "Model.hpp"
+#include "Node.hpp"
+#include "PlantLoop.hpp"
+#include "Schedule.hpp"
+#include "ZoneHVACComponent.hpp"
+#include "ZoneHVACLowTempRadiantVarFlow.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/ModelObject.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   CoilCoolingLowTempRadiantVarFlow_Impl::CoilCoolingLowTempRadiantVarFlow_Impl(const IdfObject& idfObject,
                                                                                    Model_Impl* model,

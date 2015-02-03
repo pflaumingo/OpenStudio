@@ -17,35 +17,43 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <boost/none.hpp>
+#include <quuid.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Node_FieldEnums.hxx>
+#include <string>
+
+#include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
 #include "Node.hpp"
 #include "Node_Impl.hpp"
-#include "SetpointManager.hpp"
-#include "SetpointManager_Impl.hpp"
-#include "SetpointManagerMixedAir.hpp"
-#include "SetpointManagerMixedAir_Impl.hpp"
-#include "SetpointManagerOutdoorAirReset.hpp"
-#include "SetpointManagerOutdoorAirReset_Impl.hpp"
-#include "SetpointManagerSingleZoneReheat.hpp"
-#include "SetpointManagerSingleZoneReheat_Impl.hpp"
-#include "SetpointManagerScheduled.hpp"
-#include "SetpointManagerScheduled_Impl.hpp"
-#include "SetpointManagerFollowOutdoorAirTemperature.hpp"
-#include "SetpointManagerFollowOutdoorAirTemperature_Impl.hpp"
-#include "SetpointManagerWarmest.hpp"
-#include "SetpointManagerWarmest_Impl.hpp"
-#include "ThermalZone.hpp"
 #include "PortList.hpp"
-#include "PortList_Impl.hpp"
-#include "Model.hpp"
-#include <utilities/idd/OS_Node_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
-#include "../utilities/core/Assert.hpp"
+#include "SetpointManager.hpp"
+#include "SetpointManagerFollowOutdoorAirTemperature.hpp"
+#include "SetpointManagerMixedAir.hpp"
+#include "SetpointManagerOutdoorAirReset.hpp"
+#include "SetpointManagerScheduled.hpp"
+#include "SetpointManagerSingleZoneReheat.hpp"
+#include "SetpointManagerWarmest.hpp"
+#include "ThermalZone.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/HVACComponent.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/StraightComponent.hpp"
+#include "model/StraightComponent_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail{
+
+class Model_Impl;
 
   Node_Impl::Node_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : StraightComponent_Impl(idfObject, model, keepHandle)

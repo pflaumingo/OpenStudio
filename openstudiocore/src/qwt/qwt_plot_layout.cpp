@@ -9,13 +9,22 @@
 
 // vim: expandtab
 
+#include <qfont.h>
+#include <qglobal.h>
+#include <qregion.h>
 #include <qscrollbar.h>
+#include <qwidget.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_abstract_scale_draw.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_math.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_scale_draw.h"
+#include "qwt_legend.h"
+#include "qwt_plot_canvas.h"
+#include "qwt_plot_layout.h"
+#include "qwt_scale_widget.h"
 #include "qwt_text.h"
 #include "qwt_text_label.h"
-#include "qwt_plot_canvas.h"
-#include "qwt_scale_widget.h"
-#include "qwt_legend.h"
-#include "qwt_plot_layout.h"
 
 class QwtPlotLayout::LayoutData
 {

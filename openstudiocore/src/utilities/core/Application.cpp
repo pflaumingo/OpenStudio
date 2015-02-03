@@ -17,21 +17,28 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <OpenStudio.hxx>
+#include <boost/filesystem/path.hpp>
+#include <boost/none.hpp>
+#include <qapplication.h>
+#include <qcoreapplication.h>
+#include <qeventloop.h>
+#include <qnamespace.h>
+#include <qsettings.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <qwidget.h>
+
 #include "Application.hpp"
 #include "ApplicationPathHelpers.hpp"
 #include "String.hpp"
-#include <OpenStudio.hxx>
-
-#include <QWidget>
-#include <QSettings>
+#include "utilities/core/Path.hpp"
 
 #if _WIN32 || _MSC_VER
-  #include <QWinWidget>
   #include <Windows.h>
   #include <boost/regex.hpp>
+  #include <QWinWidget>
 #endif
-
-#include <iostream>
 
 namespace openstudio{
 

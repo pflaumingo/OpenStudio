@@ -20,24 +20,37 @@
 #ifndef UTILITIES_PLOT_FLOODPLOT_HPP
 #define UTILITIES_PLOT_FLOODPLOT_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <qevent.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
+#include <qwt/qwt_color_map.h>
+#include <qwt/qwt_plot.h>
+#include <qwt/qwt_plot_layout.h>
+#include <qwt/qwt_plot_spectrogram.h>
+#include <qwt/qwt_plot_zoomer.h>
+#include <qwt/qwt_scale_draw.h>
+#include <qwt/qwt_text.h>
+#include <QAction>
+#include <QPushButton>
+#include <QWidget>
+#include <string>
+#include <vector>
 
-#include "Plot2D.hpp"
+#include "../UtilitiesAPI.hpp"
+#include "../data/Matrix.hpp"
 #include "../data/TimeSeries.hpp"
 #include "../data/Vector.hpp"
-#include "../data/Matrix.hpp"
+#include "Plot2D.hpp"
+#include "qwt/qwt_double_interval.h"
+#include "qwt/qwt_double_rect.h"
+#include "qwt/qwt_raster_data.h"
+#include "utilities/plot/../core/Macro.hpp"
+#include "utilities/plot/../data/../time/DateTime.hpp"
 
-#include <QWidget>
-#include <QPushButton>
-#include <QAction>
-
-#include <qwt/qwt_plot.h>
-#include <qwt/qwt_text.h>
-#include <qwt/qwt_color_map.h>
-#include <qwt/qwt_plot_spectrogram.h>
-#include <qwt/qwt_scale_draw.h>
-#include <qwt/qwt_plot_zoomer.h>
-#include <qwt/qwt_plot_layout.h>
+class QAction;
+class QWidget;
+class QwtPlotSpectrogram;
+class QwtScaleWidget;
 
 namespace openstudio{
 

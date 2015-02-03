@@ -17,7 +17,18 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include <ext/alloc_traits.h>
+#include <qtextedit.h>
+#include <stddef.h>
+#include <string>
+#include <vector>
+
 #include "JobErrorsDisplay.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "ui_JobErrorsDisplay.h"
+
+class QWidget;
 
 namespace openstudio {
 namespace runmanager {

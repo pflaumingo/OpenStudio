@@ -17,24 +17,47 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "EpwFile.hpp"
-#include "../idf/IdfObject.hpp"
-#include "../idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
-#include "../core/Checksum.hpp"
-#include "../core/Assert.hpp"
-#include "../units/QuantityConverter.hpp"
-
-#include <boost/regex.hpp>
-#include <boost/lexical_cast.hpp>
-
+#include <boost/algorithm/string/trim.hpp>
 #include <boost/filesystem/fstream.hpp>
-
-#include <QStringList>
-#include <QFile>
-#include <QTextStream>
-
+#include <boost/filesystem/operations.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <ext/alloc_traits.h>
+#include <qfile.h>
+#include <qiodevice.h>
+#include <qlist.h>
+#include <qstringlist.h>
+#include <qtextstream.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <algorithm>
 #include <cmath>
+#include <exception>
+#include <sstream>
+
+#include "../core/Assert.hpp"
+#include "../core/Checksum.hpp"
+#include "../idd/IddEnums.hpp"
+#include "../idf/IdfObject.hpp"
+#include "../units/QuantityConverter.hpp"
+#include "EpwFile.hpp"
+#include "utilities/filetypes/../core/Logger.hpp"
+#include "utilities/filetypes/../core/Path.hpp"
+#include "utilities/filetypes/../core/String.hpp"
+#include "utilities/filetypes/../data/TimeSeries.hpp"
+#include "utilities/filetypes/../data/Vector.hpp"
+#include "utilities/filetypes/../time/Date.hpp"
+#include "utilities/filetypes/../time/DateTime.hpp"
+#include "utilities/filetypes/../time/Time.hpp"
 
 namespace openstudio{
 

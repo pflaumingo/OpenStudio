@@ -17,10 +17,17 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "WindowGroup.hpp"
-#include "ForwardTranslator.hpp"
+#include <quuid.h>
+#include <ostream>
 
 #include "../utilities/geometry/Geometry.hpp"
+#include "ForwardTranslator.hpp"
+#include "WindowGroup.hpp"
+#include "radiance/../model/ConstructionBase.hpp"
+#include "radiance/../model/ShadingControl.hpp"
+#include "radiance/../model/Space.hpp"
+#include "radiance/../utilities/geometry/Point3d.hpp"
+#include "radiance/../utilities/geometry/Vector3d.hpp"
 
 namespace openstudio{
 namespace radiance{

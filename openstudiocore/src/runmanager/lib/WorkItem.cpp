@@ -17,16 +17,29 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "WorkItem.hpp"
-#include "JSON.hpp"
-
-#include "RubyJobUtils.hpp"
+#include <qjsondocument.h>
+#include <qmetatype.h>
+#include <qregularexpression.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <istream>
+#include <tuple>
+#include <utility>
 
 #include "../../utilities/core/FileReference.hpp"
 #include "../../utilities/core/PathHelpers.hpp"
-
-#include <QJsonDocument>
-#include <QRegularExpression>
+#include "JSON.hpp"
+#include "RubyJobUtils.hpp"
+#include "WorkItem.hpp"
+#include "runmanager/lib/../../utilities/core/Compare.hpp"
+#include "runmanager/lib/../../utilities/core/Enum.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/../../utilities/core/String.hpp"
+#include "runmanager/lib/FileInfo.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
 namespace openstudio {
 namespace runmanager {

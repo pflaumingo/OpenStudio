@@ -17,16 +17,18 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <../utilities/core/Path.hpp>
+#include <../utilities/data/TimeSeries.hpp>
+
 #include "PrjModel.hpp"
-#include "PrjReader.hpp"
-#include "SimFile.hpp"
-
 #include "PrjModelImpl.hpp"
-
-#include <QFile>
+#include "airflow/contam/PrjAirflowElements.hpp"
+#include "airflow/contam/PrjObjects.hpp"
 
 namespace openstudio {
 namespace contam {
+
+class Reader;
 
 IndexModel::IndexModel()
 {

@@ -17,12 +17,19 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "IddFileAndFactoryWrapper.hpp"
-#include <utilities/idd/IddFactory.hxx>
+#include <boost/none.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <ostream>
 
 #include "../core/Assert.hpp"
 #include "../core/Containers.hpp"
+#include "IddFileAndFactoryWrapper.hpp"
+#include "utilities/idd/../core/EnumBase.hpp"
+#include "utilities/idd/../core/Singleton.hpp"
+#include "utilities/idd/IddEnums.hpp"
+#include "utilities/idd/IddFile.hpp"
+#include "utilities/idd/IddObject.hpp"
 
 namespace openstudio {
 

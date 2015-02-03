@@ -20,12 +20,24 @@
 #ifndef ANALYSIS_GENERICUNCERTAINTYDESCRIPTION_HPP
 #define ANALYSIS_GENERICUNCERTAINTYDESCRIPTION_HPP
 
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "UncertaintyDescription.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/AnalysisEnums.hpp"
 
 namespace openstudio {
 
 class Attribute;
+namespace analysis {
+namespace detail {
+class UncertaintyDescription_Impl;
+}  // namespace detail
+}  // namespace analysis
 struct AttributeDescription;
 
 namespace analysis {

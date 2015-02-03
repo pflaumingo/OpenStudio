@@ -21,21 +21,27 @@
 #define RUNMANAGER_LIB_USERSCRIPTJOB_HPP
 
 #include <boost/filesystem.hpp>
+#include <qobjectdefs.h>
+#include <QDateTime>
+#include <QFileInfo>
+#include <QFileSystemWatcher>
+#include <QProcess>
 #include <string>
+
+#include "../../energyplus/ErrorFile.hpp"
 #include "../../utilities/core/Logger.hpp"
 #include "Job_Impl.hpp"
-#include "ToolInfo.hpp"
 #include "RubyJob.hpp"
-#include "../../energyplus/ErrorFile.hpp"
-
-#include <QProcess>
-#include <QFileSystemWatcher>
-#include <QFileInfo>
-#include <QDateTime>
+#include "ToolInfo.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/JobParam.hpp"
 
 namespace openstudio {
 namespace runmanager {
   class UserScriptJobBuilder;
+class Files;
+struct JobState;
 
 namespace detail {
 

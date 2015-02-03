@@ -10,13 +10,25 @@
 #ifndef QWT_THERMO_H
 #define QWT_THERMO_H
 
-#include <qwidget.h>
+#include <qbrush.h>
 #include <qcolor.h>
 #include <qfont.h>
+#include <qglobal.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
 #include <qrect.h>
-#include "qwt_global.h"
-#include "qwt_abstract_scale.h"
+#include <qsize.h>
+#include <qwidget.h>
+#include <stddef.h>
 
+#include "qwt_abstract_scale.h"
+#include "qwt_global.h"
+
+class QFont;
+class QPaintEvent;
+class QPainter;
+class QRect;
+class QResizeEvent;
 class QwtScaleDraw;
 
 /*!
@@ -176,6 +188,7 @@ private:
     int transform(double v) const;
     
     class PrivateData;
+
     PrivateData *d_data;
 };
 

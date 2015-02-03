@@ -1,6 +1,11 @@
-#include "litesql-gen-xml.hpp"
+#include <litesql/string.hpp>
+#include <vector>
 
-#include <fstream>
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/generator.hpp"
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/litesql-gen.hpp"
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/objectmodel.hpp"
+#include "/home/macumber/OpenStudio/openstudiocore/src/litesql/generator/xmlobjects.hpp"
+#include "litesql-gen-xml.hpp"
 
 using namespace std;
 using namespace xml;

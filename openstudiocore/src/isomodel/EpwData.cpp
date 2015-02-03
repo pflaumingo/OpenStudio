@@ -17,8 +17,18 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <assert.h>
+#include <ext/alloc_traits.h>
+#include <stdlib.h>
+#include <fstream>
+#include <stdexcept>
+
 #include "EpwData.hpp"
 #include "SolarRadiation.hpp"
+#include "isomodel/../utilities/core/Path.hpp"
+#include "isomodel/../utilities/data/Matrix.hpp"
+#include "isomodel/../utilities/data/Vector.hpp"
+#include "isomodel/TimeFrame.hpp"
 
 namespace openstudio {
 namespace isomodel {

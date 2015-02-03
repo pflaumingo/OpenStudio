@@ -17,15 +17,27 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
+#include <ext/alloc_traits.h>
+#include <qmetatype.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <ostream>
+#include <string>
+
 #include "Function.hpp"
 #include "Function_Impl.hpp"
-
 #include "InputVariable.hpp"
-#include "InputVariable_Impl.hpp"
 #include "LinearFunction.hpp"
 #include "LinearFunction_Impl.hpp"
 #include "WorkflowStep.hpp"
-#include "WorkflowStep_Impl.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/AnalysisObject.hpp"
+#include "analysis/AnalysisObject_Impl.hpp"
+#include "analysis/Variable.hpp"
+
+namespace openstudio {
+class VersionString;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {

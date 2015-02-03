@@ -17,10 +17,12 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
+#include "../core/Assert.hpp"
 #include "WorkspaceObjectDiff.hpp"
 #include "WorkspaceObjectDiff_Impl.hpp"
-
-#include "../core/Assert.hpp"
+#include "utilities/idf/../core/UUID.hpp"
+#include "utilities/idf/IdfObjectDiff.hpp"
+#include "utilities/idf/IdfObjectDiff_Impl.hpp"
 
 namespace openstudio {
   namespace detail {

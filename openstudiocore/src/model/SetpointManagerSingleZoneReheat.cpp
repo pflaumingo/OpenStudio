@@ -17,26 +17,33 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "SetpointManagerSingleZoneReheat.hpp"
-#include "SetpointManagerSingleZoneReheat_Impl.hpp"
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/OS_SetpointManager_SingleZone_Reheat_FieldEnums.hxx>
+
+#include "../utilities/core/Assert.hpp"
+#include "AirLoopHVAC.hpp"
 #include "Model.hpp"
 #include "Node.hpp"
-#include "Node_Impl.hpp"
-#include "AirLoopHVAC.hpp"
-#include "AirLoopHVACOutdoorAirSystem.hpp"
+#include "SetpointManagerSingleZoneReheat.hpp"
+#include "SetpointManagerSingleZoneReheat_Impl.hpp"
 #include "ThermalZone.hpp"
-#include "ThermalZone_Impl.hpp"
-#include "../utilities/core/Assert.hpp"
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_SetpointManager_SingleZone_Reheat_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Singleton.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/SetpointManager.hpp"
+#include "model/SetpointManager_Impl.hpp"
 
 namespace openstudio {
 
 namespace model {
 
 namespace detail{
+
+class Model_Impl;
 
   SetpointManagerSingleZoneReheat_Impl::SetpointManagerSingleZoneReheat_Impl(
       const IdfObject& idfObject, Model_Impl* model, bool keepHandle)

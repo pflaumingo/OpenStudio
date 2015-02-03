@@ -20,8 +20,23 @@
 #ifndef MODEL_STANDARDSINFORMATIONMATERIAL_HPP
 #define MODEL_STANDARDSINFORMATIONMATERIAL_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Material.hpp"
+
+namespace openstudio {
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {
@@ -29,8 +44,8 @@ namespace model {
 class Material;
 
 namespace detail {
-  class StandardsInformationMaterial_Impl;
   class Material_Impl;
+  class StandardsInformationMaterial_Impl;
 }
 
 /** StandardsInformationMaterial is a ModelObject that wraps the OpenStudio IDD object 'OS:StandardsInformation:Material'. */

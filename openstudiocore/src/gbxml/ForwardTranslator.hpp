@@ -20,16 +20,21 @@
 #ifndef GBXML_FORWARDTRANSLATOR_HPP
 #define GBXML_FORWARDTRANSLATOR_HPP
 
-#include "gbXMLAPI.hpp"
-
-#include "../utilities/core/Path.hpp"
-#include "../utilities/core/Optional.hpp"
-#include "../utilities/core/Logger.hpp"
-#include "../utilities/core/StringStreamLogSink.hpp"
+#include <boost/optional/optional.hpp>
+#include <qdom.h>
+#include <qstring.h>
+#include <map>
+#include <string>
+#include <vector>
 
 #include "../model/ModelObject.hpp"
-
-#include <map>
+#include "../utilities/core/Logger.hpp"
+#include "../utilities/core/Optional.hpp"
+#include "../utilities/core/Path.hpp"
+#include "../utilities/core/StringStreamLogSink.hpp"
+#include "gbXMLAPI.hpp"
+#include "gbxml/../model/../utilities/idf/Handle.hpp"
+#include "gbxml/../utilities/core/LogMessage.hpp"
 
 class QDomDocument;
 class QDomElement;
@@ -41,17 +46,17 @@ namespace openstudio {
   class Transformation;
 
 namespace model {
-  class Model;
-  class ModelObject;
-  class Material;
-  class ConstructionBase;
-  class Facility;
   class Building;
   class BuildingStory;
-  class ThermalZone;
+  class ConstructionBase;
+  class Facility;
+  class Material;
+  class Model;
+  class ModelObject;
   class Space;
-  class Surface;
   class SubSurface;
+  class Surface;
+  class ThermalZone;
 }
 
 namespace gbxml {

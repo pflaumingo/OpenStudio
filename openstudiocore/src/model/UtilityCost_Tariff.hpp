@@ -20,9 +20,23 @@
 #ifndef MODEL_UTILITYCOST_TARIFF_HPP
 #define MODEL_UTILITYCOST_TARIFF_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../utilities/core/Optional.hpp"
 #include "ModelAPI.hpp"
 #include "ParentObject.hpp"
-#include "../utilities/core/Optional.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio{
 namespace model{

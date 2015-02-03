@@ -1,5 +1,12 @@
 #include "generator.hpp"
-#include "objectmodel.hpp"
+
+namespace litesql {
+class ObjectModel;
+}  // namespace litesql
+namespace xml {
+class Object;
+class Relation;
+}  // namespace xml
 //#include <fstream>
 
 using namespace std;

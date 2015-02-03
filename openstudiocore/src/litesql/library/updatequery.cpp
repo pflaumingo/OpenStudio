@@ -3,8 +3,17 @@
  * The list of contributors at http://litesql.sf.net/ 
  * 
  * See LICENSE for copyright information. */
-#include "compatibility.hpp"
+#include <ext/alloc_traits.h>
+#include <litesql/expr.hpp>
+#include <litesql/field.hpp>
+#include <litesql/split.hpp>
+#include <litesql/string.hpp>
+#include <stddef.h>
+#include <string>
+#include <vector>
+
 #include "litesql/updatequery.hpp"
+
 namespace litesql {
 using namespace std;
 UpdateQuery& UpdateQuery::where(const Expr& e) {

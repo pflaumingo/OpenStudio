@@ -17,16 +17,20 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Matrix.hpp"
-
-#include "../core/Optional.hpp"
-#include "../math/FloatCompare.hpp"
-
-#include <random>
-
+#include <boost/numeric/ublas/matrix_expression.hpp>
+#include <boost/numeric/ublas/vector.hpp>
 // this should all be moved to a utilities/core/Random.h
 #include <boost/random/uniform_real.hpp>
 #include <boost/random/variate_generator.hpp>
+#include <algorithm>
+#include <cmath>
+#include <random>
+#include <set>
+
+#include "../core/Optional.hpp"
+#include "../math/FloatCompare.hpp"
+#include "Matrix.hpp"
+#include "utilities/data/Vector.hpp"
 
 namespace openstudio{
 

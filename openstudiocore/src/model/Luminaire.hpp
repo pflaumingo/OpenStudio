@@ -20,18 +20,31 @@
 #ifndef MODEL_LUMINAIRE_HPP
 #define MODEL_LUMINAIRE_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "SpaceLoadInstance.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/units/Quantity.hpp"
+#include "model/LuminaireDefinition.hpp"
 
 namespace openstudio {
 
 class Point3d;
 class Transformation;
+class IdfObject;
 
 namespace model {
 
-class Schedule;
 class LuminaireDefinition;
+class Schedule;
 
 namespace detail {
 

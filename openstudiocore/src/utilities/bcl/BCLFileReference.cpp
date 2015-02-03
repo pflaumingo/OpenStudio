@@ -17,14 +17,16 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "BCLFileReference.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <qdom.h>
+#include <qstring.h>
+#include <qtextstream.h>
+
 #include "../core/Checksum.hpp"
 #include "../core/String.hpp"
-#include "../core/System.hpp"
-
-#include <QFile>
-#include <QDomDocument>
-#include <QDomElement>
+#include "BCLFileReference.hpp"
+#include "utilities/bcl/../core/Compare.hpp"
+#include "utilities/bcl/../core/Path.hpp"
 
 namespace openstudio{
 

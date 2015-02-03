@@ -17,11 +17,15 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ProgressBar.hpp"
+#include <qprogressbar.h>
+#include <cmath>
 
 #include "../core/Application.hpp"
+#include "ProgressBar.hpp"
+#include "utilities/plot/../core/Singleton.hpp"
+#include "utilities/plot/../core/String.hpp"
 
-#include <cmath>
+class QWidget;
 
 namespace openstudio{
 

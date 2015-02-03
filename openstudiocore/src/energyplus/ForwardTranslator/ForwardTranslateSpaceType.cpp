@@ -17,63 +17,37 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-
-#include "../../model/Model.hpp"
-#include "../../model/Space.hpp"
-#include "../../model/Space_Impl.hpp"
-#include "../../model/SpaceType.hpp"
-#include "../../model/SpaceType_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
-#include "../../model/InternalMass.hpp"
-#include "../../model/InternalMass_Impl.hpp"
-#include "../../model/InternalMassDefinition.hpp"
-#include "../../model/InternalMassDefinition_Impl.hpp"
-#include "../../model/People.hpp"
-#include "../../model/People_Impl.hpp"
-#include "../../model/PeopleDefinition.hpp"
-#include "../../model/PeopleDefinition_Impl.hpp"
-#include "../../model/Lights.hpp"
-#include "../../model/Lights_Impl.hpp"
-#include "../../model/LightsDefinition.hpp"
-#include "../../model/LightsDefinition_Impl.hpp"
-#include "../../model/Luminaire.hpp"
-#include "../../model/Luminaire_Impl.hpp"
-#include "../../model/LuminaireDefinition.hpp"
-#include "../../model/LuminaireDefinition_Impl.hpp"
-#include "../../model/ElectricEquipment.hpp"
-#include "../../model/ElectricEquipment_Impl.hpp"
-#include "../../model/ElectricEquipmentDefinition.hpp"
-#include "../../model/ElectricEquipmentDefinition_Impl.hpp"
-#include "../../model/GasEquipment.hpp"
-#include "../../model/GasEquipment_Impl.hpp"
-#include "../../model/GasEquipmentDefinition.hpp"
-#include "../../model/GasEquipmentDefinition_Impl.hpp"
-#include "../../model/HotWaterEquipment.hpp"
-#include "../../model/HotWaterEquipment_Impl.hpp"
-#include "../../model/SteamEquipment.hpp"
-#include "../../model/SteamEquipment_Impl.hpp"
-#include "../../model/OtherEquipment.hpp"
-#include "../../model/OtherEquipment_Impl.hpp"
-#include "../../model/SpaceInfiltrationDesignFlowRate.hpp"
-#include "../../model/SpaceInfiltrationDesignFlowRate_Impl.hpp"
-#include "../../model/SpaceInfiltrationEffectiveLeakageArea.hpp"
-#include "../../model/SpaceInfiltrationEffectiveLeakageArea_Impl.hpp"
-#include "../../model/DesignSpecificationOutdoorAir.hpp"
-#include "../../model/DesignSpecificationOutdoorAir_Impl.hpp"
-
-
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include "../../utilities/idf/WorkspaceObjectOrder.hpp"
-#include "../../utilities/core/Logger.hpp"
-#include "../../utilities/core/Assert.hpp"
-
-#include <utilities/idd/ZoneList_FieldEnums.hxx>
-
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <algorithm>
+#include <ostream>
+#include <set>
+#include <string>
+#include <vector>
+
+#include "../../model/ElectricEquipment.hpp"
+#include "../../model/GasEquipment.hpp"
+#include "../../model/HotWaterEquipment.hpp"
+#include "../../model/InternalMass.hpp"
+#include "../../model/Lights.hpp"
+#include "../../model/Luminaire.hpp"
+#include "../../model/OtherEquipment.hpp"
+#include "../../model/People.hpp"
+#include "../../model/Space.hpp"
+#include "../../model/SpaceInfiltrationDesignFlowRate.hpp"
+#include "../../model/SpaceInfiltrationEffectiveLeakageArea.hpp"
+#include "../../model/SpaceType.hpp"
+#include "../../model/SteamEquipment.hpp"
+#include "../../model/ThermalZone.hpp"
+#include "../../utilities/core/Logger.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

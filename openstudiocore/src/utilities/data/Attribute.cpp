@@ -17,27 +17,51 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Attribute.hpp"
-#include "Attribute_Impl.hpp"
+#include <boost/filesystem/operations.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_format.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_match.hpp>
+#include <boost/regex/v4/regex_replace.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
+#include <ext/alloc_traits.h>
+#include <qfile.h>
+#include <qiodevice.h>
+#include <qlist.h>
+#include <qmap.h>
+#include <qtextstream.h>
+#include <algorithm>
+#include <functional>
+#include <limits>
+#include <set>
+#include <sstream>
+#include <utility>
 
 #include "../core/Assert.hpp"
 #include "../core/Containers.hpp"
 #include "../core/Json.hpp"
-
-#include "../units/UnitFactory.hpp"
+#include "../units/OSOptionalQuantity.hpp"
 #include "../units/Quantity.hpp"
 #include "../units/QuantityFactory.hpp"
-#include "../units/OSOptionalQuantity.hpp"
-
-#include <boost/regex.hpp>
-#include <boost/lexical_cast.hpp>
-
-#include <sstream>
-#include <limits>
-
-#include <QDomElement>
-#include <QDomDocument>
-#include <QFile>
+#include "../units/UnitFactory.hpp"
+#include "Attribute.hpp"
+#include "Attribute_Impl.hpp"
+#include "utilities/data/../core/Compare.hpp"
+#include "utilities/data/../core/Enum.hpp"
+#include "utilities/data/../core/Logger.hpp"
+#include "utilities/data/../core/Optional.hpp"
+#include "utilities/data/../core/Path.hpp"
+#include "utilities/data/../core/String.hpp"
+#include "utilities/data/../core/UUID.hpp"
+#include "utilities/data/../units/Unit.hpp"
 
 namespace openstudio {
 namespace detail{

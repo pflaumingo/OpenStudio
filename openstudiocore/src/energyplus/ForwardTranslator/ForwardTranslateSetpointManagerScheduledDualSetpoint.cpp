@@ -17,13 +17,20 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/SetpointManagerScheduledDualSetpoint.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/SetpointManager_Scheduled_DualSetpoint_FieldEnums.hxx>
+#include <ostream>
+#include <string>
+
 #include "../../model/Node.hpp"
 #include "../../model/Schedule.hpp"
-#include <utilities/idd/SetpointManager_Scheduled_DualSetpoint_FieldEnums.hxx>
+#include "../../model/SetpointManagerScheduledDualSetpoint.hpp"
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

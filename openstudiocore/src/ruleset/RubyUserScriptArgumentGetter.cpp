@@ -17,14 +17,11 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "RubyUserScriptArgumentGetter.hpp"
-#include "OSArgument.hpp"
+#include <sstream>
 
 #include "../model/Model.hpp"
-
-#include "../utilities/idf/Workspace.hpp"
-
-#include <sstream>
+#include "OSArgument.hpp"
+#include "RubyUserScriptArgumentGetter.hpp"
 
 namespace openstudio {
 namespace ruleset {

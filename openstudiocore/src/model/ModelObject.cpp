@@ -17,42 +17,57 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ModelObject.hpp"
-#include "ModelObject_Impl.hpp"
-#include "Model_Impl.hpp"
-#include "Component.hpp"
-#include "LifeCycleCost.hpp"
-#include "LifeCycleCost_Impl.hpp"
-#include "Relationship.hpp"
-#include "ParentObject.hpp"
-#include "ResourceObject.hpp"
-#include "ResourceObject_Impl.hpp"
-#include "Connection.hpp"
-#include "Connection_Impl.hpp"
-
-#include "ScheduleTypeRegistry.hpp"
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-#include "ScheduleTypeLimits.hpp"
-
-#include "OutputVariable.hpp"
-#include "OutputVariable_Impl.hpp"
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/algorithm/string/trim.hpp>
+#include <ext/alloc_traits.h>
+#include <qlist.h>
+#include <qmap.h>
+#include <qmetaobject.h>
+#include <qobject.h>
+#include <qstringlist.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <utilities/idd/OS_Output_Variable_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
+#include <set>
 
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/data/Attribute.hpp"
+#include "../utilities/data/TimeSeries.hpp"
+#include "../utilities/idf/ValidityReport.hpp"
+#include "../utilities/sql/SqlFile.hpp"
 #include "../utilities/sql/SqlFileEnums.hpp"
 #include "../utilities/sql/SqlFileTimeSeriesQuery.hpp"
-#include "../utilities/sql/SqlFile.hpp"
-#include "../utilities/idf/ValidityReport.hpp"
-#include "../utilities/units/Quantity.hpp"
 #include "../utilities/units/OSOptionalQuantity.hpp"
-
-#include <utilities/idd/OS_Output_Variable_FieldEnums.hxx>
-#include "../utilities/data/TimeSeries.hpp"
-
-#include <QMetaProperty>
-
-#include <boost/algorithm/string.hpp>
+#include "../utilities/units/Quantity.hpp"
+#include "Component.hpp"
+#include "Connection.hpp"
+#include "LifeCycleCost.hpp"
+#include "ModelObject.hpp"
+#include "ModelObject_Impl.hpp"
+#include "Model_Impl.hpp"
+#include "OutputVariable.hpp"
+#include "ParentObject.hpp"
+#include "Relationship.hpp"
+#include "ResourceObject.hpp"
+#include "Schedule.hpp"
+#include "ScheduleTypeLimits.hpp"
+#include "ScheduleTypeRegistry.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idf/DataError.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/ValidityEnums.hpp"
+#include "model/../utilities/idf/Workspace.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/Model.hpp"
+#include "utilities/core/Containers.hpp"
 
 using openstudio::Handle;
 using openstudio::HandleVector;

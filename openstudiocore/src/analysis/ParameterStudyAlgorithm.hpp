@@ -20,13 +20,32 @@
 #ifndef ANALYSIS_PARAMETERSTUDYALGORITHM_HPP
 #define ANALYSIS_PARAMETERSTUDYALGORITHM_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "DakotaAlgorithm.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/ParameterStudyAlgorithmOptions.hpp"
+
+namespace openstudio {
+class FileReference;
+namespace runmanager {
+class Job;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {
 
 class ParameterStudyAlgorithmOptions;
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
 
 namespace detail {
 

@@ -17,29 +17,35 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/lexical_cast.hpp>
+#include <ext/alloc_traits.h>
+#include <qurl.h>
+#include <exception>
 #include <sstream>
-#include <iterator>
-#include <algorithm>
+#include <stdexcept>
+#include <utility>
 
-#include "ParallelEnergyPlusSplitJob.hpp"
-#include "ParallelEnergyPlus/ParallelEnergyPlus.hpp"
 #include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
+#include "ParallelEnergyPlus/ParallelEnergyPlus.hpp"
+#include "ParallelEnergyPlusSplitJob.hpp"
 #include "RunManager_Util.hpp"
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/Job_Impl.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Model_Impl.hpp"
-#include "../../model/WeatherFile.hpp"
-#include "../../model/WeatherFile_Impl.hpp"
-#include "../../energyplus/ForwardTranslator.hpp"
-#include "../../utilities/idf/IdfFile.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include <utilities/idd/RunPeriod_FieldEnums.hxx>
-
-#include <QDir>
-#include <QDateTime>
+class QDateTime;
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

@@ -20,33 +20,50 @@
 #ifndef MODEL_MODEL_HPP
 #define MODEL_MODEL_HPP
 
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/idf/Workspace.hpp"
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
-
-#include "../utilities/idf/Workspace.hpp"
-#include "../utilities/core/Assert.hpp"
-
-#include <vector>
+#include "model/../utilities/core/Path.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfFile.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/Schedule.hpp"
+#include "model/SpaceType.hpp"
 
 namespace openstudio {
 
 class SqlFile;
+class IdfObject;
+namespace model {
+class ModelObject;
+}  // namespace model
 
 namespace model {
 
 class Building;
-class LifeCycleCostParameters;
-class RunPeriod;
-class YearDescription;
-class WeatherFile;
 class Component;
 class ComponentData;
+class LifeCycleCostParameters;
+class RunPeriod;
 class Schedule;
 class SpaceType;
+class WeatherFile;
+class YearDescription;
 
 namespace detail {
-  class Model_Impl;
   class ModelObject_Impl;
+  class Model_Impl;
 }
 
 /** Model derives from Workspace and is a container for \link ModelObject ModelObjects

@@ -12,16 +12,18 @@
 #if QT_VERSION < 0x040000
 #include <qpaintdevicemetrics.h> 
 #include <qwmatrix.h> 
+
 #define QwtMatrix QWMatrix
 #else
 #include <qmatrix.h> 
+
 #define QwtMatrix QMatrix
 #endif
-#include <qpaintdevice.h> 
 #include <qdesktopwidget.h> 
-#include "qwt_math.h"
-#include "qwt_polygon.h"
+#include <qpaintdevice.h> 
+
 #include "qwt_layout_metrics.h"
+#include "qwt_polygon.h"
 
 static QSize deviceDpi(const QPaintDevice *device)
 {

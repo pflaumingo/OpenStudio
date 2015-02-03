@@ -17,10 +17,15 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ObjectOrderBase.hpp"
-#include "../math/Permutation.hpp"
+#include <boost/none.hpp>
+#include <algorithm>
+#include <vector>
 
 #include "../core/Assert.hpp"
+#include "ObjectOrderBase.hpp"
+#include "utilities/idf/../core/Optional.hpp"
+#include "utilities/idf/../idd/../core/EnumBase.hpp"
+#include "utilities/idf/../idd/IddEnums.hpp"
 
 namespace openstudio {
 

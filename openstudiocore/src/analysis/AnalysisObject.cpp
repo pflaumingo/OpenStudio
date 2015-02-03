@@ -17,18 +17,29 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "AnalysisObject.hpp"
-#include "AnalysisObject_Impl.hpp"
+#include <boost/none.hpp>
+#include <qmap.h>
+#include <qmetatype.h>
+#include <qobject.h>
+#include <quuid.h>
+#include <exception>
+#include <ostream>
 
+#include "../utilities/core/Assert.hpp"
+#include "../utilities/core/Json.hpp"
+#include "../utilities/core/StringStreamLogSink.hpp"
 // for deserializing top-level json files
 #include "Analysis.hpp"
+#include "AnalysisObject.hpp"
+#include "AnalysisObject_Impl.hpp"
 #include "Analysis_Impl.hpp"
 #include "DataPoint.hpp"
 #include "DataPoint_Impl.hpp"
-
-#include "../utilities/core/Json.hpp"
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/StringStreamLogSink.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/Path.hpp"
+#include "analysis/../utilities/core/String.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/Problem.hpp"
 
 namespace openstudio {
 namespace analysis {

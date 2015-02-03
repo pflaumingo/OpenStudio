@@ -20,30 +20,41 @@
 #ifndef UTILITIES_IDF_IDFOBJECT_HPP
 #define UTILITIES_IDF_IDFOBJECT_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Handle.hpp"
-
-#include "../core/Logger.hpp"
-
 #include <boost/optional.hpp>
-
-#include <string>
-#include <ostream>
-#include <vector>
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
 #include <algorithm>
+#include <functional>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <typeinfo>
+#include <utility>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
+#include "Handle.hpp"
+#include "utilities/idf/../core/Compare.hpp"
+#include "utilities/idf/../core/LogMessage.hpp"
+#include "utilities/idf/../units/OSOptionalQuantity.hpp"
+#include "utilities/idf/IdfExtensibleGroup.hpp"
+#include "utilities/idf/ValidityReport.hpp"
+
+class QUrl;
 
 namespace openstudio{
  
+class DataError;
 // forward declarations
 class IddObject;
-struct IddObjectType;
 class IdfExtensibleGroup;
-class ValidityReport;
-class DataError;
-class StrictnessLevel;
-class Quantity;
 class OSOptionalQuantity;
+class Quantity;
+class StrictnessLevel;
+class ValidityReport;
+struct IddObjectType;
 
 namespace detail{
   class IdfObject_Impl;

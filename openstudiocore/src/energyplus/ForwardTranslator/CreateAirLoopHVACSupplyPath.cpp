@@ -17,23 +17,23 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/AirLoopHVAC.hpp"
-#include "../../model/AirLoopHVAC_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
-#include "../../model/AirLoopHVACZoneSplitter.hpp"
-#include "../../model/AirLoopHVACZoneSplitter_Impl.hpp"
-#include "../../model/AirLoopHVACSupplyPlenum.hpp"
-#include "../../model/AirLoopHVACSupplyPlenum_Impl.hpp"
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include "../../utilities/idf/WorkspaceObjectOrder.hpp"
-#include "../../utilities/core/Logger.hpp"
-#include "../../utilities/core/Assert.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/AirLoopHVAC_SupplyPath_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/AirLoopHVAC.hpp"
+#include "../../model/AirLoopHVACSupplyPlenum.hpp"
+#include "../../model/AirLoopHVACZoneSplitter.hpp"
+#include "../../model/Node.hpp"
+#include "../../utilities/core/Assert.hpp"
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

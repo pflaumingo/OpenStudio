@@ -20,14 +20,17 @@
 #ifndef UTILITIES_TIME_CALENDAR_HPP
 #define UTILITIES_TIME_CALENDAR_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <map>
+#include <string>
+#include <vector>
 
-#include "Date.hpp"
+#include "../UtilitiesAPI.hpp"
+#include "../core/Logger.hpp"
 #include "../core/Macro.hpp"
 #include "../core/String.hpp"
-#include "../core/Logger.hpp"
-
-#include <map>
+#include "Date.hpp"
+#include "utilities/time/../core/LogMessage.hpp"
 
 namespace openstudio{
 

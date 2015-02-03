@@ -20,9 +20,12 @@
 #ifndef UTILITIES_IDD_IDDREGEX_HPP
 #define UTILITIES_IDD_IDDREGEX_HPP
 
+#include <boost/regex.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <string>
+
 #include "../UtilitiesAPI.hpp"
 #include "../core/StaticInitializer.hpp"
-#include <boost/regex.hpp>
 
 namespace openstudio{
 namespace iddRegex{

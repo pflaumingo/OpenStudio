@@ -20,17 +20,24 @@
 #ifndef RUNMANAGER_LIB_RUNMANAGERSTATUS_HPP
 #define RUNMANAGER_LIB_RUNMANAGERSTATUS_HPP
 
-#include <string>
-#include <QTimer>
-#include "RunManager.hpp"
+#include <qdialog.h>
+#include <qnamespace.h>
+#include <qobjectdefs.h>
 #include <ui_RunManagerStatus.h>
+#include <QTimer>
+#include <string>
+
 #include "JobErrors.hpp"
 #include "JobStatusWidget.hpp"
+#include "RunManager.hpp"
+
+class QWidget;
 
 
 namespace openstudio {
 namespace runmanager {
   class RunManager;
+class JobStatusWidget;
 
   //! QDialog based user interface for displaying RunManager queue job status to the user
   //! \sa http://doc.qt.nokia.com/qdialog.html

@@ -17,16 +17,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/Construction_FfactorGroundFloor_FieldEnums.hxx>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Construction_FfactorGroundFloor_FieldEnums.hxx>
+#include <ostream>
+#include <string>
+#include <vector>
 
 #include "../../model/FFactorGroundFloorConstruction.hpp"
 #include "../../model/LifeCycleCost.hpp"
-
-#include <utilities/idd/OS_Construction_FfactorGroundFloor_FieldEnums.hxx>
-
-#include <utilities/idd/Construction_FfactorGroundFloor_FieldEnums.hxx>
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

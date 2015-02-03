@@ -17,22 +17,36 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "UtilityCost_Charge_Block.hpp"
-#include "UtilityCost_Charge_Block_Impl.hpp"
-
-#include "Model_Impl.hpp"
-
-#include "../utilities/idf/IdfExtensibleGroup.hpp"
-#include <utilities/idd/OS_UtilityCost_Charge_Block_FieldEnums.hxx>
+#include <boost/none.hpp>
+#include <ext/alloc_traits.h>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_UtilityCost_Charge_Block_FieldEnums.hxx>
 
 #include "../utilities/core/Assert.hpp"
+#include "../utilities/idf/IdfExtensibleGroup.hpp"
+#include "UtilityCost_Charge_Block.hpp"
+#include "UtilityCost_Charge_Block_Impl.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ParentObject.hpp"
+#include "model/ParentObject_Impl.hpp"
+#include "utilities/core/Containers.hpp"
 
-#include <boost/algorithm/string.hpp>
+namespace openstudio {
+namespace model {
+class Model;
+}  // namespace model
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model  {
 namespace detail {
+
+class Model_Impl;
 
 UtilityCost_Charge_Block_Impl::UtilityCost_Charge_Block_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
   : ParentObject_Impl(idfObject, model, keepHandle)

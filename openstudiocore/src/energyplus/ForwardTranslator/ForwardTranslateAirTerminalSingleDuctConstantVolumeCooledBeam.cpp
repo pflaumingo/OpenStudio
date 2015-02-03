@@ -17,29 +17,27 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/AirTerminalSingleDuctConstantVolumeCooledBeam.hpp"
-#include "../../model/AirTerminalSingleDuctConstantVolumeCooledBeam_Impl.hpp"
-#include "../../model/CoilCoolingCooledBeam.hpp"
-#include "../../model/CoilCoolingCooledBeam_Impl.hpp"
-#include "../../model/HVACComponent.hpp"
-#include "../../model/HVACComponent_Impl.hpp"
-#include "../../model/StraightComponent.hpp"
-#include "../../model/StraightComponent_Impl.hpp"
-#include "../../model/AirLoopHVACZoneSplitter.hpp"
-#include "../../model/AirLoopHVACZoneSplitter_Impl.hpp"
-#include "../../model/AirLoopHVACZoneMixer.hpp"
-#include "../../model/AirLoopHVACZoneMixer_Impl.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
-#include "../../model/Node.hpp"
-#include "../../model/Node_Impl.hpp"
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/AirTerminal_SingleDuct_ConstantVolume_CooledBeam_FieldEnums.hxx>
-#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/ZoneHVAC_AirDistributionUnit_FieldEnums.hxx>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "../../model/AirTerminalSingleDuctConstantVolumeCooledBeam.hpp"
+#include "../../model/CoilCoolingCooledBeam.hpp"
+#include "../../model/HVACComponent.hpp"
+#include "../../model/Schedule.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Logger.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

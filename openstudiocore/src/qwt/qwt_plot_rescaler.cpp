@@ -9,12 +9,20 @@
 
 // vim: expandtab
 
+#include <qcoreevent.h>
 #include <qevent.h>
+#include <qglobal.h>
+#include <qrect.h>
+#include <qsize.h>
+#include <qwidget.h>
+#include <stddef.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_valuelist.h"
+#include "qwt_double_interval.h"
 #include "qwt_plot.h"
 #include "qwt_plot_canvas.h"
-#include "qwt_scale_div.h"
-#include "qwt_double_interval.h"
 #include "qwt_plot_rescaler.h"
+#include "qwt_scale_div.h"
 
 class QwtPlotRescaler::AxisData
 {

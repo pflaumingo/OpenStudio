@@ -20,8 +20,22 @@
 #ifndef ANALYSIS_LINEARFUNCTION_HPP
 #define ANALYSIS_LINEARFUNCTION_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "Function.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+
+namespace openstudio {
+namespace analysis {
+class Variable;
+}  // namespace analysis
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {
@@ -29,6 +43,7 @@ namespace analysis {
 namespace detail {
 
   class LinearFunction_Impl;
+class AnalysisObject_Impl;
 
 } // detail
 

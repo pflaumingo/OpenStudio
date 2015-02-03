@@ -17,29 +17,33 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/RefrigerationSystem.hpp"
-#include "../../model/ThermalZone.hpp"
-//#include <model/RefrigerationCondenserAirCooled.hpp>
-#include "../../model/RefrigerationAirChiller.hpp"
-#include "../../model/RefrigerationCondenserCascade.hpp"
-#include "../../model/RefrigerationCase.hpp"
-#include "../../model/RefrigerationCompressor.hpp"
-#include "../../model/RefrigerationSecondarySystem.hpp"
-#include "../../model/RefrigerationWalkIn.hpp"
-#include "../../model/RefrigerationSubcoolerLiquidSuction.hpp"
-#include "../../model/RefrigerationSubcoolerMechanical.hpp"
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-
-#include <utilities/idd/Refrigeration_System_FieldEnums.hxx>
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/FluidProperties_Name_FieldEnums.hxx>
+#include <utilities/idd/IddEnums.hxx>
 #include <utilities/idd/Refrigeration_CaseAndWalkInList_FieldEnums.hxx>
 #include <utilities/idd/Refrigeration_CompressorList_FieldEnums.hxx>
+#include <utilities/idd/Refrigeration_System_FieldEnums.hxx>
 #include <utilities/idd/Refrigeration_TransferLoadList_FieldEnums.hxx>
-#include <utilities/idd/FluidProperties_Name_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+//#include <model/RefrigerationCondenserAirCooled.hpp>
+#include "../../model/RefrigerationAirChiller.hpp"
+#include "../../model/RefrigerationCase.hpp"
+#include "../../model/RefrigerationCompressor.hpp"
+#include "../../model/RefrigerationCondenserCascade.hpp"
+#include "../../model/RefrigerationSecondarySystem.hpp"
+#include "../../model/RefrigerationSubcoolerLiquidSuction.hpp"
+#include "../../model/RefrigerationSubcoolerMechanical.hpp"
+#include "../../model/RefrigerationSystem.hpp"
+#include "../../model/RefrigerationWalkIn.hpp"
+#include "../../model/ThermalZone.hpp"
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 
 using namespace openstudio::model;
 

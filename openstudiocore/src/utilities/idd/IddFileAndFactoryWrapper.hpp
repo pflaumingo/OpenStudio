@@ -20,14 +20,23 @@
 #ifndef UTILITIES_IDD_IDDFILEANDFACTORYWRAPPER_HPP
 #define UTILITIES_IDD_IDDFILEANDFACTORYWRAPPER_HPP
 
+#include <boost/optional/optional.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <string>
+#include <vector>
+
 #include "../UtilitiesAPI.hpp"
-#include "IddFile.hpp"
 #include "IddEnums.hpp"
+#include "IddFile.hpp"
+#include "utilities/idd/../core/LogMessage.hpp"
+#include "utilities/idd/../core/Logger.hpp"
 
 namespace openstudio {
 
 /** Wraps the functionality of IddFile and \link IddFactorySingleton IddFactory \endlink 
  *  into one class for use by IdfFile and Workspace. */
+class IddObject;
+
 class UTILITIES_API IddFileAndFactoryWrapper {
  public:
 

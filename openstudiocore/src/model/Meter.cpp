@@ -17,33 +17,50 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "Meter.hpp"
-#include "Meter_Impl.hpp"
-
-#include "Model.hpp"
-#include "Facility.hpp"
-#include "Facility_Impl.hpp"
-#include "Building.hpp"
-#include "Building_Impl.hpp"
-
-#include <utilities/idd/IddFactory.hxx>
-
-#include <utilities/idd/OS_Meter_FieldEnums.hxx>
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/match_results.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex.hpp>
+#include <boost/regex/v4/regex_search.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <boost/regex/v4/sub_match.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/OS_Meter_FieldEnums.hxx>
+#include <algorithm>
+#include <ostream>
 
+#include "../utilities/core/Assert.hpp"
 #include "../utilities/data/DataEnums.hpp"
 #include "../utilities/data/TimeSeries.hpp"
 #include "../utilities/sql/SqlFile.hpp"
-#include "../utilities/sql/SqlFileEnums.hpp"
-#include "../utilities/core/Assert.hpp"
-
-#include <boost/regex.hpp>
-#include <boost/algorithm/string.hpp>
+#include "Building.hpp"
+#include "Facility.hpp"
+#include "Meter.hpp"
+#include "Meter_Impl.hpp"
+#include "Model.hpp"
+#include "model/../utilities/idd/../core/Compare.hpp"
+#include "model/../utilities/idd/../core/Enum.hpp"
+#include "model/../utilities/idd/../core/EnumBase.hpp"
+#include "model/../utilities/idd/../core/Optional.hpp"
+#include "model/../utilities/idd/IddObject.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject_Impl.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ModelObject_Impl.hpp"
+#include "model/ParentObject.hpp"
 
 namespace openstudio {
 namespace model {
 
 namespace detail {
+
+class Model_Impl;
 
   Meter_Impl::Meter_Impl(const IdfObject& idfObject, Model_Impl* model, bool keepHandle)
     : ModelObject_Impl(idfObject,model,keepHandle)

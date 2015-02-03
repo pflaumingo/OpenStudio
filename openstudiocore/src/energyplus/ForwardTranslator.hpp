@@ -20,50 +20,67 @@
 #ifndef ENERGYPLUS_FORWARDTRANSLATOR_HPP
 #define ENERGYPLUS_FORWARDTRANSLATOR_HPP
 
-#include "EnergyPlusAPI.hpp"
-#include "../model/Model.hpp"
+#include <boost/optional/optional.hpp>
+#include <map>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "../model/ConstructionBase.hpp"
 #include "../model/HVACComponent.hpp"
-#include "../utilities/idf/Workspace.hpp"
+#include "../model/Model.hpp"
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/core/StringStreamLogSink.hpp"
+#include "../utilities/idf/Workspace.hpp"
 #include "../utilities/time/Time.hpp"
+#include "EnergyPlusAPI.hpp"
+#include "energyplus/../model/../utilities/idd/../core/LogMessage.hpp"
+#include "energyplus/../model/../utilities/idd/../core/StaticInitializer.hpp"
+#include "energyplus/../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/../model/../utilities/idf/Handle.hpp"
+#include "energyplus/../model/../utilities/idf/IdfObject.hpp"
 
 namespace openstudio {
 
 class ProgressBar;
 class Transformation;
+class IdfFile;
+class Time;
+namespace model {
+class HVACComponent;
+class ModelObject;
+}  // namespace model
 
 namespace model{
 
 class AirConditionerVariableRefrigerantFlow;
 class AirGap;
 class AirLoopHVAC;
+class AirLoopHVACOutdoorAirSystem;
+class AirLoopHVACReturnPlenum;
+class AirLoopHVACSupplyPlenum;
 class AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass;
 class AirLoopHVACUnitaryHeatPumpAirToAir;
 class AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed;
 class AirLoopHVACUnitarySystem;
-class AirLoopHVACReturnPlenum;
-class AirLoopHVACSupplyPlenum;
+class AirLoopHVACZoneMixer;
 class AirLoopHVACZoneSplitter;
 class AirTerminalSingleDuctConstantVolumeCooledBeam;
 class AirTerminalSingleDuctConstantVolumeFourPipeInduction;
 class AirTerminalSingleDuctConstantVolumeReheat;
+class AirTerminalSingleDuctInletSideMixer;
 class AirTerminalSingleDuctParallelPIUReheat;
 class AirTerminalSingleDuctSeriesPIUReheat;
 class AirTerminalSingleDuctUncontrolled;
-class AirTerminalSingleDuctVAVNoReheat;
-class AirTerminalSingleDuctVAVReheat;
-class AirTerminalSingleDuctInletSideMixer;
 class AirTerminalSingleDuctVAVHeatAndCoolNoReheat;
 class AirTerminalSingleDuctVAVHeatAndCoolReheat;
-class AirLoopHVACZoneMixer;
-class AirLoopHVACOutdoorAirSystem;
+class AirTerminalSingleDuctVAVNoReheat;
+class AirTerminalSingleDuctVAVReheat;
 class AirWallMaterial;
 class Blind;
-class Building;
 class BoilerHotWater;
 class BoilerSteam;
+class Building;
 class CFactorUndergroundWallConstruction;
 class ChillerElectricEIR;
 class CoilCoolingDXMultiSpeed;
@@ -72,9 +89,9 @@ class CoilCoolingDXTwoSpeed;
 class CoilCoolingDXVariableRefrigerantFlow;
 class CoilCoolingWater;
 class CoilCoolingWaterToAirHeatPumpEquationFit;
-class CoilHeatingDesuperheater;
 class CoilHeatingDXSingleSpeed;
 class CoilHeatingDXVariableRefrigerantFlow;
+class CoilHeatingDesuperheater;
 class CoilHeatingElectric;
 class CoilHeatingGas;
 class CoilHeatingGasMultiStage;
@@ -83,8 +100,8 @@ class CoilHeatingWaterToAirHeatPumpEquationFit;
 class CoilWaterHeatingDesuperheater;
 class Construction;
 class ConstructionWithInternalSource;
-class ControllerOutdoorAir;
 class ControllerMechanicalVentilation;
+class ControllerOutdoorAir;
 class ControllerWaterCoil;
 class ConvergenceLimits;
 class CoolingTowerPerformanceCoolTools;
@@ -121,11 +138,11 @@ class EvaporativeCoolerDirectResearchSpecial;
 class EvaporativeCoolerIndirectResearchSpecial;
 class EvaporativeFluidCoolerSingleSpeed;
 class ExteriorLights;
+class FFactorGroundFloorConstruction;
 class FanConstantVolume;
 class FanOnOff;
 class FanVariableVolume;
 class FanZoneExhaust;
-class FFactorGroundFloorConstruction;
 class Gas;
 class GasEquipment;
 class GasMixture;
@@ -136,8 +153,8 @@ class HeatExchangerFluidToFluid;
 class HotWaterEquipment;
 class HumidifierSteamElectric;
 class IlluminanceMap;
-class InsideSurfaceConvectionAlgorithm;
 class InfraredTransparentMaterial;
+class InsideSurfaceConvectionAlgorithm;
 class InteriorPartitionSurface;
 class InteriorPartitionSurfaceGroup;
 class InternalMass;
@@ -149,9 +166,9 @@ class MasslessOpaqueMaterial;
 class Meter;
 class Node;
 class OtherEquipment;
-class OutsideSurfaceConvectionAlgorithm;
 class OutputControlReportingTolerances;
 class OutputVariable;
+class OutsideSurfaceConvectionAlgorithm;
 class People;
 class PipeAdiabatic;
 class PlantLoop;
@@ -167,9 +184,9 @@ class RefrigerationCondenserCascade;
 class RefrigerationCondenserEvaporativeCooled;
 class RefrigerationCondenserWaterCooled;
 class RefrigerationGasCoolerAirCooled;
+class RefrigerationSecondarySystem;
 class RefrigerationSubcoolerLiquidSuction;
 class RefrigerationSubcoolerMechanical;
-class RefrigerationSecondarySystem;
 class RefrigerationSystem;
 class RefrigerationTranscriticalSystem;
 class RefrigerationWalkIn;
@@ -177,6 +194,15 @@ class RoofVegetation;
 class RunPeriod;
 class RunPeriodControlDaylightSavingTime;
 class RunPeriodControlSpecialDays;
+class ScheduleCompact;
+class ScheduleConstant;
+class ScheduleDay;
+class ScheduleFixedInterval;
+class ScheduleRuleset;
+class ScheduleTypeLimits;
+class ScheduleVariableInterval;
+class ScheduleWeek;
+class ScheduleYear;
 class Screen;
 class SetpointManagerFollowOutdoorAirTemperature;
 class SetpointManagerMixedAir;
@@ -190,9 +216,14 @@ class SetpointManagerSingleZoneHumidityMinimum;
 class SetpointManagerSingleZoneReheat;
 class SetpointManagerWarmest;
 class SetpointManagerWarmestTemperatureFlow;
-class ShadowCalculation;
 class Shade;
+class ShadingControl;
+class ShadingSurface;
+class ShadingSurfaceGroup;
+class ShadowCalculation;
+class SimpleGlazing;
 class SimulationControl;
+class Site;
 class SiteGroundReflectance;
 class SiteGroundTemperatureBuildingSurface;
 class SiteWaterMainsTemperature;
@@ -200,28 +231,14 @@ class SizingParameters;
 class SizingPlant;
 class SizingSystem;
 class SizingZone;
-class StandardGlazing;
-class StandardOpaqueMaterial;
-class SimpleGlazing;
-class ScheduleCompact;
-class ScheduleConstant;
-class ScheduleDay;
-class ScheduleFixedInterval;
-class ScheduleRuleset;
-class ScheduleTypeLimits;
-class ScheduleVariableInterval;
-class ScheduleWeek;
-class ScheduleYear;
-class ShadingControl;
-class ShadingSurface;
-class ShadingSurfaceGroup;
-class Site;
 class SkyTemperature;
 class Space;
 class SpaceInfiltrationDesignFlowRate;
 class SpaceInfiltrationEffectiveLeakageArea;
-class SpaceVentilationDesignFlowRate;
 class SpaceType;
+class SpaceVentilationDesignFlowRate;
+class StandardGlazing;
+class StandardOpaqueMaterial;
 class SteamEquipment;
 class SubSurface;
 class Surface;
@@ -238,18 +255,18 @@ class ZoneControlHumidistat;
 class ZoneControlThermostatStagedDualSetpoint;
 class ZoneHVACBaseboardConvectiveElectric;
 class ZoneHVACBaseboardConvectiveWater;
+class ZoneHVACEquipmentList;
 class ZoneHVACFourPipeFanCoil;
-class ZoneHVACIdealLoadsAirSystem;
 class ZoneHVACHighTemperatureRadiant;
+class ZoneHVACIdealLoadsAirSystem;
 class ZoneHVACLowTempRadiantConstFlow;
 class ZoneHVACLowTempRadiantVarFlow;
 class ZoneHVACLowTemperatureRadiantElectric;
-class ZoneHVACPackagedTerminalHeatPump;
 class ZoneHVACPackagedTerminalAirConditioner;
+class ZoneHVACPackagedTerminalHeatPump;
 class ZoneHVACTerminalUnitVariableRefrigerantFlow;
-class ZoneHVACWaterToAirHeatPump;
-class ZoneHVACEquipmentList;
 class ZoneHVACUnitHeater;
+class ZoneHVACWaterToAirHeatPump;
 }
 
 namespace energyplus {

@@ -20,25 +20,45 @@
 #ifndef MODEL_THERMALZONE_HPP
 #define MODEL_THERMALZONE_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "HVACComponent.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObject.hpp"
+#include "model/Node.hpp"
+#include "model/PortList.hpp"
+#include "model/SizingZone.hpp"
+#include "model/ZoneHVACEquipmentList.hpp"
 
 namespace openstudio {
 
-class Quantity;
 class OSOptionalQuantity;
+class Quantity;
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
 
 namespace model {
 
-class Space;
 class DaylightingControl;
 class IlluminanceMap;
-class RenderingColor;
-class ThermostatSetpointDualSetpoint;
-class Thermostat;
-class ZoneControlHumidistat;
-class SizingZone;
 class PortList;
+class RenderingColor;
+class SizingZone;
+class Space;
+class Thermostat;
+class ThermostatSetpointDualSetpoint;
+class ZoneControlHumidistat;
 
 namespace detail {
 

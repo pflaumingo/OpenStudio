@@ -10,9 +10,17 @@
 #ifndef QWT_PLOT_SCALE_ITEM_H
 #define QWT_PLOT_SCALE_ITEM_H
 
+#include <qfont.h>
+#include <qglobal.h>
+
 #include "qwt_global.h"
 #include "qwt_plot_item.h"
 #include "qwt_scale_draw.h"
+
+class QPainter;
+class QRect;
+class QwtScaleDiv;
+class QwtScaleMap;
 
 #if QT_VERSION < 0x040000
 class QColorGroup;
@@ -99,6 +107,7 @@ private:
     void updateBorders();
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

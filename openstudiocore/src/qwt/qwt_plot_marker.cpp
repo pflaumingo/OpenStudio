@@ -9,13 +9,20 @@
 
 // vim: expandtab
 
+#include <qflags.h>
 #include <qpainter.h>
+#include <qpoint.h>
+#include <qrect.h>
+#include <qsize.h>
+
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_layout_metrics.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_plot_item.h"
+#include "qwt_math.h"
 #include "qwt_painter.h"
-#include "qwt_scale_map.h"
 #include "qwt_plot_marker.h"
+#include "qwt_scale_map.h"
 #include "qwt_symbol.h"
 #include "qwt_text.h"
-#include "qwt_math.h"
 
 class QwtPlotMarker::PrivateData
 {

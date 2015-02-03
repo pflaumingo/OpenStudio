@@ -17,47 +17,59 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "ForwardTranslator.hpp"
+#include <../model/../utilities/geometry/Point3d.hpp>
+#include <../model/ModelObject.hpp>
+#include <../utilities/core/Path.hpp>
+#include <../utilities/core/String.hpp>
+#include <../utilities/data/../time/Time.hpp>
+#include <../utilities/data/TimeSeries.hpp>
+#include <../utilities/idf/../core/UUID.hpp>
+#include <../utilities/idf/Handle.hpp>
+#include <boost/none.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex_format.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_replace.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <ext/alloc_traits.h>
+#include <math.h>
+#include <qfile.h>
+#include <qglobal.h>
+#include <qiodevice.h>
+#include <qlist.h>
+#include <qstring.h>
+#include <qtextstream.h>
+#include <qthread.h>
+#include <algorithm>
+#include <memory>
+#include <ostream>
+#include <utility>
+
 #include "../WindPressure.hpp"
-
-#include "../model/Model.hpp"
-#include "../model/Building.hpp"
-#include "../model/Building_Impl.hpp"
-#include "../model/BuildingStory.hpp"
-#include "../model/BuildingStory_Impl.hpp"
-#include "../model/ThermalZone.hpp"
-#include "../model/ThermalZone_Impl.hpp"
-#include "../model/Space.hpp"
-#include "../model/Space_Impl.hpp"
-#include "../model/Surface.hpp"
-#include "../model/Surface_Impl.hpp"
-#include "../model/SubSurface.hpp"
-#include "../model/SubSurface_Impl.hpp"
 #include "../model/AirLoopHVAC.hpp"
-#include "../model/AirLoopHVAC_Impl.hpp"
+#include "../model/Building.hpp"
+#include "../model/BuildingStory.hpp"
+#include "../model/Model.hpp"
 #include "../model/Node.hpp"
-#include "../model/Node_Impl.hpp"
 #include "../model/PortList.hpp"
-#include "../model/WeatherFile.hpp"
 #include "../model/RunPeriod.hpp"
-
-#include "../utilities/time/Date.hpp"
-
-#include "../utilities/sql/SqlFile.hpp"
+#include "../model/Space.hpp"
+#include "../model/SubSurface.hpp"
+#include "../model/Surface.hpp"
+#include "../model/ThermalZone.hpp"
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/geometry/Geometry.hpp"
-#include "../utilities/plot/ProgressBar.hpp"
-
-#include <boost/math/constants/constants.hpp>
-
-#include <QFile>
-#include <QTextStream>
-#include <QList>
-#include <QStringList>
-#include <QMap>
-#include <QThread>
-
-#include <algorithm>
+#include "../utilities/sql/SqlFile.hpp"
+#include "../utilities/time/Date.hpp"
+#include "ForwardTranslator.hpp"
+#include "airflow/contam/../../utilities/core/StringStreamLogSink.hpp"
+#include "airflow/contam/PrjAirflowElements.hpp"
+#include "airflow/contam/PrjModel.hpp"
+#include "airflow/contam/PrjObjects.hpp"
 
 namespace openstudio {
 namespace contam {

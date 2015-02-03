@@ -20,16 +20,32 @@
 #ifndef MODEL_ZONEHVACCOMPONENT_HPP
 #define MODEL_ZONEHVACCOMPONENT_HPP
 
-#include "ModelAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "HVACComponent.hpp"
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
 namespace model {
 
-class ThermalZone;
-class Node;
 class AirLoopHVAC;
+class Node;
+class ThermalZone;
+class ModelObject;
 
 namespace detail {
 

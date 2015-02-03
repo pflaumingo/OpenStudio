@@ -17,41 +17,49 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ProblemRecord.hpp"
-#include "ProblemRecord_Impl.hpp"
+#include <boost/filesystem/path.hpp>
+#include <boost/none.hpp>
+#include <boost/optional/optional.hpp>
+#include <ext/alloc_traits.h>
+#include <qsqlquery.h>
+#include <quuid.h>
+#include <qvariant.h>
+#include <algorithm>
+#include <set>
 
+#include "../analysis/InputVariable.hpp"
+#include "../analysis/OptimizationProblem.hpp"
+#include "../analysis/RubyContinuousVariable.hpp"
+#include "../analysis/RubyMeasure.hpp"
+#include "../analysis/WorkflowStep.hpp"
+#include "../runmanager/lib/RubyJobUtils.hpp"
+#include "../runmanager/lib/WorkItem.hpp"
+#include "../runmanager/lib/Workflow.hpp"
+#include "../utilities/core/Assert.hpp"
 #include "FunctionRecord.hpp"
 #include "InputVariableRecord.hpp"
 #include "JoinRecord.hpp"
 #include "MeasureGroupRecord.hpp"
-#include "MeasureGroupRecord_Impl.hpp"
 #include "OptimizationProblemRecord.hpp"
+#include "ProblemRecord.hpp"
+#include "ProblemRecord_Impl.hpp"
 #include "ProjectDatabase.hpp"
 #include "RubyContinuousVariableRecord.hpp"
-#include "RubyContinuousVariableRecord_Impl.hpp"
 #include "RubyMeasureRecord.hpp"
 #include "WorkflowRecord.hpp"
+#include "project/../analysis/Function.hpp"
+#include "project/../analysis/Problem.hpp"
+#include "project/../runmanager/lib/JobType.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/Logger.hpp"
+#include "project/../utilities/core/Optional.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/../utilities/time/../core/Enum.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
+#include "project/VariableRecord.hpp"
 
-#include "../analysis/InputVariable.hpp"
-#include "../analysis/OptimizationProblem.hpp"
-#include "../analysis/OptimizationProblem_Impl.hpp"
-#include "../analysis/RubyContinuousVariable.hpp"
-#include "../analysis/RubyContinuousVariable_Impl.hpp"
-#include "../analysis/RubyMeasure.hpp"
-#include "../analysis/WorkflowStep.hpp"
-
-#include "../runmanager/lib/RubyJobUtils.hpp"
-#include "../runmanager/lib/Workflow.hpp"
-#include "../runmanager/lib/WorkItem.hpp"
-
-#include "../utilities/core/Assert.hpp"
-
-#include <boost/optional/optional.hpp>
-
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QFile>
+class QSqlDatabase;
 
 using namespace openstudio::analysis;
 

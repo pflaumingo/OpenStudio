@@ -20,27 +20,53 @@
 #ifndef UTILITIES_DATA_ATTRIBUTE_HPP
 #define UTILITIES_DATA_ATTRIBUTE_HPP
 
-#include "../UtilitiesAPI.hpp"
+#include <boost/none.hpp>
+#include <boost/optional.hpp>
+#include <boost/optional/optional.hpp>
+#include <boost/preprocessor/arithmetic/dec.hpp>
+#include <boost/preprocessor/arithmetic/inc.hpp>
+#include <boost/preprocessor/comparison/not_equal.hpp>
+#include <boost/preprocessor/control/expr_iif.hpp>
+#include <boost/preprocessor/control/iif.hpp>
+#include <boost/preprocessor/detail/auto_rec.hpp>
+#include <boost/preprocessor/logical/bool.hpp>
+#include <boost/preprocessor/logical/compl.hpp>
+#include <boost/preprocessor/repetition/detail/for.hpp>
+#include <boost/preprocessor/repetition/for.hpp>
+#include <boost/preprocessor/seq/elem.hpp>
+#include <boost/preprocessor/seq/size.hpp>
+#include <boost/preprocessor/tuple/elem.hpp>
+#include <qdom.h>
+#include <qmetatype.h>
+#include <qobjectdefs.h>
+#include <qstring.h>
+#include <qvariant.h>
+#include <QMetaType>
+#include <QVariant>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <typeinfo>
+#include <vector>
 
+#include "../UtilitiesAPI.hpp"
 #include "../core/Enum.hpp"
 #include "../core/Logger.hpp"
+#include "../core/Optional.hpp"
 #include "../core/Path.hpp"
 #include "../core/UUID.hpp"
-#include "../core/Optional.hpp"
-
-#include <boost/optional.hpp>
-
-#include <QVariant>
-#include <QMetaType>
+#include "utilities/data/../core/EnumBase.hpp"
+#include "utilities/data/../core/LogMessage.hpp"
 
 class QDomDocument;
 class QDomElement;
 
 namespace openstudio {
 
-class Unit;
-class Quantity;
 class OSOptionalQuantity;
+class Quantity;
+class Unit;
+class VersionString;
 
 namespace detail{
   class Attribute_Impl;

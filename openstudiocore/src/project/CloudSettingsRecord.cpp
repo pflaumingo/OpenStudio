@@ -17,21 +17,25 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "CloudSettingsRecord.hpp"
-#include "CloudSettingsRecord_Impl.hpp"
-
-#include "AWSSettingsRecord.hpp"
-#include "AWSSettingsRecord_Impl.hpp"
-#include "JoinRecord.hpp"
-#include "VagrantSettingsRecord.hpp"
-#include "VagrantSettingsRecord_Impl.hpp"
+#include <boost/none.hpp>
+#include <qsqlquery.h>
+#include <qvariant.h>
+#include <set>
 
 #include "../utilities/cloud/AWSProvider.hpp"
-#include "../utilities/cloud/AWSProvider_Impl.hpp"
 #include "../utilities/cloud/VagrantProvider.hpp"
-#include "../utilities/cloud/VagrantProvider_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "AWSSettingsRecord.hpp"
+#include "CloudSettingsRecord.hpp"
+#include "CloudSettingsRecord_Impl.hpp"
+#include "JoinRecord.hpp"
+#include "VagrantSettingsRecord.hpp"
+#include "project/../utilities/core/Compare.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/ObjectRecord_Impl.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

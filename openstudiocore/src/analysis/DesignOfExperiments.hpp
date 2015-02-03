@@ -20,13 +20,25 @@
 #ifndef ANALYSIS_DESIGNOFEXPERIMENTS_HPP
 #define ANALYSIS_DESIGNOFEXPERIMENTS_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "OpenStudioAlgorithm.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+#include "analysis/../utilities/core/UUID.hpp"
+#include "analysis/DesignOfExperimentsOptions.hpp"
 
 namespace openstudio {
 namespace analysis {
 
 class DesignOfExperimentsOptions;
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
 
 namespace detail {
 

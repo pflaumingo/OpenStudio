@@ -20,13 +20,22 @@
 #ifndef ANALYSIS_OPENSTUDIOALGORITHM_HPP
 #define ANALYSIS_OPENSTUDIOALGORITHM_HPP
 
-#include "AnalysisAPI.hpp"
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "Algorithm.hpp"
+#include "AnalysisAPI.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
 
 namespace openstudio {
 namespace analysis {
 
 class Analysis;
+namespace detail {
+class AnalysisObject_Impl;
+}  // namespace detail
 
 namespace detail {
 

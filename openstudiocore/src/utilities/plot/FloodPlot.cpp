@@ -17,9 +17,34 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "FloodPlot.hpp"
-#include "../time/Time.hpp"
+#include <boost/numeric/ublas/vector.hpp>
+#include <math.h>
+#include <qaction.h>
+#include <qcolor.h>
+#include <qflags.h>
+#include <qpen.h>
+#include <qstring.h>
+#include <algorithm>
+#include <memory>
+#include <stdexcept>
+
 #include "../core/Application.hpp"
+#include "../time/Time.hpp"
+#include "FloodPlot.hpp"
+#include "qwt/qwt_color_map.h"
+#include "qwt/qwt_plot.h"
+#include "qwt/qwt_plot_layout.h"
+#include "qwt/qwt_plot_spectrogram.h"
+#include "qwt/qwt_scale_widget.h"
+#include "qwt/qwt_valuelist.h"
+#include "utilities/plot/../core/Singleton.hpp"
+#include "utilities/plot/../data/../time/Date.hpp"
+#include "utilities/plot/../data/Matrix.hpp"
+#include "utilities/plot/../data/TimeSeries.hpp"
+#include "utilities/plot/../data/Vector.hpp"
+#include "utilities/plot/Plot2D.hpp"
+
+class QWidget;
 
 using namespace std;
 using namespace boost;

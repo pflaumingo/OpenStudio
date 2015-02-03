@@ -22,22 +22,20 @@
 */
 
 
+#include <contrib/minizip/ioapi.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
-#include "zlib.h"
+
 #include "zip.h"
+#include "zlib.h"
 
 #ifdef STDC
 #  include <stddef.h>
-#  include <string.h>
-#  include <stdlib.h>
 #endif
 #ifdef NO_ERRNO_H
     extern int errno;
 #else
-#   include <errno.h>
 #endif
 
 

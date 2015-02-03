@@ -17,12 +17,17 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/SetpointManagerFollowOutdoorAirTemperature.hpp"
-#include "../../model/Node.hpp"
-#include <utilities/idd/SetpointManager_FollowOutdoorAirTemperature_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/SetpointManager_FollowOutdoorAirTemperature_FieldEnums.hxx>
+#include <string>
+#include <vector>
+
+#include "../../model/Node.hpp"
+#include "../../model/SetpointManagerFollowOutdoorAirTemperature.hpp"
+#include "../../utilities/idd/IddEnums.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

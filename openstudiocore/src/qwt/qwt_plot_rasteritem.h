@@ -11,10 +11,18 @@
 #define QWT_PLOT_RASTERITEM_H
 
 #include <qglobal.h>
-#include <qstring.h>
 #include <qimage.h>
+#include <qsize.h>
+#include <qstring.h>
 
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_double_rect.h"
+#include "/home/macumber/OpenStudio/openstudiocore/src/qwt/qwt_global.h"
 #include "qwt_plot_item.h" 
+
+class QPainter;
+class QRect;
+class QwtScaleMap;
+class QwtText;
 
 /*!
   \brief A class, which displays raster data
@@ -101,6 +109,7 @@ private:
     void init();
 
     class PrivateData;
+
     PrivateData *d_data;
 };
 

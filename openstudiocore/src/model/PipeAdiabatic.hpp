@@ -20,10 +20,22 @@
 #ifndef MODEL_PIPEADIABATIC_HPP
 #define MODEL_PIPEADIABATIC_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
+#include "Connection.hpp"
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
 #include "StraightComponent.hpp"
-#include "Connection.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+
+namespace openstudio {
+class IdfObject;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace model {

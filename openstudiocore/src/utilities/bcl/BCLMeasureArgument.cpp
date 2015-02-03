@@ -17,12 +17,15 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "BCLMeasureArgument.hpp"
+#include <ext/alloc_traits.h>
+#include <qdom.h>
+#include <qstring.h>
+#include <qtextstream.h>
 
 #include "../core/Assert.hpp"
-
-#include <QDomDocument>
-#include <QDomElement>
+#include "BCLMeasureArgument.hpp"
+#include "utilities/bcl/../core/Exception.hpp"
+#include "utilities/bcl/../core/String.hpp"
 
 namespace openstudio{
 

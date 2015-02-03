@@ -17,16 +17,20 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/RefrigerationGasCoolerAirCooled.hpp"
 #include "../../model/CurveLinear.hpp"
+#include "../../model/RefrigerationGasCoolerAirCooled.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
+#include "energyplus/ForwardTranslator/../../model/ModelObject.hpp"
 // #include <model/ThermalZone.hpp>
 
-#include <utilities/idd/Refrigeration_GasCooler_AirCooled_FieldEnums.hxx>
-#include "../../utilities/idd/IddEnums.hpp"
+#include <boost/optional/optional.hpp>
 #include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include <utilities/idd/Refrigeration_GasCooler_AirCooled_FieldEnums.hxx>
+#include <string>
+
+#include "../../utilities/idd/IddEnums.hpp"
 
 using namespace openstudio::model;
 

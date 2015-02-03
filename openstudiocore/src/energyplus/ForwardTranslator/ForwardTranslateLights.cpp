@@ -17,16 +17,21 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/Lights_FieldEnums.hxx>
+
+#include "../../model/LifeCycleCost.hpp"
 #include "../../model/Lights.hpp"
 #include "../../model/LightsDefinition.hpp"
+#include "../../model/Schedule.hpp"
 #include "../../model/Space.hpp"
 #include "../../model/SpaceType.hpp"
 #include "../../model/ThermalZone.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/LifeCycleCost.hpp"
-#include <utilities/idd/Lights_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/core/Assert.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/IddEnums.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

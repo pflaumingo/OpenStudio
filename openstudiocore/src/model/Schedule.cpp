@@ -17,18 +17,30 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Schedule.hpp"
-#include "Schedule_Impl.hpp"
-
-#include "Model.hpp"
-#include "ScheduleTypeLimits.hpp"
-#include "ScheduleTypeRegistry.hpp"
-#include "ScheduleDay.hpp"
-#include "ScheduleDay_Impl.hpp"
-
-#include "../utilities/idf/ValidityReport.hpp"
-
 #include "../utilities/core/Assert.hpp"
+#include "Model.hpp"
+#include "Schedule.hpp"
+#include "ScheduleTypeRegistry.hpp"
+#include "Schedule_Impl.hpp"
+#include "model/../utilities/idf/Handle.hpp"
+#include "model/../utilities/idf/IdfObject.hpp"
+#include "model/../utilities/idf/WorkspaceObject.hpp"
+#include "model/ModelObject.hpp"
+#include "model/ScheduleBase.hpp"
+#include "model/ScheduleBase_Impl.hpp"
+
+namespace openstudio {
+class Workspace;
+namespace detail {
+class WorkspaceObject_Impl;
+}  // namespace detail
+namespace model {
+class ScheduleTypeLimits;
+namespace detail {
+class Model_Impl;
+}  // namespace detail
+}  // namespace model
+}  // namespace openstudio
 
 using openstudio::Handle;
 using openstudio::OptionalHandle;

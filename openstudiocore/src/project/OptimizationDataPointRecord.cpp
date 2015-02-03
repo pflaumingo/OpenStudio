@@ -17,26 +17,30 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "OptimizationDataPointRecord.hpp"
-#include "OptimizationDataPointRecord_Impl.hpp"
+#include <qsqlquery.h>
+#include <stddef.h>
+#include <exception>
+#include <ostream>
+#include <string>
 
-#include "JoinRecord.hpp"
-#include "AnalysisRecord.hpp"
-#include "ProblemRecord.hpp"
-#include "DataPointValueRecord.hpp"
-#include "FunctionRecord.hpp"
-#include "OptimizationProblemRecord.hpp"
-#include "OptimizationProblemRecord_Impl.hpp"
-
-#include "../analysis/Problem.hpp"
-#include "../analysis/OptimizationProblem.hpp"
-#include "../analysis/OptimizationProblem_Impl.hpp"
 #include "../analysis/OptimizationDataPoint.hpp"
-#include "../analysis/OptimizationDataPoint_Impl.hpp"
-
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
-#include "../utilities/core/FileReference.hpp"
+#include "AnalysisRecord.hpp"
+#include "DataPointValueRecord.hpp"
+#include "FunctionRecord.hpp"
+#include "OptimizationDataPointRecord.hpp"
+#include "OptimizationDataPointRecord_Impl.hpp"
+#include "OptimizationProblemRecord.hpp"
+#include "ProblemRecord.hpp"
+#include "project/../analysis/DataPoint.hpp"
+#include "project/../utilities/core/String.hpp"
+#include "project/DataPointRecord.hpp"
+#include "project/DataPointRecord_Impl.hpp"
+#include "project/ObjectRecord.hpp"
+#include "project/Record.hpp"
+
+class QSqlDatabase;
 
 namespace openstudio {
 namespace project {

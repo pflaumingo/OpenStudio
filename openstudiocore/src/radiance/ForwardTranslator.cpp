@@ -17,57 +17,68 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "ForwardTranslator.hpp"
+#include <boost/algorithm/string/case_conv.hpp>
+#include <boost/algorithm/string/classification.hpp>
+#include <boost/algorithm/string/detail/classification.hpp>
+#include <boost/algorithm/string/regex.hpp>
+#include <boost/algorithm/string/split.hpp>
+#include <boost/filesystem/fstream.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/iterator/iterator_facade.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/math/constants/constants.hpp>
+#include <boost/regex/config.hpp>
+#include <boost/regex/v4/basic_regex.hpp>
+#include <boost/regex/v4/cpp_regex_traits.hpp>
+#include <boost/regex/v4/match_flags.hpp>
+#include <boost/regex/v4/perl_matcher_common.hpp>
+#include <boost/regex/v4/perl_matcher_non_recursive.hpp>
+#include <boost/regex/v4/regex_fwd.hpp>
+#include <boost/regex/v4/regex_traits.hpp>
+#include <qpoint.h>
+#include <qpolygon.h>
+#include <qthread.h>
+#include <quuid.h>
+#include <qvector.h>
+#include <algorithm>
+#include <cmath>
+#include <exception>
+#include <fstream>
+#include <iomanip>
+#include <memory>
+#include <sstream>
 
+#include "../model/Building.hpp"
 #include "../model/DaylightingControl.hpp"
 #include "../model/GlareSensor.hpp"
 #include "../model/InteriorPartitionSurfaceGroup.hpp"
 #include "../model/Luminaire.hpp"
 #include "../model/Model.hpp"
-#include "../model/Model_Impl.hpp"
-#include "../model/WeatherFile.hpp"
-#include "../model/WeatherFile_Impl.hpp"
-#include "../model/Building.hpp"
-#include "../model/Building_Impl.hpp"
 #include "../model/RadianceParameters.hpp"
-#include "../model/RadianceParameters_Impl.hpp"
-#include "../model/Site.hpp"
-#include "../model/Site_Impl.hpp"
-#include "../model/ShadingSurface.hpp"
-#include "../model/ShadingSurface_Impl.hpp"
-#include "../model/ShadingSurfaceGroup.hpp"
-#include "../model/ShadingSurfaceGroup_Impl.hpp"
 #include "../model/ShadingControl.hpp"
-#include "../model/ShadingControl_Impl.hpp"
+#include "../model/ShadingSurface.hpp"
+#include "../model/ShadingSurfaceGroup.hpp"
+#include "../model/Site.hpp"
 #include "../model/Space.hpp"
-#include "../model/Space_Impl.hpp"
 #include "../model/ThermalZone.hpp"
-
-#include "../utilities/core/Assert.hpp"
-#include "../utilities/core/PathHelpers.hpp"
 #include "../utilities/core/ApplicationPathHelpers.hpp"
+#include "../utilities/core/PathHelpers.hpp"
 #include "../utilities/geometry/Transformation.hpp"
-
-#include <QPolygonF>
-#include <QPointF>
-#include <QDir>
-#include <QDateTime>
-#include <QThread>
-
-#include <boost/lexical_cast.hpp>
-#include <boost/algorithm/string/regex.hpp>
-#include <boost/math/constants/constants.hpp>
-#include <boost/filesystem.hpp>
-#include <boost/filesystem/fstream.hpp>
-
-#include <cstring>
-#include <cmath>
-#include <sstream>
-#include <iterator>
-#include <algorithm>
-#include <fstream>
-#include <iomanip>
-#include <math.h>
+#include "ForwardTranslator.hpp"
+#include "radiance/../model/../utilities/idd/../core/Compare.hpp"
+#include "radiance/../model/../utilities/idd/../core/Logger.hpp"
+#include "radiance/../model/../utilities/idd/../core/Optional.hpp"
+#include "radiance/../model/../utilities/idf/Workspace.hpp"
+#include "radiance/../model/ConstructionBase.hpp"
+#include "radiance/../model/IlluminanceMap.hpp"
+#include "radiance/../model/InteriorPartitionSurface.hpp"
+#include "radiance/../model/SubSurface.hpp"
+#include "radiance/../model/Surface.hpp"
+#include "radiance/../utilities/core/StringStreamLogSink.hpp"
+#include "radiance/../utilities/geometry/Point3d.hpp"
+#include "radiance/../utilities/geometry/Vector3d.hpp"
+#include "radiance/WindowGroup.hpp"
 
 using openstudio::Point3d;
 using openstudio::Point3dVector;

@@ -17,18 +17,25 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
-#include <iterator>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
 #include <algorithm>
+#include <exception>
+#include <sstream>
+#include <stdexcept>
 
-#include "PreviewIESJob.hpp"
 #include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
+#include "PreviewIESJob.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/ToolBasedJob.hpp"
+#include "runmanager/lib/ToolInfo.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-#include <QDir>
-#include <QDateTime>
+namespace openstudio {
+namespace runmanager {
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

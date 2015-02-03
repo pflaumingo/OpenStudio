@@ -20,16 +20,26 @@
 #ifndef ANALYSIS_PSUADEDACEALGORITHMOPTIONS_HPP
 #define ANALYSIS_PSUADEDACEALGORITHMOPTIONS_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <vector>
+
 #include "AnalysisAPI.hpp"
 #include "DakotaAlgorithmOptions.hpp"
+#include "analysis/../utilities/core/LogMessage.hpp"
+#include "analysis/../utilities/core/Logger.hpp"
+
+namespace openstudio {
+class Attribute;
+}  // namespace openstudio
 
 namespace openstudio {
 namespace analysis {
 
 namespace detail {
 
-  class PSUADEDaceAlgorithmOptions_Impl;
   class AnalysisObject_Impl;
+  class PSUADEDaceAlgorithmOptions_Impl;
 
 } // detail
 

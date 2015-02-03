@@ -20,16 +20,19 @@
 #ifndef MODEL_RELATIONSHIP_HPP
 #define MODEL_RELATIONSHIP_HPP
 
-#include "ModelAPI.hpp"
-#include "ModelObject.hpp"
+#include <boost/optional/optional.hpp>
+#include <qmetaobject.h>
+#include <QMetaProperty>
+#include <QVariant>
+#include <string>
+#include <vector>
 
 #include "../utilities/core/Logger.hpp"
 #include "../utilities/core/Optional.hpp"
-
-#include <QVariant>
-#include <QMetaProperty>
-
-#include <string>
+#include "ModelAPI.hpp"
+#include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/Component.hpp"
 
 namespace openstudio {
 namespace model {

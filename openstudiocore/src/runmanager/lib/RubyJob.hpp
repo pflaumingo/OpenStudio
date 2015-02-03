@@ -21,22 +21,36 @@
 #define RUNMANAGER_LIB_RUBYJOB_HPP
 
 #include <boost/filesystem.hpp>
+#include <qobjectdefs.h>
+#include <QDateTime>
+#include <QFileInfo>
+#include <QFileSystemWatcher>
+#include <QProcess>
+#include <memory>
 #include <string>
+#include <utility>
+#include <vector>
+
+#include "../../energyplus/ErrorFile.hpp"
 #include "../../utilities/core/Logger.hpp"
 #include "Job_Impl.hpp"
-#include "ToolInfo.hpp"
-#include "ToolBasedJob.hpp"
 #include "MergedJobResults.hpp"
-#include "../../energyplus/ErrorFile.hpp"
-
-#include <QProcess>
-#include <QFileSystemWatcher>
-#include <QFileInfo>
-#include <QDateTime>
+#include "ToolBasedJob.hpp"
+#include "ToolInfo.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/core/UUID.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
 
 namespace openstudio {
 namespace runmanager {
   class RubyJobBuilder;
+class Files;
+class MergedJobResults;
+namespace detail {
+class Job_Impl;
+}  // namespace detail
+struct JobState;
 
 namespace detail {
 

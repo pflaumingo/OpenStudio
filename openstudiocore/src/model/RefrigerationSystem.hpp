@@ -20,8 +20,25 @@
 #ifndef MODEL_REFRIGERATIONSYSTEM_HPP
 #define MODEL_REFRIGERATIONSYSTEM_HPP
 
+#include <boost/optional/optional.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "ModelAPI.hpp"
 #include "ModelObject.hpp"
+#include "model/../utilities/idd/../core/LogMessage.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
+#include "model/../utilities/idd/IddEnums.hpp"
+#include "model/Model.hpp"
+#include "model/ModelObjectList.hpp"
+
+namespace openstudio {
+class IdfObject;
+namespace detail {
+class IdfObject_Impl;
+}  // namespace detail
+}  // namespace openstudio
 
 namespace openstudio {
 
@@ -30,11 +47,11 @@ namespace model {
 class RefrigerationAirChiller;
 class RefrigerationCase;
 class RefrigerationCompressor;
-class RefrigerationWalkIn;
-class RefrigerationSecondarySystem;
 class RefrigerationCondenserCascade;
+class RefrigerationSecondarySystem;
 class RefrigerationSubcoolerLiquidSuction;
 class RefrigerationSubcoolerMechanical;
+class RefrigerationWalkIn;
 class ThermalZone;
 
 namespace detail {

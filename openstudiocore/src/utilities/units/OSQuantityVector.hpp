@@ -20,15 +20,18 @@
 #ifndef UTILITIES_UNITS_OSQUANTITYVECTOR_HPP
 #define UTILITIES_UNITS_OSQUANTITYVECTOR_HPP
 
-#include "../UtilitiesAPI.hpp"
-
-#include "Unit.hpp"
-
+#include <string>
 #include <vector>
+
+#include "../UtilitiesAPI.hpp"
+#include "Unit.hpp"
+#include "utilities/units/../core/LogMessage.hpp"
+#include "utilities/units/../core/Logger.hpp"
 
 namespace openstudio {
 
 class Quantity;
+struct Scale;
 
 /** Represents a vector of \link Quantity quantities \endlink all with the same units.
  *  Provides performance improvements over directly operating on std::vector<Quantity>. 

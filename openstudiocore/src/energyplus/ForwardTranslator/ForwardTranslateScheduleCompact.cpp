@@ -17,21 +17,17 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-
-#include "../../model/Model.hpp"
-#include "../../model/ScheduleTypeLimits.hpp"
-#include "../../model/ScheduleTypeLimits_Impl.hpp"
-#include "../../model/ScheduleCompact.hpp"
-#include "../../model/ScheduleCompact_Impl.hpp"
-
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
 #include <utilities/idd/Schedule_Compact_FieldEnums.hxx>
 
+#include "../../model/ScheduleCompact.hpp"
+#include "../../model/ScheduleTypeLimits.hpp"
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddEnums.hxx>
-#include <utilities/idd/IddFactory.hxx>
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Optional.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 

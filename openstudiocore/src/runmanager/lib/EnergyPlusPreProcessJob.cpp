@@ -17,36 +17,38 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include <cstring>
-#include <sstream>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <qurl.h>
+#include <utilities/idd/IddEnums.hxx>
+#include <exception>
 #include <fstream>
-#include <iterator>
-#include <algorithm>
+#include <stdexcept>
+#include <utility>
+#include <vector>
 
+#include "../../utilities/idf/Workspace.hpp"
 #include "EnergyPlusPreProcessJob.hpp"
 #include "FileInfo.hpp"
-#include "JobOutputCleanup.hpp"
 #include "RunManager_Util.hpp"
+#include "runmanager/lib/../../model/../utilities/idd/IddEnums.hpp"
+#include "runmanager/lib/../../model/../utilities/idf/WorkspaceObject.hpp"
+#include "runmanager/lib/../../ruleset/OSResult.hpp"
+#include "runmanager/lib/../../utilities/core/EnumBase.hpp"
+#include "runmanager/lib/../../utilities/core/Logger.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/JobErrors.hpp"
+#include "runmanager/lib/JobParam.hpp"
+#include "runmanager/lib/JobType.hpp"
+#include "runmanager/lib/Job_Impl.hpp"
 
-#include "../../utilities/time/DateTime.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Model_Impl.hpp"
-#include "../../model/Building.hpp"
-#include "../../model/Building_Impl.hpp"
-#include "../../model/Facility.hpp"
-#include "../../model/Facility_Impl.hpp"
-
-#include "../../energyplus/ReverseTranslator.hpp"
-
-#include "../../utilities/data/Attribute.hpp"
-#include "../../utilities/idf/IdfFile.hpp"
-#include "../../utilities/idf/Workspace.hpp"
-#include "../../utilities/sql/SqlFile.hpp"
-
-#include <utilities/idd/IddEnums.hxx>
-
-#include <QDir>
-#include <QDateTime>
+class QDateTime;
+namespace openstudio {
+namespace runmanager {
+class ProcessCreator;
+struct JobState;
+}  // namespace runmanager
+}  // namespace openstudio
 
 namespace openstudio {
 namespace runmanager {

@@ -8,4 +8,9 @@
    subject to change. Applications should only use zlib.h.
  */
 
+#include <zlib.h>
+#include <zutil.h>
+
+#include "zconf.h"
+
 void ZLIB_INTERNAL inflate_fast OF((z_streamp strm, unsigned start));

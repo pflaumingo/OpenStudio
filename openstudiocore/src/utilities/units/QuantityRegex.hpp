@@ -20,10 +20,13 @@
 #ifndef UTILITIES_UNITS_QUANTITYREGEX_HPP
 #define UTILITIES_UNITS_QUANTITYREGEX_HPP
 
-#include "../UtilitiesAPI.hpp"
 #include <boost/regex.hpp>
-
+#include <boost/regex/v4/regex_fwd.hpp>
 #include <string>
+#include <utility>
+#include <vector>
+
+#include "../UtilitiesAPI.hpp"
 
 namespace openstudio {
 

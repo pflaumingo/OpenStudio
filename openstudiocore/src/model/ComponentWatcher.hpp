@@ -20,10 +20,13 @@
 #ifndef MODEL_COMPONENTWATCHER_HPP
 #define MODEL_COMPONENTWATCHER_HPP
 
-#include "ModelAPI.hpp"
-
+#include <qobjectdefs.h>
+#include <qstring.h>
 #include <memory>
 #include <vector>
+
+#include "ModelAPI.hpp"
+#include "model/../utilities/idd/../core/Logger.hpp"
 
 namespace openstudio {
 namespace model {
@@ -31,8 +34,8 @@ namespace model {
 class ComponentData;
 
 namespace detail {
-  class Model_Impl;
   class ComponentWatcher_Impl;
+  class Model_Impl;
 }
 
 /** ComponentWatcher uses Qt signals and slots to monitor the data associated with a Component. 

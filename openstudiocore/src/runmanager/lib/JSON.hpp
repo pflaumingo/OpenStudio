@@ -20,31 +20,39 @@
 #ifndef RUNMANAGER_LIB_JSON_HPP
 #define RUNMANAGER_LIB_JSON_HPP
 
-#include "RunManagerAPI.hpp"
-
-#include "../../utilities/core/Path.hpp"
-#include "../../utilities/core/Json.hpp"
-
+#include <qmetatype.h>
+#include <qvariant.h>
+#include <QUrl>
+#include <QVariant>
+#include <functional>
 #include <string>
+#include <utility>
 #include <vector>
 
-#include <QVariant>
-#include <QUrl>
-
+#include "../../utilities/core/Json.hpp"
+#include "../../utilities/core/Path.hpp"
 #include "Job.hpp"
+#include "RunManagerAPI.hpp"
+#include "runmanager/lib/../../utilities/core/LogMessage.hpp"
+#include "runmanager/lib/../../utilities/time/../core/Logger.hpp"
+#include "runmanager/lib/AdvancedStatus.hpp"
+#include "runmanager/lib/JobParam.hpp"
+
+class QUrl;
 
 namespace openstudio {
   class URLSearchPath;
+class VersionString;
 
   namespace runmanager {
 
-    class WorkItem;
-    class JobType;
-    struct FileInfo;
-    struct ToolInfo;
-    struct JobParam;
     class ErrorType;
+    class JobType;
+    class WorkItem;
+    struct FileInfo;
     struct JobErrors;
+    struct JobParam;
+    struct ToolInfo;
 
     namespace detail
     {

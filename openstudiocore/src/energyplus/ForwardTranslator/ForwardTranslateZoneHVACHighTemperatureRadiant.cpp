@@ -17,29 +17,24 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  **********************************************************************/
 
-#include "../ForwardTranslator.hpp"
-#include "../../model/Model.hpp"
-#include "../../model/Schedule.hpp"
-#include "../../model/Schedule_Impl.hpp"
+#include <boost/optional/optional.hpp>
+#include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/ZoneHVAC_HighTemperatureRadiant_FieldEnums.hxx>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "../../model/ModelObject.hpp"
-#include "../../model/ModelObject_Impl.hpp"
-#include "../../model/ThermalZone.hpp"
-#include "../../model/ThermalZone_Impl.hpp"
+#include "../../model/Schedule.hpp"
 #include "../../model/Surface.hpp"
-#include "../../model/Surface_Impl.hpp"
-#include "../../model/Space.hpp"
-#include "../../model/Space_Impl.hpp"
+#include "../../model/ThermalZone.hpp"
 #include "../../model/ZoneHVACHighTemperatureRadiant.hpp"
 #include "../../model/ZoneHVACHighTemperatureRadiant_Impl.hpp"
-#include "../../model/ZoneHVACEquipmentList.hpp"
-#include "../../model/ZoneHVACEquipmentList_Impl.hpp"
-#include "../../model/ZoneHVACComponent.hpp"
-#include "../../model/ZoneHVACComponent_Impl.hpp"
-#include "../../utilities/idf/IdfExtensibleGroup.hpp"
-#include <utilities/idd/ZoneHVAC_HighTemperatureRadiant_FieldEnums.hxx>
-#include <utilities/idd/IddEnums.hxx>
 #include "../../utilities/idd/IddEnums.hpp"
-#include <utilities/idd/IddFactory.hxx>
+#include "../../utilities/idf/IdfExtensibleGroup.hpp"
+#include "../ForwardTranslator.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idd/../core/Compare.hpp"
+#include "energyplus/ForwardTranslator/../../model/../utilities/idf/IdfObject.hpp"
 
 using namespace openstudio::model;
 
