@@ -166,8 +166,7 @@ class MODEL_API PlantLoop : public Loop {
   bool addSupplyBranchForComponent( HVACComponent hvacComponent );
 
   /** Removes the demand side branch that contains the specified hvacComponent.
-   *  Does not remove the component from the model, but may remove surrounding,
-   *  components on the branch if they are not attached to other HVAC objects.
+   *  Any components on the branch that are not part of another system are removed from the model.
    */
   bool removeSupplyBranchWithComponent( HVACComponent hvacComponent );
 

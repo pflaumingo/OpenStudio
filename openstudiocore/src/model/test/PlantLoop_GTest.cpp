@@ -120,8 +120,16 @@ TEST_F(ModelFixture,PlantLoop_supplyComponents)
 
   // Remove the new supply branch
 
+  auto chillerInletModelObject = chiller2.supplyInletModelObject();
+  auto chillerOutletModelObject = chiller2.supplyInletModelObject();
+  ASSERT_TRUE(chillerInletModelObject);
+  ASSERT_TRUE(chillerOutletModelObject);
+
   ASSERT_TRUE(plantLoop.removeSupplyBranchWithComponent(chiller2));
   ASSERT_EQ( 7u,plantLoop.supplyComponents().size() );
+  ASSERT_TRUE(chiller2.handle().isNull());
+  ASSERT_TRUE(chillerInletModelObject->handle().isNull());
+  ASSERT_TRUE(chillerOutletModelObject->handle().isNull());
 }
 
 TEST_F(ModelFixture,PlantLoop_demandComponent)
@@ -408,5 +416,29 @@ TEST_F(ModelFixture, PlantLoop_OperationSchemes)
     EXPECT_EQ(plantEquipmentOperationOutdoorDryBulb,dryBulb.get());
   }
   
+}
+
+TEST_F(ModelFixture,PlantLoop_removeSupplyBranchWithComponent)
+{
+  Model m;
+  PlantLoop plant1(m);
+  PlantLoop plant2(m);
+
+  ChillerElectricEIR chiller(m);
+  ASSERT_TRUE(plant1.addSupplyBranchForComponent(chiller));
+  ASSERT_TRUE(plant2.addDemandBranchForComponent(chiller));
+
+  auto chillerInletModelObject = chiller.supplyInletModelObject();
+  auto chillerOutletModelObject = chiller.supplyInletModelObject();
+  ASSERT_TRUE(chillerInletModelObject);
+  ASSERT_TRUE(chillerOutletModelObject);
+
+  ASSERT_TRUE(plant1.removeSupplyBranchWithComponent(chiller));
+  ASSERT_EQ( 5u,plant1.supplyComponents().size() );
+  // since the chiller is still connnected as a demand component we expect it to stick around.
+  ASSERT_FALSE(chiller.handle().isNull());
+  // but the surrounding nodes on the supply side are gone.
+  ASSERT_TRUE(chillerInletModelObject->handle().isNull());
+  ASSERT_TRUE(chillerOutletModelObject->handle().isNull());
 }
 
