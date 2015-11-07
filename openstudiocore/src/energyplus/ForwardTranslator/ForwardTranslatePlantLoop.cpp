@@ -274,8 +274,20 @@ IdfObject ForwardTranslator::populateBranch( IdfObject & branchIdfObject,
         }
         else if( plantLoop.demandComponent(waterToWaterComponent->handle()) )
         {
-          inletNode = waterToWaterComponent->demandInletModelObject()->optionalCast<Node>();
-          outletNode = waterToWaterComponent->demandOutletModelObject()->optionalCast<Node>();
+          if( auto tertiaryInletModelObject = waterToWaterComponent->tertiaryInletModelObject() ) {
+            if( auto tertiaryInletNode = tertiaryInletModelObject->optionalCast<Node>() ) {
+              if( loop.demandComponent(tertiaryInletNode->handle()) ) {
+                inletNode = tertiaryInletNode;
+                if( auto tertiaryOutletModelObject = waterToWaterComponent->tertiaryOutletModelObject() ) {
+                  outletNode = tertiaryOutletModelObject->optionalCast<Node>();
+                }
+              }
+            }
+          }
+          if( ! inletNode ) {
+            inletNode = waterToWaterComponent->demandInletModelObject()->optionalCast<Node>();
+            outletNode = waterToWaterComponent->demandOutletModelObject()->optionalCast<Node>();
+          }
         }
       }
 
