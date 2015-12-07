@@ -15446,6 +15446,8 @@ OS:Controller:MechanicalVentilation,
        \key VentilationRateProcedure
        \key IndoorAirQualityProcedure
        \key ProportionalControl
+       \key ProportionalControlBasedonOccupancySchedule
+       \key ProportionalControlBasedOnDesignOccupancy
   A6, \field Thermal Zone
        \note A zone name or a zone list name may be used here
        \type object-list
