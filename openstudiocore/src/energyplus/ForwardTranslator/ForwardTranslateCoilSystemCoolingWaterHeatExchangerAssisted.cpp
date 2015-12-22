@@ -22,6 +22,8 @@
 #include "../../model/CoilSystemCoolingWaterHeatExchangerAssisted_Impl.hpp"
 #include "../../model/Node.hpp"
 #include "../../model/Node_Impl.hpp"
+#include "../../model/SetpointManager.hpp"
+#include "../../model/SetpointManager_Impl.hpp"
 #include "../../model/HeatExchangerAirToAirSensibleAndLatent.hpp"
 #include "../../model/HeatExchangerAirToAirSensibleAndLatent_Impl.hpp"
 #include "../../model/CoilCoolingWater.hpp"
@@ -63,15 +65,44 @@ boost::optional<IdfObject> ForwardTranslator::translateCoilSystemCoolingWaterHea
   }
 
   std::string hxExhaustAirOutletNodeName;
+  std::vector<SetpointManager> spms;
   // OutletNodeName
   if( auto mo = modelObject.outletModelObject() ) {
     if( auto node = mo->optionalCast<Node>() ) {
       hxExhaustAirOutletNodeName = node->name().get();
+      // Check for SPM we will duplicate this and apply it to the 
+      // cooling outlet node
+      spms = node->setpointManagers();
     }
   }
 
   std::string hxSupplyAirOutletNodeName = modelObject.name().get() + " HX Supply Air Outlet - Cooling Inlet Node";
   std::string hxExhaustAirInletNodeName = modelObject.name().get() + " HX Exhaust Air Inlet - Cooling Outlet Node";
+
+  // There needs to be an inner setpoint manager inside the 
+  // coil system. Unfortunately this node doesn't exist in the OS Model,
+  // because we are not currently making any "interior" connections.
+  // This creates some problems. There is no place for an OS client to
+  // attach this inner setpoint manager.
+  //
+  // Here we are going to make an assumption that the correct SPM to use
+  // on the inside is going to be the same as the SPM on the coil system outlet node.
+  // We clone the "exterior" spm and use this clone on the inside. 
+  // Here again we have to hack because we don't have a node to assign the spm clone to.
+  // We do at this point know the node name as it will appear in the idf file so we make a
+  // standin node and assign that to the spm clone. This is a hack, but effective.
+  if( ! spms.empty ) {
+    auto model = modelObject.model();
+    Node node(model);
+    node.setName(hxExhaustAirInletNodeName);
+
+    for( const auto & spm : spms ) {
+      auto spmClone = spm.clone(model).cast<SetpointManager>();
+      // Need to use some private stuff. :(
+      auto spmImpl = spmClone.getImpl<detail::SetpointManager_Impl>()
+      spmImpl->setSetpointNode(node);
+    }
+  }
 
   // HeatExchangerObjectType
   // HeatExchangerName
