@@ -368,6 +368,7 @@ Workspace ForwardTranslator::translateModelPrivate( model::Model & model, bool f
   translateSchedules(model);
 
   // get air loops in sorted order
+
   std::vector<AirLoopHVAC> airLoops = model.getConcreteModelObjects<AirLoopHVAC>();
   std::sort(airLoops.begin(), airLoops.end(), WorkspaceObjectNameLess());
   for (AirLoopHVAC airLoop : airLoops){
@@ -1647,6 +1648,12 @@ boost::optional<IdfObject> ForwardTranslator::translateAndMapModelObject(ModelOb
     }
   case openstudio::IddObjectType::OS_Node :
     {
+      model::Model model1;
+      model::Model model2;
+
+      model::Node node1(model1);
+      auto node2 = node1.clone(model2);
+
       model::Node node = modelObject.cast<Node>();
       retVal = translateNode(node);
       break;

@@ -31,22 +31,24 @@
 #include "../../model/ControllerWaterCoil.hpp"
 #include "../../model/ControllerWaterCoil_Impl.hpp"
 #include "../../model/Model.hpp"
+#include "../../model/Model_Impl.hpp"
 #include "../../utilities/core/Assert.hpp"
 #include <utilities/idd/CoilSystem_Cooling_Water_HeatExchangerAssisted_FieldEnums.hxx>
 #include <utilities/idd/HeatExchanger_AirToAir_SensibleAndLatent_FieldEnums.hxx>
 #include <utilities/idd/Coil_Cooling_Water_FieldEnums.hxx>
 #include <utilities/idd/Controller_WaterCoil_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
+#include <utilities/idd/IddFactory.hxx>
 
-using namespace openstudio::model;
-using namespace std;
+//using namespace openstudio::model;
+//using namespace std;
 
 namespace openstudio {
 
 namespace energyplus {
 
 boost::optional<IdfObject> ForwardTranslator::translateCoilSystemCoolingWaterHeatExchangerAssisted( 
-    CoilSystemCoolingWaterHeatExchangerAssisted & modelObject)
+    model::CoilSystemCoolingWaterHeatExchangerAssisted & modelObject)
 {
   IdfObject idfObject(IddObjectType::CoilSystem_Cooling_Water_HeatExchangerAssisted);
   m_idfObjects.push_back(idfObject);
@@ -59,16 +61,16 @@ boost::optional<IdfObject> ForwardTranslator::translateCoilSystemCoolingWaterHea
   std::string hxSupplyAirInletNodeName;
   // InletNodeName
   if( auto mo = modelObject.inletModelObject() ) {
-    if( auto node = mo->optionalCast<Node>() ) {
+    if( auto node = mo->optionalCast<model::Node>() ) {
       hxSupplyAirInletNodeName = node->name().get();
     }
   }
 
   std::string hxExhaustAirOutletNodeName;
-  std::vector<SetpointManager> spms;
+  std::vector<model::SetpointManager> spms;
   // OutletNodeName
   if( auto mo = modelObject.outletModelObject() ) {
-    if( auto node = mo->optionalCast<Node>() ) {
+    if( auto node = mo->optionalCast<model::Node>() ) {
       hxExhaustAirOutletNodeName = node->name().get();
       // Check for SPM we will duplicate this and apply it to the 
       // cooling outlet node
@@ -91,16 +93,18 @@ boost::optional<IdfObject> ForwardTranslator::translateCoilSystemCoolingWaterHea
   // Here again we have to hack because we don't have a node to assign the spm clone to.
   // We do at this point know the node name as it will appear in the idf file so we make a
   // standin node and assign that to the spm clone. This is a hack, but effective.
-  if( ! spms.empty ) {
-    auto model = modelObject.model();
-    Node node(model);
-    node.setName(hxExhaustAirInletNodeName);
 
-    for( const auto & spm : spms ) {
-      auto spmClone = spm.clone(model).cast<SetpointManager>();
+  if( ! spms.empty() ) {
+
+    for( auto spm : spms ) {
+      std::cout << spm.briefDescription() << std::endl;
+      //Model m;
+      //auto spmClone = spm.clone(m);//.cast<model::SetpointManager>();
       // Need to use some private stuff. :(
-      auto spmImpl = spmClone.getImpl<detail::SetpointManager_Impl>()
-      spmImpl->setSetpointNode(node);
+      //auto spmImpl = spmClone.getImpl<model::detail::SetpointManager_Impl>();
+      //spmImpl->setSetpointNode(node);
+
+      //translateAndMapModelObject(spmClone);
     }
   }
 
@@ -132,7 +136,7 @@ boost::optional<IdfObject> ForwardTranslator::translateCoilSystemCoolingWaterHea
         idf->setString(Coil_Cooling_WaterFields::AirOutletNodeName,hxExhaustAirInletNodeName);
       }
     }
-    if( auto coilCoolingWater = coolingCoil.optionalCast<CoilCoolingWater>() ) {
+    if( auto coilCoolingWater = coolingCoil.optionalCast<model::CoilCoolingWater>() ) {
       if( auto controller = coilCoolingWater->controllerWaterCoil() ) {
         if( auto idf = translateAndMapModelObject(controller.get()) ) {
           idf->setString(Controller_WaterCoilFields::SensorNodeName,hxExhaustAirInletNodeName);

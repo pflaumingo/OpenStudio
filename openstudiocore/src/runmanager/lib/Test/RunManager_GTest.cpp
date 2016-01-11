@@ -31,6 +31,7 @@
 
 #include "../../../model/Model.hpp"
 #include "../../../model/WeatherFile.hpp"
+#include "../../../model/AirLoopHVAC.hpp"
 
 #include "../../../utilities/core/Application.hpp"
 #include "../../../utilities/core/System.hpp"
@@ -289,7 +290,8 @@ TEST_F(RunManagerTestFixture, RubySwapWithNull)
 TEST_F(RunManagerTestFixture, OSMWeatherObjectTest)
 {
   openstudio::Application::instance().application(false);
-  openstudio::path outdir = openstudio::toPath(QDir::tempPath()) / openstudio::toPath("OSMWeatherObjectTest");
+  //openstudio::path outdir = openstudio::toPath(QDir::tempPath()) / openstudio::toPath("OSMWeatherObjectTest");
+  openstudio::path outdir = openstudio::toPath("/Users/kbenne/Desktop/OSMWeatherObjectTest");
   boost::filesystem::create_directories(outdir);
   openstudio::path db = outdir / openstudio::toPath("OSMWeatherObjectTestDB");
 
@@ -307,7 +309,8 @@ TEST_F(RunManagerTestFixture, OSMWeatherObjectTest)
   openstudio::path infile = outdir / openstudio::toPath("OSMWeatherObjectTest.osm");
   openstudio::path weatherdir = resourcesPath() / openstudio::toPath("runmanager");
 
-  openstudio::model::Model m = openstudio::model::exampleModel();
+  openstudio::model::Model m;// = openstudio::model::exampleModel();
+  openstudio::model::AirLoopHVAC airLoopHVAC(m);
 
   openstudio::model::WeatherFile::setWeatherFile(m, openstudio::EpwFile(weatherdir / openstudio::toPath("USA_CO_Golden-NREL.724666_TMY3.epw")));
 
@@ -316,7 +319,7 @@ TEST_F(RunManagerTestFixture, OSMWeatherObjectTest)
 
   workflow.setInputFiles(infile, weatherdir);
 
-  openstudio::runmanager::Job job = workflow.create(openstudio::tempDir() / openstudio::toPath("OSMWeatherObjectTest"));
+  openstudio::runmanager::Job job = workflow.create(outdir);
 
   kit.enqueue(job, true);
 

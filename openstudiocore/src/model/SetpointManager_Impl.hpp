@@ -69,14 +69,14 @@ namespace detail {
 
     virtual boost::optional<AirLoopHVACOutdoorAirSystem> airLoopHVACOutdoorAirSystem() const override;
 
-   private:
-
     /** This is used to set the field SetpointNodeName.
       * Use addToNode to add a setpoint manager to a node. */
     virtual bool setSetpointNode( const Node & node ) = 0;
 
     /** This is used to reset the field SetpointNodeName. */
     virtual void resetSetpointNode() = 0;
+
+   private:
 
     REGISTER_LOGGER("openstudio.model.SetpointManager");
   };
