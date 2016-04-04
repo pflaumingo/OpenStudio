@@ -332,7 +332,6 @@ option(USE_PCH "Use precompiled headers" OFF)
 
 
 # Smart find qt location, looking for 64bit when appropriate
-# and preferring opengl installations
 if(MSVC)
   if(CMAKE_CL_64)
     set(COMPILER_ARCH_TAG "_64")
@@ -346,30 +345,16 @@ if(MSVC)
     set(COMPILER_VER_TAG "2014")
   endif()
 
-  file(GLOB_RECURSE QMAKE_LOCATIONS "C:/Qt/qmake.exe")
+  file(GLOB_RECURSE QMAKE_LOCATIONS "C:/Qt/5.6/msvc2013_64/bin/qmake.exe")
 
   message(STATUS "Qt Locations: ${QMAKE_LOCATIONS}")
-
-  if(QMAKE_LOCATIONS MATCHES ".*msvc${COMPILER_VER_TAG}${COMPILER_ARCH_TAG}_opengl.*")
-    set(HAS_OPENGL_INSTALL TRUE)
-    set(OPENGL_TAG "_opengl")
-  else()
-    set(HAS_OPENGL_INSTALL FALSE)
-    set(OPENGL_TAG "")
-  endif()
 
   set(QT_HINT_DIR "")
   foreach(LOC ${QMAKE_LOCATIONS})
     if(LOC MATCHES ".*msvc${COMPILER_VER_TAG}${COMPILER_ARCH_TAG}${OPENGL_TAG}/")
       get_filename_component(PDIR "${LOC}" DIRECTORY)
       get_filename_component(GPDIR "${PDIR}" DIRECTORY)
-      if(HAS_OPENGL_INSTALL)
-        if(GPDIR MATCHES ".*opengl.*")
-          list(APPEND QT_HINT_DIR "${GPDIR}")
-        endif()
-      else()
-        list(APPEND QT_HINT_DIR "${GPDIR}")
-      endif()
+      list(APPEND QT_HINT_DIR "${GPDIR}")
     endif()
   endforeach()
 
@@ -389,22 +374,21 @@ find_package(Qt5Xml HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Xml
 #find_package(Qt5WinExtras HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Gui, Qt5WinExtras
 find_package(Qt5Concurrent HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Concurrent
 find_package(Qt5PrintSupport HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Gui, Qt5PrintSupport, Qt5Widgets
+find_package(Qt5WebEngine HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Gui, Qt5Network, Qt5Qml, Qt5Quick, Qt5WebEngine
+find_package(Qt5WebEngineWidgets HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Gui, Qt5Network, Qt5Qml, Qt5Quick, Qt5WebEngine, Qt5WebEngineWidgets, Qt5Widgets
 mark_as_advanced(
   Qt5Concurrent_DIR
   Qt5Core_DIR
   Qt5Gui_DIR
-  Qt5Gui_EGL_LIBRARY
-  Qt5Location_DIR
-  Qt5Multimedia_DIR
-  Qt5MultimediaWidgets_DIR
   Qt5Network_DIR
-  Qt5OpenGL_DIR
-  Qt5Positioning_DIR
   Qt5PrintSupport_DIR
   Qt5Qml_DIR
   Qt5Quick_DIR
-  Qt5Sensors_DIR
   Qt5Sql_DIR
+  Qt5WebChannel_DIR
+  Qt5WebEngine_DIR
+  Qt5WebEngineCore_DIR
+  Qt5WebEngineWidgets_DIR
   Qt5Widgets_DIR
   #Qt5WinExtras_DIR
   Qt5Xml_DIR
@@ -414,17 +398,8 @@ mark_as_advanced(
 if(Qt5Widgets_DIR)
   option(BUILD_QT "Build Qt" OFF)
 
-  if(${Qt5Widgets_VERSION} VERSION_LESS "5.2.1")
-    message(FATAL_ERROR "Minimum supported Qt is v5.2.1")
-  endif()
-  if(${Qt5Widgets_VERSION} VERSION_LESS "5.4.0")
-    find_package(Qt5WebKit HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Gui, Qt5Network, Qt5WebKit
-    find_package(Qt5WebKitWidgets HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Gui, Qt5Network, Qt5WebKit, Qt5WebKitWidgets, Qt5Widgets
-    mark_as_advanced(Qt5WebKit_DIR Qt5WebKitWidgets_DIR)
-  else()
-    find_package(Qt5WebEngine HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Gui, Qt5Network, Qt5Qml, Qt5Quick, Qt5WebEngine
-    find_package(Qt5WebEngineWidgets HINTS ${QT_HINT_DIR}) #Qt5Core, Qt5Gui, Qt5Network, Qt5Qml, Qt5Quick, Qt5WebEngine, Qt5WebEngineWidgets, Qt5Widgets
-    mark_as_advanced(Qt5WebEngine_DIR Qt5WebEngineWidgets_DIR)
+  if(${Qt5Widgets_VERSION} VERSION_LESS "5.6.0")
+    message(FATAL_ERROR "Minimum supported Qt is v5.6.0")
   endif()
 elseif(UNIX)
   option(BUILD_QT "Build Qt" ON)
