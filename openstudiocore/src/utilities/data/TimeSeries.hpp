@@ -301,9 +301,11 @@ private:
 };
 
 // optional TimeSeries
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<TimeSeries>;
 typedef boost::optional<TimeSeries> OptionalTimeSeries;
 
 // vector of TimeSeries
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<TimeSeries>;
 typedef std::vector<TimeSeries> TimeSeriesVector;
 
 /** double * TimeSeries */
@@ -327,4 +329,3 @@ UTILITIES_API TimeSeries evaluateTimeSeriesFromTimeSeriesVectorFunctor(
 } // openstudio
 
 #endif // UTILITIES_DATA_TIMESERIES_HPP
-

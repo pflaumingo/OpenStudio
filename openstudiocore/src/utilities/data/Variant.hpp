@@ -86,9 +86,11 @@ class UTILITIES_API Variant {
 };
 
 /** \relates Variant */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Variant>;
 typedef boost::optional<Variant> OptionalVariant;
 
 /** \relates Variant */
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Variant>;
 typedef std::vector<Variant> VariantVector;
 
 } // openstudio

@@ -74,6 +74,7 @@ class UTILITIES_API ScaleFactorySingleton {
   ScaleConstant m_recoverFromFailedCreate() const;
 };  
 
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<ScaleFactorySingleton>;
 typedef openstudio::Singleton<ScaleFactorySingleton> ScaleFactory;
 
 /** Prints scales that are registered in the factory (and thus available for use in 
@@ -90,6 +91,7 @@ UTILITIES_API std::pair<std::string,std::string> extractScaleAbbreviation(const 
 
 /** Return type for scale multiplication and division. See the corresponding operators
  *  for its use. */
+UTILITIES_TEMPLATE_EXT template struct UTILITIES_API std::pair<ScaleConstant,double>;
 typedef std::pair<ScaleConstant,double> ScaleOpReturnType;
 
 /** Multiplication of scales. If result implied by adding exponents is not 

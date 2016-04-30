@@ -129,9 +129,11 @@ class UTILITIES_API SIUnit : public Unit {
 };
 
 /** \relates SIUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<SIUnit>;
 typedef boost::optional<SIUnit> OptionalSIUnit;
 
 /** \relates SIUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<SIUnit>;
 typedef std::vector<SIUnit> SIUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -216,4 +218,3 @@ UTILITIES_API SIUnit createSIHeatCapacity();
 } // openstudio
 
 #endif // UTILITIES_UNITS_SIUNIT_HPP
-

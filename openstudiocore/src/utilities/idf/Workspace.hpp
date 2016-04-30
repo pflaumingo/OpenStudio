@@ -502,9 +502,11 @@ class UTILITIES_API Workspace {
 };
 
 /** \relates Workspace */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Workspace>;
 typedef boost::optional<Workspace> OptionalWorkspace;
 
 /** \relates Workspace */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Workspace>;
 typedef std::vector<Workspace> WorkspaceVector;
 
 /** \relates Workspace */

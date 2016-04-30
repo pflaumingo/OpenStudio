@@ -33,9 +33,13 @@
 
 namespace openstudio {
   // note: boost::optional<bool> is a bad idea, don't do it
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<double>;
   typedef boost::optional<double> OptionalDouble;
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<unsigned>;
   typedef boost::optional<unsigned> OptionalUnsigned;
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<int>;
   typedef boost::optional<int> OptionalInt;
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<std::string>;
   typedef boost::optional<std::string> OptionalString;
 
   UTILITIES_API std::ostream& operator<<(std::ostream& os, const boost::optional<double>& x);

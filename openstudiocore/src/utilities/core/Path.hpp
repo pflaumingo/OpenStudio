@@ -59,8 +59,10 @@ UTILITIES_API path toPath(const std::string& s);
 UTILITIES_API path toPath(const QString& q);
 
 /** Optional path*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<path>;
 typedef boost::optional<path> OptionalPath;
 
+UTILITIES_TEMPLATE_EXT template struct UTILITIES_API std::pair<path, path>;
 typedef std::pair<path,path> PathPair;
 
 /// Return the fully expanded Windows path name ie "c:\Progra~1" into "C:\Program Files"

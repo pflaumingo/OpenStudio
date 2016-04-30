@@ -105,6 +105,7 @@ class UTILITIES_API QuantityConverterSingleton {
 };
 
 /** \relates QuantityConverterSingleton */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<QuantityConverterSingleton>;
 typedef openstudio::Singleton<QuantityConverterSingleton> QuantityConverter;
 
 /** Non-member function to simplify interface for users. \relates QuantityConverterSingleton */
@@ -127,4 +128,3 @@ UTILITIES_API OSQuantityVector convert(const OSQuantityVector& original, const U
 }// namespace openstudio
 
 #endif // UTILITIES_UNITS_QUANTITYCONVERTER_HPP
-

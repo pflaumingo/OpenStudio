@@ -141,6 +141,7 @@ namespace detail {
 
   };
 
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::shared_ptr<WorkspaceObjectOrder_Impl>;
   typedef std::shared_ptr<WorkspaceObjectOrder_Impl> WorkspaceObjectOrder_ImplPtr;
 } // detail
 

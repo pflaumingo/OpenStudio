@@ -592,6 +592,7 @@ namespace detail {
     REGISTER_LOGGER("utilities.idf.Workspace");
   };
 
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::shared_ptr<Workspace_Impl>;
   typedef std::shared_ptr<Workspace_Impl> Workspace_ImplPtr;
 
 } // detail

@@ -107,9 +107,11 @@ namespace openstudio{
   };
 
   /// optional Calendar
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Calendar>;
   typedef boost::optional<Calendar> OptionalCalendar;
 
   /// vector of Calendar
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Calendar>;
   typedef std::vector<Calendar> CalendarVector;
 
 } // openstudio

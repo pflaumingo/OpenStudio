@@ -80,9 +80,11 @@ OPENSTUDIO_ENUM(FuelType,
   ((EnergyTransfer)));
 
 /** \relates FuelType */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<FuelType>;
 typedef boost::optional<FuelType> OptionalFuelType;
 
 /** \relates FuelType */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<FuelType>;
 typedef std::vector<FuelType> FuelTypeVector;
 
 /** \class EndUseFuelType

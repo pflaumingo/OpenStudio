@@ -438,12 +438,15 @@ struct UTILITIES_API IdfObjectTypeLess {
 };
 
 /** \relates IdfObject */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<IdfObject>;
 typedef boost::optional<IdfObject> OptionalIdfObject;
 
 /** \relates IdfObject */
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IdfObject>;
 typedef std::vector<IdfObject> IdfObjectVector;
 
 /** \relates IdfObject */
+//UTILITIES_TEMPLATE_EXT template struct UTILITIES_API std::pair<IdfObject,IdfObject>;
 typedef std::pair<IdfObject,IdfObject> IdfObjectPair;
 
 /** \relates IdfObject */

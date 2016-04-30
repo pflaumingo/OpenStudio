@@ -78,9 +78,11 @@ namespace openstudio{
   };
 
   // optional BoundingBox
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<BoundingBox>;
   typedef boost::optional<BoundingBox> OptionalBoundingBox;
 
   // vector of BoundingBox
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<BoundingBox>;
   typedef std::vector<BoundingBox> BoundingBoxVector;
 
 } // openstudio

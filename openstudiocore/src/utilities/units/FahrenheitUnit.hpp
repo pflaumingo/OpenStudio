@@ -86,9 +86,11 @@ class UTILITIES_API FahrenheitUnit : public TemperatureUnit {
 };
 
 /** \relates FahrenheitUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<FahrenheitUnit>;
 typedef boost::optional<FahrenheitUnit> OptionalFahrenheitUnit;
 
 /** \relates FahrenheitUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<FahrenheitUnit>;
 typedef std::vector<FahrenheitUnit> FahrenheitUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -102,4 +104,3 @@ UTILITIES_API FahrenheitUnit createFahrenheitTemperature();
 } // openstudio
 
 #endif // UTILITIES_UNITS_FAHRENHEITUNIT_HPP
-

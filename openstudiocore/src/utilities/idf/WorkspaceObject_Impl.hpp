@@ -56,6 +56,7 @@ namespace detail {
 
     SourceData() {}
   };
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<SourceData>;
   typedef boost::optional<SourceData> OptionalSourceData;
 
   struct UTILITIES_API ReversePointer {
@@ -83,6 +84,7 @@ namespace detail {
 
     pointer_set reversePointers;
   };
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<TargetData>;
   typedef boost::optional<TargetData> OptionalTargetData;
 
   template<class T>
@@ -350,9 +352,11 @@ namespace detail {
   };
 
   /** \relates WorkspaceObject_Impl */
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::shared_ptr<WorkspaceObject_Impl>;
   typedef std::shared_ptr<WorkspaceObject_Impl> WorkspaceObject_ImplPtr;
 
   /** \relates WorkspaceObject_Impl */
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<WorkspaceObject_ImplPtr>;
   typedef std::vector<WorkspaceObject_ImplPtr> WorkspaceObject_ImplPtrVector;
 
 } // detail

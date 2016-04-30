@@ -131,10 +131,11 @@ namespace openstudio{
 
   /// Explicitly instantiate and export LoggerSingleton Singleton template instance
   /// so that the same instance is shared between the DLL's that link to Utilities.dll
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<LoggerSingleton>;
+  //UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<LoggerSingleton>;
 
 #endif
 
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<LoggerSingleton>;
   typedef openstudio::Singleton<LoggerSingleton> Logger;
 } // openstudio
 

@@ -123,9 +123,11 @@ class UTILITIES_API Misc1Unit : public Unit {
 };
 
 /** \relates Misc1Unit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Misc1Unit>;
 typedef boost::optional<Misc1Unit> OptionalMisc1Unit;
 
 /** \relates Misc1Unit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Misc1Unit>;
 typedef std::vector<Misc1Unit> Misc1UnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -169,4 +171,3 @@ UTILITIES_API Misc1Unit createMisc1LuminousFlux();
 } // openstudio
 
 #endif // UTILITIES_UNITS_MISC1UNIT_HPP
-

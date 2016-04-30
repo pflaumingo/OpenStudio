@@ -79,9 +79,11 @@ namespace openstudio{
   UTILITIES_API std::ostream& operator<<(std::ostream& os, const std::vector<Point3d>& pointVector);
 
   // optional Point3d
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Point3d>;
   typedef boost::optional<Point3d> OptionalPoint3d;
 
   // vector of Point3d
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Point3d>;
   typedef std::vector<Point3d> Point3dVector;
 
 } // openstudio

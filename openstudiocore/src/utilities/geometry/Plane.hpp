@@ -108,9 +108,11 @@ namespace openstudio{
   UTILITIES_API std::ostream& operator<<(std::ostream& os, const Plane& plane);
 
   /// optional Plane
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Plane>;
   typedef boost::optional<Plane> OptionalPlane;
 
   /// vector of Plane
+  //UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Plane>;
   typedef std::vector<Plane> PlaneVector;
 
 } // openstudio

@@ -134,6 +134,7 @@ class UTILITIES_API VersionString {
 
 UTILITIES_API std::ostream& operator<<(std::ostream& os,const VersionString& version);
 
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<VersionString>;
 typedef boost::optional<VersionString> OptionalVersionString;
 
 // sorts WorkspaceObjects by name

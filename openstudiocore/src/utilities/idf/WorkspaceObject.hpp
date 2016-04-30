@@ -163,9 +163,11 @@ class UTILITIES_API WorkspaceObject : public IdfObject {
 };
 
 /** \relates WorkspaceObject */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<WorkspaceObject>;
 typedef boost::optional<WorkspaceObject> OptionalWorkspaceObject;
 
 /** \relates WorkspaceObject */
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<WorkspaceObject>;
 typedef std::vector<WorkspaceObject> WorkspaceObjectVector;
 
 /** \relates WorkspaceObject

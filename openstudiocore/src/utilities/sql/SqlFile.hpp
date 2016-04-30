@@ -857,6 +857,7 @@ private:
 };
 
 /// optional SqlFile
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<SqlFile>;
 typedef boost::optional<SqlFile> OptionalSqlFile;
 
 } // openstudio

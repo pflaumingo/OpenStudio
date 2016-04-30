@@ -114,9 +114,11 @@ struct UTILITIES_API AttributeDescription {
 };
 
 /** \relates AttributeDescription */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<AttributeDescription>;
 typedef boost::optional<AttributeDescription> OptionalAttributeDescription;
 
 /** \relates AttributeDescription */
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<AttributeDescription>;
 typedef std::vector<AttributeDescription> AttributeDescriptionVector;
 
 /** An attribute is a name value pair where the value can be a bool, double, int,
@@ -396,9 +398,11 @@ class UTILITIES_API Attribute {
 };
 
 /** \relates Attribute */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Attribute>;
 typedef boost::optional<Attribute> OptionalAttribute;
 
 /** \relates Attribute */
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Attribute>;
 typedef std::vector<Attribute> AttributeVector;
 
 /** Prints Attribute XML to os. \relates Attribute */

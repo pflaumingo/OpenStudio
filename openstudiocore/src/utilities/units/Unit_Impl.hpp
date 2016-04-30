@@ -201,4 +201,3 @@ namespace detail {
 } // openstudio
 
 #endif // UTILITIES_UNITS_UNIT_IMPL_HPP
-

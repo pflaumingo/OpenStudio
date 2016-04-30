@@ -98,6 +98,7 @@ private:
 
 };
 
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API Singleton<MyClassSingleton>;
 typedef Singleton<MyClassSingleton> MyClass;
 
 #endif

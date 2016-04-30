@@ -161,9 +161,11 @@ class UTILITIES_API FileReference {
 };
 
 /** \relates FileReference*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<FileReference>;
 typedef boost::optional<FileReference> OptionalFileReference;
 
 /** \relates FileReference*/
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<FileReference>;
 typedef std::vector<FileReference> FileReferenceVector;
 
 namespace detail {
@@ -179,4 +181,3 @@ namespace detail {
 } // openstudio
 
 #endif // UTILITIES_CORE_FILEREFERENCE_HPP
-

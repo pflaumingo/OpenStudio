@@ -120,9 +120,11 @@ class UTILITIES_API MPHUnit : public Unit {
 };
 
 /** \relates MPHUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<MPHUnit>;
 typedef boost::optional<MPHUnit> OptionalMPHUnit;
 
 /** \relates MPHUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<MPHUnit>;
 typedef std::vector<MPHUnit> MPHUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -167,4 +169,3 @@ UTILITIES_API MPHUnit createMPHLuminousFlux();
 } // openstudio
 
 #endif // UTILITIES_UNITS_MPHUNIT_HPP
-

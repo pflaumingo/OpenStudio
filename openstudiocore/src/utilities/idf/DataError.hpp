@@ -102,12 +102,15 @@ struct UTILITIES_API DataErrorLess {
 };
 
 /** Set container for DataError. \relates DataError */
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<DataError,DataErrorLess>;
 typedef std::set<DataError,DataErrorLess> DataErrorSet;
 
 /** \relates DataError */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<DataError>;
 typedef boost::optional<DataError> OptionalDataError;
 
 /** \relates DataError */
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<DataError>;
 typedef std::vector<DataError> DataErrorVector;
 
 /** Ostream operator for DataError. \relates DataError */

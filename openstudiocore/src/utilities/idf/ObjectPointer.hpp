@@ -53,16 +53,22 @@ bool fieldIndexEqualTo(const T& object, unsigned value) {
 
 /** ObjectPointer with source as index in IdfObjectVector, target as Handle. For Workspace, source
  *  will be outside of workspace, target will be within workspace. */
+UTILITIES_TEMPLATE_EXT template struct UTILITIES_API ObjectPointer<unsigned,Handle>;
 typedef ObjectPointer<unsigned,Handle>  UHPointer;
 /** ObjectPointer with source as Handle, target as index in IdfObjectVector. For Workspace, source
  *  will be within workspace, target will be outside of workspace. */
+UTILITIES_TEMPLATE_EXT template struct UTILITIES_API ObjectPointer<Handle,unsigned>;
 typedef ObjectPointer<Handle,unsigned>  HUPointer;
 /** ObjectPointer with source and target as Handles. For Workspace, both objects must be in a
  *  workspace. */
+UTILITIES_TEMPLATE_EXT template struct UTILITIES_API ObjectPointer<Handle,Handle>;
 typedef ObjectPointer<Handle,Handle>    HHPointer;
 
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<UHPointer>;
 typedef std::vector<UHPointer> UHPointerVector;
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<HUPointer>;
 typedef std::vector<HUPointer> HUPointerVector;
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<HHPointer>;
 typedef std::vector<HHPointer> HHPointerVector;
 
 } // openstudio

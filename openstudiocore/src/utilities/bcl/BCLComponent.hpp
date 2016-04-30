@@ -104,9 +104,11 @@ namespace openstudio{
   };
 
   /** \relates BCLComponent */
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<BCLComponent>;
   typedef boost::optional<BCLComponent> OptionalBCLComponent;
 
   /** \relates BCLComponent */
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<BCLComponent>;
   typedef std::vector<BCLComponent> BCLComponentVector;
 
 } // openstudio

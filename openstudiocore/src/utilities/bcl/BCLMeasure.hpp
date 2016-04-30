@@ -309,8 +309,10 @@ namespace openstudio{
     BCLXML m_bclXML;
   };
 
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<BCLMeasure>;
   typedef boost::optional<BCLMeasure> OptionalBCLMeasure;
 
+  //UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<BCLMeasure>;
   typedef std::vector<BCLMeasure> BCLMeasureVector;
 
 } // openstudio

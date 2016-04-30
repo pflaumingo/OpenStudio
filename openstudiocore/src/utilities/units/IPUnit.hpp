@@ -140,9 +140,11 @@ class UTILITIES_API IPUnit : public Unit {
 };
 
 /** \relates IPUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<IPUnit>;
 typedef boost::optional<IPUnit> OptionalIPUnit;
 
 /** \relates IPUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IPUnit>;
 typedef std::vector<IPUnit> IPUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -198,4 +200,3 @@ UTILITIES_API IPUnit createIPFrequency();
 } // openstudio
 
 #endif // UTILITIES_UNITS_IPUNIT_HPP
-

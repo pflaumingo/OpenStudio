@@ -52,9 +52,11 @@ class UTILITIES_API Tag {
 };
 
 /** \relates Tag */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Tag>;
 typedef boost::optional<Tag> OptionalTag;
 
 /** \relates Tag */
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Tag>;
 typedef std::vector<Tag> TagVector;
 
 namespace detail {

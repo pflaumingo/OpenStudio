@@ -126,9 +126,11 @@ class UTILITIES_API WhUnit : public Unit {
 };
 
 /** \relates WhUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<WhUnit>;
 typedef boost::optional<WhUnit> OptionalWhUnit;
 
 /** \relates WhUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<WhUnit>;
 typedef std::vector<WhUnit> WhUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -175,4 +177,3 @@ UTILITIES_API WhUnit createWhIlluminance();
 } // openstudio
 
 #endif // UTILITIES_UNITS_WHUNIT_HPP
-

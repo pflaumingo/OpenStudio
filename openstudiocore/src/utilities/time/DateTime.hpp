@@ -149,9 +149,11 @@ class UTILITIES_API DateTime {
 };
 
 /// optional DateTime
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<DateTime>;
 typedef boost::optional<DateTime> OptionalDateTime;
 
 /// vector of DateTime
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<DateTime>;
 typedef std::vector<DateTime> DateTimeVector;
 
 // std::ostream operator<<

@@ -124,9 +124,11 @@ class UTILITIES_API ThermUnit : public Unit {
 };
 
 /** \relates ThermUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<ThermUnit>;
 typedef boost::optional<ThermUnit> OptionalThermUnit;
 
 /** \relates ThermUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<ThermUnit>;
 typedef std::vector<ThermUnit> ThermUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -165,4 +167,3 @@ UTILITIES_API ThermUnit createThermLuminousFlux();
 } // openstudio
 
 #endif // UTILITIES_UNITS_THERMUNIT_HPP
-

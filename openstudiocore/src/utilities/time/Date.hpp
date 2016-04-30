@@ -306,9 +306,11 @@ namespace openstudio{
   };
 
   /// optional Date
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Date>;
   typedef boost::optional<Date> OptionalDate;
 
   /// vector of Date
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Date>;
   typedef std::vector<Date> DateVector;
 
   // std::ostream operator<<

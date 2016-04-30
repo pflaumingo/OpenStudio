@@ -213,9 +213,11 @@ class UTILITIES_API IddObject {
 };
 
 /** \relates IddObject */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<IddObject>;
 typedef boost::optional<IddObject> OptionalIddObject;
 
 /** \relates IddObject */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IddObject>;
 typedef std::vector<IddObject> IddObjectVector;
 
 /** \relates IddObject */

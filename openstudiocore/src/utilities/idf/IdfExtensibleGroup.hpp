@@ -237,6 +237,7 @@ class UTILITIES_API IdfExtensibleGroup {
 };
 
 /** \relates IdfExtensibleGroup */
+//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IdfExtensibleGroup>;
 typedef std::vector<IdfExtensibleGroup> IdfExtensibleGroupVector;
 
 } // openstudio

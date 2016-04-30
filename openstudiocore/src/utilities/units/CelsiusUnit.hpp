@@ -79,9 +79,11 @@ class UTILITIES_API CelsiusUnit : public TemperatureUnit {
 };
 
 /** \relates CelsiusUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<CelsiusUnit>;
 typedef boost::optional<CelsiusUnit> OptionalCelsiusUnit;
 
 /** \relates CelsiusUnit*/
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<CelsiusUnit>;
 typedef std::vector<CelsiusUnit> CelsiusUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -95,4 +97,3 @@ UTILITIES_API CelsiusUnit createCelsiusTemperature();
 } // openstudio
 
 #endif // UTILITIES_UNITS_CELSIUSUNIT_HPP
-

@@ -470,8 +470,10 @@ namespace detail {
     REGISTER_LOGGER("utilities.idf.IdfObject");
   };
 
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::shared_ptr<IdfObject_Impl>;
   typedef std::shared_ptr<IdfObject_Impl> IdfObject_ImplPtr;
 
+  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IdfObject_ImplPtr>;
   typedef std::vector<IdfObject_ImplPtr> IdfObject_ImplPtrVector;
 
 } // detail

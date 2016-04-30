@@ -155,9 +155,11 @@ class UTILITIES_API IddFile {
 };
 
 /** \relates IddFile */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<IddFile>;
 typedef boost::optional<IddFile> OptionalIddFile;
 
 /** \relates IddFile */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IddFile>;
 typedef std::vector<IddFile> IddFileVector;
 
 /** \relates IddFile */

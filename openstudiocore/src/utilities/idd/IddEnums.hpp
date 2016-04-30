@@ -75,8 +75,10 @@ struct UTILITIES_API IddFileType: public ::EnumBase<IddFileType> {
   typedef boost::optional<IddFileType> OptionalIddFileType ;
 #endif
 /** \relates IddFileType */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IddFileType>;
 typedef std::vector<IddFileType> IddFileTypeVector;
 /** \relates IddFileType */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<IddFileType>;
 typedef std::set<IddFileType> IddFileTypeSet;
 
 /** \relates IddFileType */
@@ -133,8 +135,10 @@ struct UTILITIES_API IddObjectType: public ::EnumBase<IddObjectType> {
   typedef boost::optional<IddObjectType> OptionalIddObjectType ;
 #endif
 /** \relates IddObjectType */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IddObjectType>;
 typedef std::vector<IddObjectType> IddObjectTypeVector;
 /** \relates IddObjectType */
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<IddObjectType>;
 typedef std::set<IddObjectType> IddObjectTypeSet;
 
 /** \relates IddObjectType */

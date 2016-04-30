@@ -119,9 +119,11 @@ class UTILITIES_API ImfFile
 };
 
 /// optional imf file
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<ImfFile>;
 typedef boost::optional<ImfFile> OptionalImfFile;
 
 /// vector of imf file
+UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<ImfFile>;
 typedef std::vector<ImfFile> ImfFileVector;
 
 // ostream operator<<
