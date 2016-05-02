@@ -22,6 +22,7 @@ set(idf_src
   idf/ObjectOrderBase.hpp
   idf/ObjectOrderBase.cpp
   idf/ObjectPointer.hpp
+  idf/ObjectPointer.cpp
   idf/ValidityEnums.hpp
   idf/ValidityReport.hpp
   idf/ValidityReport.cpp

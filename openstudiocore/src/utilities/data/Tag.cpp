@@ -22,6 +22,10 @@
 #include "../core/String.hpp"
 #include "../core/Compare.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::Tag>;
+
+template class UTILITIES_API std::vector<openstudio::Tag>;
+
 namespace openstudio {
 
 Tag::Tag(const std::string& name)

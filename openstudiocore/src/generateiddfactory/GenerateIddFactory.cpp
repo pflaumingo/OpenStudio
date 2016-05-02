@@ -217,11 +217,9 @@ void initializeOutFiles(GenerateIddFactoryOutFiles& outFiles,
     << "  mutable std::map<VersionString,IddFile> m_osIddFiles;" << std::endl
     << "};" << std::endl
     << std::endl
-    << "#if _WIN32 || _MSC_VER" << std::endl
-    << "  // Explicitly instantiate and export IddFactorySingleton Singleton template instance" << std::endl
-    << "  // so that the same instance is shared between DLLs that link to Utilities.dll." << std::endl
-    << "  UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<IddFactorySingleton>;" << std::endl
-    << "#endif" << std::endl
+    << "// Explicitly instantiate and export IddFactorySingleton Singleton template instance" << std::endl
+    << "// so that the same instance is shared between DLLs that link to Utilities.dll." << std::endl
+    << "extern template class UTILITIES_API openstudio::Singleton<IddFactorySingleton>;" << std::endl
     << std::endl
     << "/** Convenience typedef for accessing IddFactorySingleton. Usage:" << std::endl
     << " *  \\code" << std::endl

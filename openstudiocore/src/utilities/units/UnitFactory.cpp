@@ -53,6 +53,8 @@
 #include <map>
 #include <vector>
 
+template class UTILITIES_API openstudio::Singleton<openstudio::UnitFactorySingleton>;
+
 namespace openstudio{
 
 bool UnitFactorySingleton::registerUnit(CreateUnitCallback createFn,UnitSystem system) {

@@ -52,11 +52,9 @@ class UTILITIES_API Tag {
 };
 
 /** \relates Tag */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Tag>;
 typedef boost::optional<Tag> OptionalTag;
 
 /** \relates Tag */
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Tag>;
 typedef std::vector<Tag> TagVector;
 
 namespace detail {
@@ -70,5 +68,11 @@ namespace detail {
 }
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::Tag>;
+
+template<> std::vector<openstudio::Tag>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::Tag>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::Tag>;
 
 #endif // UTILITIES_DATA_TAG_HPP

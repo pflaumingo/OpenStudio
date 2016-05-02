@@ -35,11 +35,9 @@ namespace openstudio {
   typedef QUuid UUID;
 
   /// optional UUID
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<UUID>;
   typedef boost::optional<UUID> OptionalUUID;
 
   /// vector of UUID
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<UUID>;
   typedef std::vector<UUID> UUIDVector;
 
   /// create a UUID
@@ -60,6 +58,10 @@ namespace openstudio {
   UTILITIES_API std::ostream& operator<<(std::ostream& os,const UUID& uuid);
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::UUID>;
+
+extern template class UTILITIES_API std::vector<openstudio::UUID>;
 
 Q_DECLARE_METATYPE(openstudio::UUID);
 

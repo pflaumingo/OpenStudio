@@ -108,13 +108,17 @@ namespace openstudio{
   UTILITIES_API std::ostream& operator<<(std::ostream& os, const Plane& plane);
 
   /// optional Plane
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Plane>;
   typedef boost::optional<Plane> OptionalPlane;
 
   /// vector of Plane
-  //UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Plane>;
   typedef std::vector<Plane> PlaneVector;
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::Plane>;
+
+template<> std::vector<openstudio::Plane>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::Plane>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::Plane>;
 
 #endif //UTILITIES_GEOMETRY_BOUNDINGBOX_HPP

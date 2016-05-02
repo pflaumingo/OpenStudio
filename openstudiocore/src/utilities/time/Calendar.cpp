@@ -23,6 +23,10 @@
 using namespace std;
 using namespace boost;
 
+template class UTILITIES_API boost::optional<openstudio::Calendar>;
+
+template class UTILITIES_API std::vector<openstudio::Calendar>;
+
 namespace openstudio{
 
   /// default constructor, uses assumed year

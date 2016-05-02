@@ -19,6 +19,10 @@
 
 #include "EulerAngles.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::EulerAngles>;
+
+template class UTILITIES_API std::vector<openstudio::EulerAngles>;
+
 namespace openstudio{
 
   /// default constructor with no rotation

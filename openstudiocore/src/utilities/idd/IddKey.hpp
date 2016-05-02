@@ -95,16 +95,18 @@ class UTILITIES_API IddKey {
 };
 
 /** \relates IddKey */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IddKey>;
 typedef std::vector<IddKey> IddKeyVector;
 
 /** \relates IddKey */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<IddKey>;
 typedef boost::optional<IddKey> OptionalIddKey;
 
 /** \relates IddKey */
 UTILITIES_API std::ostream& operator<<(std::ostream& os, const IddKey& iddKey);
 
 } // openstudio
+
+extern template class UTILITIES_API std::vector<openstudio::IddKey>;
+
+extern template class UTILITIES_API boost::optional<openstudio::IddKey>;
 
 #endif // UTILITIES_IDD_IDDKEY_HPP

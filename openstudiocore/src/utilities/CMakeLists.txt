@@ -70,6 +70,7 @@ set(core_src
   core/UpdateManager.hpp
   core/UpdateManager.cpp
   core/Url.hpp
+  core/Url.cpp
   core/UUID.hpp
   core/UUID.cpp
   core/URLHelpers.hpp

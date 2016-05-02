@@ -107,13 +107,15 @@ namespace openstudio{
   UTILITIES_API Vector3d operator*(double mult, const Vector3d& vec);
 
   // optional Vector3d
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Vector3d>;
   typedef boost::optional<Vector3d> OptionalVector3d;
 
   // vector of Vector3d
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Vector3d>;
   typedef std::vector<Vector3d> Vector3dVector;
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::Vector3d>;
+
+extern template class UTILITIES_API std::vector<openstudio::Vector3d>;
 
 #endif //UTILITIES_GEOMETRY_VECTOR3D_HPP

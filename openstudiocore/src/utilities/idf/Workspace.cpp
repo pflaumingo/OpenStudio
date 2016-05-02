@@ -49,6 +49,12 @@
 using namespace std;
 using openstudio::istringEqual; // used for all name comparisons
 
+template class UTILITIES_API boost::optional<openstudio::Workspace>;
+
+template class UTILITIES_API std::vector<openstudio::Workspace>;
+
+extern template class UTILITIES_API std::shared_ptr<openstudio::detail::Workspace_Impl>;
+
 namespace openstudio {
 
 namespace detail {

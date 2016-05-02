@@ -124,11 +124,9 @@ class UTILITIES_API BTUUnit : public Unit {
 };
 
 /** \relates BTUUnit*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<BTUUnit>;
 typedef boost::optional<BTUUnit> OptionalBTUUnit;
 
 /** \relates BTUUnit*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<BTUUnit>;
 typedef std::vector<BTUUnit> BTUUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -173,5 +171,9 @@ UTILITIES_API BTUUnit createBTUIlluminance();
 //@}
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::BTUUnit>;
+
+extern template class UTILITIES_API std::vector<openstudio::BTUUnit>;
 
 #endif // UTILITIES_UNITS_BTUUNIT_HPP

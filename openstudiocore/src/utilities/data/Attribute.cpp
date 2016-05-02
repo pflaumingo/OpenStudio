@@ -39,6 +39,14 @@
 #include <QDomDocument>
 #include <QFile>
 
+template class UTILITIES_API boost::optional<openstudio::AttributeDescription>;
+
+template class UTILITIES_API std::vector<openstudio::AttributeDescription>;
+
+template class UTILITIES_API boost::optional<openstudio::Attribute>;
+
+template class UTILITIES_API std::vector<openstudio::Attribute>;
+
 namespace openstudio {
 namespace detail{
 

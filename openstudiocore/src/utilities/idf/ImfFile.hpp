@@ -119,16 +119,18 @@ class UTILITIES_API ImfFile
 };
 
 /// optional imf file
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<ImfFile>;
 typedef boost::optional<ImfFile> OptionalImfFile;
 
 /// vector of imf file
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<ImfFile>;
 typedef std::vector<ImfFile> ImfFileVector;
 
 // ostream operator<<
 UTILITIES_API std::ostream& operator<<(std::ostream& os, const ImfFile& imfFile);
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::ImfFile>;
+
+extern template class UTILITIES_API std::vector<openstudio::ImfFile>;
 
 #endif //UTILITIES_IDF_IMFFILE_HPP

@@ -29,6 +29,10 @@
 
 #include <iomanip>
 
+template class UTILITIES_API boost::optional<openstudio::Plane>;
+
+template class UTILITIES_API std::vector<openstudio::Plane>;
+
 namespace openstudio{
 
   Plane::Plane(const Plane& other)

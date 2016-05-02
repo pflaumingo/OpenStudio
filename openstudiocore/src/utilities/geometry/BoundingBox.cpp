@@ -21,6 +21,10 @@
 
 #include "Point3d.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::BoundingBox>;
+
+template class UTILITIES_API std::vector<openstudio::BoundingBox>;
+
 namespace openstudio{
 
   BoundingBox::BoundingBox()

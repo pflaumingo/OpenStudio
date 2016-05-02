@@ -59,6 +59,17 @@
 using std::cout;
 using std::endl;
 
+
+template class UTILITIES_API boost::optional<openstudio::IdfObject>;
+
+template class UTILITIES_API std::vector<openstudio::IdfObject>;
+
+template struct UTILITIES_API std::pair<openstudio::IdfObject,openstudio::IdfObject>;
+
+template class UTILITIES_API std::shared_ptr<openstudio::detail::IdfObject_Impl>;
+
+template class UTILITIES_API std::vector<openstudio::detail::IdfObject_ImplPtr>;
+
 namespace openstudio { 
 
 namespace detail { 

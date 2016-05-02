@@ -22,6 +22,10 @@
 
 #include "../core/Assert.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::ThermUnit>;
+
+template class UTILITIES_API std::vector<openstudio::ThermUnit>;
+
 namespace openstudio {
 namespace detail {
 

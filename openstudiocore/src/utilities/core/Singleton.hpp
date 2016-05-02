@@ -98,7 +98,7 @@ private:
 
 };
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API Singleton<MyClassSingleton>;
+extern template class UTILITIES_API Singleton<MyClassSingleton>;
 typedef Singleton<MyClassSingleton> MyClass;
 
 #endif
@@ -110,6 +110,8 @@ main.cpp
 #include <ostream>
 
 #include "myclass.hpp"
+
+template class UTILITIES_API Singleton<MyClassSingleton>;
 
 void test()
 {

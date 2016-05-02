@@ -438,15 +438,12 @@ struct UTILITIES_API IdfObjectTypeLess {
 };
 
 /** \relates IdfObject */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<IdfObject>;
 typedef boost::optional<IdfObject> OptionalIdfObject;
 
 /** \relates IdfObject */
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IdfObject>;
 typedef std::vector<IdfObject> IdfObjectVector;
 
 /** \relates IdfObject */
-//UTILITIES_TEMPLATE_EXT template struct UTILITIES_API std::pair<IdfObject,IdfObject>;
 typedef std::pair<IdfObject,IdfObject> IdfObjectPair;
 
 /** \relates IdfObject */
@@ -474,5 +471,14 @@ std::vector<T> sortByObjectName(std::vector<T> objects) {
 }
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::IdfObject>;
+
+template<> std::vector<openstudio::IdfObject>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::IdfObject>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::IdfObject>;
+
+template<> std::pair<openstudio::IdfObject, openstudio::IdfObject>::pair() = delete; // do not instantiate
+extern template struct UTILITIES_API std::pair<openstudio::IdfObject, openstudio::IdfObject>;
 
 #endif //UTILITIES_IDF_IDFOBJECT_HPP

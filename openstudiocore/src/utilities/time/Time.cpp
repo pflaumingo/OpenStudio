@@ -25,6 +25,10 @@ using namespace std;
 using namespace boost;
 using namespace posix_time;
 
+extern template class UTILITIES_API boost::optional<openstudio::Time>;
+
+extern template class UTILITIES_API std::vector<openstudio::Time>;
+
 namespace openstudio{
 
   /// round towards zero, need to move this

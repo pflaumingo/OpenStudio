@@ -258,11 +258,9 @@ class UTILITIES_API Unit {
 };
 
 /** \relates Unit*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Unit>;
 typedef boost::optional<Unit> OptionalUnit;
 
 /** \relates Unit*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Unit>;
 typedef std::vector<Unit> UnitVector;
 
 /** Print u to a stream. Scale abbreviation, if any, is printed before prettyString (if
@@ -297,5 +295,9 @@ UTILITIES_API Unit operator/(const Unit& lUnit,const Unit& rUnit);
 UTILITIES_API Unit pow(const Unit& rUnit,int expNum,int expDenom=1);
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::Unit>;
+
+extern template class UTILITIES_API std::vector<openstudio::Unit>;
 
 #endif // UTILITIES_UNITS_UNIT_HPP

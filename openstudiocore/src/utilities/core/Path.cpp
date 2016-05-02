@@ -22,6 +22,10 @@
 
 #include <QDir>
 
+template class UTILITIES_API boost::optional<openstudio::path>;
+
+template struct UTILITIES_API std::pair<openstudio::path, openstudio::path>;
+
 namespace openstudio {
 
 #ifdef Q_OS_WIN

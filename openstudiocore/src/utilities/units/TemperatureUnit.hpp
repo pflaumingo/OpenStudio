@@ -71,13 +71,17 @@ class UTILITIES_API TemperatureUnit : public Unit {
 };
 
 /** \relates TemperatureUnit*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<TemperatureUnit>;
 typedef boost::optional<TemperatureUnit> OptionalTemperatureUnit;
 
 /** \relates TemperatureUnit*/
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<TemperatureUnit>;
 typedef std::vector<TemperatureUnit> TemperatureUnitVector;
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::TemperatureUnit>;
+
+template<> std::vector<openstudio::TemperatureUnit>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::TemperatureUnit>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::TemperatureUnit>;
 
 #endif // UTILITIES_UNITS_TEMPERATUREUNIT_HPP

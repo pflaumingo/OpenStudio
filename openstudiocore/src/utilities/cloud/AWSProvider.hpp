@@ -143,7 +143,6 @@ namespace detail {
   };
 
   /// \relates AWSSettings
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<AWSSettings>;
   typedef boost::optional<AWSSettings> OptionalAWSSettings;
 
   /// AWSSession is a CloudSession.
@@ -275,7 +274,7 @@ namespace detail {
   };
 
   /// \relates AWSSession
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<AWSSession>;
+  extern template class UTILITIES_API boost::optional<AWSSession>;
   typedef boost::optional<AWSSession> OptionalAWSSession;
 
   /// AWSProvider is a CloudProvider that provides access to Amazon EC2 and CloudWatch services.
@@ -367,5 +366,7 @@ namespace detail {
   };
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::AWSSettings>;
 
 #endif // UTILITIES_CLOUD_AWSPROVIDER_HPP

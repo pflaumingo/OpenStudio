@@ -35,6 +35,10 @@
 
 #include <sstream>
 
+template class UTILITIES_API boost::optional<openstudio::IddFile>;
+
+template class UTILITIES_API std::vector<openstudio::IddFile>;
+
 namespace openstudio {
 
 namespace detail {

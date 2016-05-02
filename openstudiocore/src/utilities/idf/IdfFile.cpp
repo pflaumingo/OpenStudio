@@ -47,6 +47,10 @@
 
 #include <sstream>
 
+template class UTILITIES_API boost::optional<openstudio::IdfFile>;
+
+template class UTILITIES_API std::vector<openstudio::IdfFile>;
+
 namespace openstudio {
 
 // CONSTRUCTORS

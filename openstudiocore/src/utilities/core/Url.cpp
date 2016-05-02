@@ -17,34 +17,12 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **********************************************************************/
 
-#include "Handle.hpp"
+#include "Url.hpp"
 
-template class UTILITIES_API std::vector<openstudio::Handle>;
-template class UTILITIES_API std::set<openstudio::Handle>;
-template class UTILITIES_API std::map<openstudio::Handle,openstudio::Handle>;
-template class UTILITIES_API boost::optional<openstudio::Handle>;
-template class UTILITIES_API boost::optional<openstudio::HandleVector>;
+template class UTILITIES_API boost::optional<openstudio::Url>;
+
+template class UTILITIES_API std::vector<openstudio::Url>;
 
 namespace openstudio {
 
-Handle applyHandleMap(const Handle& original, const HandleMap& handleMap) {
-  Handle result;
-  auto it = handleMap.find(original);
-  if (it != handleMap.end()) {
-    result = it->second;
-  }
-  return result;
-}
-
-HandleVector applyHandleMap(const HandleVector& original,const HandleMap& handleMap) {
-  HandleVector result;
-  for (const Handle& oh : original) {
-    auto it = handleMap.find(oh);
-    if (it != handleMap.end()) {
-      result.push_back(it->second);
-    }
-  }
-  return result;
-}
-
-}
+} // openstudio

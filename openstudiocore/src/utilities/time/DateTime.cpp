@@ -24,6 +24,10 @@
 using namespace std;
 using namespace boost;
 
+template class UTILITIES_API boost::optional<openstudio::DateTime>;
+
+template class UTILITIES_API std::vector<openstudio::DateTime>;
+
 namespace openstudio{
 
 /// get the local time now

@@ -31,7 +31,6 @@
 namespace openstudio{
 
   /// Matrix 
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::numeric::ublas::matrix<double>;
   typedef boost::numeric::ublas::matrix<double> Matrix;
 
 //////////////////////////////////////////////////////////////////////////
@@ -129,7 +128,8 @@ namespace openstudio{
    return true;
  }
 
-
 } // openstudio
+
+extern template class UTILITIES_API boost::numeric::ublas::matrix<double>;
 
 #endif //UTILITIES_DATA_MATRIX_HPP

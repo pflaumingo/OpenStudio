@@ -23,6 +23,10 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
 
+template class UTILITIES_API boost::log::sinks::synchronous_sink<boost::log::sinks::text_ostream_backend>;
+
+template class UTILITIES_API boost::log::sources::severity_channel_logger_mt<LogLevel>;
+
 namespace openstudio{
 
   LogMessage::LogMessage(LogLevel logLevel, const LogChannel& logChannel, const std::string& logMessage)

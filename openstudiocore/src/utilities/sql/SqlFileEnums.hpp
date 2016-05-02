@@ -48,11 +48,8 @@ OPENSTUDIO_ENUM(ReportingFrequency,
           ((Monthly))
           ((RunPeriod)(Run Period)));
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<ReportingFrequency>;
 typedef boost::optional<ReportingFrequency> OptionalReportingFrequency;
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<ReportingFrequency>;
 typedef std::vector<ReportingFrequency> ReportingFrequencyVector;
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<ReportingFrequency>;
 typedef std::set<ReportingFrequency> ReportingFrequencySet;
 
 /** \class EnvironmentType
@@ -70,7 +67,6 @@ OPENSTUDIO_ENUM(EnvironmentType,
           ((DesignRunPeriod))
           ((WeatherRunPeriod)) );
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<EnvironmentType>;
 typedef boost::optional<EnvironmentType> OptionalEnvironmentType;
 
 } // openstudio

@@ -21,6 +21,10 @@
 
 #include "../core/Assert.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::Variant>;
+
+template class UTILITIES_API std::vector<openstudio::Variant>;
+
 namespace openstudio {
 
   Variant::Variant(bool value)

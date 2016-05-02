@@ -113,13 +113,15 @@ namespace openstudio{
   UTILITIES_API std::ostream& operator<<(std::ostream& os, const std::vector<PointLatLon>& pointVector);
 
   // optional PointLatLon
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<PointLatLon>;
   typedef boost::optional<PointLatLon> OptionalPointLatLon;
 
   // vector of PointLatLon
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<PointLatLon>;
   typedef std::vector<PointLatLon> PointLatLonVector;
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::PointLatLon>;
+
+extern template class UTILITIES_API std::vector<openstudio::PointLatLon>;
 
 #endif //UTILITIES_GEOMETRY_POINTLATLON_HPP

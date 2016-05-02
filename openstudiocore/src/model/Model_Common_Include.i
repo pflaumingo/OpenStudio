@@ -2,6 +2,7 @@
 #define MODEL_COMMON_INCLUDE_I
 
 #define UTILITIES_API
+#define extern extern
 #define MODEL_API
 
 %include <utilities/core/CommonInclude.i>

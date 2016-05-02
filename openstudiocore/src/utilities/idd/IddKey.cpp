@@ -25,6 +25,10 @@
 
 #include <boost/algorithm/string.hpp>
 
+template class UTILITIES_API std::vector<openstudio::IddKey>;
+
+template class UTILITIES_API boost::optional<openstudio::IddKey>;
+
 namespace openstudio {
 
 namespace detail {

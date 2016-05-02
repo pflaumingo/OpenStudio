@@ -47,6 +47,18 @@ using namespace std;
 using openstudio::detail::WorkspaceObject_Impl;
 using std::dynamic_pointer_cast;
 
+template class UTILITIES_API boost::optional<openstudio::WorkspaceObject>;
+
+template class UTILITIES_API std::vector<openstudio::WorkspaceObject>;
+
+template class UTILITIES_API boost::optional<openstudio::detail::SourceData>;
+
+template class UTILITIES_API boost::optional<openstudio::detail::TargetData>;
+
+template class UTILITIES_API std::shared_ptr<openstudio::detail::WorkspaceObject_Impl>;
+
+template class UTILITIES_API std::vector<openstudio::detail::WorkspaceObject_ImplPtr>;
+
 namespace openstudio {
 
 namespace detail {

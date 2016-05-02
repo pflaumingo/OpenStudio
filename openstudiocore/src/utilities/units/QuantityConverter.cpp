@@ -35,6 +35,8 @@
 
 #include "../core/Assert.hpp"
 
+template class UTILITIES_API openstudio::Singleton<openstudio::QuantityConverterSingleton>;
+
 namespace openstudio {
 
 boost::optional<Quantity> QuantityConverterSingleton::convert(const Quantity &q,

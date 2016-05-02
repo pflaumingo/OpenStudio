@@ -123,11 +123,9 @@ class UTILITIES_API GPDUnit : public Unit {
 };
 
 /** \relates GPDUnit*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<GPDUnit>;
 typedef boost::optional<GPDUnit> OptionalGPDUnit;
 
 /** \relates GPDUnit*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<GPDUnit>;
 typedef std::vector<GPDUnit> GPDUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -172,5 +170,9 @@ UTILITIES_API GPDUnit createGPDLuminousFlux();
 //@}
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::GPDUnit>;
+
+extern template class UTILITIES_API std::vector<openstudio::GPDUnit>;
 
 #endif // UTILITIES_UNITS_GPDUNIT_HPP

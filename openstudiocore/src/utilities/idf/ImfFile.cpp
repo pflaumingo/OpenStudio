@@ -36,6 +36,10 @@
 
 #include <sstream>
 
+template class UTILITIES_API boost::optional<openstudio::ImfFile>;
+
+template class UTILITIES_API std::vector<openstudio::ImfFile>;
+
 namespace openstudio{
 
 // CONSTRUCTORS

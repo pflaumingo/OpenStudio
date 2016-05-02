@@ -109,7 +109,6 @@ class UTILITIES_API UnitFactorySingleton {
 
 /** Typedef for accessing the UnitFactorySingleton as UnitFactory::instance().
  *  \relates UnitFactorySingleton */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<UnitFactorySingleton>;
 typedef openstudio::Singleton<UnitFactorySingleton> UnitFactory;
 
 /** Returns the best match UnitSystem for unitString, in priority order SI, IP, ..., Mixed
@@ -166,5 +165,7 @@ UTILITIES_API Unit createGPMVolumetricFlowrate();
 UTILITIES_API Unit createIPPressure();
 
 } // openstudio
+
+extern template class UTILITIES_API openstudio::Singleton<openstudio::UnitFactorySingleton>;
 
 #endif // UTILITIES_UNITS_UNITFACTORY_HPP

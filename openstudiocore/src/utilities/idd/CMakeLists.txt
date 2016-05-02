@@ -30,6 +30,8 @@ set(idd_src
   ${CMAKE_CURRENT_BINARY_DIR}/idd/IddFactory.cxx
   ${CMAKE_CURRENT_BINARY_DIR}/idd/IddFactory_EnergyPlus.cxx
   ${CMAKE_CURRENT_BINARY_DIR}/idd/IddFactory_OpenStudio.cxx
+  idd/IddEnums.hpp
+  idd/IddEnums.cpp
   idd/IddField.hpp
   idd/IddField.cpp
   idd/IddField_Impl.hpp

@@ -242,16 +242,18 @@ class UTILITIES_API IdfFile {
 };
 
 /// optional idf file
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<IdfFile>;
 typedef boost::optional<IdfFile> OptionalIdfFile;
 
 /// vector of idf file
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IdfFile>;
 typedef std::vector<IdfFile> IdfFileVector;
 
 // ostream operator<<
 UTILITIES_API std::ostream& operator<<(std::ostream& os, const IdfFile& idfFile);
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::IdfFile>;
+
+extern template class UTILITIES_API std::vector<openstudio::IdfFile>;
 
 #endif //UTILITIES_IDF_IDFFILE_HPP

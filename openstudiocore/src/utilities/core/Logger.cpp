@@ -47,6 +47,8 @@
 namespace sinks = boost::log::sinks;
 namespace keywords = boost::log::keywords;
 
+template class UTILITIES_API openstudio::Singleton<openstudio::LoggerSingleton>;
+
 namespace openstudio{
 
   // handle Qt messages

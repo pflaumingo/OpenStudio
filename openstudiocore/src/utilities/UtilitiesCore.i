@@ -7,7 +7,7 @@
 
 
 #define UTILITIES_API
-#define UTILITIES_TEMPLATE_EXT
+#define extern extern
 
 %include <utilities/core/CommonInclude.i>
 %include <utilities/core/CommonImport.i> // CommonImport is included in this module

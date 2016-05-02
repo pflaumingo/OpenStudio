@@ -102,20 +102,25 @@ struct UTILITIES_API DataErrorLess {
 };
 
 /** Set container for DataError. \relates DataError */
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<DataError,DataErrorLess>;
 typedef std::set<DataError,DataErrorLess> DataErrorSet;
 
 /** \relates DataError */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<DataError>;
 typedef boost::optional<DataError> OptionalDataError;
 
 /** \relates DataError */
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<DataError>;
 typedef std::vector<DataError> DataErrorVector;
 
 /** Ostream operator for DataError. \relates DataError */
 UTILITIES_API std::ostream& operator<<(std::ostream& os,const DataError& error);
 
 } // openstudio
+
+extern template class UTILITIES_API std::set<openstudio::DataError,openstudio::DataErrorLess>;
+
+extern template class UTILITIES_API boost::optional<openstudio::DataError>;
+
+template<> std::vector<openstudio::DataError>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::DataError>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::DataError>;
 
 #endif // UTILITIES_IDF_DATAERROR_HPP

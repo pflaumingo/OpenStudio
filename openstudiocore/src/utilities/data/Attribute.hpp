@@ -114,11 +114,9 @@ struct UTILITIES_API AttributeDescription {
 };
 
 /** \relates AttributeDescription */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<AttributeDescription>;
 typedef boost::optional<AttributeDescription> OptionalAttributeDescription;
 
 /** \relates AttributeDescription */
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<AttributeDescription>;
 typedef std::vector<AttributeDescription> AttributeDescriptionVector;
 
 /** An attribute is a name value pair where the value can be a bool, double, int,
@@ -398,11 +396,9 @@ class UTILITIES_API Attribute {
 };
 
 /** \relates Attribute */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Attribute>;
 typedef boost::optional<Attribute> OptionalAttribute;
 
 /** \relates Attribute */
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Attribute>;
 typedef std::vector<Attribute> AttributeVector;
 
 /** Prints Attribute XML to os. \relates Attribute */
@@ -485,6 +481,18 @@ namespace detail {
 }
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::AttributeDescription>;
+
+template<> std::vector<openstudio::AttributeDescription>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::AttributeDescription>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::AttributeDescription>;
+
+extern template class UTILITIES_API boost::optional<openstudio::Attribute>;
+
+template<> std::vector<openstudio::Attribute>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::Attribute>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::Attribute>;
 
 // declare these types so we can use them as properties
 //Q_DECLARE_METATYPE(openstudio::Attribute);

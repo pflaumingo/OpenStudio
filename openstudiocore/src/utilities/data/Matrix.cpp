@@ -28,6 +28,8 @@
 #include <boost/random/uniform_real.hpp>
 #include <boost/random/variate_generator.hpp>
 
+template class UTILITIES_API boost::numeric::ublas::matrix<double>;
+
 namespace openstudio{
 
   bool operator==(const Matrix& lhs, const Matrix& rhs)

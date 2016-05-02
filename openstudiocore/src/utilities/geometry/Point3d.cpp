@@ -20,6 +20,10 @@
 #include "Point3d.hpp"
 #include "Vector3d.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::Point3d>;
+
+template class UTILITIES_API std::vector<openstudio::Point3d>;
+
 namespace openstudio{
 
   /// default constructor creates point at 0, 0, 0

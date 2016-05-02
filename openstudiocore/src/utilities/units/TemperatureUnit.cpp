@@ -20,6 +20,10 @@
 #include "TemperatureUnit.hpp"
 #include "TemperatureUnit_Impl.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::TemperatureUnit>;
+
+template class UTILITIES_API std::vector<openstudio::TemperatureUnit>;
+
 namespace openstudio {
 namespace detail {
 

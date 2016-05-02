@@ -24,6 +24,14 @@
 #include "../core/Optional.hpp"
 #include "../core/Containers.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::EnvironmentIdentifier>;
+
+template class UTILITIES_API boost::optional<openstudio::TimeSeriesIdentifier>;
+
+template class UTILITIES_API boost::optional<openstudio::KeyValueIdentifier>;
+
+template class UTILITIES_API std::vector<openstudio::SqlFileTimeSeriesQuery>;
+
 namespace openstudio {
 
 // ENVIRONMENT IDENTIFIER

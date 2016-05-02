@@ -32,15 +32,16 @@ namespace openstudio {
   typedef QUrl Url;
 
   /// optional Url
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Url>;
   typedef boost::optional<Url> OptionalUrl;
 
   /// vector of Url
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Url>;
   typedef std::vector<Url> UrlVector;
 
 } // openstudio
 
+extern template class UTILITIES_API boost::optional<openstudio::Url>;
+
+extern template class UTILITIES_API std::vector<openstudio::Url>;
 
 
 #endif // UTILITIES_CORE_URL_HPP

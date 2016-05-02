@@ -27,6 +27,10 @@
 #include <QDateTime>
 #include <QFileInfo>
 
+template class UTILITIES_API boost::optional<openstudio::FileReference>;
+
+template class UTILITIES_API std::vector<openstudio::FileReference>;
+
 namespace openstudio {
 
 FileReference::FileReference(const openstudio::path& p)

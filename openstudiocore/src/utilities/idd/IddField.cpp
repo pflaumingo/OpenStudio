@@ -44,6 +44,10 @@
 
 using boost::algorithm::trim;
 
+template class UTILITIES_API std::vector<openstudio::IddField>;
+
+template class UTILITIES_API boost::optional<openstudio::IddField>;
+
 namespace openstudio {
 
 namespace detail {

@@ -180,11 +180,9 @@ class UTILITIES_API Quantity {
 UTILITIES_API std::ostream& operator<<(std::ostream& os,const Quantity& q);
 
 /** \relates Quantity */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Quantity>;
 typedef boost::optional<Quantity> OptionalQuantity;
 
 /** \relates Quantity */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Quantity>;
 typedef std::vector<Quantity> QuantityVector;
 
 /** Negate a Quantity. */
@@ -216,6 +214,10 @@ UTILITIES_API bool operator==(const Quantity& lQuantity,const Quantity& rQuantit
 UTILITIES_API bool operator!=(const Quantity& lQuantity,const Quantity& rQuantity);
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::Quantity>;
+
+extern template class UTILITIES_API std::vector<openstudio::Quantity>;
 
 // declare this type so we can use it in properties
 Q_DECLARE_METATYPE(openstudio::Quantity);

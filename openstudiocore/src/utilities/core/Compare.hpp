@@ -134,7 +134,6 @@ class UTILITIES_API VersionString {
 
 UTILITIES_API std::ostream& operator<<(std::ostream& os,const VersionString& version);
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<VersionString>;
 typedef boost::optional<VersionString> OptionalVersionString;
 
 // sorts WorkspaceObjects by name
@@ -258,5 +257,7 @@ bool handleEquals(const T& object, const U& handle) {
 }
 
 }; // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::VersionString>;
 
 #endif // UTILITIES_CORE_COMPARE_HPP

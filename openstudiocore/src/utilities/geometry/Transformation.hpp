@@ -124,11 +124,9 @@ namespace openstudio{
   UTILITIES_API std::ostream& operator<<(std::ostream& os, const Transformation& t);
 
   // optional Transformation
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Transformation>;
   typedef boost::optional<Transformation> OptionalTransformation;
 
   // vector of Transformation
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Transformation>;
   typedef std::vector<Transformation> TransformationVector;
 
   /// create rotation about origin defined by axis and angle (radians)
@@ -144,5 +142,9 @@ namespace openstudio{
   UTILITIES_API Transformation createTranslation(const Vector3d& translation);
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::Transformation>;
+
+extern template class UTILITIES_API std::vector<openstudio::Transformation>;
 
 #endif //UTILITIES_GEOMETRY_TRANSFORMATION_HPP

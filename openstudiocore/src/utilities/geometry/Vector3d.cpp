@@ -19,6 +19,10 @@
 
 #include "Vector3d.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::Vector3d>;
+
+template class UTILITIES_API std::vector<openstudio::Vector3d>;
+
 namespace openstudio{
 
   /// default constructor creates vector with 0, 0, 0

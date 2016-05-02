@@ -22,6 +22,10 @@
 
 #include "../core/Assert.hpp"
 
+extern template class UTILITIES_API boost::optional<openstudio::GPDUnit>;
+
+extern template class UTILITIES_API std::vector<openstudio::GPDUnit>;
+
 namespace openstudio {
 namespace detail {
 

@@ -31,31 +31,20 @@
 
 namespace openstudio {
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<bool>;
 typedef std::vector<bool>        BoolVector;
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<unsigned>;
 typedef std::vector<unsigned>    UnsignedVector;
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<int>;
 typedef std::vector<int>         IntVector;
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<double>;
 typedef std::vector<double>      DoubleVector;
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<std::string>;
 typedef std::vector<std::string> StringVector;
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<unsigned>;
 typedef std::set<unsigned>       UnsignedSet;
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<int>;
 typedef std::set<int>            IntSet;
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<double>;
 typedef std::set<double>         DoubleSet;
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<std::string>;
 typedef std::set<std::string>    StringSet;
 
 /** Set of strings with case-insensitive comparison. */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<std::string,IstringCompare>;
 typedef std::set<std::string,IstringCompare> IStringSet;
 
-UTILITIES_TEMPLATE_EXT template struct UTILITIES_API std::pair<std::string,std::string>;
 typedef std::pair<std::string,std::string> StringPair;
 
 UTILITIES_API std::vector<std::string> eraseEmptyElements(const std::vector<std::string>& sv);
@@ -96,5 +85,20 @@ std::vector< std::vector<T> > castArray (const std::vector< std::vector<U> >& or
 }
 
 } // openstudio
+
+extern template class UTILITIES_API std::vector<bool>;
+extern template class UTILITIES_API std::vector<unsigned>;
+extern template class UTILITIES_API std::vector<int>;
+extern template class UTILITIES_API std::vector<double>;
+extern template class UTILITIES_API std::vector<std::string>;
+
+extern template class UTILITIES_API std::set<unsigned>;
+extern template class UTILITIES_API std::set<int>;
+extern template class UTILITIES_API std::set<double>;
+extern template class UTILITIES_API std::set<std::string>;
+
+extern template class UTILITIES_API std::set<std::string, openstudio::IstringCompare>;
+
+extern template struct UTILITIES_API std::pair<std::string, std::string>;
 
 #endif // UTILITIES_CORE_CONTAINERS_HPP

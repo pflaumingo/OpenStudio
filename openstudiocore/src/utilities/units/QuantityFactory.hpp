@@ -64,7 +64,6 @@ class UTILITIES_API QuantityFactorySingleton {
   REGISTER_LOGGER("openstudio.units.QuantityFactory");
 };
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<QuantityFactorySingleton>;
 typedef openstudio::Singleton<QuantityFactorySingleton> QuantityFactory;
 
 /** Creates a Quantity object from quantityString (a string that matches
@@ -81,5 +80,7 @@ UTILITIES_API boost::optional<Quantity> createQuantity(double value,
                                                        UnitSystem system);
 
 } // openstudio
+
+extern template class UTILITIES_API openstudio::Singleton<openstudio::QuantityFactorySingleton>;
 
 #endif // UTILITIES_UNITS_QUANTITYFACTORY_HPP

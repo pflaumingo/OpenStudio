@@ -43,6 +43,8 @@
 
 #include <algorithm>
 
+template class UTILITIES_API boost::optional<openstudio::AWSSettings>;
+
 namespace openstudio{
   namespace detail{
 

@@ -59,7 +59,6 @@ class UTILITIES_API EnvironmentIdentifier {
   boost::optional<std::string> m_name;
 };
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<openstudio::EnvironmentIdentifier>;
 typedef boost::optional<openstudio::EnvironmentIdentifier> OptionalEnvironmentIdentifier;
 
 /** Small class to let users identify a time series by name, or a set of time
@@ -82,7 +81,6 @@ class UTILITIES_API TimeSeriesIdentifier {
   boost::optional<boost::regex> m_re;
 };
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<openstudio::TimeSeriesIdentifier>;
 typedef boost::optional<openstudio::TimeSeriesIdentifier> OptionalTimeSeriesIdentifier;
 
 /** Small class to let users identify one or more key values by name or regex. */
@@ -108,7 +106,6 @@ class UTILITIES_API KeyValueIdentifier {
   REGISTER_LOGGER("openstudio.KeyValueIdentifier");
 };
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<openstudio::KeyValueIdentifier>;
 typedef boost::optional<openstudio::KeyValueIdentifier> OptionalKeyValueIdentifier;
 
 /** Class to hold information about one or more SqlFile time series of interest. The query is 
@@ -200,7 +197,6 @@ class UTILITIES_API SqlFileTimeSeriesQuery {
 
 UTILITIES_API std::ostream& operator<<(std::ostream& os,const SqlFileTimeSeriesQuery& query);
 
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<SqlFileTimeSeriesQuery>;
 typedef std::vector<SqlFileTimeSeriesQuery> SqlFileTimeSeriesQueryVector;
 
 /** If all queries have been vetted, returns the set of unique environment names. Otherwise,
@@ -216,5 +212,13 @@ UTILITIES_API std::set<openstudio::ReportingFrequency> reportingFrequencies(cons
 UTILITIES_API std::set<std::string> timeSeriesNames(const std::vector<SqlFileTimeSeriesQuery>& queries);
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::EnvironmentIdentifier>;
+
+extern template class UTILITIES_API boost::optional<openstudio::TimeSeriesIdentifier>;
+
+extern template class UTILITIES_API boost::optional<openstudio::KeyValueIdentifier>;
+
+extern template class UTILITIES_API std::vector<openstudio::SqlFileTimeSeriesQuery>;
 
 #endif // UTILITIES_SQL_SQLFILETIMESERIESQUERY_HPP

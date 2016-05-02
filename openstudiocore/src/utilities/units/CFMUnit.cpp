@@ -22,6 +22,10 @@
 
 #include "../core/Assert.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::CFMUnit>;
+
+template class UTILITIES_API std::vector<openstudio::CFMUnit>;
+
 namespace openstudio {
 
 namespace detail {

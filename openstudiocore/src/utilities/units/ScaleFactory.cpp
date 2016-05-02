@@ -27,6 +27,10 @@
 #include <vector>
 #include <boost/regex.hpp>
 
+template class UTILITIES_API openstudio::Singleton<openstudio::ScaleFactorySingleton>;
+
+template struct UTILITIES_API std::pair<openstudio::ScaleConstant,double>;
+
 namespace openstudio{
 
 ScaleFactorySingleton::~ScaleFactorySingleton() {}

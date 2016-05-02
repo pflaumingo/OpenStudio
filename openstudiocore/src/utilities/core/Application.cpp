@@ -33,6 +33,8 @@
 
 #include <iostream>
 
+template class UTILITIES_API openstudio::Singleton<openstudio::ApplicationSingleton>;
+
 namespace openstudio{
 
 ApplicationSingleton::ApplicationSingleton()

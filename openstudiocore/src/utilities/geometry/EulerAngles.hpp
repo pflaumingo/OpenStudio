@@ -65,13 +65,15 @@ namespace openstudio{
   UTILITIES_API std::ostream& operator<<(std::ostream& os, const EulerAngles& angles);
 
   // optional EulerAngles
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<EulerAngles>;
   typedef boost::optional<EulerAngles> OptionalEulerAngles;
 
   // vector of EulerAngles
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<EulerAngles>;
   typedef std::vector<EulerAngles> EulerAnglesVector;
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::EulerAngles>;
+
+extern template class UTILITIES_API std::vector<openstudio::EulerAngles>;
 
 #endif //UTILITIES_GEOMETRY_EULERANGLES_HPP

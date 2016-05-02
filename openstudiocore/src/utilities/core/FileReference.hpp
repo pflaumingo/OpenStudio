@@ -161,11 +161,9 @@ class UTILITIES_API FileReference {
 };
 
 /** \relates FileReference*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<FileReference>;
 typedef boost::optional<FileReference> OptionalFileReference;
 
 /** \relates FileReference*/
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<FileReference>;
 typedef std::vector<FileReference> FileReferenceVector;
 
 namespace detail {
@@ -179,5 +177,11 @@ namespace detail {
 }
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::FileReference>;
+
+template<> std::vector<openstudio::FileReference>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::FileReference>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::FileReference>;
 
 #endif // UTILITIES_CORE_FILEREFERENCE_HPP

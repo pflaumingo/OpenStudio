@@ -125,11 +125,9 @@ class UTILITIES_API CFMUnit : public Unit {
 };
 
 /** \relates CFMUnit*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<CFMUnit>;
 typedef boost::optional<CFMUnit> OptionalCFMUnit;
 
 /** \relates CFMUnit*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<CFMUnit>;
 typedef std::vector<CFMUnit> CFMUnitVector;
 
 /** @name Create Functions Used by UnitFactory */
@@ -172,5 +170,9 @@ UTILITIES_API CFMUnit createCFMFrequency();
 //@}
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::CFMUnit>;
+
+extern template class UTILITIES_API std::vector<openstudio::CFMUnit>;
 
 #endif // UTILITIES_UNITS_CFMUNIT_HPP

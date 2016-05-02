@@ -5,9 +5,7 @@
 %module openstudioutilities
 #endif
 
-
 #define UTILITIES_API
-#define UTILITIES_TEMPLATE_EXT
 
 %include <utilities/core/CommonInclude.i>
 %import <utilities/core/CommonImport.i>

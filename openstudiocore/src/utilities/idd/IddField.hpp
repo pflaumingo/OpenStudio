@@ -148,11 +148,9 @@ class UTILITIES_API IddField {
 };
 
 /** \relates IddField */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IddField>;
 typedef std::vector<IddField> IddFieldVector;
 
 /** \relates IddField */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<IddField>;
 typedef boost::optional<IddField> OptionalIddField;
 
 /** Returns true if the reference lists of field1 and field2 match exactly (case insensitive). 
@@ -160,5 +158,9 @@ typedef boost::optional<IddField> OptionalIddField;
 UTILITIES_API bool referencesEqual(const IddField& field1, const IddField& field2);
 
 } // openstudio
+
+extern template class UTILITIES_API std::vector<openstudio::IddField>;
+
+extern template class UTILITIES_API boost::optional<openstudio::IddField>;
 
 #endif //UTILITIES_IDD_IDDFIELD_HPP

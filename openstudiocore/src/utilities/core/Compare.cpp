@@ -26,6 +26,8 @@
 #include <boost/regex.hpp>
 #include <boost/lexical_cast.hpp>
 
+template class UTILITIES_API boost::optional<openstudio::VersionString>;
+
 namespace openstudio {
 
 IstringFind::IstringFind()

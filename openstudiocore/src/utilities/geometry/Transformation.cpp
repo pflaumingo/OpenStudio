@@ -35,6 +35,10 @@
 using boost::numeric::ublas::identity_matrix;
 using std::min;
 
+template class UTILITIES_API boost::optional<openstudio::Transformation>;
+
+template class UTILITIES_API std::vector<openstudio::Transformation>;
+
 namespace openstudio{
 
   /// default constructor creates identity transformation

@@ -24,6 +24,10 @@
 #include <GeographicLib/LocalCartesian.hpp>
 #include <GeographicLib/UTMUPS.hpp>
 
+template class UTILITIES_API boost::optional<openstudio::PointLatLon>;
+
+template class UTILITIES_API std::vector<openstudio::PointLatLon>;
+
 namespace openstudio{
 
   /// default constructor creates point at 0, 0, 0

@@ -237,9 +237,12 @@ class UTILITIES_API IdfExtensibleGroup {
 };
 
 /** \relates IdfExtensibleGroup */
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IdfExtensibleGroup>;
 typedef std::vector<IdfExtensibleGroup> IdfExtensibleGroupVector;
 
 } // openstudio
+
+template<> std::vector<openstudio::IdfExtensibleGroup>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::IdfExtensibleGroup>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::IdfExtensibleGroup>;
 
 #endif // UTILITIES_IDF_IDFEXTENSIBLEGROUP_HPP

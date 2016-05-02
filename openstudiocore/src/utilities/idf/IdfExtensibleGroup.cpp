@@ -28,6 +28,8 @@
 
 #include <boost/lexical_cast.hpp>
 
+template class UTILITIES_API std::vector<openstudio::IdfExtensibleGroup>;
+
 namespace openstudio {
 
 // GETTERS

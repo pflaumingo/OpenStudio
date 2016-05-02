@@ -32,6 +32,10 @@
 
 #include <cmath>
 
+template class UTILITIES_API boost::optional<openstudio::Quantity>;
+
+template class UTILITIES_API std::vector<openstudio::Quantity>;
+
 int _QuantityType = qRegisterMetaType<openstudio::Quantity>("openstudio::Quantity");
 
 namespace openstudio{

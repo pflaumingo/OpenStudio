@@ -32,6 +32,10 @@
 
 #endif  // __APPLE__
 
+template class UTILITIES_API boost::optional<openstudio::UUID>;
+
+template class UTILITIES_API std::vector<openstudio::UUID>;
+
 int _uuid_id = qRegisterMetaType<openstudio::UUID>("openstudio::UUID");
 
 namespace openstudio {

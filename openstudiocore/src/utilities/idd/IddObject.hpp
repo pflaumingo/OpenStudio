@@ -213,11 +213,9 @@ class UTILITIES_API IddObject {
 };
 
 /** \relates IddObject */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<IddObject>;
 typedef boost::optional<IddObject> OptionalIddObject;
 
 /** \relates IddObject */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IddObject>;
 typedef std::vector<IddObject> IddObjectVector;
 
 /** \relates IddObject */
@@ -234,5 +232,9 @@ UTILITIES_API std::set<IddObjectType> getIddObjectTypeSet(const std::vector<IddO
 UTILITIES_API std::vector<std::string> getIddKeyNames(const IddObject& object,unsigned index);
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::IddObject>;
+
+extern template class UTILITIES_API std::vector<openstudio::IddObject>;
 
 #endif //UTILITIES_IDD_IDDOBJECT_HPP

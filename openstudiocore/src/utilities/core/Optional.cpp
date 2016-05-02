@@ -19,6 +19,11 @@
 
 #include "Optional.hpp"
 
+// note: boost::optional<bool> is a bad idea, don't do it
+template class UTILITIES_API boost::optional<double>;
+template class UTILITIES_API boost::optional<unsigned>;
+template class UTILITIES_API boost::optional<int>;
+template class UTILITIES_API boost::optional<std::string>;
 
 namespace openstudio {
 

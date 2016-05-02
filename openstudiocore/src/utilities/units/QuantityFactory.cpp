@@ -29,6 +29,8 @@
 using std::shared_ptr;
 using std::dynamic_pointer_cast;
 
+template class UTILITIES_API openstudio::Singleton<openstudio::QuantityFactorySingleton>;
+
 namespace openstudio{
 
 boost::optional<Quantity> QuantityFactorySingleton::createQuantity(const std::string& quantityString) const {

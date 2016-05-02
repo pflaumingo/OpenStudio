@@ -163,11 +163,9 @@ class UTILITIES_API WorkspaceObject : public IdfObject {
 };
 
 /** \relates WorkspaceObject */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<WorkspaceObject>;
 typedef boost::optional<WorkspaceObject> OptionalWorkspaceObject;
 
 /** \relates WorkspaceObject */
-//UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<WorkspaceObject>;
 typedef std::vector<WorkspaceObject> WorkspaceObjectVector;
 
 /** \relates WorkspaceObject
@@ -175,5 +173,11 @@ typedef std::vector<WorkspaceObject> WorkspaceObjectVector;
 UTILITIES_API std::ostream& operator<<(std::ostream& os, const WorkspaceObject& workspaceObject);
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::WorkspaceObject>;
+
+template<> std::vector<openstudio::WorkspaceObject>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::WorkspaceObject>::resize(size_type) = delete; // do not instantiate
+extern template class UTILITIES_API std::vector<openstudio::WorkspaceObject>;
 
 #endif // UTILITIES_IDF_WORKSPACEOBJECT_HPP

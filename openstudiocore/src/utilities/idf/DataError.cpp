@@ -27,6 +27,12 @@
 #include "../core/Assert.hpp"
 #include "../core/Optional.hpp"
 
+template class UTILITIES_API std::set<openstudio::DataError,openstudio::DataErrorLess>;
+
+template class UTILITIES_API boost::optional<openstudio::DataError>;
+
+template class UTILITIES_API std::vector<openstudio::DataError>;
+
 namespace openstudio {
 
 DataError::DataError(unsigned fieldIndex, const IdfObject& object, DataErrorType errorType) 

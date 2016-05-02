@@ -42,6 +42,10 @@ using boost::regex_replace;
 using boost::replace_all;
 using boost::trim;
 
+template class UTILITIES_API boost::optional<openstudio::IddObject>;
+
+template class UTILITIES_API std::vector<openstudio::IddObject>;
+
 namespace openstudio {
 
 namespace detail {

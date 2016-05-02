@@ -8,7 +8,7 @@
 
 
 #define UTILITIES_API
-#define UTILITIES_TEMPLATE_EXT
+#define extern extern
 
 %include <utilities/core/CommonInclude.i>
 %import <utilities/core/CommonImport.i> 

@@ -33,6 +33,10 @@
 #include <algorithm>
 #include <sstream>
 
+template class UTILITIES_API boost::optional<openstudio::Unit>;
+
+template class UTILITIES_API std::vector<openstudio::Unit>;
+
 namespace openstudio {
 namespace detail {
 

@@ -99,14 +99,10 @@ namespace openstudio{
 
   };
 
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<ApplicationSingleton>;
   typedef openstudio::Singleton<ApplicationSingleton> Application;
 
-#if _WIN32 || _MSC_VER
-  /// Explicitly instantiate and export ApplicationSingleton Singleton template instance
-  /// so that the same instance is shared between the DLL's that link to Utilities.dll
-  //UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<ApplicationSingleton>;
-#endif
 } // openstudio
+
+extern template class UTILITIES_API openstudio::Singleton<openstudio::ApplicationSingleton>;
 
 #endif // UTILITIES_CORE_APPLICATION_HPP

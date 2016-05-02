@@ -19,6 +19,21 @@
 
 #include "Containers.hpp"
 
+template class UTILITIES_API std::vector<bool>;
+template class UTILITIES_API std::vector<unsigned>;
+template class UTILITIES_API std::vector<int>;
+template class UTILITIES_API std::vector<double>;
+template class UTILITIES_API std::vector<std::string>;
+
+template class UTILITIES_API std::set<unsigned>;
+template class UTILITIES_API std::set<int>;
+template class UTILITIES_API std::set<double>;
+template class UTILITIES_API std::set<std::string>;
+
+template class UTILITIES_API std::set<std::string, openstudio::IstringCompare>;
+
+template struct UTILITIES_API std::pair<std::string, std::string>;
+
 namespace openstudio {
 
   StringVector eraseEmptyElements(const StringVector& sv) {

@@ -58,11 +58,8 @@ UTILITIES_API path toPath(const std::string& s);
 /** QString to path*/
 UTILITIES_API path toPath(const QString& q);
 
-/** Optional path*/
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<path>;
 typedef boost::optional<path> OptionalPath;
 
-UTILITIES_TEMPLATE_EXT template struct UTILITIES_API std::pair<path, path>;
 typedef std::pair<path,path> PathPair;
 
 /// Return the fully expanded Windows path name ie "c:\Progra~1" into "C:\Program Files"
@@ -70,8 +67,11 @@ UTILITIES_API QString longPathName(const QString& path);
 
 } // openstudio
 
+extern template class UTILITIES_API boost::optional<openstudio::path>;
+
+extern template struct UTILITIES_API std::pair<openstudio::path, openstudio::path>;
+
 // allow path to be written to QTextStream
 QTextStream& operator<<(QTextStream& qts, const openstudio::path& p);
-
 
 #endif // UTILITIES_CORE_PATH_HPP

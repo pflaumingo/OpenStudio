@@ -46,11 +46,9 @@ namespace openstudio{
   typedef std::string LogChannel;
 
   /// Type of stream sink used
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::log::sinks::synchronous_sink<boost::log::sinks::text_ostream_backend>;
   typedef boost::log::sinks::synchronous_sink<boost::log::sinks::text_ostream_backend> LogSinkBackend;
 
   /// Type of logger used
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::log::sources::severity_channel_logger_mt<LogLevel>;
   typedef boost::log::sources::severity_channel_logger_mt<LogLevel> LoggerType;
 
   /// LogMessage encapsulates a single logging message
@@ -81,5 +79,9 @@ namespace openstudio{
   };
 
 } // openstudio
+
+extern template class UTILITIES_API boost::log::sinks::synchronous_sink<boost::log::sinks::text_ostream_backend>;
+
+extern template class UTILITIES_API boost::log::sources::severity_channel_logger_mt<LogLevel>;
 
 #endif // UTILITIES_CORE_LOGMESSAGE_HPP

@@ -26,6 +26,10 @@ using namespace std;
 using namespace boost;
 using namespace boost::gregorian;
 
+template class UTILITIES_API boost::optional<openstudio::Date>;
+
+template class UTILITIES_API std::vector<openstudio::Date>;
+
 namespace openstudio{
 
   /// convert string to DayOfWeek

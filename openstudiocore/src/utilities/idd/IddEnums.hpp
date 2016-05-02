@@ -75,10 +75,10 @@ struct UTILITIES_API IddFileType: public ::EnumBase<IddFileType> {
   typedef boost::optional<IddFileType> OptionalIddFileType ;
 #endif
 /** \relates IddFileType */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IddFileType>;
+extern template class UTILITIES_API std::vector<IddFileType>;
 typedef std::vector<IddFileType> IddFileTypeVector;
 /** \relates IddFileType */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<IddFileType>;
+extern template class UTILITIES_API std::set<IddFileType>;
 typedef std::set<IddFileType> IddFileTypeSet;
 
 /** \relates IddFileType */
@@ -134,11 +134,10 @@ struct UTILITIES_API IddObjectType: public ::EnumBase<IddObjectType> {
 
   typedef boost::optional<IddObjectType> OptionalIddObjectType ;
 #endif
+
 /** \relates IddObjectType */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<IddObjectType>;
 typedef std::vector<IddObjectType> IddObjectTypeVector;
 /** \relates IddObjectType */
-UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::set<IddObjectType>;
 typedef std::set<IddObjectType> IddObjectTypeSet;
 
 /** \relates IddObjectType */
@@ -148,7 +147,15 @@ typedef boost::optional<std::set<IddObjectType> > OptionalIddObjectTypeSet;
 
 } // openstudio
 
+extern template class UTILITIES_API std::vector<openstudio::IddObjectType>;
+
+extern template class UTILITIES_API std::set<openstudio::IddObjectType>;
+
+extern template class UTILITIES_API boost::optional<std::vector<openstudio::IddObjectType> >;
+
+extern template class UTILITIES_API boost::optional<std::set<openstudio::IddObjectType> >;
+
 Q_DECLARE_METATYPE(openstudio::IddFileType)
 Q_DECLARE_METATYPE(openstudio::IddObjectType)
 
-#endif // UTILITIES_IDD_IDDENUMS_HXX
+#endif // UTILITIES_IDD_IDDENUMS_HPP

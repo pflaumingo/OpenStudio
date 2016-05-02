@@ -166,11 +166,9 @@ namespace openstudio{
   };
 
   /// optional Time
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API boost::optional<Time>;
   typedef boost::optional<Time> OptionalTime;
 
   /// vector of Time
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API std::vector<Time>;
   typedef std::vector<Time> TimeVector;
 
   /// std::ostream operator<<
@@ -184,5 +182,9 @@ namespace openstudio{
   };
 
 } // openstudio
+
+extern template class UTILITIES_API boost::optional<openstudio::Time>;
+
+extern template class UTILITIES_API std::vector<openstudio::Time>;
 
 #endif // UTILITIES_TIME_TIME_HPP

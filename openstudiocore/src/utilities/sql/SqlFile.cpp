@@ -21,6 +21,8 @@
 #include "SqlFile_Impl.hpp"
 #include "SqlFileTimeSeriesQuery.hpp"
 
+template class UTILITIES_API boost::optional<openstudio::SqlFile>;
+
 namespace openstudio{
 
 SqlFile::SqlFile()

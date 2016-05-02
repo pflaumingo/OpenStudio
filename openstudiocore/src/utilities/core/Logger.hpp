@@ -127,16 +127,10 @@ namespace openstudio{
     SinkSetType m_sinks;
   };
 
-#if _WIN32 || _MSC_VER
-
-  /// Explicitly instantiate and export LoggerSingleton Singleton template instance
-  /// so that the same instance is shared between the DLL's that link to Utilities.dll
-  //UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<LoggerSingleton>;
-
-#endif
-
-  UTILITIES_TEMPLATE_EXT template class UTILITIES_API openstudio::Singleton<LoggerSingleton>;
   typedef openstudio::Singleton<LoggerSingleton> Logger;
+  
 } // openstudio
+
+extern template class UTILITIES_API openstudio::Singleton<openstudio::LoggerSingleton>;
 
 #endif // UTILITIES_CORE_LOGGER_HPP
