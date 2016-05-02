@@ -145,6 +145,8 @@ void writeEnumFast(std::ostream &t_os, const std::string &t_name, const Containe
   "  }" << std::endl <<
  
   "  typedef boost::optional<" << t_name << "> Optional" << t_name << " ;" << std::endl <<
+  "  extern template class ::EnumBase<" << t_name << ">;" << std::endl <<
+  "  extern template class boost::optional<" << t_name << ">;" << std::endl <<
   "#endif";
 }
 

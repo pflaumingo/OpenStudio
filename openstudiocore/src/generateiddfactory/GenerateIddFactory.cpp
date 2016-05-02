@@ -217,10 +217,6 @@ void initializeOutFiles(GenerateIddFactoryOutFiles& outFiles,
     << "  mutable std::map<VersionString,IddFile> m_osIddFiles;" << std::endl
     << "};" << std::endl
     << std::endl
-    << "// Explicitly instantiate and export IddFactorySingleton Singleton template instance" << std::endl
-    << "// so that the same instance is shared between DLLs that link to Utilities.dll." << std::endl
-    << "extern template class UTILITIES_API openstudio::Singleton<IddFactorySingleton>;" << std::endl
-    << std::endl
     << "/** Convenience typedef for accessing IddFactorySingleton. Usage:" << std::endl
     << " *  \\code" << std::endl
     << " *  unsigned n = IddFactory::instance().objects().size();" << std::endl
@@ -230,6 +226,10 @@ void initializeOutFiles(GenerateIddFactoryOutFiles& outFiles,
     << "typedef openstudio::Singleton<IddFactorySingleton> IddFactory;" << std::endl
     << std::endl
     << "} // openstudio" << std::endl
+    << std::endl
+    << "// Explicitly instantiate and export IddFactorySingleton Singleton template instance" << std::endl
+    << "// so that the same instance is shared between DLLs that link to Utilities.dll." << std::endl
+    << "extern template class UTILITIES_API openstudio::Singleton<openstudio::IddFactorySingleton>;" << std::endl
     << std::endl
     << "#endif //UTILITIES_IDD_IDDFACTORY_HXX" << std::endl;
 
@@ -248,6 +248,8 @@ void initializeOutFiles(GenerateIddFactoryOutFiles& outFiles,
     << std::endl
     << "#include <QMutexLocker>" << std::endl
     << "#include <QMetaType>" << std::endl
+    << std::endl
+    << "template class openstudio::Singleton<openstudio::IddFactorySingleton>;"
     << std::endl
     << "int _IddObjectType_id = qRegisterMetaType<openstudio::IddObjectType>(\"openstudio::IddObjectType\");" << std::endl
     << "int _IddFileType_id = qRegisterMetaType<openstudio::IddFileType>(\"openstudio::IddFileType\");" << std::endl

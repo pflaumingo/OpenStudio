@@ -204,7 +204,6 @@ void IddFileFactoryData::parseFile(const path& outPath,
         // finish writing create function
         cxxFile->tempFile
           << std::endl
-          << std::endl
           << "    IddObjectType objType(IddObjectType::" << objectName.first << ");" << std::endl
           << "    OptionalIddObject oObj = IddObject::load(\"" << objectName.second << "\"," << std::endl
           << "                                             \"" << group << "\"," << std::endl
@@ -218,8 +217,26 @@ void IddFileFactoryData::parseFile(const path& outPath,
           << "  return object;" << std::endl
           << "}" << std::endl;
 
+
         // write field enums
         if (!fieldNames.empty() || !extensibleFieldNames.empty()) {
+
+          cxxFile->tempFile << std::endl << "#include <utilities/idd/" << objectName.first << "_FieldEnums.hxx>" << std::endl;
+
+          if (!fieldNames.empty()){
+            cxxFile->tempFile
+              << std::endl
+              << "template class ::EnumBase<openstudio::" << objectName.first << "Fields>;" << std::endl
+              << "template class boost::optional<openstudio::" << objectName.first << "Fields>;" << std::endl;
+          }
+
+          if (!extensibleFieldNames.empty()){
+            cxxFile->tempFile
+              << std::endl
+              << "template class ::EnumBase<openstudio::" << objectName.first << "ExtensibleFields>;" << std::endl
+              << "template class boost::optional<openstudio::" << objectName.first << "ExtensibleFields>;" << std::endl;
+          }
+
           // file for this object
           ss << objectName.first << "_FieldEnums.hxx";
           std::string filename = ss.str(); ss.str("");

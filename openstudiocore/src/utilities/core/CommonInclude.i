@@ -41,6 +41,8 @@
 // Todo: Remove this one after other swig warnings have been cleared up
 #pragma SWIG nowarn=315
 
+// Think we are getting this incorrectly when extern template is seen
+#pragma SWIG nowarn=320
 
 #ifdef SWIGRUBY
 %include <utilities/core/ruby/LanguageSpecific.i>

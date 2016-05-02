@@ -995,7 +995,7 @@ export(TARGETS
 set(all_exe_targets
   GenerateIddFactory
   gbXMLToIdf
-  OpenStudio
+  openstudio
   #litesql-gen
   ResultsViewer
 )
