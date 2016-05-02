@@ -40,6 +40,10 @@
 
 #include <boost/filesystem.hpp>
 
+template class UTILITIES_API boost::optional<openstudio::BCLMeasure>;
+
+template class UTILITIES_API std::vector<openstudio::BCLMeasure>;
+
 namespace openstudio{
 
   void BCLMeasure::createDirectory(const openstudio::path& dir) const {

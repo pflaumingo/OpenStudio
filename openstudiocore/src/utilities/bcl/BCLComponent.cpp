@@ -24,6 +24,10 @@
 #include <QDomDocument>
 #include <QFile>
 
+template class UTILITIES_API boost::optional<openstudio::BCLComponent>;
+
+template class UTILITIES_API std::vector<openstudio::BCLComponent>;
+
 namespace openstudio{
 
   // New component
