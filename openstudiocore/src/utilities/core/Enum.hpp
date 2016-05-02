@@ -166,7 +166,6 @@ class _enum_name : public ::EnumBase<_enum_name> \
     } \
   }; \
   inline std::ostream &operator<<(std::ostream &os, const _enum_name &e) { return os << e.valueName() << "(" << e.value() << ")";} \
-  extern template class ::EnumBase<_enum_name>; \
   typedef boost::optional<_enum_name> Optional##_enum_name; \
   extern template class boost::optional<_enum_name>; \
   typedef std::vector<_enum_name> _enum_name##Vector; \
