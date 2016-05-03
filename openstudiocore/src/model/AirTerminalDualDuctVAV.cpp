@@ -36,6 +36,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalDualDuctVAV>;
+template class std::vector<openstudio::model::AirTerminalDualDuctVAV>;
 namespace openstudio {
 namespace model {
 
@@ -320,4 +322,3 @@ AirTerminalDualDuctVAV::AirTerminalDualDuctVAV(std::shared_ptr<detail::AirTermin
 
 } // model
 } // openstudio
-

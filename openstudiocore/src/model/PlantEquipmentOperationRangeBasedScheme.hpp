@@ -110,5 +110,9 @@ typedef std::vector<PlantEquipmentOperationRangeBasedScheme> PlantEquipmentOpera
 } // model
 } // openstudio
 
-#endif // MODEL_PLANTEQUIPMENTOPERATIONRANGEBASEDSCHEME_HPP
+extern template class boost::optional<openstudio::model::PlantEquipmentOperationRangeBasedScheme>;
+template<> std::vector<openstudio::model::PlantEquipmentOperationRangeBasedScheme>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PlantEquipmentOperationRangeBasedScheme>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PlantEquipmentOperationRangeBasedScheme>;
 
+#endif // MODEL_PLANTEQUIPMENTOPERATIONRANGEBASEDSCHEME_HPP

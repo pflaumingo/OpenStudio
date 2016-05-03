@@ -145,5 +145,9 @@ typedef std::vector<ZoneControlThermostatStagedDualSetpoint> ZoneControlThermost
 } // model
 } // openstudio
 
-#endif // MODEL_ZONECONTROLTHERMOSTATSTAGEDDUALSETPOINT_HPP
+extern template class boost::optional<openstudio::model::ZoneControlThermostatStagedDualSetpoint>;
+template<> std::vector<openstudio::model::ZoneControlThermostatStagedDualSetpoint>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneControlThermostatStagedDualSetpoint>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneControlThermostatStagedDualSetpoint>;
 
+#endif // MODEL_ZONECONTROLTHERMOSTATSTAGEDDUALSETPOINT_HPP

@@ -321,5 +321,9 @@ MODEL_API std::ostream& operator<<(std::ostream& os, const SurfaceIntersection& 
 } // model
 } // openstudio
 
-#endif // MODEL_SURFACE_HPP
+extern template class boost::optional<openstudio::model::Surface>;
+template<> std::vector<openstudio::model::Surface>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Surface>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Surface>;
 
+#endif // MODEL_SURFACE_HPP

@@ -40,6 +40,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::HeatExchangerFluidToFluid>;
+template class std::vector<openstudio::model::HeatExchangerFluidToFluid>;
 namespace openstudio {
 namespace model {
 
@@ -667,4 +669,3 @@ HeatExchangerFluidToFluid::HeatExchangerFluidToFluid(std::shared_ptr<detail::Hea
 
 } // model
 } // openstudio
-

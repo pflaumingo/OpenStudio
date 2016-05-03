@@ -179,5 +179,9 @@ typedef std::vector<SiteGroundTemperatureBuildingSurface> SiteGroundTemperatureB
 } // model
 } // openstudio
 
-#endif // MODEL_SITEGROUNDTEMPERATUREBUILDINGSURFACE_HPP
+extern template class boost::optional<openstudio::model::SiteGroundTemperatureBuildingSurface>;
+template<> std::vector<openstudio::model::SiteGroundTemperatureBuildingSurface>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SiteGroundTemperatureBuildingSurface>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SiteGroundTemperatureBuildingSurface>;
 
+#endif // MODEL_SITEGROUNDTEMPERATUREBUILDINGSURFACE_HPP

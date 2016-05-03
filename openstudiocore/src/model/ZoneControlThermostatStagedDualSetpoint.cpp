@@ -28,6 +28,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneControlThermostatStagedDualSetpoint>;
+template class std::vector<openstudio::model::ZoneControlThermostatStagedDualSetpoint>;
 namespace openstudio {
 namespace model {
 
@@ -402,4 +404,3 @@ ZoneControlThermostatStagedDualSetpoint::ZoneControlThermostatStagedDualSetpoint
 
 } // model
 } // openstudio
-

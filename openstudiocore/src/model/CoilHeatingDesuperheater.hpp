@@ -132,5 +132,9 @@ typedef std::vector<CoilHeatingDesuperheater> CoilHeatingDesuperheaterVector;
 } // model
 } // openstudio
 
-#endif // MODEL_COILHEATINGDESUPERHEATER_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingDesuperheater>;
+template<> std::vector<openstudio::model::CoilHeatingDesuperheater>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingDesuperheater>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingDesuperheater>;
 
+#endif // MODEL_COILHEATINGDESUPERHEATER_HPP

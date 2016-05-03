@@ -196,5 +196,9 @@ typedef std::vector<HeatExchangerFluidToFluid> HeatExchangerFluidToFluidVector;
 } // model
 } // openstudio
 
-#endif // MODEL_HEATEXCHANGERFLUIDTOFLUID_HPP
+extern template class boost::optional<openstudio::model::HeatExchangerFluidToFluid>;
+template<> std::vector<openstudio::model::HeatExchangerFluidToFluid>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::HeatExchangerFluidToFluid>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::HeatExchangerFluidToFluid>;
 
+#endif // MODEL_HEATEXCHANGERFLUIDTOFLUID_HPP

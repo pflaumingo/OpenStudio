@@ -25,6 +25,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PlantEquipmentOperationOutdoorDewpointDifference>;
+template class std::vector<openstudio::model::PlantEquipmentOperationOutdoorDewpointDifference>;
 namespace openstudio {
 namespace model {
 
@@ -127,4 +129,3 @@ PlantEquipmentOperationOutdoorDewpointDifference::PlantEquipmentOperationOutdoor
 
 } // model
 } // openstudio
-

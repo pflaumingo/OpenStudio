@@ -53,6 +53,7 @@
 #include <utilities/idd/IddEnums.hxx>
 #include <utilities/idd/IddFactory.hxx>
 
+template class boost::optional<openstudio::model::PlantLoop>;
 namespace openstudio {
 
 namespace model {
@@ -1075,4 +1076,3 @@ std::vector<std::string> PlantLoop::loadDistributionSchemeValues() {
 
 } // model
 } // openstudio
-

@@ -31,6 +31,8 @@
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::EvaporativeCoolerDirectResearchSpecial>;
+template class std::vector<openstudio::model::EvaporativeCoolerDirectResearchSpecial>;
 namespace openstudio {
 
 namespace model {

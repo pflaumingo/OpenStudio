@@ -107,5 +107,9 @@ typedef std::vector<ScheduleFixedInterval> ScheduleFixedIntervalVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SCHEDULEFIXEDINTERVAL_HPP
+extern template class boost::optional<openstudio::model::ScheduleFixedInterval>;
+template<> std::vector<openstudio::model::ScheduleFixedInterval>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ScheduleFixedInterval>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ScheduleFixedInterval>;
 
+#endif // MODEL_SCHEDULEFIXEDINTERVAL_HPP

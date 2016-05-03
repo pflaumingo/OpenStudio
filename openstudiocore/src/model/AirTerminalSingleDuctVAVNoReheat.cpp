@@ -50,6 +50,8 @@
 //#include <utilities/core/Compare.hpp>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalSingleDuctVAVNoReheat>;
+template class std::vector<openstudio::model::AirTerminalSingleDuctVAVNoReheat>;
 namespace openstudio {
 namespace model {
 
@@ -570,4 +572,3 @@ AirTerminalSingleDuctVAVNoReheat::AirTerminalSingleDuctVAVNoReheat(std::shared_p
 
 } // model
 } // openstudio
-

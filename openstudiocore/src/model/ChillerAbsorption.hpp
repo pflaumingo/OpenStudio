@@ -187,5 +187,9 @@ typedef std::vector<ChillerAbsorption> ChillerAbsorptionVector;
 } // model
 } // openstudio
 
-#endif // MODEL_CHILLERABSORPTION_HPP
+extern template class boost::optional<openstudio::model::ChillerAbsorption>;
+template<> std::vector<openstudio::model::ChillerAbsorption>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ChillerAbsorption>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ChillerAbsorption>;
 
+#endif // MODEL_CHILLERABSORPTION_HPP

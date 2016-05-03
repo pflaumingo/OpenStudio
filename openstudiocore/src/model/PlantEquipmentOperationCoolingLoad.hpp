@@ -70,5 +70,9 @@ typedef std::vector<PlantEquipmentOperationCoolingLoad> PlantEquipmentOperationC
 } // model
 } // openstudio
 
-#endif // MODEL_PLANTEQUIPMENTOPERATIONCOOLINGLOAD_HPP
+extern template class boost::optional<openstudio::model::PlantEquipmentOperationCoolingLoad>;
+template<> std::vector<openstudio::model::PlantEquipmentOperationCoolingLoad>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PlantEquipmentOperationCoolingLoad>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PlantEquipmentOperationCoolingLoad>;
 
+#endif // MODEL_PLANTEQUIPMENTOPERATIONCOOLINGLOAD_HPP

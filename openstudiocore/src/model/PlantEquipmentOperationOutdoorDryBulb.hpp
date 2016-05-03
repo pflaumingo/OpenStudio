@@ -85,5 +85,9 @@ typedef std::vector<PlantEquipmentOperationOutdoorDryBulb> PlantEquipmentOperati
 } // model
 } // openstudio
 
-#endif // MODEL_PLANTEQUIPMENTOPERATIONOUTDOORDRYBULB_HPP
+extern template class boost::optional<openstudio::model::PlantEquipmentOperationOutdoorDryBulb>;
+template<> std::vector<openstudio::model::PlantEquipmentOperationOutdoorDryBulb>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PlantEquipmentOperationOutdoorDryBulb>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PlantEquipmentOperationOutdoorDryBulb>;
 
+#endif // MODEL_PLANTEQUIPMENTOPERATIONOUTDOORDRYBULB_HPP

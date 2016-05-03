@@ -169,5 +169,9 @@ typedef std::vector<GroundHeatExchangerHorizontalTrench> GroundHeatExchangerHori
 } // model
 } // openstudio
 
-#endif // MODEL_GROUNDHEATEXCHANGERHORIZONTALTRENCH_HPP
+extern template class boost::optional<openstudio::model::GroundHeatExchangerHorizontalTrench>;
+template<> std::vector<openstudio::model::GroundHeatExchangerHorizontalTrench>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::GroundHeatExchangerHorizontalTrench>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::GroundHeatExchangerHorizontalTrench>;
 
+#endif // MODEL_GROUNDHEATEXCHANGERHORIZONTALTRENCH_HPP

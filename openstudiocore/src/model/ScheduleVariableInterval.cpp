@@ -32,6 +32,8 @@
 #include "../utilities/data/TimeSeries.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ScheduleVariableInterval>;
+template class std::vector<openstudio::model::ScheduleVariableInterval>;
 namespace openstudio {
 namespace model {
 
@@ -323,4 +325,3 @@ ScheduleVariableInterval::ScheduleVariableInterval(std::shared_ptr<detail::Sched
 
 } // model
 } // openstudio
-

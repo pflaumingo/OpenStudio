@@ -137,5 +137,9 @@ typedef std::vector<AirTerminalSingleDuctVAVNoReheat> AirTerminalSingleDuctVAVNo
 } // model
 } // openstudio
 
-#endif // MODEL_AIRTERMINALSINGLEDUCTVAVNOREHEAT_HPP
+extern template class boost::optional<openstudio::model::AirTerminalSingleDuctVAVNoReheat>;
+template<> std::vector<openstudio::model::AirTerminalSingleDuctVAVNoReheat>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirTerminalSingleDuctVAVNoReheat>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirTerminalSingleDuctVAVNoReheat>;
 
+#endif // MODEL_AIRTERMINALSINGLEDUCTVAVNOREHEAT_HPP

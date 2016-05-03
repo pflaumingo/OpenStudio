@@ -72,4 +72,9 @@ typedef std::vector<WindowDataFile> WindowDataFileVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::WindowDataFile>;
+template<> std::vector<openstudio::model::WindowDataFile>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::WindowDataFile>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::WindowDataFile>;
+
 #endif // MODEL_WINDOWDATAFILE_HPP

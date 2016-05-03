@@ -60,6 +60,7 @@
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/units/Unit.hpp"
 
+template class boost::optional<openstudio::model::SimulationControl>;
 namespace openstudio{
 namespace model{
 

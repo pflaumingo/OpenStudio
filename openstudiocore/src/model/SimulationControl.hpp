@@ -251,4 +251,6 @@ typedef boost::optional<SimulationControl> OptionalSimulationControl;
 }
 }
 
+extern template class boost::optional<openstudio::model::SimulationControl>;
+
 #endif

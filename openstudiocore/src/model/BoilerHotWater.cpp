@@ -33,6 +33,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::BoilerHotWater>;
+template class std::vector<openstudio::model::BoilerHotWater>;
 namespace openstudio {
 namespace model {
 
@@ -677,4 +679,3 @@ BoilerHotWater::BoilerHotWater(std::shared_ptr<detail::BoilerHotWater_Impl> impl
 
 } // model
 } // openstudio
-

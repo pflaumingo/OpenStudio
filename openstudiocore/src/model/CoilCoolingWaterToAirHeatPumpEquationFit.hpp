@@ -216,5 +216,9 @@ typedef std::vector<CoilCoolingWaterToAirHeatPumpEquationFit> CoilCoolingWaterTo
 } // model
 } // openstudio
 
-#endif // MODEL_COILCOOLINGWATERTOAIRHEATPUMPEQUATIONFIT_HPP
+extern template class boost::optional<openstudio::model::CoilCoolingWaterToAirHeatPumpEquationFit>;
+template<> std::vector<openstudio::model::CoilCoolingWaterToAirHeatPumpEquationFit>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilCoolingWaterToAirHeatPumpEquationFit>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilCoolingWaterToAirHeatPumpEquationFit>;
 
+#endif // MODEL_COILCOOLINGWATERTOAIRHEATPUMPEQUATIONFIT_HPP

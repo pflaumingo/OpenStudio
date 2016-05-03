@@ -97,5 +97,9 @@ typedef std::vector<CentralHeatPumpSystemModule> CentralHeatPumpSystemModuleVect
 } // model
 } // openstudio
 
-#endif // MODEL_CENTRALHEATPUMPSYSTEMMODULE_HPP
+extern template class boost::optional<openstudio::model::CentralHeatPumpSystemModule>;
+template<> std::vector<openstudio::model::CentralHeatPumpSystemModule>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CentralHeatPumpSystemModule>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CentralHeatPumpSystemModule>;
 
+#endif // MODEL_CENTRALHEATPUMPSYSTEMMODULE_HPP

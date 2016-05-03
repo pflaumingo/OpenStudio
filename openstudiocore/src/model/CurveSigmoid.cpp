@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveSigmoid>;
+template class std::vector<openstudio::model::CurveSigmoid>;
 namespace openstudio {
 namespace model {
 
@@ -390,4 +392,3 @@ CurveSigmoid::CurveSigmoid(std::shared_ptr<detail::CurveSigmoid_Impl> impl)
 
 } // model
 } // openstudio
-

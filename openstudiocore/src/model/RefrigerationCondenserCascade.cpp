@@ -29,6 +29,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationCondenserCascade>;
+template class std::vector<openstudio::model::RefrigerationCondenserCascade>;
 namespace openstudio {
 namespace model {
 
@@ -314,4 +316,3 @@ RefrigerationCondenserCascade::RefrigerationCondenserCascade(std::shared_ptr<det
 
 } // model
 } // openstudio
-

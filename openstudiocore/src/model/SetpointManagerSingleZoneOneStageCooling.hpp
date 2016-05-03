@@ -108,5 +108,9 @@ typedef std::vector<SetpointManagerSingleZoneOneStageCooling> SetpointManagerSin
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERSINGLEZONEONESTAGECOOLING_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerSingleZoneOneStageCooling>;
+template<> std::vector<openstudio::model::SetpointManagerSingleZoneOneStageCooling>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerSingleZoneOneStageCooling>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerSingleZoneOneStageCooling>;
 
+#endif // MODEL_SETPOINTMANAGERSINGLEZONEONESTAGECOOLING_HPP

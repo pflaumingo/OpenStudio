@@ -139,5 +139,9 @@ typedef std::vector<SolarCollectorPerformanceFlatPlate> SolarCollectorPerformanc
 } // model
 } // openstudio
 
-#endif // MODEL_SOLARCOLLECTORPERFORMANCEFLATPLATE_HPP
+extern template class boost::optional<openstudio::model::SolarCollectorPerformanceFlatPlate>;
+template<> std::vector<openstudio::model::SolarCollectorPerformanceFlatPlate>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SolarCollectorPerformanceFlatPlate>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SolarCollectorPerformanceFlatPlate>;
 
+#endif // MODEL_SOLARCOLLECTORPERFORMANCEFLATPLATE_HPP

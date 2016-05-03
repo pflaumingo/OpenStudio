@@ -27,6 +27,8 @@
 #include "Model_Impl.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AvailabilityManager>;
+template class std::vector<openstudio::model::AvailabilityManager>;
 namespace openstudio {
 
 namespace model {
@@ -91,4 +93,3 @@ boost::optional<Loop> AvailabilityManager::loop() const {
 } // model
 
 } // openstudio
-

@@ -301,5 +301,9 @@ typedef std::vector<SizingSystem> SizingSystemVector;
 
 } // openstudio
 
-#endif // MODEL_SIZINGSYSTEM_HPP
+extern template class boost::optional<openstudio::model::SizingSystem>;
+template<> std::vector<openstudio::model::SizingSystem>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SizingSystem>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SizingSystem>;
 
+#endif // MODEL_SIZINGSYSTEM_HPP

@@ -34,6 +34,8 @@
 #include "../utilities/geometry/Geometry.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::GlareSensor>;
+template class std::vector<openstudio::model::GlareSensor>;
 namespace openstudio {
 namespace model {
 
@@ -445,4 +447,3 @@ GlareSensor::GlareSensor(std::shared_ptr<detail::GlareSensor_Impl> impl)
 
 } // model
 } // openstudio
-

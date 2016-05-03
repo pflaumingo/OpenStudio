@@ -114,5 +114,9 @@ typedef std::vector<SetpointManagerWarmestTemperatureFlow> SetpointManagerWarmes
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERWARMESTTEMPERATUREFLOW_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerWarmestTemperatureFlow>;
+template<> std::vector<openstudio::model::SetpointManagerWarmestTemperatureFlow>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerWarmestTemperatureFlow>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerWarmestTemperatureFlow>;
 
+#endif // MODEL_SETPOINTMANAGERWARMESTTEMPERATUREFLOW_HPP

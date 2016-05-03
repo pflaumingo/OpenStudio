@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SimpleGlazing>;
+template class std::vector<openstudio::model::SimpleGlazing>;
 namespace openstudio {
 namespace model {
 
@@ -270,4 +272,3 @@ SimpleGlazing::SimpleGlazing(std::shared_ptr<detail::SimpleGlazing_Impl> impl)
 
 } // model
 } // openstudio
-

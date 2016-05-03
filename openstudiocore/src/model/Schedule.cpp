@@ -39,6 +39,8 @@ using openstudio::OptionalWorkspaceObject;
 using openstudio::WorkspaceObjectVector;
 using openstudio::Workspace;
 
+template class boost::optional<openstudio::model::Schedule>;
+template class std::vector<openstudio::model::Schedule>;
 namespace openstudio {
 namespace model {
 

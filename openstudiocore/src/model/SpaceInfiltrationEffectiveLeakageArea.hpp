@@ -117,5 +117,9 @@ typedef std::vector<SpaceInfiltrationEffectiveLeakageArea> SpaceInfiltrationEffe
 } // model
 } // openstudio
 
-#endif // MODEL_SPACEINFILTRATIONEFFECTIVELEAKAGEAREA_HPP
+extern template class boost::optional<openstudio::model::SpaceInfiltrationEffectiveLeakageArea>;
+template<> std::vector<openstudio::model::SpaceInfiltrationEffectiveLeakageArea>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SpaceInfiltrationEffectiveLeakageArea>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SpaceInfiltrationEffectiveLeakageArea>;
 
+#endif // MODEL_SPACEINFILTRATIONEFFECTIVELEAKAGEAREA_HPP

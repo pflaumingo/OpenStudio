@@ -36,6 +36,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AvailabilityManagerNightVentilation>;
+template class std::vector<openstudio::model::AvailabilityManagerNightVentilation>;
 namespace openstudio {
 namespace model {
 
@@ -272,4 +274,3 @@ AvailabilityManagerNightVentilation::AvailabilityManagerNightVentilation(std::sh
 
 } // model
 } // openstudio
-

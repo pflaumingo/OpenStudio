@@ -203,5 +203,9 @@ typedef std::vector<PumpConstantSpeed> PumpConstantSpeedVector;
 } // model
 } // openstudio
 
-#endif // MODEL_PUMPCONSTANTSPEED_HPP
+extern template class boost::optional<openstudio::model::PumpConstantSpeed>;
+template<> std::vector<openstudio::model::PumpConstantSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PumpConstantSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PumpConstantSpeed>;
 
+#endif // MODEL_PUMPCONSTANTSPEED_HPP

@@ -104,5 +104,9 @@ typedef std::vector<ElectricLoadCenterInverterSimple> ElectricLoadCenterInverter
 } // model
 } // openstudio
 
-#endif // MODEL_ELECTRICLOADCENTERINVERTERSIMPLE_HPP
+extern template class boost::optional<openstudio::model::ElectricLoadCenterInverterSimple>;
+template<> std::vector<openstudio::model::ElectricLoadCenterInverterSimple>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ElectricLoadCenterInverterSimple>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ElectricLoadCenterInverterSimple>;
 
+#endif // MODEL_ELECTRICLOADCENTERINVERTERSIMPLE_HPP

@@ -124,5 +124,9 @@ typedef std::vector<CurveFunctionalPressureDrop> CurveFunctionalPressureDropVect
 } // model
 } // openstudio
 
-#endif // MODEL_CURVEFUNCTIONALPRESSUREDROP_HPP
+extern template class boost::optional<openstudio::model::CurveFunctionalPressureDrop>;
+template<> std::vector<openstudio::model::CurveFunctionalPressureDrop>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveFunctionalPressureDrop>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveFunctionalPressureDrop>;
 
+#endif // MODEL_CURVEFUNCTIONALPRESSUREDROP_HPP

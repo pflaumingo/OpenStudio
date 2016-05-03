@@ -36,6 +36,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACUnitVentilator>;
+template class std::vector<openstudio::model::ZoneHVACUnitVentilator>;
 namespace openstudio {
 namespace model {
 
@@ -712,4 +714,3 @@ ZoneHVACUnitVentilator::ZoneHVACUnitVentilator(std::shared_ptr<detail::ZoneHVACU
 
 } // model
 } // openstudio
-

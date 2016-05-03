@@ -87,5 +87,9 @@ typedef std::vector<AirTerminalSingleDuctInletSideMixer> AirTerminalSingleDuctIn
 } // model
 } // openstudio
 
-#endif // MODEL_AIRTERMINALSINGLEDUCTINLETSIDEMIXER_HPP
+extern template class boost::optional<openstudio::model::AirTerminalSingleDuctInletSideMixer>;
+template<> std::vector<openstudio::model::AirTerminalSingleDuctInletSideMixer>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirTerminalSingleDuctInletSideMixer>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirTerminalSingleDuctInletSideMixer>;
 
+#endif // MODEL_AIRTERMINALSINGLEDUCTINLETSIDEMIXER_HPP

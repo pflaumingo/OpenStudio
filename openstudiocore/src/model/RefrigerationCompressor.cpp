@@ -34,6 +34,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationCompressor>;
+template class std::vector<openstudio::model::RefrigerationCompressor>;
 namespace openstudio {
 namespace model {
 
@@ -510,4 +512,3 @@ RefrigerationCompressor::RefrigerationCompressor(std::shared_ptr<detail::Refrige
 
 } // model
 } // openstudio
-

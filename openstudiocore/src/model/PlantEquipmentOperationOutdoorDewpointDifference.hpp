@@ -90,5 +90,9 @@ typedef std::vector<PlantEquipmentOperationOutdoorDewpointDifference> PlantEquip
 } // model
 } // openstudio
 
-#endif // MODEL_PLANTEQUIPMENTOPERATIONOUTDOORDEWPOINTDIFFERENCE_HPP
+extern template class boost::optional<openstudio::model::PlantEquipmentOperationOutdoorDewpointDifference>;
+template<> std::vector<openstudio::model::PlantEquipmentOperationOutdoorDewpointDifference>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PlantEquipmentOperationOutdoorDewpointDifference>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PlantEquipmentOperationOutdoorDewpointDifference>;
 
+#endif // MODEL_PLANTEQUIPMENTOPERATIONOUTDOORDEWPOINTDIFFERENCE_HPP

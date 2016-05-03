@@ -93,4 +93,9 @@ typedef std::vector<AirLoopHVACZoneMixer> AirLoopHVACZoneMixerVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::AirLoopHVACZoneMixer>;
+template<> std::vector<openstudio::model::AirLoopHVACZoneMixer>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirLoopHVACZoneMixer>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirLoopHVACZoneMixer>;
+
 #endif // MODEL_AIRLOOPHVACZONEMIXER_HPP

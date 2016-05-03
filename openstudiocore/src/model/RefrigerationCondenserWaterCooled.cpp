@@ -35,6 +35,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationCondenserWaterCooled>;
+template class std::vector<openstudio::model::RefrigerationCondenserWaterCooled>;
 namespace openstudio {
 namespace model {
 
@@ -606,4 +608,3 @@ RefrigerationCondenserWaterCooled::RefrigerationCondenserWaterCooled(std::shared
 
 } // model
 } // openstudio
-

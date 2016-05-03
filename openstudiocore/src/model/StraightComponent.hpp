@@ -100,5 +100,9 @@ typedef std::vector<StraightComponent> StraightComponentVector;
 } // model
 } // openstudio
 
-#endif // MODEL_STRAIGHTCOMPONENT_HPP
+extern template class boost::optional<openstudio::model::StraightComponent>;
+template<> std::vector<openstudio::model::StraightComponent>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::StraightComponent>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::StraightComponent>;
 
+#endif // MODEL_STRAIGHTCOMPONENT_HPP

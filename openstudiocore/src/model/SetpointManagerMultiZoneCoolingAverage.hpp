@@ -101,5 +101,9 @@ typedef std::vector<SetpointManagerMultiZoneCoolingAverage> SetpointManagerMulti
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERMULTIZONECOOLINGAVERAGE_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerMultiZoneCoolingAverage>;
+template<> std::vector<openstudio::model::SetpointManagerMultiZoneCoolingAverage>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerMultiZoneCoolingAverage>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerMultiZoneCoolingAverage>;
 
+#endif // MODEL_SETPOINTMANAGERMULTIZONECOOLINGAVERAGE_HPP

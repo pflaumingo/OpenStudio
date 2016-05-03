@@ -147,5 +147,9 @@ typedef std::vector<CurveQuartic> CurveQuarticVector;
 } // model
 } // openstudio
 
-#endif // MODEL_CURVEQUARTIC_HPP
+extern template class boost::optional<openstudio::model::CurveQuartic>;
+template<> std::vector<openstudio::model::CurveQuartic>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveQuartic>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveQuartic>;
 
+#endif // MODEL_CURVEQUARTIC_HPP

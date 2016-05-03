@@ -238,5 +238,9 @@ typedef std::vector<GasMixture> GasMixtureVector;
 } // model
 } // openstudio
 
-#endif // MODEL_GASMIXTURE_HPP
+extern template class boost::optional<openstudio::model::GasMixture>;
+template<> std::vector<openstudio::model::GasMixture>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::GasMixture>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::GasMixture>;
 
+#endif // MODEL_GASMIXTURE_HPP

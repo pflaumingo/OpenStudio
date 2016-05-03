@@ -243,5 +243,9 @@ typedef std::vector<CoolingTowerVariableSpeed> CoolingTowerVariableSpeedVector;
 } // model
 } // openstudio
 
-#endif // MODEL_COOLINGTOWERVARIABLESPEED_HPP
+extern template class boost::optional<openstudio::model::CoolingTowerVariableSpeed>;
+template<> std::vector<openstudio::model::CoolingTowerVariableSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoolingTowerVariableSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoolingTowerVariableSpeed>;
 
+#endif // MODEL_COOLINGTOWERVARIABLESPEED_HPP

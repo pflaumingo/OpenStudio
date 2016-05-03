@@ -94,5 +94,9 @@ typedef std::vector<SetpointManager> SetpointManagerVector;
 
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGER_HPP
+extern template class boost::optional<openstudio::model::SetpointManager>;
+template<> std::vector<openstudio::model::SetpointManager>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManager>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManager>;
 
+#endif // MODEL_SETPOINTMANAGER_HPP

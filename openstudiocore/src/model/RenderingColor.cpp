@@ -29,6 +29,8 @@
 
 #include <cstdlib>
 
+template class boost::optional<openstudio::model::RenderingColor>;
+template class std::vector<openstudio::model::RenderingColor>;
 namespace openstudio {
 namespace model {
 
@@ -364,4 +366,3 @@ QColor RenderingColor::randomColor()
 
 } // model
 } // openstudio
-

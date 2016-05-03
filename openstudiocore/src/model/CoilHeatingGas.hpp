@@ -148,5 +148,9 @@ typedef std::vector<CoilHeatingGas> CoilHeatingGasVector;
 } // model
 } // openstudio
 
-#endif // MODEL_COILHEATINGGAS_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingGas>;
+template<> std::vector<openstudio::model::CoilHeatingGas>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingGas>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingGas>;
 
+#endif // MODEL_COILHEATINGGAS_HPP

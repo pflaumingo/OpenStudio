@@ -40,6 +40,8 @@
 #include <boost/regex.hpp>
 #include <boost/algorithm/string.hpp>
 
+template class boost::optional<openstudio::model::Meter>;
+template class std::vector<openstudio::model::Meter>;
 namespace openstudio {
 namespace model {
 
@@ -640,4 +642,3 @@ Meter::Meter(std::shared_ptr<detail::Meter_Impl> impl)
 
 } // model
 } // openstudio
-

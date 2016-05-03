@@ -38,6 +38,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
 
+template class boost::optional<openstudio::model::WaterUseConnections>;
+template class std::vector<openstudio::model::WaterUseConnections>;
 namespace openstudio {
 
 namespace model {
@@ -331,4 +333,3 @@ WaterUseConnections::WaterUseConnections(std::shared_ptr<detail::WaterUseConnect
 
 } // model
 } // openstudio
-

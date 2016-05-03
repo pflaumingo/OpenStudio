@@ -33,6 +33,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilHeatingWaterBaseboard>;
+template class std::vector<openstudio::model::CoilHeatingWaterBaseboard>;
 namespace openstudio {
 namespace model {
 
@@ -311,4 +313,3 @@ CoilHeatingWaterBaseboard::CoilHeatingWaterBaseboard(std::shared_ptr<detail::Coi
 
 } // model
 } // openstudio
-

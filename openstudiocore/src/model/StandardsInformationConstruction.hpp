@@ -248,5 +248,9 @@ typedef std::vector<StandardsInformationConstruction> StandardsInformationConstr
 } // model
 } // openstudio 
 
-#endif // MODEL_STANDARDSINFORMATIONCONSTRUCTION_HPP
+extern template class boost::optional<openstudio::model::StandardsInformationConstruction>;
+template<> std::vector<openstudio::model::StandardsInformationConstruction>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::StandardsInformationConstruction>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::StandardsInformationConstruction>;
 
+#endif // MODEL_STANDARDSINFORMATIONCONSTRUCTION_HPP

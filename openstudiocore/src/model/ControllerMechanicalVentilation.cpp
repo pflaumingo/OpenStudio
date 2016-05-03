@@ -33,6 +33,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ControllerMechanicalVentilation>;
+template class std::vector<openstudio::model::ControllerMechanicalVentilation>;
 namespace openstudio {
 namespace model {
 
@@ -267,4 +269,3 @@ ControllerMechanicalVentilation::ControllerMechanicalVentilation(std::shared_ptr
 
 } // model
 } // openstudio
-

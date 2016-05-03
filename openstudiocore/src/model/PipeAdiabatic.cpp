@@ -29,6 +29,8 @@
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PipeAdiabatic>;
+template class std::vector<openstudio::model::PipeAdiabatic>;
 namespace openstudio {
 
 namespace model {
@@ -118,4 +120,3 @@ IddObjectType PipeAdiabatic::iddObjectType() {
 
 } // model
 } // openstudio
-

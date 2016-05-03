@@ -137,5 +137,9 @@ typedef std::vector<ScheduleDay> ScheduleDayVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SCHEDULEDAY_HPP
+extern template class boost::optional<openstudio::model::ScheduleDay>;
+template<> std::vector<openstudio::model::ScheduleDay>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ScheduleDay>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ScheduleDay>;
 
+#endif // MODEL_SCHEDULEDAY_HPP

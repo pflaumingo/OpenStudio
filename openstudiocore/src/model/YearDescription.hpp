@@ -128,5 +128,9 @@ typedef std::vector<YearDescription> YearDescriptionVector;
 } // model
 } // openstudio
 
-#endif // MODEL_YEARDESCRIPTION_HPP
+extern template class boost::optional<openstudio::model::YearDescription>;
+template<> std::vector<openstudio::model::YearDescription>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::YearDescription>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::YearDescription>;
 
+#endif // MODEL_YEARDESCRIPTION_HPP

@@ -109,5 +109,9 @@ typedef std::vector<SetpointManagerMultiZoneHumidityMinimum> SetpointManagerMult
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERMULTIZONEHUMIDITYMINIMUM_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerMultiZoneHumidityMinimum>;
+template<> std::vector<openstudio::model::SetpointManagerMultiZoneHumidityMinimum>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerMultiZoneHumidityMinimum>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerMultiZoneHumidityMinimum>;
 
+#endif // MODEL_SETPOINTMANAGERMULTIZONEHUMIDITYMINIMUM_HPP

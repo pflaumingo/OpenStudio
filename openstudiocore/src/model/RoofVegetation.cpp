@@ -29,6 +29,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RoofVegetation>;
+template class std::vector<openstudio::model::RoofVegetation>;
 namespace openstudio {
 namespace model {
 
@@ -1464,4 +1466,3 @@ RoofVegetation::RoofVegetation(std::shared_ptr<detail::RoofVegetation_Impl> impl
 
 } // model
 } // openstudio
-

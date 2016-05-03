@@ -29,6 +29,8 @@
 
 #include <boost/algorithm/string.hpp>
 
+template class boost::optional<openstudio::model::UtilityCost_Ratchet>;
+template class std::vector<openstudio::model::UtilityCost_Ratchet>;
 namespace openstudio {
 namespace model  {
 namespace detail {

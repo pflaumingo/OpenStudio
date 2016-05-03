@@ -122,5 +122,9 @@ typedef std::vector<OtherEquipment> OtherEquipmentVector;
 } // model
 } // openstudio
 
-#endif // MODEL_OTHEREQUIPMENT_HPP
+extern template class boost::optional<openstudio::model::OtherEquipment>;
+template<> std::vector<openstudio::model::OtherEquipment>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::OtherEquipment>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::OtherEquipment>;
 
+#endif // MODEL_OTHEREQUIPMENT_HPP

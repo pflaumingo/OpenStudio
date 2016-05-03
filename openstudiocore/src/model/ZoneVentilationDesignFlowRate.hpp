@@ -195,5 +195,9 @@ typedef std::vector<ZoneVentilationDesignFlowRate> ZoneVentilationDesignFlowRate
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEVENTILATIONDESIGNFLOWRATE_HPP
+extern template class boost::optional<openstudio::model::ZoneVentilationDesignFlowRate>;
+template<> std::vector<openstudio::model::ZoneVentilationDesignFlowRate>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneVentilationDesignFlowRate>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneVentilationDesignFlowRate>;
 
+#endif // MODEL_ZONEVENTILATIONDESIGNFLOWRATE_HPP

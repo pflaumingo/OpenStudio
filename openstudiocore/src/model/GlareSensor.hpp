@@ -150,5 +150,9 @@ typedef std::vector<GlareSensor> GlareSensorVector;
 } // model
 } // openstudio
 
-#endif // MODEL_GLARESENSOR_HPP
+extern template class boost::optional<openstudio::model::GlareSensor>;
+template<> std::vector<openstudio::model::GlareSensor>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::GlareSensor>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::GlareSensor>;
 
+#endif // MODEL_GLARESENSOR_HPP

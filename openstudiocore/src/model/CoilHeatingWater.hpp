@@ -181,4 +181,6 @@ typedef boost::optional<CoilHeatingWater> OptionalCoilHeatingWater;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::CoilHeatingWater>;
+
 #endif // MODEL_COILHEATINGWATER_HPP

@@ -95,4 +95,9 @@ typedef std::vector<FFactorGroundFloorConstruction> FFactorGroundFloorConstructi
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::FFactorGroundFloorConstruction>;
+template<> std::vector<openstudio::model::FFactorGroundFloorConstruction>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::FFactorGroundFloorConstruction>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::FFactorGroundFloorConstruction>;
+
 #endif // MODEL_FFACTORGROUNDFLOORCONSTRUCTION_HPP

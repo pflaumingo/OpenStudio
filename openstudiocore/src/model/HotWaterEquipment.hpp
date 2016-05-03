@@ -131,5 +131,9 @@ typedef std::vector<HotWaterEquipment> HotWaterEquipmentVector;
 } // model
 } // openstudio
 
-#endif // MODEL_HOTWATEREQUIPMENT_HPP
+extern template class boost::optional<openstudio::model::HotWaterEquipment>;
+template<> std::vector<openstudio::model::HotWaterEquipment>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::HotWaterEquipment>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::HotWaterEquipment>;
 
+#endif // MODEL_HOTWATEREQUIPMENT_HPP

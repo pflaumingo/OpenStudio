@@ -123,5 +123,9 @@ typedef std::vector<CoilHeatingLowTempRadiantConstFlow> CoilHeatingLowTempRadian
 } // model
 } // openstudio
 
-#endif // MODEL_COILHEATINGLOWTEMPRADIANTCONSTFLOW_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingLowTempRadiantConstFlow>;
+template<> std::vector<openstudio::model::CoilHeatingLowTempRadiantConstFlow>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingLowTempRadiantConstFlow>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingLowTempRadiantConstFlow>;
 
+#endif // MODEL_COILHEATINGLOWTEMPRADIANTCONSTFLOW_HPP

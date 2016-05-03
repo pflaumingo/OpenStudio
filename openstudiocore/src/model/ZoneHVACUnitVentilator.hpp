@@ -175,5 +175,9 @@ typedef std::vector<ZoneHVACUnitVentilator> ZoneHVACUnitVentilatorVector;
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACUNITVENTILATOR_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACUnitVentilator>;
+template<> std::vector<openstudio::model::ZoneHVACUnitVentilator>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACUnitVentilator>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACUnitVentilator>;
 
+#endif // MODEL_ZONEHVACUNITVENTILATOR_HPP

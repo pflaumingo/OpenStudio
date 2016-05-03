@@ -37,6 +37,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::OtherEquipment>;
+template class std::vector<openstudio::model::OtherEquipment>;
 namespace openstudio {
 namespace model {
 
@@ -329,4 +331,3 @@ OtherEquipment::OtherEquipment(std::shared_ptr<detail::OtherEquipment_Impl> impl
 
 } // model
 } // openstudio
-

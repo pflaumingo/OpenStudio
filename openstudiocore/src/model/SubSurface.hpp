@@ -223,5 +223,9 @@ typedef std::vector<SubSurface> SubSurfaceVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SUBSURFACE_HPP
+extern template class boost::optional<openstudio::model::SubSurface>;
+template<> std::vector<openstudio::model::SubSurface>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SubSurface>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SubSurface>;
 
+#endif // MODEL_SUBSURFACE_HPP

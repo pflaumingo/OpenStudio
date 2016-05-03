@@ -34,6 +34,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ElectricLoadCenterInverterSimple>;
+template class std::vector<openstudio::model::ElectricLoadCenterInverterSimple>;
 namespace openstudio {
 namespace model {
 
@@ -219,4 +221,3 @@ ElectricLoadCenterInverterSimple::ElectricLoadCenterInverterSimple(std::shared_p
 
 } // model
 } // openstudio
-

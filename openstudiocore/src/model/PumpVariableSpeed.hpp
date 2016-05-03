@@ -292,5 +292,9 @@ typedef std::vector<PumpVariableSpeed> PumpVariableSpeedVector;
 } // model
 } // openstudio
 
-#endif // MODEL_PUMPVARIABLESPEED_HPP
+extern template class boost::optional<openstudio::model::PumpVariableSpeed>;
+template<> std::vector<openstudio::model::PumpVariableSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PumpVariableSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PumpVariableSpeed>;
 
+#endif // MODEL_PUMPVARIABLESPEED_HPP

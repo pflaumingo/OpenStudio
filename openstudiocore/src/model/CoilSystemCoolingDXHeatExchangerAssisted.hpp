@@ -92,5 +92,9 @@ typedef std::vector<CoilSystemCoolingDXHeatExchangerAssisted> CoilSystemCoolingD
 } // model
 } // openstudio
 
-#endif // MODEL_COILSYSTEMCOOLINGDXHEATEXCHANGERASSISTED_HPP
+extern template class boost::optional<openstudio::model::CoilSystemCoolingDXHeatExchangerAssisted>;
+template<> std::vector<openstudio::model::CoilSystemCoolingDXHeatExchangerAssisted>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilSystemCoolingDXHeatExchangerAssisted>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilSystemCoolingDXHeatExchangerAssisted>;
 
+#endif // MODEL_COILSYSTEMCOOLINGDXHEATEXCHANGERASSISTED_HPP

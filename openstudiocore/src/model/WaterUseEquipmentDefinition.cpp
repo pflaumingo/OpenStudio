@@ -27,6 +27,8 @@
 #include "../utilities/units/OSOptionalQuantity.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::WaterUseEquipmentDefinition>;
+template class std::vector<openstudio::model::WaterUseEquipmentDefinition>;
 namespace openstudio {
 
 namespace model {
@@ -343,4 +345,3 @@ WaterUseEquipmentDefinition::WaterUseEquipmentDefinition(std::shared_ptr<detail:
 
 } // model
 } // openstudio
-

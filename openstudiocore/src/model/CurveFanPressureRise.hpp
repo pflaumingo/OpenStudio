@@ -131,5 +131,9 @@ typedef std::vector<CurveFanPressureRise> CurveFanPressureRiseVector;
 } // model
 } // openstudio
 
-#endif // MODEL_CURVEFANPRESSURERISE_HPP
+extern template class boost::optional<openstudio::model::CurveFanPressureRise>;
+template<> std::vector<openstudio::model::CurveFanPressureRise>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveFanPressureRise>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveFanPressureRise>;
 
+#endif // MODEL_CURVEFANPRESSURERISE_HPP

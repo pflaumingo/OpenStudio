@@ -99,5 +99,9 @@ typedef std::vector<CoilHeatingGasMultiStageStageData> CoilHeatingGasMultiStageS
 } // model
 } // openstudio
 
-#endif // MODEL_COILHEATINGGASMULTISTAGESTAGEDATA_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingGasMultiStageStageData>;
+template<> std::vector<openstudio::model::CoilHeatingGasMultiStageStageData>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingGasMultiStageStageData>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingGasMultiStageStageData>;
 
+#endif // MODEL_COILHEATINGGASMULTISTAGESTAGEDATA_HPP

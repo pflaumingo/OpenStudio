@@ -139,5 +139,9 @@ typedef std::vector<CurveExponent> CurveExponentVector;
 } // model
 } // openstudio
 
-#endif // MODEL_CURVEEXPONENT_HPP
+extern template class boost::optional<openstudio::model::CurveExponent>;
+template<> std::vector<openstudio::model::CurveExponent>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveExponent>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveExponent>;
 
+#endif // MODEL_CURVEEXPONENT_HPP

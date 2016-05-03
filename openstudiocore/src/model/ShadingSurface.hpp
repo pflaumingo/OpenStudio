@@ -121,5 +121,9 @@ typedef std::vector<ShadingSurface> ShadingSurfaceVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SHADINGSURFACE_HPP
+extern template class boost::optional<openstudio::model::ShadingSurface>;
+template<> std::vector<openstudio::model::ShadingSurface>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ShadingSurface>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ShadingSurface>;
 
+#endif // MODEL_SHADINGSURFACE_HPP

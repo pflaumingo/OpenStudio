@@ -36,6 +36,8 @@
 
 #include <boost/algorithm/string/replace.hpp>
 
+template class boost::optional<openstudio::model::WeatherFile>;
+template class std::vector<openstudio::model::WeatherFile>;
 namespace openstudio {
 namespace model {
 
@@ -530,4 +532,3 @@ WeatherFile::WeatherFile(Model& model)
 
 } // model
 } // openstudio
-

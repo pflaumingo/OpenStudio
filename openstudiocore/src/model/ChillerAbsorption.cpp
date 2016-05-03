@@ -24,6 +24,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ChillerAbsorption>;
+template class std::vector<openstudio::model::ChillerAbsorption>;
 namespace openstudio {
 namespace model {
 
@@ -624,4 +626,3 @@ ChillerAbsorption::ChillerAbsorption(std::shared_ptr<detail::ChillerAbsorption_I
 
 } // model
 } // openstudio
-

@@ -146,5 +146,9 @@ typedef std::vector<CoilCoolingDXTwoStageWithHumidityControlMode> CoilCoolingDXT
 } // model
 } // openstudio
 
-#endif // MODEL_COILCOOLINGDXTWOSTAGEWITHHUMIDITYCONTROLMODE_HPP
+extern template class boost::optional<openstudio::model::CoilCoolingDXTwoStageWithHumidityControlMode>;
+template<> std::vector<openstudio::model::CoilCoolingDXTwoStageWithHumidityControlMode>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilCoolingDXTwoStageWithHumidityControlMode>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilCoolingDXTwoStageWithHumidityControlMode>;
 
+#endif // MODEL_COILCOOLINGDXTWOSTAGEWITHHUMIDITYCONTROLMODE_HPP

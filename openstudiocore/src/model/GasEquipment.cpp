@@ -37,6 +37,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::GasEquipment>;
+template class std::vector<openstudio::model::GasEquipment>;
 namespace openstudio {
 namespace model {
 
@@ -416,4 +418,3 @@ GasEquipment::GasEquipment(std::shared_ptr<detail::GasEquipment_Impl> impl)
 
 } // model
 } // openstudio
-

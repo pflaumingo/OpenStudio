@@ -58,6 +58,8 @@
 
 using boost::to_upper_copy;
 
+template class boost::optional<openstudio::model::SubSurface>;
+template class std::vector<openstudio::model::SubSurface>;
 namespace openstudio {
 namespace model {
 
@@ -1333,4 +1335,3 @@ std::vector<SubSurface> applySkylightPattern(const std::vector<std::vector<Point
 
 } // model
 } // openstudio
-

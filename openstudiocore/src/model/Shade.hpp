@@ -258,5 +258,9 @@ typedef std::vector<Shade> ShadeVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SHADE_HPP
+extern template class boost::optional<openstudio::model::Shade>;
+template<> std::vector<openstudio::model::Shade>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Shade>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Shade>;
 
+#endif // MODEL_SHADE_HPP

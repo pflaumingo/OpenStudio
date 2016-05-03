@@ -35,6 +35,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneMixing>;
+template class std::vector<openstudio::model::ZoneMixing>;
 namespace openstudio {
 namespace model {
 
@@ -589,4 +591,3 @@ ZoneMixing::ZoneMixing(std::shared_ptr<detail::ZoneMixing_Impl> impl)
 
 } // model
 } // openstudio
-

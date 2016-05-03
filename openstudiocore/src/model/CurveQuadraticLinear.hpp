@@ -170,5 +170,9 @@ typedef std::vector<CurveQuadraticLinear> CurveQuadraticLinearVector;
 } // model
 } // openstudio
 
-#endif // MODEL_CURVEQUADRATICLINEAR_HPP
+extern template class boost::optional<openstudio::model::CurveQuadraticLinear>;
+template<> std::vector<openstudio::model::CurveQuadraticLinear>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveQuadraticLinear>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveQuadraticLinear>;
 
+#endif // MODEL_CURVEQUADRATICLINEAR_HPP

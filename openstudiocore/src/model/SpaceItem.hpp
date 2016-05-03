@@ -84,4 +84,9 @@ typedef std::vector<SpaceItem> SpaceItemVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::SpaceItem>;
+template<> std::vector<openstudio::model::SpaceItem>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SpaceItem>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SpaceItem>;
+
 #endif // MODEL_SPACEITEM_HPP

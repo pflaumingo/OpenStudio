@@ -177,5 +177,9 @@ typedef std::vector<RefrigerationCondenserWaterCooled> RefrigerationCondenserWat
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONCONDENSERWATERCOOLED_HPP
+extern template class boost::optional<openstudio::model::RefrigerationCondenserWaterCooled>;
+template<> std::vector<openstudio::model::RefrigerationCondenserWaterCooled>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationCondenserWaterCooled>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationCondenserWaterCooled>;
 
+#endif // MODEL_REFRIGERATIONCONDENSERWATERCOOLED_HPP

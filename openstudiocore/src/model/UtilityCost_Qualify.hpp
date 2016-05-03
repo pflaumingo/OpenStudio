@@ -121,4 +121,9 @@ typedef std::vector<UtilityCost_Qualify> UtilityCost_QualifyVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::UtilityCost_Qualify>;
+template<> std::vector<openstudio::model::UtilityCost_Qualify>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::UtilityCost_Qualify>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::UtilityCost_Qualify>;
+
 #endif // MODEL_UTILITYCOST_QUALIFY_HPP

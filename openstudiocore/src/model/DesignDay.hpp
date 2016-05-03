@@ -269,4 +269,9 @@ typedef std::vector<DesignDay> DesignDayVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::DesignDay>;
+template<> std::vector<openstudio::model::DesignDay>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::DesignDay>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::DesignDay>;
+
 #endif // MODEL_DESIGNDAY_HPP

@@ -39,6 +39,8 @@
 #include <utilities/idd/IddEnums.hxx>
 
 
+template class boost::optional<openstudio::model::AirLoopHVACReturnPlenum>;
+template class std::vector<openstudio::model::AirLoopHVACReturnPlenum>;
 namespace openstudio {
 namespace model {
 
@@ -369,4 +371,3 @@ AirLoopHVACReturnPlenum::AirLoopHVACReturnPlenum(std::shared_ptr<detail::AirLoop
 
 } // model
 } // openstudio
-

@@ -437,5 +437,9 @@ typedef std::vector<WaterHeaterMixed> WaterHeaterMixedVector;
 } // model
 } // openstudio
 
-#endif // MODEL_WATERHEATERMIXED_HPP
+extern template class boost::optional<openstudio::model::WaterHeaterMixed>;
+template<> std::vector<openstudio::model::WaterHeaterMixed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::WaterHeaterMixed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::WaterHeaterMixed>;
 
+#endif // MODEL_WATERHEATERMIXED_HPP

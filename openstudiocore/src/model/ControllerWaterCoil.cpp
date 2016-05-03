@@ -27,6 +27,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ControllerWaterCoil>;
+template class std::vector<openstudio::model::ControllerWaterCoil>;
 namespace openstudio {
 
 namespace model {
@@ -398,4 +400,3 @@ ControllerWaterCoil::ControllerWaterCoil(std::shared_ptr<detail::ControllerWater
 } // model
 
 } // openstudio
-

@@ -28,6 +28,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::BoilerSteam>;
+template class std::vector<openstudio::model::BoilerSteam>;
 namespace openstudio {
 namespace model {
 
@@ -952,4 +954,3 @@ BoilerSteam::BoilerSteam(std::shared_ptr<detail::BoilerSteam_Impl> impl)
 
 } // model
 } // openstudio
-

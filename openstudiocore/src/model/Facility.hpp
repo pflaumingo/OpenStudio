@@ -696,5 +696,6 @@ typedef boost::optional<Facility> OptionalFacility;
 } // model
 } // openstudio
 
-#endif // MODEL_FACILITY_HPP
+extern template class boost::optional<openstudio::model::Facility>;
 
+#endif // MODEL_FACILITY_HPP

@@ -27,6 +27,8 @@
 #include <utilities/idd/OS_ConvergenceLimits_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::ConvergenceLimits>;
+template class std::vector<openstudio::model::ConvergenceLimits>;
 namespace openstudio {
 namespace model {
 

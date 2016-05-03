@@ -38,6 +38,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/time/Date.hpp"
 
+template class boost::optional<openstudio::model::ScheduleRuleset>;
+template class std::vector<openstudio::model::ScheduleRuleset>;
 namespace openstudio {
 namespace model {
 
@@ -583,4 +585,3 @@ bool ScheduleRuleset::moveToEnd(ScheduleRule& scheduleRule)
 
 } // model
 } // openstudio
-

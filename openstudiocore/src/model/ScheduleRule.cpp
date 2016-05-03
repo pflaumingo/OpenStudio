@@ -39,6 +39,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ScheduleRule>;
+template class std::vector<openstudio::model::ScheduleRule>;
 namespace openstudio {
 namespace model {
 
@@ -771,4 +773,3 @@ ScheduleRule::ScheduleRule(std::shared_ptr<detail::ScheduleRule_Impl> impl)
 
 } // model
 } // openstudio
-

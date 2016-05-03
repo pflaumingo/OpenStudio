@@ -105,5 +105,9 @@ typedef std::vector<AvailabilityManagerDifferentialThermostat> AvailabilityManag
 } // model
 } // openstudio
 
-#endif // MODEL_AVAILABILITYMANAGERDIFFERENTIALTHERMOSTAT_HPP
+extern template class boost::optional<openstudio::model::AvailabilityManagerDifferentialThermostat>;
+template<> std::vector<openstudio::model::AvailabilityManagerDifferentialThermostat>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AvailabilityManagerDifferentialThermostat>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AvailabilityManagerDifferentialThermostat>;
 
+#endif // MODEL_AVAILABILITYMANAGERDIFFERENTIALTHERMOSTAT_HPP

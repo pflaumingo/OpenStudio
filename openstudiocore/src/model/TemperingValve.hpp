@@ -102,5 +102,9 @@ typedef std::vector<TemperingValve> TemperingValveVector;
 } // model
 } // openstudio
 
-#endif // MODEL_TEMPERINGVALVE_HPP
+extern template class boost::optional<openstudio::model::TemperingValve>;
+template<> std::vector<openstudio::model::TemperingValve>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::TemperingValve>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::TemperingValve>;
 
+#endif // MODEL_TEMPERINGVALVE_HPP

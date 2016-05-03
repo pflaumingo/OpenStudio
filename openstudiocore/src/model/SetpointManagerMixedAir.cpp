@@ -36,6 +36,8 @@
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerMixedAir>;
+template class std::vector<openstudio::model::SetpointManagerMixedAir>;
 namespace openstudio {
 
 namespace model {
@@ -325,4 +327,3 @@ void SetpointManagerMixedAir::updateFanInletOutletNodes(AirLoopHVAC & airLoopHVA
 } // model
 
 } // openstudio
-

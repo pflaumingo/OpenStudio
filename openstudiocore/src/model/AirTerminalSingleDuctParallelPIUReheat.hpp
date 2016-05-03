@@ -160,5 +160,9 @@ typedef std::vector<AirTerminalSingleDuctParallelPIUReheat> AirTerminalSingleDuc
 } // model
 } // openstudio
 
-#endif // MODEL_AIRTERMINALSINGLEDUCTPARALLELPIUREHEAT_HPP
+extern template class boost::optional<openstudio::model::AirTerminalSingleDuctParallelPIUReheat>;
+template<> std::vector<openstudio::model::AirTerminalSingleDuctParallelPIUReheat>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirTerminalSingleDuctParallelPIUReheat>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirTerminalSingleDuctParallelPIUReheat>;
 
+#endif // MODEL_AIRTERMINALSINGLEDUCTPARALLELPIUREHEAT_HPP

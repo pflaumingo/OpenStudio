@@ -97,5 +97,9 @@ typedef std::vector<RefrigerationSubcoolerMechanical> RefrigerationSubcoolerMech
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONSUBCOOLERMECHANICAL_HPP
+extern template class boost::optional<openstudio::model::RefrigerationSubcoolerMechanical>;
+template<> std::vector<openstudio::model::RefrigerationSubcoolerMechanical>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationSubcoolerMechanical>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationSubcoolerMechanical>;
 
+#endif // MODEL_REFRIGERATIONSUBCOOLERMECHANICAL_HPP

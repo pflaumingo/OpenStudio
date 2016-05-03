@@ -38,6 +38,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACPackagedTerminalAirConditioner>;
+template class std::vector<openstudio::model::ZoneHVACPackagedTerminalAirConditioner>;
 namespace openstudio {
 namespace model {
 
@@ -863,4 +865,3 @@ void ZoneHVACPackagedTerminalAirConditioner::setCoolingCoil( HVACComponent & coo
 
 } // model
 } // openstudio
-

@@ -31,6 +31,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SolarCollectorPerformanceFlatPlate>;
+template class std::vector<openstudio::model::SolarCollectorPerformanceFlatPlate>;
 namespace openstudio {
 namespace model {
 
@@ -346,4 +348,3 @@ SolarCollectorPerformanceFlatPlate::SolarCollectorPerformanceFlatPlate(std::shar
 
 } // model
 } // openstudio
-

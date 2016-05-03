@@ -82,4 +82,9 @@ typedef std::vector<Connection> ConnectionVector;
   } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::Connection>;
+template<> std::vector<openstudio::model::Connection>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Connection>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Connection>;
+
 #endif // MODEL_CONNECTION_HPP

@@ -121,5 +121,9 @@ typedef std::vector<CoilHeatingElectric> CoilHeatingElectricVector;
 
 } // openstudio
 
-#endif // MODEL_COILHEATINGELECTRIC_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingElectric>;
+template<> std::vector<openstudio::model::CoilHeatingElectric>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingElectric>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingElectric>;
 
+#endif // MODEL_COILHEATINGELECTRIC_HPP

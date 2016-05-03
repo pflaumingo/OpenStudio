@@ -150,5 +150,9 @@ typedef std::vector<ElectricEquipmentDefinition> ElectricEquipmentDefinitionVect
 } // model
 } // openstudio
 
-#endif // MODEL_ELECTRICEQUIPMENTDEFINITION_HPP
+extern template class boost::optional<openstudio::model::ElectricEquipmentDefinition>;
+template<> std::vector<openstudio::model::ElectricEquipmentDefinition>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ElectricEquipmentDefinition>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ElectricEquipmentDefinition>;
 
+#endif // MODEL_ELECTRICEQUIPMENTDEFINITION_HPP

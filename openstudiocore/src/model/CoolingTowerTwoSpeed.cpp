@@ -34,6 +34,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoolingTowerTwoSpeed>;
+template class std::vector<openstudio::model::CoolingTowerTwoSpeed>;
 namespace openstudio {
 namespace model {
 
@@ -1604,4 +1606,3 @@ CoolingTowerTwoSpeed::CoolingTowerTwoSpeed(std::shared_ptr<detail::CoolingTowerT
 
 } // model
 } // openstudio
-

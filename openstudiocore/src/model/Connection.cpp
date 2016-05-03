@@ -29,6 +29,8 @@
 #include <utilities/idd/OS_Connection_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::Connection>;
+template class std::vector<openstudio::model::Connection>;
 namespace openstudio {
 namespace model {
 

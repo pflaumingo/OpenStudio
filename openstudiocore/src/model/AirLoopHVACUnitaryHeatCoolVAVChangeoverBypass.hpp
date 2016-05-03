@@ -194,5 +194,9 @@ typedef std::vector<AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass> AirLoopHVACUn
 } // model
 } // openstudio
 
-#endif // MODEL_AIRLOOPHVACUNITARYHEATCOOLVAVCHANGEOVERBYPASS_HPP
+extern template class boost::optional<openstudio::model::AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass>;
+template<> std::vector<openstudio::model::AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass>;
 
+#endif // MODEL_AIRLOOPHVACUNITARYHEATCOOLVAVCHANGEOVERBYPASS_HPP

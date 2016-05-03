@@ -146,5 +146,9 @@ typedef std::vector<ZoneHVACEnergyRecoveryVentilator> ZoneHVACEnergyRecoveryVent
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACENERGYRECOVERYVENTILATOR_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACEnergyRecoveryVentilator>;
+template<> std::vector<openstudio::model::ZoneHVACEnergyRecoveryVentilator>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACEnergyRecoveryVentilator>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACEnergyRecoveryVentilator>;
 
+#endif // MODEL_ZONEHVACENERGYRECOVERYVENTILATOR_HPP

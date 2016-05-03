@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoolingTowerPerformanceCoolTools>;
+template class std::vector<openstudio::model::CoolingTowerPerformanceCoolTools>;
 namespace openstudio {
 namespace model {
 
@@ -947,4 +949,3 @@ CoolingTowerPerformanceCoolTools::CoolingTowerPerformanceCoolTools(std::shared_p
 
 } // model
 } // openstudio
-

@@ -178,5 +178,6 @@ typedef boost::optional<HVACComponent> OptionalHVACComponent;
 } // model
 } // openstudio
 
-#endif // MODEL_HVACCOMPONENT_HPP
+extern template class boost::optional<openstudio::model::HVACComponent>;
 
+#endif // MODEL_HVACCOMPONENT_HPP

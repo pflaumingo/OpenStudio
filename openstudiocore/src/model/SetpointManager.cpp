@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManager>;
+template class std::vector<openstudio::model::SetpointManager>;
 namespace openstudio {
 
 namespace model {
@@ -191,4 +193,3 @@ bool SetpointManager::setControlVariable(const std::string & value)
 
 } // model
 } // openstudio
-

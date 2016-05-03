@@ -252,4 +252,9 @@ typedef boost::optional<ClimateZones> OptionalClimateZones;
 } // model
 } // openstudio
 
+template<> std::vector<openstudio::model::ClimateZone>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ClimateZone>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ClimateZone>;
+extern template class boost::optional<openstudio::model::ClimateZones>;
+
 #endif // MODEL_CLIMATEZONES_HPP

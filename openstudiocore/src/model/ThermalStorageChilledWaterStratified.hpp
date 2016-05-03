@@ -282,5 +282,9 @@ typedef std::vector<ThermalStorageChilledWaterStratified> ThermalStorageChilledW
 } // model
 } // openstudio
 
-#endif // MODEL_THERMALSTORAGECHILLEDWATERSTRATIFIED_HPP
+extern template class boost::optional<openstudio::model::ThermalStorageChilledWaterStratified>;
+template<> std::vector<openstudio::model::ThermalStorageChilledWaterStratified>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ThermalStorageChilledWaterStratified>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ThermalStorageChilledWaterStratified>;
 
+#endif // MODEL_THERMALSTORAGECHILLEDWATERSTRATIFIED_HPP

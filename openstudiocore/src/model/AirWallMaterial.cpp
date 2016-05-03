@@ -26,6 +26,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirWallMaterial>;
+template class std::vector<openstudio::model::AirWallMaterial>;
 namespace openstudio {
 namespace model {
 
@@ -90,4 +92,3 @@ AirWallMaterial::AirWallMaterial(std::shared_ptr<detail::AirWallMaterial_Impl> i
 
 } // model
 } // openstudio
-

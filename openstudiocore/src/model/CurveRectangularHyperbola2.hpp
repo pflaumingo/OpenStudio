@@ -140,5 +140,9 @@ typedef std::vector<CurveRectangularHyperbola2> CurveRectangularHyperbola2Vector
 } // model
 } // openstudio
 
-#endif // MODEL_CURVERECTANGULARHYPERBOLA2_HPP
+extern template class boost::optional<openstudio::model::CurveRectangularHyperbola2>;
+template<> std::vector<openstudio::model::CurveRectangularHyperbola2>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveRectangularHyperbola2>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveRectangularHyperbola2>;
 
+#endif // MODEL_CURVERECTANGULARHYPERBOLA2_HPP

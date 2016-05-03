@@ -60,6 +60,7 @@ using openstudio::Workspace;
 using openstudio::EndUses;
 using openstudio::CalibrationResult;
 
+template class boost::optional<openstudio::model::Facility>;
 namespace openstudio {
 namespace model {
 
@@ -2165,4 +2166,3 @@ IddObjectType Facility::iddObjectType() {
 
 } // model
 } // openstudio
-

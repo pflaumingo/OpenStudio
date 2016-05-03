@@ -205,5 +205,9 @@ typedef std::vector<ChillerAbsorptionIndirect> ChillerAbsorptionIndirectVector;
 } // model
 } // openstudio
 
-#endif // MODEL_CHILLERABSORPTIONINDIRECT_HPP
+extern template class boost::optional<openstudio::model::ChillerAbsorptionIndirect>;
+template<> std::vector<openstudio::model::ChillerAbsorptionIndirect>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ChillerAbsorptionIndirect>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ChillerAbsorptionIndirect>;
 
+#endif // MODEL_CHILLERABSORPTIONINDIRECT_HPP

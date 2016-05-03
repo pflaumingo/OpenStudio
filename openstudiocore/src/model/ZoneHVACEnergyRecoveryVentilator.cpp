@@ -38,6 +38,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACEnergyRecoveryVentilator>;
+template class std::vector<openstudio::model::ZoneHVACEnergyRecoveryVentilator>;
 namespace openstudio {
 namespace model {
 
@@ -506,4 +508,3 @@ ZoneHVACEnergyRecoveryVentilator::ZoneHVACEnergyRecoveryVentilator(std::shared_p
 
 } // model
 } // openstudio
-

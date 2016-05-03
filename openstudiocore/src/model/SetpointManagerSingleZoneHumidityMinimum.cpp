@@ -34,6 +34,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerSingleZoneHumidityMinimum>;
+template class std::vector<openstudio::model::SetpointManagerSingleZoneHumidityMinimum>;
 namespace openstudio {
 namespace model {
 
@@ -188,4 +190,3 @@ SetpointManagerSingleZoneHumidityMinimum::SetpointManagerSingleZoneHumidityMinim
 
 } // model
 } // openstudio
-

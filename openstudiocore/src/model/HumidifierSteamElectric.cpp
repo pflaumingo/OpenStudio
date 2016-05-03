@@ -30,6 +30,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::HumidifierSteamElectric>;
+template class std::vector<openstudio::model::HumidifierSteamElectric>;
 namespace openstudio {
 namespace model {
 
@@ -339,4 +341,3 @@ HumidifierSteamElectric::HumidifierSteamElectric(std::shared_ptr<detail::Humidif
 
 } // model
 } // openstudio
-

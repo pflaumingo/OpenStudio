@@ -103,5 +103,9 @@ typedef std::vector<AirTerminalSingleDuctVAVHeatAndCoolNoReheat> AirTerminalSing
 } // model
 } // openstudio
 
-#endif // MODEL_AIRTERMINALSINGLEDUCTVAVHEATANDCOOLNOREHEAT_HPP
+extern template class boost::optional<openstudio::model::AirTerminalSingleDuctVAVHeatAndCoolNoReheat>;
+template<> std::vector<openstudio::model::AirTerminalSingleDuctVAVHeatAndCoolNoReheat>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirTerminalSingleDuctVAVHeatAndCoolNoReheat>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirTerminalSingleDuctVAVHeatAndCoolNoReheat>;
 
+#endif // MODEL_AIRTERMINALSINGLEDUCTVAVHEATANDCOOLNOREHEAT_HPP

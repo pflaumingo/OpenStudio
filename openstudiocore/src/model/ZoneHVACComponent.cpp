@@ -36,6 +36,7 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACComponent>;
 namespace openstudio {
 namespace model {
 
@@ -386,4 +387,3 @@ boost::optional<AirLoopHVAC> ZoneHVACComponent::airLoopHVAC() const
 } // model
 
 } // openstudio
-

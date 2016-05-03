@@ -101,5 +101,9 @@ typedef std::vector<WaterUseConnections> WaterUseConnectionsVector;
 } // model
 } // openstudio
 
-#endif // MODEL_WATERUSECONNECTIONS_HPP
+extern template class boost::optional<openstudio::model::WaterUseConnections>;
+template<> std::vector<openstudio::model::WaterUseConnections>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::WaterUseConnections>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::WaterUseConnections>;
 
+#endif // MODEL_WATERUSECONNECTIONS_HPP

@@ -33,6 +33,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilCoolingDXVariableSpeedSpeedData>;
+template class std::vector<openstudio::model::CoilCoolingDXVariableSpeedSpeedData>;
 namespace openstudio {
 namespace model {
 
@@ -435,4 +437,3 @@ CoilCoolingDXVariableSpeedSpeedData::CoilCoolingDXVariableSpeedSpeedData(std::sh
 
 } // model
 } // openstudio
-

@@ -117,4 +117,9 @@ typedef boost::optional<Relationship> OptionalRelationship;
 } // model
 } // openstudio
 
+template<> std::vector<openstudio::model::Relationship>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Relationship>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Relationship>;
+extern template class boost::optional<openstudio::model::Relationship>;
+
 #endif // MODEL_RELATIONSHIP_HPP

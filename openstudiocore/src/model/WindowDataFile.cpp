@@ -29,6 +29,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::WindowDataFile>;
+template class std::vector<openstudio::model::WindowDataFile>;
 namespace openstudio {
 namespace model {
 

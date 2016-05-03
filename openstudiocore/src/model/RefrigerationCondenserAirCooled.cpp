@@ -36,6 +36,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationCondenserAirCooled>;
+template class std::vector<openstudio::model::RefrigerationCondenserAirCooled>;
 namespace openstudio {
 namespace model {
 
@@ -496,4 +498,3 @@ RefrigerationCondenserAirCooled::RefrigerationCondenserAirCooled(std::shared_ptr
 
 } // model
 } // openstudio
-

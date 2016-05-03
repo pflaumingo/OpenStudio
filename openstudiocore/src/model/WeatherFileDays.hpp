@@ -65,4 +65,9 @@ typedef std::vector<WeatherFileDays> WeatherFileDaysVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::WeatherFileDays>;
+template<> std::vector<openstudio::model::WeatherFileDays>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::WeatherFileDays>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::WeatherFileDays>;
+
 #endif // MODEL_WEATHERFILEDAYS_HPP

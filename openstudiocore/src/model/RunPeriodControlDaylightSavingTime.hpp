@@ -109,5 +109,9 @@ typedef std::vector<RunPeriodControlDaylightSavingTime> RunPeriodControlDaylight
 } // model
 } // openstudio
 
-#endif // MODEL_RUNPERIODCONTROLDAYLIGHTSAVINGTIME_HPP
+extern template class boost::optional<openstudio::model::RunPeriodControlDaylightSavingTime>;
+template<> std::vector<openstudio::model::RunPeriodControlDaylightSavingTime>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RunPeriodControlDaylightSavingTime>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RunPeriodControlDaylightSavingTime>;
 
+#endif // MODEL_RUNPERIODCONTROLDAYLIGHTSAVINGTIME_HPP

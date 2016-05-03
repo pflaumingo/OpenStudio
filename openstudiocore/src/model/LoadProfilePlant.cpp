@@ -41,6 +41,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::LoadProfilePlant>;
+template class std::vector<openstudio::model::LoadProfilePlant>;
 namespace openstudio {
 namespace model {
 
@@ -229,4 +231,3 @@ LoadProfilePlant::LoadProfilePlant(std::shared_ptr<detail::LoadProfilePlant_Impl
 
 } // model
 } // openstudio
-

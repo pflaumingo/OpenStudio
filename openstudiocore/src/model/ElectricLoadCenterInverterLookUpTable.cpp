@@ -34,6 +34,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ElectricLoadCenterInverterLookUpTable>;
+template class std::vector<openstudio::model::ElectricLoadCenterInverterLookUpTable>;
 namespace openstudio {
 namespace model {
 
@@ -483,4 +485,3 @@ ElectricLoadCenterInverterLookUpTable::ElectricLoadCenterInverterLookUpTable(std
 
 } // model
 } // openstudio
-

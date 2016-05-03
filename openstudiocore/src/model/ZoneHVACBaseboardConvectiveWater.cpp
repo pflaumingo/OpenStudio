@@ -40,6 +40,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACBaseboardConvectiveWater>;
+template class std::vector<openstudio::model::ZoneHVACBaseboardConvectiveWater>;
 namespace openstudio {
 namespace model {
 
@@ -318,4 +320,3 @@ ZoneHVACBaseboardConvectiveWater::ZoneHVACBaseboardConvectiveWater(std::shared_p
 
 } // model
 } // openstudio
-

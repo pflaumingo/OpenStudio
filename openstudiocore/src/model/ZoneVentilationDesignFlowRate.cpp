@@ -34,6 +34,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneVentilationDesignFlowRate>;
+template class std::vector<openstudio::model::ZoneVentilationDesignFlowRate>;
 namespace openstudio {
 namespace model {
 
@@ -728,4 +730,3 @@ ZoneVentilationDesignFlowRate::ZoneVentilationDesignFlowRate(std::shared_ptr<det
 
 } // model
 } // openstudio
-

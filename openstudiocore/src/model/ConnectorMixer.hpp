@@ -85,5 +85,6 @@ typedef boost::optional<ConnectorMixer> OptionalConnectorMixer;
 
 } // openstudio
 
-#endif // MODEL_CONNECTORMIXER_HPP
+extern template class boost::optional<openstudio::model::ConnectorMixer>;
 
+#endif // MODEL_CONNECTORMIXER_HPP

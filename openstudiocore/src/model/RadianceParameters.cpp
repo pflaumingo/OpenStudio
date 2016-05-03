@@ -28,6 +28,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RadianceParameters>;
+template class std::vector<openstudio::model::RadianceParameters>;
 namespace openstudio {
 namespace model {
 
@@ -890,4 +892,3 @@ RadianceParameters::RadianceParameters(Model& model)
 
 } // model
 } // openstudio
-

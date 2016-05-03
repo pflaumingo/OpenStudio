@@ -44,6 +44,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ShadingSurface>;
+template class std::vector<openstudio::model::ShadingSurface>;
 namespace openstudio {
 namespace model {
 
@@ -437,4 +439,3 @@ ShadingSurface::ShadingSurface(std::shared_ptr<detail::ShadingSurface_Impl> impl
 
 } // model
 } // openstudio
-

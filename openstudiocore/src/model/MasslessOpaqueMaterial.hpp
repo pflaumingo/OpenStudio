@@ -162,5 +162,9 @@ typedef std::vector<MasslessOpaqueMaterial> MasslessOpaqueMaterialVector;
 } // model
 } // openstudio
 
-#endif // MODEL_MASSLESSOPAQUEMATERIAL_HPP
+extern template class boost::optional<openstudio::model::MasslessOpaqueMaterial>;
+template<> std::vector<openstudio::model::MasslessOpaqueMaterial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::MasslessOpaqueMaterial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::MasslessOpaqueMaterial>;
 
+#endif // MODEL_MASSLESSOPAQUEMATERIAL_HPP

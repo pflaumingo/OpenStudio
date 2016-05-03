@@ -111,5 +111,9 @@ typedef std::vector<SolarCollectorFlatPlateWater> SolarCollectorFlatPlateWaterVe
 } // model
 } // openstudio
 
-#endif // MODEL_SOLARCOLLECTORFLATPLATEWATER_HPP
+extern template class boost::optional<openstudio::model::SolarCollectorFlatPlateWater>;
+template<> std::vector<openstudio::model::SolarCollectorFlatPlateWater>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SolarCollectorFlatPlateWater>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SolarCollectorFlatPlateWater>;
 
+#endif // MODEL_SOLARCOLLECTORFLATPLATEWATER_HPP

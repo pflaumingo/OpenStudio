@@ -60,6 +60,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Site>;
+template class std::vector<openstudio::model::Site>;
 namespace openstudio {
 namespace model {
 
@@ -484,4 +486,3 @@ Site::Site(Model& model)
 
 } // model
 } // openstudio
-

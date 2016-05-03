@@ -43,6 +43,8 @@ using openstudio::Workspace;
 
 using std::string;
 
+template class boost::optional<openstudio::model::OutputVariable>;
+template class std::vector<openstudio::model::OutputVariable>;
 namespace openstudio {
 namespace model {
 

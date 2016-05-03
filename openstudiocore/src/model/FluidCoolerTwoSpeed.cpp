@@ -30,6 +30,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/units/Unit.hpp"
 
+template class boost::optional<openstudio::model::FluidCoolerTwoSpeed>;
+template class std::vector<openstudio::model::FluidCoolerTwoSpeed>;
 namespace openstudio {
 namespace model {
 
@@ -673,4 +675,3 @@ FluidCoolerTwoSpeed::FluidCoolerTwoSpeed(std::shared_ptr<detail::FluidCoolerTwoS
 
 } // model
 } // openstudio
-

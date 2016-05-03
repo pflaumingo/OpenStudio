@@ -166,4 +166,9 @@ typedef std::vector<AirLoopHVACOutdoorAirSystem> AirLoopHVACOutdoorAirSystemVect
 
 } // openstudio
 
+extern template class boost::optional<openstudio::model::AirLoopHVACOutdoorAirSystem>;
+template<> std::vector<openstudio::model::AirLoopHVACOutdoorAirSystem>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirLoopHVACOutdoorAirSystem>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirLoopHVACOutdoorAirSystem>;
+
 #endif // MODEL_AIRLOOPHVACOUTDOORAIRSYSTEM_HPP

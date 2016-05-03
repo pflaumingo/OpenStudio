@@ -114,4 +114,9 @@ typedef std::vector<ConvergenceLimits> ConvergenceLimitsVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::ConvergenceLimits>;
+template<> std::vector<openstudio::model::ConvergenceLimits>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ConvergenceLimits>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ConvergenceLimits>;
+
 #endif // MODEL_CONVERGENCELIMITS_HPP

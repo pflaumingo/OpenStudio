@@ -109,4 +109,9 @@ typedef std::vector<LifeCycleCostUsePriceEscalation> LifeCycleCostUsePriceEscala
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::LifeCycleCostUsePriceEscalation>;
+template<> std::vector<openstudio::model::LifeCycleCostUsePriceEscalation>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::LifeCycleCostUsePriceEscalation>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::LifeCycleCostUsePriceEscalation>;
+
 #endif // MODEL_LIFECYCLECOSTUSEPRICEESCALATION_HPP

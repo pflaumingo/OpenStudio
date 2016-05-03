@@ -36,6 +36,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ChillerElectricEIR>;
+template class std::vector<openstudio::model::ChillerElectricEIR>;
 namespace openstudio {
 namespace model {
 
@@ -1294,4 +1296,3 @@ ChillerElectricEIR::ChillerElectricEIR(std::shared_ptr<detail::ChillerElectricEI
 
 } // model
 } // openstudio
-

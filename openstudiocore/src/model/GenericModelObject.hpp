@@ -77,4 +77,9 @@ typedef std::vector<GenericModelObject> GenericModelObjectVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::GenericModelObject>;
+template<> std::vector<openstudio::model::GenericModelObject>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::GenericModelObject>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::GenericModelObject>;
+
 #endif //MODEL_GENERICMODELOBJECT_HPP

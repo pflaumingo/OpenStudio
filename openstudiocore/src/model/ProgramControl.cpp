@@ -25,6 +25,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ProgramControl>;
+template class std::vector<openstudio::model::ProgramControl>;
 namespace openstudio {
 namespace model {
 
@@ -122,4 +124,3 @@ ProgramControl::ProgramControl(std::shared_ptr<detail::ProgramControl_Impl> impl
 
 } // model
 } // openstudio
-

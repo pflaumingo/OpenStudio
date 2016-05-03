@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SpaceLoadDefinition>;
+template class std::vector<openstudio::model::SpaceLoadDefinition>;
 namespace openstudio {
 namespace model {
 

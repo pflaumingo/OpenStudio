@@ -101,5 +101,9 @@ typedef std::vector<RefrigerationSubcoolerLiquidSuction> RefrigerationSubcoolerL
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONSUBCOOLERLIQUIDSUCTION_HPP
+extern template class boost::optional<openstudio::model::RefrigerationSubcoolerLiquidSuction>;
+template<> std::vector<openstudio::model::RefrigerationSubcoolerLiquidSuction>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationSubcoolerLiquidSuction>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationSubcoolerLiquidSuction>;
 
+#endif // MODEL_REFRIGERATIONSUBCOOLERLIQUIDSUCTION_HPP

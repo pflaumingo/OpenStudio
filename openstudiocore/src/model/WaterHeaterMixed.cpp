@@ -40,6 +40,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::WaterHeaterMixed>;
+template class std::vector<openstudio::model::WaterHeaterMixed>;
 namespace openstudio {
 
 namespace model {
@@ -2319,4 +2321,3 @@ WaterHeaterMixed::WaterHeaterMixed(std::shared_ptr<detail::WaterHeaterMixed_Impl
 
 } // model
 } // openstudio
-

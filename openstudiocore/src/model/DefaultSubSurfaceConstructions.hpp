@@ -135,5 +135,9 @@ typedef std::vector<DefaultSubSurfaceConstructions> DefaultSubSurfaceConstructio
 } // model
 } // openstudio
 
-#endif // MODEL_DEFAULTSUBSURFACECONSTRUCTIONS_HPP
+extern template class boost::optional<openstudio::model::DefaultSubSurfaceConstructions>;
+template<> std::vector<openstudio::model::DefaultSubSurfaceConstructions>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::DefaultSubSurfaceConstructions>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::DefaultSubSurfaceConstructions>;
 
+#endif // MODEL_DEFAULTSUBSURFACECONSTRUCTIONS_HPP

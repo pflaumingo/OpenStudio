@@ -26,6 +26,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SurfacePropertyOtherSideConditionsModel>;
+template class std::vector<openstudio::model::SurfacePropertyOtherSideConditionsModel>;
 namespace openstudio {
 namespace model {
 
@@ -131,4 +133,3 @@ SurfacePropertyOtherSideConditionsModel::SurfacePropertyOtherSideConditionsModel
 
 } // model
 } // openstudio
-

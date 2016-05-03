@@ -312,5 +312,9 @@ typedef std::vector<TableMultiVariableLookup> TableMultiVariableLookupVector;
 } // model
 } // openstudio
 
-#endif // MODEL_TABLEMULTIVARIABLELOOKUP_HPP
+extern template class boost::optional<openstudio::model::TableMultiVariableLookup>;
+template<> std::vector<openstudio::model::TableMultiVariableLookup>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::TableMultiVariableLookup>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::TableMultiVariableLookup>;
 
+#endif // MODEL_TABLEMULTIVARIABLELOOKUP_HPP

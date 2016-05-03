@@ -46,6 +46,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalSingleDuctParallelPIUReheat>;
+template class std::vector<openstudio::model::AirTerminalSingleDuctParallelPIUReheat>;
 namespace openstudio {
 
 namespace model {
@@ -861,4 +863,3 @@ AirTerminalSingleDuctParallelPIUReheat::AirTerminalSingleDuctParallelPIUReheat(s
 } // model
 
 } // openstudio
-

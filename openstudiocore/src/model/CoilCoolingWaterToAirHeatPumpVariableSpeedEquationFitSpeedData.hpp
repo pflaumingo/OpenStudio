@@ -148,5 +148,9 @@ typedef std::vector<CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFitSpeedDa
 } // model
 } // openstudio
 
-#endif // MODEL_COILCOOLINGWATERTOAIRHEATPUMPVARIABLESPEEDEQUATIONFITSPEEDDATA_HPP
+extern template class boost::optional<openstudio::model::CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFitSpeedData>;
+template<> std::vector<openstudio::model::CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFitSpeedData>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFitSpeedData>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFitSpeedData>;
 
+#endif // MODEL_COILCOOLINGWATERTOAIRHEATPUMPVARIABLESPEEDEQUATIONFITSPEEDDATA_HPP

@@ -30,6 +30,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SiteGroundTemperatureBuildingSurface>;
+template class std::vector<openstudio::model::SiteGroundTemperatureBuildingSurface>;
 namespace openstudio {
 namespace model {
 
@@ -528,4 +530,3 @@ SiteGroundTemperatureBuildingSurface::SiteGroundTemperatureBuildingSurface(Model
 
 } // model
 } // openstudio
-

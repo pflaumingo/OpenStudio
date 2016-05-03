@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveCubic>;
+template class std::vector<openstudio::model::CurveCubic>;
 namespace openstudio {
 namespace model {
 
@@ -366,4 +368,3 @@ CurveCubic::CurveCubic(std::shared_ptr<detail::CurveCubic_Impl> impl)
 
 } // model
 } // openstudio
-

@@ -29,6 +29,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
 
+template class boost::optional<openstudio::model::ModelObjectList>;
+template class std::vector<openstudio::model::ModelObjectList>;
 namespace openstudio {
 namespace model {
 
@@ -253,4 +255,3 @@ ModelObjectList::ModelObjectList(std::shared_ptr<detail::ModelObjectList_Impl> i
 
 } // model
 } // openstudio
-

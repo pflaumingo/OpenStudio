@@ -106,4 +106,9 @@ typedef std::vector<ScheduleCompact> ScheduleCompactVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::ScheduleCompact>;
+template<> std::vector<openstudio::model::ScheduleCompact>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ScheduleCompact>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ScheduleCompact>;
+
 #endif // MODEL_SCHEDULECOMPACT_HPP

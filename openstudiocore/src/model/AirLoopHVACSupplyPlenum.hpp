@@ -96,5 +96,9 @@ typedef std::vector<AirLoopHVACSupplyPlenum> AirLoopHVACSupplyPlenumVector;
 } // model
 } // openstudio
 
-#endif // MODEL_AIRLOOPHVACSUPPLYPLENUM_HPP
+extern template class boost::optional<openstudio::model::AirLoopHVACSupplyPlenum>;
+template<> std::vector<openstudio::model::AirLoopHVACSupplyPlenum>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirLoopHVACSupplyPlenum>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirLoopHVACSupplyPlenum>;
 
+#endif // MODEL_AIRLOOPHVACSUPPLYPLENUM_HPP

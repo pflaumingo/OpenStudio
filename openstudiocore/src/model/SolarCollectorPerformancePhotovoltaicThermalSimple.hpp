@@ -117,5 +117,9 @@ typedef std::vector<SolarCollectorPerformancePhotovoltaicThermalSimple> SolarCol
 } // model
 } // openstudio
 
-#endif // MODEL_SOLARCOLLECTORPERFORMANCEPHOTOVOLTAICTHERMALSIMPLE_HPP
+extern template class boost::optional<openstudio::model::SolarCollectorPerformancePhotovoltaicThermalSimple>;
+template<> std::vector<openstudio::model::SolarCollectorPerformancePhotovoltaicThermalSimple>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SolarCollectorPerformancePhotovoltaicThermalSimple>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SolarCollectorPerformancePhotovoltaicThermalSimple>;
 
+#endif // MODEL_SOLARCOLLECTORPERFORMANCEPHOTOVOLTAICTHERMALSIMPLE_HPP

@@ -29,6 +29,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveFunctionalPressureDrop>;
+template class std::vector<openstudio::model::CurveFunctionalPressureDrop>;
 namespace openstudio {
 namespace model {
 
@@ -243,4 +245,3 @@ CurveFunctionalPressureDrop::CurveFunctionalPressureDrop(std::shared_ptr<detail:
 
 } // model
 } // openstudio
-

@@ -30,6 +30,8 @@
 
 #include <boost/algorithm/string.hpp>
 
+template class boost::optional<openstudio::model::UtilityCost_Charge_Block>;
+template class std::vector<openstudio::model::UtilityCost_Charge_Block>;
 namespace openstudio {
 namespace model  {
 namespace detail {

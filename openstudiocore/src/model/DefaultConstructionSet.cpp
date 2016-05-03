@@ -50,6 +50,8 @@
 
 using openstudio::istringEqual;
 
+template class boost::optional<openstudio::model::DefaultConstructionSet>;
+template class std::vector<openstudio::model::DefaultConstructionSet>;
 namespace openstudio {
 namespace model {
 
@@ -826,4 +828,3 @@ DefaultConstructionSet::DefaultConstructionSet(std::shared_ptr<detail::DefaultCo
 
 } // model
 } // openstudio
-

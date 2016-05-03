@@ -113,5 +113,6 @@ typedef boost::optional<Mixer> OptionalMixer;
 
 } // openstudio
 
-#endif // MODEL_MIXER_HPP
+extern template class boost::optional<openstudio::model::Mixer>;
 
+#endif // MODEL_MIXER_HPP

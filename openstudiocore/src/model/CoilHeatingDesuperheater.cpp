@@ -40,6 +40,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilHeatingDesuperheater>;
+template class std::vector<openstudio::model::CoilHeatingDesuperheater>;
 namespace openstudio {
 namespace model {
 
@@ -305,4 +307,3 @@ CoilHeatingDesuperheater::CoilHeatingDesuperheater(std::shared_ptr<detail::CoilH
 
 } // model
 } // openstudio
-

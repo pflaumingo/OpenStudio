@@ -27,6 +27,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/math/FloatCompare.hpp"
 
+template class boost::optional<openstudio::model::ThermochromicGlazing>;
+template class std::vector<openstudio::model::ThermochromicGlazing>;
 namespace openstudio {
 namespace model {
 
@@ -273,4 +275,3 @@ void ThermochromicGlazing::setOpticalDataTemperature(double value) {
 
 } // model
 } // openstudio
-

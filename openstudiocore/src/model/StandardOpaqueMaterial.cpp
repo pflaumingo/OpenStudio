@@ -29,6 +29,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::StandardOpaqueMaterial>;
+template class std::vector<openstudio::model::StandardOpaqueMaterial>;
 namespace openstudio {
 namespace model {
 
@@ -726,4 +728,3 @@ StandardOpaqueMaterial::StandardOpaqueMaterial(std::shared_ptr<detail::StandardO
 
 } // model
 } // openstudio
-

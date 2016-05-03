@@ -29,6 +29,7 @@
 #include "Model_Impl.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirToAirComponent>;
 namespace openstudio {
 
 namespace model {
@@ -598,4 +599,3 @@ ModelObject AirToAirComponent::clone(Model model) const
 } // model
 
 } // openstudio
-

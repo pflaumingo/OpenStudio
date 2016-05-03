@@ -35,6 +35,8 @@
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PortList>;
+template class std::vector<openstudio::model::PortList>;
 namespace openstudio {
 
 namespace model {
@@ -382,4 +384,3 @@ PortList::PortList(std::shared_ptr<detail::PortList_Impl> impl)
 
 } // model
 } // openstudio
-

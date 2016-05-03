@@ -59,6 +59,8 @@ using openstudio::Workspace;
 
 using boost::to_upper_copy;
 
+template class boost::optional<openstudio::model::PlanarSurface>;
+template class std::vector<openstudio::model::PlanarSurface>;
 namespace openstudio {
 namespace model {
 

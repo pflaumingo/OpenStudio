@@ -40,6 +40,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalSingleDuctVAVHeatAndCoolReheat>;
+template class std::vector<openstudio::model::AirTerminalSingleDuctVAVHeatAndCoolReheat>;
 namespace openstudio {
 namespace model {
 
@@ -501,4 +503,3 @@ AirTerminalSingleDuctVAVHeatAndCoolReheat::AirTerminalSingleDuctVAVHeatAndCoolRe
 
 } // model
 } // openstudio
-

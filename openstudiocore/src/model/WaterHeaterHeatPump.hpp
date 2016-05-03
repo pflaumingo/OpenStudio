@@ -205,5 +205,9 @@ typedef std::vector<WaterHeaterHeatPump> WaterHeaterHeatPumpVector;
 } // model
 } // openstudio
 
-#endif // MODEL_WATERHEATERHEATPUMP_HPP
+extern template class boost::optional<openstudio::model::WaterHeaterHeatPump>;
+template<> std::vector<openstudio::model::WaterHeaterHeatPump>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::WaterHeaterHeatPump>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::WaterHeaterHeatPump>;
 
+#endif // MODEL_WATERHEATERHEATPUMP_HPP

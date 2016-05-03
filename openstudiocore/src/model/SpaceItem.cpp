@@ -29,6 +29,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SpaceItem>;
+template class std::vector<openstudio::model::SpaceItem>;
 namespace openstudio {
 namespace model {
 

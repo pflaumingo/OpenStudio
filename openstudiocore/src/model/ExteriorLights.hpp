@@ -136,5 +136,9 @@ typedef std::vector<ExteriorLights> ExteriorLightsVector;
 } // model
 } // openstudio
 
-#endif // MODEL_EXTERIORLIGHTS_HPP
+extern template class boost::optional<openstudio::model::ExteriorLights>;
+template<> std::vector<openstudio::model::ExteriorLights>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ExteriorLights>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ExteriorLights>;
 
+#endif // MODEL_EXTERIORLIGHTS_HPP

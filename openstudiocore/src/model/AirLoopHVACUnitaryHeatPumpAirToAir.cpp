@@ -50,6 +50,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirLoopHVACUnitaryHeatPumpAirToAir>;
+template class std::vector<openstudio::model::AirLoopHVACUnitaryHeatPumpAirToAir>;
 namespace openstudio {
 namespace model {
 
@@ -859,4 +861,3 @@ AirLoopHVACUnitaryHeatPumpAirToAir::AirLoopHVACUnitaryHeatPumpAirToAir(std::shar
 
 } // model
 } // openstudio
-

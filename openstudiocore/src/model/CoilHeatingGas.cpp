@@ -51,6 +51,8 @@
 #include "../utilities/units/Quantity.hpp"
 #include "../utilities/units/OSOptionalQuantity.hpp"
 
+template class boost::optional<openstudio::model::CoilHeatingGas>;
+template class std::vector<openstudio::model::CoilHeatingGas>;
 namespace openstudio {
 namespace model {
 

@@ -111,5 +111,9 @@ typedef std::vector<PlantComponentTemperatureSource> PlantComponentTemperatureSo
 } // model
 } // openstudio
 
-#endif // MODEL_PLANTCOMPONENTTEMPERATURESOURCE_HPP
+extern template class boost::optional<openstudio::model::PlantComponentTemperatureSource>;
+template<> std::vector<openstudio::model::PlantComponentTemperatureSource>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PlantComponentTemperatureSource>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PlantComponentTemperatureSource>;
 
+#endif // MODEL_PLANTCOMPONENTTEMPERATURESOURCE_HPP

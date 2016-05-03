@@ -104,5 +104,9 @@ typedef std::vector<DaylightingDeviceShelf> DaylightingDeviceShelfVector;
 } // model
 } // openstudio
 
-#endif // MODEL_DAYLIGHTINGDEVICESHELF_HPP
+extern template class boost::optional<openstudio::model::DaylightingDeviceShelf>;
+template<> std::vector<openstudio::model::DaylightingDeviceShelf>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::DaylightingDeviceShelf>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::DaylightingDeviceShelf>;
 
+#endif // MODEL_DAYLIGHTINGDEVICESHELF_HPP

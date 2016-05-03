@@ -280,5 +280,9 @@ typedef std::vector<EvaporativeFluidCoolerTwoSpeed> EvaporativeFluidCoolerTwoSpe
 } // model
 } // openstudio
 
-#endif // MODEL_EVAPORATIVEFLUIDCOOLERTWOSPEED_HPP
+extern template class boost::optional<openstudio::model::EvaporativeFluidCoolerTwoSpeed>;
+template<> std::vector<openstudio::model::EvaporativeFluidCoolerTwoSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::EvaporativeFluidCoolerTwoSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::EvaporativeFluidCoolerTwoSpeed>;
 
+#endif // MODEL_EVAPORATIVEFLUIDCOOLERTWOSPEED_HPP

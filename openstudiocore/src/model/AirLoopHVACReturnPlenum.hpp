@@ -92,5 +92,9 @@ typedef std::vector<AirLoopHVACReturnPlenum> AirLoopHVACReturnPlenumVector;
 } // model
 } // openstudio
 
-#endif // MODEL_AIRLOOPHVACRETURNPLENUM_HPP
+extern template class boost::optional<openstudio::model::AirLoopHVACReturnPlenum>;
+template<> std::vector<openstudio::model::AirLoopHVACReturnPlenum>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirLoopHVACReturnPlenum>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirLoopHVACReturnPlenum>;
 
+#endif // MODEL_AIRLOOPHVACRETURNPLENUM_HPP

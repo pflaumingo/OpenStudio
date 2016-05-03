@@ -35,6 +35,8 @@
 #include <utilities/idd/OS_TemperingValve_FieldEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::TemperingValve>;
+template class std::vector<openstudio::model::TemperingValve>;
 namespace openstudio {
 namespace model {
 
@@ -261,4 +263,3 @@ TemperingValve::TemperingValve(std::shared_ptr<detail::TemperingValve_Impl> impl
 
 } // model
 } // openstudio
-

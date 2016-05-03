@@ -90,5 +90,9 @@ typedef std::vector<PlantEquipmentOperationOutdoorWetBulbDifference> PlantEquipm
 } // model
 } // openstudio
 
-#endif // MODEL_PLANTEQUIPMENTOPERATIONOUTDOORWETBULBDIFFERENCE_HPP
+extern template class boost::optional<openstudio::model::PlantEquipmentOperationOutdoorWetBulbDifference>;
+template<> std::vector<openstudio::model::PlantEquipmentOperationOutdoorWetBulbDifference>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PlantEquipmentOperationOutdoorWetBulbDifference>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PlantEquipmentOperationOutdoorWetBulbDifference>;
 
+#endif // MODEL_PLANTEQUIPMENTOPERATIONOUTDOORWETBULBDIFFERENCE_HPP

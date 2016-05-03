@@ -129,4 +129,9 @@ typedef std::vector<FenestrationMaterial> FenestrationMaterialVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::FenestrationMaterial>;
+template<> std::vector<openstudio::model::FenestrationMaterial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::FenestrationMaterial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::FenestrationMaterial>;
+
 #endif // MODEL_FENESTRATIONMATERIAL_HPP

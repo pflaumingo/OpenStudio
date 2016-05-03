@@ -36,6 +36,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ExteriorLights>;
+template class std::vector<openstudio::model::ExteriorLights>;
 namespace openstudio {
 namespace model {
 

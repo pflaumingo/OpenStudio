@@ -172,5 +172,9 @@ typedef std::vector<CoilHeatingDXVariableSpeed> CoilHeatingDXVariableSpeedVector
 } // model
 } // openstudio
 
-#endif // MODEL_COILHEATINGDXVARIABLESPEED_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingDXVariableSpeed>;
+template<> std::vector<openstudio::model::CoilHeatingDXVariableSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingDXVariableSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingDXVariableSpeed>;
 
+#endif // MODEL_COILHEATINGDXVARIABLESPEED_HPP

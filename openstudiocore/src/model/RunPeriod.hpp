@@ -128,4 +128,9 @@ typedef std::vector<RunPeriod> RunPeriodVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::RunPeriod>;
+template<> std::vector<openstudio::model::RunPeriod>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RunPeriod>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RunPeriod>;
+
 #endif // MODEL_RUNPERIOD_HPP

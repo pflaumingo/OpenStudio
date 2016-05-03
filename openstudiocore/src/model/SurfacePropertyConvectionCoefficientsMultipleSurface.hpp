@@ -165,5 +165,9 @@ typedef std::vector<SurfacePropertyConvectionCoefficientsMultipleSurface> Surfac
 } // model
 } // openstudio
 
-#endif // MODEL_SURFACEPROPERTYCONVECTIONCOEFFICIENTSMULTIPLESURFACE_HPP
+extern template class boost::optional<openstudio::model::SurfacePropertyConvectionCoefficientsMultipleSurface>;
+template<> std::vector<openstudio::model::SurfacePropertyConvectionCoefficientsMultipleSurface>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SurfacePropertyConvectionCoefficientsMultipleSurface>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SurfacePropertyConvectionCoefficientsMultipleSurface>;
 
+#endif // MODEL_SURFACEPROPERTYCONVECTIONCOEFFICIENTSMULTIPLESURFACE_HPP

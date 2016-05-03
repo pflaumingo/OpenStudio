@@ -30,6 +30,8 @@
 #include "../utilities/math/FloatCompare.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PeopleDefinition>;
+template class std::vector<openstudio::model::PeopleDefinition>;
 namespace openstudio {
 namespace model {
 
@@ -589,4 +591,3 @@ PeopleDefinition::PeopleDefinition(std::shared_ptr<detail::PeopleDefinition_Impl
 
 } // model
 } // openstudio
-

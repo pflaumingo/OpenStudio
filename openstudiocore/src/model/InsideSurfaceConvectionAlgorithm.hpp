@@ -102,4 +102,6 @@ typedef boost::optional<InsideSurfaceConvectionAlgorithm> OptionalInsideSurfaceC
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::InsideSurfaceConvectionAlgorithm>;
+
 #endif // MODEL_INSIDESURFACECONVECTIONALGORITHM_HPP

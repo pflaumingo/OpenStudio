@@ -173,5 +173,9 @@ typedef std::vector<ZoneHVACTerminalUnitVariableRefrigerantFlow> ZoneHVACTermina
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACTERMINALUNITVARIABLEREFRIGERANTFLOW_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACTerminalUnitVariableRefrigerantFlow>;
+template<> std::vector<openstudio::model::ZoneHVACTerminalUnitVariableRefrigerantFlow>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACTerminalUnitVariableRefrigerantFlow>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACTerminalUnitVariableRefrigerantFlow>;
 
+#endif // MODEL_ZONEHVACTERMINALUNITVARIABLEREFRIGERANTFLOW_HPP

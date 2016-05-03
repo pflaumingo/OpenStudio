@@ -246,5 +246,9 @@ typedef std::vector<ZoneHVACWaterToAirHeatPump> ZoneHVACWaterToAirHeatPumpVector
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACWATERTOAIRHEATPUMP_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACWaterToAirHeatPump>;
+template<> std::vector<openstudio::model::ZoneHVACWaterToAirHeatPump>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACWaterToAirHeatPump>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACWaterToAirHeatPump>;
 
+#endif // MODEL_ZONEHVACWATERTOAIRHEATPUMP_HPP

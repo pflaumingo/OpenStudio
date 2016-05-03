@@ -101,4 +101,9 @@ typedef std::vector<AirLoopHVACZoneSplitter> AirLoopHVACZoneSplitterVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::AirLoopHVACZoneSplitter>;
+template<> std::vector<openstudio::model::AirLoopHVACZoneSplitter>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirLoopHVACZoneSplitter>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirLoopHVACZoneSplitter>;
+
 #endif // MODEL_AIRLOOPHVACZONESPLITTER_HPP

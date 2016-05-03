@@ -102,5 +102,9 @@ typedef std::vector<AirTerminalSingleDuctUncontrolled> AirTerminalSingleDuctUnco
 
 } // openstudio
 
-#endif // MODEL_AIRTERMINALSINGLEDUCTUNCONTROLLED_HPP
+extern template class boost::optional<openstudio::model::AirTerminalSingleDuctUncontrolled>;
+template<> std::vector<openstudio::model::AirTerminalSingleDuctUncontrolled>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirTerminalSingleDuctUncontrolled>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirTerminalSingleDuctUncontrolled>;
 
+#endif // MODEL_AIRTERMINALSINGLEDUCTUNCONTROLLED_HPP

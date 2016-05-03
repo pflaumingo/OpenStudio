@@ -106,5 +106,9 @@ typedef std::vector<LightingSimulationZone> LightingSimulationZoneVector;
 } // model
 } // openstudio
 
-#endif // MODEL_LIGHTINGSIMULATIONZONE_HPP
+extern template class boost::optional<openstudio::model::LightingSimulationZone>;
+template<> std::vector<openstudio::model::LightingSimulationZone>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::LightingSimulationZone>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::LightingSimulationZone>;
 
+#endif // MODEL_LIGHTINGSIMULATIONZONE_HPP

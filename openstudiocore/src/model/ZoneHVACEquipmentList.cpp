@@ -29,6 +29,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACEquipmentList>;
+template class std::vector<openstudio::model::ZoneHVACEquipmentList>;
 namespace openstudio {
 namespace model {
 
@@ -422,4 +424,3 @@ ZoneHVACEquipmentList::ZoneHVACEquipmentList(std::shared_ptr<detail::ZoneHVACEqu
 
 } // model
 } // openstudio
-

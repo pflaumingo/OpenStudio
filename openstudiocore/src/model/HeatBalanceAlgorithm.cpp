@@ -31,6 +31,8 @@
 #include <utilities/idd/OS_HeatBalanceAlgorithm_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::HeatBalanceAlgorithm>;
+template class std::vector<openstudio::model::HeatBalanceAlgorithm>;
 namespace openstudio {
 namespace model {
 
@@ -362,4 +364,3 @@ HeatBalanceAlgorithm::HeatBalanceAlgorithm(Model& model)
 
 } // model
 } // openstudio
-

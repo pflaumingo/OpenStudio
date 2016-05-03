@@ -105,5 +105,9 @@ typedef std::vector<RenderingColor> RenderingColorVector;
 } // model
 } // openstudio
 
-#endif // MODEL_RENDERINGCOLOR_HPP
+extern template class boost::optional<openstudio::model::RenderingColor>;
+template<> std::vector<openstudio::model::RenderingColor>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RenderingColor>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RenderingColor>;
 
+#endif // MODEL_RENDERINGCOLOR_HPP

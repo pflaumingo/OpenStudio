@@ -149,5 +149,9 @@ typedef std::vector<HeaderedPumpsConstantSpeed> HeaderedPumpsConstantSpeedVector
 } // model
 } // openstudio
 
-#endif // MODEL_HEADEREDPUMPSCONSTANTSPEED_HPP
+extern template class boost::optional<openstudio::model::HeaderedPumpsConstantSpeed>;
+template<> std::vector<openstudio::model::HeaderedPumpsConstantSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::HeaderedPumpsConstantSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::HeaderedPumpsConstantSpeed>;
 
+#endif // MODEL_HEADEREDPUMPSCONSTANTSPEED_HPP

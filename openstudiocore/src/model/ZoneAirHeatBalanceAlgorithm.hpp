@@ -92,5 +92,9 @@ typedef std::vector<ZoneAirHeatBalanceAlgorithm> ZoneAirHeatBalanceAlgorithmVect
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEAIRHEATBALANCEALGORITHM_HPP
+extern template class boost::optional<openstudio::model::ZoneAirHeatBalanceAlgorithm>;
+template<> std::vector<openstudio::model::ZoneAirHeatBalanceAlgorithm>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneAirHeatBalanceAlgorithm>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneAirHeatBalanceAlgorithm>;
 
+#endif // MODEL_ZONEAIRHEATBALANCEALGORITHM_HPP

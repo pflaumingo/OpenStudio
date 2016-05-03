@@ -261,4 +261,9 @@ typedef std::vector<PlanarSurface> PlanarSurfaceVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::PlanarSurface>;
+template<> std::vector<openstudio::model::PlanarSurface>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PlanarSurface>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PlanarSurface>;
+
 #endif //MODEL_PLANARSURFACE_HPP

@@ -171,5 +171,9 @@ typedef std::vector<ControllerOutdoorAir> ControllerOutdoorAirVector;
 
 } // openstudio
 
-#endif // MODEL_CONTROLLEROUTDOORAIR_HPP
+extern template class boost::optional<openstudio::model::ControllerOutdoorAir>;
+template<> std::vector<openstudio::model::ControllerOutdoorAir>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ControllerOutdoorAir>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ControllerOutdoorAir>;
 
+#endif // MODEL_CONTROLLEROUTDOORAIR_HPP

@@ -28,6 +28,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirGap>;
+template class std::vector<openstudio::model::AirGap>;
 namespace openstudio {
 namespace model {
 
@@ -267,4 +269,3 @@ AirGap::AirGap(std::shared_ptr<detail::AirGap_Impl> impl)
 
 } // model
 } // openstudio
-

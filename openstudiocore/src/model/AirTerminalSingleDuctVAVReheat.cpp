@@ -41,6 +41,7 @@
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalSingleDuctVAVReheat>;
 namespace openstudio {
 
 namespace model {
@@ -897,4 +898,3 @@ void AirTerminalSingleDuctVAVReheat::setControlForOutdoorAir(bool controlForOutd
 } // model
 
 } // openstudio
-

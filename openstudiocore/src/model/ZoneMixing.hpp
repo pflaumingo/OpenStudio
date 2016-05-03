@@ -187,5 +187,9 @@ typedef std::vector<ZoneMixing> ZoneMixingVector;
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEMIXING_HPP
+extern template class boost::optional<openstudio::model::ZoneMixing>;
+template<> std::vector<openstudio::model::ZoneMixing>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneMixing>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneMixing>;
 
+#endif // MODEL_ZONEMIXING_HPP

@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveExponentialDecay>;
+template class std::vector<openstudio::model::CurveExponentialDecay>;
 namespace openstudio {
 namespace model {
 
@@ -344,4 +346,3 @@ CurveExponentialDecay::CurveExponentialDecay(std::shared_ptr<detail::CurveExpone
 
 } // model
 } // openstudio
-

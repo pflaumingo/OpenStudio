@@ -123,4 +123,9 @@ typedef std::vector<OutputVariable> OutputVariableVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::OutputVariable>;
+template<> std::vector<openstudio::model::OutputVariable>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::OutputVariable>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::OutputVariable>;
+
 #endif // MODEL_VARIABLE_HPP

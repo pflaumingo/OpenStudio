@@ -28,6 +28,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerFollowGroundTemperature>;
+template class std::vector<openstudio::model::SetpointManagerFollowGroundTemperature>;
 namespace openstudio {
 namespace model {
 
@@ -202,4 +204,3 @@ SetpointManagerFollowGroundTemperature::SetpointManagerFollowGroundTemperature(s
 
 } // model
 } // openstudio
-

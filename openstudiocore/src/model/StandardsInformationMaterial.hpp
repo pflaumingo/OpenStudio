@@ -172,5 +172,9 @@ typedef std::vector<StandardsInformationMaterial> StandardsInformationMaterialVe
 } // model
 } // openstudio
 
-#endif // MODEL_STANDARDSINFORMATIONMATERIAL_HPP
+extern template class boost::optional<openstudio::model::StandardsInformationMaterial>;
+template<> std::vector<openstudio::model::StandardsInformationMaterial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::StandardsInformationMaterial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::StandardsInformationMaterial>;
 
+#endif // MODEL_STANDARDSINFORMATIONMATERIAL_HPP

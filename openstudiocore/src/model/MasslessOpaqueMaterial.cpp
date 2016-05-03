@@ -30,6 +30,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::MasslessOpaqueMaterial>;
+template class std::vector<openstudio::model::MasslessOpaqueMaterial>;
 namespace openstudio {
 namespace model {
 
@@ -644,4 +646,3 @@ MasslessOpaqueMaterial::MasslessOpaqueMaterial(std::shared_ptr<detail::MasslessO
 
 } // model
 } // openstudio
-

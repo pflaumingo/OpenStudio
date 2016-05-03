@@ -81,4 +81,9 @@ typedef std::vector<Schedule> ScheduleVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::Schedule>;
+template<> std::vector<openstudio::model::Schedule>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Schedule>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Schedule>;
+
 #endif

@@ -40,6 +40,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::People>;
+template class std::vector<openstudio::model::People>;
 namespace openstudio {
 namespace model {
 
@@ -688,4 +690,3 @@ People::People(std::shared_ptr<detail::People_Impl> impl)
 
 } // model
 } // openstudio
-

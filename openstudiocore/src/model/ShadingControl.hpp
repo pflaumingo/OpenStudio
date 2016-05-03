@@ -134,5 +134,9 @@ typedef std::vector<ShadingControl> ShadingControlVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SHADINGCONTROL_HPP
+extern template class boost::optional<openstudio::model::ShadingControl>;
+template<> std::vector<openstudio::model::ShadingControl>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ShadingControl>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ShadingControl>;
 
+#endif // MODEL_SHADINGCONTROL_HPP

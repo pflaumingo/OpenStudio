@@ -157,5 +157,9 @@ typedef std::vector<ZoneHVACLowTempRadiantVarFlow> ZoneHVACLowTempRadiantVarFlow
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACLOWTEMPRADIANTVARFLOW_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACLowTempRadiantVarFlow>;
+template<> std::vector<openstudio::model::ZoneHVACLowTempRadiantVarFlow>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACLowTempRadiantVarFlow>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACLowTempRadiantVarFlow>;
 
+#endif // MODEL_ZONEHVACLOWTEMPRADIANTVARFLOW_HPP

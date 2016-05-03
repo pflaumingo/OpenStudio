@@ -29,6 +29,8 @@
 
 #include <boost/algorithm/string.hpp>
 
+template class boost::optional<openstudio::model::ComponentCostAdjustments>;
+template class std::vector<openstudio::model::ComponentCostAdjustments>;
 namespace openstudio {
 namespace model  {
 namespace detail {

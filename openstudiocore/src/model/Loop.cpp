@@ -45,6 +45,7 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Loop>;
 namespace openstudio {
 
 namespace model {
@@ -571,4 +572,3 @@ Mixer Loop::demandMixer() const
 } // model
 
 } // openstudio
-

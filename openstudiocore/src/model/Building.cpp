@@ -62,6 +62,8 @@
 #include <boost/optional.hpp>
 #include <boost/algorithm/string.hpp>
 
+template class boost::optional<openstudio::model::Building>;
+template class std::vector<openstudio::model::Building>;
 namespace openstudio {
 namespace model {
 
@@ -1299,4 +1301,3 @@ Building::Building(Model& model)
 
 } // model
 } // openstudio
-

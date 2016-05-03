@@ -29,6 +29,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Screen>;
+template class std::vector<openstudio::model::Screen>;
 namespace openstudio {
 namespace model {
 
@@ -933,4 +935,3 @@ Screen::Screen(std::shared_ptr<detail::Screen_Impl> impl)
 
 } // model
 } // openstudio
-

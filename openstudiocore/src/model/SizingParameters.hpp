@@ -121,5 +121,9 @@ typedef std::vector<SizingParameters> SizingParametersVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SIZINGPARAMETERS_HPP
+extern template class boost::optional<openstudio::model::SizingParameters>;
+template<> std::vector<openstudio::model::SizingParameters>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SizingParameters>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SizingParameters>;
 
+#endif // MODEL_SIZINGPARAMETERS_HPP

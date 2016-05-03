@@ -105,4 +105,6 @@ typedef boost::optional<ThermostatSetpointDualSetpoint> OptionalThermostatSetpoi
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::ThermostatSetpointDualSetpoint>;
+
 #endif // MODEL_THERMOSTATSETPOINTDUALSETPOINT_HPP

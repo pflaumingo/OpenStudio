@@ -227,5 +227,9 @@ typedef std::vector<CoolingTowerPerformanceYorkCalc> CoolingTowerPerformanceYork
 } // model
 } // openstudio
 
-#endif // MODEL_COOLINGTOWERPERFORMANCEYORKCALC_HPP
+extern template class boost::optional<openstudio::model::CoolingTowerPerformanceYorkCalc>;
+template<> std::vector<openstudio::model::CoolingTowerPerformanceYorkCalc>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoolingTowerPerformanceYorkCalc>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoolingTowerPerformanceYorkCalc>;
 
+#endif // MODEL_COOLINGTOWERPERFORMANCEYORKCALC_HPP

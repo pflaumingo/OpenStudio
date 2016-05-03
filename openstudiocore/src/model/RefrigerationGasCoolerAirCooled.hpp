@@ -188,5 +188,9 @@ typedef std::vector<RefrigerationGasCoolerAirCooled> RefrigerationGasCoolerAirCo
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONGASCOOLERAIRCOOLED_HPP
+extern template class boost::optional<openstudio::model::RefrigerationGasCoolerAirCooled>;
+template<> std::vector<openstudio::model::RefrigerationGasCoolerAirCooled>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationGasCoolerAirCooled>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationGasCoolerAirCooled>;
 
+#endif // MODEL_REFRIGERATIONGASCOOLERAIRCOOLED_HPP

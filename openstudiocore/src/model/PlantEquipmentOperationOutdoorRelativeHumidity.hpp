@@ -85,5 +85,9 @@ typedef std::vector<PlantEquipmentOperationOutdoorRelativeHumidity> PlantEquipme
 } // model
 } // openstudio
 
-#endif // MODEL_PLANTEQUIPMENTOPERATIONOUTDOORRELATIVEHUMIDITY_HPP
+extern template class boost::optional<openstudio::model::PlantEquipmentOperationOutdoorRelativeHumidity>;
+template<> std::vector<openstudio::model::PlantEquipmentOperationOutdoorRelativeHumidity>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PlantEquipmentOperationOutdoorRelativeHumidity>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PlantEquipmentOperationOutdoorRelativeHumidity>;
 
+#endif // MODEL_PLANTEQUIPMENTOPERATIONOUTDOORRELATIVEHUMIDITY_HPP

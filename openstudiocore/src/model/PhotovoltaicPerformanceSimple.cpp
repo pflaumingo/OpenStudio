@@ -33,6 +33,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PhotovoltaicPerformanceSimple>;
+template class std::vector<openstudio::model::PhotovoltaicPerformanceSimple>;
 namespace openstudio {
 namespace model {
 
@@ -226,4 +228,3 @@ PhotovoltaicPerformanceSimple::PhotovoltaicPerformanceSimple(std::shared_ptr<det
 
 } // model
 } // openstudio
-

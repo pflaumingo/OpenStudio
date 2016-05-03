@@ -127,5 +127,9 @@ typedef std::vector<HumidifierSteamElectric> HumidifierSteamElectricVector;
 } // model
 } // openstudio
 
-#endif // MODEL_HUMIDIFIERSTEAMELECTRIC_HPP
+extern template class boost::optional<openstudio::model::HumidifierSteamElectric>;
+template<> std::vector<openstudio::model::HumidifierSteamElectric>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::HumidifierSteamElectric>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::HumidifierSteamElectric>;
 
+#endif // MODEL_HUMIDIFIERSTEAMELECTRIC_HPP

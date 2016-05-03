@@ -30,6 +30,8 @@
 #include "../utilities/geometry/Geometry.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::IlluminanceMap>;
+template class std::vector<openstudio::model::IlluminanceMap>;
 namespace openstudio {
 namespace model {
 
@@ -482,4 +484,3 @@ IlluminanceMap::IlluminanceMap(std::shared_ptr<detail::IlluminanceMap_Impl> impl
 
 } // model
 } // openstudio
-

@@ -81,5 +81,9 @@ typedef std::vector<Duct> DuctVector;
 } // model
 } // openstudio
 
-#endif // MODEL_DUCT_HPP
+extern template class boost::optional<openstudio::model::Duct>;
+template<> std::vector<openstudio::model::Duct>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Duct>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Duct>;
 
+#endif // MODEL_DUCT_HPP

@@ -426,5 +426,9 @@ typedef std::vector<AirLoopHVACUnitarySystem> AirLoopHVACUnitarySystemVector;
 } // model
 } // openstudio
 
-#endif // MODEL_AIRLOOPHVACUNITARYSYSTEM_HPP
+extern template class boost::optional<openstudio::model::AirLoopHVACUnitarySystem>;
+template<> std::vector<openstudio::model::AirLoopHVACUnitarySystem>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirLoopHVACUnitarySystem>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirLoopHVACUnitarySystem>;
 
+#endif // MODEL_AIRLOOPHVACUNITARYSYSTEM_HPP

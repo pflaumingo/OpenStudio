@@ -28,6 +28,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ScheduleWeek>;
+template class std::vector<openstudio::model::ScheduleWeek>;
 namespace openstudio {
 namespace model {
 
@@ -444,4 +446,3 @@ bool ScheduleWeek::setWeekendSchedule(const ScheduleDay& schedule)
 
 } // model
 } // openstudio
-

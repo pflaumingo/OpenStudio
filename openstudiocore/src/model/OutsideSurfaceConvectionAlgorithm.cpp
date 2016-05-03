@@ -31,6 +31,7 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::OutsideSurfaceConvectionAlgorithm>;
 namespace openstudio {
 namespace model  {
 

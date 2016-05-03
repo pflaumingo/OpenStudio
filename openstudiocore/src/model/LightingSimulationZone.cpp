@@ -34,6 +34,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::LightingSimulationZone>;
+template class std::vector<openstudio::model::LightingSimulationZone>;
 namespace openstudio {
 namespace model {
 
@@ -171,4 +173,3 @@ LightingSimulationZone::LightingSimulationZone(std::shared_ptr<detail::LightingS
 
 } // model
 } // openstudio
-

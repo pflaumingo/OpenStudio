@@ -36,6 +36,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::InteriorPartitionSurface>;
+template class std::vector<openstudio::model::InteriorPartitionSurface>;
 namespace openstudio {
 namespace model {
 
@@ -405,4 +407,3 @@ InteriorPartitionSurface::InteriorPartitionSurface(std::shared_ptr<detail::Inter
 
 } // model
 } // openstudio
-

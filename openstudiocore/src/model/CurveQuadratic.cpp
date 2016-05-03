@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveQuadratic>;
+template class std::vector<openstudio::model::CurveQuadratic>;
 namespace openstudio {
 namespace model {
 

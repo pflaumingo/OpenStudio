@@ -107,6 +107,8 @@
 
 #include "../utilities/sql/SqlFile.hpp"
 
+template class boost::optional<openstudio::model::ThermalZone>;
+template class std::vector<openstudio::model::ThermalZone>;
 namespace openstudio {
 namespace model {
 

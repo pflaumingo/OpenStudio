@@ -82,5 +82,9 @@ typedef std::vector<AirWallMaterial> AirWallMaterialVector;
 } // model
 } // openstudio
 
-#endif // MODEL_AIRWALLMATERIAL_HPP
+extern template class boost::optional<openstudio::model::AirWallMaterial>;
+template<> std::vector<openstudio::model::AirWallMaterial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirWallMaterial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirWallMaterial>;
 
+#endif // MODEL_AIRWALLMATERIAL_HPP

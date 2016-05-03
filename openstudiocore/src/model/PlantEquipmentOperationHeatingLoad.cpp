@@ -23,6 +23,8 @@
 #include "../utilities/core/Assert.hpp"
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::PlantEquipmentOperationHeatingLoad>;
+template class std::vector<openstudio::model::PlantEquipmentOperationHeatingLoad>;
 namespace openstudio {
 namespace model {
 
@@ -92,4 +94,3 @@ PlantEquipmentOperationHeatingLoad::PlantEquipmentOperationHeatingLoad(std::shar
 
 } // model
 } // openstudio
-

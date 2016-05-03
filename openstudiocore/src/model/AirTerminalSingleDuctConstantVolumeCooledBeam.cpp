@@ -51,6 +51,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalSingleDuctConstantVolumeCooledBeam>;
+template class std::vector<openstudio::model::AirTerminalSingleDuctConstantVolumeCooledBeam>;
 namespace openstudio {
 namespace model {
 
@@ -916,4 +918,3 @@ AirTerminalSingleDuctConstantVolumeCooledBeam::AirTerminalSingleDuctConstantVolu
 
 } // model
 } // openstudio
-

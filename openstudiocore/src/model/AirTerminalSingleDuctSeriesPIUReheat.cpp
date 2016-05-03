@@ -51,6 +51,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalSingleDuctSeriesPIUReheat>;
+template class std::vector<openstudio::model::AirTerminalSingleDuctSeriesPIUReheat>;
 namespace openstudio {
 namespace model {
 
@@ -710,4 +712,3 @@ AirTerminalSingleDuctSeriesPIUReheat::AirTerminalSingleDuctSeriesPIUReheat(std::
 
 } // model
 } // openstudio
-

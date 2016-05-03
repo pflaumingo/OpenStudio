@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::WeatherFileDays>;
+template class std::vector<openstudio::model::WeatherFileDays>;
 namespace openstudio {
 namespace model  {
 

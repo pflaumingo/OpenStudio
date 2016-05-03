@@ -244,5 +244,9 @@ typedef std::vector<Screen> ScreenVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SCREEN_HPP
+extern template class boost::optional<openstudio::model::Screen>;
+template<> std::vector<openstudio::model::Screen>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Screen>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Screen>;
 
+#endif // MODEL_SCREEN_HPP

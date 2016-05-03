@@ -82,5 +82,9 @@ typedef std::vector<InfraredTransparentMaterial> InfraredTransparentMaterialVect
 } // model
 } // openstudio
 
-#endif // MODEL_INFRAREDTRANSPARENTMATERIAL_HPP
+extern template class boost::optional<openstudio::model::InfraredTransparentMaterial>;
+template<> std::vector<openstudio::model::InfraredTransparentMaterial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::InfraredTransparentMaterial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::InfraredTransparentMaterial>;
 
+#endif // MODEL_INFRAREDTRANSPARENTMATERIAL_HPP

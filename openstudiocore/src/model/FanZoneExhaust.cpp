@@ -42,6 +42,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::FanZoneExhaust>;
+template class std::vector<openstudio::model::FanZoneExhaust>;
 namespace openstudio {
 namespace model {
 
@@ -432,4 +434,3 @@ FanZoneExhaust::FanZoneExhaust(std::shared_ptr<detail::FanZoneExhaust_Impl> impl
 
 } // model
 } // openstudio
-

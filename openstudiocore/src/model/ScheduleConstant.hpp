@@ -88,5 +88,9 @@ typedef std::vector<ScheduleConstant> ScheduleConstantVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SCHEDULECONSTANT_HPP
+extern template class boost::optional<openstudio::model::ScheduleConstant>;
+template<> std::vector<openstudio::model::ScheduleConstant>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ScheduleConstant>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ScheduleConstant>;
 
+#endif // MODEL_SCHEDULECONSTANT_HPP

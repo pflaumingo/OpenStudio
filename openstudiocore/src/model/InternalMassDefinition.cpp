@@ -32,6 +32,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::InternalMassDefinition>;
+template class std::vector<openstudio::model::InternalMassDefinition>;
 namespace openstudio {
 namespace model {
 
@@ -403,4 +405,3 @@ InternalMassDefinition::InternalMassDefinition(std::shared_ptr<detail::InternalM
 
 } // model
 } // openstudio
-

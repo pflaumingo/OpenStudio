@@ -206,5 +206,9 @@ typedef std::vector<BoilerSteam> BoilerSteamVector;
 } // model
 } // openstudio
 
-#endif // MODEL_BOILERSTEAM_HPP
+extern template class boost::optional<openstudio::model::BoilerSteam>;
+template<> std::vector<openstudio::model::BoilerSteam>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::BoilerSteam>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::BoilerSteam>;
 
+#endif // MODEL_BOILERSTEAM_HPP

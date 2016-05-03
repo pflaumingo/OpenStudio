@@ -200,5 +200,9 @@ typedef std::vector<BoilerHotWater> BoilerHotWaterVector;
 } // model
 } // openstudio
 
-#endif // MODEL_BOILERHOTWATER_HPP
+extern template class boost::optional<openstudio::model::BoilerHotWater>;
+template<> std::vector<openstudio::model::BoilerHotWater>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::BoilerHotWater>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::BoilerHotWater>;
 
+#endif // MODEL_BOILERHOTWATER_HPP

@@ -32,6 +32,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ChillerAbsorptionIndirect>;
+template class std::vector<openstudio::model::ChillerAbsorptionIndirect>;
 namespace openstudio {
 namespace model {
 
@@ -854,4 +856,3 @@ ChillerAbsorptionIndirect::ChillerAbsorptionIndirect(std::shared_ptr<detail::Chi
 
 } // model
 } // openstudio
-

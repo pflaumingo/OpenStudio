@@ -107,5 +107,9 @@ typedef std::vector<SetpointManagerColdest> SetpointManagerColdestVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERCOLDEST_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerColdest>;
+template<> std::vector<openstudio::model::SetpointManagerColdest>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerColdest>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerColdest>;
 
+#endif // MODEL_SETPOINTMANAGERCOLDEST_HPP

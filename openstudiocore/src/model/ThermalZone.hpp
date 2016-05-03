@@ -463,5 +463,9 @@ typedef std::vector<ThermalZone> ThermalZoneVector;
 } // model
 } // openstudio
 
-#endif // MODEL_THERMALZONE_HPP
+extern template class boost::optional<openstudio::model::ThermalZone>;
+template<> std::vector<openstudio::model::ThermalZone>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ThermalZone>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ThermalZone>;
 
+#endif // MODEL_THERMALZONE_HPP

@@ -97,5 +97,9 @@ typedef std::vector<LoadProfilePlant> LoadProfilePlantVector;
 } // model
 } // openstudio
 
-#endif // MODEL_LOADPROFILEPLANT_HPP
+extern template class boost::optional<openstudio::model::LoadProfilePlant>;
+template<> std::vector<openstudio::model::LoadProfilePlant>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::LoadProfilePlant>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::LoadProfilePlant>;
 
+#endif // MODEL_LOADPROFILEPLANT_HPP

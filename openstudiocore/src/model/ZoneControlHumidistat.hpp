@@ -99,5 +99,9 @@ typedef std::vector<ZoneControlHumidistat> ZoneControlHumidistatVector;
 } // model
 } // openstudio
 
-#endif // MODEL_ZONECONTROLHUMIDISTAT_HPP
+extern template class boost::optional<openstudio::model::ZoneControlHumidistat>;
+template<> std::vector<openstudio::model::ZoneControlHumidistat>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneControlHumidistat>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneControlHumidistat>;
 
+#endif // MODEL_ZONECONTROLHUMIDISTAT_HPP

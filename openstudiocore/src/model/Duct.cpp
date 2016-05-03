@@ -28,6 +28,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Duct>;
+template class std::vector<openstudio::model::Duct>;
 namespace openstudio {
 namespace model {
 
@@ -110,4 +112,3 @@ Duct::Duct(std::shared_ptr<detail::Duct_Impl> impl)
 
 } // model
 } // openstudio
-

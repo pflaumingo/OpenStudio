@@ -143,5 +143,9 @@ typedef std::vector<CurveCubic> CurveCubicVector;
 } // model
 } // openstudio
 
-#endif // MODEL_CURVECUBIC_HPP
+extern template class boost::optional<openstudio::model::CurveCubic>;
+template<> std::vector<openstudio::model::CurveCubic>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveCubic>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveCubic>;
 
+#endif // MODEL_CURVECUBIC_HPP

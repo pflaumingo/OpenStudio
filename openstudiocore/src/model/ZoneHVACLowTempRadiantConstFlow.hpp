@@ -194,5 +194,9 @@ typedef std::vector<ZoneHVACLowTempRadiantConstFlow> ZoneHVACLowTempRadiantConst
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACLOWTEMPRADIANTCONSTFLOW_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACLowTempRadiantConstFlow>;
+template<> std::vector<openstudio::model::ZoneHVACLowTempRadiantConstFlow>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACLowTempRadiantConstFlow>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACLowTempRadiantConstFlow>;
 
+#endif // MODEL_ZONEHVACLOWTEMPRADIANTCONSTFLOW_HPP

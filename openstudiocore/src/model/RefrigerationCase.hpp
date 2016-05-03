@@ -487,5 +487,9 @@ typedef std::vector<RefrigerationCase> RefrigerationCaseVector;
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONCASE_HPP
+extern template class boost::optional<openstudio::model::RefrigerationCase>;
+template<> std::vector<openstudio::model::RefrigerationCase>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationCase>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationCase>;
 
+#endif // MODEL_REFRIGERATIONCASE_HPP

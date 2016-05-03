@@ -184,5 +184,9 @@ typedef std::vector<GroundHeatExchangerVertical> GroundHeatExchangerVerticalVect
 } // model
 } // openstudio
 
-#endif // MODEL_GROUNDHEATEXCHANGERVERTICAL_HPP
+extern template class boost::optional<openstudio::model::GroundHeatExchangerVertical>;
+template<> std::vector<openstudio::model::GroundHeatExchangerVertical>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::GroundHeatExchangerVertical>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::GroundHeatExchangerVertical>;
 
+#endif // MODEL_GROUNDHEATEXCHANGERVERTICAL_HPP

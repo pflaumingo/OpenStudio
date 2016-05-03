@@ -37,6 +37,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::WaterHeaterStratified>;
+template class std::vector<openstudio::model::WaterHeaterStratified>;
 namespace openstudio {
 namespace model {
 
@@ -1720,4 +1722,3 @@ WaterHeaterStratified::WaterHeaterStratified(std::shared_ptr<detail::WaterHeater
 
 } // model
 } // openstudio
-

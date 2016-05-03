@@ -230,5 +230,9 @@ typedef std::vector<SolarCollectorPerformanceIntegralCollectorStorage> SolarColl
 } // model
 } // openstudio
 
-#endif // MODEL_SOLARCOLLECTORPERFORMANCEINTEGRALCOLLECTORSTORAGE_HPP
+extern template class boost::optional<openstudio::model::SolarCollectorPerformanceIntegralCollectorStorage>;
+template<> std::vector<openstudio::model::SolarCollectorPerformanceIntegralCollectorStorage>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SolarCollectorPerformanceIntegralCollectorStorage>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SolarCollectorPerformanceIntegralCollectorStorage>;
 
+#endif // MODEL_SOLARCOLLECTORPERFORMANCEINTEGRALCOLLECTORSTORAGE_HPP

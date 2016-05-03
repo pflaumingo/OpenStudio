@@ -28,6 +28,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::DesignSpecificationZoneAirDistribution>;
+template class std::vector<openstudio::model::DesignSpecificationZoneAirDistribution>;
 namespace openstudio {
 namespace model {
 
@@ -356,4 +358,3 @@ DesignSpecificationZoneAirDistribution::DesignSpecificationZoneAirDistribution(s
 
 } // model
 } // openstudio
-

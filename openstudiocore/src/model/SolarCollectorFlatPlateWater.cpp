@@ -42,6 +42,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SolarCollectorFlatPlateWater>;
+template class std::vector<openstudio::model::SolarCollectorFlatPlateWater>;
 namespace openstudio {
 namespace model {
 
@@ -270,4 +272,3 @@ SolarCollectorFlatPlateWater::SolarCollectorFlatPlateWater(std::shared_ptr<detai
 
 } // model
 } // openstudio
-

@@ -30,6 +30,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerFollowSystemNodeTemperature>;
+template class std::vector<openstudio::model::SetpointManagerFollowSystemNodeTemperature>;
 namespace openstudio {
 namespace model {
 
@@ -262,4 +264,3 @@ SetpointManagerFollowSystemNodeTemperature::SetpointManagerFollowSystemNodeTempe
 
 } // model
 } // openstudio
-

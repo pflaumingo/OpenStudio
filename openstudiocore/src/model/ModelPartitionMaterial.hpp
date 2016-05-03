@@ -70,4 +70,9 @@ typedef std::vector<ModelPartitionMaterial> ModelPartitionMaterialVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::ModelPartitionMaterial>;
+template<> std::vector<openstudio::model::ModelPartitionMaterial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ModelPartitionMaterial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ModelPartitionMaterial>;
+
 #endif // MODEL_MODELPARTITIONMATERIAL_HPP

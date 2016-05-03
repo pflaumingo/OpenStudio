@@ -126,5 +126,6 @@ typedef boost::optional<WaterToAirComponent> OptionalWaterToAirComponent;
 
 } // openstudio
 
-#endif // MODEL_WATERTOAIRCOMPONENT_HPP
+extern template class boost::optional<openstudio::model::WaterToAirComponent>;
 
+#endif // MODEL_WATERTOAIRCOMPONENT_HPP

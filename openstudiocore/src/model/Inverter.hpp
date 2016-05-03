@@ -78,5 +78,9 @@ typedef std::vector<Inverter> InverterVector;
 } // model
 } // openstudio
 
-#endif // MODEL_INVERTER_HPP
+extern template class boost::optional<openstudio::model::Inverter>;
+template<> std::vector<openstudio::model::Inverter>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Inverter>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Inverter>;
 
+#endif // MODEL_INVERTER_HPP

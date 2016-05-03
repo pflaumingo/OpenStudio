@@ -32,6 +32,8 @@
 #include "../utilities/data/TimeSeries.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ScheduleFixedInterval>;
+template class std::vector<openstudio::model::ScheduleFixedInterval>;
 namespace openstudio {
 namespace model {
 
@@ -343,4 +345,3 @@ ScheduleFixedInterval::ScheduleFixedInterval(std::shared_ptr<detail::ScheduleFix
 
 } // model
 } // openstudio
-

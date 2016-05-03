@@ -176,5 +176,9 @@ typedef std::vector<IlluminanceMap> IlluminanceMapVector;
 } // model
 } // openstudio
 
-#endif // MODEL_ILLUMINANCEMAP_HPP
+extern template class boost::optional<openstudio::model::IlluminanceMap>;
+template<> std::vector<openstudio::model::IlluminanceMap>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::IlluminanceMap>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::IlluminanceMap>;
 
+#endif // MODEL_ILLUMINANCEMAP_HPP

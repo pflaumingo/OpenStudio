@@ -25,6 +25,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Curve>;
+template class std::vector<openstudio::model::Curve>;
 namespace openstudio {
 namespace model {
 
@@ -110,4 +112,3 @@ Curve::Curve(std::shared_ptr<detail::Curve_Impl> impl)
 
 } // model
 } // openstudio
-

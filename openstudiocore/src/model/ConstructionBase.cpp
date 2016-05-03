@@ -41,6 +41,8 @@
 
 using std::vector;
 
+template class boost::optional<openstudio::model::ConstructionBase>;
+template class std::vector<openstudio::model::ConstructionBase>;
 namespace openstudio {
 namespace model {
 

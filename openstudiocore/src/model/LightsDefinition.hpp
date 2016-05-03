@@ -174,5 +174,9 @@ typedef std::vector<LightsDefinition> LightsDefinitionVector;
 } // model
 } // openstudio
 
-#endif // MODEL_LIGHTSDEFINITION_HPP
+extern template class boost::optional<openstudio::model::LightsDefinition>;
+template<> std::vector<openstudio::model::LightsDefinition>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::LightsDefinition>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::LightsDefinition>;
 
+#endif // MODEL_LIGHTSDEFINITION_HPP

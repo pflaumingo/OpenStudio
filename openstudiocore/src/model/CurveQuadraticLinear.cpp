@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveQuadraticLinear>;
+template class std::vector<openstudio::model::CurveQuadraticLinear>;
 namespace openstudio {
 namespace model {
 
@@ -491,4 +493,3 @@ CurveQuadraticLinear::CurveQuadraticLinear(std::shared_ptr<detail::CurveQuadrati
 
 } // model
 } // openstudio
-

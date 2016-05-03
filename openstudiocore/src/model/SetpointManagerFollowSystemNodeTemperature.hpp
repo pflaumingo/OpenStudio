@@ -117,5 +117,9 @@ typedef std::vector<SetpointManagerFollowSystemNodeTemperature> SetpointManagerF
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERFOLLOWSYSTEMNODETEMPERATURE_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerFollowSystemNodeTemperature>;
+template<> std::vector<openstudio::model::SetpointManagerFollowSystemNodeTemperature>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerFollowSystemNodeTemperature>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerFollowSystemNodeTemperature>;
 
+#endif // MODEL_SETPOINTMANAGERFOLLOWSYSTEMNODETEMPERATURE_HPP

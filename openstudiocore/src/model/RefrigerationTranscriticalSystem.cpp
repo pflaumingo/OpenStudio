@@ -44,6 +44,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationTranscriticalSystem>;
+template class std::vector<openstudio::model::RefrigerationTranscriticalSystem>;
 namespace openstudio {
 namespace model {
 
@@ -809,4 +811,3 @@ RefrigerationTranscriticalSystem::RefrigerationTranscriticalSystem(std::shared_p
 
 } // model
 } // openstudio
-

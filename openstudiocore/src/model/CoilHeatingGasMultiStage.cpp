@@ -37,6 +37,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
 
+template class boost::optional<openstudio::model::CoilHeatingGasMultiStage>;
+template class std::vector<openstudio::model::CoilHeatingGasMultiStage>;
 namespace openstudio {
 namespace model {
 
@@ -275,4 +277,3 @@ CoilHeatingGasMultiStage::CoilHeatingGasMultiStage(std::shared_ptr<detail::CoilH
 
 } // model
 } // openstudio
-

@@ -143,5 +143,9 @@ typedef std::vector<CurveExponentialSkewNormal> CurveExponentialSkewNormalVector
 } // model
 } // openstudio
 
-#endif // MODEL_CURVEEXPONENTIALSKEWNORMAL_HPP
+extern template class boost::optional<openstudio::model::CurveExponentialSkewNormal>;
+template<> std::vector<openstudio::model::CurveExponentialSkewNormal>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveExponentialSkewNormal>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveExponentialSkewNormal>;
 
+#endif // MODEL_CURVEEXPONENTIALSKEWNORMAL_HPP

@@ -23,6 +23,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PlantEquipmentOperationOutdoorRelativeHumidity>;
+template class std::vector<openstudio::model::PlantEquipmentOperationOutdoorRelativeHumidity>;
 namespace openstudio {
 namespace model {
 
@@ -92,4 +94,3 @@ PlantEquipmentOperationOutdoorRelativeHumidity::PlantEquipmentOperationOutdoorRe
 
 } // model
 } // openstudio
-

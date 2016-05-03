@@ -151,5 +151,9 @@ typedef std::vector<SetpointManagerOutdoorAirPretreat> SetpointManagerOutdoorAir
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGEROUTDOORAIRPRETREAT_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerOutdoorAirPretreat>;
+template<> std::vector<openstudio::model::SetpointManagerOutdoorAirPretreat>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerOutdoorAirPretreat>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerOutdoorAirPretreat>;
 
+#endif // MODEL_SETPOINTMANAGEROUTDOORAIRPRETREAT_HPP

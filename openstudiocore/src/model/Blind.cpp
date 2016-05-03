@@ -29,6 +29,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Blind>;
+template class std::vector<openstudio::model::Blind>;
 namespace openstudio {
 namespace model {
 
@@ -1875,4 +1877,3 @@ Blind::Blind(std::shared_ptr<detail::Blind_Impl> impl)
 
 } // model
 } // openstudio
-

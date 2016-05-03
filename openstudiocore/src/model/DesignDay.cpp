@@ -31,6 +31,8 @@
 #include <utilities/idd/IddFactory.hxx>
 
 
+template class boost::optional<openstudio::model::DesignDay>;
+template class std::vector<openstudio::model::DesignDay>;
 namespace openstudio {
 
 namespace model  {

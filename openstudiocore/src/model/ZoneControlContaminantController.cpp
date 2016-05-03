@@ -31,6 +31,8 @@
 #include <utilities/idd/OS_ZoneControl_ContaminantController_FieldEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneControlContaminantController>;
+template class std::vector<openstudio::model::ZoneControlContaminantController>;
 namespace openstudio {
 namespace model {
 
@@ -286,4 +288,3 @@ ZoneControlContaminantController::ZoneControlContaminantController(std::shared_p
 
 } // model
 } // openstudio
-

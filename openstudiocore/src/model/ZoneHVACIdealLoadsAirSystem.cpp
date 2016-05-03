@@ -34,6 +34,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACIdealLoadsAirSystem>;
+template class std::vector<openstudio::model::ZoneHVACIdealLoadsAirSystem>;
 namespace openstudio {
 namespace model {
 
@@ -1485,4 +1487,3 @@ ZoneHVACIdealLoadsAirSystem::ZoneHVACIdealLoadsAirSystem(std::shared_ptr<detail:
 
 } // model
 } // openstudio
-

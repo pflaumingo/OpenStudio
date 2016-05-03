@@ -39,6 +39,8 @@
 #include <utilities/idd/OS_Coil_Cooling_CooledBeam_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::CoilCoolingCooledBeam>;
+template class std::vector<openstudio::model::CoilCoolingCooledBeam>;
 namespace openstudio {
 namespace model {
 
@@ -543,4 +545,3 @@ CoilCoolingCooledBeam::CoilCoolingCooledBeam(std::shared_ptr<detail::CoilCooling
 
 } // model
 } // openstudio
-

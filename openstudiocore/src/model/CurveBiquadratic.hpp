@@ -169,4 +169,9 @@ typedef std::vector<CurveBiquadratic> CurveBiquadraticVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::CurveBiquadratic>;
+template<> std::vector<openstudio::model::CurveBiquadratic>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveBiquadratic>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveBiquadratic>;
+
 #endif // MODEL_CURVEBIQUADRATIC_HPP

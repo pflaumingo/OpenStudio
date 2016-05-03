@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveTriquadratic>;
+template class std::vector<openstudio::model::CurveTriquadratic>;
 namespace openstudio {
 namespace model {
 
@@ -1429,4 +1431,3 @@ CurveTriquadratic::CurveTriquadratic(std::shared_ptr<detail::CurveTriquadratic_I
 
 } // model
 } // openstudio
-

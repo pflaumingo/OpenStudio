@@ -56,6 +56,8 @@
 #include "../utilities/units/Quantity.hpp"
 #include "../utilities/units/OSOptionalQuantity.hpp"
 
+template class boost::optional<openstudio::model::FanConstantVolume>;
+template class std::vector<openstudio::model::FanConstantVolume>;
 namespace openstudio {
 
 namespace model {
@@ -572,4 +574,3 @@ void FanConstantVolume::autosizeMaximumFlowRate() {
 
 } // model
 } // openstudio
-

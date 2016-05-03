@@ -46,6 +46,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalSingleDuctConstantVolumeFourPipeInduction>;
+template class std::vector<openstudio::model::AirTerminalSingleDuctConstantVolumeFourPipeInduction>;
 namespace openstudio {
 namespace model {
 
@@ -766,4 +768,3 @@ AirTerminalSingleDuctConstantVolumeFourPipeInduction::AirTerminalSingleDuctConst
 
 } // model
 } // openstudio
-

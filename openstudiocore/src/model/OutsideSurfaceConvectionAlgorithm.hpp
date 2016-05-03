@@ -100,4 +100,6 @@ typedef boost::optional<OutsideSurfaceConvectionAlgorithm> OptionalOutsideSurfac
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::OutsideSurfaceConvectionAlgorithm>;
+
 #endif // MODEL_OUTSIDESURFACECONVECTIONALGORITHM_HPP

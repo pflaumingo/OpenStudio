@@ -125,5 +125,9 @@ typedef std::vector<CoilHeatingWaterBaseboardRadiant> CoilHeatingWaterBaseboardR
 } // model
 } // openstudio
 
-#endif // MODEL_COILHEATINGWATERBASEBOARDRADIANT_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingWaterBaseboardRadiant>;
+template<> std::vector<openstudio::model::CoilHeatingWaterBaseboardRadiant>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingWaterBaseboardRadiant>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingWaterBaseboardRadiant>;
 
+#endif // MODEL_COILHEATINGWATERBASEBOARDRADIANT_HPP

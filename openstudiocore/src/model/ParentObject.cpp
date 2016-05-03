@@ -31,6 +31,8 @@
 
 #include <deque>
 
+template class boost::optional<openstudio::model::ParentObject>;
+template class std::vector<openstudio::model::ParentObject>;
 namespace openstudio {
 namespace model {
 

@@ -29,6 +29,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::DaylightRedirectionDevice>;
+template class std::vector<openstudio::model::DaylightRedirectionDevice>;
 namespace openstudio {
 namespace model {
 
@@ -135,4 +137,3 @@ DaylightRedirectionDevice::DaylightRedirectionDevice(std::shared_ptr<detail::Day
 
 } // model
 } // openstudio
-

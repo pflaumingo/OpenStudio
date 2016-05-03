@@ -35,6 +35,7 @@
 #include "Mixer_Impl.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::WaterToAirComponent>;
 namespace openstudio {
 
 namespace model {
@@ -464,4 +465,3 @@ bool WaterToAirComponent::removeFromPlantLoop()
 } // model
 
 } // openstudio
-

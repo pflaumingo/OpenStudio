@@ -33,6 +33,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ScheduleBase>;
+template class std::vector<openstudio::model::ScheduleBase>;
 namespace openstudio {
 namespace model {
 
@@ -218,4 +220,3 @@ ScheduleBase::ScheduleBase(IddObjectType type, const Model &model)
 
 } // model
 } // openstudio
-

@@ -35,6 +35,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneAirContaminantBalance>;
+template class std::vector<openstudio::model::ZoneAirContaminantBalance>;
 namespace openstudio {
 namespace model {
 
@@ -215,4 +217,3 @@ ZoneAirContaminantBalance::ZoneAirContaminantBalance(Model& model)
 
 } // model
 } // openstudio
-

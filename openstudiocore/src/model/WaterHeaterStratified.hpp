@@ -390,5 +390,9 @@ typedef std::vector<WaterHeaterStratified> WaterHeaterStratifiedVector;
 } // model
 } // openstudio
 
-#endif // MODEL_WATERHEATERSTRATIFIED_HPP
+extern template class boost::optional<openstudio::model::WaterHeaterStratified>;
+template<> std::vector<openstudio::model::WaterHeaterStratified>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::WaterHeaterStratified>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::WaterHeaterStratified>;
 
+#endif // MODEL_WATERHEATERSTRATIFIED_HPP

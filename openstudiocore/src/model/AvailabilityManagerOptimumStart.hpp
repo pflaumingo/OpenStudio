@@ -136,5 +136,9 @@ typedef std::vector<AvailabilityManagerOptimumStart> AvailabilityManagerOptimumS
 } // model
 } // openstudio
 
-#endif // MODEL_AVAILABILITYMANAGEROPTIMUMSTART_HPP
+extern template class boost::optional<openstudio::model::AvailabilityManagerOptimumStart>;
+template<> std::vector<openstudio::model::AvailabilityManagerOptimumStart>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AvailabilityManagerOptimumStart>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AvailabilityManagerOptimumStart>;
 
+#endif // MODEL_AVAILABILITYMANAGEROPTIMUMSTART_HPP

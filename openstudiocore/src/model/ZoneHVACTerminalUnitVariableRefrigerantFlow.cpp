@@ -41,6 +41,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACTerminalUnitVariableRefrigerantFlow>;
+template class std::vector<openstudio::model::ZoneHVACTerminalUnitVariableRefrigerantFlow>;
 namespace openstudio {
 
 namespace model {
@@ -706,4 +708,3 @@ ZoneHVACTerminalUnitVariableRefrigerantFlow::ZoneHVACTerminalUnitVariableRefrige
 
 } // model
 } // openstudio
-

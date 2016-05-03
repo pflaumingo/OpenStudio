@@ -145,5 +145,9 @@ typedef std::vector<CoilHeatingDXMultiSpeedStageData> CoilHeatingDXMultiSpeedSta
 } // model
 } // openstudio
 
-#endif // MODEL_COILHEATINGDXMULTISPEEDSTAGEDATA_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingDXMultiSpeedStageData>;
+template<> std::vector<openstudio::model::CoilHeatingDXMultiSpeedStageData>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingDXMultiSpeedStageData>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingDXMultiSpeedStageData>;
 
+#endif // MODEL_COILHEATINGDXMULTISPEEDSTAGEDATA_HPP

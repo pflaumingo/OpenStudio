@@ -136,5 +136,9 @@ typedef std::vector<HeatPumpWaterToWaterEquationFitHeating> HeatPumpWaterToWater
 } // model
 } // openstudio
 
-#endif // MODEL_HEATPUMPWATERTOWATEREQUATIONFITHEATING_HPP
+extern template class boost::optional<openstudio::model::HeatPumpWaterToWaterEquationFitHeating>;
+template<> std::vector<openstudio::model::HeatPumpWaterToWaterEquationFitHeating>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::HeatPumpWaterToWaterEquationFitHeating>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::HeatPumpWaterToWaterEquationFitHeating>;
 
+#endif // MODEL_HEATPUMPWATERTOWATEREQUATIONFITHEATING_HPP

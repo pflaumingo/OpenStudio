@@ -29,6 +29,7 @@
 
 #include "../utilities/core/Containers.hpp"
 
+template class std::vector<openstudio::model::ScheduleType>;
 namespace openstudio {
 namespace model {
 

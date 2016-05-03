@@ -29,6 +29,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveFanPressureRise>;
+template class std::vector<openstudio::model::CurveFanPressureRise>;
 namespace openstudio {
 namespace model {
 
@@ -324,4 +326,3 @@ CurveFanPressureRise::CurveFanPressureRise(std::shared_ptr<detail::CurveFanPress
 
 } // model
 } // openstudio
-

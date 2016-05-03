@@ -260,5 +260,9 @@ typedef std::vector<StandardOpaqueMaterial> StadardOpaqueMaterialVector;
 } // model
 } // openstudio
 
-#endif // MODEL_STANDARDOPAQUEMATERIAL_HPP
+extern template class boost::optional<openstudio::model::StandardOpaqueMaterial>;
+template<> std::vector<openstudio::model::StandardOpaqueMaterial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::StandardOpaqueMaterial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::StandardOpaqueMaterial>;
 
+#endif // MODEL_STANDARDOPAQUEMATERIAL_HPP

@@ -113,5 +113,6 @@ typedef boost::optional<Splitter> OptionalSplitter;
 
 } // openstudio
 
-#endif // MODEL_SPLITTER_HPP
+extern template class boost::optional<openstudio::model::Splitter>;
 
+#endif // MODEL_SPLITTER_HPP

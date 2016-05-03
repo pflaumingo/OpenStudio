@@ -32,6 +32,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AvailabilityManagerNightCycle>;
+template class std::vector<openstudio::model::AvailabilityManagerNightCycle>;
 namespace openstudio {
 namespace model {
 
@@ -339,4 +341,3 @@ AvailabilityManagerNightCycle::AvailabilityManagerNightCycle(std::shared_ptr<det
 
 } // model
 } // openstudio
-

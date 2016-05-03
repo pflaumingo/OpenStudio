@@ -37,6 +37,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ElectricEquipment>;
+template class std::vector<openstudio::model::ElectricEquipment>;
 namespace openstudio {
 namespace model {
 
@@ -430,4 +432,3 @@ ElectricEquipment::ElectricEquipment(std::shared_ptr<detail::ElectricEquipment_I
 
 } // model
 } // openstudio
-

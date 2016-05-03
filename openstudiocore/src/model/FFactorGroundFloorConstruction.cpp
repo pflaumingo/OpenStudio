@@ -29,6 +29,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::FFactorGroundFloorConstruction>;
+template class std::vector<openstudio::model::FFactorGroundFloorConstruction>;
 namespace openstudio {
 namespace model {
 

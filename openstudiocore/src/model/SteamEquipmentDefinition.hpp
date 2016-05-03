@@ -155,5 +155,9 @@ typedef std::vector<SteamEquipmentDefinition> SteamEquipmentDefinitionVector;
 } // model
 } // openstudio
 
-#endif // MODEL_STEAMEQUIPMENTDEFINITION_HPP
+extern template class boost::optional<openstudio::model::SteamEquipmentDefinition>;
+template<> std::vector<openstudio::model::SteamEquipmentDefinition>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SteamEquipmentDefinition>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SteamEquipmentDefinition>;
 
+#endif // MODEL_STEAMEQUIPMENTDEFINITION_HPP

@@ -167,4 +167,9 @@ typedef std::vector<LifeCycleCost> LifeCycleCostVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::LifeCycleCost>;
+template<> std::vector<openstudio::model::LifeCycleCost>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::LifeCycleCost>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::LifeCycleCost>;
+
 #endif // MODEL_LIFECYCLECOST_HPP

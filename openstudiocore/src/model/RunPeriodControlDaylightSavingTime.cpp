@@ -30,6 +30,8 @@
 #include "../utilities/time/Date.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RunPeriodControlDaylightSavingTime>;
+template class std::vector<openstudio::model::RunPeriodControlDaylightSavingTime>;
 namespace openstudio {
 namespace model {
 
@@ -336,4 +338,3 @@ RunPeriodControlDaylightSavingTime::RunPeriodControlDaylightSavingTime(Model& mo
 
 } // model
 } // openstudio
-

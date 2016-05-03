@@ -105,5 +105,9 @@ typedef std::vector<SetpointManagerScheduledDualSetpoint> SetpointManagerSchedul
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERSCHEDULEDDUALSETPOINT_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerScheduledDualSetpoint>;
+template<> std::vector<openstudio::model::SetpointManagerScheduledDualSetpoint>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerScheduledDualSetpoint>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerScheduledDualSetpoint>;
 
+#endif // MODEL_SETPOINTMANAGERSCHEDULEDDUALSETPOINT_HPP

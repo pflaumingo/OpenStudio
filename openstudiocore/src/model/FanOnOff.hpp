@@ -150,5 +150,9 @@ typedef std::vector<FanOnOff> FanOnOffVector;
 } // model
 } // openstudio
 
-#endif // MODEL_FANONOFF_HPP
+extern template class boost::optional<openstudio::model::FanOnOff>;
+template<> std::vector<openstudio::model::FanOnOff>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::FanOnOff>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::FanOnOff>;
 
+#endif // MODEL_FANONOFF_HPP

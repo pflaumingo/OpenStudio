@@ -41,6 +41,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PumpVariableSpeed>;
+template class std::vector<openstudio::model::PumpVariableSpeed>;
 namespace openstudio {
 namespace model {
 

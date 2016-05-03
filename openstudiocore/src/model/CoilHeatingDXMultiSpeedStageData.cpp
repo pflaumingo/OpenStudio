@@ -33,6 +33,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilHeatingDXMultiSpeedStageData>;
+template class std::vector<openstudio::model::CoilHeatingDXMultiSpeedStageData>;
 namespace openstudio {
 namespace model {
 
@@ -515,4 +517,3 @@ CoilHeatingDXMultiSpeedStageData::CoilHeatingDXMultiSpeedStageData(std::shared_p
 
 } // model
 } // openstudio
-

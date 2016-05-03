@@ -39,6 +39,8 @@
 #include <utilities/idd/IddFactory.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilSystemCoolingWaterHeatExchangerAssisted>;
+template class std::vector<openstudio::model::CoilSystemCoolingWaterHeatExchangerAssisted>;
 namespace openstudio {
 namespace model {
 
@@ -196,4 +198,3 @@ CoilSystemCoolingWaterHeatExchangerAssisted::CoilSystemCoolingWaterHeatExchanger
 
 } // model
 } // openstudio
-

@@ -37,6 +37,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CentralHeatPumpSystem>;
+template class std::vector<openstudio::model::CentralHeatPumpSystem>;
 namespace openstudio {
 namespace model {
 
@@ -302,4 +304,3 @@ CentralHeatPumpSystem::CentralHeatPumpSystem(std::shared_ptr<detail::CentralHeat
 
 } // model
 } // openstudio
-

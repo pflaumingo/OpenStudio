@@ -114,5 +114,6 @@ typedef boost::optional<ZoneHVACComponent> OptionalZoneHVACComponent;
 
 } // openstudio
 
-#endif // MODEL_ZONEHVACCOMPONENT_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACComponent>;
 
+#endif // MODEL_ZONEHVACCOMPONENT_HPP

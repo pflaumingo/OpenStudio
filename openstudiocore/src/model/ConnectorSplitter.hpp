@@ -88,5 +88,6 @@ typedef boost::optional<ConnectorSplitter> OptionalConnectorSplitter;
 } // model
 } // openstudio
 
-#endif // MODEL_CONNECTORSPLITTER_HPP
+extern template class boost::optional<openstudio::model::ConnectorSplitter>;
 
+#endif // MODEL_CONNECTORSPLITTER_HPP

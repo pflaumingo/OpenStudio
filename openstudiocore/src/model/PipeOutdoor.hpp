@@ -106,5 +106,9 @@ typedef std::vector<PipeOutdoor> PipeOutdoorVector;
 } // model
 } // openstudio
 
-#endif // MODEL_PIPEOUTDOOR_HPP
+extern template class boost::optional<openstudio::model::PipeOutdoor>;
+template<> std::vector<openstudio::model::PipeOutdoor>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PipeOutdoor>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PipeOutdoor>;
 
+#endif // MODEL_PIPEOUTDOOR_HPP

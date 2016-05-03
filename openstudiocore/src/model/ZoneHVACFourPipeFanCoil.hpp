@@ -262,5 +262,9 @@ typedef std::vector<ZoneHVACFourPipeFanCoil> ZoneHVACFourPipeFanCoilVector;
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACFOURPIPEFANCOIL_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACFourPipeFanCoil>;
+template<> std::vector<openstudio::model::ZoneHVACFourPipeFanCoil>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACFourPipeFanCoil>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACFourPipeFanCoil>;
 
+#endif // MODEL_ZONEHVACFOURPIPEFANCOIL_HPP

@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::LuminaireDefinition>;
+template class std::vector<openstudio::model::LuminaireDefinition>;
 namespace openstudio {
 namespace model {
 
@@ -355,4 +357,3 @@ LuminaireDefinition::LuminaireDefinition(std::shared_ptr<detail::LuminaireDefini
 
 } // model
 } // openstudio
-

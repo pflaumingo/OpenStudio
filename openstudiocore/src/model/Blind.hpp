@@ -391,5 +391,9 @@ typedef std::vector<Blind> BlindVector;
 } // model
 } // openstudio
 
-#endif // MODEL_BLIND_HPP
+extern template class boost::optional<openstudio::model::Blind>;
+template<> std::vector<openstudio::model::Blind>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Blind>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Blind>;
 
+#endif // MODEL_BLIND_HPP

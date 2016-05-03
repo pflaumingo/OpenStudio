@@ -259,5 +259,9 @@ typedef std::vector<RefrigerationCondenserEvaporativeCooled> RefrigerationConden
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONCONDENSEREVAPORATIVECOOLED_HPP
+extern template class boost::optional<openstudio::model::RefrigerationCondenserEvaporativeCooled>;
+template<> std::vector<openstudio::model::RefrigerationCondenserEvaporativeCooled>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationCondenserEvaporativeCooled>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationCondenserEvaporativeCooled>;
 
+#endif // MODEL_REFRIGERATIONCONDENSEREVAPORATIVECOOLED_HPP

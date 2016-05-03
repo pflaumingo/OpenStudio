@@ -32,6 +32,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass>;
+template class std::vector<openstudio::model::AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass>;
 namespace openstudio {
 namespace model {
 
@@ -739,4 +741,3 @@ AirLoopHVACUnitaryHeatCoolVAVChangeoverBypass::AirLoopHVACUnitaryHeatCoolVAVChan
 
 } // model
 } // openstudio
-

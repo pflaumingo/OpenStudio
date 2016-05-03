@@ -140,5 +140,9 @@ typedef std::vector<ZoneHVACDehumidifierDX> ZoneHVACDehumidifierDXVector;
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACDEHUMIDIFIERDX_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACDehumidifierDX>;
+template<> std::vector<openstudio::model::ZoneHVACDehumidifierDX>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACDehumidifierDX>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACDehumidifierDX>;
 
+#endif // MODEL_ZONEHVACDEHUMIDIFIERDX_HPP

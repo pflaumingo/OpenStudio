@@ -160,5 +160,9 @@ typedef std::vector<ElectricLoadCenterDistribution> ElectricLoadCenterDistributi
 } // model
 } // openstudio
 
-#endif // MODEL_ELECTRICLOADCENTERDISTRIBUTION_HPP
+extern template class boost::optional<openstudio::model::ElectricLoadCenterDistribution>;
+template<> std::vector<openstudio::model::ElectricLoadCenterDistribution>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ElectricLoadCenterDistribution>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ElectricLoadCenterDistribution>;
 
+#endif // MODEL_ELECTRICLOADCENTERDISTRIBUTION_HPP

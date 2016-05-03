@@ -26,6 +26,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerWarmestTemperatureFlow>;
+template class std::vector<openstudio::model::SetpointManagerWarmestTemperatureFlow>;
 namespace openstudio {
 namespace model {
 
@@ -227,4 +229,3 @@ SetpointManagerWarmestTemperatureFlow::SetpointManagerWarmestTemperatureFlow(std
 
 } // model
 } // openstudio
-

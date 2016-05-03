@@ -109,5 +109,9 @@ typedef std::vector<SetpointManagerMultiZoneMinimumHumidityAverage> SetpointMana
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERMULTIZONEMINIMUMHUMIDITYAVERAGE_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerMultiZoneMinimumHumidityAverage>;
+template<> std::vector<openstudio::model::SetpointManagerMultiZoneMinimumHumidityAverage>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerMultiZoneMinimumHumidityAverage>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerMultiZoneMinimumHumidityAverage>;
 
+#endif // MODEL_SETPOINTMANAGERMULTIZONEMINIMUMHUMIDITYAVERAGE_HPP

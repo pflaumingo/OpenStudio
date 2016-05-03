@@ -30,6 +30,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerMultiZoneMinimumHumidityAverage>;
+template class std::vector<openstudio::model::SetpointManagerMultiZoneMinimumHumidityAverage>;
 namespace openstudio {
 namespace model {
 
@@ -206,4 +208,3 @@ SetpointManagerMultiZoneMinimumHumidityAverage::SetpointManagerMultiZoneMinimumH
 
 } // model
 } // openstudio
-

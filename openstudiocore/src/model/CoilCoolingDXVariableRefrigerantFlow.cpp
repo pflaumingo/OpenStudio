@@ -38,6 +38,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilCoolingDXVariableRefrigerantFlow>;
+template class std::vector<openstudio::model::CoilCoolingDXVariableRefrigerantFlow>;
 namespace openstudio {
 
 namespace model {
@@ -365,4 +367,3 @@ CoilCoolingDXVariableRefrigerantFlow::CoilCoolingDXVariableRefrigerantFlow(std::
 
 } // model
 } // openstudio
-

@@ -100,4 +100,6 @@ typedef boost::optional<Timestep> OptionalTimestep;
 
 } // openstudio
 
+extern template class boost::optional<openstudio::model::Timestep>;
+
 #endif // MODEL_TIMESTEP_HPP

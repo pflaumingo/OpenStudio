@@ -36,6 +36,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::EvaporativeFluidCoolerTwoSpeed>;
+template class std::vector<openstudio::model::EvaporativeFluidCoolerTwoSpeed>;
 namespace openstudio {
 namespace model {
 
@@ -1156,4 +1158,3 @@ EvaporativeFluidCoolerTwoSpeed::EvaporativeFluidCoolerTwoSpeed(std::shared_ptr<d
 
 } // model
 } // openstudio
-

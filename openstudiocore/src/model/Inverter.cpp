@@ -28,6 +28,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Inverter>;
+template class std::vector<openstudio::model::Inverter>;
 namespace openstudio {
 
 namespace model {
@@ -105,4 +107,3 @@ void Inverter::resetThermalZone() {
 } // model
 
 } // openstudio
-

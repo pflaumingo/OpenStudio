@@ -30,6 +30,8 @@
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirLoopHVACZoneMixer>;
+template class std::vector<openstudio::model::AirLoopHVACZoneMixer>;
 namespace openstudio {
 namespace model {
 

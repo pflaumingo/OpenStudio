@@ -32,6 +32,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationSubcoolerMechanical>;
+template class std::vector<openstudio::model::RefrigerationSubcoolerMechanical>;
 namespace openstudio {
 namespace model {
 
@@ -168,4 +170,3 @@ RefrigerationSubcoolerMechanical::RefrigerationSubcoolerMechanical(std::shared_p
 
 } // model
 } // openstudio
-

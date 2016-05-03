@@ -66,4 +66,9 @@ typedef std::vector<GasLayer> GasLayerVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::GasLayer>;
+template<> std::vector<openstudio::model::GasLayer>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::GasLayer>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::GasLayer>;
+
 #endif // MODEL_GASLAYER_HPP

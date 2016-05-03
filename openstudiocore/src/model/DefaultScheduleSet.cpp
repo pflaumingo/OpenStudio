@@ -28,6 +28,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::DefaultScheduleSet>;
+template class std::vector<openstudio::model::DefaultScheduleSet>;
 namespace openstudio {
 namespace model {
 
@@ -806,4 +808,3 @@ DefaultScheduleSet::DefaultScheduleSet(std::shared_ptr<detail::DefaultScheduleSe
 
 } // model
 } // openstudio
-

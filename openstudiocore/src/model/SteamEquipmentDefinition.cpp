@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SteamEquipmentDefinition>;
+template class std::vector<openstudio::model::SteamEquipmentDefinition>;
 namespace openstudio {
 namespace model {
 
@@ -412,4 +414,3 @@ SteamEquipmentDefinition::SteamEquipmentDefinition(std::shared_ptr<detail::Steam
 
 } // model
 } // openstudio
-

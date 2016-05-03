@@ -287,5 +287,12 @@ typedef std::vector<UtilityBill> UtilityBillVector;
 } // model
 } // openstudio
 
-#endif // MODEL_UTILITYBILL_HPP
+template<> std::vector<openstudio::model::BillingPeriod>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::BillingPeriod>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::BillingPeriod>;
+extern template class boost::optional<openstudio::model::UtilityBill>;
+template<> std::vector<openstudio::model::UtilityBill>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::UtilityBill>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::UtilityBill>;
 
+#endif // MODEL_UTILITYBILL_HPP

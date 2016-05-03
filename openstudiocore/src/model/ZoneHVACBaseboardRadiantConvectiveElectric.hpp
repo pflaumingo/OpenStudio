@@ -138,5 +138,9 @@ typedef std::vector<ZoneHVACBaseboardRadiantConvectiveElectric> ZoneHVACBaseboar
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACBASEBOARDRADIANTCONVECTIVEELECTRIC_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACBaseboardRadiantConvectiveElectric>;
+template<> std::vector<openstudio::model::ZoneHVACBaseboardRadiantConvectiveElectric>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACBaseboardRadiantConvectiveElectric>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACBaseboardRadiantConvectiveElectric>;
 
+#endif // MODEL_ZONEHVACBASEBOARDRADIANTCONVECTIVEELECTRIC_HPP

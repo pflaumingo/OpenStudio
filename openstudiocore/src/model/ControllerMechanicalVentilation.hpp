@@ -93,5 +93,9 @@ typedef std::vector<ControllerMechanicalVentilation> ControllerMechanicalVentila
 } // model
 } // openstudio
 
-#endif // MODEL_CONTROLLERMECHANICALVENTILATION_HPP
+extern template class boost::optional<openstudio::model::ControllerMechanicalVentilation>;
+template<> std::vector<openstudio::model::ControllerMechanicalVentilation>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ControllerMechanicalVentilation>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ControllerMechanicalVentilation>;
 
+#endif // MODEL_CONTROLLERMECHANICALVENTILATION_HPP

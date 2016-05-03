@@ -230,5 +230,9 @@ typedef std::vector<RadianceParameters> RadianceParametersVector;
 } // model
 } // openstudio
 
-#endif // MODEL_RADIANCEPARAMETERS_HPP
+extern template class boost::optional<openstudio::model::RadianceParameters>;
+template<> std::vector<openstudio::model::RadianceParameters>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RadianceParameters>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RadianceParameters>;
 
+#endif // MODEL_RADIANCEPARAMETERS_HPP

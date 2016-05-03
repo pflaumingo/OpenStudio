@@ -24,6 +24,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::HeatPumpWaterToWaterEquationFitHeating>;
+template class std::vector<openstudio::model::HeatPumpWaterToWaterEquationFitHeating>;
 namespace openstudio {
 namespace model {
 
@@ -384,4 +386,3 @@ HeatPumpWaterToWaterEquationFitHeating::HeatPumpWaterToWaterEquationFitHeating(s
 
 } // model
 } // openstudio
-

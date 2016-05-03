@@ -58,6 +58,8 @@
 
 using boost::to_upper_copy;
 
+template class boost::optional<openstudio::model::Surface>;
+template class std::vector<openstudio::model::Surface>;
 namespace openstudio {
 namespace model {
 
@@ -2368,4 +2370,3 @@ std::ostream& operator<<(std::ostream& os, const SurfaceIntersection& surfaceInt
 
 } // model
 } // openstudio
-

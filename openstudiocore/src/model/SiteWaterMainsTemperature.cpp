@@ -37,6 +37,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SiteWaterMainsTemperature>;
+template class std::vector<openstudio::model::SiteWaterMainsTemperature>;
 namespace openstudio {
 namespace model {
 
@@ -384,4 +386,3 @@ SiteWaterMainsTemperature::SiteWaterMainsTemperature(std::shared_ptr<detail::Sit
 
 } // model
 } // openstudio
-

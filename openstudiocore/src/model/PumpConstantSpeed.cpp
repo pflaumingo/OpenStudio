@@ -38,6 +38,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PumpConstantSpeed>;
+template class std::vector<openstudio::model::PumpConstantSpeed>;
 namespace openstudio {
 
 namespace model {
@@ -967,4 +969,3 @@ PumpConstantSpeed::PumpConstantSpeed(std::shared_ptr<detail::PumpConstantSpeed_I
 
 } // model
 } // openstudio
-

@@ -25,6 +25,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneAirMassFlowConservation>;
+template class std::vector<openstudio::model::ZoneAirMassFlowConservation>;
 namespace openstudio {
 namespace model {
 
@@ -251,4 +253,3 @@ ZoneAirMassFlowConservation::ZoneAirMassFlowConservation(Model& model)
 
 } // model
 } // openstudio
-

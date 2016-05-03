@@ -30,6 +30,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SiteGroundReflectance>;
+template class std::vector<openstudio::model::SiteGroundReflectance>;
 namespace openstudio {
 namespace model {
 
@@ -526,4 +528,3 @@ SiteGroundReflectance::SiteGroundReflectance(Model& model)
 
 } // model
 } // openstudio
-

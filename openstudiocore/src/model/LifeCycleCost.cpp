@@ -67,6 +67,8 @@ using namespace std;
 using std::string;
 using std::type_info;
 
+template class boost::optional<openstudio::model::LifeCycleCost>;
+template class std::vector<openstudio::model::LifeCycleCost>;
 namespace openstudio {
 namespace model  {
 namespace detail {

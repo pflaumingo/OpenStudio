@@ -34,6 +34,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::HeaderedPumpsConstantSpeed>;
+template class std::vector<openstudio::model::HeaderedPumpsConstantSpeed>;
 namespace openstudio {
 namespace model {
 
@@ -421,4 +423,3 @@ HeaderedPumpsConstantSpeed::HeaderedPumpsConstantSpeed(std::shared_ptr<detail::H
 
 } // model
 } // openstudio
-

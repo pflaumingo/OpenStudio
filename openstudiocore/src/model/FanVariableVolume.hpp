@@ -245,5 +245,9 @@ typedef std::vector<FanVariableVolume> FanVariableVolumeVector;
 
 } // openstudio
 
-#endif // MODEL_FANVARIABLEVOLUME_HPP
+extern template class boost::optional<openstudio::model::FanVariableVolume>;
+template<> std::vector<openstudio::model::FanVariableVolume>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::FanVariableVolume>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::FanVariableVolume>;
 
+#endif // MODEL_FANVARIABLEVOLUME_HPP

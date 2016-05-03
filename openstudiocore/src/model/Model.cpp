@@ -59,6 +59,8 @@ using openstudio::detail::WorkspaceObject_Impl;
 
 using std::dynamic_pointer_cast;
 
+template class boost::optional<openstudio::model::Model>;
+template class std::vector<openstudio::model::Model>;
 namespace openstudio {
 namespace model {
 

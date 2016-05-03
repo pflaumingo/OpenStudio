@@ -38,6 +38,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ThermalStorageIceDetailed>;
+template class std::vector<openstudio::model::ThermalStorageIceDetailed>;
 namespace openstudio {
 namespace model {
 
@@ -402,4 +404,3 @@ ThermalStorageIceDetailed::ThermalStorageIceDetailed(std::shared_ptr<detail::The
 
 } // model
 } // openstudio
-

@@ -34,6 +34,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed>;
+template class std::vector<openstudio::model::AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed>;
 namespace openstudio {
 namespace model {
 
@@ -965,4 +967,3 @@ AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed::AirLoopHVACUnitaryHeatPumpAirToAir
 
 } // model
 } // openstudio
-

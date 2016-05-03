@@ -133,5 +133,9 @@ MODEL_API bool isCompatible(const ScheduleTypeLimits& parentLimits,
 } // model
 } // openstudio
 
-#endif // MODEL_SCHEDULETYPELIMITS_HPP
+extern template class boost::optional<openstudio::model::ScheduleTypeLimits>;
+template<> std::vector<openstudio::model::ScheduleTypeLimits>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ScheduleTypeLimits>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ScheduleTypeLimits>;
 
+#endif // MODEL_SCHEDULETYPELIMITS_HPP

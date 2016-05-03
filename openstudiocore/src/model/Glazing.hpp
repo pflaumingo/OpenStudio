@@ -66,4 +66,9 @@ typedef std::vector<Glazing> GlazingVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::Glazing>;
+template<> std::vector<openstudio::model::Glazing>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Glazing>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Glazing>;
+
 #endif // MODEL_GLAZING_HPP

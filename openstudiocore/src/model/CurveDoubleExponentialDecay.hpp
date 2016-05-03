@@ -147,5 +147,9 @@ typedef std::vector<CurveDoubleExponentialDecay> CurveDoubleExponentialDecayVect
 } // model
 } // openstudio
 
-#endif // MODEL_CURVEDOUBLEEXPONENTIALDECAY_HPP
+extern template class boost::optional<openstudio::model::CurveDoubleExponentialDecay>;
+template<> std::vector<openstudio::model::CurveDoubleExponentialDecay>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveDoubleExponentialDecay>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveDoubleExponentialDecay>;
 
+#endif // MODEL_CURVEDOUBLEEXPONENTIALDECAY_HPP

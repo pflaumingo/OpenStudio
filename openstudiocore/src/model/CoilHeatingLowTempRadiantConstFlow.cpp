@@ -41,6 +41,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilHeatingLowTempRadiantConstFlow>;
+template class std::vector<openstudio::model::CoilHeatingLowTempRadiantConstFlow>;
 namespace openstudio {
 namespace model {
 
@@ -403,4 +405,3 @@ CoilHeatingLowTempRadiantConstFlow::CoilHeatingLowTempRadiantConstFlow(std::shar
 
 } // model
 } // openstudio
-

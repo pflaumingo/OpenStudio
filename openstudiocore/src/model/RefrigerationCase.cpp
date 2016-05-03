@@ -43,6 +43,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationCase>;
+template class std::vector<openstudio::model::RefrigerationCase>;
 namespace openstudio {
 namespace model {
 
@@ -2103,4 +2105,3 @@ RefrigerationCase::RefrigerationCase(std::shared_ptr<detail::RefrigerationCase_I
 
 } // model
 } // openstudio
-

@@ -118,5 +118,9 @@ typedef std::vector<SolarCollectorFlatPlatePhotovoltaicThermal> SolarCollectorFl
 } // model
 } // openstudio
 
-#endif // MODEL_SOLARCOLLECTORFLATPLATEPHOTOVOLTAICTHERMAL_HPP
+extern template class boost::optional<openstudio::model::SolarCollectorFlatPlatePhotovoltaicThermal>;
+template<> std::vector<openstudio::model::SolarCollectorFlatPlatePhotovoltaicThermal>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SolarCollectorFlatPlatePhotovoltaicThermal>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SolarCollectorFlatPlatePhotovoltaicThermal>;
 
+#endif // MODEL_SOLARCOLLECTORFLATPLATEPHOTOVOLTAICTHERMAL_HPP

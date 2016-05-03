@@ -29,6 +29,8 @@
 
 #include <boost/algorithm/string.hpp>
 
+template class boost::optional<openstudio::model::CurrencyType>;
+template class std::vector<openstudio::model::CurrencyType>;
 namespace openstudio {
 namespace model  {
 namespace detail {

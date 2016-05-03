@@ -215,5 +215,9 @@ typedef std::vector<Luminaire> LuminaireVector;
 } // model
 } // openstudio
 
-#endif // MODEL_LUMINAIRE_HPP
+extern template class boost::optional<openstudio::model::Luminaire>;
+template<> std::vector<openstudio::model::Luminaire>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Luminaire>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Luminaire>;
 
+#endif // MODEL_LUMINAIRE_HPP

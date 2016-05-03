@@ -26,6 +26,8 @@
 
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::WeatherFileConditionType>;
+template class std::vector<openstudio::model::WeatherFileConditionType>;
 namespace openstudio {
 namespace model  {
 

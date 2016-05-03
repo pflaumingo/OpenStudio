@@ -27,6 +27,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerWarmest>;
+template class std::vector<openstudio::model::SetpointManagerWarmest>;
 namespace openstudio {
 
 namespace model {
@@ -197,4 +199,3 @@ SetpointManagerWarmest::SetpointManagerWarmest(std::shared_ptr<detail::SetpointM
 
 } // model
 } // openstudio
-

@@ -175,5 +175,9 @@ typedef std::vector<PeopleDefinition> PeopleDefinitionVector;
 } // model
 } // openstudio
 
-#endif // MODEL_PEOPLEDEFINITION_HPP
+extern template class boost::optional<openstudio::model::PeopleDefinition>;
+template<> std::vector<openstudio::model::PeopleDefinition>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PeopleDefinition>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PeopleDefinition>;
 
+#endif // MODEL_PEOPLEDEFINITION_HPP

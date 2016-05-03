@@ -44,6 +44,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::WaterHeaterHeatPump>;
+template class std::vector<openstudio::model::WaterHeaterHeatPump>;
 namespace openstudio {
 namespace model {
 
@@ -849,4 +851,3 @@ WaterHeaterHeatPump::WaterHeaterHeatPump(std::shared_ptr<detail::WaterHeaterHeat
 
 } // model
 } // openstudio
-

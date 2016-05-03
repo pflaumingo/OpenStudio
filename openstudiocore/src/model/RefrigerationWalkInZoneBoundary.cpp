@@ -38,6 +38,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationWalkInZoneBoundary>;
+template class std::vector<openstudio::model::RefrigerationWalkInZoneBoundary>;
 namespace openstudio {
 namespace model {
 
@@ -527,4 +529,3 @@ RefrigerationWalkInZoneBoundary::RefrigerationWalkInZoneBoundary(std::shared_ptr
 
 } // model
 } // openstudio
-

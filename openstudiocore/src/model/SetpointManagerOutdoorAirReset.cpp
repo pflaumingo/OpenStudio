@@ -36,6 +36,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerOutdoorAirReset>;
+template class std::vector<openstudio::model::SetpointManagerOutdoorAirReset>;
 namespace openstudio {
 namespace model {
 
@@ -765,4 +767,3 @@ SetpointManagerOutdoorAirReset::SetpointManagerOutdoorAirReset(std::shared_ptr<d
 
 } // model
 } // openstudio
-

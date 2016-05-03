@@ -294,5 +294,9 @@ typedef std::vector<Gas> GasVector;
 } // model
 } // openstudio
 
-#endif // MODEL_GAS_HPP
+extern template class boost::optional<openstudio::model::Gas>;
+template<> std::vector<openstudio::model::Gas>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Gas>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Gas>;
 
+#endif // MODEL_GAS_HPP

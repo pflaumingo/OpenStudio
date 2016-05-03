@@ -107,4 +107,9 @@ typedef std::vector<ConstructionWithInternalSource> ConstructionWithInternalSour
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::ConstructionWithInternalSource>;
+template<> std::vector<openstudio::model::ConstructionWithInternalSource>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ConstructionWithInternalSource>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ConstructionWithInternalSource>;
+
 #endif // MODEL_CONSTRUCTIONWITHINTERNALSOURCE_HPP

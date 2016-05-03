@@ -44,6 +44,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationSecondarySystem>;
+template class std::vector<openstudio::model::RefrigerationSecondarySystem>;
 namespace openstudio {
 namespace model {
 
@@ -1042,4 +1044,3 @@ RefrigerationSecondarySystem::RefrigerationSecondarySystem(std::shared_ptr<detai
 
 } // model
 } // openstudio
-

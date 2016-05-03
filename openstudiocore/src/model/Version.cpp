@@ -29,6 +29,7 @@
 
 #include <OpenStudio.hxx>
 
+template class boost::optional<openstudio::model::Version>;
 namespace openstudio {
 namespace model {
 

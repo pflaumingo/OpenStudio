@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveLinear>;
+template class std::vector<openstudio::model::CurveLinear>;
 namespace openstudio {
 namespace model {
 
@@ -324,4 +326,3 @@ CurveLinear::CurveLinear(std::shared_ptr<detail::CurveLinear_Impl> impl)
 
 } // model
 } // openstudio
-

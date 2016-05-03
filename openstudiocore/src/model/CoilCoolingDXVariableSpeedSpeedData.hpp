@@ -135,5 +135,9 @@ typedef std::vector<CoilCoolingDXVariableSpeedSpeedData> CoilCoolingDXVariableSp
 } // model
 } // openstudio
 
-#endif // MODEL_COILCOOLINGDXVARIABLESPEEDSPEEDDATA_HPP
+extern template class boost::optional<openstudio::model::CoilCoolingDXVariableSpeedSpeedData>;
+template<> std::vector<openstudio::model::CoilCoolingDXVariableSpeedSpeedData>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilCoolingDXVariableSpeedSpeedData>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilCoolingDXVariableSpeedSpeedData>;
 
+#endif // MODEL_COILCOOLINGDXVARIABLESPEEDSPEEDDATA_HPP

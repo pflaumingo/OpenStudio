@@ -30,6 +30,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerOutdoorAirPretreat>;
+template class std::vector<openstudio::model::SetpointManagerOutdoorAirPretreat>;
 namespace openstudio {
 namespace model {
 
@@ -388,4 +390,3 @@ SetpointManagerOutdoorAirPretreat::SetpointManagerOutdoorAirPretreat(std::shared
 
 } // model
 } // openstudio
-

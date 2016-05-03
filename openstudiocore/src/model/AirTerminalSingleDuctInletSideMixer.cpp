@@ -37,6 +37,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalSingleDuctInletSideMixer>;
+template class std::vector<openstudio::model::AirTerminalSingleDuctInletSideMixer>;
 namespace openstudio {
 namespace model {
 
@@ -261,4 +263,3 @@ AirTerminalSingleDuctInletSideMixer::AirTerminalSingleDuctInletSideMixer(std::sh
 
 } // model
 } // openstudio
-

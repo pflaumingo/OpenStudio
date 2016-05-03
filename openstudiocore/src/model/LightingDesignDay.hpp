@@ -120,5 +120,9 @@ typedef std::vector<LightingDesignDay> LightingDesignDayVector;
 } // model
 } // openstudio
 
-#endif // MODEL_LIGHTINGDESIGNDAY_HPP
+extern template class boost::optional<openstudio::model::LightingDesignDay>;
+template<> std::vector<openstudio::model::LightingDesignDay>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::LightingDesignDay>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::LightingDesignDay>;
 
+#endif // MODEL_LIGHTINGDESIGNDAY_HPP

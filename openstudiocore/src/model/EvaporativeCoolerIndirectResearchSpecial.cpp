@@ -32,6 +32,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::EvaporativeCoolerIndirectResearchSpecial>;
+template class std::vector<openstudio::model::EvaporativeCoolerIndirectResearchSpecial>;
 namespace openstudio {
 namespace model {
 
@@ -715,4 +717,3 @@ EvaporativeCoolerIndirectResearchSpecial::EvaporativeCoolerIndirectResearchSpeci
 
 } // model
 } // openstudio
-

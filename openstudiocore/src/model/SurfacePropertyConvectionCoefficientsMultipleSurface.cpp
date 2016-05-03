@@ -31,6 +31,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SurfacePropertyConvectionCoefficientsMultipleSurface>;
+template class std::vector<openstudio::model::SurfacePropertyConvectionCoefficientsMultipleSurface>;
 namespace openstudio {
 namespace model {
 
@@ -435,4 +437,3 @@ SurfacePropertyConvectionCoefficientsMultipleSurface::SurfacePropertyConvectionC
 
 } // model
 } // openstudio
-

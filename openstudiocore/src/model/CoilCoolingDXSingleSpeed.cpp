@@ -53,6 +53,8 @@
 #include "../utilities/units/Quantity.hpp"
 #include "../utilities/units/OSOptionalQuantity.hpp"
 
+template class boost::optional<openstudio::model::CoilCoolingDXSingleSpeed>;
+template class std::vector<openstudio::model::CoilCoolingDXSingleSpeed>;
 namespace openstudio {
 namespace model {
 

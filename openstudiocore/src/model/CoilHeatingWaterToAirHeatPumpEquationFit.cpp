@@ -34,6 +34,8 @@
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilHeatingWaterToAirHeatPumpEquationFit>;
+template class std::vector<openstudio::model::CoilHeatingWaterToAirHeatPumpEquationFit>;
 namespace openstudio {
 namespace model {
 
@@ -586,4 +588,3 @@ CoilHeatingWaterToAirHeatPumpEquationFit::CoilHeatingWaterToAirHeatPumpEquationF
 
 } // model
 } // openstudio
-

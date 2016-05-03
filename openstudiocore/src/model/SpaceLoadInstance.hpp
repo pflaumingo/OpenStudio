@@ -103,4 +103,9 @@ typedef std::vector<SpaceLoadInstance> SpaceLoadInstanceVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::SpaceLoadInstance>;
+template<> std::vector<openstudio::model::SpaceLoadInstance>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SpaceLoadInstance>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SpaceLoadInstance>;
+
 #endif // MODEL_SPACELOADINSTANCE_HPP

@@ -139,5 +139,9 @@ typedef std::vector<ZoneHVACLowTemperatureRadiantElectric> ZoneHVACLowTemperatur
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACLOWTEMPERATURERADIANTELECTRIC_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACLowTemperatureRadiantElectric>;
+template<> std::vector<openstudio::model::ZoneHVACLowTemperatureRadiantElectric>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACLowTemperatureRadiantElectric>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACLowTemperatureRadiantElectric>;
 
+#endif // MODEL_ZONEHVACLOWTEMPERATURERADIANTELECTRIC_HPP

@@ -25,6 +25,7 @@
 #include "ThermalZone_Impl.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Thermostat>;
 namespace openstudio {
 namespace model {
 
@@ -91,4 +92,3 @@ boost::optional<ThermalZone> Thermostat::thermalZone() const
 } // model
 
 } // openstudio
-

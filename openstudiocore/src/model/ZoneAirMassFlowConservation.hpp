@@ -125,5 +125,9 @@ typedef std::vector<ZoneAirMassFlowConservation> ZoneAirMassFlowConservationVect
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEAIRMASSFLOWCONSERVATION_HPP
+extern template class boost::optional<openstudio::model::ZoneAirMassFlowConservation>;
+template<> std::vector<openstudio::model::ZoneAirMassFlowConservation>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneAirMassFlowConservation>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneAirMassFlowConservation>;
 
+#endif // MODEL_ZONEAIRMASSFLOWCONSERVATION_HPP

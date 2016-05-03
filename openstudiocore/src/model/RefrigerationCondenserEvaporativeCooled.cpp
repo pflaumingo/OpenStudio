@@ -39,6 +39,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationCondenserEvaporativeCooled>;
+template class std::vector<openstudio::model::RefrigerationCondenserEvaporativeCooled>;
 namespace openstudio {
 namespace model {
 
@@ -945,4 +947,3 @@ RefrigerationCondenserEvaporativeCooled::RefrigerationCondenserEvaporativeCooled
 
 } // model
 } // openstudio
-

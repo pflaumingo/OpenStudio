@@ -229,4 +229,6 @@ typedef boost::optional<Loop> OptionalLoop;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::Loop>;
+
 #endif // MODEL_LOOP_HPP

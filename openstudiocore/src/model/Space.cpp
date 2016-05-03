@@ -122,6 +122,8 @@
 
 #include <cmath>
 
+template class boost::optional<openstudio::model::Space>;
+template class std::vector<openstudio::model::Space>;
 namespace openstudio {
 namespace model {
 
@@ -3528,4 +3530,3 @@ std::vector<std::vector<Point3d> > generateSkylightPattern(const std::vector<Spa
 
 } // model
 } // openstudio
-

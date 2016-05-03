@@ -99,5 +99,9 @@ typedef std::vector<LightingSimulationControl> LightingSimulationControlVector;
 } // model
 } // openstudio
 
-#endif // MODEL_LIGHTINGSIMULATIONCONTROL_HPP
+extern template class boost::optional<openstudio::model::LightingSimulationControl>;
+template<> std::vector<openstudio::model::LightingSimulationControl>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::LightingSimulationControl>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::LightingSimulationControl>;
 
+#endif // MODEL_LIGHTINGSIMULATIONCONTROL_HPP

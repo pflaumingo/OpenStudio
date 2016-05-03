@@ -172,5 +172,9 @@ typedef std::vector<ElectricLoadCenterInverterLookUpTable> ElectricLoadCenterInv
 } // model
 } // openstudio
 
-#endif // MODEL_ELECTRICLOADCENTERINVERTERLOOKUPTABLE_HPP
+extern template class boost::optional<openstudio::model::ElectricLoadCenterInverterLookUpTable>;
+template<> std::vector<openstudio::model::ElectricLoadCenterInverterLookUpTable>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ElectricLoadCenterInverterLookUpTable>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ElectricLoadCenterInverterLookUpTable>;
 
+#endif // MODEL_ELECTRICLOADCENTERINVERTERLOOKUPTABLE_HPP

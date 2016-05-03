@@ -29,6 +29,8 @@
 #include "Node.hpp"
 #include "Node_Impl.hpp"
 
+template class boost::optional<openstudio::model::DistrictCooling>;
+template class std::vector<openstudio::model::DistrictCooling>;
 namespace openstudio {
 namespace model {
 
@@ -161,6 +163,3 @@ DistrictCooling::DistrictCooling(std::shared_ptr<detail::DistrictCooling_Impl> i
 } // model
 
 } // openstudio
-
-
-

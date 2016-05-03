@@ -601,5 +601,9 @@ typedef std::vector<Space> SpaceVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SPACE_HPP
+extern template class boost::optional<openstudio::model::Space>;
+template<> std::vector<openstudio::model::Space>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Space>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Space>;
 
+#endif // MODEL_SPACE_HPP

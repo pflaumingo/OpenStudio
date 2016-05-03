@@ -39,6 +39,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationAirChiller>;
+template class std::vector<openstudio::model::RefrigerationAirChiller>;
 namespace openstudio {
 namespace model {
 
@@ -1096,4 +1098,3 @@ RefrigerationAirChiller::RefrigerationAirChiller(std::shared_ptr<detail::Refrige
 
 } // model
 } // openstudio
-

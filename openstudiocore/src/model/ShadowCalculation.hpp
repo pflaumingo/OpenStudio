@@ -123,4 +123,6 @@ typedef boost::optional<ShadowCalculation> OptionalShadowCalculation;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::ShadowCalculation>;
+
 #endif // MODEL_SHADOWCALCULATION_HPP

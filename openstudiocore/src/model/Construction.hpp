@@ -87,4 +87,9 @@ typedef std::vector<Construction> ConstructionVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::Construction>;
+template<> std::vector<openstudio::model::Construction>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Construction>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Construction>;
+
 #endif // MODEL_CONSTRUCTION_HPP

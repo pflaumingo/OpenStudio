@@ -35,6 +35,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/PathHelpers.hpp"
 
+template class boost::optional<openstudio::model::Component>;
+template class std::vector<openstudio::model::Component>;
 namespace openstudio {
 namespace model {
 

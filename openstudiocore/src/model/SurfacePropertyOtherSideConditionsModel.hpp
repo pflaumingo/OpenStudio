@@ -92,5 +92,9 @@ typedef std::vector<SurfacePropertyOtherSideConditionsModel> SurfacePropertyOthe
 } // model
 } // openstudio
 
-#endif // MODEL_SURFACEPROPERTYOTHERSIDECONDITIONSMODEL_HPP
+extern template class boost::optional<openstudio::model::SurfacePropertyOtherSideConditionsModel>;
+template<> std::vector<openstudio::model::SurfacePropertyOtherSideConditionsModel>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SurfacePropertyOtherSideConditionsModel>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SurfacePropertyOtherSideConditionsModel>;
 
+#endif // MODEL_SURFACEPROPERTYOTHERSIDECONDITIONSMODEL_HPP

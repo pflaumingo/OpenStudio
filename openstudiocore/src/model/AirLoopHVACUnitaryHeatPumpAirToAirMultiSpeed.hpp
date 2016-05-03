@@ -249,5 +249,9 @@ typedef std::vector<AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed> AirLoopHVACUni
 } // model
 } // openstudio
 
-#endif // MODEL_AIRLOOPHVACUNITARYHEATPUMPAIRTOAIRMULTISPEED_HPP
+extern template class boost::optional<openstudio::model::AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed>;
+template<> std::vector<openstudio::model::AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirLoopHVACUnitaryHeatPumpAirToAirMultiSpeed>;
 
+#endif // MODEL_AIRLOOPHVACUNITARYHEATPUMPAIRTOAIRMULTISPEED_HPP

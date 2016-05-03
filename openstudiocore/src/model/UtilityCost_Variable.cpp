@@ -29,6 +29,8 @@
 
 #include <boost/algorithm/string.hpp>
 
+template class boost::optional<openstudio::model::UtilityCost_Variable>;
+template class std::vector<openstudio::model::UtilityCost_Variable>;
 namespace openstudio {
 namespace model  {
 namespace detail {

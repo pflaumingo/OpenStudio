@@ -28,6 +28,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PhotovoltaicPerformanceEquivalentOneDiode>;
+template class std::vector<openstudio::model::PhotovoltaicPerformanceEquivalentOneDiode>;
 namespace openstudio {
 namespace model {
 
@@ -781,4 +783,3 @@ PhotovoltaicPerformanceEquivalentOneDiode::PhotovoltaicPerformanceEquivalentOneD
 
 } // model
 } // openstudio
-

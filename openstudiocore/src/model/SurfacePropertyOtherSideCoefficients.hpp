@@ -185,5 +185,9 @@ typedef std::vector<SurfacePropertyOtherSideCoefficients> SurfacePropertyOtherSi
 } // model
 } // openstudio
 
-#endif // MODEL_SURFACEPROPERTYOTHERSIDECOEFFICIENTS_HPP
+extern template class boost::optional<openstudio::model::SurfacePropertyOtherSideCoefficients>;
+template<> std::vector<openstudio::model::SurfacePropertyOtherSideCoefficients>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SurfacePropertyOtherSideCoefficients>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SurfacePropertyOtherSideCoefficients>;
 
+#endif // MODEL_SURFACEPROPERTYOTHERSIDECOEFFICIENTS_HPP

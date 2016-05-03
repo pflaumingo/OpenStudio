@@ -205,5 +205,9 @@ typedef std::vector<EvaporativeCoolerIndirectResearchSpecial> EvaporativeCoolerI
 } // model
 } // openstudio
 
-#endif // MODEL_EVAPORATIVECOOLERINDIRECTRESEARCHSPECIAL_HPP
+extern template class boost::optional<openstudio::model::EvaporativeCoolerIndirectResearchSpecial>;
+template<> std::vector<openstudio::model::EvaporativeCoolerIndirectResearchSpecial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::EvaporativeCoolerIndirectResearchSpecial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::EvaporativeCoolerIndirectResearchSpecial>;
 
+#endif // MODEL_EVAPORATIVECOOLERINDIRECTRESEARCHSPECIAL_HPP

@@ -133,5 +133,9 @@ typedef std::vector<FanZoneExhaust> FanZoneExhaustVector;
 } // model
 } // openstudio
 
-#endif // MODEL_FANZONEEXHAUST_HPP
+extern template class boost::optional<openstudio::model::FanZoneExhaust>;
+template<> std::vector<openstudio::model::FanZoneExhaust>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::FanZoneExhaust>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::FanZoneExhaust>;
 
+#endif // MODEL_FANZONEEXHAUST_HPP

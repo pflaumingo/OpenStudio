@@ -203,5 +203,6 @@ typedef boost::optional<AirTerminalSingleDuctVAVReheat> OptionalAirTerminalSingl
 } // model
 } // openstudio
 
-#endif // MODEL_AIRTERMINALSINGLEDUCTVAVREHEAT_HPP
+extern template class boost::optional<openstudio::model::AirTerminalSingleDuctVAVReheat>;
 
+#endif // MODEL_AIRTERMINALSINGLEDUCTVAVREHEAT_HPP

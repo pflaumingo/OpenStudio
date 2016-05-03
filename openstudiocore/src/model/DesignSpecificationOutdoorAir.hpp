@@ -151,5 +151,9 @@ typedef std::vector<DesignSpecificationOutdoorAir> DesignSpecificationOutdoorAir
 } // model
 } // openstudio
 
-#endif // MODEL_DESIGNSPECIFICATIONOUTDOORAIR_HPP
+extern template class boost::optional<openstudio::model::DesignSpecificationOutdoorAir>;
+template<> std::vector<openstudio::model::DesignSpecificationOutdoorAir>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::DesignSpecificationOutdoorAir>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::DesignSpecificationOutdoorAir>;
 
+#endif // MODEL_DESIGNSPECIFICATIONOUTDOORAIR_HPP

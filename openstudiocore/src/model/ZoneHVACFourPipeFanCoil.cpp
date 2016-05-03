@@ -42,6 +42,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACFourPipeFanCoil>;
+template class std::vector<openstudio::model::ZoneHVACFourPipeFanCoil>;
 namespace openstudio {
 namespace model {
 
@@ -1327,4 +1329,3 @@ ZoneHVACFourPipeFanCoil::ZoneHVACFourPipeFanCoil(std::shared_ptr<detail::ZoneHVA
 
 } // model
 } // openstudio
-

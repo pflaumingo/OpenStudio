@@ -148,4 +148,9 @@ typedef std::vector<UtilityCost_Tariff> UtilityCost_TariffVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::UtilityCost_Tariff>;
+template<> std::vector<openstudio::model::UtilityCost_Tariff>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::UtilityCost_Tariff>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::UtilityCost_Tariff>;
+
 #endif // MODEL_UTILITYCOST_TARIFF_HPP

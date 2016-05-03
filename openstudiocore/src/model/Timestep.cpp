@@ -27,6 +27,7 @@
 #include <utilities/idd/OS_Timestep_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::Timestep>;
 namespace openstudio {
 
 namespace model  {

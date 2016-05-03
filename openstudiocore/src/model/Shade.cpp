@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Shade>;
+template class std::vector<openstudio::model::Shade>;
 namespace openstudio {
 namespace model {
 
@@ -1021,4 +1023,3 @@ Shade::Shade(std::shared_ptr<detail::Shade_Impl> impl)
 
 } // model
 } // openstudio
-

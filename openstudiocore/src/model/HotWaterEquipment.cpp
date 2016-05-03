@@ -37,6 +37,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::HotWaterEquipment>;
+template class std::vector<openstudio::model::HotWaterEquipment>;
 namespace openstudio {
 namespace model {
 
@@ -380,4 +382,3 @@ HotWaterEquipment::HotWaterEquipment(std::shared_ptr<detail::HotWaterEquipment_I
 
 } // model
 } // openstudio
-

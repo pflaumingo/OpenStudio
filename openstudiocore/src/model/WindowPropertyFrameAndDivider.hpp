@@ -283,5 +283,9 @@ typedef std::vector<WindowPropertyFrameAndDivider> WindowPropertyFrameAndDivider
 } // model
 } // openstudio
 
-#endif // MODEL_WINDOWPROPERTYFRAMEANDDIVIDER_HPP
+extern template class boost::optional<openstudio::model::WindowPropertyFrameAndDivider>;
+template<> std::vector<openstudio::model::WindowPropertyFrameAndDivider>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::WindowPropertyFrameAndDivider>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::WindowPropertyFrameAndDivider>;
 
+#endif // MODEL_WINDOWPROPERTYFRAMEANDDIVIDER_HPP

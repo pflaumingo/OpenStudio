@@ -37,6 +37,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Lights>;
+template class std::vector<openstudio::model::Lights>;
 namespace openstudio {
 namespace model {
 
@@ -451,4 +453,3 @@ Lights::Lights(std::shared_ptr<detail::Lights_Impl> impl)
 
 } // model
 } // openstudio
-

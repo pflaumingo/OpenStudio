@@ -114,5 +114,9 @@ typedef std::vector<SimpleGlazing> SimpleGlazingVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SIMPLEGLAZING_HPP
+extern template class boost::optional<openstudio::model::SimpleGlazing>;
+template<> std::vector<openstudio::model::SimpleGlazing>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SimpleGlazing>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SimpleGlazing>;
 
+#endif // MODEL_SIMPLEGLAZING_HPP

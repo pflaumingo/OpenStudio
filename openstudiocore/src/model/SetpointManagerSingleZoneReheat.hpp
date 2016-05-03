@@ -112,5 +112,9 @@ typedef std::vector<SetpointManagerSingleZoneReheat> SetpointManagerSingleZoneRe
 
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERSINGLEZONEREHEAT_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerSingleZoneReheat>;
+template<> std::vector<openstudio::model::SetpointManagerSingleZoneReheat>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerSingleZoneReheat>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerSingleZoneReheat>;
 
+#endif // MODEL_SETPOINTMANAGERSINGLEZONEREHEAT_HPP

@@ -47,6 +47,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Containers.hpp"
 
+template class boost::optional<openstudio::model::AirConditionerVariableRefrigerantFlow>;
+template class std::vector<openstudio::model::AirConditionerVariableRefrigerantFlow>;
 namespace openstudio {
 
 namespace model {
@@ -2877,4 +2879,3 @@ AirConditionerVariableRefrigerantFlow::AirConditionerVariableRefrigerantFlow(std
 
 } // model
 } // openstudio
-

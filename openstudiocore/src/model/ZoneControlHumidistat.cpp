@@ -34,6 +34,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneControlHumidistat>;
+template class std::vector<openstudio::model::ZoneControlHumidistat>;
 namespace openstudio {
 namespace model {
 
@@ -185,4 +187,3 @@ ZoneControlHumidistat::ZoneControlHumidistat(std::shared_ptr<detail::ZoneControl
 
 } // model
 } // openstudio
-

@@ -28,6 +28,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::DesignSpecificationOutdoorAir>;
+template class std::vector<openstudio::model::DesignSpecificationOutdoorAir>;
 namespace openstudio {
 namespace model {
 
@@ -470,4 +472,3 @@ DesignSpecificationOutdoorAir::DesignSpecificationOutdoorAir(std::shared_ptr<det
 
 } // model
 } // openstudio
-

@@ -27,6 +27,7 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Splitter>;
 namespace openstudio {
 
 namespace model {
@@ -265,4 +266,3 @@ bool Splitter::isRemovable() const
 } // model
 
 } // openstudio
-

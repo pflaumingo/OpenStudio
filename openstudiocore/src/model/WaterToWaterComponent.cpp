@@ -35,6 +35,7 @@
 #include "Mixer_Impl.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::WaterToWaterComponent>;
 namespace openstudio {
 
 namespace model {
@@ -525,4 +526,3 @@ boost::optional<ModelObject> WaterToWaterComponent::tertiaryOutletModelObject() 
 } // model
 
 } // openstudio
-

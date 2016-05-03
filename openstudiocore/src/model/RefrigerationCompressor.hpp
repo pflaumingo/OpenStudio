@@ -147,5 +147,9 @@ typedef std::vector<RefrigerationCompressor> RefrigerationCompressorVector;
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONCOMPRESSOR_HPP
+extern template class boost::optional<openstudio::model::RefrigerationCompressor>;
+template<> std::vector<openstudio::model::RefrigerationCompressor>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationCompressor>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationCompressor>;
 
+#endif // MODEL_REFRIGERATIONCOMPRESSOR_HPP

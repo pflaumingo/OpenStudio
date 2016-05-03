@@ -32,6 +32,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AvailabilityManagerOptimumStart>;
+template class std::vector<openstudio::model::AvailabilityManagerOptimumStart>;
 namespace openstudio {
 namespace model {
 
@@ -364,4 +366,3 @@ AvailabilityManagerOptimumStart::AvailabilityManagerOptimumStart(std::shared_ptr
 
 } // model
 } // openstudio
-

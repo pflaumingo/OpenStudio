@@ -83,5 +83,9 @@ typedef std::vector<PipeAdiabatic> PipeAdiabaticVector;
 } // model
 } // openstudio
 
-#endif // MODEL_PIPEADIABATIC_HPP
+extern template class boost::optional<openstudio::model::PipeAdiabatic>;
+template<> std::vector<openstudio::model::PipeAdiabatic>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PipeAdiabatic>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PipeAdiabatic>;
 
+#endif // MODEL_PIPEADIABATIC_HPP

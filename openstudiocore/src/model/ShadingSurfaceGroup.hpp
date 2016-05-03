@@ -124,5 +124,9 @@ typedef std::vector<ShadingSurfaceGroup> ShadingSurfaceGroupVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SHADINGSURFACEGROUP_HPP
+extern template class boost::optional<openstudio::model::ShadingSurfaceGroup>;
+template<> std::vector<openstudio::model::ShadingSurfaceGroup>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ShadingSurfaceGroup>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ShadingSurfaceGroup>;
 
+#endif // MODEL_SHADINGSURFACEGROUP_HPP

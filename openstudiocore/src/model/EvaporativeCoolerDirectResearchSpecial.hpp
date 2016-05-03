@@ -153,5 +153,9 @@ typedef std::vector<EvaporativeCoolerDirectResearchSpecial> EvaporativeCoolerDir
 } // model
 } // openstudio
 
-#endif // MODEL_EVAPORATIVECOOLERDIRECTRESEARCHSPECIAL_HPP
+extern template class boost::optional<openstudio::model::EvaporativeCoolerDirectResearchSpecial>;
+template<> std::vector<openstudio::model::EvaporativeCoolerDirectResearchSpecial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::EvaporativeCoolerDirectResearchSpecial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::EvaporativeCoolerDirectResearchSpecial>;
 
+#endif // MODEL_EVAPORATIVECOOLERDIRECTRESEARCHSPECIAL_HPP

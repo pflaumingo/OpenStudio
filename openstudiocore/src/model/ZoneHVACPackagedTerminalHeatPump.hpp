@@ -248,5 +248,9 @@ typedef std::vector<ZoneHVACPackagedTerminalHeatPump> ZoneHVACPackagedTerminalHe
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACPACKAGEDTERMINALHEATPUMP_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACPackagedTerminalHeatPump>;
+template<> std::vector<openstudio::model::ZoneHVACPackagedTerminalHeatPump>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACPackagedTerminalHeatPump>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACPackagedTerminalHeatPump>;
 
+#endif // MODEL_ZONEHVACPACKAGEDTERMINALHEATPUMP_HPP

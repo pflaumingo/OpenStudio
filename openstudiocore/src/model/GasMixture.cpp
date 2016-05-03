@@ -34,6 +34,8 @@
 #include "../utilities/core/Assert.hpp"
 #include <math.h>
 
+template class boost::optional<openstudio::model::GasMixture>;
+template class std::vector<openstudio::model::GasMixture>;
 namespace openstudio {
 namespace model {
 
@@ -1041,4 +1043,3 @@ GasMixture::GasMixture(std::shared_ptr<detail::GasMixture_Impl> impl)
 
 } // model
 } // openstudio
-

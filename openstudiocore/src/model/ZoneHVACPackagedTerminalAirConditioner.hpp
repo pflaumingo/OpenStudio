@@ -203,5 +203,9 @@ typedef std::vector<ZoneHVACPackagedTerminalAirConditioner> ZoneHVACPackagedTerm
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACPACKAGEDTERMINALAIRCONDITIONER_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACPackagedTerminalAirConditioner>;
+template<> std::vector<openstudio::model::ZoneHVACPackagedTerminalAirConditioner>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACPackagedTerminalAirConditioner>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACPackagedTerminalAirConditioner>;
 
+#endif // MODEL_ZONEHVACPACKAGEDTERMINALAIRCONDITIONER_HPP

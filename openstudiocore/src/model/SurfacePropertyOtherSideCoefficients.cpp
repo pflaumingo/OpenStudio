@@ -30,6 +30,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SurfacePropertyOtherSideCoefficients>;
+template class std::vector<openstudio::model::SurfacePropertyOtherSideCoefficients>;
 namespace openstudio {
 namespace model {
 
@@ -538,4 +540,3 @@ SurfacePropertyOtherSideCoefficients::SurfacePropertyOtherSideCoefficients(std::
 
 } // model
 } // openstudio
-

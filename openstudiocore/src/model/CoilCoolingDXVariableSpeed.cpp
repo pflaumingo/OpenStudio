@@ -55,6 +55,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
 
+template class boost::optional<openstudio::model::CoilCoolingDXVariableSpeed>;
+template class std::vector<openstudio::model::CoilCoolingDXVariableSpeed>;
 namespace openstudio {
 namespace model {
 
@@ -838,4 +840,3 @@ CoilCoolingDXVariableSpeed::CoilCoolingDXVariableSpeed(std::shared_ptr<detail::C
 
 } // model
 } // openstudio
-

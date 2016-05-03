@@ -83,6 +83,8 @@
 #include <QJsonObject>
 #include <QJsonParseError>
 
+template class boost::optional<openstudio::model::SpaceType>;
+template class std::vector<openstudio::model::SpaceType>;
 namespace openstudio {
 namespace model {
 
@@ -1716,4 +1718,3 @@ SpaceType::SpaceType(std::shared_ptr<detail::SpaceType_Impl> impl)
 
 } // model
 } // openstudio
-

@@ -123,5 +123,9 @@ typedef std::vector<SiteWaterMainsTemperature> SiteWaterMainsTemperatureVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SITEWATERMAINSTEMPERATURE_HPP
+extern template class boost::optional<openstudio::model::SiteWaterMainsTemperature>;
+template<> std::vector<openstudio::model::SiteWaterMainsTemperature>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SiteWaterMainsTemperature>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SiteWaterMainsTemperature>;
 
+#endif // MODEL_SITEWATERMAINSTEMPERATURE_HPP

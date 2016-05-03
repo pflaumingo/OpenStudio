@@ -43,6 +43,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ShadingControl>;
+template class std::vector<openstudio::model::ShadingControl>;
 namespace openstudio {
 namespace model {
 
@@ -371,4 +373,3 @@ ShadingControl::ShadingControl(std::shared_ptr<detail::ShadingControl_Impl> impl
 
 } // model
 } // openstudio
-

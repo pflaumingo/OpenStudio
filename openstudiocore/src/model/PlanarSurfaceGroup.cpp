@@ -33,6 +33,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PlanarSurfaceGroup>;
+template class std::vector<openstudio::model::PlanarSurfaceGroup>;
 namespace openstudio {
 namespace model {
 

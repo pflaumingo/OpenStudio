@@ -31,6 +31,8 @@
 
 #include <time.h>
 
+template class boost::optional<openstudio::model::ComponentData>;
+template class std::vector<openstudio::model::ComponentData>;
 namespace openstudio {
 namespace model {
 

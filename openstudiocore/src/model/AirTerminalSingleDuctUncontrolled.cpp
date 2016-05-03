@@ -38,6 +38,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirTerminalSingleDuctUncontrolled>;
+template class std::vector<openstudio::model::AirTerminalSingleDuctUncontrolled>;
 namespace openstudio {
 namespace model {
 

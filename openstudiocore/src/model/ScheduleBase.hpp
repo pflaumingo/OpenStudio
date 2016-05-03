@@ -102,5 +102,9 @@ typedef std::vector<ScheduleBase> ScheduleBaseVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SCHEDULEBASE_HPP
+extern template class boost::optional<openstudio::model::ScheduleBase>;
+template<> std::vector<openstudio::model::ScheduleBase>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ScheduleBase>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ScheduleBase>;
 
+#endif // MODEL_SCHEDULEBASE_HPP

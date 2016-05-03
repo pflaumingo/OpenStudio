@@ -101,5 +101,9 @@ typedef std::vector<CoilHeatingDXVariableRefrigerantFlow> CoilHeatingDXVariableR
 } // model
 } // openstudio
 
-#endif // MODEL_COILHEATINGDXVARIABLEREFRIGERANTFLOW_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingDXVariableRefrigerantFlow>;
+template<> std::vector<openstudio::model::CoilHeatingDXVariableRefrigerantFlow>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingDXVariableRefrigerantFlow>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingDXVariableRefrigerantFlow>;
 
+#endif // MODEL_COILHEATINGDXVARIABLEREFRIGERANTFLOW_HPP

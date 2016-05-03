@@ -110,5 +110,9 @@ typedef std::vector<OutputControlReportingTolerances> OutputControlReportingTole
 } // model
 } // openstudio
 
-#endif // MODEL_OUTPUTCONTROLREPORTINGTOLERANCES_HPP
+extern template class boost::optional<openstudio::model::OutputControlReportingTolerances>;
+template<> std::vector<openstudio::model::OutputControlReportingTolerances>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::OutputControlReportingTolerances>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::OutputControlReportingTolerances>;
 
+#endif // MODEL_OUTPUTCONTROLREPORTINGTOLERANCES_HPP

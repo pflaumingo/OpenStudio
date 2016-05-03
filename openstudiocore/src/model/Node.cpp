@@ -41,6 +41,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Node>;
+template class std::vector<openstudio::model::Node>;
 namespace openstudio {
 
 namespace model {
@@ -495,4 +497,3 @@ IddObjectType Node::iddObjectType() {
 
 } // model
 } // openstudio
-

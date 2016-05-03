@@ -144,5 +144,6 @@ typedef boost::optional<WaterToWaterComponent> OptionalWaterToWaterComponent;
 
 } // openstudio
 
-#endif // MODEL_WATERTOWATERCOMPONENT_HPP
+extern template class boost::optional<openstudio::model::WaterToWaterComponent>;
 
+#endif // MODEL_WATERTOWATERCOMPONENT_HPP

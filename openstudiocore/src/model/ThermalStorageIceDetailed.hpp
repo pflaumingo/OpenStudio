@@ -130,5 +130,9 @@ typedef std::vector<ThermalStorageIceDetailed> ThermalStorageIceDetailedVector;
 } // model
 } // openstudio
 
-#endif // MODEL_THERMALSTORAGEICEDETAILED_HPP
+extern template class boost::optional<openstudio::model::ThermalStorageIceDetailed>;
+template<> std::vector<openstudio::model::ThermalStorageIceDetailed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ThermalStorageIceDetailed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ThermalStorageIceDetailed>;
 
+#endif // MODEL_THERMALSTORAGEICEDETAILED_HPP

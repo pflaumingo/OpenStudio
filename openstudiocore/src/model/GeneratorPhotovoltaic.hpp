@@ -139,5 +139,9 @@ typedef std::vector<GeneratorPhotovoltaic> GeneratorPhotovoltaicVector;
 } // model
 } // openstudio
 
-#endif // MODEL_GENERATORPHOTOVOLTAIC_HPP
+extern template class boost::optional<openstudio::model::GeneratorPhotovoltaic>;
+template<> std::vector<openstudio::model::GeneratorPhotovoltaic>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::GeneratorPhotovoltaic>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::GeneratorPhotovoltaic>;
 
+#endif // MODEL_GENERATORPHOTOVOLTAIC_HPP

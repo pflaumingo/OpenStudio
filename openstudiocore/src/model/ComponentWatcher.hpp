@@ -88,4 +88,8 @@ typedef std::vector<ComponentWatcher> ComponentWatcherVector;
 } // model
 } // openstudio
 
+template<> std::vector<openstudio::model::ComponentWatcher>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ComponentWatcher>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ComponentWatcher>;
+
 #endif // MODEL_COMPONENTWATCHER_HPP

@@ -220,5 +220,9 @@ typedef std::vector<RefractionExtinctionGlazing> RefractionExtinctionGlazingVect
 } // model
 } // openstudio
 
-#endif // MODEL_REFRACTIONEXTINCTIONGLAZING_HPP
+extern template class boost::optional<openstudio::model::RefractionExtinctionGlazing>;
+template<> std::vector<openstudio::model::RefractionExtinctionGlazing>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefractionExtinctionGlazing>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefractionExtinctionGlazing>;
 
+#endif // MODEL_REFRACTIONEXTINCTIONGLAZING_HPP

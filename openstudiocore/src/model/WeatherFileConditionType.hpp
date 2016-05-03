@@ -65,4 +65,9 @@ typedef std::vector<WeatherFileConditionType> WeatherFileConditionTypeVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::WeatherFileConditionType>;
+template<> std::vector<openstudio::model::WeatherFileConditionType>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::WeatherFileConditionType>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::WeatherFileConditionType>;
+
 #endif // MODEL_WEATHERFILECONDITIONTYPE_HPP

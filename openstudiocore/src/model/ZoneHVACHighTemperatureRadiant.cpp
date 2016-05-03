@@ -38,6 +38,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACHighTemperatureRadiant>;
+template class std::vector<openstudio::model::ZoneHVACHighTemperatureRadiant>;
 namespace openstudio {
 namespace model {
 
@@ -477,4 +479,3 @@ ZoneHVACHighTemperatureRadiant::ZoneHVACHighTemperatureRadiant(std::shared_ptr<d
 
 } // model
 } // openstudio
-

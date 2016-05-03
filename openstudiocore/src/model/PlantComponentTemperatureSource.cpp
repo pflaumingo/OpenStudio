@@ -33,6 +33,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PlantComponentTemperatureSource>;
+template class std::vector<openstudio::model::PlantComponentTemperatureSource>;
 namespace openstudio {
 namespace model {
 
@@ -249,4 +251,3 @@ PlantComponentTemperatureSource::PlantComponentTemperatureSource(std::shared_ptr
 
 } // model
 } // openstudio
-

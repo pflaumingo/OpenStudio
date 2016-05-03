@@ -387,5 +387,9 @@ typedef std::vector<CoolingTowerTwoSpeed> CoolingTowerTwoSpeedVector;
 } // model
 } // openstudio
 
-#endif // MODEL_COOLINGTOWERTWOSPEED_HPP
+extern template class boost::optional<openstudio::model::CoolingTowerTwoSpeed>;
+template<> std::vector<openstudio::model::CoolingTowerTwoSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoolingTowerTwoSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoolingTowerTwoSpeed>;
 
+#endif // MODEL_COOLINGTOWERTWOSPEED_HPP

@@ -217,5 +217,9 @@ typedef std::vector<HeatExchangerAirToAirSensibleAndLatent> HeatExchangerAirToAi
 } // model
 } // openstudio
 
-#endif // MODEL_HEATEXCHANGERAIRTOAIRSENSIBLEANDLATENT_HPP
+extern template class boost::optional<openstudio::model::HeatExchangerAirToAirSensibleAndLatent>;
+template<> std::vector<openstudio::model::HeatExchangerAirToAirSensibleAndLatent>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::HeatExchangerAirToAirSensibleAndLatent>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::HeatExchangerAirToAirSensibleAndLatent>;
 
+#endif // MODEL_HEATEXCHANGERAIRTOAIRSENSIBLEANDLATENT_HPP

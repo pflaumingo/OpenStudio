@@ -229,5 +229,9 @@ typedef std::vector<EvaporativeFluidCoolerSingleSpeed> EvaporativeFluidCoolerSin
 } // model
 } // openstudio
 
-#endif // MODEL_EVAPORATIVEFLUIDCOOLERSINGLESPEED_HPP
+extern template class boost::optional<openstudio::model::EvaporativeFluidCoolerSingleSpeed>;
+template<> std::vector<openstudio::model::EvaporativeFluidCoolerSingleSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::EvaporativeFluidCoolerSingleSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::EvaporativeFluidCoolerSingleSpeed>;
 
+#endif // MODEL_EVAPORATIVEFLUIDCOOLERSINGLESPEED_HPP

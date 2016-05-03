@@ -34,6 +34,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::WaterUseEquipment>;
+template class std::vector<openstudio::model::WaterUseEquipment>;
 namespace openstudio {
 
 namespace model {

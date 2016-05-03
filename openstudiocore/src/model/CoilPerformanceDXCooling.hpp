@@ -205,5 +205,9 @@ typedef std::vector<CoilPerformanceDXCooling> CoilPerformanceDXCoolingVector;
 } // model
 } // openstudio
 
-#endif // MODEL_COILPERFORMANCEDXCOOLING_HPP
+extern template class boost::optional<openstudio::model::CoilPerformanceDXCooling>;
+template<> std::vector<openstudio::model::CoilPerformanceDXCooling>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilPerformanceDXCooling>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilPerformanceDXCooling>;
 
+#endif // MODEL_COILPERFORMANCEDXCOOLING_HPP

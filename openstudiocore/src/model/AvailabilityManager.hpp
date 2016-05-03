@@ -65,5 +65,9 @@ typedef std::vector<AvailabilityManager> AvailabilityManagerVector;
 } // model
 } // openstudio
 
-#endif // MODEL_AVAILABILITYMANAGER_HPP
+extern template class boost::optional<openstudio::model::AvailabilityManager>;
+template<> std::vector<openstudio::model::AvailabilityManager>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AvailabilityManager>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AvailabilityManager>;
 
+#endif // MODEL_AVAILABILITYMANAGER_HPP

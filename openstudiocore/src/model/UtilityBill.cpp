@@ -48,6 +48,9 @@
 
 #include <QDate>
 
+template class std::vector<openstudio::model::BillingPeriod>;
+template class boost::optional<openstudio::model::UtilityBill>;
+template class std::vector<openstudio::model::UtilityBill>;
 namespace openstudio {
 namespace model {
 
@@ -1552,4 +1555,3 @@ UtilityBill::UtilityBill(std::shared_ptr<detail::UtilityBill_Impl> impl)
 
 } // model
 } // openstudio
-

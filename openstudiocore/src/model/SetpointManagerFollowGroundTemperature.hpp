@@ -105,5 +105,9 @@ typedef std::vector<SetpointManagerFollowGroundTemperature> SetpointManagerFollo
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERFOLLOWGROUNDTEMPERATURE_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerFollowGroundTemperature>;
+template<> std::vector<openstudio::model::SetpointManagerFollowGroundTemperature>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerFollowGroundTemperature>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerFollowGroundTemperature>;
 
+#endif // MODEL_SETPOINTMANAGERFOLLOWGROUNDTEMPERATURE_HPP

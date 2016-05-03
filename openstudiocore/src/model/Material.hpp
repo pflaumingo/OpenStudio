@@ -108,4 +108,9 @@ typedef std::vector<Material> MaterialVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::Material>;
+template<> std::vector<openstudio::model::Material>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Material>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Material>;
+
 #endif // MODEL_MATERIAL_HPP

@@ -36,6 +36,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::DaylightingDeviceShelf>;
+template class std::vector<openstudio::model::DaylightingDeviceShelf>;
 namespace openstudio {
 namespace model {
 
@@ -222,4 +224,3 @@ DaylightingDeviceShelf::DaylightingDeviceShelf(std::shared_ptr<detail::Daylighti
 
 } // model
 } // openstudio
-

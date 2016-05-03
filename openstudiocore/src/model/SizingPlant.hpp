@@ -124,5 +124,9 @@ typedef std::vector<SizingPlant> SizingPlantVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SIZINGPLANT_HPP
+extern template class boost::optional<openstudio::model::SizingPlant>;
+template<> std::vector<openstudio::model::SizingPlant>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SizingPlant>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SizingPlant>;
 
+#endif // MODEL_SIZINGPLANT_HPP

@@ -53,6 +53,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACWaterToAirHeatPump>;
+template class std::vector<openstudio::model::ZoneHVACWaterToAirHeatPump>;
 namespace openstudio {
 namespace model {
 
@@ -1122,4 +1124,3 @@ ZoneHVACWaterToAirHeatPump::ZoneHVACWaterToAirHeatPump(std::shared_ptr<detail::Z
 
 } // model
 } // openstudio
-

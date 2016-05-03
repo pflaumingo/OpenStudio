@@ -145,5 +145,9 @@ typedef std::vector<CoilCoolingDXMultiSpeed> CoilCoolingDXMultiSpeedVector;
 } // model
 } // openstudio
 
-#endif // MODEL_COILCOOLINGDXMULTISPEED_HPP
+extern template class boost::optional<openstudio::model::CoilCoolingDXMultiSpeed>;
+template<> std::vector<openstudio::model::CoilCoolingDXMultiSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilCoolingDXMultiSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilCoolingDXMultiSpeed>;
 
+#endif // MODEL_COILCOOLINGDXMULTISPEED_HPP

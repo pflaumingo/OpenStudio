@@ -328,5 +328,9 @@ typedef std::vector<SizingZone> SizingZoneVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SIZINGZONE_HPP
+extern template class boost::optional<openstudio::model::SizingZone>;
+template<> std::vector<openstudio::model::SizingZone>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SizingZone>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SizingZone>;
 
+#endif // MODEL_SIZINGZONE_HPP

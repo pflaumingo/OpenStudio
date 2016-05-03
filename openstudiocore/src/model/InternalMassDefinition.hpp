@@ -140,5 +140,9 @@ typedef std::vector<InternalMassDefinition> InternalMassDefinitionVector;
 } // model
 } // openstudio
 
-#endif // MODEL_INTERNALMASSDEFINITION_HPP
+extern template class boost::optional<openstudio::model::InternalMassDefinition>;
+template<> std::vector<openstudio::model::InternalMassDefinition>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::InternalMassDefinition>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::InternalMassDefinition>;
 
+#endif // MODEL_INTERNALMASSDEFINITION_HPP

@@ -32,6 +32,8 @@
 
 #include <boost/algorithm/string.hpp>
 
+template class boost::optional<openstudio::model::LifeCycleCostParameters>;
+template class std::vector<openstudio::model::LifeCycleCostParameters>;
 namespace openstudio {
 namespace model  {
 

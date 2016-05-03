@@ -247,4 +247,6 @@ typedef boost::optional<PlantLoop> OptionalPlantLoop;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::PlantLoop>;
+
 #endif // MODEL_PLANTLOOP_HPP

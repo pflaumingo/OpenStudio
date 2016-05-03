@@ -31,6 +31,8 @@
 
 #include <boost/algorithm/string.hpp>  
 
+template class boost::optional<openstudio::model::OtherEquipmentDefinition>;
+template class std::vector<openstudio::model::OtherEquipmentDefinition>;
 namespace openstudio {
 namespace model {
 
@@ -426,4 +428,3 @@ OtherEquipmentDefinition::OtherEquipmentDefinition(std::shared_ptr<detail::Other
 
 } // model
 } // openstudio
-

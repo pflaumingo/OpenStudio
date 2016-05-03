@@ -111,4 +111,9 @@ typedef std::vector<RunPeriodControlSpecialDays> RunPeriodControlSpecialDaysVect
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::RunPeriodControlSpecialDays>;
+template<> std::vector<openstudio::model::RunPeriodControlSpecialDays>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RunPeriodControlSpecialDays>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RunPeriodControlSpecialDays>;
+
 #endif // MODEL_RUNPERIODCONTROLSPECIALDAYS_HPP

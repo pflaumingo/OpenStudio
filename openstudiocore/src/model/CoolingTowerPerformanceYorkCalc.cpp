@@ -24,6 +24,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoolingTowerPerformanceYorkCalc>;
+template class std::vector<openstudio::model::CoolingTowerPerformanceYorkCalc>;
 namespace openstudio {
 namespace model {
 
@@ -804,4 +806,3 @@ CoolingTowerPerformanceYorkCalc::CoolingTowerPerformanceYorkCalc(std::shared_ptr
 
 } // model
 } // openstudio
-

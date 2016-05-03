@@ -114,5 +114,9 @@ typedef std::vector<ZoneHVACEquipmentList> ZoneHVACEquipmentListVector;
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACEQUIPMENTLIST_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACEquipmentList>;
+template<> std::vector<openstudio::model::ZoneHVACEquipmentList>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACEquipmentList>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACEquipmentList>;
 
+#endif // MODEL_ZONEHVACEQUIPMENTLIST_HPP

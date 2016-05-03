@@ -135,5 +135,9 @@ typedef std::vector<CurveLinear> CurveLinearVector;
 } // model
 } // openstudio
 
-#endif // MODEL_CURVELINEAR_HPP
+extern template class boost::optional<openstudio::model::CurveLinear>;
+template<> std::vector<openstudio::model::CurveLinear>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CurveLinear>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CurveLinear>;
 
+#endif // MODEL_CURVELINEAR_HPP

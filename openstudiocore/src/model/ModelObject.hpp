@@ -338,4 +338,9 @@ typedef std::vector<ModelObject> ModelObjectVector;
 Q_DECLARE_METATYPE(boost::optional<openstudio::model::ModelObject>);
 Q_DECLARE_METATYPE(std::vector<openstudio::model::ModelObject>);
 
+extern template class boost::optional<openstudio::model::ModelObject>;
+template<> std::vector<openstudio::model::ModelObject>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ModelObject>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ModelObject>;
+
 #endif // MODEL_MODELOBJECT_HPP

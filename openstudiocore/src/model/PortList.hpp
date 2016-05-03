@@ -129,5 +129,9 @@ typedef std::vector<PortList> PortListVector;
 } // model
 } // openstudio
 
-#endif // MODEL_PORTLIST_HPP
+extern template class boost::optional<openstudio::model::PortList>;
+template<> std::vector<openstudio::model::PortList>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PortList>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PortList>;
 
+#endif // MODEL_PORTLIST_HPP

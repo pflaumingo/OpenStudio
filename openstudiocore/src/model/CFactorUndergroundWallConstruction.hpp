@@ -88,4 +88,9 @@ typedef std::vector<CFactorUndergroundWallConstruction> CFactorUndergroundWallCo
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::CFactorUndergroundWallConstruction>;
+template<> std::vector<openstudio::model::CFactorUndergroundWallConstruction>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CFactorUndergroundWallConstruction>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CFactorUndergroundWallConstruction>;
+
 #endif // MODEL_CFACTORUNDERGROUNDWALLCONSTRUCTION_HPP

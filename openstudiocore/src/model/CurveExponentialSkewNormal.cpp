@@ -32,6 +32,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveExponentialSkewNormal>;
+template class std::vector<openstudio::model::CurveExponentialSkewNormal>;
 namespace openstudio {
 namespace model {
 
@@ -371,4 +373,3 @@ CurveExponentialSkewNormal::CurveExponentialSkewNormal(std::shared_ptr<detail::C
 
 } // model
 } // openstudio
-

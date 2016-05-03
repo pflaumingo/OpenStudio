@@ -32,6 +32,8 @@
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
 #include "../utilities/math/FloatCompare.hpp"
 
+template class boost::optional<openstudio::model::PlantEquipmentOperationRangeBasedScheme>;
+template class std::vector<openstudio::model::PlantEquipmentOperationRangeBasedScheme>;
 namespace openstudio {
 
 namespace model {
@@ -310,4 +312,3 @@ double PlantEquipmentOperationRangeBasedScheme::minimumLowerLimit() const
 } // model
 
 } // openstudio
-

@@ -119,4 +119,9 @@ typedef std::vector<UtilityCost_Ratchet> UtilityCost_RatchetVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::UtilityCost_Ratchet>;
+template<> std::vector<openstudio::model::UtilityCost_Ratchet>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::UtilityCost_Ratchet>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::UtilityCost_Ratchet>;
+
 #endif // MODEL_UTILITYCOST_RATCHET_HPP

@@ -22,6 +22,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::OpaqueMaterial>;
+template class std::vector<openstudio::model::OpaqueMaterial>;
 namespace openstudio {
 namespace model {
 

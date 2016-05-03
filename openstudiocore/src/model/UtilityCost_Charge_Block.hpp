@@ -131,4 +131,9 @@ typedef std::vector<UtilityCost_Charge_Block> UtilityCost_Charge_BlockVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::UtilityCost_Charge_Block>;
+template<> std::vector<openstudio::model::UtilityCost_Charge_Block>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::UtilityCost_Charge_Block>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::UtilityCost_Charge_Block>;
+
 #endif // MODEL_UTILITYCOST_CHARGE_BLOCK_HPP

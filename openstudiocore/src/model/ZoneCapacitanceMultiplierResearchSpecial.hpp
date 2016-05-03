@@ -122,5 +122,9 @@ typedef std::vector<ZoneCapacitanceMultiplierResearchSpecial> ZoneCapacitanceMul
 } // model
 } // openstudio
 
-#endif // MODEL_ZONECAPACITANCEMULTIPLIERRESEARCHSPECIAL_HPP
+extern template class boost::optional<openstudio::model::ZoneCapacitanceMultiplierResearchSpecial>;
+template<> std::vector<openstudio::model::ZoneCapacitanceMultiplierResearchSpecial>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneCapacitanceMultiplierResearchSpecial>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneCapacitanceMultiplierResearchSpecial>;
 
+#endif // MODEL_ZONECAPACITANCEMULTIPLIERRESEARCHSPECIAL_HPP

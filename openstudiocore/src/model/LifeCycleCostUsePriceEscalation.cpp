@@ -30,6 +30,8 @@
 
 #include <boost/algorithm/string.hpp>
 
+template class boost::optional<openstudio::model::LifeCycleCostUsePriceEscalation>;
+template class std::vector<openstudio::model::LifeCycleCostUsePriceEscalation>;
 namespace openstudio {
 namespace model  {
 namespace detail {

@@ -39,6 +39,7 @@
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilCoolingWater>;
 namespace openstudio {
 namespace model {
 
@@ -650,4 +651,3 @@ boost::optional<ControllerWaterCoil> CoilCoolingWater::controllerWaterCoil()
 
 } // model
 } // openstudio
-

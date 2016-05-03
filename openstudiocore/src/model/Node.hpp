@@ -177,5 +177,9 @@ typedef std::vector<Node> NodeVector;
 } // model
 } // openstudio
 
-#endif // MODEL_Node_HPP
+extern template class boost::optional<openstudio::model::Node>;
+template<> std::vector<openstudio::model::Node>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Node>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Node>;
 
+#endif // MODEL_Node_HPP

@@ -30,6 +30,8 @@
 #include <utilities/idd/OS_Construction_InternalSource_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::ConstructionWithInternalSource>;
+template class std::vector<openstudio::model::ConstructionWithInternalSource>;
 namespace openstudio {
 namespace model {
 

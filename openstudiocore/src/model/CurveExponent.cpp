@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveExponent>;
+template class std::vector<openstudio::model::CurveExponent>;
 namespace openstudio {
 namespace model {
 
@@ -348,4 +350,3 @@ CurveExponent::CurveExponent(std::shared_ptr<detail::CurveExponent_Impl> impl)
 
 } // model
 } // openstudio
-

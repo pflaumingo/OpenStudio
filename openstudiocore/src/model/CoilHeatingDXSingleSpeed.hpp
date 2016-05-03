@@ -233,5 +233,9 @@ typedef std::vector<CoilHeatingDXSingleSpeed> CoilHeatingDXSingleSpeedVector;
 
 } // openstudio
 
-#endif // MODEL_COILHEATINGDXSINGLESPEED_HPP
+extern template class boost::optional<openstudio::model::CoilHeatingDXSingleSpeed>;
+template<> std::vector<openstudio::model::CoilHeatingDXSingleSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilHeatingDXSingleSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilHeatingDXSingleSpeed>;
 
+#endif // MODEL_COILHEATINGDXSINGLESPEED_HPP

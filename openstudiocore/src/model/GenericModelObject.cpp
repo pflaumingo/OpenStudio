@@ -21,6 +21,8 @@
 #include "GenericModelObject_Impl.hpp"
 
 
+template class boost::optional<openstudio::model::GenericModelObject>;
+template class std::vector<openstudio::model::GenericModelObject>;
 namespace openstudio {
 namespace model {
 

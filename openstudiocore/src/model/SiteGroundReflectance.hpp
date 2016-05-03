@@ -178,5 +178,9 @@ typedef std::vector<SiteGroundReflectance> SiteGroundReflectanceVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SITEGROUNDREFLECTANCE_HPP
+extern template class boost::optional<openstudio::model::SiteGroundReflectance>;
+template<> std::vector<openstudio::model::SiteGroundReflectance>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SiteGroundReflectance>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SiteGroundReflectance>;
 
+#endif // MODEL_SITEGROUNDREFLECTANCE_HPP

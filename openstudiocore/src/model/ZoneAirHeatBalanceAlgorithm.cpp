@@ -30,6 +30,8 @@
 #include <utilities/idd/OS_ZoneAirHeatBalanceAlgorithm_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::ZoneAirHeatBalanceAlgorithm>;
+template class std::vector<openstudio::model::ZoneAirHeatBalanceAlgorithm>;
 namespace openstudio {
 namespace model {
 
@@ -156,4 +158,3 @@ ZoneAirHeatBalanceAlgorithm::ZoneAirHeatBalanceAlgorithm(Model& model)
 
 } // model
 } // openstudio
-

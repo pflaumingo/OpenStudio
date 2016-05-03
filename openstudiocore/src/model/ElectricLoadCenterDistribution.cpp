@@ -44,6 +44,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ElectricLoadCenterDistribution>;
+template class std::vector<openstudio::model::ElectricLoadCenterDistribution>;
 namespace openstudio {
 namespace model {
 
@@ -501,4 +503,3 @@ ElectricLoadCenterDistribution::ElectricLoadCenterDistribution(std::shared_ptr<d
 
 } // model
 } // openstudio
-

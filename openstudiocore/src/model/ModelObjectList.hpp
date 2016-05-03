@@ -86,5 +86,9 @@ typedef std::vector<ModelObjectList> ModelObjectListVector;
 } // model
 } // openstudio
 
-#endif // MODEL_MODELOBJECTLIST_HPP
+extern template class boost::optional<openstudio::model::ModelObjectList>;
+template<> std::vector<openstudio::model::ModelObjectList>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ModelObjectList>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ModelObjectList>;
 
+#endif // MODEL_MODELOBJECTLIST_HPP

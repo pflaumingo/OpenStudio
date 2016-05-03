@@ -32,6 +32,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SolarCollectorPerformancePhotovoltaicThermalSimple>;
+template class std::vector<openstudio::model::SolarCollectorPerformancePhotovoltaicThermalSimple>;
 namespace openstudio {
 namespace model {
 
@@ -258,4 +260,3 @@ SolarCollectorPerformancePhotovoltaicThermalSimple::SolarCollectorPerformancePho
 
 } // model
 } // openstudio
-

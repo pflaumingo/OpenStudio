@@ -67,6 +67,10 @@ using std::vector;
 int __metaType1__ = qRegisterMetaType<boost::optional<openstudio::model::ModelObject> >("boost::optional<openstudio::model::ModelObject>");
 int __metaType2__ = qRegisterMetaType<std::vector<openstudio::model::ModelObject> >("std::vector<openstudio::model::ModelObject>" );
 
+template class boost::optional<openstudio::model::ModelObject>;
+template class std::vector<openstudio::model::ModelObject>;
+template class std::shared_ptr<openstudio::model::detail::ModelObject_Impl>;
+
 namespace openstudio {
 namespace model {
 namespace detail {

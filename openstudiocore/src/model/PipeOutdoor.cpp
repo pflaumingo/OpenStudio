@@ -31,6 +31,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/units/Unit.hpp"
 
+template class boost::optional<openstudio::model::PipeOutdoor>;
+template class std::vector<openstudio::model::PipeOutdoor>;
 namespace openstudio {
 namespace model {
 
@@ -221,4 +223,3 @@ PipeOutdoor::PipeOutdoor(std::shared_ptr<detail::PipeOutdoor_Impl> impl)
 
 } // model
 } // openstudio
-

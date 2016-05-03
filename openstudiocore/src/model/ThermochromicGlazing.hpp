@@ -91,5 +91,9 @@ typedef std::vector<ThermochromicGlazing> ThermochromicGlazingVector;
 } // model
 } // openstudio
 
-#endif // MODEL_THERMOCHROMICGLAZING_HPP
+extern template class boost::optional<openstudio::model::ThermochromicGlazing>;
+template<> std::vector<openstudio::model::ThermochromicGlazing>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ThermochromicGlazing>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ThermochromicGlazing>;
 
+#endif // MODEL_THERMOCHROMICGLAZING_HPP

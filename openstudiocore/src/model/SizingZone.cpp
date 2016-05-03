@@ -28,6 +28,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SizingZone>;
+template class std::vector<openstudio::model::SizingZone>;
 namespace openstudio {
 namespace model {
 
@@ -1449,4 +1451,3 @@ SizingZone::SizingZone(std::shared_ptr<detail::SizingZone_Impl> impl)
 
 } // model
 } // openstudio
-

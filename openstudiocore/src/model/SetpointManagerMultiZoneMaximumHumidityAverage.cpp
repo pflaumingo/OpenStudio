@@ -28,6 +28,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SetpointManagerMultiZoneMaximumHumidityAverage>;
+template class std::vector<openstudio::model::SetpointManagerMultiZoneMaximumHumidityAverage>;
 namespace openstudio {
 namespace model {
 
@@ -171,4 +173,3 @@ SetpointManagerMultiZoneMaximumHumidityAverage::SetpointManagerMultiZoneMaximumH
 
 } // model
 } // openstudio
-

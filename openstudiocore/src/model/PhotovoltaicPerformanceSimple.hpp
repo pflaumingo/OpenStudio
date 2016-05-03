@@ -107,5 +107,9 @@ typedef std::vector<PhotovoltaicPerformanceSimple> PhotovoltaicPerformanceSimple
 } // model
 } // openstudio
 
-#endif // MODEL_PHOTOVOLTAICPERFORMANCESIMPLE_HPP
+extern template class boost::optional<openstudio::model::PhotovoltaicPerformanceSimple>;
+template<> std::vector<openstudio::model::PhotovoltaicPerformanceSimple>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PhotovoltaicPerformanceSimple>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PhotovoltaicPerformanceSimple>;
 
+#endif // MODEL_PHOTOVOLTAICPERFORMANCESIMPLE_HPP

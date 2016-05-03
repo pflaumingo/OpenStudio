@@ -145,5 +145,9 @@ typedef std::vector<FluidCoolerSingleSpeed> FluidCoolerSingleSpeedVector;
 } // model
 } // openstudio
 
-#endif // MODEL_FLUIDCOOLERSINGLESPEED_HPP
+extern template class boost::optional<openstudio::model::FluidCoolerSingleSpeed>;
+template<> std::vector<openstudio::model::FluidCoolerSingleSpeed>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::FluidCoolerSingleSpeed>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::FluidCoolerSingleSpeed>;
 
+#endif // MODEL_FLUIDCOOLERSINGLESPEED_HPP

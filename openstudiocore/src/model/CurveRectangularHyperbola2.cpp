@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveRectangularHyperbola2>;
+template class std::vector<openstudio::model::CurveRectangularHyperbola2>;
 namespace openstudio {
 namespace model {
 
@@ -346,4 +348,3 @@ CurveRectangularHyperbola2::CurveRectangularHyperbola2(std::shared_ptr<detail::C
 
 } // model
 } // openstudio
-

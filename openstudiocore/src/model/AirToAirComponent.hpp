@@ -110,5 +110,6 @@ typedef boost::optional<AirToAirComponent> OptionalAirToAirComponent;
 } // model
 } // openstudio
 
-#endif // MODEL_AIRTOAIRCOMPONENT_HPP
+extern template class boost::optional<openstudio::model::AirToAirComponent>;
 
+#endif // MODEL_AIRTOAIRCOMPONENT_HPP

@@ -148,5 +148,9 @@ typedef std::vector<DefaultConstructionSet> DefaultConstructionSetVector;
 } // model
 } // openstudio
 
-#endif // MODEL_DEFAULTCONSTRUCTIONSET_HPP
+extern template class boost::optional<openstudio::model::DefaultConstructionSet>;
+template<> std::vector<openstudio::model::DefaultConstructionSet>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::DefaultConstructionSet>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::DefaultConstructionSet>;
 
+#endif // MODEL_DEFAULTCONSTRUCTIONSET_HPP

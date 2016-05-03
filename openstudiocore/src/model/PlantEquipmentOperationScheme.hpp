@@ -65,5 +65,9 @@ typedef std::vector<PlantEquipmentOperationScheme> PlantEquipmentOperationScheme
 } // model
 } // openstudio
 
-#endif // MODEL_PLANTEQUIPMENTOPERATIONSCHEME_HPP
+extern template class boost::optional<openstudio::model::PlantEquipmentOperationScheme>;
+template<> std::vector<openstudio::model::PlantEquipmentOperationScheme>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PlantEquipmentOperationScheme>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PlantEquipmentOperationScheme>;
 
+#endif // MODEL_PLANTEQUIPMENTOPERATIONSCHEME_HPP

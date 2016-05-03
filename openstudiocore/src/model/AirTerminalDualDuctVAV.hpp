@@ -123,5 +123,9 @@ typedef std::vector<AirTerminalDualDuctVAV> AirTerminalDualDuctVAVVector;
 } // model
 } // openstudio
 
-#endif // MODEL_AIRTERMINALDUALDUCTVAV_HPP
+extern template class boost::optional<openstudio::model::AirTerminalDualDuctVAV>;
+template<> std::vector<openstudio::model::AirTerminalDualDuctVAV>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirTerminalDualDuctVAV>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirTerminalDualDuctVAV>;
 
+#endif // MODEL_AIRTERMINALDUALDUCTVAV_HPP

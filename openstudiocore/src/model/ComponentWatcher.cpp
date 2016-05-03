@@ -31,6 +31,7 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/Compare.hpp"
 
+template class std::vector<openstudio::model::ComponentWatcher>;
 namespace openstudio {
 namespace model {
 

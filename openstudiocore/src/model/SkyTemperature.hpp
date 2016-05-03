@@ -65,4 +65,9 @@ typedef std::vector<SkyTemperature> SkyTemperatureVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::SkyTemperature>;
+template<> std::vector<openstudio::model::SkyTemperature>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SkyTemperature>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SkyTemperature>;
+
 #endif // MODEL_SKYTEMPERATURE_HPP

@@ -98,5 +98,9 @@ typedef std::vector<ZoneAirContaminantBalance> ZoneAirContaminantBalanceVector;
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEAIRCONTAMINANTBALANCE_HPP
+extern template class boost::optional<openstudio::model::ZoneAirContaminantBalance>;
+template<> std::vector<openstudio::model::ZoneAirContaminantBalance>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneAirContaminantBalance>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneAirContaminantBalance>;
 
+#endif // MODEL_ZONEAIRCONTAMINANTBALANCE_HPP

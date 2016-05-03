@@ -174,5 +174,9 @@ typedef std::vector<RefrigerationWalkInZoneBoundary> RefrigerationWalkInZoneBoun
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONWALKINZONEBOUNDARY_HPP
+extern template class boost::optional<openstudio::model::RefrigerationWalkInZoneBoundary>;
+template<> std::vector<openstudio::model::RefrigerationWalkInZoneBoundary>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationWalkInZoneBoundary>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationWalkInZoneBoundary>;
 
+#endif // MODEL_REFRIGERATIONWALKINZONEBOUNDARY_HPP

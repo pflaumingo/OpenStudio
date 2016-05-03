@@ -22,6 +22,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ResourceObject>;
+template class std::vector<openstudio::model::ResourceObject>;
 namespace openstudio {
 namespace model {
 

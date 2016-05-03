@@ -76,4 +76,6 @@ typedef boost::optional<Version> OptionalVersion;
 }
 }
 
+extern template class boost::optional<openstudio::model::Version>;
+
 #endif

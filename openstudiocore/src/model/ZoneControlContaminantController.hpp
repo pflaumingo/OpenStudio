@@ -117,5 +117,9 @@ typedef std::vector<ZoneControlContaminantController> ZoneControlContaminantCont
 } // model
 } // openstudio
 
-#endif // MODEL_ZONECONTROLCONTAMINANTCONTROLLER_HPP
+extern template class boost::optional<openstudio::model::ZoneControlContaminantController>;
+template<> std::vector<openstudio::model::ZoneControlContaminantController>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneControlContaminantController>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneControlContaminantController>;
 
+#endif // MODEL_ZONECONTROLCONTAMINANTCONTROLLER_HPP

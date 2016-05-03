@@ -174,5 +174,9 @@ typedef std::vector<AirTerminalSingleDuctConstantVolumeFourPipeInduction> AirTer
 } // model
 } // openstudio
 
-#endif // MODEL_AIRTERMINALSINGLEDUCTCONSTANTVOLUMEFOURPIPEINDUCTION_HPP
+extern template class boost::optional<openstudio::model::AirTerminalSingleDuctConstantVolumeFourPipeInduction>;
+template<> std::vector<openstudio::model::AirTerminalSingleDuctConstantVolumeFourPipeInduction>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirTerminalSingleDuctConstantVolumeFourPipeInduction>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirTerminalSingleDuctConstantVolumeFourPipeInduction>;
 
+#endif // MODEL_AIRTERMINALSINGLEDUCTCONSTANTVOLUMEFOURPIPEINDUCTION_HPP

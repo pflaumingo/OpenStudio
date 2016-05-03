@@ -44,6 +44,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilWaterHeatingDesuperheater>;
+template class std::vector<openstudio::model::CoilWaterHeatingDesuperheater>;
 namespace openstudio {
 namespace model {
 
@@ -732,4 +734,3 @@ CoilWaterHeatingDesuperheater::CoilWaterHeatingDesuperheater(std::shared_ptr<det
 
 } // model
 } // openstudio
-

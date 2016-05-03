@@ -114,4 +114,9 @@ typedef std::vector<Component> ComponentVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::Component>;
+template<> std::vector<openstudio::model::Component>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Component>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Component>;
+
 #endif // MODEL_COMPONENT_HPP

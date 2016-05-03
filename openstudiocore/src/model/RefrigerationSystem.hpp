@@ -241,5 +241,9 @@ typedef std::vector<RefrigerationSystem> RefrigerationSystemVector;
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONSYSTEM_HPP
+extern template class boost::optional<openstudio::model::RefrigerationSystem>;
+template<> std::vector<openstudio::model::RefrigerationSystem>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationSystem>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationSystem>;
 
+#endif // MODEL_REFRIGERATIONSYSTEM_HPP

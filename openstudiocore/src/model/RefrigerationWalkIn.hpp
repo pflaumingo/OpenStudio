@@ -331,5 +331,9 @@ typedef std::vector<RefrigerationWalkIn> RefrigerationWalkInVector;
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONWALKIN_HPP
+extern template class boost::optional<openstudio::model::RefrigerationWalkIn>;
+template<> std::vector<openstudio::model::RefrigerationWalkIn>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationWalkIn>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationWalkIn>;
 
+#endif // MODEL_REFRIGERATIONWALKIN_HPP

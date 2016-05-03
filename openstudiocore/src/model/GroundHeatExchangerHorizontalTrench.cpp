@@ -28,6 +28,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::GroundHeatExchangerHorizontalTrench>;
+template class std::vector<openstudio::model::GroundHeatExchangerHorizontalTrench>;
 namespace openstudio {
 namespace model {
 
@@ -529,4 +531,3 @@ GroundHeatExchangerHorizontalTrench::GroundHeatExchangerHorizontalTrench(std::sh
 
 } // model
 } // openstudio
-

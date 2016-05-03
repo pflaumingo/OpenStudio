@@ -34,6 +34,8 @@
 
 #include <algorithm>
 
+template class boost::optional<openstudio::model::TableMultiVariableLookup>;
+template class std::vector<openstudio::model::TableMultiVariableLookup>;
 namespace openstudio {
 namespace model {
 
@@ -1257,4 +1259,3 @@ TableMultiVariableLookup::TableMultiVariableLookup(std::shared_ptr<detail::Table
 
 } // model
 } // openstudio
-

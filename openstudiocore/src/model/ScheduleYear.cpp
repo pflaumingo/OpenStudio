@@ -35,6 +35,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/time/Date.hpp"
 
+template class boost::optional<openstudio::model::ScheduleYear>;
+template class std::vector<openstudio::model::ScheduleYear>;
 namespace openstudio {
 namespace model {
 
@@ -318,4 +320,3 @@ void ScheduleYear::clearScheduleWeeks()
 
 } // model
 } // openstudio
-

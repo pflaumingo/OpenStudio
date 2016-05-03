@@ -88,5 +88,9 @@ typedef std::vector<ProgramControl> ProgramControlVector;
 } // model
 } // openstudio
 
-#endif // MODEL_PROGRAMCONTROL_HPP
+extern template class boost::optional<openstudio::model::ProgramControl>;
+template<> std::vector<openstudio::model::ProgramControl>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ProgramControl>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ProgramControl>;
 
+#endif // MODEL_PROGRAMCONTROL_HPP

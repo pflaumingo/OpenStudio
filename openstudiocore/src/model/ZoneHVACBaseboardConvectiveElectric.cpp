@@ -31,6 +31,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACBaseboardConvectiveElectric>;
+template class std::vector<openstudio::model::ZoneHVACBaseboardConvectiveElectric>;
 namespace openstudio {
 namespace model {
 
@@ -372,4 +374,3 @@ ZoneHVACBaseboardConvectiveElectric::ZoneHVACBaseboardConvectiveElectric(std::sh
 
 } // model
 } // openstudio
-

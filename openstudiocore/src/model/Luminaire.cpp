@@ -42,6 +42,8 @@
 #include "../utilities/geometry/Geometry.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Luminaire>;
+template class std::vector<openstudio::model::Luminaire>;
 namespace openstudio {
 namespace model {
 
@@ -862,4 +864,3 @@ Luminaire::Luminaire(std::shared_ptr<detail::Luminaire_Impl> impl)
 
 } // model
 } // openstudio
-

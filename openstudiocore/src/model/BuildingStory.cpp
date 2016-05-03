@@ -38,6 +38,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::BuildingStory>;
+template class std::vector<openstudio::model::BuildingStory>;
 namespace openstudio {
 namespace model {
 
@@ -352,4 +354,3 @@ BuildingStory::BuildingStory(std::shared_ptr<detail::BuildingStory_Impl> impl)
 
 } // model
 } // openstudio
-

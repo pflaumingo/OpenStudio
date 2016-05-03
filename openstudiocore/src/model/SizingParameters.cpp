@@ -32,6 +32,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SizingParameters>;
+template class std::vector<openstudio::model::SizingParameters>;
 namespace openstudio {
 namespace model {
 
@@ -266,4 +268,3 @@ SizingParameters::SizingParameters(Model& model)
 
 } // model
 } // openstudio
-

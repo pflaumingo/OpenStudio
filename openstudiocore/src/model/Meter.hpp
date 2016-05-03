@@ -208,5 +208,9 @@ MODEL_API bool MeterFuelTypeEquals(const Meter& meter, const FuelType& ft);
 } // model
 } // openstudio
 
-#endif // MODEL_METER_HPP
+extern template class boost::optional<openstudio::model::Meter>;
+template<> std::vector<openstudio::model::Meter>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Meter>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Meter>;
 
+#endif // MODEL_METER_HPP

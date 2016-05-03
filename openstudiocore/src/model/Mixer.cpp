@@ -25,6 +25,7 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::Mixer>;
 namespace openstudio {
 
 namespace model {
@@ -247,4 +248,3 @@ bool Mixer::isRemovable() const
 } // model
 
 } // openstudio
-

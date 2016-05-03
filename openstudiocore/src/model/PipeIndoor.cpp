@@ -38,6 +38,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/units/Unit.hpp"
 
+template class boost::optional<openstudio::model::PipeIndoor>;
+template class std::vector<openstudio::model::PipeIndoor>;
 namespace openstudio {
 namespace model {
 
@@ -328,4 +330,3 @@ PipeIndoor::PipeIndoor(std::shared_ptr<detail::PipeIndoor_Impl> impl)
 
 } // model
 } // openstudio
-

@@ -321,5 +321,9 @@ typedef std::vector<RoofVegetation> RoofVegetationVector;
 } // model
 } // openstudio
 
-#endif // MODEL_ROOFVEGETATION_HPP
+extern template class boost::optional<openstudio::model::RoofVegetation>;
+template<> std::vector<openstudio::model::RoofVegetation>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RoofVegetation>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RoofVegetation>;
 
+#endif // MODEL_ROOFVEGETATION_HPP

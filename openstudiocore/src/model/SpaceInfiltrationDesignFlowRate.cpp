@@ -39,6 +39,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SpaceInfiltrationDesignFlowRate>;
+template class std::vector<openstudio::model::SpaceInfiltrationDesignFlowRate>;
 namespace openstudio {
 namespace model {
 
@@ -813,4 +815,3 @@ SpaceInfiltrationDesignFlowRate::SpaceInfiltrationDesignFlowRate(std::shared_ptr
 
 } // model
 } // openstudio
-

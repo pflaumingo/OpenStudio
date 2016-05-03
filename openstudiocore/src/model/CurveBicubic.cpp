@@ -31,6 +31,8 @@
 
 using namespace std;
 
+template class boost::optional<openstudio::model::CurveBicubic>;
+template class std::vector<openstudio::model::CurveBicubic>;
 namespace openstudio {
 namespace model {
 
@@ -576,4 +578,3 @@ CurveBicubic::CurveBicubic(std::shared_ptr<detail::CurveBicubic_Impl> impl)
 
 } // model
 } // openstudio
-

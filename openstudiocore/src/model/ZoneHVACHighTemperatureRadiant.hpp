@@ -150,5 +150,9 @@ typedef std::vector<ZoneHVACHighTemperatureRadiant> ZoneHVACHighTemperatureRadia
 } // model
 } // openstudio
 
-#endif // MODEL_ZONEHVACHIGHTEMPERATURERADIANT_HPP
+extern template class boost::optional<openstudio::model::ZoneHVACHighTemperatureRadiant>;
+template<> std::vector<openstudio::model::ZoneHVACHighTemperatureRadiant>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ZoneHVACHighTemperatureRadiant>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ZoneHVACHighTemperatureRadiant>;
 
+#endif // MODEL_ZONEHVACHIGHTEMPERATURERADIANT_HPP

@@ -32,6 +32,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilWaterHeatingAirToWaterHeatPump>;
+template class std::vector<openstudio::model::CoilWaterHeatingAirToWaterHeatPump>;
 namespace openstudio {
 namespace model {
 
@@ -782,4 +784,3 @@ CoilWaterHeatingAirToWaterHeatPump::CoilWaterHeatingAirToWaterHeatPump(std::shar
 
 } // model
 } // openstudio
-

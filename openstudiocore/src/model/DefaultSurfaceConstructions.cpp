@@ -30,6 +30,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::DefaultSurfaceConstructions>;
+template class std::vector<openstudio::model::DefaultSurfaceConstructions>;
 namespace openstudio {
 namespace model {
 
@@ -275,4 +277,3 @@ DefaultSurfaceConstructions::DefaultSurfaceConstructions(std::shared_ptr<detail:
 
 } // model
 } // openstudio
-

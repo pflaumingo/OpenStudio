@@ -46,6 +46,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::CoilHeatingElectric>;
+template class std::vector<openstudio::model::CoilHeatingElectric>;
 namespace openstudio {
 namespace model {
 
@@ -476,4 +478,3 @@ CoilHeatingElectric::CoilHeatingElectric(std::shared_ptr<detail::CoilHeatingElec
 } // model
 
 } // openstudio
-

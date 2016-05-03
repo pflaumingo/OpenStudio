@@ -253,5 +253,9 @@ typedef std::vector<CoolingTowerPerformanceCoolTools> CoolingTowerPerformanceCoo
 } // model
 } // openstudio
 
-#endif // MODEL_COOLINGTOWERPERFORMANCECOOLTOOLS_HPP
+extern template class boost::optional<openstudio::model::CoolingTowerPerformanceCoolTools>;
+template<> std::vector<openstudio::model::CoolingTowerPerformanceCoolTools>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoolingTowerPerformanceCoolTools>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoolingTowerPerformanceCoolTools>;
 
+#endif // MODEL_COOLINGTOWERPERFORMANCECOOLTOOLS_HPP

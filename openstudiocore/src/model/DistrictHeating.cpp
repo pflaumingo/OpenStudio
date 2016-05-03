@@ -28,6 +28,8 @@
 #include "Node.hpp"
 #include "Node_Impl.hpp"
 
+template class boost::optional<openstudio::model::DistrictHeating>;
+template class std::vector<openstudio::model::DistrictHeating>;
 namespace openstudio {
 namespace model {
 
@@ -157,6 +159,3 @@ DistrictHeating::DistrictHeating(std::shared_ptr<detail::DistrictHeating_Impl> i
 } // model
 
 } // openstudio
-
-
-

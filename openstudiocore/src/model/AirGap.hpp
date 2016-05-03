@@ -97,5 +97,9 @@ typedef std::vector<AirGap> AirGapVector;
 } // model
 } // openstudio
 
-#endif // MODEL_AIRGAP_HPP
+extern template class boost::optional<openstudio::model::AirGap>;
+template<> std::vector<openstudio::model::AirGap>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirGap>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirGap>;
 
+#endif // MODEL_AIRGAP_HPP

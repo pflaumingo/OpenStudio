@@ -30,6 +30,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/core/String.hpp"
 
+template class std::vector<openstudio::model::ClimateZone>;
+template class boost::optional<openstudio::model::ClimateZones>;
 namespace openstudio {
 namespace model {
 

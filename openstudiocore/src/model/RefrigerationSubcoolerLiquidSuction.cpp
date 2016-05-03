@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationSubcoolerLiquidSuction>;
+template class std::vector<openstudio::model::RefrigerationSubcoolerLiquidSuction>;
 namespace openstudio {
 namespace model {
 
@@ -194,4 +196,3 @@ RefrigerationSubcoolerLiquidSuction::RefrigerationSubcoolerLiquidSuction(std::sh
 
 } // model
 } // openstudio
-

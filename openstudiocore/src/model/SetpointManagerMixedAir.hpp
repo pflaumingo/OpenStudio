@@ -115,5 +115,9 @@ typedef std::vector<SetpointManagerMixedAir> SetpointManagerMixedAirVector;
 
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERMIXEDAIR_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerMixedAir>;
+template<> std::vector<openstudio::model::SetpointManagerMixedAir>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerMixedAir>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerMixedAir>;
 
+#endif // MODEL_SETPOINTMANAGERMIXEDAIR_HPP

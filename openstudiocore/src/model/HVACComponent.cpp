@@ -40,6 +40,7 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::HVACComponent>;
 namespace openstudio {
 namespace model {
 
@@ -579,4 +580,3 @@ boost::optional<StraightComponent> HVACComponent::containingStraightComponent() 
 } // model
 
 } // openstudio
-

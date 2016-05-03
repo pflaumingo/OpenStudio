@@ -114,5 +114,9 @@ typedef std::vector<AvailabilityManagerNightVentilation> AvailabilityManagerNigh
 } // model
 } // openstudio
 
-#endif // MODEL_AVAILABILITYMANAGERNIGHTVENTILATION_HPP
+extern template class boost::optional<openstudio::model::AvailabilityManagerNightVentilation>;
+template<> std::vector<openstudio::model::AvailabilityManagerNightVentilation>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AvailabilityManagerNightVentilation>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AvailabilityManagerNightVentilation>;
 
+#endif // MODEL_AVAILABILITYMANAGERNIGHTVENTILATION_HPP

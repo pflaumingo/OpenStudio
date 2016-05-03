@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::OutputControlReportingTolerances>;
+template class std::vector<openstudio::model::OutputControlReportingTolerances>;
 namespace openstudio {
 namespace model {
 
@@ -218,4 +220,3 @@ OutputControlReportingTolerances::OutputControlReportingTolerances(Model& model)
 
 } // model
 } // openstudio
-

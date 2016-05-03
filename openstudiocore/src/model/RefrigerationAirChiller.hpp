@@ -272,5 +272,9 @@ typedef std::vector<RefrigerationAirChiller> RefrigerationAirChillerVector;
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONAIRCHILLER_HPP
+extern template class boost::optional<openstudio::model::RefrigerationAirChiller>;
+template<> std::vector<openstudio::model::RefrigerationAirChiller>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationAirChiller>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationAirChiller>;
 
+#endif // MODEL_REFRIGERATIONAIRCHILLER_HPP

@@ -295,5 +295,6 @@ namespace detail {
 } // model
 } // openstudio
 
-#endif
+extern template class std::shared_ptr<openstudio::model::detail::ModelObject_Impl>;
 
+#endif

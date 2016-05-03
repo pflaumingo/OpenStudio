@@ -25,6 +25,8 @@
 #include "Model_Impl.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::PlantEquipmentOperationScheme>;
+template class std::vector<openstudio::model::PlantEquipmentOperationScheme>;
 namespace openstudio {
 
 namespace model {
@@ -80,4 +82,3 @@ boost::optional<PlantLoop> PlantEquipmentOperationScheme::plantLoop() const {
 } // model
 
 } // openstudio
-

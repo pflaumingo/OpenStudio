@@ -32,6 +32,8 @@
 
 #include <boost/regex.hpp>
 
+template class boost::optional<openstudio::model::RunPeriodControlSpecialDays>;
+template class std::vector<openstudio::model::RunPeriodControlSpecialDays>;
 namespace openstudio {
 namespace model  {
 

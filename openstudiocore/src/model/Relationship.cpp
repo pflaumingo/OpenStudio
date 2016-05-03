@@ -32,6 +32,8 @@
 
 #include <QMetaType>
 
+template class std::vector<openstudio::model::Relationship>;
+template class boost::optional<openstudio::model::Relationship>;
 namespace openstudio {
 namespace model {
 

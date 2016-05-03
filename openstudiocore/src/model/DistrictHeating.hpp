@@ -108,7 +108,9 @@ typedef std::vector<DistrictHeating> DistrictHeatingVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::DistrictHeating>;
+template<> std::vector<openstudio::model::DistrictHeating>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::DistrictHeating>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::DistrictHeating>;
+
 #endif // MODEL_DISTRICTHEATING_HPP
-
-
-

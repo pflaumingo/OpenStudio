@@ -39,6 +39,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ScheduleTypeLimits>;
+template class std::vector<openstudio::model::ScheduleTypeLimits>;
 namespace openstudio {
 namespace model {
 
@@ -593,4 +595,3 @@ bool isCompatible(const ScheduleTypeLimits &parentLimits,
 
 } // model
 } // openstudio
-

@@ -93,5 +93,9 @@ typedef std::vector<CoilSystemCoolingWaterHeatExchangerAssisted> CoilSystemCooli
 } // model
 } // openstudio
 
-#endif // MODEL_COILSYSTEMCOOLINGWATERHEATEXCHANGERASSISTED_HPP
+extern template class boost::optional<openstudio::model::CoilSystemCoolingWaterHeatExchangerAssisted>;
+template<> std::vector<openstudio::model::CoilSystemCoolingWaterHeatExchangerAssisted>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilSystemCoolingWaterHeatExchangerAssisted>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilSystemCoolingWaterHeatExchangerAssisted>;
 
+#endif // MODEL_COILSYSTEMCOOLINGWATERHEATEXCHANGERASSISTED_HPP

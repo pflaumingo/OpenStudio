@@ -159,5 +159,9 @@ typedef std::vector<CoilCoolingCooledBeam> CoilCoolingCooledBeamVector;
 } // model
 } // openstudio
 
-#endif // MODEL_COILCOOLINGCOOLEDBEAM_HPP
+extern template class boost::optional<openstudio::model::CoilCoolingCooledBeam>;
+template<> std::vector<openstudio::model::CoilCoolingCooledBeam>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::CoilCoolingCooledBeam>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::CoilCoolingCooledBeam>;
 
+#endif // MODEL_COILCOOLINGCOOLEDBEAM_HPP

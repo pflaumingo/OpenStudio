@@ -181,4 +181,9 @@ typedef std::vector<LayeredConstruction> LayeredConstructionVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::LayeredConstruction>;
+template<> std::vector<openstudio::model::LayeredConstruction>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::LayeredConstruction>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::LayeredConstruction>;
+
 #endif // MODEL_LAYEREDCONSTRUCTION_HPP

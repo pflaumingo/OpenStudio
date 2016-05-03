@@ -119,4 +119,9 @@ MODEL_API std::vector< std::vector<ModelObject> > getRecursiveResourceSubTrees(
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::ResourceObject>;
+template<> std::vector<openstudio::model::ResourceObject>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ResourceObject>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ResourceObject>;
+
 #endif // MODEL_RESOURCEOBJECT_HPP

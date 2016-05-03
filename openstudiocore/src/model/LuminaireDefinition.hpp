@@ -142,5 +142,9 @@ typedef std::vector<LuminaireDefinition> LuminaireDefinitionVector;
 } // model
 } // openstudio
 
-#endif // MODEL_LUMINAIREDEFINITION_HPP
+extern template class boost::optional<openstudio::model::LuminaireDefinition>;
+template<> std::vector<openstudio::model::LuminaireDefinition>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::LuminaireDefinition>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::LuminaireDefinition>;
 
+#endif // MODEL_LUMINAIREDEFINITION_HPP

@@ -65,5 +65,6 @@ typedef boost::optional<Thermostat> OptionalThermostat;
 } // model
 } // openstudio
 
-#endif // MODEL_THERMOSTAT_HPP
+extern template class boost::optional<openstudio::model::Thermostat>;
 
+#endif // MODEL_THERMOSTAT_HPP

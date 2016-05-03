@@ -141,5 +141,9 @@ typedef std::vector<GasEquipment> GasEquipmentVector;
 } // model
 } // openstudio
 
-#endif // MODEL_GASEQUIPMENT_HPP
+extern template class boost::optional<openstudio::model::GasEquipment>;
+template<> std::vector<openstudio::model::GasEquipment>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::GasEquipment>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::GasEquipment>;
 
+#endif // MODEL_GASEQUIPMENT_HPP

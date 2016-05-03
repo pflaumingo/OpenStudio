@@ -89,4 +89,9 @@ typedef std::vector<WaterUseEquipment> WaterUseEquipmentVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::WaterUseEquipment>;
+template<> std::vector<openstudio::model::WaterUseEquipment>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::WaterUseEquipment>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::WaterUseEquipment>;
+
 #endif // MODEL_WATERUSEEQUIPMENT_HPP

@@ -120,4 +120,9 @@ typedef std::vector<ComponentCostAdjustments> ComponentCostAdjustmentsVector;
 } // model
 } // openstudio
 
+extern template class boost::optional<openstudio::model::ComponentCostAdjustments>;
+template<> std::vector<openstudio::model::ComponentCostAdjustments>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ComponentCostAdjustments>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ComponentCostAdjustments>;
+
 #endif // MODEL_COMPONENTCOSTADJUSTMENTS_HPP

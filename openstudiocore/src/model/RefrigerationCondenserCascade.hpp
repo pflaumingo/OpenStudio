@@ -127,5 +127,9 @@ typedef std::vector<RefrigerationCondenserCascade> RefrigerationCondenserCascade
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONCONDENSERCASCADE_HPP
+extern template class boost::optional<openstudio::model::RefrigerationCondenserCascade>;
+template<> std::vector<openstudio::model::RefrigerationCondenserCascade>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationCondenserCascade>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationCondenserCascade>;
 
+#endif // MODEL_REFRIGERATIONCONDENSERCASCADE_HPP

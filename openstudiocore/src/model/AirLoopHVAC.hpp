@@ -336,4 +336,9 @@ typedef std::vector<AirLoopHVAC> AirLoopHVACVector;
 
 } // openstudio
 
+extern template class boost::optional<openstudio::model::AirLoopHVAC>;
+template<> std::vector<openstudio::model::AirLoopHVAC>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::AirLoopHVAC>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::AirLoopHVAC>;
+
 #endif // MODEL_AIRLOOPHVAC_HPP

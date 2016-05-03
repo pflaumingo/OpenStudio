@@ -35,6 +35,8 @@
 #include <boost/algorithm/string.hpp>
 
 
+template class boost::optional<openstudio::model::RunPeriod>;
+template class std::vector<openstudio::model::RunPeriod>;
 namespace openstudio {
 namespace model  {
 

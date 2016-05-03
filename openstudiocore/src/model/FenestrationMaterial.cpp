@@ -22,6 +22,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::FenestrationMaterial>;
+template class std::vector<openstudio::model::FenestrationMaterial>;
 namespace openstudio {
 namespace model {
 

@@ -43,6 +43,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::EvaporativeFluidCoolerSingleSpeed>;
+template class std::vector<openstudio::model::EvaporativeFluidCoolerSingleSpeed>;
 namespace openstudio {
 namespace model {
 
@@ -908,4 +910,3 @@ EvaporativeFluidCoolerSingleSpeed::EvaporativeFluidCoolerSingleSpeed(std::shared
 
 } // model
 } // openstudio
-

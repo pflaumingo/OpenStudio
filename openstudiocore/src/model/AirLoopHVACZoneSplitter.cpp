@@ -33,6 +33,8 @@
 #include "../utilities/core/Compare.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::AirLoopHVACZoneSplitter>;
+template class std::vector<openstudio::model::AirLoopHVACZoneSplitter>;
 namespace openstudio {
 namespace model {
 
@@ -209,4 +211,3 @@ void AirLoopHVACZoneSplitter::disconnect()
 } // model
 
 } // openstudio
-

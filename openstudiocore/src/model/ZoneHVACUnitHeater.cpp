@@ -40,6 +40,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACUnitHeater>;
+template class std::vector<openstudio::model::ZoneHVACUnitHeater>;
 namespace openstudio {
 namespace model {
 
@@ -608,4 +610,3 @@ ZoneHVACUnitHeater::ZoneHVACUnitHeater(std::shared_ptr<detail::ZoneHVACUnitHeate
 
 } // model
 } // openstudio
-

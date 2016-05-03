@@ -33,6 +33,8 @@
 #include "../utilities/time/DateTime.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::LightingDesignDay>;
+template class std::vector<openstudio::model::LightingDesignDay>;
 namespace openstudio {
 namespace model {
 
@@ -286,4 +288,3 @@ LightingDesignDay::LightingDesignDay(std::shared_ptr<detail::LightingDesignDay_I
 
 } // model
 } // openstudio
-

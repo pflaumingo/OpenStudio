@@ -33,6 +33,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ChillerHeaterPerformanceElectricEIR>;
+template class std::vector<openstudio::model::ChillerHeaterPerformanceElectricEIR>;
 namespace openstudio {
 namespace model {
 
@@ -959,4 +961,3 @@ ChillerHeaterPerformanceElectricEIR::ChillerHeaterPerformanceElectricEIR(std::sh
 
 } // model
 } // openstudio
-

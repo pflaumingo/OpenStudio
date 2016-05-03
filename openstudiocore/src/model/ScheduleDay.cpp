@@ -43,6 +43,8 @@
 #include "../utilities/time/Time.hpp"
 #include "../utilities/data/Vector.hpp"
 
+template class boost::optional<openstudio::model::ScheduleDay>;
+template class std::vector<openstudio::model::ScheduleDay>;
 namespace openstudio {
 namespace model {
 
@@ -503,4 +505,3 @@ ScheduleDay::ScheduleDay(std::shared_ptr<detail::ScheduleDay_Impl> impl)
 
 } // model
 } // openstudio
-

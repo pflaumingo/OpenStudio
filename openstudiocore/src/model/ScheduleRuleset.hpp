@@ -158,5 +158,9 @@ typedef std::vector<ScheduleRuleset> ScheduleRulesetVector;
 } // model
 } // openstudio
 
-#endif // MODEL_SCHEDULERULESET_HPP
+extern template class boost::optional<openstudio::model::ScheduleRuleset>;
+template<> std::vector<openstudio::model::ScheduleRuleset>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::ScheduleRuleset>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::ScheduleRuleset>;
 
+#endif // MODEL_SCHEDULERULESET_HPP

@@ -31,6 +31,8 @@
 #include <utilities/idd/OS_SetpointManager_SingleZone_Reheat_FieldEnums.hxx>
 #include <utilities/idd/IddEnums.hxx>
 
+template class boost::optional<openstudio::model::SetpointManagerSingleZoneReheat>;
+template class std::vector<openstudio::model::SetpointManagerSingleZoneReheat>;
 namespace openstudio {
 
 namespace model {

@@ -45,6 +45,8 @@
 #include "../utilities/core/Assert.hpp"
 #include "../utilities/idf/WorkspaceExtensibleGroup.hpp"
 
+template class boost::optional<openstudio::model::CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFit>;
+template class std::vector<openstudio::model::CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFit>;
 namespace openstudio {
 namespace model {
 
@@ -554,4 +556,3 @@ CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFit::CoilCoolingWaterToAirHeat
 
 } // model
 } // openstudio
-

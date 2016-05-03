@@ -108,5 +108,9 @@ typedef std::vector<SetpointManagerSingleZoneOneStageHeating> SetpointManagerSin
 } // model
 } // openstudio
 
-#endif // MODEL_SETPOINTMANAGERSINGLEZONEONESTAGEHEATING_HPP
+extern template class boost::optional<openstudio::model::SetpointManagerSingleZoneOneStageHeating>;
+template<> std::vector<openstudio::model::SetpointManagerSingleZoneOneStageHeating>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::SetpointManagerSingleZoneOneStageHeating>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::SetpointManagerSingleZoneOneStageHeating>;
 
+#endif // MODEL_SETPOINTMANAGERSINGLEZONEONESTAGEHEATING_HPP

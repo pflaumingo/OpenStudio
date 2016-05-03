@@ -82,5 +82,9 @@ typedef std::vector<Generator> GeneratorVector;
 } // model
 } // openstudio
 
-#endif // MODEL_GENERATOR_HPP
+extern template class boost::optional<openstudio::model::Generator>;
+template<> std::vector<openstudio::model::Generator>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::Generator>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::Generator>;
 
+#endif // MODEL_GENERATOR_HPP

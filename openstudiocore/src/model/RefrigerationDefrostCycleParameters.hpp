@@ -82,5 +82,9 @@ typedef std::vector<RefrigerationDefrostCycleParameters> RefrigerationDefrostCyc
 } // model
 } // openstudio
 
-#endif // MODEL_REFRIGERATIONDEFROSTCYCLEPARAMETERS_HPP
+extern template class boost::optional<openstudio::model::RefrigerationDefrostCycleParameters>;
+template<> std::vector<openstudio::model::RefrigerationDefrostCycleParameters>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::RefrigerationDefrostCycleParameters>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::RefrigerationDefrostCycleParameters>;
 
+#endif // MODEL_REFRIGERATIONDEFROSTCYCLEPARAMETERS_HPP

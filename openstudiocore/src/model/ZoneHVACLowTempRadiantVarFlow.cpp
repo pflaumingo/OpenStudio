@@ -52,6 +52,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACLowTempRadiantVarFlow>;
+template class std::vector<openstudio::model::ZoneHVACLowTempRadiantVarFlow>;
 namespace openstudio {
 namespace model {
 
@@ -689,4 +691,3 @@ ZoneHVACLowTempRadiantVarFlow::ZoneHVACLowTempRadiantVarFlow(std::shared_ptr<det
 
 } // model
 } // openstudio
-

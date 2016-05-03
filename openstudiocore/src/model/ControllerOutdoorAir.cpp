@@ -48,6 +48,8 @@ using openstudio::WorkspaceObjectVector;
 using openstudio::Workspace;
 using openstudio::istringEqual;
 
+template class boost::optional<openstudio::model::ControllerOutdoorAir>;
+template class std::vector<openstudio::model::ControllerOutdoorAir>;
 namespace openstudio {
 namespace model {
 

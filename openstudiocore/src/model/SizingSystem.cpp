@@ -29,6 +29,8 @@
 #include <utilities/idd/IddEnums.hxx>
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SizingSystem>;
+template class std::vector<openstudio::model::SizingSystem>;
 namespace openstudio {
 
 namespace model {
@@ -1149,4 +1151,3 @@ SizingSystem::SizingSystem(std::shared_ptr<detail::SizingSystem_Impl> impl)
 } // model
 
 } // openstudio
-

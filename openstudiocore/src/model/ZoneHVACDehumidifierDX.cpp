@@ -37,6 +37,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ZoneHVACDehumidifierDX>;
+template class std::vector<openstudio::model::ZoneHVACDehumidifierDX>;
 namespace openstudio {
 namespace model {
 
@@ -474,4 +476,3 @@ ZoneHVACDehumidifierDX::ZoneHVACDehumidifierDX(std::shared_ptr<detail::ZoneHVACD
 
 } // model
 } // openstudio
-

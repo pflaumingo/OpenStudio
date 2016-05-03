@@ -27,6 +27,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::RefrigerationDefrostCycleParameters>;
+template class std::vector<openstudio::model::RefrigerationDefrostCycleParameters>;
 namespace openstudio {
 namespace model {
 
@@ -342,4 +344,3 @@ RefrigerationDefrostCycleParameters::RefrigerationDefrostCycleParameters(std::sh
 
 } // model
 } // openstudio
-

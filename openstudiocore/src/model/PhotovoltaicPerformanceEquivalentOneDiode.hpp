@@ -241,5 +241,9 @@ typedef std::vector<PhotovoltaicPerformanceEquivalentOneDiode> PhotovoltaicPerfo
 } // model
 } // openstudio
 
-#endif // MODEL_PHOTOVOLTAICPERFORMANCEEQUIVALENTONEDIODE_HPP
+extern template class boost::optional<openstudio::model::PhotovoltaicPerformanceEquivalentOneDiode>;
+template<> std::vector<openstudio::model::PhotovoltaicPerformanceEquivalentOneDiode>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::PhotovoltaicPerformanceEquivalentOneDiode>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::PhotovoltaicPerformanceEquivalentOneDiode>;
 
+#endif // MODEL_PHOTOVOLTAICPERFORMANCEEQUIVALENTONEDIODE_HPP

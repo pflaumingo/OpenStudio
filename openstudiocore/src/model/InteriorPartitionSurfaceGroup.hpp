@@ -107,5 +107,9 @@ typedef std::vector<InteriorPartitionSurfaceGroup> InteriorPartitionSurfaceGroup
 } // model
 } // openstudio
 
-#endif // MODEL_INTERIORPARTITIONSURFACEGROUP_HPP
+extern template class boost::optional<openstudio::model::InteriorPartitionSurfaceGroup>;
+template<> std::vector<openstudio::model::InteriorPartitionSurfaceGroup>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::InteriorPartitionSurfaceGroup>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::InteriorPartitionSurfaceGroup>;
 
+#endif // MODEL_INTERIORPARTITIONSURFACEGROUP_HPP

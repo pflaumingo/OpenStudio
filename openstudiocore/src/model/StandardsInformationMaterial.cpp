@@ -34,6 +34,8 @@
 #include <QJsonObject>
 #include <QJsonParseError>
 
+template class boost::optional<openstudio::model::StandardsInformationMaterial>;
+template class std::vector<openstudio::model::StandardsInformationMaterial>;
 namespace openstudio {
 namespace model {
 
@@ -1224,4 +1226,3 @@ StandardsInformationMaterial::StandardsInformationMaterial(std::shared_ptr<detai
 
 } // model
 } // openstudio
-

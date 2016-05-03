@@ -28,6 +28,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::SolarCollectorPerformanceIntegralCollectorStorage>;
+template class std::vector<openstudio::model::SolarCollectorPerformanceIntegralCollectorStorage>;
 namespace openstudio {
 namespace model {
 
@@ -730,4 +732,3 @@ SolarCollectorPerformanceIntegralCollectorStorage::SolarCollectorPerformanceInte
 
 } // model
 } // openstudio
-

@@ -34,6 +34,8 @@
 #include "../utilities/geometry/Geometry.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::DaylightingControl>;
+template class std::vector<openstudio::model::DaylightingControl>;
 namespace openstudio {
 namespace model {
 
@@ -687,4 +689,3 @@ DaylightingControl::DaylightingControl(std::shared_ptr<detail::DaylightingContro
 
 } // model
 } // openstudio
-

@@ -208,5 +208,9 @@ typedef std::vector<DaylightingControl> DaylightingControlVector;
 } // model
 } // openstudio
 
-#endif // MODEL_DAYLIGHTINGCONTROL_HPP
+extern template class boost::optional<openstudio::model::DaylightingControl>;
+template<> std::vector<openstudio::model::DaylightingControl>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::DaylightingControl>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::DaylightingControl>;
 
+#endif // MODEL_DAYLIGHTINGCONTROL_HPP

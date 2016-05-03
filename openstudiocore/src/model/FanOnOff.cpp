@@ -58,6 +58,8 @@
 #include "../utilities/units/Unit.hpp"
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::FanOnOff>;
+template class std::vector<openstudio::model::FanOnOff>;
 namespace openstudio {
 namespace model {
 
@@ -762,4 +764,3 @@ FanOnOff::FanOnOff(std::shared_ptr<detail::FanOnOff_Impl> impl)
 
 } // model
 } // openstudio
-

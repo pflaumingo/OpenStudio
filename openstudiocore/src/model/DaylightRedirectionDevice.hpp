@@ -100,5 +100,9 @@ typedef std::vector<DaylightRedirectionDevice> DaylightRedirectionDeviceVector;
 } // model
 } // openstudio
 
-#endif // MODEL_DAYLIGHTREDIRECTIONDEVICE_HPP
+extern template class boost::optional<openstudio::model::DaylightRedirectionDevice>;
+template<> std::vector<openstudio::model::DaylightRedirectionDevice>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::DaylightRedirectionDevice>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::DaylightRedirectionDevice>;
 
+#endif // MODEL_DAYLIGHTREDIRECTIONDEVICE_HPP

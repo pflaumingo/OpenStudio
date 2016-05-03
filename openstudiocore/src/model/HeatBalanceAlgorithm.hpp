@@ -152,5 +152,9 @@ typedef std::vector<HeatBalanceAlgorithm> HeatBalanceAlgorithmVector;
 } // model
 } // openstudio
 
-#endif // MODEL_HEATBALANCEALGORITHM_HPP
+extern template class boost::optional<openstudio::model::HeatBalanceAlgorithm>;
+template<> std::vector<openstudio::model::HeatBalanceAlgorithm>::vector(size_type) = delete; // do not instantiate
+template<> void std::vector<openstudio::model::HeatBalanceAlgorithm>::resize(size_type) = delete; // do not instantiate
+extern template class std::vector<openstudio::model::HeatBalanceAlgorithm>;
 
+#endif // MODEL_HEATBALANCEALGORITHM_HPP

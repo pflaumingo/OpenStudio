@@ -22,6 +22,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::ShadingMaterial>;
+template class std::vector<openstudio::model::ShadingMaterial>;
 namespace openstudio {
 namespace model {
 

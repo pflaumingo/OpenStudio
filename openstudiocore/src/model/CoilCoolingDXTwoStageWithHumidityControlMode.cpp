@@ -44,6 +44,8 @@
 #include "../utilities/core/Assert.hpp"
 #include <utilities/idd/IddFactory.hxx>
 
+template class boost::optional<openstudio::model::CoilCoolingDXTwoStageWithHumidityControlMode>;
+template class std::vector<openstudio::model::CoilCoolingDXTwoStageWithHumidityControlMode>;
 namespace openstudio {
 namespace model {
 
@@ -767,4 +769,3 @@ CoilCoolingDXTwoStageWithHumidityControlMode::CoilCoolingDXTwoStageWithHumidityC
 
 } // model
 } // openstudio
-

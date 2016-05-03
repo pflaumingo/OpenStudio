@@ -45,6 +45,8 @@
 
 #include "../utilities/core/Assert.hpp"
 
+template class boost::optional<openstudio::model::YearDescription>;
+template class std::vector<openstudio::model::YearDescription>;
 namespace openstudio {
 namespace model {
 
@@ -424,4 +426,3 @@ YearDescription::YearDescription(Model& model)
 
 } // model
 } // openstudio
-
