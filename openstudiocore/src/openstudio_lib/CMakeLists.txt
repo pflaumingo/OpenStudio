@@ -706,10 +706,11 @@ add_library(${target_name} SHARED
   ${${target_name}_moc_src}
   ${${target_name}_moc}
   ${${target_name}_qrcs}
+  $<TARGET_OBJECTS:openstudio_model>
 )
 
 set(depends
-  openstudio_model
+        #openstudio_model
   openstudio_energyplus
   openstudio_modeleditor
   #openstudio_runmanager

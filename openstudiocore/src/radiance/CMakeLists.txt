@@ -31,7 +31,7 @@ set(${target_name}_test_src
 )
 
 set(${target_name}_depends
-  openstudio_model
+        #openstudio_model
 )
 
 set(${target_name}_swig_src
@@ -41,7 +41,7 @@ set(${target_name}_swig_src
 )
 
 add_library(${target_name} STATIC ${${target_name}_src} ${${target_name}_qrc_src})
-target_link_libraries(${target_name} ${${target_name}_depends})
+#target_link_libraries(${target_name} ${${target_name}_depends})
 AddPCH(${target_name})
 
 # No need to install static library

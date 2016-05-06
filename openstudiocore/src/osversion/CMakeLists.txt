@@ -19,16 +19,17 @@ set(${target_name}_swig_src
 )
 
 set(${target_name}_depends
-  openstudio_model
+        #openstudio_model
 )
 
 add_library(${target_name} STATIC 
   ${${target_name}_src}
+  $<TARGET_OBJECTS:openstudio_model>
 )
 
 AddPCH(${target_name})
 
-target_link_libraries(${target_name} ${${target_name}_depends})
+#target_link_libraries(${target_name} ${${target_name}_depends})
 
 # No need to install static lib
 #if(NOT APPLE)

@@ -962,7 +962,7 @@ set(all_lib_targets
   #openstudio_runmanager
   #openstudio_project
   openstudio_osversion
-  openstudio_model
+  #openstudio_model
   openstudio_modeleditor
   openstudio_utilities
   openstudio_energyplus

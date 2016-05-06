@@ -25,12 +25,12 @@ set(${target_name}_depends
   ${CMAKE_THREAD_LIBS}
   ${QT_LIBS}
   openstudio_utilities
-  openstudio_model
+  #openstudio_model
   openstudio_energyplus
   openstudio_osversion
 )
 
-add_library(${target_name} SHARED ${${target_name}_src})
+add_library(${target_name} SHARED ${${target_name}_src} $<TARGET_OBJECTS:openstudio_model>)
 target_link_libraries(${target_name} ${${target_name}_depends})
 AddPCH(${target_name})
 

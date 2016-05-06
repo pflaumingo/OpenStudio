@@ -484,7 +484,7 @@ set(${target_name}_swig_src
 ##qt5_add_resources(${target_name}_qrcs ${${target_name}_qrc})
 
 set(${target_name}_depends
-  openstudio_model
+        #openstudio_model
 )
 
 set(FILES 
@@ -521,7 +521,7 @@ include("${CMAKE_SOURCE_DIR}/embedded/EmbedFiles.cmake")
 embed_files("${FILES}" "${EMBEDDED_PATHS}" OUTPUT energyplus)
 
 add_library(${target_name} STATIC ${${target_name}_src} ${OUTPUT})
-target_link_libraries(${target_name} ${${target_name}_depends})
+#target_link_libraries(${target_name} ${${target_name}_depends})
 
 AddPCH(${target_name})
 

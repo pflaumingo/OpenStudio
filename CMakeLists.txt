@@ -617,7 +617,7 @@ else()
     URL_MD5 d4d8b600af2f77566515728d5bd7ffa4
     BUILD_IN_SOURCE 1
     CONFIGURE_COMMAND .\\win32\\configure.bat --with-static-linked-ext --without-win32ole --disable-install-doc --prefix=${CMAKE_BINARY_DIR}/Ruby-prefix/src/Ruby-install
-    BUILD_COMMAND nmake libenc && nmake libtrans && nmake
+    BUILD_COMMAND C:\\Devkit\\devkitvars.bat && nmake libenc && nmake libtrans && nmake
     INSTALL_COMMAND nmake install
   )
   set(RUBY_LIBRARY "${CMAKE_BINARY_DIR}/Ruby-prefix/src/Ruby-install/lib/x64-msvcr120-ruby220-static.lib")

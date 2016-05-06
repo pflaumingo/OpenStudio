@@ -52,7 +52,7 @@ set(${target_name}_depends
   ${CMAKE_THREAD_LIBS}
   ${QT_LIBS}
   openstudio_utilities
-  openstudio_model
+  #openstudio_model
   #zkexpat
 )
 

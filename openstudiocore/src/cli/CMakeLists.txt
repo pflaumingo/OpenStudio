@@ -3,6 +3,10 @@ IF (APPLE)
    find_library(COREFOUNDATION_LIBRARY CoreFoundation )
 ENDIF (APPLE)
 
+if( WIN32 )
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /")
+endif()
+
 file(READ "${RUBY_SOURCE_DIR}/enc/encinit.c" ENCINIT_FILE_CONTENT)
 string(REGEX MATCHALL "init_enc\\([a-zA-Z0-9_]*\\);" ENCINIT_MATCH "${ENCINIT_FILE_CONTENT}")
 set(ENC_INIT_DECLARATIONS "")
@@ -166,6 +170,7 @@ add_executable(openstudio
  RubyInterpreter.hpp
  "${CMAKE_CURRENT_BINARY_DIR}/embedded_scripting_wrap.cxx"
  ${OUTPUT}
+  $<TARGET_OBJECTS:openstudio_model>
 )
 
 set_source_files_properties("${CMAKE_CURRENT_BINARY_DIR}/embedded_scripting_wrap.cxx" PROPERTIES COMPILE_FLAGS "-DRUBY_EMBEDDED" )
@@ -230,7 +235,11 @@ target_link_libraries(openstudio
 )
 
 target_link_libraries(openstudio
+  openstudio_osversion
+  openstudio_energyplus
+  openstudio_measure
 	openstudio_utilities
+
   	${Boost_LIBRARIES}
   	${QT_LIBS}
 )

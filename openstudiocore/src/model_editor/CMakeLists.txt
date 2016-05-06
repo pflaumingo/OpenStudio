@@ -111,12 +111,13 @@ add_library(${target_name} SHARED
   ${${target_name}_qrcs}
   ${${target_name}_ui}
   ${${target_name}_uis}
+  $<TARGET_OBJECTS:openstudio_model>
 )
 
 # lib dependencies
 set(${target_name}_depends
   openstudio_energyplus
-  openstudio_model
+  #openstudio_model
 )
 
 add_dependencies(${target_name} ${${target_name}_depends})
